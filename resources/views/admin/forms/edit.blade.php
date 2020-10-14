@@ -10,7 +10,7 @@
                 <div class="text-center text-muted mb-4">
                   <small>Edita el usuario</small>
                 </div>
-                <form role="form" method="POST" action="{{ route('admin.update',$user) }}" >
+                <form role="form" method="POST" action="{{ url('admin/usuario',$user->id) }}" >
                     @csrf @method('PUT') 
                     
                   <div class="form-group mb-3">

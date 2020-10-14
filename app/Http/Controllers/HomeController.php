@@ -27,39 +27,38 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-
-    public function user()
-    {
         $users = User::all();
         return view('admin.usuario', compact('users'));
     }
 
-    public function create(Request $request)  
+
+    public function store(Request $request)
     {
+
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
         User::create($request->all());
-        return redirect()->route('admin.user');
+        return redirect('admin/usuario');
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $request->merge([
             'password' => Hash::make($request->input('password'))
         ]);
-
-        $user->update($request->all());
-        return redirect()->route('admin.user');
+        $data = User::find($id);
+        $data->update($request->all());
+        return redirect('admin/usuario');
     }
 
-    public function delete(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect()->route('admin.user');
+
+        $data = User::find($id);
+        $data->delete();
+
+        return redirect('admin/usuario');
     }
 
     public function logout()

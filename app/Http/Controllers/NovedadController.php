@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class NovedadController extends Controller
 {
-   /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -35,21 +35,21 @@ class NovedadController extends Controller
 
     public function crear()
     {
-       
+
         return view('admin.crearnovedad');
     }
 
 
     public function create(Request $request)
     {
-     
+
         Novedad::create($request->all());
         return redirect()->route('admin.novedad');
     }
 
     public function update(Request $request, Novedad $novedad)
     {
- 
+
         $novedad->update($request->all());
         return redirect()->route('admin.novedad');
     }
@@ -66,6 +66,5 @@ class NovedadController extends Controller
         Auth::logout();
 
         return redirect('auth.login');
-
     }
 }

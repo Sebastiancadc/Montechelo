@@ -11,8 +11,9 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crea el usuario</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{ route('admin.create') }}" >
-                                        @csrf
+                                    <form role="form" method="POST" action="{{ url('admin/usuario') }}" >
+                                        @csrf @method('POST') 
+
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">

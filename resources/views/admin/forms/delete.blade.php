@@ -10,7 +10,7 @@
                 <div class="text-center text-muted mb-4">
                   <small>Eliminar el usuario</small>
                 </div>
-                <form role="form" method="POST" action="{{ route('admin.delete',$user) }}" >
+                <form role="form" method="POST" action="{{ url('admin/usuario',$user->id) }}" >
                     @csrf @method('DELETE') 
 
                   <div class="text-center">
