@@ -65,13 +65,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                    
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                     
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                     
                     </a>
                   </div>
                 </div>
@@ -114,13 +114,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                     
                     </a>
                   </div>
                 </div>
@@ -163,13 +163,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                     
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                     
                     </a>
                   </div>
                 </div>
@@ -212,13 +212,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                     
                     </a>
                   </div>
                 </div>
@@ -261,13 +261,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                     
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                     
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                     
                     </a>
                   </div>
                 </div>
@@ -310,13 +310,13 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
                     <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                      <i class="fab fa-twitter"></i>
+                     
                     </a>
                     <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                      <i class="fab fa-facebook"></i>
+                      
                     </a>
                     <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                      <i class="fab fa-dribbble"></i>
+                      
                     </a>
                   </div>
                 </div>

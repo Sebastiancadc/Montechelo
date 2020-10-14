@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
 </head>
 
-<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%, #0098C9 100%) !important;">
+<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%, rgb(31 34 37) 100%) !important;">
   <!-- Navbar -->
   <div id="particles-js"> </div>
   <!-- Main content -->
@@ -29,7 +29,7 @@
       <div class="container">
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -9%;">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -12%;">
               <h1 class="text-white">¡Bienvenido!</h1>
 
             </div>
@@ -42,12 +42,11 @@
     <div class="container mt--8 pb-5">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-          <div class="card bg-secondary border-0 mb-0" style="top: -147px;">
-            <div class="card-header bg-transparent pb-5">
-
-
+          <div class="card bg-secondary border-0 mb-0" style="top: -184px;">
+            <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;">
+              <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 150px;">
             </div>
-            <div class="card-body px-lg-5 py-lg-5">
+            <div class="card-body px-lg-5 py-lg-5" >
               <div class="text-center text-muted mb-4">
                 <h3>Ingresa tus datos</h3>
               </div>
@@ -95,7 +94,7 @@
             </div>
           </div>
       
-          <div class="row" style="margin-top: -142px;">
+          <div class="row" style="margin-top: -179px;">
             <div class="col-6">
              
               <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
