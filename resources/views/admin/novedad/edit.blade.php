@@ -10,7 +10,7 @@
                 <div class="text-center text-muted mb-4">
                   <small>Edita el novedad</small>
                 </div>
-                <form role="form" method="POST" action="{{ route('admin.update.novedad',$novedad) }}" >
+                <form role="form" method="POST" action="{{ route('admin/novedad') }}" >
                     @csrf @method('PUT') 
                     
                   

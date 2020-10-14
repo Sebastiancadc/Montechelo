@@ -24,40 +24,34 @@ class NovedadController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-
-
-
     public function index()
     {
         $novedad = Novedad::all();
         return view('admin.novedad', compact('novedad'));
     }
 
-    public function crear()
+    public function store(Request $request)
     {
-
-        return view('admin.crearnovedad');
-    }
-
-
-    public function create(Request $request)
-    {
-
         Novedad::create($request->all());
-        return redirect()->route('admin.novedad');
+        return redirect('admin/novedad');
     }
 
-    public function update(Request $request, Novedad $novedad)
+    public function update(Request $request, $novedad)
     {
 
-        $novedad->update($request->all());
-        return redirect()->route('admin.novedad');
+        $data = Novedad::find($novedad);
+        $data->update($request->all());
+        return redirect('admin/novedad');
     }
 
-    public function delete(Novedad $novedad)
+
+    public function destroy($novedad)
     {
-        $novedad->delete();
-        return redirect()->route('admin.novedad');
+
+        $data = Novedad::find($novedad);
+        $data->delete();
+
+        return redirect('admin/novedad');
     }
 
     public function logout()

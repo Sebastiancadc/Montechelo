@@ -10,7 +10,7 @@
                 <div class="text-center text-muted mb-4">
                   <small>Eliminar la novedad</small>
                 </div>
-                <form role="form" method="POST" action="{{ route('admin.delete.novedad',$novedad)}}" >
+                <form role="form" method="POST" action="{{ route('admin/novedad')}}" >
                     @csrf @method('DELETE') 
 
                   <div class="text-center">

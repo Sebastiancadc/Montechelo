@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
@@ -18,12 +18,12 @@
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
 </head>
 @section('content')
-<body class="bg-default">
-
+<body class="bg-default" style="background: linear-gradient(87deg, #002a60 0%,rgb(31 34 37) 100%) !important;">
+  <div id="particles-js"> </div>
   <!-- Main content -->
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+    <div class="header  py-7 py-lg-8 pt-lg-9">
       <div class="container">
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
@@ -34,11 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
+
     </div>
     <!-- Page content -->
     <div class="container mt--8 pb-5">
@@ -46,13 +42,13 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border-0"  style="top: -147px;">
-            <div class="card-header bg-transparent pb-5">
+            <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;" >
               
-        
+              <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 199px;">
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Ingresa tus datos</small>
+                <h3>Ingresa tus datos</h3>
               </div>
               <form role="form"  method="POST" action="{{ route('register') }}">
                 @csrf
@@ -129,7 +125,7 @@
                   <button type="submit" class="btn btn-primary mt-4">Crear cuenta</button>
                 </div>
                 <div class="text-center" style="margin-top: -15%;margin-left: 25%;" >
-                  <a href="login.html" class="btn btn-danger mt-4">Cancelar</a>
+                  <a href="{{ url('/') }}" class="btn btn-danger mt-4">Cancelar</a>
                 </div>
               </form>
             </div>
@@ -153,5 +149,12 @@
   <script src="{{asset("plantilla/particles/app.js")}}"></script>
 
 </body>
-
+<style>
+  #particles-js {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+</style>
 </html>

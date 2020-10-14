@@ -1,6 +1,7 @@
 
 
 @extends('admin.layout')
+<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -88,10 +89,10 @@
                                     </td>
                                     <td class="table-actions">
                                         
-                                        <a class="table-action" data-toggle="modal" data-target="#editUsuario{{$user->id}}" data-original-title="Editar usuario">
+                                        <a href="#" class="table-action" data-toggle="modal" data-target="#editUsuario{{$user->id}}" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <a class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
+                                        <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                        

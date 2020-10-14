@@ -3099,15 +3099,15 @@ fieldset:disabled a.btn
 .btn-primary
 {
     color: #fff;
-    border-color: #5e72e4;
-    background-color: #5e72e4;
+    border-color: #0098C9;
+    background-color: #0098C9;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-primary:hover
 {
     color: #fff;
-    border-color: #5e72e4; 
-    background-color: #5e72e4;
+    border-color: #0098C9; 
+    background-color:#0098C9;
 }
 .btn-primary:focus,
 .btn-primary.focus
@@ -8443,7 +8443,7 @@ a.close.disabled
 
 .bg-primary
 {
-    background-color: #5e72e4 !important;
+    background-color: #002A60 !important;
 }
 
 a.bg-primary:hover,
@@ -18177,7 +18177,7 @@ a.text-darker:focus
 
 .btn-neutral
 {
-    color: #5e72e4;
+    color:#002A60;
 }
 
 .btn-facebook

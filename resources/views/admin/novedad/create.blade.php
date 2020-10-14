@@ -11,8 +11,8 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crea la novedad</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{ route('admin.create.novedad') }}" >
-                                        @csrf
+                                    <form role="form" method="POST" action="{{ route('admin/novedad')}}" >
+                                        @csrf @method('POST') 
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">

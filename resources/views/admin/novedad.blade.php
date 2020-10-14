@@ -41,7 +41,7 @@
                                     <span class="btn-inner--text">Crear</span>
                                    
                                 </a>
-                                @include('admin.novedad.create')
+                                {{-- @include('admin.novedad.create') --}}
                             </div>
                         </div>
                     </div>
@@ -92,8 +92,8 @@
                                 </tr>
                                 @endforeach
 
-                                @include('admin.novedad.edit')
-                                @include('admin.novedad.delete')
+                                {{-- @include('admin.novedad.edit')
+                                @include('admin.novedad.delete') --}}
                             </tbody>
                         </table>
                     </div>

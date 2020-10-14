@@ -29,4 +29,41 @@ Route::get('admin/pasword', function () {
 });
 
 
+Route::get('admin/buzon', function () {
+
+    return view('admin.buzon');
+});
+
+Route::get('admin/planestrategico', function () {
+
+    return view('admin.plan');
+});
+
+Route::get('admin/solicitud', function () {
+
+    return view('admin.solicitud');
+});
+
+Route::get('admin/directorio', function () {
+
+    return view('admin.directorio');
+});
+
+Route::get('admin/calendario', function () {
+
+    return view('admin.calendario');
+});
+Route::get('admin/repositorio', function () {
+
+    return view('admin.repositorio');
+});
+
+
+
 Route::resource('admin/usuario', 'HomeController');
+
+
+Route::resource('admin/novedad','NovedadController');
+
+    // Route::post('admin/novedad','NovedadController@store')->name('admin.novedad');
+    // Route::delete('admin/novedad','NovedadController@destroy')->name('admin.novedad');

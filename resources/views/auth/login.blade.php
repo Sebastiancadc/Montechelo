@@ -49,7 +49,7 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Ingresa tus datos</small>
+                <h3>Ingresa tus datos</h3>
               </div>
               <form role="form"  method="POST" action="{{ route('login') }}">
                 @csrf

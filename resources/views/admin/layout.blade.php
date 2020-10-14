@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon -->
-  <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
+  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
-  <title>MOnte</title>
+  <title>Montechelo </title>
 </head>
 
 <body>
@@ -26,8 +26,10 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-          <img src="{{asset("plantilla/img/brand/blue.png")}}" class="navbar-brand-img">
+        <a class="navbar-brand" href="{{url("home")}}">
+          <img src="{{asset("plantilla/img/theme/Logo1.png")}}" class="navbar-brand-img" style="margin-top: -7px;
+          max-width: 126%;
+          max-height: 10rem;">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -46,7 +48,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item"></li>
-            <a class="nav-link active" href="dashboard.html">
+            <a class="nav-link active" href="{{ url('home')}}">
               <i class="ni ni-shop text-primary"></i>
               <span class="nav-link-text">Inicio</span>
             </a>
@@ -60,38 +62,38 @@
 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#navbar-components">
+              <a class="nav-link" href="{{url("admin/directorio")}}">
                 <i class="ni ni-badge text-info"></i>
                 <span class="nav-link-text">Directorio</span>
               </a>
 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#navbar-forms">
+              <a class="nav-link" href="{{url("admin/repositorio")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/calendar.html">
+              <a class="nav-link" href="{{url("admin/calendario")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="{{url("admin/solicitud")}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="{{url("admin/buzon")}}">
                 <i class="ni ni-send text-yellow"></i>
                 <span class="nav-link-text">Buzon de sugerencias</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="{{url("admin/planestrategico")}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Plan estrategico</span>
               </a>
