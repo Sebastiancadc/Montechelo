@@ -41,13 +41,13 @@
                                     <span class="btn-inner--text">Crear</span>
                                    
                                 </a>
-                                {{-- @include('admin.novedad.create') --}}
+                                @include('admin.novedad.create')
                             </div>
                         </div>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table class="table align-items-center table-flush test">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="área">#</th>
@@ -61,72 +61,102 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($novedad as $novedad)
+                                @foreach ($novedad as $item)
                                 <tr>
                                     <td class="table-user">
-                                        <b>{{$novedad->id_novedad}}</b>
+                                        <b></b>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$novedad->area}}</span>
+                                        <span class="text-muted">{{$item->area}}</span>
                                     </td>
                                     <td>
-                                        <a class="font-weight-bold">{{$novedad->fecha}}</a>
+                                        <a class="font-weight-bold">{{$item->fecha}}</a>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$novedad->novedad}}</span>
+                                        <span class="text-muted">{{$item->novedad}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$novedad->descripcion}}</span>
+                                        <span class="text-muted">{{$item->descripcion}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$novedad->estado}}</span>
+                                        <span class="text-muted">{{$item->estado}}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="#!" class="table-action" data-toggle="modal" data-target="#editNovedad{{$novedad->id_novedad}}" data-original-title="Editar novedad">
+                                        <a href="{{route('editar',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
                                             <i class="fas fa-user-edit"></i>
-                                        </a>
-                                        <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNovedad{{$novedad->id_novedad}}" data-original-title="Eliminar novedad">
+
+
+                                        <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="Eliminar novedad">
                                             <i class="fas fa-trash"></i>
                                         </a>
+
+                                    <div class="modal fade" id="deleteNovedad{{$item->id_novedad}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                              <div class="card bg-secondary border-0 mb-0">
+                                  
+                                                <div class="card-body px-lg-5 py-lg-5">
+                                                  <div class="text-center text-muted mb-4">
+                                                    <h3>Eliminar la novedad</h3>
+                                                  </div>
+                                                  <form role="form" method="POST" action="{{route('eliminar',$item->id_novedad)}}" >
+                                                      @csrf @method('DELETE') 
+                                  
+                                                    <div class="text-center">
+                                                      <button type="submit" class="btn btn-primary my-4">Eliminar</button>
+                                                      <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                                    </div>
+                                                  </form>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </td>
                                 </tr>
                                 @endforeach
-
-                                {{-- @include('admin.novedad.edit')
-                                @include('admin.novedad.delete') --}}
                             </tbody>
                         </table>
+                      
                     </div>
+                    
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Anterior</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Siguiente</span>
-                                    </a>
-                                </li>
+                                {{$novedad->links()}}
                             </ul>
                         </nav>
                     </div>
+                    @if (session('eliminar'))
+                    <div class="alert alert-success mt-3">
+                        {{session('eliminar')}} 
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
-
     </div>
 </body>
+
+<script>
+    var addNumeration = function(cl){
+      var table = document.querySelector('table.' + cl)
+      var trs = table.querySelectorAll('tr')
+      var counter = 1
+      
+      Array.prototype.forEach.call(trs, function(x,i){
+        var firstChild = x.children[0]
+        if (firstChild.tagName === 'TD') {
+          var cell = document.createElement('td')
+          cell.textContent = counter ++
+          x.insertBefore(cell,firstChild)
+        } else {
+          firstChild.setAttribute('colspan',2)
+        }
+      })
+    }
+    addNumeration("test")
+    </script>
 @endsection
-</html>

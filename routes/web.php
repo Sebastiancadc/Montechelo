@@ -59,11 +59,16 @@ Route::get('admin/repositorio', function () {
 });
 
 
-
+//Novedad
 Route::resource('admin/usuario', 'HomeController');
-
-
+Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
+Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
+Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+ 
+//Novedad
 Route::resource('admin/novedad','NovedadController');
-
-    // Route::post('admin/novedad','NovedadController@store')->name('admin.novedad');
-    // Route::delete('admin/novedad','NovedadController@destroy')->name('admin.novedad');
+Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
+Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
+Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editar');
+Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
+Route::delete('deletenovedad/{id}', 'NovedadController@destroy')->name('eliminar');

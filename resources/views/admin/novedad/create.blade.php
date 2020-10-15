@@ -11,14 +11,14 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crea la novedad</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{ route('admin/novedad')}}" >
+                                    <form role="form" method="POST" action="{{ url('admin/novedad')}}" >
                                         @csrf @method('POST') 
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Nombre" name="area" type="text">
+                                          <input class="form-control" placeholder="Area " name="area" type="text">
                                         </div>
                                       </div>
                                    
@@ -27,7 +27,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Nombre" name="fecha" type="date">
+                                          <input class="form-control"  name="fecha" type="date">
                                         </div>
                                       </div>
                                       <div class="form-group mb-3">
@@ -35,7 +35,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Nombre" name="novedad" type="text">
+                                          <input class="form-control" placeholder="Novedad" name="novedad" type="text">
                                         </div>
                                       </div>
                                       <div class="form-group mb-3">
@@ -43,7 +43,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Nombre" name="descripcion" type="text">
+                                          <input class="form-control" placeholder="Descripcion" name="descripcion" type="text">
                                         </div>
                                       </div>
                                    

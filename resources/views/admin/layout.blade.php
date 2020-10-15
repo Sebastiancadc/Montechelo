@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('admin/crearnovedad')}}">
+              <a class="nav-link" href="{{ url('crearnovedad')}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>

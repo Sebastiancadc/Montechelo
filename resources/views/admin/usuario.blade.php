@@ -55,7 +55,7 @@
                     <!-- Light table -->
                     <div class="table-responsive">
                    
-                        <table class="table align-items-center table-flush">
+                        <table class="table align-items-center table-flush test" >
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="nombre">#</th>
@@ -77,10 +77,10 @@
 
                                 @foreach ($users as $user)
                                 <tr>
-                                   
                                     <td>
-                                        <span class="text-muted">{{$user->id}}</span>
+                                        <span class="text-muted"></span>
                                     </td>
+                                   
                                     <td>
                                         <span class="text-muted">{{$user->name}}</span>
                                     </td>
@@ -89,47 +89,55 @@
                                     </td>
                                     <td class="table-actions">
                                         
-                                        <a href="#" class="table-action" data-toggle="modal" data-target="#editUsuario{{$user->id}}" data-original-title="Editar usuario">
+                                        <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
                                         <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
                                             <i class="fas fa-trash"></i>
                                         </a>
-                                       
+
+                                        <div class="col-md-4">
+                           
+                                            <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                              <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-body p-0">
+                                                    <div class="card bg-secondary border-0 mb-0">
+                                        
+                                                      <div class="card-body px-lg-5 py-lg-5">
+                                                        <div class="text-center text-muted mb-4">
+                                                          <h3>Eliminar el usuario</h3>
+                                                        </div>
+                                                        <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}" >
+                                                            @csrf @method('DELETE') 
+                                        
+                                                          <div class="text-center">
+                                                            <button type="submit" class="btn btn-primary my-4">Eliminar</button>
+                                                            <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                                          </div>
+                                                        </form>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                     </td>
                                 </tr>
                                 @endforeach
-                                
-                             
-                                @include('admin.forms.edit')
-                                @include('admin.forms.delete')
                             </tbody>
                         </table>
-
-                        
+                        @if (session('eliminarusuario'))
+                        <div class="alert alert-success" role="alert">
+                        {{session('eliminarusuario')}} 
+                        </div>
+                     @endif
                     </div>
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Anterior</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Siguiente</span>
-                                    </a>
-                                </li>
+                                {{$users->links()}}
                             </ul>
                         </nav>
                     </div>
@@ -138,5 +146,24 @@
         </div>
 
     </div>
+    <script>
+        var addNumeration = function(cl){
+          var table = document.querySelector('table.' + cl)
+          var trs = table.querySelectorAll('tr')
+          var counter = 1
+          
+          Array.prototype.forEach.call(trs, function(x,i){
+            var firstChild = x.children[0]
+            if (firstChild.tagName === 'TD') {
+              var cell = document.createElement('td')
+              cell.textContent = counter ++
+              x.insertBefore(cell,firstChild)
+            } else {
+              firstChild.setAttribute('colspan',2)
+            }
+          })
+        }
+        addNumeration("test")
+        </script>
     @endsection
-</html>
+

@@ -10,6 +10,10 @@ class Novedad extends Model
     use Notifiable;
 
     protected $table = 'novedad';
-    protected $guarded = [];
+    protected $guarded = ['id_novedad'];
 
+	protected $primaryKey = 'id_novedad';
+    protected $fillable = [
+        'area','fecha','novedad','descripcion','estado'
+    ];
 }

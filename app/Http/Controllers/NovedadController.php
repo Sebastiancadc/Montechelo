@@ -26,7 +26,7 @@ class NovedadController extends Controller
      */
     public function index()
     {
-        $novedad = Novedad::all();
+        $novedad = Novedad::paginate(4);
         return view('admin.novedad', compact('novedad'));
     }
 
@@ -36,22 +36,39 @@ class NovedadController extends Controller
         return redirect('admin/novedad');
     }
 
-    public function update(Request $request, $novedad)
-    {
 
-        $data = Novedad::find($novedad);
-        $data->update($request->all());
-        return redirect('admin/novedad');
+    public function crearnovedad()
+    {
+        return view('admin/crearnovedad');
+    }
+
+    public function crearnovedades(Request $request)
+    {
+        Novedad::create($request->all());
+        return redirect('admin/crearnovedad')->with('crearnovedad','Novedad registrada correctamente');
+    }
+  
+
+    public function edit($id)
+    {
+        $novedadActualizar = Novedad::findOrFail($id);
+        return view('admin/novedad/editarnovedad',compact('novedadActualizar'));
+    }   
+
+    public function update(Request $request, $id)
+    {
+        $novedadAUpdate = Novedad::findOrFail($id);
+        $novedadAUpdate->estado = $request->estado;
+        $novedadAUpdate->save();
+        return redirect('admin/novedad')->with('update','El estado de la novedad se actualizo');
     }
 
 
-    public function destroy($novedad)
+    public function destroy($id)
     {
-
-        $data = Novedad::find($novedad);
+        $data = Novedad::findOrFail($id);
         $data->delete();
-
-        return redirect('admin/novedad');
+        return redirect('admin/novedad')->with('eliminar','la novedad se elimino');
     }
 
     public function logout()

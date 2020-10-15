@@ -79,7 +79,27 @@
                 @enderror
                 </div>
                 </div>
-             
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                  
+                      <input class="form-control datepicker" placeholder="Select date" type="date">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                  
+                    <select class="form-control" id="exampleFormControlSelect1" name="genero">
+                      <option >Genero</option>
+                      <option name="genero">Hombre</option>
+                      <option name="genero">Mujer</option>
+                      <option name="genero">Otro</option>
+                    </select>
+                  </div>
+              </div>
+              </div>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
@@ -102,16 +122,9 @@
                     <input  id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmar Contraseña" required>
                   </div>
                 </div>
-
-                <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                    </div>
-                    <input class="form-control datepicker" placeholder="Select date" type="text">
-                  </div>
-                </div>
-                          <div class="row my-4">
+                
+    
+                  <div class="row my-4">
                   <div class="col-12">
                     <div class="custom-control custom-control-alternative custom-checkbox">
                       <input class="custom-control-input" id="customCheckRegister" type="checkbox">

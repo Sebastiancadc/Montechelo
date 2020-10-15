@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(4);
         return view('admin.usuario', compact('users'));
     }
 
@@ -42,23 +42,31 @@ class HomeController extends Controller
         return redirect('admin/usuario');
     }
 
+    public function edit($id)
+    {
+        $userActualizar = User::findOrFail($id);
+        return view('admin/forms/editaruser',compact('userActualizar'));
+    }   
+
     public function update(Request $request, $id)
     {
         $request->merge([
             'password' => Hash::make($request->input('password'))
         ]);
-        $data = User::find($id);
-        $data->update($request->all());
+        $UserUpdate = User::findOrFail($id);
+        $UserUpdate->name = $request->name;
+        $UserUpdate->email = $request->email;
+        $UserUpdate->password = $request->password;
+        $UserUpdate->save();
         return redirect('admin/usuario');
     }
 
+
     public function destroy($id)
     {
-
         $data = User::find($id);
         $data->delete();
-
-        return redirect('admin/usuario');
+        return redirect('admin/usuario')->with('eliminarusuario','El usuario se elimino');
     }
 
     public function logout()

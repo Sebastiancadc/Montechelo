@@ -10,10 +10,8 @@
                 <div class="text-center text-muted mb-4">
                   <small>Edita el novedad</small>
                 </div>
-                <form role="form" method="POST" action="{{ route('admin/novedad') }}" >
-                    @csrf @method('PUT') 
-                    
-                  
+                <form role="form" method="POST" action="{{ url('admin/novedad',$novedad->id)}}" >
+                    @csrf @method ('PUT')
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
                       <div class="input-group-prepend">
