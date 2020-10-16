@@ -61,10 +61,10 @@
                                     <th scope="col" class="sort" data-sort="nombre">#</th>
                                     <th scope="col" class="sort" data-sort="nombre">Nombre</th>
                                     <th scope="col" class="sort" data-sort="apellido">Apellido</th>
-                                    {{-- <th scope="col" class="sort" data-sort="username">Username</th> --}}
+                                    <th scope="col" class="sort" data-sort="género">Género</th>
+                                    <th scope="col" class="sort" data-sort="género">Fecha de nacimiento</th>
                                     {{-- <th scope="col" class="sort" data-sort="área">Área</th>
                                     <th scope="col" class="sort" data-sort="cédula">Cédula</th>
-                                    <th scope="col" class="sort" data-sort="género">Género</th>
                                     <th scope="col" class="sort" data-sort="teléfono">Teléfono</th>
                                     <th scope="col" class="sort" data-sort="correo">Correo</th> --}}
                                     {{-- <th scope="col" class="sort" data-sort="dirección">Dirección</th>
@@ -86,6 +86,12 @@
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$user->email}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$user->genero}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$user->cumpleaños}}</span>
                                     </td>
                                     <td class="table-actions">
                                         

@@ -17,7 +17,7 @@
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
-            L : 'YYYY-MM-DD',
+            L : 'dd/MM/yyyy',
             LL : 'D[-a de] MMMM, YYYY',
             LLL : 'D[-a de] MMMM, YYYY HH:mm',
             LLLL : 'dddd, [la] D[-a de] MMMM, YYYY HH:mm'

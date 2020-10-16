@@ -84,18 +84,18 @@
                   <div class="form-group">
                     <div class="input-group input-group-merge input-group-alternative">
                   
-                      <input class="form-control datepicker" placeholder="Select date" type="date">
+                      <input class="form-control datepicker" placeholder="Select date" type="date" name="cumpleaños" id="cumpleaños">
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                   
-                    <select class="form-control" id="exampleFormControlSelect1" name="genero">
-                      <option >Genero</option>
-                      <option name="genero">Hombre</option>
-                      <option name="genero">Mujer</option>
-                      <option name="genero">Otro</option>
+                    <select class="form-control" id="exampleFormControlSelect1" name="genero" id="genero">
+                      <option>Genero</option>
+                      <option>Hombre</option>
+                      <option>Mujer</option>
+                      <option>Otro</option>
                     </select>
                   </div>
               </div>

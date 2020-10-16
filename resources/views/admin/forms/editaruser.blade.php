@@ -49,6 +49,29 @@
                   <input class="form-control" placeholder="Email" value='{{$userActualizar->email}}' name="email" type="email">
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                
+                    <input class="form-control datepicker" value='{{$userActualizar->cumpleaños}}' type="date" name="cumpleaños" id="cumpleaños">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                
+                  <select class="form-control" id="exampleFormControlSelect1" name="genero">
+                    <option>{{$userActualizar->genero}}</option>
+                    <option>Hombre</option>
+                    <option>Mujer</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+            </div>
+            </div>
+
               <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">

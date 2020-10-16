@@ -56,11 +56,12 @@ class HomeController extends Controller
         $UserUpdate = User::findOrFail($id);
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
+        $UserUpdate->genero = $request->genero;
+        $UserUpdate->cumpleaños = $request->cumpleaños;
         $UserUpdate->password = $request->password;
         $UserUpdate->save();
         return redirect('admin/usuario');
     }
-
 
     public function destroy($id)
     {
@@ -71,9 +72,7 @@ class HomeController extends Controller
 
     public function logout()
     {
-
         Auth::logout();
-
         return redirect('auth.login');
         // $this->guard()->logout();Request $request
 

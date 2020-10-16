@@ -2181,7 +2181,7 @@
     var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
 
     var isoDates = [
-        ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
+        ['dd/MM/yyyy', /[+-]\d{6}-\d\d-\d\d/],
         ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/],
         ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/],
         ['GGGG-[W]WW', /\d{4}-W\d\d/, false],
