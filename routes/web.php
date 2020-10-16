@@ -57,7 +57,10 @@ Route::get('admin/repositorio', function () {
 
     return view('admin.repositorio');
 });
+Route::get('admin/buzonagregar', function () {
 
+    return view('admin.crearbuzon');
+});
 
 //Novedad
 Route::resource('admin/usuario', 'HomeController');

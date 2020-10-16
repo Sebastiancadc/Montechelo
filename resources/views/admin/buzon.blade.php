@@ -18,7 +18,7 @@
             </div>
                 <br>
                 <div class="col-lg-6 col-5 text-right">
-                <a href="agregarbuzon.php" class="btn btn-sm btn-neutral">Agregar</a>
+                <a href="{{ url('admin/buzonagregar')}}" class="btn btn-sm btn-neutral">Agregar</a>
 
                 </div>
             </div>
