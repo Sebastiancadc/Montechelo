@@ -47,13 +47,13 @@ class NovedadController extends Controller
         Novedad::create($request->all());
         return view('admin/crearnovedad')->with('crearnovedad','Novedad registrada correctamente');
     }
-  
+
 
     public function edit($id)
     {
         $novedadActualizar = Novedad::findOrFail($id);
         return view('admin/novedad/editarnovedad',compact('novedadActualizar'));
-    }   
+    }
 
     public function update(Request $request, $id)
     {
