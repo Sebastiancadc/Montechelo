@@ -45,7 +45,7 @@ class NovedadController extends Controller
     public function crearnovedades(Request $request)
     {
         Novedad::create($request->all());
-        return redirect('admin/crearnovedad')->with('crearnovedad','Novedad registrada correctamente');
+        return view('admin/crearnovedad')->with('crearnovedad','Novedad registrada correctamente');
     }
   
 

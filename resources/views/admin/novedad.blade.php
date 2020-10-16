@@ -79,7 +79,7 @@
                                         <span class="text-muted">{{$item->descripcion}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->estado}}</span>
+                                        <span class="badge badge-lg badge-success">{{$item->estado}}</span>
                                     </td>
                                     <td class="table-actions">
                                         <a href="{{route('editar',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
