@@ -81,7 +81,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/solicitud")}}">
+              <a class="nav-link" href="{{url('crearsolicitud')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('crearnovedad')}}">
+              <a class="nav-link" href="{{url('crearnovedad')}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
@@ -116,6 +116,9 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ url('admin/solicitud')}}" class="nav-link">Solicitudes</a>
                   </li>
                 </ul>
               </div>
@@ -425,7 +428,7 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                
+
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
