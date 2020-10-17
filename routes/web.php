@@ -63,10 +63,23 @@ Route::get('admin/buzonagregar', function () {
 });
 
 //Usuario
-Route::resource('admin/usuario', 'HomeController');
+Route::group(['prefix' => 'admin','middleware' =>'admin'], function() {
+Route::resource('usuario', 'HomeController');
+Route::post('usuario/createadmin','HomeController@storeAdmin');
+Route::get('crearUserAdmin', 'HomeController@crearAdmin');
 Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
 Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
 Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+});
+
+//Usuario
+// Route::resource('admin/usuario', 'HomeController');
+// Route::post('admin/usuario/createadmin','HomeController@storeAdmin');
+// Route::get('crearUserAdmin', 'HomeController@crearAdmin');
+// Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
+// Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
+// Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+
 
 //Novedad
 Route::resource('admin/novedad','NovedadController');

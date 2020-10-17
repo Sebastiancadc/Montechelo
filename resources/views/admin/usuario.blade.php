@@ -40,14 +40,25 @@
                             <div class="col-6">
                                 <h3 class="mb-0">Gestión de Usuarios</h3>
                             </div>
+                            
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
                                    
-                                    <span class="btn-inner--text">Crear</span>
+                                    <span class="btn-inner--text">Crear colaborador</span>
                                    
                                 </a>
                                 @include('admin.forms.create')
+                            </div>                     
+                            <div class="col-6 text-right">
+                                <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -69%;
+                                margin-top: -27px;">
+                                    <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+                                   
+                                    <span class="btn-inner--text">Crear admin</span>
+                                   
+                                </a>
+                                @include('admin.crearUserAdmin')
                             </div>
                         </div>
                     </div>
@@ -63,6 +74,7 @@
                                     <th scope="col" class="sort" data-sort="apellido">Apellido</th>
                                     <th scope="col" class="sort" data-sort="género">Género</th>
                                     <th scope="col" class="sort" data-sort="género">Fecha de nacimiento</th>
+                                    <th scope="col" class="sort" data-sort="género">Rol</th>
                                     {{-- <th scope="col" class="sort" data-sort="área">Área</th>
                                     <th scope="col" class="sort" data-sort="cédula">Cédula</th>
                                     <th scope="col" class="sort" data-sort="teléfono">Teléfono</th>
@@ -93,17 +105,20 @@
                                     <td>
                                         <span class="text-muted">{{$user->cumpleaños}}</span>
                                     </td>
+                                    <td>
+                                        <span class="text-muted">{{$user->role}}</span>
+                                    </td>
                                     <td class="table-actions">
-                                        
+                                       
                                         <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
+                                       
                                         <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
                                             <i class="fas fa-trash"></i>
                                         </a>
-
-                                        <div class="col-md-4">
-                           
+                                    <div class="col-md-4">
+                        
                                             <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                                               <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                                                 <div class="modal-content">

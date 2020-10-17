@@ -38,8 +38,25 @@ class HomeController extends Controller
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
+        $request['role']='colaborador';
         User::create($request->all());
         return redirect('admin/usuario');
+    }
+
+    public function storeAdmin(Request $request)
+    {
+
+        $request->request->add([
+            'password' => Hash::make($request->input('password'))
+        ]);
+        $request['role']='admin';
+        User::create($request->all());
+        return redirect('admin/usuario');
+    }
+
+    public function crearAdmin()
+    {
+        return view('admin/crearadmin');
     }
 
     public function edit($id)
@@ -58,6 +75,7 @@ class HomeController extends Controller
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
         $UserUpdate->cumpleaños = $request->cumpleaños;
+        $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->save();
         return redirect('admin/usuario');
