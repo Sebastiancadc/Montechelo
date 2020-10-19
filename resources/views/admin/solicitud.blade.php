@@ -75,25 +75,25 @@
                                         <span class="text-muted"></span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Nombre}}</span>
+                                        <span class="text-muted">{{$item->nombre}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Apellido}}</span>
+                                        <span class="text-muted">{{$item->apellido}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Cedula}}</span>
+                                        <span class="text-muted">{{$item->cedula}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Area_de_trabajo}}</span>
+                                        <span class="text-muted">{{$item->area_trabajo}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Tipo_de_solicitud}}</span>
+                                        <span class="text-muted">{{$item->tipo_solicitud}}</span>
                                     </td>
                                     <td>
-                                        <a class="font-weight-bold">{{$item->Fecha}}</a>
+                                        <a class="font-weight-bold">{{$item->fecha}}</a>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->Estado_de_solicitud}}</span>
+                                        <span class="text-muted">{{$item->estado_solicitud}}</span>
                                     </td>
                                     <td class="table-actions">
 

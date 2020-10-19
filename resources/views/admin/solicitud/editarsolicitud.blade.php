@@ -33,8 +33,8 @@
         <form action="{{url('admin/solicitud',$solicitudActualizar->Id_Solicitud)}}" method="POST">
             @method('PUT')
             @csrf
-        <select class="form-control" data-toggle="select" name="Estado_de_solicitud" id="Estado_de_solicitud">
-          <option>{{$solicitudActualizar->Estado_de_solicitud}}</option>
+        <select class="form-control" data-toggle="select" name="estado_solicitud" id="estado_solicitud">
+          <option>{{$solicitudActualizar->estado_solicitud}}</option>
           <option>Pendiente</option>
           <option>Revisado</option>
         </select>

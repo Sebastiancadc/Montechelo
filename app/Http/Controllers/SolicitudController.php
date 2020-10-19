@@ -58,7 +58,7 @@ class SolicitudController extends Controller
     public function update(Request $request, $id)
     {
         $solicitudUpdate = Solicitud::findOrFail($id);
-        $solicitudUpdate->Estado_de_solicitud = $request->Estado_de_solicitud;
+        $solicitudUpdate->estado_solicitud = $request->estado_solicitud;
         $solicitudUpdate->save();
         return redirect('admin/solicitud')->with('update','El estado de la solicitud se actualizó correctamente.');
     }

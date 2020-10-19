@@ -14,6 +14,6 @@ class Solicitud extends Model
 
 	protected $primaryKey = 'Id_Solicitud';
     protected $fillable = [
-       'Tipo_de_solicitud','Fecha','Nombre','Apellido','Cedula','Estado_Solicitud', 'Area_de_trabajo'
+       'tipo_solicitud','fecha','nombre','apellido','cedula','estado_solicitud', 'area_trabajo' 
     ];
 }
