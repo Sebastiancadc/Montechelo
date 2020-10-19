@@ -59,13 +59,13 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Número de documento</label>
-                    <input type="text" class="form-control" id="example3cols3Input" name="cedula" placeholder="One of three cols">
+                    <input type="text" class="form-control" id="example3cols3Input" name="cedula" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Teléfono</label>
-                    <input type="text" class="form-control" id="example3cols3Input" name="telefono" placeholder="One of three cols">
+                    <input type="text" class="form-control" id="example3cols3Input" name="telefono" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">

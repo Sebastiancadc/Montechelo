@@ -57,14 +57,15 @@
                         <table class="table align-items-center table-flush test" >
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col" class="sort" data-sort="Nombre">#</th>
-                                    <th scope="col" class="sort" data-sort="Nombre">Nombre</th>
-                                    <th scope="col" class="sort" data-sort="Apellido">Apellido</th>
-                                    <th scope="col" class="sort" data-sort="Cedula">Cédula</th>
-                                    <th scope="col" class="sort" data-sort="Area_de_trabajo">Área</th>
-                                    <th scope="col" class="sort" data-sort="Tipo_de_solicitud">Tipo de solicitud</th>
-                                    <th scope="col" class="sort" data-sort="Fecha">Fecha</th>
-                                    <th scope="col" class="sort" data-sort="Estado_de_solicitud">Estado</th>
+                                    <th scope="col" class="sort" data-sort="nombre">#</th>
+                                    <th scope="col" class="sort" data-sort="nombre">Nombre</th>
+                                    <th scope="col" class="sort" data-sort="apellido">Apellido</th>
+                                    <th scope="col" class="sort" data-sort="cedula">Cédula</th>
+                                    <th scope="col" class="sort" data-sort="telefono">Teléfono</th>
+                                    <th scope="col" class="sort" data-sort="area_trabajo">Área</th>
+                                    <th scope="col" class="sort" data-sort="tipo_solicitud">Tipo de solicitud</th>
+                                    <th scope="col" class="sort" data-sort="fecha">Fecha</th>
+                                    <th scope="col" class="sort" data-sort="estado_solicitud">Estado</th>
                                     <th scope="col" class="sort" data-sort="Acciones">Acciones</th>
                             </thead>
                             <tbody>
@@ -82,6 +83,9 @@
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$item->cedula}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$item->telefono}}</span>
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$item->area_trabajo}}</span>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Solicitud;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 
 class SolicitudController extends Controller
@@ -26,7 +27,7 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        $solicitud =Solicitud::paginate(4);
+        $solicitud = Solicitud::paginate(4);
         return view('admin.solicitud', compact('solicitud'));
     }
 
@@ -45,14 +46,14 @@ class SolicitudController extends Controller
     public function crearsolicitudes(Request $request)
     {
         Solicitud::create($request->all());
-        return view('admin/crearsolicitud')->with('crearsolicitudes','La solicitud fue enviada exitosamente.');
+        return view('admin/crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');
     }
 
 
     public function edit($id)
     {
         $solicitudActualizar = Solicitud::findOrFail($id);
-        return view('admin/solicitud/editarsolicitud',compact('solicitudActualizar'));
+        return view('admin/solicitud/editarsolicitud', compact('solicitudActualizar'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +61,7 @@ class SolicitudController extends Controller
         $solicitudUpdate = Solicitud::findOrFail($id);
         $solicitudUpdate->estado_solicitud = $request->estado_solicitud;
         $solicitudUpdate->save();
-        return redirect('admin/solicitud')->with('update','El estado de la solicitud se actualizó correctamente.');
+        return redirect('admin/solicitud')->with('update', 'El estado de la solicitud se actualizó correctamente.');
     }
 
 
@@ -68,7 +69,7 @@ class SolicitudController extends Controller
     {
         $data = Solicitud::findOrFail($id);
         $data->delete();
-        return redirect('admin/solicitud')->with('eliminar','La solicitud se eliminó.');
+        return redirect('admin/solicitud')->with('eliminar', 'La solicitud se eliminó.');
     }
 
     public function logout()
@@ -78,6 +79,17 @@ class SolicitudController extends Controller
 
         return redirect('auth.login');
     }
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+        'tipo_solicitud' => ['required', 'string', 'max:30'],
+        'nombre' => ['required', 'string', 'max:30'],
+        'apellido' => ['required', 'string', 'max:30'],
+        'fecha' => ['required', 'date'],
+        'cedula' => ['required', 'int', 'max:10'],
+        'telefono' => ['required', 'decimal','min:1', 'max:12'],
+        'area_trabajo' => ['required', 'string', 'max:30'],
+        'estado_solicitud' => ['string', 'max:30'],
+        'status' => ['int', 'max:4'],]);
+    }
 }
-
-
