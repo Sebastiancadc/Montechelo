@@ -37,9 +37,9 @@
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                   
+
                                     <span class="btn-inner--text">Crear</span>
-                                   
+
                                 </a>
                                 @include('admin.novedad.create')
                             </div>
@@ -95,14 +95,20 @@
                                           <div class="modal-content">
                                             <div class="modal-body p-0">
                                               <div class="card bg-secondary border-0 mb-0">
-                                  
+
                                                 <div class="card-body px-lg-5 py-lg-5">
                                                   <div class="text-center text-muted mb-4">
                                                     <h3>Eliminar la novedad</h3>
                                                   </div>
+<<<<<<< HEAD
+                                                  <form role="form" method="POST" action="{{route('eliminar',$item->id_novedad)}}" >
+                                                      @csrf @method('DELETE')
+
+=======
                                                   <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad)}}" >
-                                                      @csrf @method('DELETE') 
-                                  
+                                                      @csrf @method('DELETE')
+
+>>>>>>> 8fe1574b95de69727585673dc510791b89e442be
                                                     <div class="text-center">
                                                       <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                                                       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
@@ -119,9 +125,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-                      
+
                     </div>
-                    
+
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
@@ -131,7 +137,7 @@
                     </div>
                     @if (session('eliminar'))
                     <div class="alert alert-success mt-3">
-                        {{session('eliminar')}} 
+                        {{session('eliminar')}}
                     </div>
                     @endif
                 </div>
@@ -145,7 +151,7 @@
       var table = document.querySelector('table.' + cl)
       var trs = table.querySelectorAll('tr')
       var counter = 1
-      
+
       Array.prototype.forEach.call(trs, function(x,i){
         var firstChild = x.children[0]
         if (firstChild.tagName === 'TD') {

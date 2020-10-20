@@ -30,19 +30,33 @@
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlInput1">Titulo</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <form  method="POST" action="{{ url('crearsugerencias')}}">
+                      @csrf @method('POST')
+                      <div class="form-group">
+                            <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
+                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
+                                <option>Quejas</option>
+                                <option>Reclamos</option>
+                                <option>Observacion</option>
+                                <option>Novedad</option>
+                                <option>Mejoras</option>
+                                <option>Felicidades</option>
+                            </select>
                         </div>
+                        @error('titulo')
+                        <div class="alert alert-danger">titulo requerido</div>
+                        @enderror
 
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
                         </div>
+                        @error('descripcion')
+                        <div class="alert alert-danger">descripcion requerida</div>
+                        @enderror
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1">Area</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area">Area</label>
+                            <select class="form-control" id="area" name="area">
                                 <option>Seleccione el area</option>
                                 <option>Diseño</option>
                                 <option>Software</option>
@@ -50,11 +64,18 @@
                                 <option>Administracion</option>
                             </select>
                         </div>
+                        @error('area')
+                        <div class="alert alert-danger">area requerida</div>
+                        @enderror
                         <div class="col-lg-6 col-5 text-right" style="float: right;">
-                            <a href="AgregarBuzon.html" class="btn btn-sm btn-neutral">Enviar</a>
+                            <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>
                     </form>
+                    @if(session('buzoncrear'))
+                    <div class="alert alert-primary"  role="alert">
+                        {{session('buzoncrear')}}
                 </div>
+                @endif
             </div>
         </div>
     </div>

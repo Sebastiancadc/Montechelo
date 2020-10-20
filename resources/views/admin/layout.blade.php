@@ -24,7 +24,7 @@
 
 
 <?php
-  $user = auth()->user();  
+  $user = auth()->user();
 ?>
 
   <!-- Sidenav -->
@@ -93,7 +93,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/buzon")}}">
+              <a class="nav-link" href="{{url("buzonusu")}}">
                 <i class="ni ni-send text-yellow"></i>
                 <span class="nav-link-text">Buzon de sugerencias</span>
               </a>
@@ -117,17 +117,20 @@
     <i class="ni ni-map-big text-primary"></i>
     <span class="nav-link-text">Administrador</span>
   </a>
-  <div class="collapse" id="navbar-maps"> 
+  <div class="collapse" id="navbar-maps">
     <ul class="nav nav-sm flex-column">
       <li class="nav-item">
         <a href="{{ url('admin/usuario')}}" class="nav-link">Usuarios</a>
-      </li>   
+      </li>
 
       <li class="nav-item">
         <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
       </li>
       <li class="nav-item">
         <a href="{{ url('admin/solicitud')}}" class="nav-link">Solicitudes</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/buzon')}}" class="nav-link">Buzon</a>
       </li>
       <li class="nav-item">
         <a href="{{ url('admin/eventos')}}" class="nav-link">Eventos</a>
@@ -483,8 +486,12 @@
 
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
+<<<<<<< HEAD
+</html>
+=======
 
 
 
 
 </html>
+>>>>>>> 8fe1574b95de69727585673dc510791b89e442be

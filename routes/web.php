@@ -57,9 +57,11 @@ Route::get('admin/repositorio', function () {
 
     return view('admin.repositorio');
 });
+
+
 Route::get('admin/buzonagregar', function () {
 
-    return view('admin.crearbuzon');
+    return view('admin.buzon');
 });
 
 //Usuario
@@ -91,7 +93,7 @@ Route::get('admin/eventos','ControllerEvent@eventos');
 Route::get('Evento/details/{id}','ControllerEvent@details')->name('editarevento');
 Route::put('updateevento/{id}', 'ControllerEvent@update')->name('updateevent');
 Route::get('Evento/index','ControllerEvent@index');
-Route::get('Evento/index/{month}','ControllerEvent@index_month');    
+Route::get('Evento/index/{month}','ControllerEvent@index_month');
 Route::delete('deleteevento/{id}', 'ControllerEvent@destroy')->name('eliminarevento');
 
 //Solicitud
@@ -101,3 +103,13 @@ Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('c
 Route::get('editarsolicitud/{id}', 'SolicitudController@edit')->name('editar');
 Route::put('updatesolicitud/{id}', 'SolicitudController@update')->name('update');
 Route::delete('deletesolicitud/{id}', 'SolicitudController@destroy')->name('eliminar');
+
+//buzon
+Route::resource('admin/buzon', 'BuzonDeSugerenciasController');
+
+Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
+Route::get('buzonusu', 'BuzonDeSugerenciasController@index2')->name('index2');
+Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')->name('crearsugerencias');
+Route::delete('deletesugerencia/{id}', 'BuzonDeSugerenciasController@destroy')->name('eliminarsugerencia');
+/* Route::get('/editar/{id}', 'BuzonDeSugerenciasController@edit')->name('editar');
+Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'); */
