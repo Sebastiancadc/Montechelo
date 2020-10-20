@@ -485,13 +485,4 @@
 <script src="{{asset("plantilla/js/demo.min.js")}}"></script>
 
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-
-<<<<<<< HEAD
 </html>
-=======
-
-
-
-
-</html>
->>>>>>> 8fe1574b95de69727585673dc510791b89e442be
