@@ -79,10 +79,10 @@
                                         <span class="text-muted">{{$item->descripcion}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$item->estado}}</span>
+                                        <span class="badge badge-lg badge-success">{{$item->estado}}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="{{route('editar',$item->Id_sugerencia)}}" class="table-action" data-original-title="Editar novedad">
+                                        <a href="{{route('editarnovedad',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
                                             <i class="fas fa-user-edit"></i>
 
 
@@ -100,9 +100,15 @@
                                                   <div class="text-center text-muted mb-4">
                                                     <h3>Eliminar la novedad</h3>
                                                   </div>
+<<<<<<< HEAD
                                                   <form role="form" method="POST" action="{{route('eliminar',$item->id_novedad)}}" >
                                                       @csrf @method('DELETE')
 
+=======
+                                                  <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad)}}" >
+                                                      @csrf @method('DELETE')
+
+>>>>>>> 8fe1574b95de69727585673dc510791b89e442be
                                                     <div class="text-center">
                                                       <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                                                       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>

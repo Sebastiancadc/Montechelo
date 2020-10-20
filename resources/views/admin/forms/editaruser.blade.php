@@ -49,7 +49,15 @@
                   <input class="form-control" placeholder="Email" value='{{$userActualizar->email}}' name="email" type="email">
                 </div>
               </div>
-
+              <div class="form-group mb-3">
+                <div class="form-group">
+                  <select class="form-control" id="role" name="role">
+                    <option>{{$userActualizar->role}}</option>
+                    <option>Admin</option>
+                    <option>Colaborador</option>
+                  </select>
+                </div>
+            </div>
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">

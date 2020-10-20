@@ -21,6 +21,12 @@
 </head>
 
 <body>
+
+
+<?php
+  $user = auth()->user();
+?>
+
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -75,13 +81,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/calendario")}}">
+              <a class="nav-link" href="{{url("Evento/index")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/solicitud")}}">
+              <a class="nav-link" href="{{url('crearsolicitud')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
@@ -99,30 +105,40 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('crearnovedad')}}">
+              <a class="nav-link" href="{{url('crearnovedad')}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-                <i class="ni ni-map-big text-primary"></i>
-                <span class="nav-link-text">Administrador</span>
-              </a>
-              <div class="collapse" id="navbar-maps">
-                <ul class="nav nav-sm flex-column">
-                  <li class="nav-item">
-                    <a href="{{ url('admin/usuario')}}" class="nav-link">Usuarios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
-                  </li>
-                   <li class="nav-item">
-                    <a href="{{ url('admin/buzon')}}" class="nav-link">Buzon</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+
+@if ($user->role=='admin')
+<li class="nav-item">
+  <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
+    <i class="ni ni-map-big text-primary"></i>
+    <span class="nav-link-text">Administrador</span>
+  </a>
+  <div class="collapse" id="navbar-maps">
+    <ul class="nav nav-sm flex-column">
+      <li class="nav-item">
+        <a href="{{ url('admin/usuario')}}" class="nav-link">Usuarios</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/solicitud')}}" class="nav-link">Solicitudes</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/buzon')}}" class="nav-link">Buzon</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/eventos')}}" class="nav-link">Eventos</a>
+      </li>
+    </ul>
+  </div>
+</li>
+@endif
           </ul>
         </div>
       </div>
@@ -470,4 +486,12 @@
 
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
+<<<<<<< HEAD
 </html>
+=======
+
+
+
+
+</html>
+>>>>>>> 8fe1574b95de69727585673dc510791b89e442be
