@@ -26,11 +26,23 @@
       <div class="card-wrapper">
 <div class="card">
   <!-- Card header -->
+
+
   <div class="card-header">
     <h3 class="mb-0">Editar evento</h3>
   </div>
+  @if (session('updatess'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+    <span class="alert-text"><strong>{{session('updatess')}}</strong></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  @endif
   <!-- Card body -->
   <div class="card-body">
+
       <form action="{{url('admin/evento',$event->id)}}" method="POST">
           @method('PUT')
           @csrf
@@ -88,6 +100,7 @@
                     <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                     <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
                   </div>
+                
                 </form>
               </div>
             </div>
@@ -96,11 +109,6 @@
       </div>
     </div>
 
-    @if (session('updatess'))
-    <div class="alert alert-success mt-3">
-    {{session('updatess')}} 
-    </div>
- @endif
   </div>
 </div>
 </div>

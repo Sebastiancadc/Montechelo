@@ -71,7 +71,8 @@ class ControllerEvent extends Controller
         $event->fecha = $request->fecha;
         $event->class = $request->class;
         $event->save();
-        return view("admin/calendario/evento",["event" => $event])->with('updatess','El estado de la novedad se actualizo');
+        // return view("admin/calendario/evento",["event" => $event])->with('updatess','El estado de la novedad se actualizo');
+        return back()->with('updatess','Evento modificado correctamente');
     }
 
     public function destroy($id)
