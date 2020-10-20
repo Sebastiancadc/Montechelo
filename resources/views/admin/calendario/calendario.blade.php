@@ -93,28 +93,19 @@
             </nav>
           </div>
           <div class="col-lg-6 mt-3 mt-lg-0 text-lg-right">
-            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
-                <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+            <a href="#" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
+               
                 <span class="btn-inner--text">Crear evento</span>
+                <a class="btn btn-sm btn-neutral"  href="{{ asset('/Evento/index')}}">Hoy</a>
+                <a  href="{{ asset('/Evento/index') }}/<?= $data['last']; ?>" class="fullcalendar-btn-next btn btn-sm btn-neutral">
+                  <i class="fas fa-angle-left"> </i>
+                </a>
+              
+                <a  href="{{ asset('/Evento/index') }}/<?= $data['next']; ?>" class="fullcalendar-btn-next btn btn-sm btn-neutral"> 
+                  <i class="fas fa-angle-right"></i>
+                </a>
             </a>
             @include('admin.calendario.eve')
-
-
-            <a class="btn btn-sm btn-neutral"  href="{{ url('calendario/form') }}">Crear un evento</a> 
-            <a class="btn btn-sm btn-neutral"  href="{{ asset('/Evento/index')}}">Hoy</a>
-     
-
-
-            <a  href="{{ asset('/Evento/index') }}/<?= $data['last']; ?>" class="fullcalendar-btn-next btn btn-sm btn-neutral">
-                <i class="fas fa-angle-left"> </i>
-              </a>
-            
-              <a  href="{{ asset('/Evento/index') }}/<?= $data['next']; ?>" class="fullcalendar-btn-next btn btn-sm btn-neutral"> 
-                <i class="fas fa-angle-right"></i>
-              </a>
-            {{-- <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">Month</a>
-            <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">Week</a>
-            <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Day</a> --}}
           </div>
         </div>
       </div>
