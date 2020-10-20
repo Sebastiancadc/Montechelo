@@ -33,6 +33,11 @@
                     <form  method="POST" action="{{ url('crearsugerencias')}}">
                       @csrf @method('POST')
                       <div class="form-group">
+                        @if (session('buzon_crear'))
+                        <div class="alert alert-success mt-3">
+                            {{session('buzon_crear')}}
+                        </div>
+                        @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
                             <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
                                 <option>Quejas</option>
@@ -71,12 +76,9 @@
                             <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>
                     </form>
-                    @if(session('buzoncrear'))
-                    <div class="alert alert-primary"  role="alert">
-                        {{session('buzoncrear')}}
-                </div>
-                @endif
+                    
             </div>
+
         </div>
     </div>
 </div>

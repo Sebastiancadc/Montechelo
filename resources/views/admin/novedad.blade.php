@@ -100,15 +100,9 @@
                                                   <div class="text-center text-muted mb-4">
                                                     <h3>Eliminar la novedad</h3>
                                                   </div>
-<<<<<<< HEAD
-                                                  <form role="form" method="POST" action="{{route('eliminar',$item->id_novedad)}}" >
-                                                      @csrf @method('DELETE')
-
-=======
                                                   <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad)}}" >
                                                       @csrf @method('DELETE')
 
->>>>>>> 8fe1574b95de69727585673dc510791b89e442be
                                                     <div class="text-center">
                                                       <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                                                       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>

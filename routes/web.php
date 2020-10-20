@@ -106,7 +106,6 @@ Route::delete('deletesolicitud/{id}', 'SolicitudController@destroy')->name('elim
 
 //buzon
 Route::resource('admin/buzon', 'BuzonDeSugerenciasController');
-
 Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
 Route::get('buzonusu', 'BuzonDeSugerenciasController@index2')->name('index2');
 Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')->name('crearsugerencias');

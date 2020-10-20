@@ -40,11 +40,8 @@ class BuzonDeSugerenciasController extends Controller
     public function crearsugerencias(Request $request)
     {
         buzon_de_sugerencias::create($request->all());
-        return redirect('admin/buzon')->with('buzon_crear','Sugerencia registrada correctamente');
+        return back()->with('buzon_crear','Sugerencia registrada correctamente');
     }
-
-
-
 
     public function destroy($id)
     {
