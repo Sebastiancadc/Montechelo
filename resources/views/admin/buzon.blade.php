@@ -18,11 +18,10 @@
             </div>
                 <br>
                 <div class="col-lg-6 col-5 text-right">
-                <a href="{{ url('admin/buzonagregar')}}" class="btn btn-sm btn-neutral">Agregar</a>
+                <a href="{{ url('crearbuzon')}}" class="btn btn-sm btn-neutral">Agregar</a>
 
                 </div>
             </div>
-        </div>
     </div>
 </div>
 <br><br>
@@ -35,7 +34,7 @@
                     <div class="col-md-6">
 
                         <p class="lead text-white"> </p>
-                       
+
                     </div>
                 </div>
             </section>
@@ -45,90 +44,22 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="row">
-
-
+                                @foreach ($buzon as $item)
                                 <div class="col-lg-4">
                                     <div class="card card-lift--hover shadow border-0">
                                         <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
+                                            <h4>{{$item->tipo_sugerencia}}</h4>
+                                            <p class="description mt-3" style="text-align: justify;">{{$item->descripcion}}</p>
+                                            <h5>{{$item->area}}</h5>
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="col-lg-4">
-                                    <div class="card card-lift--hover shadow border-0">
-                                        <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="card card-lift--hover shadow border-0">
-                                        <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="card card-lift--hover shadow border-0">
-                                        <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="card card-lift--hover shadow border-0">
-                                        <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="card card-lift--hover shadow border-0">
-                                        <div class="card-body py-5">
-                                            <h4>Titulo</h4>
-                                            <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet
-                                                consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti
-                                                repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque
-                                                beatae perspiciatis nobis.</p>
-                                            <h5>- Area</h5>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
     </div>

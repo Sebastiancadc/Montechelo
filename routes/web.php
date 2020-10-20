@@ -11,7 +11,7 @@ Route::get('/', 'InicioController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-//dasboard 
+//dasboard
 
 Route::get('home', function () {
 
@@ -57,17 +57,31 @@ Route::get('admin/repositorio', function () {
 
     return view('admin.repositorio');
 });
+
+
 Route::get('admin/buzonagregar', function () {
 
-    return view('admin.crearbuzon');
+    return view('admin.buzon');
 });
 
-//Novedad
+
+//buzon
+Route::resource('admin/buzon', 'BuzonDeSugerenciasController');
+
+Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
+Route::get('buzonusu', 'BuzonDeSugerenciasController@index2')->name('index2');
+Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')->name('crearsugerencias');
+Route::delete('deletesugerencia/{id}', 'BuzonDeSugerenciasController@destroy')->name('eliminarsugerencia');
+/* Route::get('/editar/{id}', 'BuzonDeSugerenciasController@edit')->name('editar');
+Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'); */
+
+
+//Usuarios
 Route::resource('admin/usuario', 'HomeController');
 Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
 Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
 Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
- 
+
 //Novedad
 Route::resource('admin/novedad','NovedadController');
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');

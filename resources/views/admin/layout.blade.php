@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/buzon")}}">
+              <a class="nav-link" href="{{url("buzonusu")}}">
                 <i class="ni ni-send text-yellow"></i>
                 <span class="nav-link-text">Buzon de sugerencias</span>
               </a>
@@ -116,6 +116,9 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
+                  </li>
+                   <li class="nav-item">
+                    <a href="{{ url('admin/buzon')}}" class="nav-link">Buzon</a>
                   </li>
                 </ul>
               </div>
@@ -425,7 +428,7 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                
+
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
