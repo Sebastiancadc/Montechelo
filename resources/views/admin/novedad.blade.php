@@ -82,7 +82,7 @@
                                         <span class="badge badge-lg badge-success">{{$item->estado}}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="{{route('editar',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
+                                        <a href="{{route('editarnovedad',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
                                             <i class="fas fa-user-edit"></i>
 
 
@@ -100,7 +100,7 @@
                                                   <div class="text-center text-muted mb-4">
                                                     <h3>Eliminar la novedad</h3>
                                                   </div>
-                                                  <form role="form" method="POST" action="{{route('eliminar',$item->id_novedad)}}" >
+                                                  <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad)}}" >
                                                       @csrf @method('DELETE') 
                                   
                                                     <div class="text-center">

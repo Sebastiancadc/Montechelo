@@ -81,7 +81,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/calendario")}}">
+              <a class="nav-link" href="{{url("Evento/index")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
@@ -128,6 +128,9 @@
       </li>
       <li class="nav-item">
         <a href="{{ url('admin/solicitud')}}" class="nav-link">Solicitudes</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/eventos')}}" class="nav-link">Eventos</a>
       </li>
     </ul>
   </div>

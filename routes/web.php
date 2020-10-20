@@ -49,10 +49,10 @@ Route::get('admin/directorio', function () {
     return view('admin.directorio');
 });
 
-Route::get('admin/calendario', function () {
-
-    return view('admin.calendario');
+Route::get('admin/calendario/calendario', function () {
+    return view('admin/calendario/calendario');
 });
+
 Route::get('admin/repositorio', function () {
 
     return view('admin.repositorio');
@@ -72,22 +72,27 @@ Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario')
 Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
 });
 
-//Usuario
-// Route::resource('admin/usuario', 'HomeController');
-// Route::post('admin/usuario/createadmin','HomeController@storeAdmin');
-// Route::get('crearUserAdmin', 'HomeController@crearAdmin');
-// Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
-// Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
-// Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
-
-
 //Novedad
 Route::resource('admin/novedad','NovedadController');
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
-Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editar');
+Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
 Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
 Route::delete('deletenovedad/{id}', 'NovedadController@destroy')->name('eliminar');
+
+
+//Evento
+Route::get('calendario/form','ControllerEvent@form');
+Route::post('calendario/create','ControllerEvent@create');
+
+//Calendario
+Route::resource('admin/evento','ControllerEvent');
+Route::get('admin/eventos','ControllerEvent@eventos');
+Route::get('Evento/details/{id}','ControllerEvent@details')->name('editarevento');
+Route::put('updateevento/{id}', 'ControllerEvent@update')->name('updateevent');
+Route::get('Evento/index','ControllerEvent@index');
+Route::get('Evento/index/{month}','ControllerEvent@index_month');    
+Route::delete('deleteevento/{id}', 'ControllerEvent@destroy')->name('eliminarevento');
 
 //Solicitud
 Route::resource('admin/solicitud','SolicitudController');
