@@ -78,7 +78,7 @@ Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
 Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
 Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
-Route::delete('deletenovedad/{id}', 'NovedadController@destroy')->name('eliminar');
+Route::delete('deletenovedad/{id}', 'NovedadController@destroy')->name('eliminarnovedad');
 
 
 //Evento
