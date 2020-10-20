@@ -13,6 +13,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item active" aria-current="page">Agregar sugerencia</li>
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 </ol>
               </nav>
             </div>
@@ -40,6 +41,9 @@
                         @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
                             <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
+
+
+                                <option>Seleccionar tipo de sugerencia </option>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>
                                 <option>Observacion</option>
@@ -76,7 +80,7 @@
                             <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>
                     </form>
-                    
+
             </div>
 
         </div>
