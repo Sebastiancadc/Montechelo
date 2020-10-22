@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                              
+
                                 <li class="breadcrumb-item active" aria-current="page">Novedades</li>
                             </ol>
                         </nav>
@@ -28,7 +28,7 @@
     </div>
 
     <form role="form" method="POST" action="{{ url('crearnovedades')}}" >
-      @csrf @method('POST') 
+      @csrf @method('POST')
     <!-- Card body -->
     <div class="card-body">
       <!-- Form groups used in grid -->
@@ -40,7 +40,7 @@
               <option>Talento humano</option>
               <option>Recursos humanos</option>
               <option>Produccion</option>
-              
+
             </select>
           </div>
         <div class="col-md-4">
@@ -52,11 +52,11 @@
         <div class="col-md-4">
           <div class="form-group">
             <label class="form-control-label" for="example3cols3Input">Novedad</label>
-            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="One of three cols">
+            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="">
           </div>
         </div>
       </div>
-      
+
       <div class="row">
 
         <div class="col-md-9">
@@ -72,7 +72,7 @@
   </form>
   @if (session('crearnovedad'))
   <div class="alert alert-success mt-3">
-  {{session('crearnovedad')}} 
+  {{session('crearnovedad')}}
   </div>
 @endif
   </div>

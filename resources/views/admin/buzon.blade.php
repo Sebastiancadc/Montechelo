@@ -1,6 +1,5 @@
 
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
 <!-- BUZON DE SUGERENCIAS -->
 <div class="header bg-primary pb-6" style="height: 100px;">
@@ -50,7 +49,7 @@
                                         <div class="card-body py-5">
                                             <h4>{{$item->tipo_sugerencia}}</h4>
                                             <p class="description mt-3" style="text-align: justify;">{{$item->descripcion}}</p>
-                                            <h5>{{$item->area}}</h5>
+                                            <h4 style="color:#0098C9 ">{{$item->area}}</h4>
                                         </div>
                                     </div>
                                 </div>

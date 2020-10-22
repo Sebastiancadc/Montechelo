@@ -1,5 +1,4 @@
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
   
 <div class=" bg-gradient-info3  pb-6">

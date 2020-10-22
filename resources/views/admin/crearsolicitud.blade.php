@@ -36,18 +36,18 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                <input type="text" class="form-control" id="example3cols3Input" name="nombre" placeholder="">
+                <input type="text" class="form-control"  name="nombre" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                <input type="text" class="form-control" id="example3cols3Input" name="apellido" placeholder="">
+                <input type="text" class="form-control" name="apellido" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Tipo de solicitud</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="tipo_solicitud">
+                <select class="form-control" name="tipo_solicitud">
                     <option>Vacaciones</option>
                     <option>Desprendibles de pago</option>
                     <option>Certificado laboral</option>
@@ -59,18 +59,18 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Número de documento</label>
-                    <input type="text" class="form-control" id="example3cols3Input" name="cedula" placeholder="">
+                    <input type="text" class="form-control"  name="cedula" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Teléfono</label>
-                    <input type="text" class="form-control" id="example3cols3Input" name="telefono" placeholder="">
+                    <input type="text" class="form-control"  name="telefono" placeholder="">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Área de trabajo</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="area_trabajo">
+                <select class="form-control"  name="area_trabajo">
                     <option>Desarrollo</option>
                     <option>Talento Humano</option>
                     <option>Recursos Humanos</option>
@@ -82,13 +82,13 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols2Input">Fecha</label>
-                    <input type="date" class="form-control" id="example3cols2Input" name="fecha">
+                    <input type="date" class="form-control" name="fecha">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="custom-control custom-checkbox mb-3">
-                <input class="custom-control-input" id="invalidCheck2" type="checkbox" value="" required>
+                <input class="custom-control-input" type="checkbox" value="" required>
                 <label class="custom-control-label" for="invalidCheck2">Acepto los términos y condiciones.</label>
                 <div class="invalid-feedback">
                     Debes aceptar los términos y condiciones antes de enviar.
@@ -101,11 +101,23 @@
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
   </form>
+
   @if (session('crearsolicitud'))
-  <div class="alert alert-success mt-3">
-  {{session('crearsolicitud')}}
+    <div class="alert alert-success mt-3">
+    {{session('crearsolicitud')}}
+    </div>
+ @endif
   </div>
-@endif
-  </div>
+  <!-- Footer -->
+    <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6">
+                <div class="copyright text-center text-lg-left text-muted">
+                    &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
+
   @endsection
