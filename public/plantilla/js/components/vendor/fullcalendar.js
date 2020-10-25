@@ -7,9 +7,9 @@
 var Fullcalendar = (function() {
 
 	// Variables
-
+	
 	var $calendar = $('[data-toggle="calendar"]');
-
+	
 	//
 	// Methods
 	//
@@ -118,6 +118,7 @@ var Fullcalendar = (function() {
 		// For more options read the official docs: https://fullcalendar.io/docs
 
 		options = {
+			locale:'es',
 			header: {
 				right: '',
 				center: '',
@@ -133,13 +134,13 @@ var Fullcalendar = (function() {
 			editable: true,
 			events: events,
 
-			dayClick: function(date) {
-				var isoDate = moment(date).toISOString();
-				$('#new-event').modal('show');
-				$('.new-event--title').val('');
-				$('.new-event--start').val(isoDate);
-				$('.new-event--end').val(isoDate);
-			},
+			// dayClick: function(date) {
+			// 	var isoDate = moment(date).toISOString();
+			// 	$('#new-event').modal('show');
+			// 	$('.new-event--title').val('');
+			// 	$('.new-event--start').val(isoDate);
+			// 	$('.new-event--end').val(isoDate);
+			// },
 
 			viewRender: function(view) {
 				var calendarDate = $this.fullCalendar('getDate');

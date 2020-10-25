@@ -52,7 +52,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label class="form-control-label" for="example3cols3Input">Novedad</label>
-            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="One of three cols">
+            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="Novedad">
           </div>
         </div>
       </div>

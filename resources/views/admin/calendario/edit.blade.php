@@ -31,19 +31,20 @@
   <div class="card-header">
     <h3 class="mb-0">Editar evento</h3>
   </div>
-  @if (session('updatess'))
+  @if (session('editarevento'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-    <span class="alert-text"><strong>{{session('updatess')}}</strong></span>
+    <span class="alert-text"><strong>{{session('editarevento')}}</strong></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   @endif
+  
   <!-- Card body -->
   <div class="card-body">
 
-      <form action="{{url('admin/evento',$event->id)}}" method="POST">
+      <form action="{{url('Calendario/editarEvento',$eventos->id)}}" method="POST">
           @method('PUT')
           @csrf
           <div class="form-group mb-3">
@@ -51,63 +52,45 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
-                <input class="form-control" placeholder="titulo" value='{{$event->titulo}}' name="titulo" type="text">
+                <input class="form-control" placeholder="titulo" value='{{$eventos->name}}' name="name" type="text">
               </div>
             </div>
-            <div class="form-group mb-3">
-              <div class="form-group">
-                <div class="input-group input-group-merge input-group-alternative">
-              
-                  <input class="form-control datepicker" value='{{$event->fecha}}' type="date" name="fecha" id="fecha">
-                </div>
-              </div>
+            <div class="row"> 
+                <div class="col-md-7"> 
+                    <div class="form-group row" >
+                        <div class="col-md-10">
+                          <input class="form-control" type="datetime-local"  value='{{$eventos->start_time}}' name="start_time" id="datepicker">
+                        </div>
+                      </div>
             </div>
+            <input type="text" name="start_time" value='{{$eventos->start_time}}'>
+            <div class="col-md-7"> 
+                <div class="form-group row">
+                    <div class="col-md-10" style="margin-left:237px;margin-top: -70px;">
+                      <input class="form-control" type="datetime-local"  value='{{$eventos->end_time}}' name="end_time" id="example-datetime-local-input" >
+                    </div>
+                  </div>
+        </div>
+        </div>
             <div class="form-group mb-3">
               <div class="form-group">
-                <select class="form-control" id="class" name="class">
-                  <option>{{$event->class}}</option>
-                  <option>Admin</option>
-                  <option>Colaborador</option>
-                </select>
+                <select class="form-control " id="exampleFormControlSelect1" name="className" id="class">
+                    <option>{{$eventos->className}}</option>
+                    <option value="Importante">Importante</option>
+                    <option value="Especial">Especial</option>
+                    <option value="Advertencia">Advertencia</option>
+                  </select>
               </div>
           </div>
             <div class="form-group mb-3">
               <div class="input-group input-group-merge input-group-alternative">
-                <textarea name="descripcion" id="descripcion" cols="60" rows="05">{{$event->descripcion}}</textarea>
+                <textarea name="description" id="description" cols="60" rows="05">{{$eventos->description}}</textarea>
               </div>
             </div>
       <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
-      
-
-      <a href="#!" data-toggle="modal" data-target="#deleteNovedad{{$event->id}}" class="btn btn-danger my-4">Eliminar</a>
-      <a href="{{url("Evento/index")}}" class="btn btn-link my-4">Cancelar</a>
+  
+      <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
     </form>
-
-    <div class="modal fade" id="deleteNovedad{{$event->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-      <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-        <div class="modal-content">
-          <div class="modal-body p-0">
-            <div class="card bg-secondary border-0 mb-0">
-
-              <div class="card-body px-lg-5 py-lg-5">
-                <div class="text-center text-muted mb-4">
-                  <h3>¿Esta seguro de eiminar el evento?</h3>
-                </div>
-                <form role="form" method="POST" action="{{route('eliminarevento',$event->id)}}" >
-                    @csrf @method('DELETE') 
-
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary my-4">Eliminar</button>
-                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
-                  </div>
-                
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </div>
@@ -115,4 +98,15 @@
 </div>
 </div>
 </div>
+<style>
+  .eventoVerde{
+      background-color: #2dce89 !important;
+      }
+      .eventoAmarillo{
+      background-color: #fb6340 !important;
+      }
+      .eventoAzul{
+      background-color: #11cdef !important;
+      }
+      </style>
 @endsection

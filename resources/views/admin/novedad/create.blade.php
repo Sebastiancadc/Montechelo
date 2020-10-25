@@ -16,16 +16,20 @@
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            <span class="input-group-text"><i class="ni ni-satisfied"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Area " name="area" type="text">
+                                          <select class="form-control" id="exampleFormControlSelect1" name="area">
+                                            <option>Desarrollo</option>
+                                            <option>Talento humano</option>
+                                            <option>Recursos humanos</option>
+                                            <option>Produccion</option>
+                                          </select>
                                         </div>
                                       </div>
-
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                           </div>
                                           <input class="form-control"  name="fecha" type="date">
                                         </div>
@@ -33,17 +37,15 @@
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            <span class="input-group-text"><i class="ni ni-active-40"></i></span>
                                           </div>
                                           <input class="form-control" placeholder="Novedad" name="novedad" type="text">
                                         </div>
                                       </div>
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Descripcion" name="descripcion" type="text">
+                                    
+                                        <textarea class="form-control" placeholder="Descripcion de la novedad" name="descripcion" type="text" cols="10" rows="5"></textarea>
                                         </div>
                                       </div>
 

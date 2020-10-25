@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-<link rel="stylesheet" href="}">
+
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
@@ -21,8 +21,6 @@
 </head>
 
 <body>
-
-
 <?php
   $user = auth()->user();
 ?>
@@ -81,7 +79,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("Evento/index")}}">
+              <a class="nav-link" href="{{url("calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
@@ -485,4 +483,3 @@
 <script src="{{asset("plantilla/js/demo.min.js")}}"></script>
 
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-</html>

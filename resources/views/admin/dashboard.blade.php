@@ -267,6 +267,7 @@
 
 
 
+ 
         <!-- Timeline card -->
 
         <div class="card widget-calendar">
@@ -274,6 +275,10 @@
           <div class="card-header">
             <!-- Title -->
             <h5 class="h3 mb-0">Proximos eventos </h5>
+             <h5><?php
+   
+              ?>   
+          </h5>
           </div>
           <div class="card-header">
             <div class="h3 mb-0 widget-calendar-day"></div>
@@ -395,4 +400,19 @@
 
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+     
+          $('#calendarioEvent').fullCalendar({
+         
+          header: {
+          left: 'prev,next',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay' 
+      },
+          events: events,
+          })
+  });
+</script>
 @endsection

@@ -16,4 +16,11 @@ class InicioController extends Controller
         return view('inicio');
     }
 
+
+
+    public function index2()
+    {
+        return view('admin.dashboard');
+    }
+
 }

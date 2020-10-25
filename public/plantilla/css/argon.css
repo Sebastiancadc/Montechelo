@@ -230,8 +230,6 @@ a:hover
 a:not([href]):not([tabindex])
 {
     text-decoration: none; 
-
-    color: inherit;
 }
 a:not([href]):not([tabindex]):hover,
 a:not([href]):not([tabindex]):focus
@@ -26947,7 +26945,7 @@ table.dataTable tbody > tr.selected
     text-align: left;
 }
 .calendar .fc-day-grid-event
-{
+{   
     margin: 1px 9px;
 }
 
