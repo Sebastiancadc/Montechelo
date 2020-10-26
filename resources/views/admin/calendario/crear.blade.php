@@ -1,0 +1,111 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Crear evento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+            <form role="form" method="POST" action="{{url('Calendario/crearEvento')}}">
+                @csrf @method('POST') 
+
+                <div class="form-group mb-3">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Titulo" name="name" type="text">
+                    </div>
+                </div>
+            <div class="row"> 
+              <div class="col-md-6">
+            <div class="form-group">
+              <h3>Fecha inicial</h3>
+              <div class='input-group date' id='datetime1'>
+                  <input type='text' class="form-control" name="start_time" >
+                  <span class="input-group-addon input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <h3>Fecha final</h3>
+            <div class='input-group date' id='datetimepicker12'>
+                <input type='text' class="form-control" name="end_time" >
+                <span class="input-group-addon input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                </span>
+            </div>
+          </div>
+        </div>
+        </div>
+            <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                    <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
+                        <option>Tipo</option>
+                        <option value="eventoAzul">Importante</option>
+                        <option value="eventoVerde">Especial</option>
+                        <option value="eventoAmarillo">Advertencia</option>
+                      </select>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                    <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5"></textarea>
+                </div>
+            </div>
+            </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary my-4">Crear</button>
+                <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+
+  <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+  <script>
+    $(function () {
+        $('#datetime1').datetimepicker({
+          format: 'YYYY/MM/DD HH:SS',
+          icons: {
+            time: "fa fa-clock",
+            date: "fa fa-calendar-day",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+          }
+        });
+    });
+  </script>
+  <script>
+    $(function () {
+        $('#datetimepicker12').datetimepicker({
+          format: 'YYYY/MM/DD HH:SS',
+          icons: {
+            time: "fa fa-clock",
+            date: "fa fa-calendar-day",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+          }
+        });
+    });
+  </script>

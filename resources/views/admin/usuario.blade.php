@@ -57,6 +57,25 @@
                                 @include('admin.crearUserAdmin')
                             </div>
                         </div>
+                  @if (session('eliminarusuario'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                    <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminarusuario')}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
+                  @if (session('editarUsuario'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('editarUsuario')}}</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          @endif
                     </div>
                   
                     <!-- Light table -->
@@ -99,7 +118,7 @@
                                         <span class="text-muted">{{$user->genero}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$user->cumpleaños}}</span>
+                                        <span class="text-muted">{{$user->cumpleanios}}</span>
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$user->role}}</span>
@@ -145,11 +164,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        @if (session('eliminarusuario'))
-                        <div class="alert alert-success" role="alert">
-                        {{session('eliminarusuario')}} 
-                        </div>
-                     @endif
+                     
+                     
                     </div>
                     <div class="card-footer py-4">
                         <nav aria-label="...">

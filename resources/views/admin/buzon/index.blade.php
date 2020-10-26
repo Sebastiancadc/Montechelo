@@ -31,13 +31,13 @@
     <!-- Page content -->
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col"style="padding:15px  200px !important">
+            <div class="col">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="mb-0">Gestión de Sugerencias</h3>
+                                <h3 class="mb-0">Gestión de sugerencias</h3>
                             </div>
 
                         </div>

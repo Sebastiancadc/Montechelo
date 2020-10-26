@@ -45,7 +45,7 @@ class NovedadController extends Controller
     public function crearnovedades(Request $request)
     {
         Novedad::create($request->all());
-        return view('admin/crearnovedad')->with('crearnovedad','Novedad registrada correctamente');
+        return back()->with('crearnovedad','Novedad registrada correctamente');
     }
 
 
@@ -60,7 +60,7 @@ class NovedadController extends Controller
         $novedadAUpdate = Novedad::findOrFail($id);
         $novedadAUpdate->estado = $request->estado;
         $novedadAUpdate->save();
-        return redirect('admin/novedad')->with('update','El estado de la novedad se actualizo');
+        return redirect()->action('NovedadController@index')->with('update', 'El estado de la novedad se actualizo correctamente');
     }
 
 
@@ -69,6 +69,7 @@ class NovedadController extends Controller
         $data = Novedad::findOrFail($id);
         $data->delete();
         return redirect('admin/novedad')->with('eliminar','la novedad se elimino');
+        
     }
 
     public function logout()

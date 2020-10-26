@@ -7,9 +7,9 @@
 var Fullcalendar = (function() {
 
 	// Variables
-
+	
 	var $calendar = $('[data-toggle="calendar"]');
-
+	
 	//
 	// Methods
 	//
@@ -24,7 +24,7 @@ var Fullcalendar = (function() {
             {
 				id: 1,
 				title: 'Call with Dave',
-				start: '2018-11-18',
+				start: '2020-10-18',
 				allDay: true,
 				className: 'bg-red',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
@@ -95,7 +95,7 @@ var Fullcalendar = (function() {
             
             {
 				id: 9,
-				title: 'Black Friday',
+				title: 'Marcelooo',
 				start: '2018-12-23',
 				allDay: true,
 				className: 'bg-blue',
@@ -118,6 +118,7 @@ var Fullcalendar = (function() {
 		// For more options read the official docs: https://fullcalendar.io/docs
 
 		options = {
+			locale:'es',
 			header: {
 				right: '',
 				center: '',

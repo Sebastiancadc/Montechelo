@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-<link rel="stylesheet" href="}">
+
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
@@ -23,8 +23,6 @@
 </head>
 
 <body>
-
-
 <?php
   $user = auth()->user();
 ?>
@@ -82,7 +80,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("Evento/index")}}">
+              <a class="nav-link" href="{{url("calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
@@ -466,8 +464,6 @@
     </nav>
 
 @yield('content')
-
-</body>
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
@@ -481,15 +477,12 @@
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
 
+<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
-
-<!-- <script src="../../assets/js/argon.js?v=1.1.0"></script> -->
 
 <!-- Demo JS - remove this in your project -->
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script src="{{asset("plantilla/js/demo.min.js")}}"></script>
-
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-<!-- Modo Oscuro JS -->
-<script src="{{asset("plantilla/js/dark.js")}}"></script>
-</html>
+
+@yield('js')
+</body>

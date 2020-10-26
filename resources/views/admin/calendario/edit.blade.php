@@ -1,0 +1,167 @@
+@extends('admin.layout')
+<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
+<!-- Page plugins -->
+
+<link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
+<!-- Argon CSS -->
+<link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+<style>
+  .eventoVerde{
+      background-color: #2dce89 !important;
+      }
+      .eventoAmarillo{
+      background-color: #fb6340 !important;
+      }
+      .eventoAzul{
+      background-color: #11cdef !important;
+      }
+</style>
+@section('content')
+
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Editar evento</h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="#">Calendario</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Editar </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--6">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card-wrapper">
+<div class="card">
+  <!-- Card header -->
+
+
+  <div class="card-header">
+    <h3 class="mb-0">Editar evento</h3>
+  </div>
+  @if (session('editarevento'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+    <span class="alert-text"><strong>{{session('editarevento')}}</strong></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  @endif
+  
+  <!-- Card body -->
+  <div class="card-body">
+
+      <form action="{{url('Calendario/editarEvento',$eventos->id)}}" method="POST">
+          @method('PUT')
+          @csrf
+          <div class="form-group mb-3">
+              <div class="input-group input-group-merge input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="titulo" value='{{$eventos->name}}' name="name" type="text">
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-md-6">
+            <div class="form-group">
+              <h3>Fecha inicial</h3>
+              <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control" name="start_time" value='{{$eventos->start_time}}'>
+                  <span class="input-group-addon input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <h3>Fecha final</h3>
+            <div class='input-group date' id='datetimepicker12'>
+                <input type='text' class="form-control" name="end_time" value='{{$eventos->end_time}}'>
+                <span class="input-group-addon input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                </span>
+            </div>
+          </div>
+        </div>
+        </div>
+            <div class="form-group mb-3">
+              <div class="form-group">
+                <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
+                    <option>{{$eventos->className}}</option>
+                    <option value="Importante">Importante</option>
+                    <option value="Especial">Especial</option>
+                    <option value="Advertencia">Advertencia</option>
+                  </select>
+              </div>
+          </div>
+            <div class="form-group mb-3">
+              <div class="input-group input-group-merge input-group-alternative">
+                <textarea name="description" id="description" cols="60" rows="05">{{$eventos->description}}</textarea>
+              </div>
+            </div>
+      <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
+  
+      <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
+    </form>
+  
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+
+<script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+<script>
+  $(function () {
+      $('#datetimepicker1').datetimepicker({
+        format: 'YYYY/MM/DD HH:SS',
+        icons: {
+          time: "fa fa-clock",
+          date: "fa fa-calendar-day",
+          up: "fa fa-chevron-up",
+          down: "fa fa-chevron-down",
+          previous: 'fa fa-chevron-left',
+          next: 'fa fa-chevron-right',
+          today: 'fa fa-screenshot',
+          clear: 'fa fa-trash',
+          close: 'fa fa-remove'
+        }
+      });
+  });
+</script>
+<script>
+  $(function () {
+      $('#datetimepicker12').datetimepicker({
+        format: 'YYYY/MM/DD HH:SS',
+        icons: {
+          time: "fa fa-clock",
+          date: "fa fa-calendar-day",
+          up: "fa fa-chevron-up",
+          down: "fa fa-chevron-down",
+          previous: 'fa fa-chevron-left',
+          next: 'fa fa-chevron-right',
+          today: 'fa fa-screenshot',
+          clear: 'fa fa-trash',
+          close: 'fa fa-remove'
+        }
+      });
+  });
+</script>
+
+@endsection
