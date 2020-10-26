@@ -26,7 +26,15 @@
     <div class="card-header">
       <h3 class="mb-0">Novedad</h3>
     </div>
-
+    @if (session('crearnovedad'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('crearnovedad')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    @endif
     <form role="form" method="POST" action="{{ url('crearnovedades')}}" >
       @csrf @method('POST') 
     <!-- Card body -->
@@ -70,11 +78,8 @@
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
   </form>
-  @if (session('crearnovedad'))
-  <div class="alert alert-success mt-3">
-  {{session('crearnovedad')}} 
-  </div>
-@endif
+
+
   </div>
 </div>
   @endsection

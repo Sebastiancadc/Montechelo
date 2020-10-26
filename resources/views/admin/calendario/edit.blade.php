@@ -1,5 +1,24 @@
 @extends('admin.layout')
 <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
+<!-- Page plugins -->
+
+<link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
+<!-- Argon CSS -->
+<link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+<style>
+  .eventoVerde{
+      background-color: #2dce89 !important;
+      }
+      .eventoAmarillo{
+      background-color: #fb6340 !important;
+      }
+      .eventoAzul{
+      background-color: #11cdef !important;
+      }
+</style>
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -56,25 +75,32 @@
               </div>
             </div>
             <div class="row"> 
-                <div class="col-md-7"> 
-                    <div class="form-group row" >
-                        <div class="col-md-10">
-                          <input class="form-control" type="datetime-local"  value='{{$eventos->start_time}}' name="start_time" id="datepicker">
-                        </div>
-                      </div>
+              <div class="col-md-6">
+            <div class="form-group">
+              <h3>Fecha inicial</h3>
+              <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control" name="start_time" value='{{$eventos->start_time}}'>
+                  <span class="input-group-addon input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                  </span>
+              </div>
             </div>
-            <input type="text" name="start_time" value='{{$eventos->start_time}}'>
-            <div class="col-md-7"> 
-                <div class="form-group row">
-                    <div class="col-md-10" style="margin-left:237px;margin-top: -70px;">
-                      <input class="form-control" type="datetime-local"  value='{{$eventos->end_time}}' name="end_time" id="example-datetime-local-input" >
-                    </div>
-                  </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <h3>Fecha final</h3>
+            <div class='input-group date' id='datetimepicker12'>
+                <input type='text' class="form-control" name="end_time" value='{{$eventos->end_time}}'>
+                <span class="input-group-addon input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                </span>
+            </div>
+          </div>
         </div>
         </div>
             <div class="form-group mb-3">
               <div class="form-group">
-                <select class="form-control " id="exampleFormControlSelect1" name="className" id="class">
+                <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                     <option>{{$eventos->className}}</option>
                     <option value="Importante">Importante</option>
                     <option value="Especial">Especial</option>
@@ -91,22 +117,51 @@
   
       <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
     </form>
-
+  
   </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<style>
-  .eventoVerde{
-      background-color: #2dce89 !important;
-      }
-      .eventoAmarillo{
-      background-color: #fb6340 !important;
-      }
-      .eventoAzul{
-      background-color: #11cdef !important;
-      }
-      </style>
+<script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+
+<script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+<script>
+  $(function () {
+      $('#datetimepicker1').datetimepicker({
+        format: 'YYYY/MM/DD HH:SS',
+        icons: {
+          time: "fa fa-clock",
+          date: "fa fa-calendar-day",
+          up: "fa fa-chevron-up",
+          down: "fa fa-chevron-down",
+          previous: 'fa fa-chevron-left',
+          next: 'fa fa-chevron-right',
+          today: 'fa fa-screenshot',
+          clear: 'fa fa-trash',
+          close: 'fa fa-remove'
+        }
+      });
+  });
+</script>
+<script>
+  $(function () {
+      $('#datetimepicker12').datetimepicker({
+        format: 'YYYY/MM/DD HH:SS',
+        icons: {
+          time: "fa fa-clock",
+          date: "fa fa-calendar-day",
+          up: "fa fa-chevron-up",
+          down: "fa fa-chevron-down",
+          previous: 'fa fa-chevron-left',
+          next: 'fa fa-chevron-right',
+          today: 'fa fa-screenshot',
+          clear: 'fa fa-trash',
+          close: 'fa fa-remove'
+        }
+      });
+  });
+</script>
+
 @endsection

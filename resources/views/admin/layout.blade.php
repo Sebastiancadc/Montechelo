@@ -459,8 +459,6 @@
     </nav>
 
 @yield('content')
-
-</body>
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
@@ -474,12 +472,12 @@
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
 
+<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
-
-<!-- <script src="../../assets/js/argon.js?v=1.1.0"></script> -->
 
 <!-- Demo JS - remove this in your project -->
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script src="{{asset("plantilla/js/demo.min.js")}}"></script>
-
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+
+@yield('js')
+</body>

@@ -21,22 +21,30 @@
                         <input class="form-control" placeholder="Titulo" name="name" type="text">
                     </div>
                 </div>
-                <div class="row"> 
-                    <div class="col-md-7"> 
-                        <div class="form-group row" >
-                            <div class="col-md-10">
-                              <input class="form-control" type="datetime-local" name="start_time" id="datepicker">
-                            </div>
-                          </div>
-                </div>
-                <div class="col-md-7"> 
-                    <div class="form-group row">
-                        <div class="col-md-10" style="margin-left:237px;margin-top: -70px;">
-                          <input class="form-control" type="datetime-local"  name="end_time" id="example-datetime-local-input" >
-                        </div>
-                      </div>
+            <div class="row"> 
+              <div class="col-md-6">
+            <div class="form-group">
+              <h3>Fecha inicial</h3>
+              <div class='input-group date' id='datetime1'>
+                  <input type='text' class="form-control" name="start_time" >
+                  <span class="input-group-addon input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                  </span>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <h3>Fecha final</h3>
+            <div class='input-group date' id='datetimepicker12'>
+                <input type='text' class="form-control" name="end_time" >
+                <span class="input-group-addon input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
+                </span>
             </div>
+          </div>
+        </div>
+        </div>
             <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
                     <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
@@ -62,11 +70,42 @@
       </div>
     </div>
   </div>
+  <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 
-<script>
-var dateControl = document.querySelector('input[type="datetime-local"]');
-dateControl.value = today   ;
-dateFormat = "dd-MM-yy HH:mm:ss";
-minDate = dateToday;
-
-</script>
+  <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+  <script>
+    $(function () {
+        $('#datetime1').datetimepicker({
+          format: 'YYYY/MM/DD HH:SS',
+          icons: {
+            time: "fa fa-clock",
+            date: "fa fa-calendar-day",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+          }
+        });
+    });
+  </script>
+  <script>
+    $(function () {
+        $('#datetimepicker12').datetimepicker({
+          format: 'YYYY/MM/DD HH:SS',
+          icons: {
+            time: "fa fa-clock",
+            date: "fa fa-calendar-day",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+          }
+        });
+    });
+  </script>

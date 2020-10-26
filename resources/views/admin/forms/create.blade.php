@@ -30,15 +30,18 @@
                                           <input class="form-control" placeholder="Email" name="email" type="email">
                                         </div>
                                       </div>
+
                                       <div class="row">
                                         <div class="col-md-6">
-                                        <div class="form-group">
-                                          <div class="input-group input-group-merge input-group-alternative">
-                                        
-                                            <input class="form-control datepicker" placeholder="Select date" type="date" name="cumpleaños" id="cumpleaños">
-                                          </div>
+                                      <div class="form-group">
+                                          <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                            </div>
+                                            <input class="form-control datepicker" id="datepicker" name="cumpleanios" placeholder="Select date" type="text">
                                         </div>
-                                      </div>
+                                    </div>
+                                  </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
                                           <select class="form-control" id="exampleFormControlSelect1" name="genero" id="genero">
@@ -80,3 +83,13 @@
                           </div>
                         </div>
                       </div>
+                        <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+
+                     <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+                      <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+                      <script>
+                        $(function () {
+                            $('#datepicker').datepicker({
+                            });
+                        });
+                      </script>

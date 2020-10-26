@@ -10,7 +10,7 @@ class Eventos extends Model
 {
     use SoftDeletes;
 
-    public $table = 'events';
+    public $table = 'eventos';
     protected $guarded = ['id'];
 
     protected $primaryKey = 'id';

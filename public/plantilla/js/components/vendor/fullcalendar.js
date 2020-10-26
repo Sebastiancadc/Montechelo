@@ -24,7 +24,7 @@ var Fullcalendar = (function() {
             {
 				id: 1,
 				title: 'Call with Dave',
-				start: '2018-11-18',
+				start: '2020-10-18',
 				allDay: true,
 				className: 'bg-red',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
@@ -95,7 +95,7 @@ var Fullcalendar = (function() {
             
             {
 				id: 9,
-				title: 'Black Friday',
+				title: 'Marcelooo',
 				start: '2018-12-23',
 				allDay: true,
 				className: 'bg-blue',
@@ -134,13 +134,13 @@ var Fullcalendar = (function() {
 			editable: true,
 			events: events,
 
-			// dayClick: function(date) {
-			// 	var isoDate = moment(date).toISOString();
-			// 	$('#new-event').modal('show');
-			// 	$('.new-event--title').val('');
-			// 	$('.new-event--start').val(isoDate);
-			// 	$('.new-event--end').val(isoDate);
-			// },
+			dayClick: function(date) {
+				var isoDate = moment(date).toISOString();
+				$('#new-event').modal('show');
+				$('.new-event--title').val('');
+				$('.new-event--start').val(isoDate);
+				$('.new-event--end').val(isoDate);
+			},
 
 			viewRender: function(view) {
 				var calendarDate = $this.fullCalendar('getDate');

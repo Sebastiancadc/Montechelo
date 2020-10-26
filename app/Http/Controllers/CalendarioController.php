@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Eventos;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Helpers\Helpers;
+
 
 class CalendarioController extends Controller
 {
 
     public function eventos()
     {
-        $eventos = Eventos::paginate(4);
+        $eventos = Eventos::paginate(6);
         return view('admin.calendario.eventos', compact('eventos'));
     }
 
@@ -33,7 +34,7 @@ class CalendarioController extends Controller
 
     public $sourcess = [
         [
-            'cumpleaños' => 'cumpleaños',
+            'cumpleanos' => 'cumpleanios',
             'name' => 'name',
             'prefix'     => 'Cumpleaños',
         ],
@@ -41,19 +42,11 @@ class CalendarioController extends Controller
 
     public function index()
     {
-        $eventos = [];
-        foreach ($this->sourcess as $source) {
-            $cumplea = User::all();
-            foreach ($cumplea as $model) {
-                $cumpleaños = $model->getOriginal($source['cumpleaños']);
-                $eventos[] = [  
-                    'title' => trim($model->{$source['name']}
-                    . " " . $source['prefix']),
-                    'start' => $cumpleaños,
-                    'className'=> 'eventoRojo',
-                ];
-            }
-        }
+        
+        $u =User::all();
+        $h =Helpers::usuario($u);
+        
+
         $events = [];
         foreach ($this->sources as $source) {
             $calendarEvents = Eventos::all();
@@ -75,7 +68,7 @@ class CalendarioController extends Controller
             }
         }
 
-        $calendario= array_merge($events,$eventos);
+        $calendario= array_merge($events,$h);
         return view('admin.calen', compact('calendario'));
     }
 

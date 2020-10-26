@@ -77,7 +77,7 @@ if($('[data-toggle="widget-calendar"]')[0]) {
             },
             
             {
-                title: 'Black Friday',
+                title: 'preuebaas',
                 start: '2018-12-23',
                 end: '2018-12-23',
                 className: 'bg-blue'

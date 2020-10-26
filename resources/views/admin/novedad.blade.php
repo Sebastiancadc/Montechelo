@@ -44,6 +44,25 @@
                                 @include('admin.novedad.create')
                             </div>
                         </div>
+                        @if (session('eliminar'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <span class="alert-icon"><i class="ni ni-"></i></span>
+                          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      @endif
+                      @if (session('update'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <span class="alert-icon"><i class="ni ni-"></i></span>
+                          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      @endif
+                      
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -129,11 +148,6 @@
                             </ul>
                         </nav>
                     </div>
-                    @if (session('eliminar'))
-                    <div class="alert alert-success mt-3">
-                        {{session('eliminar')}}
-                    </div>
-                    @endif
                 </div>
             </div>
         </div>

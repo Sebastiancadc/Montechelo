@@ -7,10 +7,13 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', 'InicioController@index');
 
+Route::get('/home', 'InicioController@index2');
+
+Route::get('/home', 'InicioController@index2')->middleware('verified');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
 //dasboard
 
 Route::get('home', function () {
@@ -119,17 +122,17 @@ Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'
 
 
 //CalendarioFull
-Route::get('calendario', 'CalendarioController@index');
-Route::get('calendario/eventos', 'CalendarioController@lsitar');
+// Route::get('calendario', 'CalendarioController@index');
+// Route::get('calendario/eventos', 'CalendarioController@lsitar');
 
-//Canlendario3
+//Canlendario
 Route::get('admin/eventos','CalendarioController@eventos');
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
 Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
-Route::get('Home', 'InicioController@index2')->name('home');
 Route::resource('events', 'EventsController');  
 Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
 Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
 Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
 Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
 Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
+

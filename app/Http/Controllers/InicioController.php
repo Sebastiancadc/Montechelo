@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -16,11 +17,10 @@ class InicioController extends Controller
         return view('inicio');
     }
 
-
-
     public function index2()
     {
-        return view('admin.dashboard');
+        $users = User::whereMonth('cumpleaños',"=", date('m'))->get();
+        return view('admin.dashboard',compact('users'));
     }
 
 }
