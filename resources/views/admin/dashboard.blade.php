@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="header bg-primary pb-6" >
-    
+
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
@@ -13,7 +13,7 @@
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                
+
               </ol>
             </nav>
           </div>
@@ -37,7 +37,7 @@
           <div class="card-header bg-transparent">
             <div class="row align-items-center">
               <div class="col">
-                <h2 class="text-uppercase ls-1 mb-1" style="color: #32325d;">Noticias de interes</h2>
+                <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
 
               </div>
               <div class="col-sm-12">
@@ -163,7 +163,7 @@
                           </div>
                           <div class="carousel-item">
                             <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                           
+
                             <div class="carousel-caption d-none d-md-block">
                               <h5>Third slide label</h5>
                               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -195,15 +195,14 @@
       </div>
       <div class="col-lg-4">
 
-        
+
         <div class="card">
           <div class="card-header bg-transparent">
-            <div class="row align-items-center">
-              <div class="col">
-
-                <h5 class="h3 mb-0">Proximos cumpleaños</h5>
-              </div>
-            </div>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h5 class="h3 mb-0">Proximos cumpleaños</h5>
+                    </div>
+                </div>
           </div>
           <div class="card-body">
 
@@ -211,17 +210,17 @@
             {{-- @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
-               
+
                 <a class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
                 </a>
               </div>
               <div class="col ml--2">
-                <h4 class="mb-0">  
-                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleaños)}}</a>x 
+                <h4 class="mb-0">
+                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleaños)}}</a>x
                 </h4>
               </div>
-            </div>  
+            </div>
             @endforeach --}}
           </div>
         </div>
@@ -234,13 +233,13 @@
             <!-- Title -->
             <h5 class="h3 mb-0">Proximos eventos</h5>
              <h5><?php
-   
-              ?>   
+
+              ?>
           </h5>
           </div>
           <div class="card-header">
-            <div class="h3 mb-0 widget-calendar-day"></div>
-            <div class="h3 text-muted mb-1 widget-calendar-year"></div>
+                <div class="h3 mb-0 widget-calendar-day"></div>
+                <div class="h3 text-muted mb-1 widget-calendar-year"></div>
           </div>
           <!-- Card body -->
           <div class="card-body">
@@ -258,15 +257,12 @@
 
         <div class="card">
           <!-- Card header -->
-          <div class="card-header">
+          <div class="card-header bg-transparent">
             <!-- Title -->
             <h5 class="h3 mb-0">Amigos en linea </h5>
           </div>
           <!-- Card body -->
           <div class="card-body">
-            <!-- List group -->
-            <ul class="list-group list-group-flush list my--3">
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
@@ -283,8 +279,6 @@
                   </div>
 
                 </div>
-              </li>
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
@@ -301,8 +295,6 @@
                   </div>
 
                 </div>
-              </li>
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
@@ -319,8 +311,6 @@
                   </div>
 
                 </div>
-              </li>
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
@@ -337,12 +327,11 @@
                   </div>
 
                 </div>
-              </li>
             </ul>
           </div>
 
         </div>
-     
+
       </div>
 
     </div>
@@ -361,13 +350,13 @@
 
 <script>
   $(document).ready(function () {
-     
+
           $('#calendarioEvent').fullCalendar({
-         
+
           header: {
           left: 'prev,next',
           center: 'title',
-          right: 'month,agendaWeek,agendaDay' 
+          right: 'month,agendaWeek,agendaDay'
       },
           events: events,
           })

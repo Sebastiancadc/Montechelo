@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+  <!-- Modo Oscuro CSS -->
+  <link rel="stylesheet" href="{{asset("plantilla/css/dark.css")}}" type="text/css">
   <title>Montechelo </title>
 </head>
 
@@ -52,7 +54,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item"></li>
-            <a class="nav-link active" href="{{ url('home')}}">
+            <a class="nav-link" href="{{ url('home')}}">
               <i class="ni ni-shop text-primary"></i>
               <span class="nav-link-text">Inicio</span>
             </a>
@@ -63,7 +65,6 @@
                 <i class="ni ni-chat-round text-orange"></i>
                 <span class="nav-link-text">Chat</span>
               </a>
-
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url("admin/directorio")}}">
@@ -182,6 +183,10 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
+            <button class="switch" id="switch">
+                <span><i class="fas fa-sun" style="15px"></i></span>
+                <span><i class="fas fa-moon"style="15px"></i></span>
+            </button>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-chat-round"></i>
@@ -325,7 +330,7 @@
                             <small>2 hrs ago</small>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
                       </div>
                     </div>
                   </a>
@@ -382,7 +387,7 @@
                             <small>2 hrs ago</small>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
                       </div>
                     </div>
                   </a>
@@ -476,10 +481,12 @@
 
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
+<script src="{{asset("plantilla/js/dark.js")}}"></script>
 
 <!-- Demo JS - remove this in your project -->
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
+<script src="{{asset("plantilla/js/dark.js")}}"></script>
 @yield('js')
 </body>

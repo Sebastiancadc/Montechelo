@@ -1,6 +1,5 @@
 
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
 <!-- AGREGAR BUZON DE SUGERENCIAS -->
 <div class="header bg-primary pb-6" style="height: 100px;">
