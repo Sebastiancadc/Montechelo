@@ -109,7 +109,9 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-
+            <li class="nav-item">
+              <a href="{{ url('admin/repositorio')}}" class="nav-link">Repositorio</a>
+            </li>
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
@@ -430,7 +432,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Bienvenido!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="{{ url('perfil')}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>Mi perfil</span>
                 </a>

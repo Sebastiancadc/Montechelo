@@ -1,376 +1,169 @@
 @extends('admin.layout')
 @section('content')
-  
-<div class=" bg-gradient-info3  pb-6">
-    <div class="container-fluid">
-      <div class="header-body">
-        <div class="row align-items-center py-4">
-          <div class="col-lg-6 col-7">
-            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <h6 class="h2 text-white d-inline-block mb-0">Repositorio</h6>
+                            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="#">Administrador</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Novedades</li>
+                                </ol>
+                            </nav>
+                    </div>
+                </div>
 
-            </nav>
-          </div>
-
-        </div>
-        <!-- Card stats -->
-
-        <div class="">
-          <div class="card-body"></div>
-          <div class="row">
-            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30" style="
-                margin-top: -88px;
-            ">
-              <h4 class="tx-gray-800 mg-b-5">Gestor de archivos</h4>
-              <p class="mg-b-0">Este es el administrador de archivos.</p>
             </div>
-          </div>
         </div>
-
-      </div>
-      <div class="btn-group hidden-xs-down">
-        <a href="#" class="btn btn-outline-info " style="
-    margin-left: 174px;
-">Compartir</a>
-        <a href="#" class="btn btn-outline-info">Descargar</a>
-      </div><!-- btn-group -->
-      <div class="btn-group  hidden-xs-down">
-        <a href="#" class="btn btn-outline-info">Archivar documento</a>
-      </div>
-      <div class="dropdown hidden-sm-up">
-        <div class="dropdown-menu pd-10">
-          <nav class="nav nav-style-1 flex-column">
-            <a href="" class="nav-link ">Compartir</a>
-            <a href="" class="nav-link">Descargar</a>
-            <div class="dropdown-divider"></div>
-            <a href="" class="nav-link">Editar</a>
-            <a href="" class="nav-link">Eliminar</a>
-          </nav>
-        </div><!-- dropdown-menu -->
-      </div><!-- dropdown -->
-      <!-- END: DISPLAYED FOR MOBILE ONLY -->
-
-      <!-- btn-group -->
-      <br>
-      <div class="btn-group mg-l-auto hidden-sm-down">
-        <a href="#" class="btn btn-outline-info active" style="
-      margin-left: 175px;
-  ">Todos</a>
-        <a href="#" class="btn btn-outline-info">Imagenes</a>
-        <a href="#" class="btn btn-outline-info">Videos</a>
-        <a href="#" class="btn btn-outline-info">Documentos</a>
-        <a href="#" class="btn btn-outline-info">Audio</a>
-      </div><!-- btn-group -->
-
-      <!-- START: DISPLAYED FOR MOBILE ONLY -->
-      <div class="dropdown mg-l-auto hidden-md-up">
-        <a href="#" class="btn btn-outline-secondary " style="
-      margin-top: 60px;
-      margin-left: 283px;
-  " data-toggle="dropdown">Todos <i class="fa fa-angle-down mg-l-5"></i></a>
-        <div class="dropdown-menu dropdown-menu-right pd-10">
-          <nav class="nav nav-style-1 flex-column">
-            <a href="" class="nav-link">Todos</a>
-            <a href="" class="nav-link">Imageness</a>
-            <a href="" class="nav-link">Videos</a>
-            <a href="" class="nav-link">Documentos</a>
-            <a href="" class="nav-link">Audios</a>
-          </nav>
-        </div><!-- dropdown-menu -->
-      </div>
-      <div class="br-pagebody pd-x-20 pd-sm-x-30">
-        <div class="card bd-0 shadow-base">
-          <table class="table mg-b-0">
-            <thead>
-              <tr>
-                <th class="wd-5p">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-
-                </th>
-                <th class="tx-10-force tx-mont tx-medium">Nombre</th>
-
-                <th class="tx-10-force tx-mont tx-medium hidden-xs-down">Modificar</th>
-                <th class="tx-10-force tx-mont tx-medium hidden-xs-down">Opciones</th>
-
-                <th class="wd-5p"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-folder-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">Subidad de camara</span>
-                </td>
-                <td class="hidden-xs-down">---</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon bold-down"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Informacion</a>
-                      <a href="" class="nav-link">Descargar</a>
-                      <a href="" class="nav-link">Renombrar</a>
-                      <a href="" class="nav-link">Mover</a>
-                      <a href="" class="nav-link">Copiar</a>
-                      <a href="" class="nav-link">Eliminar</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-folder-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">My Collections</span>
-                </td>
-                <td class="hidden-xs-down">---</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Información</a>
-                      <a href="" class="nav-link">Desargar</a>
-                      <a href="" class="nav-link">Renombrar</a>
-                      <a href="" class="nav-link">Mover</a>
-                      <a href="" class="nav-link">Copiar</a>
-                      <a href="" class="nav-link">Eliminar</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-folder-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">E-Book</span>
-                </td>
-                <td class="hidden-xs-down">---</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Informacion</a>
-                      <a href="" class="nav-link">Descarga</a>
-                      <a href="" class="nav-link">Renombrar</a>
-                      <a href="" class="nav-link">Mover</a>
-                      <a href="" class="nav-link">Copiar</a>
-                      <a href="" class="nav-link">Eliminar</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="fa fa-file-pdf-o tx-22 tx-danger lh-0 valign-middle"></i>
-                  <span class="pd-l-5">MyResume.pdf</span>
-                </td>
-                <td class="hidden-xs-down">10/11/2017 7:22am</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Informacion</a>
-                      <a href="" class="nav-link">Descarga</a>
-                      <a href="" class="nav-link">Renombrar</a>
-                      <a href="" class="nav-link">Mover</a>
-                      <a href="" class="nav-link">Copiar</a>
-                      <a href="" class="nav-link">Eliminar</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <img src="../img/img18.jpg" class="wd-20" alt="">
-                  <span class="pd-l-5">23424343.jpg</span>
-                </td>
-                <td class="hidden-xs-down">10/11/2017 7:22am</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-folder-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">Illustrations</span>
-                </td>
-                <td class="hidden-xs-down">---</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-folder-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">Movies</span>
-                </td>
-                <td class="hidden-xs-down">---</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info "
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="fa fa-file-audio-o tx-22 tx-primary lh-0 valign-middle"></i>
-                  <span class="pd-l-5">InTheEnd.mp3</span>
-                </td>
-                <td class="hidden-xs-down">10/11/2017 3:20am</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="fa fa-file-audio-o tx-22 tx-primary lh-0 valign-middle"></i>
-                  <span class="pd-l-5">Symphony.mp3</span>
-                </td>
-                <td class="hidden-xs-down">10/11/2017 5:51am</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="fa fa-file-audio-o tx-22 tx-primary lh-0 valign-middle"></i>
-                  <span class="pd-l-5">Clarity.mp3</span>
-                </td>
-                <td class="hidden-xs-down">10/11/2017 8:22am</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"
-                    style="background-color: gray;"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                      <a href="" class="nav-link">Info</a>
-                      <a href="" class="nav-link">Download</a>
-                      <a href="" class="nav-link">Rename</a>
-                      <a href="" class="nav-link">Move</a>
-                      <a href="" class="nav-link">Copy</a>
-                      <a href="" class="nav-link">Delete</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <!-- br-pagebody -->
-<footer class="footer pt-0">
-    <div class="row align-items-center justify-content-lg-between">
-      <div class="col-lg-6">
-        <div class="copyright text-center text-lg-left text-muted">
-          &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
-        </div>
-      </div>
     </div>
-  </footer>
-</div>
-</div>   
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3 class="mb-0">Gestión de repositorio</h3>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
+                                    <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+                                   
+                                    <span class="btn-inner--text">Crear</span>
+                                   
+                                </a>
+                                @include('admin.repositorio.create')
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive" id="listadoregistros">
+                        <table class="table align-items-center table-flush test "id="tbllistado">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="área">#</th>
+                                    <th scope="col" class="sort" data-sort="Tipo_archivo">Tipo de archivo</th>
+                                    <th scope="col" clss="sort" data-sort="Autor">Autor</th>
+                                    <th scope="col" class="sort" data-sort="Observaciones">Observaciones</th>
+                                    <th scope="col" class="sort" data-sort="imagen">imagen</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($repositorio as $item)
+                                <tr>
+                                    <td class="table-user">
+                                        <b></b>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$item->tipo_archivo}}</span>
+                                    </td>
+                                    <td>
+                                        <a class="font-weight-bold">{{$item->autor}}</a>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$item->observaciones}}</span>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-muted">{{$item->status}}</span>
+                                    </td>
+                                      <td>
+                                       
+                                        <img  height= "100px"  src="{{$item->imagen}}">{{$item->imagen}}
+                                    </td>
+
+
+                                    <td class="table-actions">
+                                        <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="editrepositorio">
+                                            <i class="fas fa-user-edit"></i>
+
+
+                                            <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#eliminarrepositorio{{$item->Id_Repositorio}}" data-original-title="Eliminar novedad">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+    
+                                        <div class="modal fade" id="eliminarrepositorio{{$item->Id_Repositorio}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                            <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-body p-0">
+                                                  <div class="card bg-secondary border-0 mb-0">
+                                      
+                                                    <div class="card-body px-lg-5 py-lg-5">
+                                                      <div class="text-center text-muted mb-4">
+                                                        <h3>Eliminar el archivo</h3>
+                                                      </div>
+                                                      <form role="form" method="POST" action="{{route('eliminarrepositorio',$item->Id_Repositorio)}}" >
+                                                          @csrf 
+                                                          @method('DELETE') 
+                                                          <div class="text-center">
+                                                          <button type="submit" class="btn btn-primary my-4">Eliminar</button>
+                                                          <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                                        </div>
+                                                      </form>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                      
+                    </div>
+                    
+                    <div class="card-footer py-4">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-end mb-0">
+                                
+                           </ul>
+                        </nav>
+                    </div>
+                    @if (session('eliminarrepos'))
+                    <div class="alert alert-success mt-3">
+                        {{session('eliminarrepos')}} 
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="scripts/repositorio.js"></script>
+<?php 
+
+ob_end_flush();
+?>
+
+<script>
+    var addNumeration = function(cl){
+      var table = document.querySelector('table.' + cl)
+      var trs = table.querySelectorAll('tr')
+      var counter = 1
+      
+      Array.prototype.forEach.call(trs, function(x,i){
+        var firstChild = x.children[0]
+        if (firstChild.tagName === 'TD') {
+          var cell = document.createElement('td')
+          cell.textContent = counter ++
+          x.insertBefore(cell,firstChild)
+        } else {
+          firstChild.setAttribute('colspan',2)
+        }
+      })
+    }
+    addNumeration("test")
+    </script>
 @endsection

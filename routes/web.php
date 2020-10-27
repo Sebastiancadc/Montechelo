@@ -135,4 +135,18 @@ Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name(
 Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
 Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
 Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
+//repositorio   
+Route::resource('admin/repositorio','RepositorioController');
 
+Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorioo');
+Route::post('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
+Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
+Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
+Route::post('/subir','Controller@subirArchivo')->name('subir');
+
+//perfil
+
+Route::resource('perfil','PerfilController'); 
+Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
+Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
