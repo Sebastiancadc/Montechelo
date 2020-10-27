@@ -96,9 +96,9 @@
               <div class="form-group">
                 <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                     <option>{{$eventos->className}}</option>
-                    <option value="Importante">Importante</option>
-                    <option value="Especial">Especial</option>
-                    <option value="Advertencia">Advertencia</option>
+                    <option class="importante" value="Importante">Importante</option>
+                    <option class="especial" value="Especial">Especial</option>
+                    <option class="advertencia" value="Advertencia">Advertencia</option>
                   </select>
               </div>
           </div>
@@ -118,7 +118,11 @@
 </div>
 </div>
 </div>
-
+<style>
+.advertencia{color:#fb6340;}
+.importante{color:#11cdef;}
+.especial{color:#2dce89;}
+</style>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script type="text/javascript">

@@ -45,8 +45,7 @@ class CalendarioController extends Controller
         
         $u =User::all();
         $h =Helpers::usuario($u);
-        
-
+    
         $events = [];
         foreach ($this->sources as $source) {
             $calendarEvents = Eventos::all();

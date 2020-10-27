@@ -1,5 +1,6 @@
 
   <!-- Modal -->
+  <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -49,9 +50,9 @@
                 <div class="input-group input-group-alternative">
                     <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                         <option>Tipo</option>
-                        <option value="eventoAzul">Importante</option>
-                        <option value="eventoVerde">Especial</option>
-                        <option value="eventoAmarillo">Advertencia</option>
+                        <option class="myRed" value="Importante">Importante</option>
+                        <option class="myblue" value="Especial">Especial</option>
+                        <option class="mygreen" value="Advertencia">Advertencia</option>
                       </select>
                 </div>
             </div>
@@ -73,10 +74,10 @@
   <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 
   <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
-  <script>
+  <script type="text/javascript">
     $(function () {
         $('#datetime1').datetimepicker({
-          format: 'YYYY/MM/DD HH:SS',
+          format: 'Y/M/D hh:mm',
           icons: {
             time: "fa fa-clock",
             date: "fa fa-calendar-day",
@@ -94,7 +95,7 @@
   <script>
     $(function () {
         $('#datetimepicker12').datetimepicker({
-          format: 'YYYY/MM/DD HH:SS',
+          format: 'Y/M/D hh:mm',
           icons: {
             time: "fa fa-clock",
             date: "fa fa-calendar-day",

@@ -337,15 +337,12 @@ height: 80%;"></span>
                               <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
                            
-                            <input class="form-control datepicker" placeholder="Select date" name="cumpleanios" value='{{Auth::user()->cumpleanios}}' type="text"/>
+                            <input class="form-control datepicker" id="date" type="text" name="cumpleanios" value='{{App\Helpers\Helpers::formatearFechaPerfil(Auth::user()->cumpleanios)}}'>
                           </div>
                         </div>
                       </div>
                     </div>
-
-                  </div>
-
-                
+                  </div>                
                 </div>
                 <div class="row">
                   <div class="col-lg-4" style="margin-left: 230px">
@@ -492,4 +489,12 @@ height: 80%;"></span>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 
+
+<script type="text/javascript">
+  $(function () {
+      $('#date').date({
+        format: 'Y/M/D',
+      });
+  });
+</script>
 @endsection

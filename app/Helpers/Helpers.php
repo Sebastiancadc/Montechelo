@@ -42,4 +42,12 @@ class Helpers
         $fechaformateada =Carbon::parse($cumpleanios)->isoFormat('D MMMM');
         return $fechaformateada;
     }
+
+
+    public static function formatearFechaPerfil($cumpleanios) 
+    {   
+        $fechaformateada =Carbon::parse($cumpleanios)->format('d/m/Y');
+        return $fechaformateada;
+    }
+    
 }

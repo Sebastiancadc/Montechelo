@@ -78,10 +78,9 @@
             @endif
           </div>
           <!-- Card body -->
-          {{-- <div><div class="calendar" id="calendarioEvent"  data-toggle="calendar" ></div></div> --}}
-          <div class="calendar" id="eventos" data-toggle="calendar"></div>
+         
           <div class="card-body p-0">
-            {{-- <div class="calendar" id="calendarioEvent"></div> --}}
+            <div class="calendar" id="eventos" data-toggle="calendar"></div>
           </div>
         @include('admin.calendario.crear')
         </div>
@@ -242,67 +241,6 @@ function init($this) {
     }
   });
 
-
-  //Update/Delete an Event
-  $('body').on('click', '[data-calendar]', function() {
-    var calendarAction = $(this).data('calendar');
-    var currentId = $('.edit-event--id').val();
-    var currentTitle = $('.edit-event--title').val();
-    var currentDesc = $('.edit-event--description').val();
-    var currentClass = $('#edit-event .event-tag input:checked').val();
-    var currentEvent = $this.fullCalendar('clientEvents', currentId);
-
-    //Update
-    if (calendarAction === 'update') {
-      if (currentTitle != '') {
-        currentEvent[0].title = currentTitle;
-        currentEvent[0].description = currentDesc;
-        currentEvent[0].className = [currentClass];
-
-        console.log(currentClass);
-        $this.fullCalendar('updateEvent', currentEvent[0]);
-        $('#edit-event').modal('hide');
-      } else {
-        $('.edit-event--title').closest('.form-group').addClass('has-error');
-        $('.edit-event--title').focus();
-      }
-    }
-
-    //Delete
-    if (calendarAction === 'delete') {
-      $('#edit-event').modal('hide');
-
-      // Show confirm dialog
-      setTimeout(function() {
-        swal({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          type: 'warning',
-          showCancelButton: true,
-          buttonsStyling: false,
-          confirmButtonClass: 'btn btn-danger',
-          confirmButtonText: 'Yes, delete it!',
-          cancelButtonClass: 'btn btn-secondary'
-        }).then((result) => {
-          if (result.value) {
-            // Delete event
-            $this.fullCalendar('removeEvents', currentId);
-
-            // Show confirmation
-            swal({
-              title: 'Deleted!',
-              text: 'The event has been deleted.',
-              type: 'success',
-              buttonsStyling: false,
-              confirmButtonClass: 'btn btn-primary'
-            });
-          }
-        })
-      }, 200);
-    }
-  });
-
-
   //Calendar views switch
   $('body').on('click', '[data-calendar-view]', function(e) {
     e.preventDefault();
@@ -341,6 +279,5 @@ if ($calendar.length) {
 
 })();
 </script>
-
 @endsection
 @endsection
