@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 
@@ -36,10 +37,9 @@ class Helpers
         return $eventos;
     }
 
-    public static function formatearFecha($cumpleanios)
-    {
-        
-        $fecha= date('d M',strtotime($cumpleanios));
-        return $fecha;
+    public static function formatearFecha($cumpleanios) 
+    {   
+        $fechaformateada =Carbon::parse($cumpleanios)->Format('d');
+        return $fechaformateada;
     }
 }

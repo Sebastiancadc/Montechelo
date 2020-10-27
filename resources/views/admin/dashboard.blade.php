@@ -205,9 +205,8 @@
                 </div>
           </div>
           <div class="card-body">
-
-
-            {{-- @foreach ($users as $user)
+          
+           @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
 
@@ -217,11 +216,11 @@
               </div>
               <div class="col ml--2">
                 <h4 class="mb-0">
-                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleaños)}}</a>x
+                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a>
                 </h4>
               </div>
             </div>
-            @endforeach --}}
+            @endforeach
           </div>
         </div>
 
