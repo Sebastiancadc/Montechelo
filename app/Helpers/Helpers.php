@@ -39,7 +39,7 @@ class Helpers
 
     public static function formatearFecha($cumpleanios) 
     {   
-        $fechaformateada =Carbon::parse($cumpleanios)->Format('d');
+        $fechaformateada =Carbon::parse($cumpleanios)->isoFormat('D MMMM');
         return $fechaformateada;
     }
 }

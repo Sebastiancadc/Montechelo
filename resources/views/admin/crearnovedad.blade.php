@@ -51,12 +51,23 @@
 
             </select>
           </div>
+      
         <div class="col-md-4">
-          <div class="form-group">
-            <label class="form-control-label" for="example3cols2Input">Fecha</label>
-            <input type="date" class="form-control" id="example3cols2Input" name="fecha">
+        <div class="tab-content">
+          <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
+            <div class="form-group">
+              <label class="form-control-label" for="example3cols2Input">Fecha</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                </div>
+               
+                <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"/>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
         <div class="col-md-4">
           <div class="form-group">
             <label class="form-control-label" for="example3cols3Input">Novedad</label>
@@ -78,8 +89,14 @@
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
   </form>
-
-
   </div>
 </div>
-  @endsection
+
+<script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
+<script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
+<script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
+
+
+@endsection

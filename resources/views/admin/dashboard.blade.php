@@ -216,8 +216,9 @@
               </div>
               <div class="col ml--2">
                 <h4 class="mb-0">
-                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a>
+                <a>{{$user->name}}  <a style="color: #8898aa !important;">{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a>   </a>
                 </h4>
+               
               </div>
             </div>
             @endforeach

@@ -33,7 +33,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-          <img src="{{asset("plantilla/img/theme/Logo1.png")}}" class="navbar-brand-img" style="margin-top: -7px;
+          <img src="{{asset("plantilla/img/theme/Logo1.png")}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
           max-width: 126%;
           max-height: 10rem;">
         </a>
@@ -109,9 +109,7 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{ url('admin/repositorio')}}" class="nav-link">Repositorio</a>
-            </li>
+            
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
@@ -487,6 +485,5 @@
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
-<script src="{{asset("plantilla/js/dark.js")}}"></script>
 @yield('js')
 </body>
