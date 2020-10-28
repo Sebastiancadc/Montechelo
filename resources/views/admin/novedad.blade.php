@@ -56,32 +56,30 @@
             @include('admin.novedad.create')
         </div>
 
-        @if (session('eliminar'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <span class="alert-icon"><i class="ni ni-"></i></span>
-          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      @endif
-      @if (session('update'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <span class="alert-icon"><i class="ni ni-"></i></span>
-          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      @endif
         <br>
 
     </div>
 
+    @if (session('eliminar'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  @endif
+  @if (session('update'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  @endif
 </div>
                     <!-- Light table -->
-                   
-
 
                     <div class="table-responsive py-4" style="margin-top: -41px;">
                         
@@ -156,10 +154,6 @@
                             
                         </table>
                     </div>
-  
-
-
-
 
                     <div class="card-footer py-4">
                         <nav aria-label="...">
@@ -204,36 +198,8 @@
     addNumeration("test")
     </script>
 
-{{-- BUSCADOR --}}
-{{-- <script>
 
-
-    $(document).ready(function() {
-       $("#search").autocomplete({
-
-           source: function(request, response) {
-               $.ajax({
-               url: "{{url('buscar')}}",
-               data: {
-                       term : request.term
-                },
-               dataType: "json",
-               success: function(data){
-                  var resp = $.map(data,function(obj){
-                       return obj.name;
-                  });
-
-                  response(resp);
-               }
-           });
-       },
-       minLength: 1
-    });
-   });
-
-   </script> --}}
-
-@section('js')
+@section('jss')
 <script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>

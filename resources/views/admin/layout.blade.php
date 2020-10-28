@@ -478,7 +478,7 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
-
+@yield('jss')
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
@@ -486,6 +486,6 @@
 
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-
 @yield('js')
+
 </body>
