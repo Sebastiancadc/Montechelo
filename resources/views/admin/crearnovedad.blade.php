@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                              
+
                                 <li class="breadcrumb-item active" aria-current="page">Novedades</li>
                             </ol>
                         </nav>
@@ -26,42 +26,62 @@
     <div class="card-header">
       <h3 class="mb-0">Novedad</h3>
     </div>
-
+    @if (session('crearnovedad'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('crearnovedad')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    @endif
     <form role="form" method="POST" action="{{ url('crearnovedades')}}" >
-      @csrf @method('POST') 
+      @csrf @method('POST')
     <!-- Card body -->
     <div class="card-body">
       <!-- Form groups used in grid -->
       <div class="row">
         <div class="col-md-4">
             <label class="form-control-label" for="exampleFormControlSelect1">Area</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="area">
+            <select class="form-control" id="exampleFormControlSelect1" name="area" required>
+              <option></option>
               <option>Desarrollo</option>
               <option>Talento humano</option>
               <option>Recursos humanos</option>
               <option>Produccion</option>
-              
+
             </select>
           </div>
+      
         <div class="col-md-4">
-          <div class="form-group">
-            <label class="form-control-label" for="example3cols2Input">Fecha</label>
-            <input type="date" class="form-control" id="example3cols2Input" name="fecha">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label class="form-control-label" for="example3cols3Input">Novedad</label>
-            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="One of three cols">
+        <div class="tab-content">
+          <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab" >
+            <div class="form-group">
+              <label class="form-control-label" for="example3cols2Input">Fecha</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                </div>
+               
+                <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text" required/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="form-control-label" for="example3cols3Input">Novedad</label>
+            <input type="text" class="form-control" id="example3cols3Input" name="novedad" required>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
 
         <div class="col-md-9">
             <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required></textarea>
           </div>
       </div>
     </div>
@@ -70,11 +90,14 @@
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
   </form>
-  @if (session('crearnovedad'))
-  <div class="alert alert-success mt-3">
-  {{session('crearnovedad')}} 
-  </div>
-@endif
   </div>
 </div>
-  @endsection
+
+<script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
+<script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
+<script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
+
+
+@endsection

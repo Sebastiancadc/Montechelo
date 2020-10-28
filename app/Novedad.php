@@ -17,3 +17,6 @@ class Novedad extends Model
         'area','fecha','novedad','descripcion','estado'
     ];
 }
+
+
+

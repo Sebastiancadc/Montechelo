@@ -1,5 +1,4 @@
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
@@ -63,7 +62,7 @@
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                 
-                    <input class="form-control datepicker" value='{{$userActualizar->cumpleaños}}' type="date" name="cumpleaños" id="cumpleaños">
+                    <input class="form-control datepicker" value='{{$userActualizar->cumpleanios}}' type="date" name="cumpleaños" id="cumpleaños">
                   </div>
                 </div>
               </div>

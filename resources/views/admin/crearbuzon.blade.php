@@ -1,6 +1,5 @@
 
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
 <!-- AGREGAR BUZON DE SUGERENCIAS -->
 <div class="header bg-primary pb-6" style="height: 100px;">
@@ -58,13 +57,13 @@
 
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
                         </div>
                         @error('descripcion')
                         <div class="alert alert-danger">descripcion requerida</div>
                         @enderror
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1" name="area">Area</label>
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" required>Area</label>
                             <select class="form-control" id="area" name="area">
                                 <option>Seleccione el area</option>
                                 <option>Diseño</option>

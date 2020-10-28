@@ -5,18 +5,21 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'InicioController@index');
+Route::get('/', function () {
 
+    return view('admin.login');
+});
+
+Route::get('/home', 'InicioController@index');
+
+// Route::get('/home', 'InicioController@index')->middleware('verified');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
 //dasboard
 
-Route::get('home', function () {
 
-    return view('admin.dashboard');
-});
 // login
 Route::get('admin', function () {
 
@@ -53,6 +56,12 @@ Route::get('admin/calendario/calendario', function () {
     return view('admin/calendario/calendario');
 });
 
+
+Route::get('admin/calendario', function () {
+    return view('admin/calendario');
+});
+
+
 Route::get('admin/repositorio', function () {
 
     return view('admin.repositorio');
@@ -63,6 +72,17 @@ Route::get('admin/buzonagregar', function () {
 
     return view('admin.buzon');
 });
+
+Route::get('admin/calen', function () {
+
+    return view('admin.calen');
+});
+
+
+Route::get('evento', function () {
+    return view('admin.calendario.eve');
+});
+
 
 //Usuario
 Route::group(['prefix' => 'admin','middleware' =>'admin'], function() {
@@ -83,19 +103,6 @@ Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
 Route::delete('deletenovedad/{id}', 'NovedadController@destroy')->name('eliminarnovedad');
 
 
-//Evento
-Route::get('calendario/form','ControllerEvent@form');
-Route::post('calendario/create','ControllerEvent@create');
-
-//Calendario
-Route::resource('admin/evento','ControllerEvent');
-Route::get('admin/eventos','ControllerEvent@eventos');
-Route::get('Evento/details/{id}','ControllerEvent@details')->name('editarevento');
-Route::put('updateevento/{id}', 'ControllerEvent@update')->name('updateevent');
-Route::get('Evento/index','ControllerEvent@index');
-Route::get('Evento/index/{month}','ControllerEvent@index_month');
-Route::delete('deleteevento/{id}', 'ControllerEvent@destroy')->name('eliminarevento');
-
 //Solicitud
 Route::resource('admin/solicitud','SolicitudController');
 Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
@@ -112,3 +119,34 @@ Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')
 Route::delete('deletesugerencia/{id}', 'BuzonDeSugerenciasController@destroy')->name('eliminarsugerencia');
 /* Route::get('/editar/{id}', 'BuzonDeSugerenciasController@edit')->name('editar');
 Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'); */
+
+
+//CalendarioFull
+// Route::get('calendario', 'CalendarioController@index');
+// Route::get('calendario/eventos', 'CalendarioController@lsitar');
+
+//Canlendario
+Route::get('admin/eventos','CalendarioController@eventos');
+Route::get('calendar', 'CalendarioController@index')->name('calendar');
+Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
+Route::resource('events', 'EventsController');  
+Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
+Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
+Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
+Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
+Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
+//repositorio   
+Route::resource('admin/repositorio','RepositorioController');
+
+Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorioo');
+Route::post('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
+Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
+Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
+Route::post('/subir','Controller@subirArchivo')->name('subir');
+
+//perfil
+
+Route::resource('perfil','PerfilController'); 
+Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
+Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');

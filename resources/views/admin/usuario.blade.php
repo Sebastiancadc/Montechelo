@@ -1,7 +1,5 @@
 
-
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -44,23 +42,39 @@
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                   
                                     <span class="btn-inner--text">Crear colaborador</span>
-                                   
                                 </a>
                                 @include('admin.forms.create')
                             </div>                     
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -69%;
-                                margin-top: -27px;">
+                                margin-top: -54px;">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                   
                                     <span class="btn-inner--text">Crear admin</span>
                                    
                                 </a>
                                 @include('admin.crearUserAdmin')
                             </div>
                         </div>
+                  @if (session('eliminarusuario'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                    <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminarusuario')}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
+                  @if (session('editarUsuario'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('editarUsuario')}}</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          @endif
                     </div>
                   
                     <!-- Light table -->
@@ -103,7 +117,7 @@
                                         <span class="text-muted">{{$user->genero}}</span>
                                     </td>
                                     <td>
-                                        <span class="text-muted">{{$user->cumpleaños}}</span>
+                                        <span class="text-muted">{{$user->cumpleanios}}</span>
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$user->role}}</span>
@@ -149,11 +163,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        @if (session('eliminarusuario'))
-                        <div class="alert alert-success" role="alert">
-                        {{session('eliminarusuario')}} 
-                        </div>
-                     @endif
+                     
+                     
                     </div>
                     <div class="card-footer py-4">
                         <nav aria-label="...">
@@ -163,6 +174,16 @@
                         </nav>
                     </div>
                 </div>
+                <!-- Footer -->
+                <footer class="footer pt-0">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6">
+                            <div class="copyright text-center text-lg-left text-muted">
+                                &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
 

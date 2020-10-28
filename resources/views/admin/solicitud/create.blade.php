@@ -21,7 +21,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                                                 </div>
-                                                                <input class="form-control" placeholder="Nombre" name="Nombre" type="text">
+                                                                <input class="form-control" placeholder="Nombre" name="Nombre" type="text" required>
                                                             </div>
                                                         </div>
                                                 </div>
@@ -32,14 +32,14 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                                             </div>
-                                                            <input class="form-control" placeholder="Apellido" name="Apellido" type="text">
+                                                            <input class="form-control" placeholder="Apellido" name="Apellido" type="text" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <div class="form-group mb-3">
-                                                    <select class="form-control" id="exampleFormControlSelect1" name="Area_de_trabajo" id="Area_de_trabajo">
+                                                    <select class="form-control" id="exampleFormControlSelect1" name="Area_de_trabajo" id="Area_de_trabajo" required>
                                                         <option>Área de trabajo</option>
                                                         <option>Desarrollo</option>
                                                         <option>Talento humano</option>
@@ -55,7 +55,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                                             </div>
-                                                            <input class="form-control" placeholder="Cedula" name="Cedula" type="text">
+                                                            <input class="form-control" placeholder="Cedula" name="Cedula" type="text" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,14 +65,14 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                                             </div>
-                                                            <input class="form-control" placeholder="Fecha" name="Fecha" type="date">
+                                                            <input class="form-control" placeholder="Fecha" name="Fecha" type="date" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <div class="form-group mb-3">
-                                                    <select class="form-control" id="exampleFormControlSelect1" name="Tipo_de_solicitud" id="Tipo_de_solicitud">
+                                                    <select class="form-control" id="exampleFormControlSelect1" name="Tipo_de_solicitud" id="Tipo_de_solicitud" required>
                                                         <option>Vacaciones</option>
                                                         <option>Tipo de solicitud</option>
                                                         <option>Desprendibles de pago</option>

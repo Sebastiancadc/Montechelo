@@ -2,10 +2,6 @@
 <html>
 
 <head>
-
-
-
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,17 +14,17 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-<link rel="stylesheet" href="}">
+
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">S
+  <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+  <!-- Modo Oscuro CSS -->
+  <link rel="stylesheet" href="{{asset("plantilla/css/dark.css")}}" type="text/css">
   <title>Montechelo </title>
 </head>
 
 <body>
-
-
 <?php
   $user = auth()->user();
 ?>
@@ -39,7 +35,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-          <img src="{{asset("plantilla/img/theme/Logo1.png")}}" class="navbar-brand-img" style="margin-top: -7px;
+          <img src="{{asset("plantilla/img/theme/Logo1.png")}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
           max-width: 126%;
           max-height: 10rem;">
         </a>
@@ -60,7 +56,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item"></li>
-            <a class="nav-link active" href="{{ url('home')}}">
+            <a class="nav-link" href="{{ url('home')}}">
               <i class="ni ni-shop text-primary"></i>
               <span class="nav-link-text">Inicio</span>
             </a>
@@ -71,7 +67,6 @@
                 <i class="ni ni-chat-round text-orange"></i>
                 <span class="nav-link-text">Chat</span>
               </a>
-
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url("admin/directorio")}}">
@@ -87,7 +82,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("Evento/index")}}">
+              <a class="nav-link" href="{{url("calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
@@ -116,7 +111,7 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-
+            
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
@@ -188,6 +183,10 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
+            <button class="switch" id="switch">
+                <span><i class="fas fa-sun" style="15px"></i></span>
+                <span><i class="fas fa-moon"style="15px"></i></span>
+            </button>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-chat-round"></i>
@@ -331,7 +330,7 @@
                             <small>2 hrs ago</small>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
                       </div>
                     </div>
                   </a>
@@ -388,7 +387,7 @@
                             <small>2 hrs ago</small>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
                       </div>
                     </div>
                   </a>
@@ -433,7 +432,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Bienvenido!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="{{ url('perfil')}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>Mi perfil</span>
                 </a>
@@ -467,8 +466,6 @@
     </nav>
 
 @yield('content')
-
-</body>
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
@@ -481,16 +478,14 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
-@yield('js')
 
-<!-- <script src="../../assets/js/argon.js?v=1.1.0"></script> -->
+<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
+<!-- Argon JS -->
+<script src="{{asset("plantilla/js/dark.js")}}"></script>
 
 <!-- Demo JS - remove this in your project -->
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script src="{{asset("plantilla/js/demo.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
-<script src="{{asset("plantilla/js/jquery-1.12.4.js")}}"></script>
-<script src="{{asset("plantilla/js/jquery-ui.js")}}"></script>
-
-</html>
+@yield('js')
+</body>

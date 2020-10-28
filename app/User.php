@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','genero','cumpleaños','role'
+        'name', 'email', 'password','genero','cumpleanios','role'
     ];
 
     /**
@@ -52,6 +53,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function admin()
     {
         return $this->role === 'admin'; 
+    }
+    public function setCrbDateAttribute($value)
+    {
+        $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y-m-d', $value);
     }
 
 }

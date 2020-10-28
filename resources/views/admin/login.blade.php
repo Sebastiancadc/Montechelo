@@ -8,7 +8,7 @@
   <meta name="author" content="Creative Tim">
   <title>Login</title>
   <!-- Favicon -->
-  <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
+  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
@@ -82,7 +82,7 @@
                 <div class="custom-control custom-control-alternative custom-checkbox">
                   <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                   <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
+                    {{-- <span class="text-muted">Remember me</span> --}}
                   </label>
                 </div>
                 <div class="text-center">
