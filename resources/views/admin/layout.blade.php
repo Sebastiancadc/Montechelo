@@ -2,8 +2,14 @@
 <html>
 
 <head>
+
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
@@ -16,7 +22,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+  <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">S
   <title>Montechelo </title>
 </head>
 
@@ -475,14 +481,16 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
-
-<!-- Argon JS -->
+@yield('js')
 
 <!-- <script src="../../assets/js/argon.js?v=1.1.0"></script> -->
 
 <!-- Demo JS - remove this in your project -->
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/js/demo.min.js")}}"></script>
-
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+
+<script src="{{asset("plantilla/js/jquery-1.12.4.js")}}"></script>
+<script src="{{asset("plantilla/js/jquery-ui.js")}}"></script>
+
 </html>
