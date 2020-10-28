@@ -150,3 +150,4 @@ Route::post('/subir','Controller@subirArchivo')->name('subir');
 Route::resource('perfil','PerfilController'); 
 Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
 Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
+Route::post('/perfil/foto', 'ProfileController@updatePhoto');

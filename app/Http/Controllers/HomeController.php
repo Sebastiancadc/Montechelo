@@ -110,4 +110,25 @@ class HomeController extends Controller
 
         // return $this->loggedOut($request) ?: redirect('admin.login');
     }
+
+    public function postProfileImage(Request $request)
+    {
+       $this->validate($request,['photo'=>'required|iamge']);
+       $user=Auth::user();
+       $extension=$request->file('photo')->getClient0riginalExtension();
+       $file_name=$user->id .'.'.$extension;
+       $path= public_path('images/user'.$file_name);
+
+       Image::make($request->file('photo'))->fit(144,144)->save();
+
+       $user->photo=$extension;
+       $user->save();
+
+       $data['success']=true;
+       $data['user']=$path;
+       
+
+
+return '';
+}
 }
