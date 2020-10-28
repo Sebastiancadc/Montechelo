@@ -125,7 +125,9 @@
                                     </td>
                                     <td class="table-actions">
                                        
-                                        <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
+                                        <a  <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
+                                            <i class="fas fa-user-edit"></i>
+                                        </a>class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
                                        

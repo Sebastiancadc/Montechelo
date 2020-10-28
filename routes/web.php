@@ -142,4 +142,5 @@ Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarper
 Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
 
 //Directorio
-Route::resource('Directorio','DirectorioController'); 
+Route::resource('Directorio','DirectorioController');
+Route::get('verperfil/{id}','DirectorioController@perfilUsuarios')->name('verperfil');
