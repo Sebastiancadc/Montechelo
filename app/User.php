@@ -11,7 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    
+
     /*
      * The attributes that are mass assignable.
      *
@@ -52,11 +52,16 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function admin()
     {
-        return $this->role === 'admin'; 
+        return $this->role === 'admin';
     }
     public function setCrbDateAttribute($value)
     {
         $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y-m-d', $value);
     }
+    public function noticia()
+    {
+        return $this->hasMany('App\Noticia');
+    }
+
 
 }
