@@ -205,9 +205,8 @@
                 </div>
           </div>
           <div class="card-body">
-
-
-            {{-- @foreach ($users as $user)
+          
+           @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
 
@@ -217,11 +216,12 @@
               </div>
               <div class="col ml--2">
                 <h4 class="mb-0">
-                <a>{{$user->name." ". App\Helpers\Helpers::formatearFecha($user->cumpleaños)}}</a>x
+                <a>{{$user->name}}  <a style="color: #8898aa !important;">{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
                 </h4>
+               
               </div>
             </div>
-            @endforeach --}}
+            @endforeach
           </div>
         </div>
 
@@ -229,12 +229,11 @@
 
         <div class="card widget-calendar">
           <!-- Card header -->
+          
           <div class="card-header">
             <!-- Title -->
             <h5 class="h3 mb-0">Proximos eventos</h5>
-             <h5><?php
-
-              ?>
+             <h5>
           </h5>
           </div>
           <div class="card-header">
@@ -242,17 +241,26 @@
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
           </div>
           <!-- Card body -->
+          
           <div class="card-body">
-            <div data-toggle="widget-calendar"></div>
+            <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div>
+            <div data-toggle="calendar" id="date" style="margin-top: -151%;" ></div>
+            
           </div>
-          <div style="height: 125px;">
-            <br>
-            <p style="margin-left: 54px;">Reunion 25 octubre</p>
-            <p style="margin-left: 54px;">Capacitacion 27 octubre</p>
-
+          @foreach ($eventos as $evento)
+          <div style="padding: 0.25rem 0.5rem;
+          border-bottom: 1px solid rgba(0, 0, 0, .05);">            
+            <h4>
+              <br>
+            <a style="margin-left:31px;">{{$evento->name}} 
+            <a style="color: #8898aa !important;">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>    
+            <a style="color: #8898aa !important;"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
+          <br>
+            </h4>
           </div>
-
+          @endforeach
         </div>
+        
         <!-- Progress track -->
 
         <div class="card">
@@ -268,54 +276,6 @@
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
                       <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col ml--2">
-                    <h4 class="mb-0">
-                      <a>User</a>
-                    </h4>
-                    <span class="text-success">●</span>
-                    <small>Online</small>
-                  </div>
-
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col ml--2">
-                    <h4 class="mb-0">
-                      <a>User</a>
-                    </h4>
-                    <span class="text-success">●</span>
-                    <small>Online</small>
-                  </div>
-
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col ml--2">
-                    <h4 class="mb-0">
-                      <a>User</a>
-                    </h4>
-                    <span class="text-success">●</span>
-                    <small>Online</small>
-                  </div>
-
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
                     </a>
                   </div>
                   <div class="col ml--2">
@@ -347,19 +307,32 @@
 
   </div>
 </div>
-
+<style>
+  .Especial{
+      background-color: #2dce89 !important;
+      }
+  .Advertencia  {
+      background-color: #fb6340 !important;
+      }
+  .Importante{
+      background-color: #11cdef !important;
+      }
+  .eventoRojo{
+     
+      background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
+      }
+      .black{
+        color:#000000; 
+      }
+</style>
+@section('js')
 <script>
   $(document).ready(function () {
-
-          $('#calendarioEvent').fullCalendar({
-
-          header: {
-          left: 'prev,next',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-      },
-          events: events,
+          events={!! json_encode($events) !!};
+          $('#date').fullCalendar({
+              events: events,
           })
-  });
+      });
 </script>
+@endsection
 @endsection

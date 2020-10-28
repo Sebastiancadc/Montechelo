@@ -1,4 +1,8 @@
 @extends('admin.layout')
+
+<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
+<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
 @section('content')
 <body>
     <!-- Header -->
@@ -18,97 +22,108 @@
                                 </ol>
                             </nav>
                     </div>
+
                 </div>
 
             </div>
+
         </div>
     </div>
+
+
+
     <!-- Page content -->
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <!-- Card header -->
-                    <div class="card-header border-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="mb-0">Gestión de Novedades</h3>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
 
-                                    <span class="btn-inner--text">Crear</span>
+ <div class="card-header border-0">
+    <div class="row float-left">
+        <div class="col-12">
+            <h3 class="mb-0">Gestión de Novedades</h3>
 
-                                </a>
-                                @include('admin.novedad.create')
-                            </div>
-                        </div>
-                        @if (session('eliminar'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <span class="alert-icon"><i class="ni ni-"></i></span>
-                          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      @endif
-                      @if (session('update'))
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                          <span class="alert-icon"><i class="ni ni-"></i></span>
-                          <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      @endif
-                      
-                    </div>
+        </div>
+        <br>
+        <div class="col-6 text-right">
+            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
+                <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+
+                <span class="btn-inner--text">Crear</span>
+
+            </a>
+            @include('admin.novedad.create')
+        </div>
+
+        <br>
+
+    </div>
+
+    @if (session('eliminar'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  @endif
+  @if (session('update'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  @endif
+</div>
                     <!-- Light table -->
-                    <div class="table-responsive">
-                        <table class="table align-items-center table-flush test">
+
+                    <div class="table-responsive py-4" style="margin-top: -41px;">
+                        
+                        <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col" class="sort" data-sort="área">#</th>
-                                    <th scope="col" class="sort" data-sort="área">Área</th>
-                                    <th scope="col" class="sort" data-sort="fecha">Fecha</th>
-                                    <th scope="col" class="sort" data-sort="novedad">Novedad</th>
-                                    <th scope="col" class="sort" data-sort="descripción">Descripción</th>
-                                    <th scope="col" class="sort" data-sort="descripción">Estado</th>
-                                    <th scope="col" class="sort" data-sort="Acciones">Acciones</th>
-                                </tr>
+                                    <th>#</th>
+                                    <th>Área</th>
+                                    <th>Fecha </th>
+                                    <th>Novedad</th>
+                                    <th>Descripción</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+   
                             </thead>
+                            <tfoot>
+                                
+                                <th>#</th>
+                                <th>Área</th>
+                                <th>Fecha </th>
+                                <th>Novedad</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                                
+                            </tfoot>
                             <tbody>
-
-                                @foreach ($novedad as $item)
-                                <tr>
-                                    <td class="table-user">
-                                        <b></b>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->area}}</span>
-                                    </td>
-                                    <td>
-                                        <a class="font-weight-bold">{{$item->fecha}}</a>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->novedad}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->descripcion}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-success">{{$item->estado}}</span>
-                                    </td>
-                                    <td class="table-actions">
-                                        <a href="{{route('editarnovedad',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
-                                            <i class="fas fa-user-edit"></i>
+                                @foreach ($novedad as $item) 
+                                
+                            
+                                    <td></td>
+                                    <td>{{$item->area}}</td>
+                                    <td>{{$item->fecha}}</td>
+                                    <td>{{$item->novedad}}</td>
+                                    <td>{{$item->descripcion}}</td>
+                                    <td><span class="badge badge-lg badge-success">{{$item->estado}}</span></td> 
+                                    
+                                    <td><a href="{{route('editarnovedad',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
+                                        <i class="fas fa-user-edit"></i>
 
 
-                                        <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="Eliminar novedad">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-
+                                    <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="Eliminar novedad">
+                                        <i class="fas fa-trash"></i>
+                                    </a></td> 
                                     <div class="modal fade" id="deleteNovedad{{$item->id_novedad}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                                         <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                                           <div class="modal-content">
@@ -133,12 +148,11 @@
                                           </div>
                                         </div>
                                       </div>
-                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
+                            
                         </table>
-
                     </div>
 
                     <div class="card-footer py-4">
@@ -183,4 +197,16 @@
     }
     addNumeration("test")
     </script>
+
+
+@section('jss')
+<script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
+    
+@endsection
 @endsection

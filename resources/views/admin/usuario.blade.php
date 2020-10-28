@@ -1,5 +1,4 @@
 
-
 @extends('admin.layout')
 @section('content')
     <div class="header bg-primary pb-6">
@@ -49,7 +48,7 @@
                             </div>                     
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -69%;
-                                margin-top: -27px;">
+                                margin-top: -54px;">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
                                     <span class="btn-inner--text">Crear admin</span>
                                    

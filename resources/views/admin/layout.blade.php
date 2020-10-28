@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
@@ -33,7 +35,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-          <img src="{{asset("plantilla/img/theme/Logo1.png")}}" class="navbar-brand-img" style="margin-top: -7px;
+          <img src="{{asset("plantilla/img/theme/Logo1.png")}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
           max-width: 126%;
           max-height: 10rem;">
         </a>
@@ -476,16 +478,15 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
-
+@yield('jss')
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
 <script src="{{asset("plantilla/js/perfil.js")}}"></script>
 
-<!-- Demo JS - remove this in your project -->
+
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-
-<script src="{{asset("plantilla/js/dark.js")}}"></script>
 @yield('js')
+
 </body>

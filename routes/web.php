@@ -5,21 +5,21 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'InicioController@index');
+Route::get('/', function () {
 
-Route::get('/home', 'InicioController@index2');
+    return view('admin.login');
+});
 
-Route::get('/home', 'InicioController@index2')->middleware('verified');
+Route::get('/home', 'InicioController@index');
+
+// Route::get('/home', 'InicioController@index')->middleware('verified');
 
 Auth::routes();
 
 
 //dasboard
 
-Route::get('home', function () {
 
-    return view('admin.dashboard');
-});
 // login
 Route::get('admin', function () {
 

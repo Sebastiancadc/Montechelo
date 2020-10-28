@@ -1,13 +1,7 @@
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
-<!-- Page plugins -->
 
-<link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
-<!-- Argon CSS -->
-<link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+<link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
+
 <style>
   .eventoVerde{
       background-color: #2dce89 !important;
@@ -78,7 +72,7 @@
               <div class="col-md-6">
             <div class="form-group">
               <h3>Fecha inicial</h3>
-              <div class='input-group date' id='datetimepicker1'>
+              <div class='input-group' id='datetimepicker1'>
                   <input type='text' class="form-control" name="start_time" value='{{$eventos->start_time}}'>
                   <span class="input-group-addon input-group-append">
                       <button class="btn btn-outline-primary" type="button" id="button-addon2">  <span class="fa fa-calendar"></span></button>
@@ -96,15 +90,15 @@
                 </span>
             </div>
           </div>
-        </div>
+        </div>  
         </div>
             <div class="form-group mb-3">
               <div class="form-group">
                 <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                     <option>{{$eventos->className}}</option>
-                    <option value="Importante">Importante</option>
-                    <option value="Especial">Especial</option>
-                    <option value="Advertencia">Advertencia</option>
+                    <option class="importante" value="Importante">Importante</option>
+                    <option class="especial" value="Especial">Especial</option>
+                    <option class="advertencia" value="Advertencia">Advertencia</option>
                   </select>
               </div>
           </div>
@@ -124,13 +118,17 @@
 </div>
 </div>
 </div>
+<style>
+.advertencia{color:#fb6340;}
+.importante{color:#11cdef;}
+.especial{color:#2dce89;}
+</style>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
-
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
-<script>
+<script type="text/javascript">
   $(function () {
       $('#datetimepicker1').datetimepicker({
-        format: 'YYYY/MM/DD HH:SS',
+        format: 'Y/M/D hh:mm',
         icons: {
           time: "fa fa-clock",
           date: "fa fa-calendar-day",
@@ -148,7 +146,7 @@
 <script>
   $(function () {
       $('#datetimepicker12').datetimepicker({
-        format: 'YYYY/MM/DD HH:SS',
+        format: 'Y/M/D hh:mm',
         icons: {
           time: "fa fa-clock",
           date: "fa fa-calendar-day",

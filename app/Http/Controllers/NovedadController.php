@@ -44,7 +44,14 @@ class NovedadController extends Controller
 
     public function crearnovedades(Request $request)
     {
-        Novedad::create($request->all());
+
+        $novedad = new Novedad();
+        $novedad->area = $request->area;
+        $novedad->fecha = new \Datetime($request->fecha);
+        $novedad->novedad = $request->novedad;
+        $novedad->descripcion = $request->descripcion;
+        $novedad->estado = $request->estado;
+        $novedad->save();
         return back()->with('crearnovedad','Novedad registrada correctamente');
     }
 

@@ -1,5 +1,6 @@
 
   <!-- Modal -->
+  <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -18,7 +19,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-world-2"></i></span>
                         </div>
-                        <input class="form-control" placeholder="Titulo" name="name" type="text">
+                        <input class="form-control" placeholder="Titulo" name="name" type="text" required>
                     </div>
                 </div>
             <div class="row"> 
@@ -47,17 +48,17 @@
         </div>
             <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
-                    <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
+                    <select class="form-control" id="exampleFormControlSelect1" name="className" id="class" required>
                         <option>Tipo</option>
-                        <option value="eventoAzul">Importante</option>
-                        <option value="eventoVerde">Especial</option>
-                        <option value="eventoAmarillo">Advertencia</option>
+                        <option class="myRed" value="Importante">Importante</option>
+                        <option class="myblue" value="Especial">Especial</option>
+                        <option class="mygreen" value="Advertencia">Advertencia</option>
                       </select>
                 </div>
             </div>
             <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
-                    <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5"></textarea>
+                    <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5" required></textarea>
                 </div>
             </div>
             </div>
@@ -73,10 +74,10 @@
   <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 
   <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
-  <script>
+  <script type="text/javascript">
     $(function () {
         $('#datetime1').datetimepicker({
-          format: 'YYYY/MM/DD HH:SS',
+          format: 'Y/M/D hh:mm',
           icons: {
             time: "fa fa-clock",
             date: "fa fa-calendar-day",
@@ -94,7 +95,7 @@
   <script>
     $(function () {
         $('#datetimepicker12').datetimepicker({
-          format: 'YYYY/MM/DD HH:SS',
+          format: 'Y/M/D hh:mm',
           icons: {
             time: "fa fa-clock",
             date: "fa fa-calendar-day",
@@ -108,4 +109,4 @@
           }
         });
     });
-  </script>
+</script>

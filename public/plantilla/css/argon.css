@@ -26850,11 +26850,10 @@ table.dataTable tbody > tr.selected
 .fc-event .fc-time
 {
     float: left;
-
     margin: 0 0 0 -1px;
     padding: 2px 6px;
-
     background: rgba(0, 0, 0, .2);
+    color: #fff;
 }
 
 .fc-view,

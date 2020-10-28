@@ -480,5 +480,5 @@ height: 80%;"></span>
 <script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
-<script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>i
+<script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 @endsection

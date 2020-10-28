@@ -1,5 +1,4 @@
 @extends('admin.layout')
-<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 @section('content')
 <div class="header bg-primary pb-6">
   <div class="container-fluid">
@@ -36,16 +35,16 @@
               <div class="col-auto" style="width: -webkit-fill-available;">
                
                 <div class="icon-shape rounded-circle" style="background-color: #2dce89;padding: 8px;"></div>
-                <span><h4 style="margin-left: 25px;margin-top: -18px;">Especial</h4></span>
+                <span><h4 style="margin-left: 25px;margin-top: -26px;">Especial</h4></span>
                
               </div>
               <div class="col-auto" style="width: -webkit-fill-available;">
                 <div class="icon-shape rounded-circle" style="background-color: #fb6340;padding: 8px;">
-                </div><span><h4 style="margin-left: 25px;margin-top: -18px;">Advertencia</h4></span>
+                </div><span><h4 style="margin-left: 25px;margin-top: -25px;">Advertencia</h4></span>
               </div>
               <div class="col-auto" style="width: -webkit-fill-available;">
                 <div class="icon-shape rounded-circle" style="background-color: #11cdef;padding: 8px;"></div>
-                <span><h4 style="margin-left: 25px;margin-top: -18px;">Importante</h4></span>
+                <span><h4 style="margin-left: 25px;margin-top: -25px;">Importante</h4></span>
               </div>
 
            

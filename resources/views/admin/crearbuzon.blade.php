@@ -12,6 +12,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item active" aria-current="page">Agregar sugerencia</li>
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 </ol>
               </nav>
             </div>
@@ -39,6 +40,9 @@
                         @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
                             <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
+
+
+                                <option>Seleccionar tipo de sugerencia </option>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>
                                 <option>Observacion</option>
@@ -53,13 +57,13 @@
 
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
                         </div>
                         @error('descripcion')
                         <div class="alert alert-danger">descripcion requerida</div>
                         @enderror
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1" name="area">Area</label>
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" required>Area</label>
                             <select class="form-control" id="area" name="area">
                                 <option>Seleccione el area</option>
                                 <option>Diseño</option>
@@ -75,7 +79,7 @@
                             <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>
                     </form>
-                    
+
             </div>
 
         </div>
