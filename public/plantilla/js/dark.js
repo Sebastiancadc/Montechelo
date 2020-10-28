@@ -9,10 +9,10 @@ btnSwitch.addEventListener('click', () => {
 	// Guardamos el modo en localstorage.
 	if(document.body.classList.contains('dark')){
 		localStorage.setItem('dark-mode', 'true');
-		imagen.setAttribute("src", "plantilla/img/theme/Montechelo_Negativo.png");
+		// imagen.setAttribute("src", "plantilla/img/theme/Montechelo_Negativo.png");
 	} else {
 		localStorage.setItem('dark-mode', 'false');
-		imagen.setAttribute("src", "plantilla/img/theme/Logo1.png");
+		// imagen.setAttribute("src", "plantilla/img/theme/Logo1.png");
 	}
 	
 });
