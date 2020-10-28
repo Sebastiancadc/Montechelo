@@ -1,6 +1,6 @@
 const btnSwitch = document.querySelector('#switch');
 
-const imagen=document.querySelector('#imagenmenuleft');
+//const imagen=document.querySelector('#imagenmenuleft');
 
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');

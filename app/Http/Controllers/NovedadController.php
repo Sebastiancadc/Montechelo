@@ -26,7 +26,7 @@ class NovedadController extends Controller
      */
     public function index()
     {
-        $novedad = Novedad::paginate(4);
+        $novedad = Novedad::paginate(9);
         return view('admin.novedad', compact('novedad'));
     }
 

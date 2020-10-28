@@ -1,7 +1,7 @@
 
 @extends('admin.layout')
 @section('content')
-    <div class="header bg-primary pb-6">
+<div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
@@ -77,12 +77,13 @@
           @endif
                     </div>
                   
+
                     <!-- Light table -->
-                    <div class="table-responsive">
-                   
-                        <table class="table align-items-center table-flush test" >
+                    <div class="table-responsive py-4" style="margin-top: -51px;">
+                        
+                        <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
-                                <tr>
+                               
                                     <th scope="col" class="sort" data-sort="nombre">#</th>
                                     <th scope="col" class="sort" data-sort="nombre">Nombre</th>
                                     <th scope="col" class="sort" data-sort="apellido">Apellido</th>
@@ -96,7 +97,7 @@
                                     {{-- <th scope="col" class="sort" data-sort="dirección">Dirección</th>
                                     <th scope="col" class="sort" data-sort="estado">Estado</th> --}}
                                     <th scope="col" class="sort" data-sort="acciones">Acciones</th>
-                                </tr>
+                                
                             </thead>
                             <tbody>
 
@@ -166,6 +167,20 @@
                      
                      
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
@@ -174,6 +189,7 @@
                         </nav>
                     </div>
                 </div>
+
                 <!-- Footer -->
                 <footer class="footer pt-0">
                     <div class="row align-items-center justify-content-lg-between">
@@ -208,4 +224,3 @@
         addNumeration("test")
         </script>
     @endsection
-

@@ -1,9 +1,8 @@
 @extends('admin.layout')
 
-<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
+
 @section('content')
+
 <body>
     <!-- Header -->
     <!-- Header -->
@@ -47,10 +46,11 @@
         </div>
         <br>
         <div class="col-6 text-right">
-            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
+            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -650%;
+            margin-top: -54px;">
                 <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
 
-                <span class="btn-inner--text">Crear</span>
+                <span class="btn-inner--text">Crear</span >
 
             </a>
             @include('admin.novedad.create')
@@ -58,34 +58,35 @@
 
         <br>
 
-    </div>
 
-    @if (session('eliminar'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <span class="alert-icon"><i class="ni ni-"></i></span>
-      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminar')}}</span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  @endif
-  @if (session('update'))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <span class="alert-icon"><i class="ni ni-"></i></span>
-      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  @endif
+        
+    </div>
 </div>
+@if (session('eliminar'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+  <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-fat-remove" ><strong></strong>{{session('eliminar')}}</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+@if (session('update'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+  <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-check-bold" ><strong></strong>{{session('update')}}</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
                     <!-- Light table -->
 
-                    <div class="table-responsive py-4" style="margin-top: -41px;">
+                    <div class="table-responsive py-4" style="margin-top: -51px;">
                         
                         <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
-                                <tr>
+                                
                                     <th>#</th>
                                     <th>Área</th>
                                     <th>Fecha </th>
@@ -199,14 +200,5 @@
     </script>
 
 
-@section('jss')
-<script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-    
-@endsection
+
 @endsection

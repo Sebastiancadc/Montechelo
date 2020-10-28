@@ -44,9 +44,9 @@
                     </div>
 
                     <!-- Light table -->
-                    <div class="table-responsive">
-
-                        <table class="table align-items-center table-flush test" >
+                    <div class="table-responsive py-4" style="margin-top: -40px;">
+                        
+                        <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="nombre">#</th>
