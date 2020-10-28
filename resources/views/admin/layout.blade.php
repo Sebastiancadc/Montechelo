@@ -69,7 +69,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/directorio")}}">
+              <a class="nav-link" href="{{url("Directorio")}}">
                 <i class="ni ni-badge text-info"></i>
                 <span class="nav-link-text">Directorio</span>
               </a>
