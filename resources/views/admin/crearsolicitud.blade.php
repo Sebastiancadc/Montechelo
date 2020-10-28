@@ -36,18 +36,18 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                <input type="text" class="form-control"  name="nombre" placeholder="">
+                <input type="text" class="form-control"  name="nombre" required>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                <input type="text" class="form-control" name="apellido" placeholder="">
+                <input type="text" class="form-control" name="apellido" required>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Tipo de solicitud</label>
-                <select class="form-control" name="tipo_solicitud">
+                <select class="form-control" name="tipo_solicitud" required>
                     <option>Vacaciones</option>
                     <option>Desprendibles de pago</option>
                     <option>Certificado laboral</option>
@@ -59,18 +59,18 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Número de documento</label>
-                    <input type="text" class="form-control"  name="cedula" placeholder="">
+                    <input type="text" class="form-control"  name="cedula" placeholder="" required>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Teléfono</label>
-                    <input type="text" class="form-control"  name="telefono" placeholder="">
+                    <input type="text" class="form-control"  name="telefono" placeholder="" required>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Área de trabajo</label>
-                <select class="form-control"  name="area_trabajo">
+                <select class="form-control"  name="area_trabajo" required>
                     <option>Desarrollo</option>
                     <option>Talento Humano</option>
                     <option>Recursos Humanos</option>
@@ -82,7 +82,7 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols2Input">Fecha</label>
-                    <input type="date" class="form-control" name="fecha">
+                    <input type="date" class="form-control" name="fecha" required>
                 </div>
             </div>
         </div>

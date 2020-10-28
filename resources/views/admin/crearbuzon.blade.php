@@ -38,7 +38,7 @@
                         </div>
                         @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
-                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
+                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia" required>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>
                                 <option>Observacion</option>
@@ -53,13 +53,13 @@
 
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
                         </div>
                         @error('descripcion')
                         <div class="alert alert-danger">descripcion requerida</div>
                         @enderror
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1" name="area">Area</label>
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" required>Area</label>
                             <select class="form-control" id="area" name="area">
                                 <option>Seleccione el area</option>
                                 <option>Diseño</option>

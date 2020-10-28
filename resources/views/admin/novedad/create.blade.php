@@ -18,7 +18,8 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-satisfied"></i></span>
                                           </div>
-                                          <select class="form-control" id="exampleFormControlSelect1" name="area">
+                                          <select class="form-control" id="exampleFormControlSelect1" name="area" required>
+                                            <option>Seleccione algun campo</option>
                                             <option>Desarrollo</option>
                                             <option>Talento humano</option>
                                             <option>Recursos humanos</option>
@@ -31,7 +32,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                           </div>
-                                          <input class="form-control"  name="fecha" type="date">
+                                          <input class="form-control"  name="fecha" type="date" required>
                                         </div>
                                       </div>
                                       <div class="form-group mb-3">
@@ -39,13 +40,13 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-active-40"></i></span>
                                           </div>
-                                          <input class="form-control" placeholder="Novedad" name="novedad" type="text">
+                                          <input class="form-control" placeholder="Novedad" name="novedad" type="text" required>
                                         </div>
                                       </div>
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                     
-                                        <textarea class="form-control" placeholder="Descripcion de la novedad" name="descripcion" type="text" cols="10" rows="5"></textarea>
+                                        <textarea class="form-control" placeholder="Descripcion de la novedad" name="descripcion" type="text" cols="10" rows="5" required></textarea>
                                         </div>
                                       </div>
 

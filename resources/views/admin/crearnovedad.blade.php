@@ -43,7 +43,8 @@
       <div class="row">
         <div class="col-md-4">
             <label class="form-control-label" for="exampleFormControlSelect1">Area</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="area">
+            <select class="form-control" id="exampleFormControlSelect1" name="area" required>
+              <option></option>
               <option>Desarrollo</option>
               <option>Talento humano</option>
               <option>Recursos humanos</option>
@@ -54,7 +55,7 @@
       
         <div class="col-md-4">
         <div class="tab-content">
-          <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
+          <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab" >
             <div class="form-group">
               <label class="form-control-label" for="example3cols2Input">Fecha</label>
               <div class="input-group">
@@ -62,7 +63,7 @@
                   <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                 </div>
                
-                <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"/>
+                <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text" required/>
               </div>
             </div>
           </div>
@@ -71,7 +72,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label class="form-control-label" for="example3cols3Input">Novedad</label>
-            <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="">
+            <input type="text" class="form-control" id="example3cols3Input" name="novedad" required>
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@
 
         <div class="col-md-9">
             <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required></textarea>
           </div>
       </div>
     </div>

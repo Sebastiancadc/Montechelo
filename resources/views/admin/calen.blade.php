@@ -1,6 +1,5 @@
 @extends('admin.layout')
-
-
+<link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
 @section('content')
   
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">

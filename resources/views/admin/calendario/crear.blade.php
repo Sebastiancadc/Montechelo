@@ -19,7 +19,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-world-2"></i></span>
                         </div>
-                        <input class="form-control" placeholder="Titulo" name="name" type="text">
+                        <input class="form-control" placeholder="Titulo" name="name" type="text" required>
                     </div>
                 </div>
             <div class="row"> 
@@ -48,7 +48,7 @@
         </div>
             <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
-                    <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
+                    <select class="form-control" id="exampleFormControlSelect1" name="className" id="class" required>
                         <option>Tipo</option>
                         <option class="myRed" value="Importante">Importante</option>
                         <option class="myblue" value="Especial">Especial</option>
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
-                    <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5"></textarea>
+                    <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5" required></textarea>
                 </div>
             </div>
             </div>

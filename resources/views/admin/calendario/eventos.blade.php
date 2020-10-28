@@ -1,7 +1,6 @@
-
-
 @extends('admin.layout')
 @section('content')
+
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
@@ -140,11 +139,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        @if (session('eliminarusuario'))
-                        <div class="alert alert-success" role="alert">
-                        {{session('eliminarusuario')}} 
-                        </div>
-                     @endif
                     </div>
                     <div class="card-footer py-4">
                         <nav aria-label="...">
