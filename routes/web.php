@@ -88,6 +88,8 @@ Route::get('crearUserAdmin', 'HomeController@crearAdmin');
 Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
 Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
 Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+Route::delete('/user/imagen/', 'HomeController@postProfileImage');
+
 });
 
 //Novedad

@@ -11,13 +11,24 @@ $(function(){
     avatarUrl=$avatarForm.attr('ation');
 
     $avatarImage.on('change', function () {
-       $.ajax({url:'/test/example',
+      
+    
+    $.ajax({
+    url: avatarUrl+'?'+savatarForm.serialize(),
     method:'POST',
-    data: params})
+    data: $avatarForm.serialize(),
+    data:formData: false,
+    contentType:false
 
 
-    })
-    .fail(function(){ 
+})
+.done(function(data){ if (data.success)
+    console. log(data.path);
 
+})
+.fail(function(){ 
+
+    alert('la imagen tiene formato incorrecto')
+});
 });
 });
