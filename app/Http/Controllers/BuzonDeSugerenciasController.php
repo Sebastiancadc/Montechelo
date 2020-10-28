@@ -16,13 +16,13 @@ class BuzonDeSugerenciasController extends Controller
      */
     public function index()
     {
-        $buzon=buzon_de_sugerencias::paginate(4);
+        $buzon=buzon_de_sugerencias::all();
         return view('admin.buzon.index', compact('buzon'));
     }
 
     public function index2()
     {
-        $buzon=buzon_de_sugerencias::paginate(4);
+        $buzon=buzon_de_sugerencias::all();
         return view('admin.buzon', compact('buzon'));
     }
 
@@ -40,7 +40,7 @@ class BuzonDeSugerenciasController extends Controller
     public function crearsugerencias(Request $request)
     {
         buzon_de_sugerencias::create($request->all());
-        return back()->with('buzon_crear','Sugerencia registrada correctamente');
+        return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Sugerencia registrada correctamente');
     }
 
     public function destroy($id)

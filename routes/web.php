@@ -79,6 +79,17 @@ Route::get('evento', function () {
     return view('admin.calendario.eve');
 });
 
+Route::get('admin/noticia', function () {
+
+    return view('admin.noticia');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('categoria', 'CategoryController');
+    Route::resource('noticia', 'NoticiasController');
+
+ });
+
 
 //Usuario
 Route::group(['prefix' => 'admin','middleware' =>'admin'], function() {
@@ -122,13 +133,13 @@ Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'
 Route::get('admin/eventos','CalendarioController@eventos');
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
 Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
-Route::resource('events', 'EventsController');  
+Route::resource('events', 'EventsController');
 Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
 Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
 Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
 Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
 Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
-//repositorio   
+//repositorio
 Route::resource('admin/repositorio','RepositorioController');
 
 Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorioo');
@@ -139,9 +150,27 @@ Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('
 Route::post('/subir','Controller@subirArchivo')->name('subir');
 
 //perfil
-Route::resource('perfil','PerfilController'); 
+Route::resource('perfil','PerfilController');
 Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
 Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
 
 //Directorio
-Route::resource('Directorio','DirectorioController'); 
+Route::resource('Directorio','DirectorioController');
+Route::get('verperfil/{id}','DirectorioController@perfilUsuarios')->name('verperfil');
+
+//Noticias
+Route::resource('admin/noticia', 'NoticiasController');
+Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
+Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
+Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
+Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editar');
+Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
+Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
+Route::get('post/{slug}','NoticiasController@post')->name('post');
+
+//Categorias
+Route::resource('admin/categoria', 'CategoryController');
+Route::get('crearcategoria', 'CategoryController@crearbuzon')->name('crearcategoria');
+Route::post('crearcategorias', 'CategoryController@crearsugerencias')->name('crearcategorias');
+Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
+Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');

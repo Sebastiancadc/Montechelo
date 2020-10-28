@@ -46,7 +46,7 @@ class SolicitudController extends Controller
     public function crearsolicitudes(Request $request)
     {
         Solicitud::create($request->all());
-        return view('admin/crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');
+        return redirect()->action('SolicitudController@crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');
     }
 
 

@@ -27,6 +27,15 @@
       <h3 class="mb-0">Enviar solicitud</h3>
     </div>
 
+    @if (session('crearsolicitudes'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('crearsolicitudes')}}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  @endif
     <form role="form" method="POST" action="{{ url('crearsolicitudes')}}" >
       @csrf @method('POST')
     <!-- Card body -->
@@ -88,7 +97,7 @@
         </div>
         <div class="form-group">
             <div class="custom-control custom-checkbox mb-3">
-                <input class="custom-control-input" type="checkbox" value="" required>
+                <input class="custom-control-input" type="checkbox" >
                 <label class="custom-control-label" for="invalidCheck2">Acepto los términos y condiciones.</label>
                 <div class="invalid-feedback">
                     Debes aceptar los términos y condiciones antes de enviar.
@@ -102,11 +111,6 @@
     </div>
   </form>
 
-  @if (session('crearsolicitud'))
-    <div class="alert alert-success mt-3">
-    {{session('crearsolicitud')}}
-    </div>
- @endif
   </div>
   <!-- Footer -->
     <footer class="footer pt-0">
