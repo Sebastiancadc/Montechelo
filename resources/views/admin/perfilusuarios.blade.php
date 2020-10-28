@@ -11,9 +11,9 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->apellido}}</h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} </h1>
       </div>
-      <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
+  
     </div>
   </div>
 </div>
@@ -49,13 +49,16 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{ Auth::user()->name}}<span class="font-weight-light"><br> <?php echo calculaedad(Auth::user()->cumpleanios) ?></span>
+              {{$perfil->name}}<span class="font-weight-light"><br> <?php echo calculaedad($perfil->cumpleanios) ?></span>
               años
             </h5>
-            <div class="h5 mt-4">
-              {{ Auth::user()->email}}
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>{{$perfil->area}}
             </div>
-
+            <div class="h5 mt-4">
+              {{$perfil->email}}
+            </div>
+            
           </div>
         </div>
       </div>
@@ -259,8 +262,6 @@ height: 148%;"></span>
         </div>
       </div>
     </div>
-
-
     <div class="col-xl-8 order-xl-1" style="margin-top: 30px">
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
@@ -281,82 +282,49 @@ height: 148%;"></span>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
 
-              <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
-                @csrf @method('PUT')
+              
                 <hr class="my-4" />
-                @if (session('editarusu'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                  <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55"><strong></strong>{{session('editarusu')}}</span>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                @endif
                 <!-- Address -->
                 <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-md-6">
                         <h4>Nombre</h4>
-                        <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
+                        <h4 class=" text-muted mb-4">{{$perfil->name}}</h4>
                     </div>
                     <div class="col-md-5">
                       <div class="tab-content">
-                        <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
-                          <div class="form-group">
-                            <label class="form-control-label" for="example3cols2Input">Fecha</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                              </div>
-                              <input class="form-control datepicker" id="date" type="text" name="cumpleanios" value='{{App\Helpers\Helpers::formatearFechaPerfil(Auth::user()->cumpleanios)}}'>
-                            </div>
-                          </div>
-                        </div>
+                        <h4>Fecha de nacimiento</h4>
+                        <h4 class=" text-muted mb-4">{{$perfil->cumpleanios}}</h4>
                       </div>
                     </div>
                   </div>        
                   <div class="row">
                     <div class="col-md-6">
                       <h4>Gmail</h4>
-                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
+                      <h4 class=" text-muted mb-4">{{$perfil->email}}</h4>
 
                     </div>
                     <div class="col-md-5">
                       <h4>Genero</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
-                        <option>{{ Auth::user()->genero}}</option>
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro</option>
-                      </select>
+                      <h4 class=" text-muted mb-4">{{$perfil->genero}}</h4>
                     </div>
                   </div>  
-                  <br> 
+
                   <div class="row">
                     <div class="col-md-6">
                       <h4>Area</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
-                        <option>{{ Auth::user()->area}}</option>
-                        <option>Programacion</option>
-                        <option>Diseño</option>
-                        <option>Marketing</option>
-                        <option>Produccion</option>
-                      </select>
+                      <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
                     </div>
                     <div class="col-md-5">
                       <h4>Telefono</h4>
-                      <input class="form-control" name="telefono" value="{{ Auth::user()->telefono}} " type="text" >
+                      <h4 class=" text-muted mb-4">{{$perfil->telefono}}</h4>
 
                     </div>
                   </div>                        
-                </div>
-                <div class="card-body text-center"> 
-                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Editar Perfil</button>
                 </div>  
             </div>
-          </form>
+        
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
 

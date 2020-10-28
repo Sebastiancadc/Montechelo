@@ -80,7 +80,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url("noticiausu")}}">
-                  <i class="ni ni-folder-17 text-pink"></i>
+                  <i class="ni ni-archive-2 text-black"></i>
                   <span class="nav-link-text">Noticia</span>
                 </a>
               </li>
