@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,6 +79,12 @@
 
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{url("noticiausu")}}">
+                  <i class="ni ni-folder-17 text-pink"></i>
+                  <span class="nav-link-text">Noticia</span>
+                </a>
+              </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{url("admin/repositorio")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
@@ -114,7 +120,7 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-          
+
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
@@ -489,7 +495,7 @@
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-    
+
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
