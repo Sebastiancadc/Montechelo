@@ -481,7 +481,7 @@
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
 
-<!-- Demo JS - remove this in your project -->
+
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 
