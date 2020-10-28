@@ -125,12 +125,9 @@
                                     </td>
                                     <td class="table-actions">
                                        
-                                        <a  <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
-                                            <i class="fas fa-user-edit"></i>
-                                        </a>class="table-action" data-original-title="Editar usuario">
+                                        <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                       
                                         <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
                                             <i class="fas fa-trash"></i>
                                         </a>
