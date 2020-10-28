@@ -252,8 +252,8 @@ height: 148%;"></span>
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                    </a>
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                      </a>
                   </div>
 
                   <div class="col">
@@ -369,105 +369,92 @@ height: 148%;"></span>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
 
+        
+              
               <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
+              </a>
+              <a href="#" class="avatar" style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                        ">Juan Felix</h4>
+                            
+                        ">Manuel Rodriguez</h4>
               <br>
-              <a href="#" class="avatar">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-              </a>
+              
               <h4 style="
-                         margin-left: 53px;
-                         margin-top: -35px;
-                     ">Manuela Beltran</h4> <br>
-
-              <a href="#" class="avatar " style="
-                         margin-left: 335px;
-                         margin-top: -131px;
-                     ">
+                            margin-left: 400px;
+                            margin-top: -50px;
+                            
+                        ">Andres Sebastian</h4>
+              <br>
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}} ">
+              </a>
+              <a href="#" class="avatar "style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
-
               <h4 style="
-                              margin-left: 390px;
-                              margin-top: -120px;
-                          ">
-                <a>Natalia Rodriguez</a>
-              </h4> <br>
-
-
-              <a href="#" class="avatar" style="
-                              margin-left: 335px;
-                          ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
+                            margin-left: 53px;
+                            margin-top: -35px;
+                        ">Angie Vega</h4>
+              <br>
               <h4 style="
-                                  margin-left: 390px;
-                                  margin-top: -35px;
-                              ">
-                <a>Camilo Nuñez</a>
-              </h4> <br>
-
-
-
-
-
-            </div>
+                            margin-left: 400px;
+                            margin-top: -55px;
+                        ">Maria Alejandra</h4>
+              <br>
+              
+           
+            
+              
+                     
+  </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
 
 
               <h1 class="form-control-label">Grupos sugeridos</h1><br>
 
-              <a href="#" class="avatar rounded-circle">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+             
+        
+              
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
+              </a>
+              <a href="#" class="avatar" style="margin-left: 295px">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}} ">
               </a>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                        ">Java 5.8</h4>
+                            
+                        ">PHP avanzado</h4>
               <br>
-              <a href="#" class="avatar rounded-circle">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
+              
+              <h4 style="
+                            margin-left: 400px;
+                            margin-top: -50px;
+                            
+                        ">Desarrolladores</h4>
+              <br>
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
+              </a>
+              <a href="#" class="avatar "style="margin-left: 295px">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
               <h4 style="
-                         margin-left: 53px;
-                         margin-top: -35px;
-                     ">Diseñadores web</h4> <br>
-
-              <a href="#" class="avatar " style="
-                         margin-left: 335px;
-                         margin-top: -131px;
-                     ">
-
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
-
+                            margin-left: 53px;
+                            margin-top: -35px;
+                        ">Laravel 5.8</h4>
+              <br>
               <h4 style="
-                              margin-left: 390px;
-                              margin-top: -120px;
-                          ">
-                <a>Base de datos</a>
-              </h4> <br>
-
-
-              <a href="#" class="avatar" style="
-                              margin-left: 335px;
-                          ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
-              <h4 style="
-                                  margin-left: 390px;
-                                  margin-top: -35px;
-                              ">
-                <a>Java</a>
-              </h4> <br>
+                            margin-left: 400px;
+                            margin-top: -55px;
+                        ">Base de datos</h4>
+              <br>
 
             </div>
           </div>

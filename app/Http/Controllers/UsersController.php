@@ -18,4 +18,10 @@ class UsersController extends Controller
       $users = User::all();
       return view('admin.usuario', compact('users'));
    }
+  
+   
+
+
+   
+
 }

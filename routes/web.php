@@ -141,6 +141,5 @@ Route::resource('perfil','PerfilController');
 Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
 Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
 
-
 //Directorio
 Route::resource('Directorio','DirectorioController'); 
