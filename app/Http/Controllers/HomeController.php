@@ -123,6 +123,7 @@ class HomeController extends Controller
        $path= public_path('images/user'.$file_name);
 
        Image::make($request->file('photo'))->fit(144,144)->save();
+       
 
        $user->photo=$extension;
        $user->save();
