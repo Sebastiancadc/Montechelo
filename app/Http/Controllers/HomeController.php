@@ -42,6 +42,7 @@ class HomeController extends Controller
         $user->email = $request->email;
         $user->genero = $request->genero;
         $user->password = $request->password;
+        $user->area = $request->area;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
         $request['role']='colaborador';
         $user->save();
@@ -59,6 +60,7 @@ class HomeController extends Controller
         $user->email = $request->email;
         $user->genero = $request->genero;
         $user->password = $request->password;
+        $user->area = $request->area;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
         $request['role']='admin';
         $user->save();
@@ -88,6 +90,7 @@ class HomeController extends Controller
         $UserUpdate->cumpleanios = $request->cumpleanios;
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
+        $UserUpdate->area = $request->area;
         $UserUpdate->save();
         // return redirect('admin/usuario');
         return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
@@ -110,4 +113,26 @@ class HomeController extends Controller
 
         // return $this->loggedOut($request) ?: redirect('admin.login');
     }
+
+    public function postProfileImage(Request $request)
+    {
+       $this->validate($request,['photo'=>'required|iamge']);
+       $user=Auth::user();
+       $extension=$request->file('photo')->getClient0riginalExtension();
+       $file_name=$user->id .'.'.$extension;
+       $path= public_path('images/user'.$file_name);
+
+       Image::make($request->file('photo'))->fit(144,144)->save();
+       
+
+       $user->photo=$extension;
+       $user->save();
+
+       $data['success']=true;
+       $data['user']=$path;
+       
+
+
+return '';
+}
 }

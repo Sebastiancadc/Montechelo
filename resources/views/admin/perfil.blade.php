@@ -4,26 +4,24 @@
 <div class="header pb-6 d-flex align-items-center " <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8" style="
 width: 100%;
-height: 80%;"></span>
-  <br>
-  <br>
+height: 148%;"></span>
+
   <?php
   $user = auth()->user();
   ?>
   <!-- Header container -->
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
-      <div class="col-lg-7 col-md-10">
-        <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px">
+      <div class="col-md-12 col-lg-7">
+        {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:30px;margin-left:140px;margin-top: -100px">{{ Auth::user()->name }} {{ Auth::user()->apellido }}</h1>
-        <br>
-
-
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->apellido}}</h1>
       </div>
+      <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
     </div>
   </div>
 </div>
+
 
 
 
@@ -254,8 +252,8 @@ height: 80%;"></span>
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                    </a>
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                      </a>
                   </div>
 
                   <div class="col">
@@ -308,158 +306,155 @@ height: 80%;"></span>
                 <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group ">
-
+                    <div class="col-md-6">
                         <h4>Nombre</h4>
-                        <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text" style="width: 150px">
-
-
-                      </div>
+                        <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <h4>Genero</h4>
-                        <input class="form-control" name="genero" value="{{ Auth::user()->genero}} " type="text" style="width: 150px">
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4" style="margin-top: -202px;margin-left: 190px">
-                    <div class="tab-content">
-                      <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
-                        <div class="form-group">
-                          <h4>Fecha de nacimiento</h4>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                    <div class="col-md-5">
+                      <div class="tab-content">
+                        <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
+                          <div class="form-group">
+                            <label class="form-control-label" for="example3cols2Input">Fecha</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                              </div>
+                              <input class="form-control datepicker" id="date" type="text" name="cumpleanios" value='{{App\Helpers\Helpers::formatearFechaPerfil(Auth::user()->cumpleanios)}}'>
                             </div>
-                           
-                            <input class="form-control datepicker" id="date" type="text" name="cumpleanios" value='{{App\Helpers\Helpers::formatearFechaPerfil(Auth::user()->cumpleanios)}}'>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>                
-                </div>
-                <div class="row">
-                  <div class="col-lg-4" style="margin-left: 230px">
-                    <div class="form-group">
+                  </div>        
+                  <div class="row">
+                    <div class="col-md-6">
                       <h4>Gmail</h4>
-                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" style="width: 150px">
+                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
 
                     </div>
-                    <button type="submit" style="width: 160px; margin-left:180px; margin-top: 10px" class="btn btn-primary" type="button">Editar Perfil</button>
+                    <div class="col-md-5">
+                      <h4>Genero</h4>
+                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
+                        <option>{{ Auth::user()->genero}}</option>
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                        <option>Otro</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <br> 
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4>Area</h4>
+                      <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
+                        <option>{{ Auth::user()->area}}</option>
+                        <option>Programacion</option>
+                        <option>Diseño</option>
+                        <option>Marketing</option>
+                        <option>Produccion</option>
+                      </select>
+                    </div>
+                    <div class="col-md-5">
+                      <h4>Telefono</h4>
+                      <input class="form-control" name="telefono" value="{{ Auth::user()->telefono}} " type="text" >
 
-                  </div>
+                    </div>
+                  </div>                        
                 </div>
+                <div class="card-body text-center"> 
+                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Editar Perfil</button>
+                </div>  
             </div>
-
-            </form>
+          </form>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
 
+        
+              
               <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
+              </a>
+              <a href="#" class="avatar" style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                        ">Juan Felix</h4>
+                            
+                        ">Manuel Rodriguez</h4>
               <br>
-              <a href="#" class="avatar">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-              </a>
+              
               <h4 style="
-                         margin-left: 53px;
-                         margin-top: -35px;
-                     ">Manuela Beltran</h4> <br>
-
-              <a href="#" class="avatar " style="
-                         margin-left: 335px;
-                         margin-top: -131px;
-                     ">
+                            margin-left: 400px;
+                            margin-top: -50px;
+                            
+                        ">Andres Sebastian</h4>
+              <br>
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}} ">
+              </a>
+              <a href="#" class="avatar "style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
-
               <h4 style="
-                              margin-left: 390px;
-                              margin-top: -120px;
-                          ">
-                <a>Natalia Rodriguez</a>
-              </h4> <br>
-
-
-              <a href="#" class="avatar" style="
-                              margin-left: 335px;
-                          ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
+                            margin-left: 53px;
+                            margin-top: -35px;
+                        ">Angie Vega</h4>
+              <br>
               <h4 style="
-                                  margin-left: 390px;
-                                  margin-top: -35px;
-                              ">
-                <a>Camilo Nuñez</a>
-              </h4> <br>
-
-
-
-
-
-            </div>
+                            margin-left: 400px;
+                            margin-top: -55px;
+                        ">Maria Alejandra</h4>
+              <br>
+              
+           
+            
+              
+                     
+  </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
 
 
               <h1 class="form-control-label">Grupos sugeridos</h1><br>
 
-              <a href="#" class="avatar rounded-circle">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+             
+        
+              
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
+              </a>
+              <a href="#" class="avatar" style="margin-left: 295px">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}} ">
               </a>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                        ">Java 5.8</h4>
+                            
+                        ">PHP avanzado</h4>
               <br>
-              <a href="#" class="avatar rounded-circle">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
+              
+              <h4 style="
+                            margin-left: 400px;
+                            margin-top: -50px;
+                            
+                        ">Desarrolladores</h4>
+              <br>
+              <a href="#" class="avatar ">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
+              </a>
+              <a href="#" class="avatar "style="margin-left: 295px">
+                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
               <h4 style="
-                         margin-left: 53px;
-                         margin-top: -35px;
-                     ">Diseñadores web</h4> <br>
-
-              <a href="#" class="avatar " style="
-                         margin-left: 335px;
-                         margin-top: -131px;
-                     ">
-
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
-
+                            margin-left: 53px;
+                            margin-top: -35px;
+                        ">Laravel 5.8</h4>
+              <br>
               <h4 style="
-                              margin-left: 390px;
-                              margin-top: -120px;
-                          ">
-                <a>Base de datos</a>
-              </h4> <br>
-
-
-              <a href="#" class="avatar" style="
-                              margin-left: 335px;
-                          ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-              </a>
-
-              <h4 style="
-                                  margin-left: 390px;
-                                  margin-top: -35px;
-                              ">
-                <a>Java</a>
-              </h4> <br>
+                            margin-left: 400px;
+                            margin-top: -55px;
+                        ">Base de datos</h4>
+              <br>
 
             </div>
           </div>
@@ -488,8 +483,6 @@ height: 80%;"></span>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-
-
 <script type="text/javascript">
   $(function () {
       $('#date').date({

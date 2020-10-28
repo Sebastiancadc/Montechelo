@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class HomeController extends Controller
+class DirectorioController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,8 +21,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $users = User::all();
-        return view('admin.usuario', compact('users'));
+        $usuarios = User::all();
+        return view('admin.directorio', compact('usuarios'));
     }
 
 

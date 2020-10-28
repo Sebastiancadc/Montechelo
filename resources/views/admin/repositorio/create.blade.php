@@ -42,8 +42,7 @@
                                       <div class="text-center">
                                       <form method="POST" action="{{route('subir')}}" accept-charset="UTF-8" enctype="multipart/form-data">
                                       @csrf
-              <label for="imagen"><b>Archivo: </b></label><br> <br>
-              <input type="file" name="imagen">
+  
               <input class="btn btn-primary my-4" type="submit" value="Enviar" style="margin-top: 30px">
               <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>  
               </form>

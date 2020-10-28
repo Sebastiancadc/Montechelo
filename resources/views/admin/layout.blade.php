@@ -72,7 +72,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("admin/directorio")}}">
+              <a class="nav-link" href="{{url("Directorio")}}">
                 <i class="ni ni-badge text-info"></i>
                 <span class="nav-link-text">Directorio</span>
               </a>
@@ -114,7 +114,7 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-            
+          
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
@@ -493,6 +493,7 @@
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
+<script src="{{asset("plantilla/js/perfil.js")}}"></script>
 
 
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>

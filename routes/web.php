@@ -47,10 +47,6 @@ Route::get('admin/solicitud', function () {
     return view('admin.solicitud');
 });
 
-Route::get('admin/directorio', function () {
-
-    return view('admin.directorio');
-});
 
 Route::get('admin/calendario/calendario', function () {
     return view('admin/calendario/calendario');
@@ -120,11 +116,6 @@ Route::delete('deletesugerencia/{id}', 'BuzonDeSugerenciasController@destroy')->
 /* Route::get('/editar/{id}', 'BuzonDeSugerenciasController@edit')->name('editar');
 Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'); */
 
-
-//CalendarioFull
-// Route::get('calendario', 'CalendarioController@index');
-// Route::get('calendario/eventos', 'CalendarioController@lsitar');
-
 //Canlendario
 Route::get('admin/eventos','CalendarioController@eventos');
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
@@ -146,7 +137,9 @@ Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('
 Route::post('/subir','Controller@subirArchivo')->name('subir');
 
 //perfil
-
 Route::resource('perfil','PerfilController'); 
 Route::get('editarperfil/{id}','PerfilController@editarperfil')->name('editarperfil');
 Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarprofile');
+
+//Directorio
+Route::resource('Directorio','DirectorioController'); 
