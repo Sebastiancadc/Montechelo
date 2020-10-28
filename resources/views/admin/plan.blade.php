@@ -47,9 +47,11 @@
 
                                 <div class="row">
 
-                                    <div class="col-lg-4">
-                                        <div class="card card-lift--hover shadow border-0">
-                                            <div class="card-body py-5">
+                                    <div class="col-lg-4" >
+                                        <div class="card card-lift--hover shadow border-0" >
+                                            <div class="card-body py-5" style="-webkit-box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);
+                                            -moz-box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);
+                                            box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);">
                                                 <h4 class="h3 text-primary text-uppercase" style="text-align: center;">Mision</h4>
                                                 <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
@@ -58,8 +60,10 @@
 
 
                                     <div class="col-lg-4">
-                                        <div class="card card-lift--hover shadow border-0">
-                                            <div class="card-body py-5">
+                                        <div class="card card-lift--hover shadow border-0" >
+                                            <div class="card-body py-5" style="-webkit-box-shadow: 0px 13px 19px 5px rgba(88,154,252,0.42);
+                                            -moz-box-shadow: 0px 13px 19px 5px rgba(88,154,252,0.42);
+                                            box-shadow: 0px 13px 19px 5px rgba(88,154,252,0.42); ">
                                                 <h4 class="h3 text-primary text-uppercase" style="text-align: center;">Valores</h4>
                                                 <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
@@ -69,7 +73,9 @@
 
                                     <div class="col-lg-4">
                                         <div class="card card-lift--hover shadow border-0">
-                                            <div class="card-body py-5">
+                                            <div class="card-body py-5" style="-webkit-box-shadow: 10px 10px 19px 5px rgba(88,154,252,0.42);
+                                            -moz-box-shadow: 10px 10px 19px 5px rgba(88,154,252,0.42);
+                                            box-shadow: 10px 10px 19px 5px rgba(88,154,252,0.42);">
                                                 <h4 class="h3 text-primary text-uppercase" style="text-align: center;">Vision</h4>
                                                 <p class="description mt-3" style="text-align: justify; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
