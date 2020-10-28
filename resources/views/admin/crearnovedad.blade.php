@@ -87,7 +87,7 @@
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary my-4">Crear</button>
-      <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+
     </div>
   </form>
   </div>

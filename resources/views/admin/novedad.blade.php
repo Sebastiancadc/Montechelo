@@ -46,7 +46,7 @@
         </div>
         <br>
         <div class="col-6 text-right">
-            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -650%;
+            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir admin" style="    margin-right: -650%;
             margin-top: -54px;">
                 <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
 
@@ -57,12 +57,8 @@
         </div>
 
         <br>
-
-
-        
     </div>
-</div>
-@if (session('eliminar'))
+    @if (session('eliminar'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
   <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-fat-remove" ><strong></strong>{{session('eliminar')}}</span>
@@ -71,7 +67,7 @@
   </button>
 </div>
 @endif
-@if (session('update'))
+@if (session('crear'))
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
   <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-check-bold" ><strong></strong>{{session('update')}}</span>
@@ -80,6 +76,17 @@
   </button>
 </div>
 @endif
+@if (session('crear'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+  <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-check-bold" ><strong></strong>{{session('crear')}}</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+</div>
+
                     <!-- Light table -->
 
                     <div class="table-responsive py-4" style="margin-top: -51px;">

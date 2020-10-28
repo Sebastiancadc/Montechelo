@@ -21,10 +21,17 @@
 
                 </div>
             </div>
-
-
     </div>
 </div>
+@if (session('buzon_crear'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+  <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('buzon_crear')}}</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 <br><br><br>
 <div class="container-fluid mt--6">
     <div class="row">

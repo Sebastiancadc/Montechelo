@@ -39,14 +39,14 @@
                             <div class="col-6">
                                 <h3 class="mb-0">Gestión de Solicitudes</h3>
                             </div>
-                            <div class="col-6 text-right">
+                            {{-- <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir solicitud">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
                                     <span class="btn-inner--text">Crear</span>
 
                                 </a>
                                 @include('admin.solicitud.create')
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
