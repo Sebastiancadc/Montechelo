@@ -115,24 +115,26 @@ class HomeController extends Controller
     }
 
     public function postProfileImage(Request $request)
-    {
-       $this->validate($request,['photo'=>'required|iamge']);
-       $user=Auth::user();
-       $extension=$request->file('photo')->getClient0riginalExtension();
-       $file_name=$user->id .'.'.$extension;
-       $path= public_path('images/user'.$file_name);
+{
+    $this->validate($request, [
+        'photo' => 'required|image'
+    ]);
+    $user= Auth::user();
+    $extension = $file->getClientOriginalExtension();
+    $fileName = auth()->id() . '.' . $extension;
+    $path = public_path('admin//'.$fileName);
 
-       Image::make($request->file('photo'))->fit(144,144)->save();
-       
+  
 
-       $user->photo=$extension;
-       $user->save();
+    Image::make($request->file('Photo')->fit(144,144))->save();
 
-       $data['success']=true;
-       $data['user']=$path;
-       
+  
+    $user->photo_extension = $extension;
+    $saved = $user->save();
 
+    $data['success'] = $saved;
+    $data['path'] = $user->getAvatarUrl() . '?' . uniqid();
 
-return '';
+    return $data;
 }
 }
