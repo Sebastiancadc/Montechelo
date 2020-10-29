@@ -44,34 +44,10 @@ class PerfilController extends Controller
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
-        $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
+        $UserUpdate->cumpleanios = $request->cumpleanios;
         $UserUpdate->save();
         return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
-
     }  
 
 
-public function postProfileImage(Request $request)
-{
-    $this->validate($request, [
-        'photo' => 'required|image'
-    ]);
-    $user= Auth::user();
-    $extension = $file->getClientOriginalExtension();
-    $fileName = auth()->id() . '.' . $extension;
-    $path = public_path('admin//'.$fileName);
-
-  
-
-    Image::make($request->file('Photo')->fit(144,144))->save();
-
-  
-    $user->photo_extension = $extension;
-    $saved = $user->save();
-
-    $data['success'] = $saved;
-    $data['path'] = $user->getAvatarUrl() . '?' . uniqid();
-
-    return $data;
-}
 }

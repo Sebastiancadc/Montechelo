@@ -35,9 +35,7 @@ height: 148%;"></span>
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                  <form action="{url('user/image')}}" id="avatarForm"> <input type="file" id="avatarInput" style="display: none"></form>
-                  {{csrf_filed()}}
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" id="avatarImage" class="rounded-circle">
+                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
               </a>
             </div>
           </div>
