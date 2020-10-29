@@ -145,6 +145,10 @@
       <li class="nav-item">
         <a href="{{ url('admin/eventos')}}" class="nav-link">Eventos</a>
       </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/noticia')}}" class="nav-link">Noticias</a>
+      </li>
+
     </ul>
   </div>
 </li>

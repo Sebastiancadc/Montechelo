@@ -44,7 +44,6 @@
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
                                     <span class="btn-inner--text">Publicar</span>
                                 </a>
-                                @include('admin.noticias.create')
                             </div>
 
                         </div>
