@@ -23,13 +23,13 @@ class NoticiasController extends Controller
     public function index()
     {
 
-        $noticia = Noticia::all();
+        $noticia = Noticia::paginate(4);
         return view('admin.noticias.index',compact('noticia'));
     }
     public function index2()
     {
 
-        $noticia = Noticia::all();
+        $noticia = Noticia::paginate(6);
         return view('admin.noticia',compact('noticia'));
     }
     /**
