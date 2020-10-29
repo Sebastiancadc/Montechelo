@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Facades\DB;
 
 
@@ -46,8 +47,16 @@ class Helpers
 
     public static function formatearFechaPerfil($cumpleanios) 
     {   
-        $fechaformateada =Carbon::parse($cumpleanios)->format('d/m/Y');
+        $fechaformateada =Carbon::parse($cumpleanios)->format('d-m-Y');
         return $fechaformateada;
+    }
+
+    public static function edad($cumpleanios) 
+    {   
+        $fecha_nacimiento = new DateTime($cumpleanios);
+        $hoy = new DateTime();
+        $edad = $hoy->diff($fecha_nacimiento);
+        return $edad->y;
     }
     
 }

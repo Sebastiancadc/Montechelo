@@ -70,7 +70,7 @@
             <div class="card-body text-center">
               <a href="{{route('verEvento',$eventos->id)}}" class="btn btn-primary">Editar</a>
               <a href="#!" data-toggle="modal" data-target="#deleteNovedad{{$eventos->id}}" class="btn btn-danger my-4">Eliminar</a>  
-              <a href="{{url("admin/calendar")}}" class="btn btn-secondary">Volver</a>
+              <a href="{{url("calendar")}}" class="btn btn-secondary">Volver</a>
             </div>
           </div>
 

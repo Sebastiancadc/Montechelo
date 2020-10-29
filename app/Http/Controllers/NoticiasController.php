@@ -109,8 +109,8 @@ class NoticiasController extends Controller
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
-        $categoria = Category::all();
-        return view('admin/noticias/edit',compact('noticia','category','noticiaActualizar'));
+        // $categoria = Category::all();
+        return view('admin/noticias/edit',compact('noticiaActualizar'));    
     }
     /**
      * Update the specified resource in storage.
@@ -169,7 +169,7 @@ class NoticiasController extends Controller
         $noticia = Noticia::findOrFail($id);
         $noticia->delete();
         Session::flash('message','Publicación borrada  correctamente');
-        return redirect()->view('admin/noticias/index');
+        return redirect()->action('NoticiasController@index')->with('eliminar','la noticia se elimino correctamente');
     }
     public function logout()
     {

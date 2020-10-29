@@ -5,16 +5,16 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Directorio</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Noticia</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Directorio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Noticia  </li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                    <a href="{{ url('admin/crearnoticia') }}" class="btn btn-sm btn-neutral">Agregar</a>
+                    <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral">Agregar</a>
                 </div>
             </div>
             <!-- Card stats -->
@@ -41,7 +41,7 @@
                             <h5 class="h2 card-title mb-0">{{$item->title }}</h5>
                             <small class="text-muted">{{ $item->created_at->format('d/m/Y') }} Escrito por <cite title="Source Title">{{ $item->user->name }}</cite></small>
                             <p class="card-text mt-4">{{ substr($item->body, 0,20) }}...</p>
-                            <a href="{{ 'post' }}/{{ $item->slug }}" class="btn btn-link px-0">View article</a>
+                            <a href="{{ 'post' }}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
                         </div>
                     </div>
           </div>

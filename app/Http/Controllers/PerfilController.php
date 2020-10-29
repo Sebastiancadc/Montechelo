@@ -44,7 +44,8 @@ class PerfilController extends Controller
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
-        $UserUpdate->cumpleanios = $request->cumpleanios;
+        $UserUpdate->area = $request->area;
+        $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->save();
         return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
     }  

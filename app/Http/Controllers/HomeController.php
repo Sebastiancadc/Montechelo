@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -51,10 +52,10 @@ class HomeController extends Controller
 
     public function storeAdmin(Request $request)
     {
+        $user = new DateTime();
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
-        
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -79,7 +80,9 @@ class HomeController extends Controller
     }   
 
     public function update(Request $request, $id)
-    {
+    { 
+        
+        $UserUpdate = new DateTime();
         $request->merge([
             'password' => Hash::make($request->input('password'))
         ]);
@@ -87,7 +90,8 @@ class HomeController extends Controller
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
-        $UserUpdate->cumpleanios = $request->cumpleanios;
+        $UserUpdate->format("Y-m-d");
+        $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->area = $request->area;

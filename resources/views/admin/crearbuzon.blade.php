@@ -30,7 +30,7 @@
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-                    <form  method="POST" action="{{ url('admin/crearsugerencias')}}">
+                    <form  method="POST" action="{{ url('crearsugerencias')}}">
                       @csrf @method('POST')
                       <div class="form-group">
                         @if (session('buzon_crear'))
@@ -40,8 +40,6 @@
                         @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
                             <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
-
-
                                 <option>Seleccionar tipo de sugerencia </option>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>
