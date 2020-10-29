@@ -99,6 +99,8 @@ Route::get('crearUserAdmin', 'HomeController@crearAdmin');
 Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
 Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
 Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+Route::delete('/user/imagen/', 'HomeController@postProfileImage');
+
 });
 
 //Novedad
@@ -154,6 +156,7 @@ Route::put('editarprofile/{id}','PerfilController@updateProfile')->name('editarp
 
 //Directorio
 Route::resource('Directorio','DirectorioController');
+Route::get('verperfil/{id}','DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias
 Route::resource('admin/noticia', 'NoticiasController');
