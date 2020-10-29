@@ -32,7 +32,7 @@
             <!-- Grid system -->
             <div class="card">
                     <div class="card-body">
-                        <form  method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
+                        <form  method="POST" action="{{ url('admin/crearnoticias') }}" enctype="multipart/form-data">
                             @csrf @method('POST')
                             <input type="hidden" name="user_id"  name="user_id" value="{{$user->id }}";>
 

@@ -114,7 +114,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('solicitud', 'SolicitudController');
     Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
     Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
-    Route::get('editarsolicitud/{id}', 'SolicitudController@edit')->name('editar');
+    Route::get('editarsolicitud/{id}', 'SolicitudController@edit')->name('editarsoli');
     Route::put('updatesolicitud/{id}', 'SolicitudController@update')->name('update');
     Route::delete('deletesolicitud/{id}', 'SolicitudController@destroy')->name('eliminar');
 
@@ -130,8 +130,7 @@ Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'
     //Canlendario
     Route::get('eventos', 'CalendarioController@eventos');
     Route::get('calendar', 'CalendarioController@index')->name('calendar');
-    Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
-    Route::resource('events', 'EventsController');
+    Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');    
     Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
     Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
     Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
@@ -153,7 +152,7 @@ Route::put('/update/{id}', 'BuzonDeSugerenciasController@update')->name('update'
     Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
 
     //Directorio
-    Route::resource('Directorio', 'DirectorioController');
+    Route::resource('directorio', 'DirectorioController');
     Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
     //Noticias

@@ -72,14 +72,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("Directorio")}}">
+              <a class="nav-link" href="{{url("admin/directorio")}}">
                 <i class="ni ni-badge text-info"></i>
                 <span class="nav-link-text">Directorio</span>
               </a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url("noticiausu")}}">
+                <a class="nav-link" href="{{url("admin/noticiausu")}}">
                   <i class="ni ni-archive-2 text-black"></i>
                   <span class="nav-link-text">Noticia</span>
                 </a>
@@ -91,19 +91,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("calendar")}}">
+              <a class="nav-link" href="{{url("admin/calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('crearsolicitud')}}">
+              <a class="nav-link" href="{{url('admin/crearsolicitud')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("buzonusu")}}">
+              <a class="nav-link" href="{{url("admin/buzonusu")}}">
                 <i class="ni ni-send text-yellow"></i>
                 <span class="nav-link-text">Buzon de sugerencias</span>
               </a>
@@ -115,7 +115,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('crearnovedad')}}">
+              <a class="nav-link" href="{{url('admin/crearnovedad')}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
@@ -445,7 +445,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Bienvenido!</h6>
                 </div>
-                <a href="{{ url('perfil')}}" class="dropdown-item">
+                <a href="{{ url('admin/perfil')}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>Mi perfil</span>
                 </a>

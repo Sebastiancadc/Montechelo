@@ -35,7 +35,7 @@
       </button>
     </div>
     @endif
-    <form role="form" method="POST" action="{{ url('crearnovedades')}}" >
+    <form role="form" method="POST" action="{{ url('admin/crearnovedades')}}" >
       @csrf @method('POST')
     <!-- Card body -->
     <div class="card-body">
@@ -49,10 +49,8 @@
               <option>Talento humano</option>
               <option>Recursos humanos</option>
               <option>Produccion</option>
-
             </select>
           </div>
-      
         <div class="col-md-4">
         <div class="tab-content">
           <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab" >

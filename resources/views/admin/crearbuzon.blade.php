@@ -30,7 +30,7 @@
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-                    <form  method="POST" action="{{ url('crearsugerencias')}}">
+                    <form  method="POST" action="{{ url('admin/crearsugerencias')}}">
                       @csrf @method('POST')
                       <div class="form-group">
                         @if (session('buzon_crear'))

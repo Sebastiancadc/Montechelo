@@ -2,7 +2,7 @@
  @section('card')
 
     <div class="card-body">
-        <form  method="POST" action="{{route('update', {{$editarbuzon->id}})}}">
+        <form  method="POST" action="{{route('admin/update', {{$editarbuzon->id}})}}">
           @csrf  <div class="form-group">
           <label class="form-control-label" for="exampleFormControlInput1">Titulo</label>
                 <input type="email" name='titulo' class="form-control" id="titulo" placeholder="" value="{{$editarbuzon->titulo}}">

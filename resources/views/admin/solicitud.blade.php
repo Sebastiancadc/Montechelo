@@ -106,7 +106,7 @@
                                     </td>
                                     <td class="table-actions">
 
-                                        <a href="{{route('editar',$item->Id_Solicitud)}}" class="table-action" data-original-title="Editar solicitud">
+                                        <a href="{{route('editarsoli',$item->Id_Solicitud)}}" class="table-action" data-original-title="Editar solicitud">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
                                         <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteSolicitud{{$item->Id_Solicitud}}" data-original-title="Eliminar solicitud">
