@@ -71,8 +71,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //repositorio
     Route::resource('repositorio', 'RepositorioController');
-    Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorioo');
-    Route::post('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+
+    Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+    Route::post('crearrepositorios', 'RepositorioController@store')->name('crearrepositorios');
     Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
     Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
     Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');

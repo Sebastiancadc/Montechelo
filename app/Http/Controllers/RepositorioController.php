@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositorio;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
 
 
+use Redirect;
 class RepositorioController extends Controller
+
 
 {
     /**
@@ -31,24 +36,47 @@ class RepositorioController extends Controller
         return view('admin.repositorio', compact('repositorio'));
     }
 
-    public function store(Request $request)
-    {
-        Repositorio::create($request->all());
-        return redirect('admin/repositorio');
-    }
-
-
-    public function createrepositorio()
+   
+    
+    public function crearrepositorio()
     {
         return view('admin/repositorio/create');
     }
 
-    public function createrepositorios(Request $request)
+    public function crearrepositorios(Request $request)
     {
-        Repositorio::create($request->all());
-        return redirect('admin/repositorio/create')->with('create','Repositorio registrada correctamente');
+        return view('admin.repositorio.create');
     }
   
+    public function store(Request $request)
+    {
+    
+    
+ 
+
+        $messages = [
+          
+          //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
+          'image.max' =>'La imagen no debe ser mayor que 2 mb.'
+
+
+        ];
+         $this->validate($request,  $messages);
+
+         $repositorio = new Repositorio($request->all());
+        
+
+
+         if ($request->file('image')) {
+            $nombre = Storage::disk('archivosave')->put('archivos/repositorio', $request->file('image'));
+            $repositorio->fill(['image' => asset($nombre)])->save();
+         }
+          Session::flash('message','Publicación creada correctamente');
+
+          return back();
+
+
+    }
 
     public function editrepositorio($id)
     {
@@ -62,10 +90,12 @@ class RepositorioController extends Controller
         $repositorio->tipo_archivo = $request->tipo_archivo;
         $repositorio->autor = $request->autor;
         $repositorio->observaciones = $request->observaciones;
-
-        $repositorio->imagen = $request->imagen;
+        $repositorio->image=$request->image;
+        
         $repositorio->save();
-        return redirect('admin/repositorio')->with('updaterepositorio','El estado del repositorio se actualizo');
+        
+        
+        return redirect('admin/repositorio')->with('updaterepositorio','El repositorio se actualizo');
     }
 
 

@@ -59,13 +59,10 @@
                 </div>
               </div>
 
-             
+              <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
 
-  <label for="imagen"><b>Archivo: </b></label><br>
-  <input type="file" name="imagen" required>
-  <input class="btn btn-primary my-4" type="submit" value="Enviar" style="margin-top: -20%;margin-left: 90px;" >
-  
-        <div class="text-center" style="margin-top: -25%;margin-left: 90px;" >
+              <button type="submit" class="btn btn-primary my-4">Editar</button>
+
             <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
             @if (session('updaterepositorio'))
             <div class="alert alert-success mt-3">

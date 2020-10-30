@@ -79,13 +79,15 @@
                                     </td>
                                       <td>
                                        
-                                        <img  height= "100px"  src="{{$item->imagen}}">{{$item->imagen}}
+                                        <img  src="{{$item->image}} "  width="50" height="50" class="img-fluid">
                                     </td>
 
 
                                     <td class="table-actions">
                                         <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="editrepositorio">
                                             <i class="fas fa-user-edit"></i>
+                                            <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="editrepositorio">
+                                                <i class="fas fa-user-edit"></i>
 
 
                                             <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#eliminarrepositorio{{$item->Id_Repositorio}}" data-original-title="Eliminar novedad">
@@ -167,3 +169,4 @@ ob_end_flush();
     addNumeration("test")
     </script>
 @endsection
+
