@@ -31,12 +31,6 @@ Route::get('admin/pasword', function () {
     return view('admin.pasword');
 });
 
-
-Route::get('admin/buzon', function () {
-
-    return view('admin.buzon');
-});
-
 Route::get('planestrategico', function () {
 
     return view('admin.plan');
@@ -51,13 +45,13 @@ Route::middleware(['auth'])->group(function () {
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('usuario', 'HomeController');
-    Route::post('usuario/createadmin', 'HomeController@storeAdmin')->name('crearAdmin');
+    Route::post('createadmin', 'HomeController@storeAdmin')->name('crearAdmin');
     Route::get('crearUserAdmin', 'HomeController@crearAdmin');
     Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
     Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
 
-    //Novedad
+    //Novedada
     Route::resource('novedad', 'NovedadController');
     Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
     Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
@@ -98,18 +92,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
 });
 
-
-
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
 Route::group(['prefix' => ''], function () {
 //Usuario
 Route::resource('perfil', 'PerfilController');
-Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');
-Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
+Route::get('editarperfil/{id_Usuario}', 'PerfilController@editarperfil')->name('editarperfil');
+Route::put('editarprofile/{id_Usuario}', 'PerfilController@updateProfile')->name('editarprofile');
 
 //Directorio
 Route::resource('directorio', 'DirectorioController');
-Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
+Route::get('verperfil/{id_Usuario}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias
 Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
@@ -119,7 +111,6 @@ Route::get('post/{slug}', 'NoticiasController@post')->name('post');
 
 //Repositorio
 Route::resource('repositorio', 'RepositorioController');
-
 
 //Canlendario
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
@@ -144,5 +135,4 @@ Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')
 //Novedad
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
-
 });

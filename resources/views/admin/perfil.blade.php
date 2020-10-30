@@ -55,10 +55,14 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{ Auth::user()->name}}<span class="font-weight-light"><br> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
+              {{ Auth::user()->name}}<span class="font-weight-light"> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
               años
+              <div class="h5 mt-4">
+                {{ Auth::user()->area}}
+              </div>
             </h5>
-            <div class="h5 mt-4">
+            
+            <div class="">
               {{ Auth::user()->email}}
             </div>
 
@@ -287,7 +291,7 @@ height: 148%;"></span>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
 
-              <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
+              <form role="form" method="POST" action="{{url('editarprofile',$user->id_Usuario)}}">
                 @csrf @method('PUT')
                 <hr class="my-4" />
                 @if (session('editarusu'))
@@ -353,7 +357,7 @@ height: 148%;"></span>
                     </div>
                     <div class="col-md-5">
                       <h4>Telefono</h4>
-                      <input class="form-control" name="telefono" value="{{ Auth::user()->telefono}} " type="text" >
+                      <input class="form-control" name="telefono" value="{{Auth::user()->telefono}} " type="text" >
 
                     </div>
                   </div>                        

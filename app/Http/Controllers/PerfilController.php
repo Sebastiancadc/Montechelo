@@ -27,8 +27,8 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.perfil', compact('users'));
+        $usuario = User::all();
+        return view('admin.perfil', compact('usuario'));
     }
 
     public function editarperfil($id)
@@ -37,10 +37,10 @@ class PerfilController extends Controller
         return view('admin.perfil',compact('userActualizar'));
     }   
 
-    public function updateProfile(Request $request, $id)
+    public function updateProfile(Request $request, $id_Usuario)
     {
      
-        $UserUpdate = User::findOrFail($id);    
+        $UserUpdate = User::findOrFail($id_Usuario);    
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;

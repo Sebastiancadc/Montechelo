@@ -32,16 +32,18 @@
 <div class="container-fluid mt--6">
 
     <div class="row card-wrapper mb-2">
-       @foreach ($noticia as $item)
+       @foreach ($noticias as $item)
+      {{-- {{dd($item->user)}} --}}
           <div class="col-lg-4">
                     <img  src="{{ $item->image }}" class="card-img-top " width="200" height="220" ></img>
                     <div class="card position-relative">
                         <div class="card-body flex-column position-static">
-                            <strong class="h4 d-inline-block mb-2 text-primary">{{ $item->category->name }}</strong>
+                            <strong class="h4 d-inline-block mb-2 text-primary">{{ $item->category->name}}</strong>
                             <h5 class="h2 card-title mb-0">{{$item->title }}</h5>
-                            <small class="text-muted">{{ $item->created_at->format('d/m/Y') }} Escrito por <cite title="Source Title">{{ $item->user->name }}</cite></small>
+                            
+                            <small class="text-muted">{{ $item->created_at->format('d/m/Y') }} Escrito por <cite title="Source Title">{{$item->user->name}}</cite></small>
                             <p class="card-text mt-4">{{ substr($item->body, 0,20) }}...</p>
-                            <a href="{{ 'post' }}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
+                            <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
                         </div>
                     </div>
           </div>

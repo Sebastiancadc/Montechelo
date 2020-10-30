@@ -109,7 +109,7 @@
             </div>
       <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
   
-      <a href="{{url("admin/calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
+      <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
     </form>
   
   </div>

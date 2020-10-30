@@ -6,6 +6,7 @@ use App\Eventos;
 use App\Helpers\Helpers;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InicioController extends Controller
 {
@@ -21,30 +22,50 @@ class InicioController extends Controller
     public function index()
     {   
 
-        $events = [];
-        foreach ($this->sources as $source) {
-            $calendarEvents = Eventos::all();
-            foreach ($calendarEvents as $model) {
-                $start_time = $model->getOriginal($source['start_time']);
-                $end_time = $model->getOriginal($source['end_time']);
-                $className = $model->getOriginal($source['className']);
-                $name = $model->getOriginal($source['name']);
-                if (!$start_time) {
-                    continue;
+        $usuariologeado = Auth::user();
+        $admins = User::where('role','=','admin')->pluck('id_Usuario');
+         
+        $u =User::all();
+        $h =Helpers::usuario($u);
+
+        if($usuariologeado->role =='colaborador'){
+            $eventosadministradores = Eventos::whereIn('Usuario_id_Usuario',$admins)->get()->toArray();
+            $eventoscolaborador = Eventos::where('Usuario_id_Usuario','=',$usuariologeado->id_Usuario)->get()->toArray();
+            $agrupaciondeeventos= array_merge($eventosadministradores,$eventoscolaborador);
+            $events = [];
+                foreach ($agrupaciondeeventos as $model) {
+                    
+                    $events[] = [
+                        'title' => $model['name'],
+                        'start' => $model['start_time'],
+                        'end' => $model['end_time'],
+                        'className' => $model['className'],
+                        'url'   => route('verEventos',$model['id']),
+                        
+                    ];
                 }
-                $events[] = [
-                    'title' => $name,
-                    'start' => $start_time,
-                    'end' => $end_time,
-                    'className' => $className,
-                ];
-            }
-        }
-       
+        $calendario = array_merge($events);
+        
+        }else{
+            $eventos = Eventos::all()->toArray();
+            $events = [];
+                foreach ($eventos as $model) {
+                    
+                    $events[] = [
+                        'title' => $model['name'],
+                        'start' => $model['start_time'],
+                        'end' => $model['end_time'],
+                        'className' => $model['className'],
+                        'url'   => route('verEventos',$model['id']),
+                    ];
+                }
+            $calendario= array_merge($events,$h);
+            
+        }       
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();
         $eventos = Eventos::whereMonth('start_time',"=",date('m'))->get();
         
-        return view('admin.dashboard',compact('users','eventos','events'));
+        return view('admin.dashboard',compact('users','eventos','calendario'));
     }
 
 

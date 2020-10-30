@@ -1,5 +1,8 @@
 
   <!-- Modal -->
+  <?php
+  $user = auth()->user();
+  ?>
   <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -13,7 +16,7 @@
         <div class="modal-body ">
             <form role="form" method="POST" action="{{url('Calendario/crearEvento')}}">
                 @csrf @method('POST') 
-
+                <input value="{{Auth::user()->id_Usuario}}" name="Usuario_id_Usuario" hidden>
                 <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">

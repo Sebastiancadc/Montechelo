@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'genero' => $data['genero'],
+            'role' => $data['role'],
             'cumpleanios'=> new \Datetime($data['cumpleanios']),
             'password' => Hash::make($data['password']),
         ]);

@@ -328,7 +328,7 @@
 @section('js')
 <script>
   $(document).ready(function () {
-          events={!! json_encode($events) !!};
+          events={!! json_encode($calendario) !!};
           $('#date').fullCalendar({
               events: events,
           })

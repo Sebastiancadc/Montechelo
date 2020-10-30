@@ -1,6 +1,6 @@
 <div class="col-md-4">
                            
-    <div class="modal fade" id="editUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal fade" id="editUsuario{{$user->id_Usuario}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
       <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-body p-0">
@@ -10,7 +10,7 @@
                 <div class="text-center text-muted mb-4">
                   <small>Edita el usuario</small>
                 </div>
-                <form role="form" method="POST" action="{{ url('admin/usuario',$user->id) }}" >
+                <form role="form" method="POST" action="{{ url('admin/usuario',$user->id_Usuario) }}" >
                     @csrf @method('PUT') 
                     
                   <div class="form-group mb-3">

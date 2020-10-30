@@ -66,6 +66,7 @@
                 
                 </div>
                 </div>
+                <input name="role" value="colaborador" hidden>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">

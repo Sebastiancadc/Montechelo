@@ -14,7 +14,7 @@ class Category extends Model
         'name'
     ];
 
-    public function noticia()
+    public function noticias()
     {
         return $this->hasMany('App\Noticia');
     }

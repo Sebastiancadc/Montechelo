@@ -13,7 +13,7 @@
                                     </div>
                                     <form role="form" method="POST" action="{{url('admin/usuario')}}" >
                                         @csrf @method('POST') 
-
+                                      
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">
@@ -28,9 +28,10 @@
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                           </div>
                                           <input class="form-control" placeholder="Email" name="email" type="email">
+                                          
                                         </div>
                                       </div>
-
+                                      <input value="colaborador" name="role" hidden>
                                       <div class="row">
                                         <div class="col-md-6">
                                       <div class="form-group">

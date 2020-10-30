@@ -7,7 +7,7 @@ use App\Eventos;
 use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
-
+use Illuminate\Support\Facades\Auth;
 
 class CalendarioController extends Controller
 {
@@ -42,32 +42,46 @@ class CalendarioController extends Controller
 
     public function index()
     {
-        
+        $usuariologeado = Auth::user();
+        $admins = User::where('role','=','admin')->pluck('id_Usuario');
+         
         $u =User::all();
         $h =Helpers::usuario($u);
     
-        $events = [];
-        foreach ($this->sources as $source) {
-            $calendarEvents = Eventos::all();
-            foreach ($calendarEvents as $model) {
-                $start_time = $model->getOriginal($source['start_time']);
-                $end_time = $model->getOriginal($source['end_time']);
-                $className = $model->getOriginal($source['className']);
-                if (!$start_time) {
-                    continue;
+        if($usuariologeado->role =='colaborador'){
+            $eventosadministradores = Eventos::whereIn('Usuario_id_Usuario',$admins)->get()->toArray();
+            $eventoscolaborador = Eventos::where('Usuario_id_Usuario','=',$usuariologeado->id_Usuario)->get()->toArray();
+            $agrupaciondeeventos= array_merge($eventosadministradores,$eventoscolaborador);
+            $events = [];
+                foreach ($agrupaciondeeventos as $model) {
+                    
+                    $events[] = [
+                        'title' => $model['name'],
+                        'start' => $model['start_time'],
+                        'end' => $model['end_time'],
+                        'className' => $model['className'],
+                        'url'   => route('verEventos',$model['id']),
+                        
+                    ];
                 }
-                $events[] = [
-                    'title' => trim($model->{$source['name']}
-                        . " " . $source['suffix']),
-                    'start' => $start_time,
-                    'end' => $end_time,
-                    'className' => $className,
-                    'url'   => route($source['route'], $model->id),
-                ];
-            }
+        $calendario = array_merge($events,$h);
+        
+        }else{
+            $eventos = Eventos::all()->toArray();
+            $events = [];
+                foreach ($eventos as $model) {
+                    
+                    $events[] = [
+                        'title' => $model['name'],
+                        'start' => $model['start_time'],
+                        'end' => $model['end_time'],
+                        'className' => $model['className'],
+                        'url'   => route('verEventos',$model['id']),
+                    ];
+                }
+            $calendario= array_merge($events,$h);
+            
         }
-
-        $calendario= array_merge($events,$h);
         return view('admin.calen', compact('calendario'));
     }
 
@@ -80,6 +94,7 @@ class CalendarioController extends Controller
         $evento->className = $request->className;
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
+        $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
         $evento->save();
         return back()->with('crearevento', 'Evento registrado correctamente');
     }
@@ -97,6 +112,7 @@ class CalendarioController extends Controller
     public function editarEvento(Request $request, $id)
     {
         $evento = Eventos::findOrFail($id);
+        $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
         $evento->name = $request->name;
         $evento->description = $request->description;
         $evento->className = $request->className;

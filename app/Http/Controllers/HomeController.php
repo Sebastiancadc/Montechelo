@@ -37,24 +37,6 @@ class HomeController extends Controller
     {
         $request->request->add([
             'password' => Hash::make($request->input('password'))
-        ]);       
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->genero = $request->genero;
-        $user->password = $request->password;
-        $user->area = $request->area;
-        $user->cumpleanios = new \Datetime($request->cumpleanios);
-        $request['role']='colaborador';
-        $user->save();
-        return redirect('admin/usuario');
-    }
-
-    public function storeAdmin(Request $request)
-    {
-        $user = new DateTime();
-        $request->request->add([
-            'password' => Hash::make($request->input('password'))
         ]);
         $user = new User();
         $user->name = $request->name;
@@ -63,8 +45,26 @@ class HomeController extends Controller
         $user->password = $request->password;
         $user->area = $request->area;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
-        $request['role']='admin';
+        $user->role = $request->role;
         $user->save();
+        return redirect('admin/usuario');
+    }
+
+    public function storeAdmin(Request $request)
+    {
+
+        $request->request->add([
+            'password' => Hash::make($request->input('password'))
+        ]);
+        $user2 = new User();
+        $user2->name = $request->name;
+        $user2->email = $request->email;
+        $user2->genero = $request->genero;
+        $user2->password = $request->password;
+        $user2->area = $request->area;
+        $user2->cumpleanios = new \Datetime($request->cumpleanios);
+        $request['role'] = 'admin';
+        $user2->save();
         return redirect('admin/usuario');
     }
 
@@ -76,12 +76,12 @@ class HomeController extends Controller
     public function edit($id)
     {
         $userActualizar = User::findOrFail($id);
-        return view('admin/forms/editaruser',compact('userActualizar'));
-    }   
+        return view('admin/forms/editaruser', compact('userActualizar'));
+    }
 
     public function update(Request $request, $id)
-    { 
-        
+    {
+
         $UserUpdate = new DateTime();
         $request->merge([
             'password' => Hash::make($request->input('password'))
@@ -90,13 +90,11 @@ class HomeController extends Controller
         $UserUpdate->name = $request->name;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
-        $UserUpdate->format("Y-m-d");
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->area = $request->area;
         $UserUpdate->save();
-        // return redirect('admin/usuario');
         return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
     }
 
@@ -104,7 +102,7 @@ class HomeController extends Controller
     {
         $data = User::find($id);
         $data->delete();
-        return redirect('admin/usuario')->with('eliminarusuario','El usuario se elimino');
+        return redirect('admin/usuario')->with('eliminarusuario', 'El usuario se elimino');
     }
 
     public function logout()
@@ -118,27 +116,5 @@ class HomeController extends Controller
         // return $this->loggedOut($request) ?: redirect('admin.login');
     }
 
-    public function postProfileImage(Request $request)
-{
-    $this->validate($request, [
-        'photo' => 'required|image'
-    ]);
-    $user= Auth::user();
-    $extension = $file->getClientOriginalExtension();
-    $fileName = auth()->id() . '.' . $extension;
-    $path = public_path('admin//'.$fileName);
 
-  
-
-    Image::make($request->file('Photo')->fit(144,144))->save();
-
-  
-    $user->photo_extension = $extension;
-    $saved = $user->save();
-
-    $data['success'] = $saved;
-    $data['path'] = $user->getAvatarUrl() . '?' . uniqid();
-
-    return $data;
-}
 }

@@ -31,6 +31,7 @@ class Eventos extends Model
         'start_time',
         'end_time',
         'className',
+        'Usuario_id_Usuario',
 
     ];
 

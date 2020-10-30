@@ -11,7 +11,7 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crea el admin</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{url('crearAdmin')}}">
+                                    <form role="form" method="POST" action="{{url('admin/usuario')}}">
                                         @csrf @method('POST') 
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
@@ -40,6 +40,7 @@
                                             </div>
                                         </div>
                                       </div>
+                                      <input value="admin" name="role" hidden>
                                       <div class="col-md-6">
                                         <div class="form-group">
                                           <select class="form-control" id="exampleFormControlSelect1" name="genero" id="genero">

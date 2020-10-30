@@ -28,24 +28,19 @@ class NoticiasController extends Controller
     }
     public function index2()
     {
-
-        $noticia = Noticia::paginate(6);
-        return view('admin.noticia',compact('noticia'));
+        $noticias = Noticia::paginate(6);
+        return view('admin.noticia',compact('noticias'));
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function crearnoticia()
     {
-        $user = User::find(Auth::User()->id);
+        $user = User::find(Auth::User()->id_Usuario);
         $categoria = Category::all();
         return view('admin/crearnoticia',compact('categoria','user'));
     }
     public function crearnoticias()
     {
-       $user = User::find(Auth::User()->id);
+       $user = User::find(Auth::User()->id_Usuario);
        $categoria = Category::all();
        return view('admin.crearnoticia',compact('categoria','user'));
     }
@@ -85,10 +80,6 @@ class NoticiasController extends Controller
          }
           Session::flash('message','Publicación creada correctamente');
           return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
-
-
-
-
     }
     /**
      * Display the specified resource.

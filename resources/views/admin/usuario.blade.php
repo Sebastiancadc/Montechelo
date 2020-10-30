@@ -50,10 +50,10 @@
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-forms" data-original-title="Añadir admin" style="    margin-right: -69%;
                                 margin-top: -54px;">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                    <span class="btn-inner--text">Crear admin</span>
+                                    <span class="btn-inner--text">Crear administrador</span>
                                    
                                 </a>
-                                @include('admin.crearUserAdmin')
+                                @include('admin.forms.crearUserAdmin')
                             </div>
                         </div>
                   @if (session('eliminarusuario'))
@@ -125,15 +125,15 @@
                                     </td>
                                     <td class="table-actions">
                                        
-                                        <a href="{{route('editarusuario',$user->id)}}" class="table-action" data-original-title="Editar usuario">
+                                        <a href="{{route('editarusuario',$user->id_Usuario)}}" class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
+                                        <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteUsuario{{$user->id_Usuario}}" data-original-title="Eliminar usuario">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     <div class="col-md-4">
                         
-                                            <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                            <div class="modal fade" id="deleteUsuario{{$user->id_Usuario}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                                               <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                                                 <div class="modal-content">
                                                   <div class="modal-body p-0">
@@ -143,7 +143,7 @@
                                                         <div class="text-center text-muted mb-4">
                                                           <h3>Eliminar el usuario</h3>
                                                         </div>
-                                                        <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}" >
+                                                        <form role="form" method="POST" action="{{route('eliminarusuario',$user->id_Usuario) }}" >
                                                             @csrf @method('DELETE') 
                                         
                                                           <div class="text-center">

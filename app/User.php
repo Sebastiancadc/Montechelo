@@ -12,11 +12,11 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
-    /*
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
+    protected $table = 'usuario';
+    protected $guarded = ['id_Usuario'];
+	protected $primaryKey = 'id_Usuario';
+
     protected $fillable = [
         'name', 'email', 'password','genero','cumpleanios','role','area'
     ];
@@ -63,10 +63,8 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y/m/d', $value);
     }
     
-    public function noticia()
+    public function noticias()
     {
         return $this->hasMany('App\Noticia');
     }
-
-
 }
