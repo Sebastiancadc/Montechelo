@@ -54,10 +54,15 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role === 'admin';
     }
+    public function colaborador()
+    {
+        return $this->role === 'colaborador';
+    }
     public function setCrbDateAttribute($value)
     {
-        $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y-m-d', $value);
+        $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y/m/d', $value);
     }
+    
     public function noticia()
     {
         return $this->hasMany('App\Noticia');

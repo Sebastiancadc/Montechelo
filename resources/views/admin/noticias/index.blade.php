@@ -45,12 +45,18 @@
                                     <span class="btn-inner--text">Publicar</span>
                                 </a>
                             </div>
-
+                            @include('admin.noticias.create')
                         </div>
                     </div>
                     @if (Session::has('message'))
-                    <div class="alert alert-success">{{ Session::get('message') }}</div>
-                    @endif
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+    <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{ Session::get('message') }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
                     <!-- Light table -->
                     <div class="table-responsive">
 
@@ -111,7 +117,7 @@
                                                         <div class="text-center text-muted mb-4">
                                                           <h3>¿Está segur@ de eliminar esta noticia?</h3>
                                                         </div>
-                                                        <form role="form" method="POST" action="{{route('eliminar',$item->Id_noticia)}}" >
+                                                        <form role="form" method="POST" action="{{route('eliminarnoticia',$item->Id_noticia)}}" >
                                                             @csrf @method('DELETE')
 
                                                           <div class="text-center">

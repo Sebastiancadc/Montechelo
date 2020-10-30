@@ -11,7 +11,7 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crea el admin</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{url('admin/usuario/createadmin')}}" >
+                                    <form role="form" method="POST" action="{{url('crearAdmin')}}">
                                         @csrf @method('POST') 
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">

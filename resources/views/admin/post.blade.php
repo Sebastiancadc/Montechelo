@@ -14,7 +14,7 @@
                     </nav>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                    <a href="{{ url('admin/noticiausu') }}" class="btn btn-sm btn-neutral">Volver</a>
+                    <a href="{{ url('noticiausu') }}" class="btn btn-sm btn-neutral">Volver</a>
                 </div>
             </div>
             <!-- Card stats -->

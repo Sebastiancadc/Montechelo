@@ -36,7 +36,7 @@
       </button>
   </div>
   @endif
-    <form role="form" method="POST" action="{{ url('admin/crearsolicitudes')}}" >
+    <form role="form" method="POST" action="{{ url('crearsolicitudes')}}" >
       @csrf @method('POST')
     <!-- Card body -->
     <div class="card-body">

@@ -11,7 +11,7 @@
           </button>
         </div>
         <div class="modal-body ">
-            <form role="form" method="POST" action="{{url('admin/Calendario/crearEvento')}}">
+            <form role="form" method="POST" action="{{url('Calendario/crearEvento')}}">
                 @csrf @method('POST') 
 
                 <div class="form-group mb-3">

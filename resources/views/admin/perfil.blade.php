@@ -55,7 +55,7 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{ Auth::user()->name}}<span class="font-weight-light"><br> <?php echo calculaedad(Auth::user()->cumpleanios) ?></span>
+              {{ Auth::user()->name}}<span class="font-weight-light"><br> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
               años
             </h5>
             <div class="h5 mt-4">
@@ -65,9 +65,6 @@ height: 148%;"></span>
           </div>
         </div>
       </div>
-
-
-
       <div class="card">
         <!-- Card header -->
         <div class="card-header">
@@ -314,7 +311,7 @@ height: 148%;"></span>
                       <div class="tab-content">
                         <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
                           <div class="form-group">
-                            <label class="form-control-label" for="example3cols2Input">Fecha</label>
+                            <label class="form-control-label" for="example3cols2Input">Fecha de nacimiento</label>
                             <div class="input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -347,7 +344,7 @@ height: 148%;"></span>
                     <div class="col-md-6">
                       <h4>Area</h4>
                       <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
-                        <option>{{ Auth::user()->area}}</option>
+                        <option>{{Auth::user()->area}}</option>
                         <option>Programacion</option>
                         <option>Diseño</option>
                         <option>Marketing</option>
@@ -405,12 +402,7 @@ height: 148%;"></span>
                             margin-left: 400px;
                             margin-top: -55px;
                         ">Maria Alejandra</h4>
-              <br>
-              
-           
-            
-              
-                     
+              <br>                     
   </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
 
@@ -461,17 +453,6 @@ height: 148%;"></span>
         </div>
 
       </div>
-      <?php
-      function calculaedad($fechanacimiento)
-      {
-        list($ano, $mes, $dia) = explode("-", $fechanacimiento);
-        $ano_diferencia  = date("Y") - $ano;
-        $mes_diferencia = date("m") - $mes;
-        $dia_diferencia   = date("d") - $dia;
-        if ($dia_diferencia < 0 || $mes_diferencia < 0)
-          $ano_diferencia--;
-        return $ano_diferencia;
-      } ?>
       <?php $user = auth()->user();
       ?>
     </div>
@@ -486,7 +467,7 @@ height: 148%;"></span>
 <script type="text/javascript">
   $(function () {
       $('#date').date({
-        format: 'Y/M/D',
+        format: 'Y/m/d',
       });
   });
 </script>
