@@ -11,7 +11,7 @@
                                     <div class="text-center text-muted mb-4">
                                       <small>Crear repositorio</small>
                                     </div>
-                                    <form role="form" method="POST" action="{{url('admin/repositorio')}}" >
+                                    <form enctype="multipart/form-data" role="form" method="POST" action="{{url('admin/repositorio')}}" >
                                         @csrf @method('POST') 
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
@@ -39,12 +39,12 @@
                                         </div>
                                       </div>
  
-                                      <div class="text-center">
-                                      <form method="POST" action="{{route('subir')}}" accept-charset="UTF-8" enctype="multipart/form-data">
-                                      @csrf
+                                     
   
-              <input class="btn btn-primary my-4" type="submit" value="Enviar" style="margin-top: 30px">
-              <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>  
+                                      <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
+                                      <button type="submit" class="btn btn-primary my-4">Crear</button>
+
+                                      <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>  
               </form>
                                    </div>
                                     </form>

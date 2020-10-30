@@ -14,6 +14,6 @@ class Repositorio extends Model
 
 	protected $primaryKey = 'Id_Repositorio';
     protected $fillable = [
-        'Id_Repositorio','tipo_archivo','autor','observaciones','carpetas','staus','imagen','created_at','updated_at',
+        'Id_Repositorio','tipo_archivo','autor','observaciones','staus','image','created_at','updated_at',
     ];
 }
