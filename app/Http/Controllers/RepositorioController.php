@@ -50,15 +50,11 @@ class RepositorioController extends Controller
   
     public function store(Request $request)
     {
-    
-    
- 
 
         $messages = [
           
           //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
           'image.max' =>'La imagen no debe ser mayor que 2 mb.'
-
 
         ];
          $this->validate($request,  $messages);
@@ -114,8 +110,6 @@ class RepositorioController extends Controller
         return redirect('auth.login');
     }
 
-
-    
 //recordar añadir Request en el que caso que nuestro controlador no lo tenga importado
 
  public function subirArchivo(Request $request)

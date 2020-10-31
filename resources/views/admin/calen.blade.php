@@ -1,5 +1,5 @@
 @extends('admin.layout')
-<link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
+{{-- <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css"> --}}
 @section('content')
   
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">
@@ -81,12 +81,13 @@
           <div class="card-body p-0">
             <div class="calendar" id="eventos" data-toggle="calendar"></div>
           </div>
-        @include('admin.calendario.crear')
+       
         </div>
-  
+       
       </div>
     </div>
-    {{-- <footer class="footer pt-0">
+    
+    <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
           <div class="copyright text-center text-lg-left text-muted">
@@ -94,11 +95,12 @@
           </div>
         </div>
       </div>
-    </footer>  --}}
+    </footer> 
     </div>
   </div>
  
 
+  @include('admin.calendario.crear')
   <style>
     .Especial{
         background-color: #2dce89 !important;

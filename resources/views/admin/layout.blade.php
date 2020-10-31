@@ -116,7 +116,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('crearnovedad')}}">
-                <i class="ni ni-building text-orange"></i>
+                <i class="ni ni-building text-purple"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
