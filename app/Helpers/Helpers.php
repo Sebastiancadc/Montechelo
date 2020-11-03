@@ -51,6 +51,12 @@ class Helpers
         return $fechaformateada;
     }
 
+    public static function modal($cumpleanios) 
+    {   
+        $fechamodal =Carbon::parse($cumpleanios)->format('m-d');
+        return $fechamodal;
+    }
+
     public static function edad($cumpleanios) 
     {   
         $fecha_nacimiento = new DateTime($cumpleanios);

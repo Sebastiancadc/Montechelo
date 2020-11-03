@@ -98,28 +98,7 @@
     </footer> 
     </div>
   </div>
- 
-
   @include('admin.calendario.crear')
-  <style>
-    .Especial{
-        background-color: #2dce89 !important;
-        }
-    .Advertencia  {
-        background-color: #fb6340 !important;
-        }
-    .Importante{
-        background-color: #11cdef !important;
-        }
-    .eventoRojo{
-       
-        background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
-        }
-        .black{
-          color:#000000; 
-        }
-  </style>
-
 @section('js')
 
 <script>

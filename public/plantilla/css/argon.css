@@ -29638,3 +29638,28 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 {
     max-width: 200px;
 }
+.gif{
+background-image: url('https://cdn.discordapp.com/attachments/751199423354241064/773242214649954324/giphy_1.gif');
+background-size: cover; 
+}
+.gris{
+color: #8898aa !important;
+}
+
+
+.Especial{
+    background-color: #2dce89 !important;
+    }
+.Advertencia  {
+    background-color: #fb6340 !important;
+    }
+.Importante{
+    background-color: #11cdef !important;
+    }
+.eventoRojo{
+   
+    background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
+    }
+    .black{
+      color:#000000; 
+    }

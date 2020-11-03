@@ -15,7 +15,7 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->apellido}}</h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->lastname}}</h1>
       </div>
       <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
     </div>
@@ -55,7 +55,7 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{ Auth::user()->name}}<span class="font-weight-light"> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
+              {{ Auth::user()->name}} {{Auth::user()->lastname}} <span class="font-weight-light"> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
               años
               <div class="h5 mt-4">
                 {{ Auth::user()->area}}
@@ -311,7 +311,21 @@ height: 148%;"></span>
                         <h4>Nombre</h4>
                         <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
+                      <h4>Apellido</h4>
+                      <input class="form-control" value="{{ Auth::user()->lastname}}" name="lastname" type="text">
+                  </div>
+                  </div>    
+                  <br>   
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>Correo</h4>
+                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
+                    </div>
+                  </div>
+<br>
+                  <div class="row">
+                    <div class="col-md-6">
                       <div class="tab-content">
                         <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
                           <div class="form-group">
@@ -326,25 +340,6 @@ height: 148%;"></span>
                         </div>
                       </div>
                     </div>
-                  </div>        
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h4>Gmail</h4>
-                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
-
-                    </div>
-                    <div class="col-md-5">
-                      <h4>Genero</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
-                        <option>{{ Auth::user()->genero}}</option>
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro</option>
-                      </select>
-                    </div>
-                  </div>  
-                  <br> 
-                  <div class="row">
                     <div class="col-md-6">
                       <h4>Area</h4>
                       <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
@@ -355,11 +350,26 @@ height: 148%;"></span>
                         <option>Produccion</option>
                       </select>
                     </div>
-                    <div class="col-md-5">
-                      <h4>Telefono</h4>
-                      <input class="form-control" name="telefono" value="{{Auth::user()->telefono}} " type="text" >
 
+                  </div>  
+            
+                  <div class="row">
+                                        
+                    <div class="col-md-6">
+
+                      <h4>Genero</h4>
+                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
+                        <option>{{ Auth::user()->genero}}</option>
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                        <option>Otro</option>
+                      </select>
                     </div>
+                    <div class="col-md-6">
+                      <h4>Telefono</h4>
+                      <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
+                    </div>
+
                   </div>                        
                 </div>
                 <div class="card-body text-center"> 
@@ -412,10 +422,6 @@ height: 148%;"></span>
 
 
               <h1 class="form-control-label">Grupos sugeridos</h1><br>
-
-             
-        
-              
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
               </a>

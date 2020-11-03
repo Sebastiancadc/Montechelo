@@ -39,9 +39,7 @@ class InicioController extends Controller
                         'title' => $model['name'],
                         'start' => $model['start_time'],
                         'end' => $model['end_time'],
-                        'className' => $model['className'],
-                        'url'   => route('verEventos',$model['id']),
-                        
+                        'className' => $model['className'],  
                     ];
                 }
         $calendario = array_merge($events);
@@ -55,8 +53,7 @@ class InicioController extends Controller
                         'title' => $model['name'],
                         'start' => $model['start_time'],
                         'end' => $model['end_time'],
-                        'className' => $model['className'],
-                        'url'   => route('verEventos',$model['id']),
+                        'className' => $model['className'],  
                     ];
                 }
             $calendario= array_merge($events,$h);
@@ -64,8 +61,9 @@ class InicioController extends Controller
         }       
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();
         $eventos = Eventos::whereMonth('start_time',"=",date('m'))->get();
-        
-        return view('admin.dashboard',compact('users','eventos','calendario'));
+        $modal = User::whereDay('cumpleanios',"=",date('d'))->get();
+
+        return view('admin.dashboard',compact('users','eventos','calendario','modal'));
     }
 
 

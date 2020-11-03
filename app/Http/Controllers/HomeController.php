@@ -88,12 +88,14 @@ class HomeController extends Controller
         ]);
         $UserUpdate = User::findOrFail($id);
         $UserUpdate->name = $request->name;
+        $UserUpdate->lastname = $request->lastname;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->area = $request->area;
+        $UserUpdate->phone = $request->phone;
         $UserUpdate->save();
         return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
     }

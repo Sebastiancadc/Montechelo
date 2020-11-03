@@ -42,9 +42,11 @@ class PerfilController extends Controller
      
         $UserUpdate = User::findOrFail($id_Usuario);    
         $UserUpdate->name = $request->name;
+        $UserUpdate->lastname = $request->lastname;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
         $UserUpdate->area = $request->area;
+        $UserUpdate->phone = $request->phone;
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->save();
         return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');

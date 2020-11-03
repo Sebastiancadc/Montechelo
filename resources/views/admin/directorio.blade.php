@@ -57,9 +57,12 @@
               <span class="text-success">●</span>
               <small>Activo</small>
               <h5 class="h3">
-                {{$usuario->name}}<span class="font-weight-light">, 
+                {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,
                 {{App\Helpers\Helpers::edad($usuario->cumpleanios)}}
               </h5>
+              <div class="h5 font-weight-300">
+                <i class="ni location_pin mr-2"></i>{{$usuario->phone}}
+              </div>
               <div class="h5 font-weight-300">
                 <i class="ni location_pin mr-2"></i>{{$usuario->area}}
               </div>
