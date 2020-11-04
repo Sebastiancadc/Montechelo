@@ -37,6 +37,24 @@
                       <input class="form-control" placeholder="Rol" value='{{$user->role}}' name="role" type="text">
                     </div>
                   </div>
+
+                  <div class="form-group mb-3">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Email" value='{{$user->phone}}' name="email" type="email">
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Rol" value='{{$user->area}}' name="role" type="text">
+                    </div>
+                  </div>
+
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
                       <div class="input-group-prepend">

@@ -102,6 +102,8 @@ Route::put('editarprofile/{id_Usuario}', 'PerfilController@updateProfile')->name
 
 //Directorio
 Route::resource('directorio', 'DirectorioController');
+
+Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
 Route::get('verperfil/{id_Usuario}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias

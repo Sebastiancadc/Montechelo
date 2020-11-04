@@ -67,4 +67,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Noticia');
     }
+
+    public function scopeBuscarpor($query,$tipo,$buscar)
+    {
+       if( ($tipo) &&  ($buscar))
+       {
+          return $query->where($tipo,'like',"%buscar%");
+       }
+    }
 }

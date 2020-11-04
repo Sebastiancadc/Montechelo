@@ -369,12 +369,6 @@ height: 148%;"></span>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      {{-- <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="phone_status" >
-                        <label class="custom-control-label" for="customCheck1"></label>
-                      </div>   --}}
-                      
-                      
                       <h4>Telefono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
                         checked value="1" 
                         @else

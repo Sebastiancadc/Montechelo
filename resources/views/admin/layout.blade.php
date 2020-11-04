@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
+
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-
+  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
@@ -499,7 +499,7 @@
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-
+@yield('jss')
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
