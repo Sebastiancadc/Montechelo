@@ -293,7 +293,8 @@ height: 148%;"></span>
 
               <form role="form" method="POST" action="{{url('editarprofile',$user->id_Usuario)}}">
                 @csrf @method('PUT')
-                <hr class="my-4" />
+                <h4 class="text-muted ">INFORMACION PERSONAL</h4>
+                <hr class="my-4"/>
                 @if (session('editarusu'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <span class="alert-icon"><i class="ni ni-like-2"></i></span>
@@ -304,9 +305,11 @@ height: 148%;"></span>
                 </div>
                 @endif
                 <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
+                <a class="text-muted mb-4">Seleccione los campos que desee ocultar</a>
+                <br><br>
                 <div class="pl-lg-4">
                   <div class="row">
+                    
                     <div class="col-md-6">
                         <h4>Nombre</h4>
                         <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
@@ -323,7 +326,7 @@ height: 148%;"></span>
                       <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
                     </div>
                   </div>
-<br>
+                    <br>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="tab-content">
@@ -366,7 +369,18 @@ height: 148%;"></span>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <h4>Telefono</h4>
+                      {{-- <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="phone_status" >
+                        <label class="custom-control-label" for="customCheck1"></label>
+                      </div>   --}}
+                      
+                      
+                      <h4>Telefono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
+                        checked value="1" 
+                        @else
+                            value="0"
+                      @endif></h4>
+                      
                       <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
                     </div>
 

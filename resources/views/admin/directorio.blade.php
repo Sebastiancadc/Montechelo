@@ -60,9 +60,11 @@
                 {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,
                 {{App\Helpers\Helpers::edad($usuario->cumpleanios)}}
               </h5>
+              @if ($usuario->phone_status == '1')
               <div class="h5 font-weight-300">
                 <i class="ni location_pin mr-2"></i>{{$usuario->phone}}
               </div>
+              @endif
               <div class="h5 font-weight-300">
                 <i class="ni location_pin mr-2"></i>{{$usuario->area}}
               </div>

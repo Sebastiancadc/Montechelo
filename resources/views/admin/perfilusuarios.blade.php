@@ -316,11 +316,14 @@ height: 148%;"></span>
                       <h4>Area</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
                     </div>
+                    @if ($perfil->phone_status == '1')
                     <div class="col-md-5">
                       <h4>Telefono</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
 
-                    </div>
+                    </div>   
+                    @endif
+                    
                   </div>                        
                 </div>  
             </div>
