@@ -63,7 +63,7 @@ height: 148%;"></span>
                 {{ Auth::user()->area}}
               </div>
             </h5>
-            
+
             <div class="">
               {{ Auth::user()->email}}
             </div>
@@ -81,7 +81,6 @@ height: 148%;"></span>
         <div class="card-body">
           <!-- List group -->
           <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -98,8 +97,6 @@ height: 148%;"></span>
                 </div>
 
               </div>
-            </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -117,7 +114,6 @@ height: 148%;"></span>
 
               </div>
             </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -134,8 +130,6 @@ height: 148%;"></span>
                 </div>
 
               </div>
-            </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -168,111 +162,106 @@ height: 148%;"></span>
         <div class="card-body">
           <!-- List group -->
           <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Alejandra Osorio</h5>
-                  <div class="">
-                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Sebastian Rodriguez</h5>
-                  <div class="">
-                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Brayan Oconer</h5>
-                  <div class="">
-                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li> <br>
-            <div class="card-header">
-              <h5 class="h3 mb-0"> Mi grupos</h5>
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
-                  <div class="col-auto">
+                    <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
                     </a>
-                  </div>
-                  <div class="col">
-                    <h5>Diseñadores</h5>
-                    <div class="">
-                      <div class="progress-bar bg-teal" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
                     </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col">
-                    <h5>Java español</h5>
+                    <div class="col">
+                    <h5>Alejandra Osorio</h5>
                     <div class="">
-                      <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                      </a>
-                  </div>
 
-                  <div class="col">
-                    <h5>Desarrolladores </h5>
-                    <div class="">
-                      <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <!-- Avatar -->
+                        <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                        </a>
                     </div>
-                  </div>
+                    <div class="col">
+                        <h5>Sebastian Rodriguez</h5>
+                        <div class="">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                        </div>
+                    </div>
                 </div>
-              </li>
-          </ul>
+
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                    <!-- Avatar -->
+                    <a href="#" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
+                    </a>
+                    </div>
+                    <div class="col">
+                    <h5>Brayan Oconer</h5>
+                    <div class="">
+                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
+                    </div>
+                    </div>
+                </div>
+                </li> <br>
+                <div class="row align-items-center">
+                    <div class="card-header">
+                        <h5 class="h3 mb-0"> Mis grupos</h5>
+                    </div>
+                    <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <h5>Diseñadores</h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-teal" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <h5>Java español</h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <h5>Desarrolladores </h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
         </div>
-      </div>
     </div>
-
-
     <div class="col-xl-8 order-xl-1" style="margin-top: 30px">
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
@@ -320,8 +309,8 @@ height: 148%;"></span>
                       <h4>Apellido</h4>
                       <input class="form-control" value="{{ Auth::user()->lastname}}" name="lastname" type="text">
                   </div>
-                  </div>    
-                  <br>   
+                  </div>
+                  <br>
                   <div class="row">
                     <div class="col-md-12">
                       <h4>Correo</h4>
@@ -356,10 +345,10 @@ height: 148%;"></span>
                       </select>
                     </div>
 
-                  </div>  
-            
+                  </div>
+
                   <div class="row">
-                                        
+
                     <div class="col-md-6">
 
                       <h4>Genero</h4>
@@ -380,18 +369,18 @@ height: 148%;"></span>
                       <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
                     </div>
 
-                  </div>                        
+                  </div>
                 </div>
-                <div class="card-body text-center"> 
+                <div class="card-body text-center">
                   <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Editar Perfil</button>
-                </div>  
+                </div>
             </div>
           </form>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
 
-        
-              
+
+
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
@@ -401,14 +390,14 @@ height: 148%;"></span>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                            
+
                         ">Manuel Rodriguez</h4>
               <br>
-              
+
               <h4 style="
                             margin-left: 400px;
                             margin-top: -50px;
-                            
+
                         ">Andres Sebastian</h4>
               <br>
               <a href="#" class="avatar ">
@@ -426,7 +415,7 @@ height: 148%;"></span>
                             margin-left: 400px;
                             margin-top: -55px;
                         ">Maria Alejandra</h4>
-              <br>                     
+              <br>
   </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
 
@@ -441,14 +430,14 @@ height: 148%;"></span>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                            
+
                         ">PHP avanzado</h4>
               <br>
-              
+
               <h4 style="
                             margin-left: 400px;
                             margin-top: -50px;
-                            
+
                         ">Desarrolladores</h4>
               <br>
               <a href="#" class="avatar ">

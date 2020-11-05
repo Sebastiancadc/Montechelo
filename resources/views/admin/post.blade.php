@@ -5,11 +5,11 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Noticia</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Directorio</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Noticia</li>
+                            <li class="breadcrumb-item active" aria-current="page">Directorio</li>
                         </ol>
                     </nav>
                 </div>
@@ -57,23 +57,9 @@
                     <p class="mb-4">
                         {{ $noticia->body }}
                     </p>
-                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded" style="margin-left: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
+                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
                     <div class="row align-items-center my-3 pb-3 border-bottom">
                     <div class="col-sm-6">
-                        <div class="icon-actions">
-                        <a href="#" class="like active">
-                            <i class="ni ni-like-2"></i>
-                            <span class="text-muted">150</span>
-                        </a>
-                        <a href="#">
-                            <i class="ni ni-chat-round"></i>
-                            <span class="text-muted">36</span>
-                        </a>
-                        <a href="#">
-                            <i class="ni ni-curved-next"></i>
-                            <span class="text-muted">12</span>
-                        </a>
-                        </div>
                     </div>
                     <div class="col-sm-6 d-none d-sm-block">
                         <div class="d-flex align-items-center justify-content-sm-end">
@@ -94,55 +80,31 @@
                     </div>
                     <!-- Comments -->
                     <div class="mb-1">
-                    <div class="media media-comment">
-                        <img alt="Image placeholder" class="avatar avatar-lg media-comment-avatar rounded-circle" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
-                        <div class="media-body">
-                        <div class="media-comment-text">
-                            <h6 class="h5 mt-0">Michael Lewis</h6>
-                            <p class="text-sm lh-160">Cras sit amet nibh libero nulla vel metus scelerisque ante sollicitudin. Cras purus odio vestibulum in vulputate viverra turpis.</p>
-                            <div class="icon-actions">
-                            <a href="#" class="like active">
-                                <i class="ni ni-like-2"></i>
-                                <span class="text-muted">3 likes</span>
-                            </a>
-                            <a href="#">
-                                <i class="ni ni-curved-next"></i>
-                                <span class="text-muted">2 shares</span>
-                            </a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="media media-comment">
-                        <img alt="Image placeholder" class="avatar avatar-lg media-comment-avatar rounded-circle" src="{{asset("plantilla/img/theme/team-2.jpg")}}">
-                        <div class="media-body">
-                        <div class="media-comment-text">
-                            <h6 class="h5 mt-0">Jessica Stones</h6>
-                            <p class="text-sm lh-160">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-                            <div class="icon-actions">
-                            <a href="#" class="like active">
-                                <i class="ni ni-like-2"></i>
-                                <span class="text-muted">10 likes</span>
-                            </a>
-                            <a href="#">
-                                <i class="ni ni-curved-next"></i>
-                                <span class="text-muted">1 share</span>
-                            </a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="media align-items-center">
-                        <img alt="Image placeholder" class="avatar avatar-lg rounded-circle mr-4" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
-                        <div class="media-body">
-                        <form>
-                            <textarea class="form-control" placeholder="Write your comment" rows="1"></textarea>
-                        </form>
-                        </div>
+                        <div id="disqus_thread"></div>
+                        <script>
+
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://montechelo-prueba.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
                     </div>
                 </div>
-            </div>
+           </div>
         </div>
     </div>
 </div>
