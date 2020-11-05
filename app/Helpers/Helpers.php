@@ -64,5 +64,7 @@ class Helpers
         $edad = $hoy->diff($fecha_nacimiento);
         return $edad->y;
     }
+
+    
     
 }

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-  
+<link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.min.css")}}">
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
       <div class="header-body">
@@ -15,6 +15,20 @@
             </nav>
           </div>
         </div>
+
+        <form >
+          <div class="input-group gpr">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-primary" type="submit" style="height: 40px;">Todos</button>
+                <span>.</span>
+                <button class="btn btn-primary" type="submit" style="height: 40px;">Buscar</button>
+                <span>.</span>
+              </div>
+              <input class="form-control" type="search" placeholder="Buscar por" name="search" id="search" style="height: 40px;"> 
+            </div>
+          </div> 
+        </form>
         <!-- Card stats -->
         <div class="row">
           <div class="col-xl-3 col-md-6">
@@ -60,9 +74,11 @@
                 {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,
                 {{App\Helpers\Helpers::edad($usuario->cumpleanios)}}
               </h5>
+              @if ($usuario->phone_status == '1')
               <div class="h5 font-weight-300">
                 <i class="ni location_pin mr-2"></i>{{$usuario->phone}}
               </div>
+              @endif
               <div class="h5 font-weight-300">
                 <i class="ni location_pin mr-2"></i>{{$usuario->area}}
               </div>
@@ -105,4 +121,26 @@
     </footer>
   </div>
 </div>  
+
+@section('jss')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+<script>
+  $('#search').autocomplete({
+    source: function(request, response){
+      $.ajax({
+        url:"{{route('buscar')}}",
+        dataType:'json',
+        data:{
+          term: request.term
+        },
+        success: function(data){
+          response(data)
+        }
+      });  
+
+    }
+  });
+  </script>
+@endsection
+
 @endsection

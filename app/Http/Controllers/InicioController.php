@@ -56,7 +56,7 @@ class InicioController extends Controller
                         'className' => $model['className'],  
                     ];
                 }
-            $calendario= array_merge($events,$h);
+            $calendario= array_merge($events);
             
         }       
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();

@@ -80,8 +80,6 @@
                 @enderror
                 </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -89,19 +87,6 @@
                       </div>
                       <input class="form-control datepicker" id="datepickers" name="cumpleanios" placeholder="Select date" type="text">
                   </div>
-              </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                  
-                    <select class="form-control" id="exampleFormControlSelect1" name="genero" id="genero">
-                      <option>Genero</option>
-                      <option>Hombre</option>
-                      <option>Mujer</option>
-                      <option>Otro</option>
-                    </select>
-                  </div>
-              </div>
               </div>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">

@@ -84,16 +84,15 @@
                         <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
                                
-                                    <th scope="col" class="sort" data-sort="nombre">#</th>
-                                    <th scope="col" class="sort" data-sort="nombre">Nombre</th>
-                                    <th scope="col" class="sort" data-sort="apellido">Apellido</th>
-                                    <th scope="col" class="sort" data-sort="género">Género</th>
-                                    <th scope="col" class="sort" data-sort="género">Fecha de nacimiento</th>
-                                    <th scope="col" class="sort" data-sort="género">Rol</th>
-                                    {{-- <th scope="col" class="sort" data-sort="área">Área</th>
-                                    <th scope="col" class="sort" data-sort="cédula">Cédula</th>
-                                    <th scope="col" class="sort" data-sort="teléfono">Teléfono</th>
-                                    <th scope="col" class="sort" data-sort="correo">Correo</th> --}}
+                                    <th scope="col" class="sort" >#</th>
+                                    <th scope="col" class="sort" >Nombre</th>
+                                    <th scope="col" class="sort" >Correo</th>
+                                    <th scope="col" class="sort" >Género</th>
+                                    <th scope="col" class="sort" >Fecha de nacimiento</th>
+                                    <th scope="col" class="sort" >Área</th>
+                                    <th scope="col" class="sort" >Teléfono</th>
+                                    <th scope="col" class="sort" >Rol</th>
+                                    {{--<th scope="col" class="sort" data-sort="cédula">Cédula</th>--}}
                                     {{-- <th scope="col" class="sort" data-sort="dirección">Dirección</th>
                                     <th scope="col" class="sort" data-sort="estado">Estado</th> --}}
                                     <th scope="col" class="sort" data-sort="acciones">Acciones</th>
@@ -109,7 +108,7 @@
                                     </td>
                                    
                                     <td>
-                                        <span class="text-muted">{{$user->name}}</span>
+                                        <span class="text-muted">{{$user->name}} {{$user->lastname}}</span>
                                     </td>
                                     <td>
                                         <span class="text-muted">{{$user->email}}</span>
@@ -121,8 +120,15 @@
                                         <span class="text-muted">{{$user->cumpleanios}}</span>
                                     </td>
                                     <td>
+                                        <span class="text-muted">{{$user->area}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{$user->phone}}</span>
+                                    </td>
+                                    <td>
                                         <span class="text-muted">{{$user->role}}</span>
                                     </td>
+                                    
                                     <td class="table-actions">
                                        
                                         <a href="{{route('editarusuario',$user->id_Usuario)}}" class="table-action" data-original-title="Editar usuario">

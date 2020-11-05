@@ -29658,8 +29658,20 @@ color: #8898aa !important;
     }
 .eventoRojo{
    
-    background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
-    }
-    .black{
+background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
+}
+.black{
       color:#000000; 
-    }
+}
+
+.tubn{
+margin-left: 79%;
+height: 30px;
+width: 45px;
+}
+.gpr{
+    width: 352px;
+    margin-left: 66%;
+    margin-top: -33px;
+}
+

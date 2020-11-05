@@ -232,10 +232,8 @@ $date =date('m-d')
                     <div class="modal-header">
                      <span aria-hidden="true"></span>
                     </div>
-                    <br><br><br><br><br>
-                    <br>
-                    <br>
                     <br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-white" data-dismiss="modal">¡Gracias!</button>
                     </div>   

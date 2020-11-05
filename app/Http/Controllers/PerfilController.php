@@ -39,7 +39,9 @@ class PerfilController extends Controller
 
     public function updateProfile(Request $request, $id_Usuario)
     {
-     
+       
+
+       
         $UserUpdate = User::findOrFail($id_Usuario);    
         $UserUpdate->name = $request->name;
         $UserUpdate->lastname = $request->lastname;
@@ -47,6 +49,12 @@ class PerfilController extends Controller
         $UserUpdate->genero = $request->genero;
         $UserUpdate->area = $request->area;
         $UserUpdate->phone = $request->phone;
+        $UserUpdate->phone_status = $request->phone_status;
+        if ($request->has('phone_status')) {
+            $UserUpdate->phone_status = "1";
+        } else {
+            $UserUpdate->phone_status = "0";
+        }
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->save();
         return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
