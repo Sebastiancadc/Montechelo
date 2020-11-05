@@ -29,7 +29,7 @@ height: 148%;"></span>
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
+                <img src="{{$perfil->photo}}" class="rounded-circle">
               </a>
             </div>
           </div>

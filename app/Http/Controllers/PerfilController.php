@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class PerfilController extends Controller
@@ -39,9 +40,6 @@ class PerfilController extends Controller
 
     public function updateProfile(Request $request, $id_Usuario)
     {
-       
-
-       
         $UserUpdate = User::findOrFail($id_Usuario);    
         $UserUpdate->name = $request->name;
         $UserUpdate->lastname = $request->lastname;
@@ -60,5 +58,24 @@ class PerfilController extends Controller
         return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
     }  
 
+    public function updatePhoto(Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|image'
+        ]);
 
+        $user=Auth::user();
+        $extension =$request->file('photo')->getClientOriginalExtension();
+        $file_name = $user->id_Usuario. '.' .$extension;
+            
+        $path= public_path('images/users/'.$file_name);
+
+        Image::make($request->file('photo'))->fit(144,144)->save($path);
+        $user->photo = 'http://localhost/Montechelo/public/images/users/'.$file_name;
+        $user->save();  
+        $data['success'] =true;
+        $data['path'] = $path;
+        $data['file_name']=$file_name;  
+        return $data;
+    }
 }

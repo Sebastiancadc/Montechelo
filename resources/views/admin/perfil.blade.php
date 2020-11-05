@@ -34,9 +34,11 @@ height: 148%;"></span>
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
-              <a href="#">
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
-              </a>
+              <form action="{{ url('foto') }}" enctype='multipart/form-data' id="avatarForm">
+                @csrf 
+                <input type="file" id="avatarInput" style="display: none" name="photo">
+            </form>
+            <img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle">
             </div>
           </div>
         </div>
@@ -489,4 +491,48 @@ height: 148%;"></span>
       });
   });
 </script>
+
+@section('js')
+<script>
+$(function () {
+    var $avatarImage, $avatarInput, $avatarForm;
+    var avatarUrl;
+    
+    $avatarImage = $('#avatarImage');
+    $avatarInput = $('#avatarInput');
+    $avatarForm = $('#avatarForm');
+
+    $avatarImage.on('click', function () {
+        $avatarInput.click();
+    });
+
+    avatarUrl =$avatarForm.attr('action');  
+
+    $avatarInput.on('change', function () {
+    
+    var formData = new FormData();
+    
+
+    formData.append('photo', $avatarInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$avatarForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+
+    })
+    .fail(function () {
+        alert('La imagen subida no tiene un formato correcto');
+    });
+});
+});
+</script>
+@endsection
 @endsection

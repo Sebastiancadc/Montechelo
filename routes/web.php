@@ -138,4 +138,8 @@ Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')
 //Novedad
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
+
+//Imagen de perfil
+Route::post('foto', 'PerfilController@updatePhoto');
+
 });

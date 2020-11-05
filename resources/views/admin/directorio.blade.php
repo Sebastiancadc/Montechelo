@@ -54,7 +54,7 @@
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
                 <a href="#">
-                  <img src="{{asset("plantilla/img/theme/team-6.jpg")}}" class="rounded-circle">
+                  <img src="{{$usuario->photo}}" class="rounded-circle">
                 </a>
               </div>
             </div>
