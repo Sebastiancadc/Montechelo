@@ -1157,6 +1157,7 @@ var PieChart = (function() {
 
 'use strict';
 
+
 //
 // Points chart
 //
