@@ -53,7 +53,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
-                <a href="#">
+                <a href="{{route('verperfil',$usuario->id_Usuario)}}">
                   <img src="{{$usuario->photo}}" class="rounded-circle">
                 </a>
               </div>
@@ -89,10 +89,11 @@
                 <i class="ni location_pin mr-2"></i>{{$usuario->area}}
               </div>
               <div>
-                <a class="h3>">{{$usuario->email}}</a>
+                <a class="h3">{{$usuario->email}}</a>
               </div>
+             
             </div>
-            <div class="row">
+            {{-- <div class="row">
               <div class="col">
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div class="mt-3">
@@ -108,11 +109,33 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
       @endforeach
+
+{{-- Modal llenar campos --}}
+@if (Auth::User()->phone == '')
+<div class="col-lg-10">
+  <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog modal-dialog-centered modal-" role="document">
+    <div class="modal-content ">       
+        <div class="modal-header">
+         <span aria-hidden="true"></span>
+        </div>
+        <div class="modal-body"> 
+         <p>Por favor termine el registro para poder ingresar</p>                      
+     </div>
+        <div class="modal-footer">
+           <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+         </div>   
+       </div>
+</div>
+</div>
+</div>
+@endif
+{{-- fin modal llenar campos --}}
     </div>
     <!-- Footer -->
     <footer class="footer pt-0">
@@ -147,6 +170,12 @@
     }
   });
   </script>
+  <script>
+    $(document).ready(function()
+    {
+       $("#modaLlenarcampos").modal("show");
+    });
+  </script> 
 @endsection
 
 @endsection

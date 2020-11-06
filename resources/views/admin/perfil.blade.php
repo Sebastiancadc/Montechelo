@@ -372,7 +372,7 @@ height: 148%;"></span>
                   </div>
                 </div>
                 <div class="card-body text-center">
-                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Editar Perfil</button>
+                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Guardar</button>
                 </div>
             </div>
           </form>

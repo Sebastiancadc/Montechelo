@@ -66,9 +66,9 @@
                                       <div class="form-group">
                                         <select class="form-control" id="exampleFormControlSelect1" name="area" id="genero">
                                           <option>Area</option>
-                                          <option>Hombre</option>
-                                          <option>Mujer</option>
-                                          <option>Otro</option>
+                                          <option>Programacion</option>
+                                          <option>Diseño</option>
+                                          <option>Produccion</option>
                                         </select>
                                       </div>
                                   </div>

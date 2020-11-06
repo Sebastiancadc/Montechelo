@@ -58,7 +58,8 @@ class InicioController extends Controller
                 }
             $calendario= array_merge($events);
             
-        }       
+        }     
+          
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();
         $eventos = Eventos::whereMonth('start_time',"=",date('m'))->get();
         $modal = User::whereDay('cumpleanios',"=",date('d'))->get();
