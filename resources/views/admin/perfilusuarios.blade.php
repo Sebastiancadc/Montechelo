@@ -11,7 +11,7 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} </h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} {{$perfil->lastname}} </h1>
       </div>
   
     </div>
@@ -29,7 +29,7 @@ height: 148%;"></span>
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
+                <img src="{{$perfil->photo}}" class="rounded-circle">
               </a>
             </div>
           </div>
@@ -49,7 +49,7 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{$perfil->name}}<span class="font-weight-light"><br> <?php echo calculaedad($perfil->cumpleanios) ?></span>
+              {{$perfil->name}} {{$perfil->lastname}} <span class="font-weight-light"><br> <?php echo calculaedad($perfil->cumpleanios) ?></span>
               años
             </h5>
             <div class="h5 font-weight-300">
@@ -290,7 +290,7 @@ height: 148%;"></span>
                   <div class="row">
                     <div class="col-md-6">
                         <h4>Nombre</h4>
-                        <h4 class=" text-muted mb-4">{{$perfil->name}}</h4>
+                        <h4 class=" text-muted mb-4">{{$perfil->name}} {{$perfil->lastname}}</h4>
                     </div>
                     <div class="col-md-5">
                       <div class="tab-content">
@@ -316,11 +316,14 @@ height: 148%;"></span>
                       <h4>Area</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
                     </div>
+                    @if ($perfil->phone_status == '1')
                     <div class="col-md-5">
                       <h4>Telefono</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->telefono}}</h4>
+                      <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
 
-                    </div>
+                    </div>   
+                    @endif
+                    
                   </div>                        
                 </div>  
             </div>

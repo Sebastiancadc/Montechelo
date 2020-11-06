@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
+
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-
+  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
@@ -116,7 +116,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('crearnovedad')}}">
-                <i class="ni ni-building text-orange"></i>
+                <i class="ni ni-building text-purple"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
@@ -437,10 +437,10 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
+                    <img alt="Image placeholder" src="{{Auth::user()->photo}}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }} {{Auth::user()->lastname}}</span>
                   </div>
                 </div>
               </a>
@@ -502,7 +502,7 @@
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-
+@yield('jss')
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>

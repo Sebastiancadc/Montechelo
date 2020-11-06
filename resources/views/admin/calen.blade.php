@@ -1,5 +1,5 @@
 @extends('admin.layout')
-<link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
+{{-- <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css"> --}}
 @section('content')
   
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">
@@ -81,12 +81,13 @@
           <div class="card-body p-0">
             <div class="calendar" id="eventos" data-toggle="calendar"></div>
           </div>
-        @include('admin.calendario.crear')
+       
         </div>
-  
+       
       </div>
     </div>
-    {{-- <footer class="footer pt-0">
+    
+    <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
           <div class="copyright text-center text-lg-left text-muted">
@@ -94,30 +95,10 @@
           </div>
         </div>
       </div>
-    </footer>  --}}
+    </footer> 
     </div>
   </div>
- 
-
-  <style>
-    .Especial{
-        background-color: #2dce89 !important;
-        }
-    .Advertencia  {
-        background-color: #fb6340 !important;
-        }
-    .Importante{
-        background-color: #11cdef !important;
-        }
-    .eventoRojo{
-       
-        background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
-        }
-        .black{
-          color:#000000; 
-        }
-  </style>
-
+  @include('admin.calendario.crear')
 @section('js')
 
 <script>

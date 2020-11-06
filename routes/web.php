@@ -114,6 +114,8 @@ Route::put('editarprofile/{id_Usuario}', 'PerfilController@updateProfile')->name
 
 //Directorio
 Route::resource('directorio', 'DirectorioController');
+
+Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
 Route::get('verperfil/{id_Usuario}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias
@@ -148,4 +150,8 @@ Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')
 //Novedad
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
+
+//Imagen de perfil
+Route::post('foto', 'PerfilController@updatePhoto');
+
 });

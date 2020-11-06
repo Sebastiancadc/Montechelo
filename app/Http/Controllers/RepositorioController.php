@@ -128,8 +128,6 @@ class RepositorioController extends Controller
         return redirect('auth.login');
     }
 
-
-    
 //recordar añadir Request en el que caso que nuestro controlador no lo tenga importado
 
  public function subirArchivo(Request $request)

@@ -2,6 +2,9 @@
 
 
 @section('content')
+<?php
+$date =date('m-d')
+?>
 <div class="header bg-primary pb-6" >
 
     <div class="container-fluid">
@@ -216,21 +219,59 @@
               </div>
               <div class="col ml--2">
                 <h4 class="mb-0">
-                <a>{{$user->name}}  <a style="color: #8898aa !important;">{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
+                <a>{{$user->name}} {{$user->lastname}} <a class="gris" >{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
                 </h4>
-               
               </div>
             </div>
+            {{-- Modal feliz cumpleaños --}}
+            @if (App\Helpers\Helpers::modal(Auth::User()->cumpleanios) == $date)
+            <div class="col-lg-10">
+              <div class="modal fade" id="modal-notification" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered modal-" role="document">
+                <div class="modal-content gif">       
+                    <div class="modal-header">
+                     <span aria-hidden="true"></span>
+                    </div>
+                    <br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>  
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">¡Gracias!</button>
+                    </div>   
+                </div>
+            </div>
+            </div>
+            </div>
+            @endif
+            {{-- fin modal feliz cumpleaños --}}
+
+             {{-- Modal llenar campos --}}
+             @if (Auth::User()->phone == '')
+             <div class="col-lg-10">
+               <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
+             <div class="modal-dialog modal-dialog-centered modal-" role="document">
+                 <div class="modal-content ">       
+                     <div class="modal-header">
+                      <span aria-hidden="true"></span>
+                     </div>
+                     <div class="modal-body"> 
+                      <p>Por favor termine el registro para poder ingresar</p>                      
+                  </div>
+                     <div class="modal-footer">
+                        <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+                      </div>   
+                    </div>
+             </div>
+             </div>
+             </div>
+             @endif
+             {{-- fin modal llenar campos --}}
             @endforeach
           </div>
         </div>
-
         <!-- Timeline card -->
-
         <div class="card widget-calendar">
           <!-- Card header -->
-          
-          <div class="card-header">
+                    <div class="card-header">
             <!-- Title -->
             <h5 class="h3 mb-0">Proximos eventos</h5>
              <h5>
@@ -253,8 +294,8 @@
             <h4>
               <br>
             <a style="margin-left:31px;">{{$evento->name}} 
-            <a style="color: #8898aa !important;">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>    
-            <a style="color: #8898aa !important;"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
+            <a class="gris">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>    
+            <a class="gris"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
           <br>
             </h4>
           </div>
@@ -307,24 +348,6 @@
 
   </div>
 </div>
-<style>
-  .Especial{
-      background-color: #2dce89 !important;
-      }
-  .Advertencia  {
-      background-color: #fb6340 !important;
-      }
-  .Importante{
-      background-color: #11cdef !important;
-      }
-  .eventoRojo{
-     
-      background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
-      }
-      .black{
-        color:#000000; 
-      }
-</style>
 @section('js')
 <script>
   $(document).ready(function () {
@@ -334,5 +357,20 @@
           })
       });
 </script>
+
+<script>
+  $(document).ready(function()
+  {
+     $("#modal-notification").modal("show");
+  });
+</script>   
+
+<script>
+  $(document).ready(function()
+  {
+     $("#modaLlenarcampos").modal("show");
+  });
+</script> 
+
 @endsection
 @endsection
