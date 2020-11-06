@@ -319,14 +319,14 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
+                <i class="ni ni-bell-55"> <span  class="bange">1</span> </i>
               </a>
 
 
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.
+                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong>  notifications.
                   </h6>
                 </div>
                 <!-- List group -->
