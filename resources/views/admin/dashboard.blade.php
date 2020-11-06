@@ -219,7 +219,7 @@ $date =date('m-d')
               </div>
               <div class="col ml--2">
                 <h4 class="mb-0">
-                <a>{{$user->name}} {{$user->lastname}} <a class="gris" >{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
+                <a>{{$user->name}} {{$user->lastname}} <a class="gris">{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
                 </h4>
               </div>
             </div>

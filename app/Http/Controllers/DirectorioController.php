@@ -27,7 +27,7 @@ class DirectorioController extends Controller
         if($request){
             $query=trim($request->get('search'));
             $usuari = User::all();
-            $usuarios = User::where('name','LIKE','%'.$query.'%')->orWhere('area','LIKE','%'.$query.'%')->get();
+            $usuarios = User::where('name','LIKE','%'.$query.'%')->orWhere('area','LIKE','%'.$query.'%')->orWhere('email','LIKE','%'.$query.'%')->orWhere('genero','LIKE','%'.$query.'%')->get();
         }
         return view('admin.directorio', compact('usuari','query','usuarios'));
     }   
@@ -36,7 +36,22 @@ class DirectorioController extends Controller
       $term = $request->get('term');
       $querys = User::where('name','LIKE','%' . $term . '%')->get();
       $quer = User::where('area','LIKE','%' . $term . '%')->get();
+      $correo = User::where('email','LIKE','%' . $term . '%')->get();
+      $genero = User::where('genero','LIKE','%' . $term . '%')->get();
       $data= [];
+      foreach($correo as $query){
+        $data[]=[
+            'label'=> $query->email
+        ];
+
+    }
+    foreach($genero as $query){
+        $data[]=[
+            'label'=> $query->genero
+        ];
+
+    }
+
       foreach($querys as $query){
           $data[]=[
               'label'=> $query->name
