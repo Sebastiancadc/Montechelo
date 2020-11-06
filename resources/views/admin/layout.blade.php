@@ -85,7 +85,7 @@
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("repositorio")}}">
+              <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
               </a>
@@ -147,6 +147,9 @@
       </li>
       <li class="nav-item">
         <a href="{{ url('admin/noticia')}}" class="nav-link">Noticias</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/repositorio')}}" class="nav-link">Repositorio</a>
       </li>
 
     </ul>

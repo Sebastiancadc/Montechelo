@@ -30,7 +30,7 @@
     </div>
     <!-- Card body -->
     <div class="card-body">
-        <form action="{{url('admin/repositorio',$repositorioActualizar->Id_Repositorio)}}" method="POST">
+        <form action="{{url('repositorio',$repositorioActualizar->Id_Repositorio)}}" method="POST">
             @method('PUT')
             @csrf
             <div class="form-group mb-3">
@@ -61,9 +61,11 @@
 
               <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
 
+
+
               <button type="submit" class="btn btn-primary my-4">Editar</button>
 
-            <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
+            <a href="{{ url('repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
             @if (session('updaterepositorio'))
             <div class="alert alert-success mt-3">
             {{session('updaterepositorio')}} 

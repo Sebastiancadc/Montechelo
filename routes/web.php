@@ -72,11 +72,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //repositorio
     Route::resource('repositorio', 'RepositorioController');
 
-    Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
-    Route::post('crearrepositorios', 'RepositorioController@store')->name('crearrepositorios');
-    Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
-    Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
-    Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
     Route::post('/subir', 'Controller@subirArchivo')->name('subir');
 
     //Noticias
@@ -91,6 +86,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('crearcategorias', 'CategoryController@crearsugerencias')->name('crearcategorias');
     Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
     Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
+});
+
+
+//repositorio
+
+Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+Route::post('crearrepositorios', 'RepositorioController@store')->name('crearrepositorios');
+Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
+Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
+Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
+Route::resource('repositorio', 'RepositorioController');
+Route::post('/subir', 'Controller@subirArchivo')->name('subir');
+
+
+Route::get('repositoriocola', function () {
+
+    return view('admin.repositoriocola');
 });
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
@@ -110,8 +122,8 @@ Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
 Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
 Route::get('post/{slug}', 'NoticiasController@post')->name('post');
 
-//Repositorio
-Route::resource('repositorio', 'RepositorioController');
+
+
 
 //Canlendario
 Route::get('calendar', 'CalendarioController@index')->name('calendar');

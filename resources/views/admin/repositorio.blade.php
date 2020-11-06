@@ -1,25 +1,29 @@
+
 @extends('admin.layout')
 @section('content')
-<body>
-    <!-- Header -->
-    <!-- Header -->
-    <div class="header bg-primary pb-6">
+<div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-white d-inline-block mb-0">Usuarios</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <h6 class="h2 text-white d-inline-block mb-0">Repositorio</h6>
-                            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#">Administrador</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Novedades</li>
-                                </ol>
-                            </nav>
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#">Administrador</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
-
+                <!-- Card stats -->
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card card-stats">
+                            <!-- Card body -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -32,38 +36,64 @@
                     <div class="card-header border-0">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="mb-0">Gestión de repositorio</h3>
+                                <h3 class="mb-0">Gestión de Archivos</h3>
                             </div>
+                            
                             <div class="col-6 text-right">
                                 <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                   
-                                    <span class="btn-inner--text">Crear</span>
-                                   
+                                    <span class="btn-inner--text">Crear archivo</span>
                                 </a>
-                                @include('admin.repositorio.create')
-                            </div>
+                               
+                            </div>                     
+<br><br>                          
                         </div>
-                    </div>
-                    <!-- Light table -->
-                    <div class="table-responsive" id="listadoregistros">
-                        <table class="table align-items-center table-flush test "id="tbllistado">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col" class="sort" data-sort="área">#</th>
-                                    <th scope="col" class="sort" data-sort="Tipo_archivo">Tipo de archivo</th>
-                                    <th scope="col" clss="sort" data-sort="Autor">Autor</th>
-                                    <th scope="col" class="sort" data-sort="Observaciones">Observaciones</th>
-                                    <th scope="col" class="sort" data-sort="imagen">imagen</th>
+                  @if (session('eliminarrepositorio'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                    <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('eliminarrepositorio')}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
 
-                                </tr>
+                  @if (session('updaterepositorio'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('updaterepositorio')}}</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          @endif
+                    </div>
+                  
+
+                    <!-- Light table -->
+                    <div class="table-responsive py-4" style="margin-top: -51px;">
+                        
+                        <table class="table table-flush test" id="datatable-basic">
+                            <thead class="thead-light">
+                               
+                                    <th scope="col" class="sort" >#</th>
+                                    <th scope="col" class="sort" >Tipo archivo</th>
+                                    <th scope="col" class="sort" >Autor</th>
+                                    <th scope="col" class="sort" >Observaciones</th>
+                                    <th scope="col" class="sort" >Imagen</th>
+                                    
+                                    <th scope="col" class="sort" data-sort="acciones">Acciones</th>
+                                
                             </thead>
                             <tbody>
+
+
                                 @foreach ($repositorio as $item)
                                 <tr>
-                                    <td class="table-user">
-                                        <b></b>
+                                    <td>
+                                        <span class="text-muted"></span>
                                     </td>
+                                   
                                     <td>
                                         <span class="text-muted">{{$item->tipo_archivo}}</span>
                                     </td>
@@ -74,99 +104,150 @@
                                         <span class="text-muted">{{$item->observaciones}}</span>
                                     </td>
 
-                                    <td>
-                                        <span class="text-muted">{{$item->status}}</span>
-                                    </td>
+                                  
                                       <td>
-                                       
-                                        <img  src="{{$item->image}} "  width="50" height="50" class="img-fluid">
+                                       <a href="#" data-toggle="modal" data-target="#ver{{$item->Id_Repositorio}}" > <img src="{{$item->image}}"  width="50" height="50" class="img-fluid" ></a>
+                            
+                                    </a>
                                     </td>
 
 
                                     <td class="table-actions">
-                                        <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="editrepositorio">
+                                        
+                                       
+                                        <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="Editar usuario">
                                             <i class="fas fa-user-edit"></i>
-                                            <a href="{{route('editrepositorio',$item->Id_Repositorio)}}" class="table-action" data-original-title="editrepositorio">
-                                                <i class="fas fa-user-edit"></i>
+                                            
+                                        </a>
 
-
-                                            <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#eliminarrepositorio{{$item->Id_Repositorio}}" data-original-title="Eliminar novedad">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-    
-                                        <div class="modal fade" id="eliminarrepositorio{{$item->Id_Repositorio}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                                            <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-body p-0">
-                                                  <div class="card bg-secondary border-0 mb-0">
-                                      
-                                                    <div class="card-body px-lg-5 py-lg-5">
-                                                      <div class="text-center text-muted mb-4">
-                                                        <h3>Eliminar el archivo</h3>
-                                                      </div>
-                                                      <form role="form" method="POST" action="{{route('eliminarrepositorio',$item->Id_Repositorio)}}" >
-                                                          @csrf 
-                                                          @method('DELETE') 
-                                                          <div class="text-center">
-                                                          <button type="submit" class="btn btn-primary my-4">Eliminar</button>
-                                                          <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                        
+                                        <a href="#" class="table-action table-action-delete" data-toggle="modal" data-target="#eliminarrepositorio{{$item->Id_Repositorio}}" data-original-title="Eliminar usuario">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    <div class="col-md-4">
+                        
+                                            <div class="modal fade" id="eliminarrepositorio{{$item->Id_Repositorio}}"  tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                              <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-body p-0">
+                                                    <div class="card bg-secondary border-0 mb-0">
+                                        
+                                                      <div class="card-body px-lg-5 py-lg-5">
+                                                        <div class="text-center text-muted mb-4">
+                                                          <h3>Eliminar archivo</h3>
                                                         </div>
-                                                      </form>
+                                                        <form role="form" method="POST" action="{{route('eliminarrepositorio',$item->Id_Repositorio)}}">
+                                                            @csrf @method('DELETE') 
+                                        
+                                                          <div class="text-center">
+                                                            <button type="submit" class="btn btn-primary my-4" >Eliminar</button>
+                                                            <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                                          </div>
+                                                        </form>
+                                                      </div>
                                                     </div>
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
+                                          <div class="col-md-4">
+                                            <div class="modal fade" id="ver{{$item->Id_Repositorio}}" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                          <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                              <div class="modal-content">
+                                                  
+                                                  <div class="modal-header">
+                                                      <h6 class="modal-title" id="modal-title-default">Tipo documento</h6>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">×</span>
+                                                      </button>
+                                                  </div>
+                                                  
+                                                  <div class="modal-body">
+                                                      
+                                                      
+                                                      <div class="text-center">
+                                                        <img src="{{$item->image}}" width="1000" height="1000" class="img-fluid">
+                                                      <div>
+                                                  </div>
+                                                  
+
+
+                                                  
+                                                  <div class="modal-footer">
+                                                      <a href="{{$item->image}}" download
+                                                        target="_blank"> Descargar</a>
+                                                      <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">Close</button>
+                                                  </div>
+                                                  
+                                              </div>
+                                          </div>
+                                      </div>
+                                      
+                                        </div>
+                                    </div>
+                                </div>
+
+                                            </div>
+                                          </div>
+
+                                         
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                      
-                    </div>
-                    
+                     
+                     
+                    </div>                    
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
                                 
-                           </ul>
+                            </ul>
                         </nav>
                     </div>
-                    @if (session('eliminarrepos'))
-                    <div class="alert alert-success mt-3">
-                        {{session('eliminarrepos')}} 
-                    </div>
-                    @endif
                 </div>
+
+                <!-- Footer -->
+                <footer class="footer pt-0">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6">
+                            <div class="copyright text-center text-lg-left text-muted">
+                                &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </footer>
             </div>
+
+            
         </div>
+        @include('admin.repositorio.create')
     </div>
-</body>
-<script type="text/javascript" src="scripts/repositorio.js"></script>
-<?php 
 
-ob_end_flush();
-?>
-
-<script>
-    var addNumeration = function(cl){
-      var table = document.querySelector('table.' + cl)
-      var trs = table.querySelectorAll('tr')
-      var counter = 1
-      
-      Array.prototype.forEach.call(trs, function(x,i){
-        var firstChild = x.children[0]
-        if (firstChild.tagName === 'TD') {
-          var cell = document.createElement('td')
-          cell.textContent = counter ++
-          x.insertBefore(cell,firstChild)
-        } else {
-          firstChild.setAttribute('colspan',2)
+    
+    <script>
+        var addNumeration = function(cl){
+          var table = document.querySelector('table.' + cl)
+          var trs = table.querySelectorAll('tr')
+          var counter = 1
+          
+          Array.prototype.forEach.call(trs, function(x,i){
+            var firstChild = x.children[0]
+            if (firstChild.tagName === 'TD') {
+              var cell = document.createElement('td')
+              cell.textContent = counter ++
+              x.insertBefore(cell,firstChild)
+            } else {
+              firstChild.setAttribute('colspan',2)
+            }
+          })
         }
-      })
-    }
-    addNumeration("test")
-    </script>
-@endsection
+        addNumeration("test")
+        </script>
+    @endsection
 
+    

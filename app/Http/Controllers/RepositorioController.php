@@ -50,25 +50,20 @@ class RepositorioController extends Controller
   
     public function store(Request $request)
     {
-    
-    
- 
-
-        $messages = [
-          
-          //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
-          'image.max' =>'La imagen no debe ser mayor que 2 mb.'
-
-
+       
+           $messages = [
+           
+            //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
+            'image.max' =>'La imagen no debe ser mayor que 2 mb.'
         ];
-         $this->validate($request,  $messages);
+         $this->validate($request,$messages);
 
          $repositorio = new Repositorio($request->all());
-        
+  
 
 
          if ($request->file('image')) {
-            $nombre = Storage::disk('archivosave')->put('archivos/repositorio', $request->file('image'));
+            $nombre = Storage::disk('archivosave')->put('archivos/repositorio',$request->file('image'));
             $repositorio->fill(['image' => asset($nombre)])->save();
          }
           Session::flash('message','Publicación creada correctamente');
@@ -93,17 +88,36 @@ class RepositorioController extends Controller
         $repositorio->image=$request->image;
         
         $repositorio->save();
-        
-        
-        return redirect('admin/repositorio')->with('updaterepositorio','El repositorio se actualizo');
-    }
+        {
+            //validacion
+            $rules = [
+             
+              'image' =>'mimes:jpg,bmp,png,jpg,gif,pdf,doc|max:2000',
+             ];
+             $messages = [
+                'title.required' =>'Es obligatorio un título para la publicación',
+                'body.required' =>'Es obligatorio un contenido para la publicación',
+                'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
+                'image.max' =>'La imagen no debe ser mayor que 2 mb.'
+      
+      
+      
+                 ];
+                 
 
 
+
+        
+        return redirect()->action('RepositorioController@index')->with('updaterepositorio','El archivo se actualizo');
+            }}
+
+
+            
     public function destroy($id)
     {
         $data = Repositorio::findOrFail($id);
         $data->delete();
-        return redirect('admin/repositorio')->with('eliminarrepositorio','se elimino');
+        return back()->with('eliminarrepositorio','Se elimono el archivo');
     }
 
     public function logout()
