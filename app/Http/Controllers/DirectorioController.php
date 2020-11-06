@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Filesystem\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
+use Illuminate\Support\Facades\Cache as FacadesCache;
 
 class DirectorioController extends Controller
 {
@@ -22,6 +22,8 @@ class DirectorioController extends Controller
 
     public function index(Request $request)
     {
+
+        
         if($request){
             $query=trim($request->get('search'));
             $usuari = User::all();

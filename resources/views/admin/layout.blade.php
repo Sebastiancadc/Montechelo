@@ -510,4 +510,10 @@
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
 
+
+
+
+
+
+
 </body>

@@ -75,6 +75,15 @@
               </button>
           </div>
             @endif
+            @if (session('hora'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('hora')}}</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+            @endif
           </div>
           <!-- Card body -->
          

@@ -68,8 +68,14 @@
          
           <div class="card-body pt-0">
             <div class="text-center">
+              @if(Illuminate\Support\Facades\Cache::has('user-is-online-'.$usuario->id_Usuario))
               <span class="text-success">●</span>
-              <small>Activo</small>
+              <small>Conectado</small>
+              @else
+              <span class="text-danger">●</span>
+              <small>Desconectado</small>
+              @endif
+              {{-- <small>Activo</small> --}}
               <h5 class="h3">
                 {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,
                 {{App\Helpers\Helpers::edad($usuario->cumpleanios)}}
