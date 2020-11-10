@@ -38,9 +38,9 @@ class PerfilController extends Controller
         return view('admin.perfil',compact('userActualizar'));
     }   
 
-    public function updateProfile(Request $request, $id_Usuario)
+    public function updateProfile(Request $request, $id)
     {
-        $UserUpdate = User::findOrFail($id_Usuario);    
+        $UserUpdate = User::findOrFail($id);    
         $UserUpdate->name = $request->name;
         $UserUpdate->lastname = $request->lastname;
         $UserUpdate->email = $request->email;
@@ -66,7 +66,7 @@ class PerfilController extends Controller
 
         $user=Auth::user();
         $extension =$request->file('photo')->getClientOriginalExtension();
-        $file_name = $user->id_Usuario. '.' .$extension;
+        $file_name = $user->id. '.' .$extension;
             
         $path= public_path('images/users/'.$file_name);
 

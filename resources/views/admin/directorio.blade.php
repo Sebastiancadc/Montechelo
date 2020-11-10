@@ -53,7 +53,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
-                <a href="{{route('verperfil',$usuario->id_Usuario)}}">
+                <a href="{{route('verperfil',$usuario->id)}}">
                   <img src="{{$usuario->photo}}" class="rounded-circle">
                 </a>
               </div>
@@ -62,13 +62,13 @@
           <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
             <div class="d-flex justify-content-between">
               <a href="#" class="btn btn-sm btn-info mr-4">Añadir amigo</a>
-              <a href="{{route('verperfil',$usuario->id_Usuario)}}"  class="btn btn-sm btn-default float-right">Ver perfil</a>
+              <a href="{{route('verperfil',$usuario->id)}}"  class="btn btn-sm btn-default float-right">Ver perfil</a>
             </div>
           </div>
          
           <div class="card-body pt-0">
             <div class="text-center">
-              @if(Illuminate\Support\Facades\Cache::has('user-is-online-'.$usuario->id_Usuario))
+              @if(Illuminate\Support\Facades\Cache::has('user-is-online-'.$usuario->id))
               <span class="text-success">●</span>
               <small>Conectado</small>
               @else

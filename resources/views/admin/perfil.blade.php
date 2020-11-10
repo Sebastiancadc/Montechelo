@@ -282,7 +282,7 @@ height: 148%;"></span>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
 
-              <form role="form" method="POST" action="{{url('editarprofile',$user->id_Usuario)}}">
+              <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
                 <h4 class="text-muted ">INFORMACION PERSONAL</h4>
                 <hr class="my-4"/>

@@ -109,14 +109,14 @@ Route::get('repositoriocola', function () {
 Route::group(['prefix' => ''], function () {
 //Usuario
 Route::resource('perfil', 'PerfilController');
-Route::get('editarperfil/{id_Usuario}', 'PerfilController@editarperfil')->name('editarperfil');
-Route::put('editarprofile/{id_Usuario}', 'PerfilController@updateProfile')->name('editarprofile');
+Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');
+Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
 
 //Directorio
 Route::resource('directorio', 'DirectorioController');
 
 Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
-Route::get('verperfil/{id_Usuario}', 'DirectorioController@perfilUsuarios')->name('verperfil');
+Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias
 Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
