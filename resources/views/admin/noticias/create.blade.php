@@ -14,7 +14,7 @@
                                     <form role="form" method="POST" action="{{url('crearnoticias')}}" enctype="multipart/form-data">
                                         @csrf
                                         @method('POST')
-                                        <input type="hidden" name="user_id"  name="user_id" value="{{$user->id_Usuario}}";>
+                                        <input type="hidden" name="user_id"  name="user_id" value="{{$user->id}}";>
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <input class="form-control" placeholder="titulo" name="title" type="text">

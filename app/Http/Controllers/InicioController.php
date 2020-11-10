@@ -24,7 +24,7 @@ class InicioController extends Controller
     {
 
         $usuariologeado = Auth::user();
-        $admins = User::where('role','=','admin')->pluck('id_Usuario');
+        $admins = User::where('role','=','admin')->pluck('id');
 
 
 
