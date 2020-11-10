@@ -69,7 +69,7 @@
             <li class="list-group-item"><h3 class="card-title mb-3">Descripcion</h3> {{$eventos->description}}</li>
            
             <div class="card-body text-center">
-              @if($eventos->Usuario_id_Usuario == Auth::User()->id_Usuario)
+              @if($eventos->Usuario_id_Usuario == Auth::User()->id)
               <a href="{{route('verEvento',$eventos->id)}}" class="btn btn-primary">Editar</a>
               <a href="#!" data-toggle="modal" data-target="#deleteNovedad{{$eventos->id}}" class="btn btn-danger my-4">Eliminar</a>  
               @endif  

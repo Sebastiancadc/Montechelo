@@ -34,13 +34,13 @@ class NoticiasController extends Controller
 
     public function crearnoticia()
     {
-        $user = User::find(Auth::User()->id_Usuario);
+        $user = User::find(Auth::User()->id);
         $categoria = Category::all();
         return view('admin/crearnoticia',compact('categoria','user'));
     }
     public function crearnoticias()
     {
-       $user = User::find(Auth::User()->id_Usuario);
+       $user = User::find(Auth::User()->id);
        $categoria = Category::all();
        return view('admin.crearnoticia',compact('categoria','user'));
     }

@@ -29,7 +29,7 @@
     </div>
     <!-- Card body -->
     <div class="card-body">
-        <form action="{{url('admin/usuario',$userActualizar->id_Usuario)}}" method="POST">
+        <form action="{{url('admin/usuario',$userActualizar->id)}}" method="POST">
             @method('PUT')
             @csrf
             <div class="form-group mb-3">

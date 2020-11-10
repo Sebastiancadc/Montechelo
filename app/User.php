@@ -14,8 +14,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
     protected $table = 'usuario';
-    protected $guarded = ['id_Usuario'];
-	protected $primaryKey = 'id_Usuario';
+    protected $guarded = ['id'];
+	protected $primaryKey = 'id';
 
     protected $fillable = [
         'name','lastname', 'email', 'password','genero','cumpleanios','role','area','phone','phone_status'

@@ -67,9 +67,9 @@ class DirectorioController extends Controller
       $dates = array_merge($data,$datas);
       return $dates;
     }
-    public function perfilUsuarios($id_Usuario)
+    public function perfilUsuarios($id)
     {
-        $perfil = User::findOrFail($id_Usuario);
+        $perfil = User::findOrFail($id);
         return view('admin/perfilusuarios',compact('perfil'));
     }
 

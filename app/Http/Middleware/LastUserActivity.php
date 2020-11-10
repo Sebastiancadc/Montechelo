@@ -21,7 +21,7 @@ class LastUserActivity
     {
         if (Auth::check()) {
             $expiresAt = Carbon::now()->addMinutes(1);
-            FacadesCache::put('user-is-online-' . Auth::user()->id_Usuario, true, $expiresAt);
+            FacadesCache::put('user-is-online-' . Auth::user()->id, true, $expiresAt);
         }
         return $next($request);
     }

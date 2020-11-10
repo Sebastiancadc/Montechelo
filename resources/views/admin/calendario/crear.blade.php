@@ -16,7 +16,7 @@
         <div class="modal-body ">
             <form role="form" method="POST" action="{{url('Calendario/crearEvento')}}">
                 @csrf @method('POST') 
-                <input value="{{Auth::user()->id_Usuario}}" name="Usuario_id_Usuario" hidden>
+                <input value="{{Auth::user()->id}}" name="Usuario_id_Usuario" hidden>
                 <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
