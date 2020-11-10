@@ -39,7 +39,7 @@
                 <div class="card-header d-flex align-items-center">
                         <div class="d-flex align-items-center">
                         <a href="#">
-                            <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="avatar">
+                            <img src="{{ $noticia->user->photo }}" class="avatar">
                         </a>
                         <div class="mx-3">
                             <a href="#" class="text-dark font-weight-600 text-sm">{{ $noticia->user->name }}</a>
@@ -60,22 +60,6 @@
                     <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
                     <div class="row align-items-center my-3 pb-3 border-bottom">
                     <div class="col-sm-6">
-                    </div>
-                    <div class="col-sm-6 d-none d-sm-block">
-                        <div class="d-flex align-items-center justify-content-sm-end">
-                        <div class="avatar-group">
-                            <a href="#" class="avatar avatar-xs rounded-circle" data-toggle="tooltip" data-original-title="Jessica Rowland">
-                            <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
-                            </a>
-                            <a href="#" class="avatar avatar-xs rounded-circle" data-toggle="tooltip" data-original-title="Audrey Love">
-                            <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}}" class="rounded-circle">
-                            </a>
-                            <a href="#" class="avatar avatar-xs rounded-circle" data-toggle="tooltip" data-original-title="Michael Lewis">
-                            <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}}" class="rounded-circle">
-                            </a>
-                        </div>
-                        <small class="pl-2 font-weight-bold">and 30+ more</small>
-                        </div>
                     </div>
                     </div>
                     <!-- Comments -->

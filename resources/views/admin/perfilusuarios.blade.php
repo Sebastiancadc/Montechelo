@@ -49,7 +49,7 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{$perfil->name}} {{$perfil->lastname}} <span class="font-weight-light"><br> <?php echo calculaedad($perfil->cumpleanios) ?></span>
+              {{$perfil->name}} {{$perfil->lastname}} <span class="font-weight-light"><br> {{App\Helpers\Helpers::edad($perfil->cumpleanios)}}</span>
               años
             </h5>
             <div class="h5 font-weight-300">
@@ -423,17 +423,7 @@ height: 148%;"></span>
         </div>
 
       </div>
-      <?php
-      function calculaedad($fechanacimiento)
-      {
-        list($ano, $mes, $dia) = explode("-", $fechanacimiento);
-        $ano_diferencia  = date("Y") - $ano;
-        $mes_diferencia = date("m") - $mes;
-        $dia_diferencia   = date("d") - $dia;
-        if ($dia_diferencia < 0 || $mes_diferencia < 0)
-          $ano_diferencia--;
-        return $ano_diferencia;
-      } ?>
+
       <?php $user = auth()->user();
       ?>
     </div>

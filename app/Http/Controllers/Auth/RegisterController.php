@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'genero' => $data['genero'],
             'role' => $data['role'],
+            'messenger_color' => '#2180f3',
             'cumpleanios'=> new \Datetime($data['cumpleanios']),
             'password' => Hash::make($data['password']),
         ]);

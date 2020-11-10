@@ -76,7 +76,6 @@
               <a href="{{url("calendar")}}" class="btn btn-secondary">Volver</a>
             </div>
           </div>
-          
       </div>
     </div>
   </div>

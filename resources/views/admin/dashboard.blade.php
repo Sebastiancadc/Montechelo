@@ -212,9 +212,8 @@ $date =date('m-d')
            @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
-
                 <a class="avatar rounded-circle">
-                  <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
+                  <img alt="Image placeholder" src="{{$user->photo}}">
                 </a>
               </div>
               <div class="col ml--2">
