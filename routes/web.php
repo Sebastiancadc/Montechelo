@@ -76,7 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //Noticias
     Route::resource('noticia', 'NoticiasController');
-    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editar');
+    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
     Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
@@ -130,7 +130,7 @@ Route::get('post/{slug}', 'NoticiasController@post')->name('post');
 //Canlendario
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
 Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
-Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');    
+Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
 Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
 Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
 Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
