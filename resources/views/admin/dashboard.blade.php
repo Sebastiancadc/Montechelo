@@ -49,32 +49,21 @@ $date =date('m-d')
                     <div class="bd-example">
                       <div id="carouselExampleCaptionss" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleCaptionss" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleCaptionss" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleCaptionss" data-slide-to="2"></li>
+                          @foreach ($noticias as $item)
+                            <li data-target="#carouselExampleControls" data-slide-to="{{$loop->index}}" class="{{$loop->first ? 'active' : ''}}"><li>
+                          @endforeach
                         </ol>
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="">
+                          @foreach ($noticias as $item)
+                          <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                            <img src="{{ $item->image }}" class=" img-fluid d-block" alt="" style="margin-left: auto; margin-right: auto; width: 450px; height:350px ;min-width: 474px;">
                             <div class="carousel-caption d-none d-md-block">
-                              <h5>First slide label</h5>
-                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                              <h5 class="h3 mb-0">{{$item->title }}</h5>
+                              <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0 ">Ver noticia</a>
                             </div>
                           </div>
-                          <div class="carousel-item">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Second slide label</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Third slide label</h5>
-                              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </div>
-                          </div>
+
+                          @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleCaptionss" role="button"
                           data-slide="prev">
@@ -89,103 +78,7 @@ $date =date('m-d')
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="">
-                    <div class="bd-example">
-                      <div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleCaptions2" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>First slide label</h5>
-                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Second slide label</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Third slide label</h5>
-                              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button"
-                          data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button"
-                          data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="">
-                    <div class="bd-example">
-                      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
 
-                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src=" {{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Second slide label</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" class="d-block w-100" alt="...">
-
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Third slide label</h5>
-                              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </div>
-                          </div>
-                          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -208,7 +101,7 @@ $date =date('m-d')
                 </div>
           </div>
           <div class="card-body">
-          
+
            @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
@@ -228,15 +121,15 @@ $date =date('m-d')
             <div class="col-lg-10">
               <div class="modal fade" id="modal-notification" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-dialog-centered modal-" role="document">
-                <div class="modal-content gif">       
+                <div class="modal-content gif">
                     <div class="modal-header">
                      <span aria-hidden="true"></span>
                     </div>
                     <br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br>  
+                    <br><br><br><br><br><br><br>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-white" data-dismiss="modal">¡Gracias!</button>
-                    </div>   
+                    </div>
                 </div>
             </div>
             </div>
@@ -249,16 +142,16 @@ $date =date('m-d')
              <div class="col-lg-10">
                <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
              <div class="modal-dialog modal-dialog-centered modal-" role="document">
-                 <div class="modal-content ">       
+                 <div class="modal-content ">
                      <div class="modal-header">
                       <span aria-hidden="true"></span>
                      </div>
-                     <div class="modal-body"> 
-                      <p>Por favor termine el registro para poder ingresar</p>                      
+                     <div class="modal-body">
+                      <p>Por favor termine el registro para poder ingresar</p>
                   </div>
                      <div class="modal-footer">
                         <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
-                      </div>   
+                      </div>
                     </div>
              </div>
              </div>
@@ -282,26 +175,26 @@ $date =date('m-d')
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
           </div>
           <!-- Card body -->
-          
+
           <div class="card-body">
             <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div>
             <div data-toggle="calendar" id="date" style="margin-top: -151%;" ></div>
-            
+
           </div>
           @foreach ($eventos as $evento)
           <div style="padding: 0.25rem 0.5rem;
-          border-bottom: 1px solid rgba(0, 0, 0, .05);">            
+          border-bottom: 1px solid rgba(0, 0, 0, .05);">
             <h4>
               <br>
-            <a style="margin-left:31px;">{{$evento->name}} 
-            <a class="gris">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>    
+            <a style="margin-left:31px;">{{$evento->name}}
+            <a class="gris">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>
             <a class="gris"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
           <br>
             </h4>
           </div>
           @endforeach
         </div>
-        
+
         <!-- Progress track -->
 
         <div class="card">
@@ -363,14 +256,14 @@ $date =date('m-d')
   {
      $("#modal-notification").modal("show");
   });
-</script>   
+</script>
 
 <script>
   $(document).ready(function()
   {
      $("#modaLlenarcampos").modal("show");
   });
-</script> 
+</script>
 
 @endsection
 @endsection

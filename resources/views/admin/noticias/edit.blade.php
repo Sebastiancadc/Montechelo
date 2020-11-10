@@ -17,38 +17,59 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+<br>
+<br>
+
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <div class="card-wrapper">
-<div class="card">
-    <!-- Card header -->
-    <div class="card-header">
-      <h3 class="mb-0">Editar el estado de la noticia</h3>
-    </div>
-    <!-- Card body -->
-    <div class="card-body">
-        <form action="{{url('admin/noticia',$noticiaActualizar->Id_noticia)}}" method="POST">
-            @method('PUT')
-            @csrf
-        <select class="form-control" data-toggle="select" name="estado_noticia" id="estado_noticia">
-          <option>{{$noticiaActualizar->estado_noticia}}</option>
-          <option>Pendiente</option>
-          <option>Revisada</option>
-        </select>
-        <button type="submit" class="btn btn-primary my-4">Editar</button>
-      </form>
-      @if (session('update'))
-        <div class="alert alert-success mt-3">
-        {{session('update')}}
-        </div>
-     @endif
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
+        <div class="col-lg-8 card-wrapper">
+            <!-- Grid system -->
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{url('admin/noticia',$noticiaActualizar->Id_noticia)}}" method="POST"  enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                            <label class="form-control-label" >Categoria de la publicación</label>
+                            <select class="form-control" name="category_id">
+                                @foreach ($categoria as $category)
+                                <option  value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="title">Título </label>
+                            <input type="text" id="title" class="form-control form-control-alternative" placeholder="" value="{{$noticiaActualizar->title }}" name="title">
+                            @if ($errors->has('title'))
+                            <strong class="text-danger" >{{ $errors->first('title') }}</strong>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="competencias">Contenido</label>
+                                <textarea class="form-control" id="mymce" rows="3" name="body">{{$noticiaActualizar->body }}</textarea>
+                        </div>
 
+                        <img src="{{$noticiaActualizar->image }}" class="img-fluid rounded" style="margin-left: 200px; width: 300px; heightmin-width: ;min-width: 300px;">
+
+                        <div class="form-group">
+                            <label class="form-control-label" for="competencias">Imagen</label>
+                            <input type="file"  class="form-control form-control-alternative" placeholder="" value="{{$noticiaActualizar->image }}" name="image">
+                        </div>
+
+                        <div class="col-lg-6 col-5 text-right" style="float: right;">
+                            <button type="submit" class="btn btn-primary my-4">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+                @if (session('update'))
+                <div class="alert alert-success mt-3">
+                    {{session('update')}}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+
+</div>
 @endsection

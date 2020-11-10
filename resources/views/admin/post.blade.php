@@ -5,11 +5,11 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Directorio</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Noticias</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Directorio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Noticia publicada</li>
                         </ol>
                     </nav>
                 </div>
@@ -42,7 +42,9 @@
                             <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="avatar">
                         </a>
                         <div class="mx-3">
-                            <a href="#" class="text-dark font-weight-600 text-sm">{{ $noticia->user->name }}</a>
+                            <h4 class="mb-0">
+                                <a>{{$noticia->user->name}} {{$noticia->user->lastname}}</a>
+                            </h4>
                             <small class="d-block text-muted">{{ $noticia->created_at->format('d/m/Y') }}</small>
                         </div>
                         </div>
