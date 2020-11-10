@@ -49,9 +49,11 @@
                         </div>
                         </div>
                         <div class="text-right ml-auto">
+                            @if($noticia->user->id == Auth::User()->id)
                         <button type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Follow</span>
+                            @endif
                         </button>
                         </div>
                     </div>
