@@ -1,5 +1,5 @@
 {{-- user info and avatar --}}
-<div class="avatar av-l"></div>
+<div class="avatar av-l"> <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="    height: 84px;"></div>
 <p class="info-name">Montechelo chat</p>
 <p class="s" style="margin-top: -5px;"> </p>
 <div class="messenger-infoView-btns">

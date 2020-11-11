@@ -175,8 +175,7 @@
 
                                                   
                                                   <div class="modal-footer">
-                                                      <a href="{{$item->image}}" download
-                                                        target="_blank"> Descargar</a>
+                                                      <a href="{{$item->image}}" download target="_blank"> Descargar</a>
                                                       <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">Close</button>
                                                   </div>
                                                   

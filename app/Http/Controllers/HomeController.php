@@ -47,7 +47,7 @@ class HomeController extends Controller
         $user->phone = $request->phone;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
         $user->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
-        $request['messenger_color'] = '#2180f3';
+        $user->messenger_color = $request->messenger_color;
         $user->role = $request->role;
         $user->save();
         return redirect('admin/usuario');

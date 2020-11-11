@@ -1,12 +1,10 @@
 {{-- ---------------------- Image modal box ---------------------- --}}
-{{-- <div id="imageModalBox" class="imageModal">
+
+<div id="imageModalBox" class="imageModal">
     <span class="imageModal-close">&times;</span>
     <img class="imageModal-content" id="imageModalBoxSrc">
-    <div style="margin-left: 70%;">
-    <span class="fas fa-download" style=" color: aliceblue;"></span>
-    <a href="" target="_blank" download>Descargar</a></div>
-  </div> --}}
-  
+    </div>
+
   {{-- ---------------------- Delete Modal ---------------------- --}}
   <div class="app-modal" data-name="delete">
       <div class="app-modal-container">

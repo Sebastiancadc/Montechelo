@@ -9,6 +9,8 @@ use Chatify\Http\Models\Message;
 use Chatify\Http\Models\Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
+use Chatify\ChatifyMessenger as ChatifyChatifyMessenger;
+use Chatify\Facades\ChatifyMessenger;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -398,6 +400,16 @@ class MessagesController extends Controller
             'deleted' => $delete ? 1 : 0,
         ], 200);
     }
+
+
+    public function deleteMessage($id)
+    {
+        $data = ChatifyMessenger::findOrFail($id);
+        $data->delete();
+        return back();
+    }
+
+
 
     public function updateSettings(Request $request)
     {
