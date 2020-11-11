@@ -82,8 +82,7 @@ body{
 .m-header{
 	padding: 10px 15px;
 	font-weight: 600;
-	background: transparent;
-}
+  background: transparent;}
 .m-header-right {
   display: inline-flex;
   float: right;

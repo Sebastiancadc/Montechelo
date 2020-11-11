@@ -10,6 +10,7 @@ use Chatify\Http\Models\Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
@@ -85,7 +86,7 @@ class MessagesController extends Controller
         return Response::json([
             'favorite' => $favorite,
             'fetch' => $fetch,
-            'user_avatar' => asset('/storage/' . config('chatify.user_avatar.folder') . '/' . $fetch->avatar),
+            'user_avatar' => asset($fetch->photo),
         ]);
     }
 
@@ -205,7 +206,7 @@ class MessagesController extends Controller
         // send the response
         return Response::json([
             'count' => $query->count(),
-            'messages' => '<p class="message-hint"><span>Say \'hi\' and start messaging</span></p>',
+            'messages' => '<p class="message-hint"><span></span></p>',
         ]);
     }
 
@@ -340,7 +341,7 @@ class MessagesController extends Controller
     {
         $getRecords = null;
         $input = trim(filter_var($request['input'], FILTER_SANITIZE_STRING));
-        $records = User::where('name', 'LIKE', "%{$input}%");
+        $records = User::where('name', 'LIKE', "%{$input}%")->orWhere('lastname', 'LIKE', "%{$input}%");
         foreach ($records->get() as $record) {
             $getRecords .= view('Chatify::layouts.listItem', [
                 'get' => 'search_item',
@@ -428,16 +429,16 @@ class MessagesController extends Controller
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed_images)) {
                     // delete the older one
-                    if (Auth::user()->avatar != config('chatify.user_avatar.default')) {
-                        $path = storage_path('app/public/' . config('chatify.user_avatar.folder') . '/' . Auth::user()->avatar);
+                    if (Auth::user()->photo != config('chatify.user_avatar.default')) {
+                        $path = storage_path('app/public/' . config('chatify.user_avatar.folder') . '/' . Auth::user()->photo);
                         if (file_exists($path)) {
                             @unlink($path);
                         }
                     }
                     // upload
-                    $avatar = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    $update = User::where('id', Auth::user()->id)->update(['avatar' => $avatar]);
-                    $file->storeAs("public/" . config('chatify.user_avatar.folder'), $avatar);
+                    $photo = Str::uuid() . "." . $file->getClientOriginalExtension();
+                    $update = User::where('id', Auth::user()->id)->update(['avatar' => $photo]);
+                    $file->storeAs("public/" . config('chatify.user_avatar.folder'), $photo);
                     $success = $update ? 1 : 0;
                 } else {
                     $msg = "File extension not allowed!";

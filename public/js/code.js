@@ -297,8 +297,8 @@ function IDinfo(id, type) {
             dataType: 'JSON',
             success: (data) => {
                 // avatar photo
-                $('.messenger-infoView').find('.avatar').css('background-image', 'url("' + data.user_avatar + '")');
-                $('.header-avatar').css('background-image', 'url("' + data.user_avatar + '")');
+                //$('.messenger-infoView').find('.avatar').css('background-image', 'url("https://th.bing.com/th/id/OIP.W6ScvjHPKMmixDc--Fvc6gHaHk?pid=Api&rs=1")');
+                // $('.header-avatar').css('background-image', 'url("")');
                 // Show shared and actions
                 $('.messenger-infoView-btns .delete-conversation').show();
                 $('.messenger-infoView-shared').show();
@@ -308,7 +308,9 @@ function IDinfo(id, type) {
                 messageInput.focus();
                 // update info in view
                 $('.messenger-infoView .info-name').html(data.fetch.name);
+
                 $('.m-header-messaging .user-name').html(data.fetch.name);
+                $('.s').html(data.fetch.lastname);
                 // Star status
                 data.favorite > 0
                     ? $('.add-to-favorite').addClass('favorite')

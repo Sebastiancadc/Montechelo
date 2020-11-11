@@ -435,11 +435,5 @@ height: 148%;"></span>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script type="text/javascript">
-  $(function () {
-      $('#date').date({
-        format: 'Y/M/D',
-      });
-  });
-</script>
+
 @endsection

@@ -23,7 +23,6 @@ class DirectorioController extends Controller
     public function index(Request $request)
     {
 
-        
         if($request){
             $query=trim($request->get('search'));
             $usuari = User::all();

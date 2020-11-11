@@ -27,14 +27,15 @@
                 <span class="activeStatus"></span>
             @endif
         <div class="avatar av-m" 
-        style="background-image: url('{{ asset('/storage/'.config('chatify.user_avatar.folder').'/'.$user->avatar) }}');">
+        style="background-image: url('{{$user->photo}}');">
         </div>
         </td>
         {{-- center side --}}
         <td>
         <p data-id="{{ $type.'_'.$user->id }}">
-            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }} 
+            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name.' '.$user->lastname }} 
             <span>{{ $lastMessage->created_at->diffForHumans() }}</span></p>
+            
         <span>
             {{-- Last Message user indicator --}}
             {!!
@@ -68,13 +69,13 @@
         {{-- Avatar side --}}
         <td>
         <div class="avatar av-m"
-        style="background-image: url('{{ asset('/storage/'.config('chatify.user_avatar.folder').'/'.$user->avatar) }}');">
+        style="background-image: url('{{$user->photo}}');">
         </div>
         </td>
         {{-- center side --}}
         <td>
         <p data-id="{{ $type.'_'.$user->id }}">
-            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }} 
+            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name.' '.$user->lastname }} 
         </td>
         
     </tr>
@@ -84,6 +85,7 @@
 {{-- -------------------- Shared photos Item -------------------- --}}
 @if($get == 'sharedPhoto')
 <div class="shared-photo chat-image" style="background-image: url('{{ $image }}')"></div>
+
 @endif
 
 

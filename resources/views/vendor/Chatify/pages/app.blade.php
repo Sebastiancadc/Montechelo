@@ -17,9 +17,9 @@
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($route == 'user') class="active-tab" @endif data-view="usuario">
-                    <span class="far fa-user"></span> Personas</a>
-                <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
-                    <span class="fas fa-users"></span>Grupos</a>
+                    <span class="far fa-user"></span>Personas</a>
+                {{-- <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
+                    <span class="fas fa-users"></span>Grupos</a> --}}
             </div>
         </div>
         {{-- tabs and lists --}}
@@ -57,6 +57,8 @@
         </div>
     </div>
 
+
+
     {{-- ----------------------Messaging side---------------------- --}}
     <div class="messenger-messagingView">
         {{-- header title [conversation name] amd buttons --}}
@@ -65,9 +67,13 @@
                 {{-- header back button, avatar and user name --}}
                 <div style="display: inline-flex;">
                     <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a>
-                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
+                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px; background-image:url('{{App\User::all()}}')">
+                                         
+                    <img src="">
                     </div>
-                    <a href="#" class="user-name">Montechelo chat</a>
+                    <a href="#" class="user-name"> Montechelo chat</a>
+                    <a class="s" style="text-decoration: none;margin-left: 4px;
+                    color: #fff;" >  </a>
                 </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">

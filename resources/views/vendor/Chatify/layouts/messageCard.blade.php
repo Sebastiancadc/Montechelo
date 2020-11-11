@@ -38,11 +38,20 @@
     </div>
     {{-- If attachment is an image --}}
     @if(@$attachment[2] == 'image')
+    <div id="imageModalBox" class="imageModal">
+        <span class="imageModal-close">&times;</span>
+        <img class="imageModal-content" id="imageModalBoxSrc">
+        <div style="margin-left: 70%;">
+        <span class="fas fa-download" style=" color: aliceblue;"></span>
+        <a href="{{ asset('storage/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}" target="_blank" download>Descargar</a></div>
+      </div>    
     <div>
         <div class="message-card mc-sender">
             <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('{{ asset('storage/'.config('chatify.attachments.folder').'/'.$attachment[0]) }}')">
             </div>
         </div>
     </div>
+    
     @endif
+
 @endif
