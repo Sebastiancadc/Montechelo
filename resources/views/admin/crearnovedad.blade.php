@@ -60,7 +60,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                 </div>
-               
+
                 <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text" required/>
               </div>
             </div>
@@ -70,7 +70,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label class="form-control-label" for="example3cols3Input">Novedad</label>
-            <input type="text" class="form-control" id="example3cols3Input" name="novedad" required>
+            <input type="text" class="form-control" id="example3cols3Input" name="novedad" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="30">
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
 
         <div class="col-md-9">
             <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="250"></textarea>
           </div>
       </div>
     </div>
@@ -96,16 +96,16 @@
 <div class="col-lg-10">
   <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
 <div class="modal-dialog modal-dialog-centered modal-" role="document">
-    <div class="modal-content ">       
+    <div class="modal-content ">
         <div class="modal-header">
          <span aria-hidden="true"></span>
         </div>
-        <div class="modal-body"> 
-         <p>Por favor termine el registro para poder ingresar</p>                      
+        <div class="modal-body">
+         <p>Por favor termine el registro para poder ingresar</p>
      </div>
         <div class="modal-footer">
            <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
-         </div>   
+         </div>
        </div>
 </div>
 </div>
@@ -120,7 +120,7 @@
     {
        $("#modaLlenarcampos").modal("show");
     });
-  </script> 
+  </script>
 @endsection
 
 

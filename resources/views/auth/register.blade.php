@@ -29,7 +29,7 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -9%;">
               <h1 class="text-white">¡Crea tu cuenta!</h1>
-              
+
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border-0"  style="top: -147px;">
             <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;" >
-              
+
               <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 199px;">
             </div>
             <div class="card-body px-lg-5 py-lg-5">
@@ -63,7 +63,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-                
+
                 </div>
                 </div>
                 <input name="role" value="colaborador" hidden>
@@ -72,7 +72,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$" title="Sólo pueden registrase cuentas corporativas">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                       </div>
-                      <input class="form-control datepicker" id="datepickers" name="cumpleanios" placeholder="Select date" type="text">
+                      <input class="form-control datepicker" id="datepickers" name="cumpleanios" placeholder="Select date" type="text" required>
                   </div>
               </div>
                 <div class="form-group">
@@ -110,8 +110,8 @@
                     <input  id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmar Contraseña" required>
                   </div>
                 </div>
-                
-    
+
+
                   <div class="row my-4">
                   <div class="col-12">
                     <div class="custom-control custom-control-alternative custom-checkbox">
