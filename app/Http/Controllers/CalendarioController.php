@@ -125,6 +125,7 @@ class CalendarioController extends Controller
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
         $evento->save();
+       
         return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
     
     }

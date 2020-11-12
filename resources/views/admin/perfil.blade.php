@@ -54,7 +54,7 @@ height: 148%;"></span>
             <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
-        <a  style="margin-top: -6px;
+        {{-- <a  style="margin-top: -6px;
         margin-left: 150px;
         font-size: 24px;
         z-index: 2;
@@ -65,8 +65,7 @@ height: 148%;"></span>
          font-size: 24px;
          z-index: 2;
          color: black;border: 0px solid rgb(255 253 253 / 18%);
-    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a>
-         <br><br><br>
+    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a> --}}
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
@@ -533,6 +532,7 @@ $(function () {
     .done(function (data) {
         if (data.success)
             $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
             location.reload();
 
     })
