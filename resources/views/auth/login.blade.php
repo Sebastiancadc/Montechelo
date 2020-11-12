@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-     
+
     </div>
     <!-- Page content -->
     <div class="container mt--8 pb-5">
@@ -62,7 +62,7 @@
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                @enderror  
+                @enderror
                 </div>
                 </div>
                 <div class="form-group">
@@ -70,12 +70,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" type="password" required>  
-                  
+                    <input id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" type="password" required>
+
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
-                    </span> 
+                    </span>
                 @enderror
                 </div>
                 </div>
@@ -86,24 +86,24 @@
                   </label>
                 </div>
                 <div class="text-center">
-                    
-                  <button type="submit" class="btn btn-primary my-4">Ingresar</button> 
-               
+
+                  <button type="submit" class="btn btn-primary my-4">Ingresar</button>
+
                 </div>
               </form>
             </div>
           </div>
-      
+
           <div class="row" style="margin-top: -179px;">
             <div class="col-6">
-             
+
               <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
             </div>
-            
+
             <div class="col-6 text-right">
               <a href="{{ route('register') }}" class="text-light"><small>Crear nueva cuenta</small></a>
             </div>
-          
+
           </div>
         </div>
       </div>

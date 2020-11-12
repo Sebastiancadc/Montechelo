@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     @if (Session::has('message'))
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <span class="alert-icon"><i class="ni ni-like-2"></i></span>
     <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{ Session::get('message') }}</span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -30,7 +30,11 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
+        <form action="{{ url('fotoportada') }}" enctype='multipart/form-data' id="portadaForm">
+          @csrf 
+          <input type="file" id="portadaInput" style="display: none" name="photo_portada">
+        </form>
+        <img src="{{Auth::user()->photo_portada}}" id="portadata"  class="card-img img-fluid">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
@@ -38,16 +42,30 @@ height: 148%;"></span>
                 @csrf 
                 <input type="file" id="avatarInput" style="display: none" name="photo">
             </form>
-            <img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle">
-            </div>
+            <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
+    
+          </div>
           </div>
         </div>
+
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+            {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
+        {{-- <a  style="margin-top: -6px;
+        margin-left: 150px;
+        font-size: 24px;
+        z-index: 2;
+        color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left" class="ni ni-camera-compact"></i></a>
+         <a  style="margin-top:-133px;
+         margin-left: 280px;
+         font-size: 24px;
+         z-index: 2;
+         color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a> --}}
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
@@ -266,13 +284,13 @@ height: 148%;"></span>
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>Perfil</a>
+            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Amigos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Amigos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-calendar-grid-58 mr-2"></i>Grupos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>Grupos</a>
           </li>
         </ul>
       </div>
@@ -515,6 +533,7 @@ $(function () {
         if (data.success)
             $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
+            location.reload();
 
     })
     .fail(function () {
@@ -523,5 +542,46 @@ $(function () {
 });
 });
 </script>
+
+<script>
+  $(function () {
+      var $portadata, $portadaInput, $portadaForm;
+      var portadaUrl;
+      
+      $portadata = $('#portadata');
+      $portadaInput = $('#portadaInput');
+      $portadaForm = $('#portadaForm');
+  
+      $portadata.on('click', function () {
+          $portadaInput.click();
+      });
+  
+      portadaUrl =$portadaForm.attr('action');  
+  
+      $portadaInput.on('change', function () {
+      
+      var formData = new FormData();
+      
+  
+      formData.append('photo_portada', $portadaInput[0].files[0]);
+  
+      $.ajax({
+          url: portadaUrl+'?'+$portadaForm.serialize(),
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false
+      })
+      .done(function (data) {
+          if (data.success)
+              $portadata.attr('src', 'http://localhost/Montechelo/public/images/portada/'+data.file_name+'?'+ new Date().getTime());
+  
+      })
+      .fail(function () {
+          alert('La imagen subida no tiene un formato correcto');
+      });
+  });
+  });
+  </script>
 @endsection
 @endsection

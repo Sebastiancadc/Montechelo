@@ -45,14 +45,14 @@
                                     @endif
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlInput1" name="titulo">Título de la publicación</label>
-                                        <input type="text"  class="form-control form-control-alternative" placeholder="" value="{{ old('title') }}" name="title">
+                                        <input type="text"  class="form-control form-control-alternative" placeholder="" value="{{ old('title') }}" name="title" maxlength="30" required>
                                         @if ($errors->has('title'))
                                         <strong class="text-danger" >{{ $errors->first('title') }}</strong>
                                         @endif
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label" >Categorias</label>
-                                        <select class="form-control" name="category_id">
+                                        <select class="form-control" name="category_id" required>
                                           @foreach ($categoria as $category)
                                             <option  value="{{ $category->id }}">{{ $category->name }}</option>
                                           @endforeach
@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
                                         <div class="col-md-12">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3">{{ old('body') }}</textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3"  maxlength="250" required>{{ old('body') }}</textarea>
                                         </div>
                                         @if ($errors->has('body'))
                                         <strong class="text-danger" >{{ $errors->first('body') }}</strong>
@@ -72,7 +72,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label"> Portada </label>
-                                            <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
+                                            <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image" required>
                                             @if ($errors->has('image'))
                                             <strong class="text-danger" >{{ $errors->first('image') }}</strong>
                                             @endif
