@@ -1,4 +1,5 @@
 @include('Chatify::layouts.headLinks')
+
 <div class="messenger">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
     <div class="messenger-listView">
@@ -8,8 +9,10 @@
                 <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">Mensajes</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
+                    <a href="{{ url('home')}}"><i class="fas fa-home"></i></a>
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a> 
+                    
                 </nav>
             </nav>
             {{-- Search input --}}
@@ -78,6 +81,14 @@
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                  <i class="fa fa-reply" aria-hidden="true"></i>
+                  
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                     <a href="{{ url('home')}}"><i class="fas fa-home"></i></a>
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
                 </nav>

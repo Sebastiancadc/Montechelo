@@ -73,7 +73,7 @@ class NoticiasController extends Controller
          $noticia->slug = Str::slug($request->title);
          $noticia->save();
 
-
+        
          if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
