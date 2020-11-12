@@ -89,7 +89,7 @@ class RepositorioController extends Controller
         
         $repositorio->save();
         {
-            //validacion
+        
             $rules = [
              
               'image' =>'mimes:jpg,bmp,png,jpg,gif,pdf,doc|max:2000',
@@ -103,6 +103,17 @@ class RepositorioController extends Controller
       
       
                  ];
+                 $this->validate($request, $messages);
+
+                 $repositorio = Repositorio::find($id);
+                 $repositorio->update($request->all());
+     
+                if($request->file('image')){
+                 $nombre = Storage::disk('archivosave')->put('plantilla/img/repositorio',  $request->file('image'));
+                 $repositorio->fill(['image' => asset($nombre)])->save();
+               }
+     
+                Session::flash('message','Publicación actualizada correctamente');
                  
 
 
