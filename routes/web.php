@@ -153,5 +153,6 @@ Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearno
 
 //Imagen de perfil
 Route::post('foto', 'PerfilController@updatePhoto');
+Route::post('fotoportada', 'PerfilController@updatePhotoportada');
 
 });

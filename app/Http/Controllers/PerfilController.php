@@ -78,4 +78,25 @@ class PerfilController extends Controller
         $data['file_name']=$file_name;  
         return $data;
     }
+
+    public function updatePhotoportada(Request $request)
+    {
+        $this->validate($request, [
+            'photo_portada' => 'required|image'
+        ]);
+
+        $user=Auth::user();
+        $extension =$request->file('photo_portada')->getClientOriginalExtension();
+        $file_name = $user->id. '.' .$extension;
+            
+        $path= public_path('images/portada/'.$file_name);
+
+        Image::make($request->file('photo_portada'))->fit(144,144)->save($path);
+        $user->photo_portada = 'http://localhost/Montechelo/public/images/portada/'.$file_name;
+        $user->save();  
+        $data['success'] =true;
+        $data['path'] = $path;
+        $data['file_name']=$file_name;  
+        return $data;
+    }
 }

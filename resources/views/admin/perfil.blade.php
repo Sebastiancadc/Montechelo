@@ -30,7 +30,12 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
+        <form action="{{ url('fotoportada') }}" enctype='multipart/form-data' id="portadaForm">
+          @csrf 
+          <input type="file" id="portadaInput" style="display: none" name="photo_portada">
+        </form>
+        
+        <img src="{{Auth::user()->photo_portada}}" id="portadata" alt="Image placeholder" class="card-img-top" style="height: 165px;">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
@@ -38,16 +43,31 @@ height: 148%;"></span>
                 @csrf 
                 <input type="file" id="avatarInput" style="display: none" name="photo">
             </form>
-            <img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle">
-            </div>
+            <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
+    
+          </div>
           </div>
         </div>
+
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+            {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Message</a>
           </div>
         </div>
+        <a  style="margin-top: -6px;
+        margin-left: 150px;
+        font-size: 24px;
+        z-index: 2;
+        color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left" class="ni ni-camera-compact"></i></a>
+         <a  style="margin-top:-133px;
+         margin-left: 280px;
+         font-size: 24px;
+         z-index: 2;
+         color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a>
+         <br><br><br>
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
@@ -523,5 +543,46 @@ $(function () {
 });
 });
 </script>
+
+<script>
+  $(function () {
+      var $portadata, $portadaInput, $portadaForm;
+      var portadaUrl;
+      
+      $portadata = $('#portadata');
+      $portadaInput = $('#portadaInput');
+      $portadaForm = $('#portadaForm');
+  
+      $portadata.on('click', function () {
+          $portadaInput.click();
+      });
+  
+      portadaUrl =$portadaForm.attr('action');  
+  
+      $portadaInput.on('change', function () {
+      
+      var formData = new FormData();
+      
+  
+      formData.append('photo_portada', $portadaInput[0].files[0]);
+  
+      $.ajax({
+          url: portadaUrl+'?'+$portadaForm.serialize(),
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false
+      })
+      .done(function (data) {
+          if (data.success)
+              $portadata.attr('src', 'http://localhost/Montechelo/public/images/portada/'+data.file_name+'?'+ new Date().getTime());
+  
+      })
+      .fail(function () {
+          alert('La imagen subida no tiene un formato correcto');
+      });
+  });
+  });
+  </script>
 @endsection
 @endsection
