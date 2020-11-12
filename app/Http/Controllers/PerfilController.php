@@ -91,7 +91,7 @@ class PerfilController extends Controller
             
         $path= public_path('images/portada/'.$file_name);
 
-        Image::make($request->file('photo_portada'))->fit(144,144)->save($path);
+        Image::make($request->file('photo_portada'))->fit(1000,600)->save($path);
         $user->photo_portada = 'http://localhost/Montechelo/public/images/portada/'.$file_name;
         $user->save();  
         $data['success'] =true;

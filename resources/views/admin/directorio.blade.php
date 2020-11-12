@@ -49,7 +49,7 @@
       <div class="col-lg-4">
         <!-- Profile card -->
         <div class="card card-profile">
-          <img src="{{$usuario->photo_portada}}" alt="Image placeholder" class="card-img-top" style="height: 165px;">
+          <img src="{{$usuario->photo_portada}}" class="img-fluid rounded" > 
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
