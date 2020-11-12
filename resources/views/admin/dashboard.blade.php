@@ -43,62 +43,31 @@ $date =date('m-d')
                 <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
 
               </div>
-              <div class="col-sm-12">
-                <div class="card">
-                  <div class="card-header bg-transparent">
-                    <div class="bd-example">
-                      <div id="carouselExampleCaptionss" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          @foreach ($noticias as $item)
-                            <li data-target="#carouselExampleControls" data-slide-to="{{$loop->index}}" class="{{$loop->first ? 'active' : ''}}"><li>
-                          @endforeach
-                        </ol>
-                        <div class="carousel-inner">
-                          @foreach ($noticias as $item)
-                          <div class="carousel-item {{$loop->first ? 'active' : ''}}">
-                            <img src="{{ $item->image }}" class=" img-fluid d-block" alt="" style="margin-left: auto; margin-right: auto; width: 450px; height:350px ;min-width: 474px;">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5 class="h3 mb-0">{{$item->title }}</h5>
-                              <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0 ">Ver noticia</a>
-                            </div>
-                          </div>
-
-                          @endforeach
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleCaptionss" role="button"
-                          data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleCaptionss" role="button"
-                          data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+              
             </div>
+        
           </div>
 
         </div>
-            <div class="card mb-6" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="..." class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
+        @foreach ($noticias as $item)
+        <div class="card mb-6" style="max-width: 740px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+            <img src="{{$item->image}}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{$item->title}}</h5>
+                <p class="card-text">{{ substr($item->body, 0,20) }}...</p>
+                <p class="card-text"><small class="text-muted">{{$item->created_at->format('d/m/Y')}}</small></p>
+                <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
+
+                
               </div>
             </div>
+          </div>
+        </div> 
+        @endforeach
         
       </div>
       <div class="col-lg-4">
