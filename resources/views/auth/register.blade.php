@@ -67,7 +67,6 @@
                 </div>
                 </div>
                 <input name="role" value="colaborador" hidden>
-                <input name="messenger_color" value="#2180f3" hidden>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
