@@ -61,8 +61,6 @@ $date =date('m-d')
                 <p class="card-text">{{ substr($item->body, 0,20) }}...</p>
                 <p class="card-text"><small class="text-muted">{{$item->created_at->format('d/m/Y')}}</small></p>
                 <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
-
-                
               </div>
             </div>
           </div>

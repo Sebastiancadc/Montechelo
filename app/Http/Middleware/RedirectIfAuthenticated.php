@@ -20,10 +20,8 @@ class RedirectIfAuthenticated
     {
 
         if (Auth::guard($guard)->check()) {
-            // return redirect()->action('InicioController@eventoslistar');
             return redirect('/home');
         }
-
         return $next($request);
     }
 }
