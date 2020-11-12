@@ -8,7 +8,7 @@
 
   <title>Registrarse</title>
   <!-- Favicon -->
-  <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
+  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
@@ -67,7 +67,6 @@
                 </div>
                 </div>
                 <input name="role" value="colaborador" hidden>
-                <input name="messenger_color" value="#2180f3" hidden>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">

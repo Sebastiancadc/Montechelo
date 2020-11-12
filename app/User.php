@@ -45,10 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return void
      */
-    public function sendEmailVerificationNotification()
-    {
-        $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
-    }
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
+    // }
 
     public function admin()
     {
