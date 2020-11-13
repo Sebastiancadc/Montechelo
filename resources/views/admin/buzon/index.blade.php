@@ -1,5 +1,3 @@
-
-
 @extends('admin.layout')
 @section('content')
     <div class="header bg-primary pb-6">
@@ -30,6 +28,13 @@
     </div>
     <!-- Page content -->
     <div class="container-fluid mt--6">
+{{--
+        @if(session('eliminar'))
+    <div class="alert alert-success mt-3">
+        {{session('eliminar')}}
+    </div>
+    @endif
+ --}}
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -45,7 +50,7 @@
 
                     <!-- Light table -->
                     <div class="table-responsive py-4" style="margin-top: -40px;">
-                        
+
                         <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
                                 <tr>
@@ -53,6 +58,7 @@
                                     <th scope="col" class="sort" data-sort="nombre">Tipo de sugerencia</th>
                                     <th scope="col" class="sort" data-sort="apellido">Descripcion</th>
                                     <th scope="col" class="sort" data-sort="género">Area</th>
+                                    <th scope="col" class="sort" data-sort="género">Acciones</th>
 
 
 
@@ -76,15 +82,21 @@
                                     <td>
                                         <span class="text-muted">{{$item->area}}</span>
                                     </td>
+
+                                    <td>
+                                    <a href="#!" class="table-action table-action-delete" data-toggle="modal"  data-target="#deletebuzon{{$item->id}}" data-original-title="Eliminar sugerencia">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                    </td>
+
+
+
+
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        @if (session('eliminarsugerencia'))
-                        <div class="alert alert-success" role="alert">
-                        {{session('eliminarsugerencia')}}
-                        </div>
-                     @endif
+
                     </div>
 
                 </div>

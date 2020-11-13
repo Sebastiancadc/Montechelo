@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
     Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
 
-    //Novedada
+    //Novedad
     Route::resource('novedad', 'NovedadController');
     Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
     Route::put('updatenovedad/{id}', 'NovedadController@update')->name('update');
@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //buzon
     Route::resource('buzon', 'BuzonDeSugerenciasController');
+    //Route::delete('deletebuzon/{id}', 'BuzonDeSugerenciasController@destroy')->name('eliminarbuzon');
 
     //Canlendario
     Route::get('eventos', 'CalendarioController@eventos');
@@ -91,6 +92,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('crearcategorias', 'CategoryController@crearsugerencias')->name('crearcategorias');
     Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
     Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
+
+    //Capacitaciones
+    Route::resource('capacitaciones', 'CapacitacionesController');
+    Route::get('capacitaciones', 'CapacitacionesController@index2');
+    Route::post('/store', 'CapacitacionesController@store')->name('store');
+    Route::get('admin/editarcapacitacion/{id_capacitacion}', 'CapacitacionesController@edit')->name('editarcapacitacion');
+    Route::put('/update/{id_capacitacion}', 'CapacitacionesController@update')->name('update');
+    Route::delete('deletecapacitacion/{id_capacitacion}', 'CapacitacionesController@destroy')->name('eliminarcapacitacion');
+
 });
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
@@ -116,7 +126,7 @@ Route::resource('repositorio', 'RepositorioController');
 //Canlendario
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
 Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
-Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');    
+Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
 Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
 Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
 Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
@@ -136,4 +146,9 @@ Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')
 //Novedad
 Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
 Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
+
+//capacitaciones
+Route::resource('capacitaciones', 'CapacitacionesController');
+//Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
+
 });

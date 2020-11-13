@@ -120,6 +120,18 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
+            {{--  <li class="nav-item">
+              <a class="nav-link" href="{{url('capacitaciones')}}">
+                <i class="ni ni-planet text-green"></i>
+                <span class="nav-link-text">Talento Humano</span>
+              </a>
+            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('capacitaciones')}}">
+                  <i class="ni ni-paper-diploma text-black"></i>
+                  <span class="nav-link-text">Capacitaciones</span>
+                </a>
+              </li>
 
 @if ($user->role=='admin')
 <li class="nav-item">
@@ -148,6 +160,12 @@
       <li class="nav-item">
         <a href="{{ url('admin/noticia')}}" class="nav-link">Noticias</a>
       </li>
+
+      <li class="nav-item">
+        <a href="{{ url('admin/capacitaciones')}}" class="nav-link">Capacitaciones</a>
+      </li>
+
+
 
     </ul>
   </div>
