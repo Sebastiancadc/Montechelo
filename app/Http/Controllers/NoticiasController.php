@@ -34,13 +34,13 @@ class NoticiasController extends Controller
 
     public function crearnoticia()
     {
-        $user = User::find(Auth::User()->id_Usuario);
+        $user = User::find(Auth::User()->id);
         $categoria = Category::all();
         return view('admin/crearnoticia',compact('categoria','user'));
     }
     public function crearnoticias()
     {
-       $user = User::find(Auth::User()->id_Usuario);
+       $user = User::find(Auth::User()->id);
        $categoria = Category::all();
        return view('admin.crearnoticia',compact('categoria','user'));
     }
@@ -73,7 +73,7 @@ class NoticiasController extends Controller
          $noticia->slug = Str::slug($request->title);
          $noticia->save();
 
-
+        
          if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
@@ -100,8 +100,8 @@ class NoticiasController extends Controller
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
-        // $categoria = Category::all();
-        return view('admin/noticias/edit',compact('noticiaActualizar'));    
+        $categoria = Category::all();
+        return view('admin/noticias/edit', compact('noticiaActualizar','categoria'));
     }
     /**
      * Update the specified resource in storage.
@@ -133,7 +133,7 @@ class NoticiasController extends Controller
             $this->validate($request, $rules, $messages);
 
             $noticia = Noticia::find($id);
-            $noticia->slug =  Str::slug($request->titulo);
+            $noticia->slug =  Str::slug($request->title);
             $noticia->update($request->all());
 
            if($request->file('image')){
@@ -142,7 +142,7 @@ class NoticiasController extends Controller
           }
 
            Session::flash('message','Publicación actualizada correctamente');
-          return redirect()->route('admin/solicitud');
+           return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
     }
     public function post($slug)
     {

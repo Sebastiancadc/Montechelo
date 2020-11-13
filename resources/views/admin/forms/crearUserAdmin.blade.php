@@ -52,6 +52,25 @@
                                         </div>
                                     </div>
                                     </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                          <input class="form-control" name="phone" placeholder="Telefono" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
+                                      </div>
+                                  </div>
+                                </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1" name="area" id="genero">
+                                          <option>Area</option>
+                                          <option>Programacion</option>
+                                          <option>Diseño</option>
+                                          <option>Produccion</option>
+                                        </select>
+                                      </div>
+                                  </div>
+                                  </div>
                                       <div class="form-group mb-3">
                                         <div class="input-group input-group-merge input-group-alternative">
                                           <div class="input-group-prepend">

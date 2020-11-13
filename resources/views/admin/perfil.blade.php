@@ -15,7 +15,7 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->apellido}}</h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->lastname}}</h1>
       </div>
       <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
     </div>
@@ -30,22 +30,42 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
+        <form action="{{ url('fotoportada') }}" enctype='multipart/form-data' id="portadaForm">
+          @csrf 
+          <input type="file" id="portadaInput" style="display: none" name="photo_portada">
+        </form>
+        <img src="{{Auth::user()->photo_portada}}" id="portadata"  class="card-img img-fluid">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
-              <a href="#">
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
-              </a>
-            </div>
+              <form action="{{ url('foto') }}" enctype='multipart/form-data' id="avatarForm">
+                @csrf 
+                <input type="file" id="avatarInput" style="display: none" name="photo">
+            </form>
+            <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
+    
+          </div>
           </div>
         </div>
+
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+            {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
+        {{-- <a  style="margin-top: -6px;
+        margin-left: 150px;
+        font-size: 24px;
+        z-index: 2;
+        color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left" class="ni ni-camera-compact"></i></a>
+         <a  style="margin-top:-133px;
+         margin-left: 280px;
+         font-size: 24px;
+         z-index: 2;
+         color: black;border: 0px solid rgb(255 253 253 / 18%);
+    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a> --}}
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
@@ -55,13 +75,13 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{ Auth::user()->name}}<span class="font-weight-light"> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
+              {{ Auth::user()->name}} {{Auth::user()->lastname}} <span class="font-weight-light"> {{App\Helpers\Helpers::edad(Auth::user()->cumpleanios)}}</span>
               años
               <div class="h5 mt-4">
                 {{ Auth::user()->area}}
               </div>
             </h5>
-            
+
             <div class="">
               {{ Auth::user()->email}}
             </div>
@@ -79,7 +99,6 @@ height: 148%;"></span>
         <div class="card-body">
           <!-- List group -->
           <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -96,8 +115,6 @@ height: 148%;"></span>
                 </div>
 
               </div>
-            </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -115,7 +132,6 @@ height: 148%;"></span>
 
               </div>
             </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -132,8 +148,6 @@ height: 148%;"></span>
                 </div>
 
               </div>
-            </li>
-            <li class="list-group-item px-0">
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Avatar -->
@@ -166,122 +180,117 @@ height: 148%;"></span>
         <div class="card-body">
           <!-- List group -->
           <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Alejandra Osorio</h5>
-                  <div class="">
-                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Sebastian Rodriguez</h5>
-                  <div class="">
-                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Brayan Oconer</h5>
-                  <div class="">
-                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li> <br>
-            <div class="card-header">
-              <h5 class="h3 mb-0"> Mi grupos</h5>
-              <li class="list-group-item px-0">
                 <div class="row align-items-center">
-                  <div class="col-auto">
+                    <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
                     </a>
-                  </div>
-                  <div class="col">
-                    <h5>Diseñadores</h5>
-                    <div class="">
-                      <div class="progress-bar bg-teal" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
                     </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col">
-                    <h5>Java español</h5>
+                    <div class="col">
+                    <h5>Alejandra Osorio</h5>
                     <div class="">
-                      <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                      </a>
-                  </div>
 
-                  <div class="col">
-                    <h5>Desarrolladores </h5>
-                    <div class="">
-                      <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <!-- Avatar -->
+                        <a href="#" class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                        </a>
                     </div>
-                  </div>
+                    <div class="col">
+                        <h5>Sebastian Rodriguez</h5>
+                        <div class="">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                        </div>
+                    </div>
                 </div>
-              </li>
-          </ul>
+
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                    <!-- Avatar -->
+                    <a href="#" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
+                    </a>
+                    </div>
+                    <div class="col">
+                    <h5>Brayan Oconer</h5>
+                    <div class="">
+                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
+                    </div>
+                    </div>
+                </div>
+                </li> <br>
+                <div class="row align-items-center">
+                    <div class="card-header">
+                        <h5 class="h3 mb-0"> Mis grupos</h5>
+                    </div>
+                    <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <h5>Diseñadores</h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-teal" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <h5>Java español</h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <!-- Avatar -->
+                                    <a href="#" class="avatar rounded-circle">
+                                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <h5>Desarrolladores </h5>
+                                    <div class="">
+                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
         </div>
-      </div>
     </div>
-
-
     <div class="col-xl-8 order-xl-1" style="margin-top: 30px">
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>Perfil</a>
+            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Amigos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Amigos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-calendar-grid-58 mr-2"></i>Grupos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>Grupos</a>
           </li>
         </ul>
       </div>
@@ -291,9 +300,10 @@ height: 148%;"></span>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
 
-              <form role="form" method="POST" action="{{url('editarprofile',$user->id_Usuario)}}">
+              <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
-                <hr class="my-4" />
+                <h4 class="text-muted ">INFORMACION PERSONAL</h4>
+                <hr class="my-4"/>
                 @if (session('editarusu'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <span class="alert-icon"><i class="ni ni-like-2"></i></span>
@@ -304,14 +314,30 @@ height: 148%;"></span>
                 </div>
                 @endif
                 <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
+                <a class="text-muted mb-4">Seleccione los campos que desee ocultar</a>
+                <br><br>
                 <div class="pl-lg-4">
                   <div class="row">
+                    
                     <div class="col-md-6">
                         <h4>Nombre</h4>
                         <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
+                      <h4>Apellido</h4>
+                      <input class="form-control" value="{{ Auth::user()->lastname}}" name="lastname" type="text">
+                  </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>Correo</h4>
+                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
+                    </div>
+                  </div>
+                    <br>
+                  <div class="row">
+                    <div class="col-md-6">
                       <div class="tab-content">
                         <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
                           <div class="form-group">
@@ -326,25 +352,6 @@ height: 148%;"></span>
                         </div>
                       </div>
                     </div>
-                  </div>        
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h4>Gmail</h4>
-                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
-
-                    </div>
-                    <div class="col-md-5">
-                      <h4>Genero</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
-                        <option>{{ Auth::user()->genero}}</option>
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro</option>
-                      </select>
-                    </div>
-                  </div>  
-                  <br> 
-                  <div class="row">
                     <div class="col-md-6">
                       <h4>Area</h4>
                       <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
@@ -355,23 +362,43 @@ height: 148%;"></span>
                         <option>Produccion</option>
                       </select>
                     </div>
-                    <div class="col-md-5">
-                      <h4>Telefono</h4>
-                      <input class="form-control" name="telefono" value="{{Auth::user()->telefono}} " type="text" >
 
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-6">
+
+                      <h4>Genero</h4>
+                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
+                        <option>{{ Auth::user()->genero}}</option>
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                        <option>Otro</option>
+                      </select>
                     </div>
-                  </div>                        
+                    <div class="col-md-6">
+                      <h4>Telefono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
+                        checked value="1" 
+                        @else
+                            value="0"
+                      @endif></h4>
+                      
+                      <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
+                    </div>
+
+                  </div>
                 </div>
-                <div class="card-body text-center"> 
-                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Editar Perfil</button>
-                </div>  
+                <div class="card-body text-center">
+                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Guardar</button>
+                </div>
             </div>
           </form>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
 
-        
-              
+
+
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
@@ -381,14 +408,14 @@ height: 148%;"></span>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                            
+
                         ">Manuel Rodriguez</h4>
               <br>
-              
+
               <h4 style="
                             margin-left: 400px;
                             margin-top: -50px;
-                            
+
                         ">Andres Sebastian</h4>
               <br>
               <a href="#" class="avatar ">
@@ -406,16 +433,12 @@ height: 148%;"></span>
                             margin-left: 400px;
                             margin-top: -55px;
                         ">Maria Alejandra</h4>
-              <br>                     
+              <br>
   </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
 
 
               <h1 class="form-control-label">Grupos sugeridos</h1><br>
-
-             
-        
-              
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
               </a>
@@ -425,14 +448,14 @@ height: 148%;"></span>
               <h4 style="
                             margin-left: 53px;
                             margin-top: -35px;
-                            
+
                         ">PHP avanzado</h4>
               <br>
-              
+
               <h4 style="
                             margin-left: 400px;
                             margin-top: -50px;
-                            
+
                         ">Desarrolladores</h4>
               <br>
               <a href="#" class="avatar ">
@@ -475,4 +498,90 @@ height: 148%;"></span>
       });
   });
 </script>
+
+@section('js')
+<script>
+$(function () {
+    var $avatarImage, $avatarInput, $avatarForm;
+    var avatarUrl;
+    
+    $avatarImage = $('#avatarImage');
+    $avatarInput = $('#avatarInput');
+    $avatarForm = $('#avatarForm');
+
+    $avatarImage.on('click', function () {
+        $avatarInput.click();
+    });
+
+    avatarUrl =$avatarForm.attr('action');  
+
+    $avatarInput.on('change', function () {
+    
+    var formData = new FormData();
+    
+
+    formData.append('photo', $avatarInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$avatarForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+
+    })
+    .fail(function () {
+        alert('La imagen subida no tiene un formato correcto');
+    });
+});
+});
+</script>
+
+<script>
+  $(function () {
+      var $portadata, $portadaInput, $portadaForm;
+      var portadaUrl;
+      
+      $portadata = $('#portadata');
+      $portadaInput = $('#portadaInput');
+      $portadaForm = $('#portadaForm');
+  
+      $portadata.on('click', function () {
+          $portadaInput.click();
+      });
+  
+      portadaUrl =$portadaForm.attr('action');  
+  
+      $portadaInput.on('change', function () {
+      
+      var formData = new FormData();
+      
+  
+      formData.append('photo_portada', $portadaInput[0].files[0]);
+  
+      $.ajax({
+          url: portadaUrl+'?'+$portadaForm.serialize(),
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false
+      })
+      .done(function (data) {
+          if (data.success)
+              $portadata.attr('src', 'http://localhost/Montechelo/public/images/portada/'+data.file_name+'?'+ new Date().getTime());
+  
+      })
+      .fail(function () {
+          alert('La imagen subida no tiene un formato correcto');
+      });
+  });
+  });
+  </script>
+@endsection
 @endsection

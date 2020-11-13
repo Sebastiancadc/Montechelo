@@ -29,10 +29,11 @@
     </div>
     <!-- Card body -->
     <div class="card-body">
-        <form action="{{url('admin/usuario',$userActualizar->id_Usuario)}}" method="POST">
+        <form action="{{url('admin/usuario',$userActualizar->id)}}" method="POST">
             @method('PUT')
             @csrf
             <div class="form-group mb-3">
+              <h4>Nombre</h4>
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
@@ -41,6 +42,7 @@
                 </div>
               </div>
               <div class="form-group mb-3">
+                <h4>Correo</h4>
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
@@ -50,6 +52,7 @@
               </div>
               <div class="form-group mb-3">
                 <div class="form-group">
+                  <h4>Rol</h4>
                   <select class="form-control" id="role" name="role">
                     <option>{{$userActualizar->role}}</option>
                     <option>Admin</option>
@@ -60,6 +63,7 @@
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
+                  <h4>Fecha de nacimiento</h4>
                   <div class="input-group input-group-merge input-group-alternative">
                 
                     <input class="form-control datepicker" value='{{$userActualizar->cumpleanios}}' type="date" name="cumpleaños" id="cumpleaños">
@@ -68,7 +72,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                
+                  <h4>Genero</h4>
                   <select class="form-control" id="exampleFormControlSelect1" name="genero">
                     <option>{{$userActualizar->genero}}</option>
                     <option>Hombre</option>
@@ -79,7 +83,27 @@
             </div>
             </div>
 
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Telefono</h4>
+                <input class="form-control" name="phone" value="{{$userActualizar->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
+              </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <h4>Area</h4>
+                <select class="form-control" id="exampleFormControlSelect1" name="area">
+                  <option>{{$userActualizar->area}}</option>
+                  <option>Progrmacion</option>
+                  <option>Diseño</option>
+                  <option>Marketing</option>
+                  <option>Produccion</option>
+                </select>
+              </div>
+          </div>
+          </div>
+
               <div class="form-group mb-3">
+                <h4>Contraseña</h4>
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
@@ -88,6 +112,7 @@
                 </div>
               </div>
               <div class="form-group mb-3">
+                <h4>Confimrar contraseña</h4>
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>

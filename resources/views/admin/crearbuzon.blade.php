@@ -39,7 +39,7 @@
                         </div>
                         @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
-                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia">
+                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia" required>
                                 <option>Seleccionar tipo de sugerencia </option>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>

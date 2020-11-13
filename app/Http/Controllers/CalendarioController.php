@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class CalendarioController extends Controller
 {
@@ -43,14 +44,14 @@ class CalendarioController extends Controller
     public function index()
     {
         $usuariologeado = Auth::user();
-        $admins = User::where('role','=','admin')->pluck('id_Usuario');
+        $admins = User::where('role','=','admin')->pluck('id');
          
         $u =User::all();
         $h =Helpers::usuario($u);
     
         if($usuariologeado->role =='colaborador'){
             $eventosadministradores = Eventos::whereIn('Usuario_id_Usuario',$admins)->get()->toArray();
-            $eventoscolaborador = Eventos::where('Usuario_id_Usuario','=',$usuariologeado->id_Usuario)->get()->toArray();
+            $eventoscolaborador = Eventos::where('Usuario_id_Usuario','=',$usuariologeado->id)->get()->toArray();
             $agrupaciondeeventos= array_merge($eventosadministradores,$eventoscolaborador);
             $events = [];
                 foreach ($agrupaciondeeventos as $model) {
@@ -88,16 +89,21 @@ class CalendarioController extends Controller
 
     public function crearevento(Request $request)
     {
+
         $evento = new Eventos();
         $evento->name = $request->name;
         $evento->description = $request->description;
         $evento->className = $request->className;
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
+        // if (Eventos::where('start_time', '=', Input::get('start_time'))->exists()) { 
+        //     return back()->with('hora', 'La hora seleccionada ya esta ocupada, por favor elegir otra hora');       
+        // }
         $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
         $evento->save();
         return back()->with('crearevento', 'Evento registrado correctamente');
     }
+
     public function verevento($id)
     {
         $eventos = Eventos::find($id);
@@ -119,6 +125,7 @@ class CalendarioController extends Controller
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
         $evento->save();
+       
         return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
     
     }

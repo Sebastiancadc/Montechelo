@@ -39,20 +39,20 @@ class VerifyEmail extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
-    {
-        $verificationUrl = $this->verificationUrl($notifiable);
+    // public function toMail($notifiable)
+    // {
+    //     $verificationUrl = $this->verificationUrl($notifiable);
 
-        if (static::$toMailCallback) {
-            return call_user_func(static::$toMailCallback, $notifiable, $verificationUrl);
-        }
+    //     if (static::$toMailCallback) {
+    //         return call_user_func(static::$toMailCallback, $notifiable, $verificationUrl);
+    //     }
 
-        return (new MailMessage)
-            ->subject(Lang::getFromJson('Verify Email Address'))
-            ->line(Lang::getFromJson('Please click the button below to verify your email address.'))
-            ->action(Lang::getFromJson('Verify Email Address'), $verificationUrl)
-            ->line(Lang::getFromJson('If you did not create an account, no further action is required.'));
-    }
+    //     return (new MailMessage)
+    //         ->subject(Lang::getFromJson('Verify Email Address'))
+    //         ->line(Lang::getFromJson('Please click the button below to verify your email address.'))
+    //         ->action(Lang::getFromJson('Verify Email Address'), $verificationUrl)
+    //         ->line(Lang::getFromJson('If you did not create an account, no further action is required.'));
+    // }
 
     /**
      * Get the verification URL for the given notifiable.
@@ -65,7 +65,7 @@ class VerifyEmail extends Notification implements ShouldQueue
         return URL::temporarySignedRoute(
             'verification.verify',
             Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
-            ['id_Usuario' => $notifiable->getKey()]
+            ['id' => $notifiable->getKey()]
         );
     }
 

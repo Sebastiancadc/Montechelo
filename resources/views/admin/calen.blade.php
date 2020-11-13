@@ -75,6 +75,15 @@
               </button>
           </div>
             @endif
+            @if (session('hora'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('hora')}}</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+            @endif
           </div>
           <!-- Card body -->
          
@@ -86,7 +95,27 @@
        
       </div>
     </div>
-    
+    {{-- Modal llenar campos --}}
+@if (Auth::User()->phone == '')
+<div class="col-lg-10">
+  <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog modal-dialog-centered modal-" role="document">
+    <div class="modal-content ">       
+        <div class="modal-header">
+         <span aria-hidden="true"></span>
+        </div>
+        <div class="modal-body"> 
+         <p>Por favor termine el registro para poder ingresar</p>                      
+     </div>
+        <div class="modal-footer">
+           <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+         </div>   
+       </div>
+</div>
+</div>
+</div>
+@endif
+{{-- fin modal llenar campos --}}
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
@@ -98,33 +127,19 @@
     </footer> 
     </div>
   </div>
- 
-
   @include('admin.calendario.crear')
-  <style>
-    .Especial{
-        background-color: #2dce89 !important;
-        }
-    .Advertencia  {
-        background-color: #fb6340 !important;
-        }
-    .Importante{
-        background-color: #11cdef !important;
-        }
-    .eventoRojo{
-       
-        background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
-        }
-        .black{
-          color:#000000; 
-        }
-  </style>
-
 @section('js')
 
-<script>
 
-  
+
+
+<script>
+  $(document).ready(function()
+  {
+     $("#modaLlenarcampos").modal("show");
+  });
+</script>   
+<script>
 var Fullcalendar = (function() {
 
 // Variables

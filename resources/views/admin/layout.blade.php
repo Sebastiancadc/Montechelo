@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
+
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
   <!-- Fonts -->
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Page plugins -->
-
+  <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <!-- Argon CSS -->
@@ -22,8 +22,8 @@
   <!-- Modo Oscuro CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/dark.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
-<link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
+  <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
+  <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
   <title>Montechelo </title>
 </head>
 
@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#navbar-examples">
+              <a class="nav-link" href="{{ url('Chatmontechelo')}}">
                 <i class="ni ni-chat-round text-orange"></i>
                 <span class="nav-link-text">Chat</span>
               </a>
@@ -85,7 +85,7 @@
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url("repositorio")}}">
+              <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
               </a>
@@ -159,6 +159,9 @@
       </li>
       <li class="nav-item">
         <a href="{{ url('admin/noticia')}}" class="nav-link">Noticias</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/repositorio')}}" class="nav-link">Repositorio</a>
       </li>
 
       <li class="nav-item">
@@ -334,14 +337,14 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
+                <i class="ni ni-bell-55"> <span  class="bange">1</span> </i>
               </a>
 
 
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.
+                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong>  notifications.
                   </h6>
                 </div>
                 <!-- List group -->
@@ -452,10 +455,10 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
+                    <img alt="Image placeholder" src="{{Auth::user()->photo}}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }} {{Auth::user()->lastname}}</span>
                   </div>
                 </div>
               </a>
@@ -517,7 +520,7 @@
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-
+@yield('jss')
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
@@ -527,5 +530,11 @@
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
+
+
+
+
+
+
 
 </body>

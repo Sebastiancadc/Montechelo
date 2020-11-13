@@ -14,11 +14,11 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
     protected $table = 'usuario';
-    protected $guarded = ['id_Usuario'];
-	protected $primaryKey = 'id_Usuario';
+    protected $guarded = ['id'];
+	protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name', 'email', 'password','genero','cumpleanios','role','area'
+        'name','lastname', 'email', 'password','genero','cumpleanios','role','area','phone','phone_status'
     ];
 
     /**
@@ -45,10 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return void
      */
-    public function sendEmailVerificationNotification()
-    {
-        $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
-    }
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
+    // }
 
     public function admin()
     {
@@ -66,5 +66,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function noticias()
     {
         return $this->hasMany('App\Noticia');
+    }
+
+    public function scopeBuscarpor($query,$tipo,$buscar)
+    {
+       if( ($tipo) &&  ($buscar))
+       {
+          return $query->where($tipo,'like',"%buscar%");
+       }
     }
 }

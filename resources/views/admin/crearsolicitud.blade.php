@@ -45,13 +45,13 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                <input type="text" class="form-control"  name="nombre" required>
+                <input type="text" class="form-control"  name="nombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" maxlength="30">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                <input type="text" class="form-control" name="apellido" required>
+                <input type="text" class="form-control" name="apellido" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" maxlength="30">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -68,13 +68,13 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Número de documento</label>
-                    <input type="text" class="form-control"  name="cedula" placeholder="" required>
+                    <input type="text" class="form-control"  name="cedula" placeholder="" required pattern="[0-9-]{1,10}" maxlength="10">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="example3cols3Input">Teléfono</label>
-                    <input type="text" class="form-control"  name="telefono" placeholder="" required>
+                    <input type="text" class="form-control"  name="telefono" placeholder="" required pattern="[0-9-]{1,10}" maxlength="10">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -109,7 +109,27 @@
       <button type="submit" class="btn btn-primary my-4">Crear</button>
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
-  </form>
+  </form>{{-- Modal llenar campos --}}
+  @if (Auth::User()->phone == '')
+  <div class="col-lg-10">
+    <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-" role="document">
+      <div class="modal-content ">
+          <div class="modal-header">
+           <span aria-hidden="true"></span>
+          </div>
+          <div class="modal-body">
+           <p>Por favor termine el registro para poder ingresar</p>
+       </div>
+          <div class="modal-footer">
+             <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+           </div>
+         </div>
+  </div>
+  </div>
+  </div>
+  @endif
+  {{-- fin modal llenar campos --}}
 
   </div>
   <!-- Footer -->
@@ -123,5 +143,13 @@
         </div>
     </footer>
 </div>
+@section('js')
 
+<script>
+    $(document).ready(function()
+    {
+       $("#modaLlenarcampos").modal("show");
+    });
+  </script>
+@endsection
   @endsection

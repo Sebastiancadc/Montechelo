@@ -39,17 +39,17 @@
                             <div class="col-6">
                                 <h3 class="mb-0">Gestión de Noticias</h3>
                             </div>
-                            <div class="col-6 text-right">
+                            {{--  <div class="col-6 text-right">
                                 <a href="" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Agregar noticia">
                                     <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
                                     <span class="btn-inner--text">Publicar</span>
                                 </a>
                             </div>
-                            @include('admin.noticias.create')
+                            @include('admin.noticias.create')  --}}
                         </div>
                     </div>
                     @if (Session::has('message'))
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <span class="alert-icon"><i class="ni ni-like-2"></i></span>
     <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{ Session::get('message') }}</span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -98,7 +98,7 @@
 
                                     <td class="table-actions">
 
-                                        <a href="{{route('editar',$item->Id_noticia)}}" class="table-action" data-original-title="Editar noticia">
+                                        <a href="{{route('editarnoticia', $item->Id_noticia)}}" class="table-action" data-original-title="Editar noticia">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
                                         <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNoticia{{$item->Id_noticia}}" data-original-title="Eliminar noticia">

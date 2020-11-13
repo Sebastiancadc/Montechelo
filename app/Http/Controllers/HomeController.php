@@ -44,7 +44,10 @@ class HomeController extends Controller
         $user->genero = $request->genero;
         $user->password = $request->password;
         $user->area = $request->area;
+        $user->phone = $request->phone;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
+        $user->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
+        $user->messenger_color = $request->messenger_color;
         $user->role = $request->role;
         $user->save();
         return redirect('admin/usuario');
@@ -62,7 +65,9 @@ class HomeController extends Controller
         $user2->genero = $request->genero;
         $user2->password = $request->password;
         $user2->area = $request->area;
+        $user2->phone = $request->phone;
         $user2->cumpleanios = new \Datetime($request->cumpleanios);
+        $user2->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
         $request['role'] = 'admin';
         $user2->save();
         return redirect('admin/usuario');
@@ -88,12 +93,14 @@ class HomeController extends Controller
         ]);
         $UserUpdate = User::findOrFail($id);
         $UserUpdate->name = $request->name;
+        $UserUpdate->lastname = $request->lastname;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->area = $request->area;
+        $UserUpdate->phone = $request->phone;
         $UserUpdate->save();
         return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
     }

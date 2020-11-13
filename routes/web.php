@@ -73,16 +73,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //repositorio
     Route::resource('repositorio', 'RepositorioController');
 
-    Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
-    Route::post('crearrepositorios', 'RepositorioController@store')->name('crearrepositorios');
-    Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
-    Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
-    Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
     Route::post('/subir', 'Controller@subirArchivo')->name('subir');
 
     //Noticias
     Route::resource('noticia', 'NoticiasController');
-    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editar');
+    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
     Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
@@ -103,16 +98,35 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 });
 
+
+//repositorio
+
+Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
+Route::post('crearrepositorios', 'RepositorioController@store')->name('crearrepositorios');
+Route::get('editrepositorio/{id}', 'RepositorioController@editrepositorio')->name('editrepositorio');
+Route::put('updaterepositorio/{id}', 'RepositorioController@update')->name('updaterepositorio');
+Route::delete('deleterepositorio/{id}', 'RepositorioController@destroy')->name('eliminarrepositorio');
+Route::resource('repositorio', 'RepositorioController');
+Route::post('/subir', 'Controller@subirArchivo')->name('subir');
+
+
+Route::get('repositoriocola', function () {
+
+    return view('admin.repositoriocola');
+});
+
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
 Route::group(['prefix' => ''], function () {
 //Usuario
 Route::resource('perfil', 'PerfilController');
-Route::get('editarperfil/{id_Usuario}', 'PerfilController@editarperfil')->name('editarperfil');
-Route::put('editarprofile/{id_Usuario}', 'PerfilController@updateProfile')->name('editarprofile');
+Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');
+Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
 
 //Directorio
 Route::resource('directorio', 'DirectorioController');
-Route::get('verperfil/{id_Usuario}', 'DirectorioController@perfilUsuarios')->name('verperfil');
+
+Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
+Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
 //Noticias
 Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
@@ -120,8 +134,8 @@ Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
 Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
 Route::get('post/{slug}', 'NoticiasController@post')->name('post');
 
-//Repositorio
-Route::resource('repositorio', 'RepositorioController');
+
+
 
 //Canlendario
 Route::get('calendar', 'CalendarioController@index')->name('calendar');
@@ -151,4 +165,8 @@ Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearno
 Route::resource('capacitaciones', 'CapacitacionesController');
 //Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
 
+
+//Imagen de perfil
+Route::post('foto', 'PerfilController@updatePhoto');
+Route::post('fotoportada', 'PerfilController@updatePhotoportada');
 });

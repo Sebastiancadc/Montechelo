@@ -11,7 +11,7 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
 
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} </h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} {{$perfil->lastname}} </h1>
       </div>
   
     </div>
@@ -24,20 +24,20 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="{{asset("plantilla/img/theme/img-1-1000x600.jpg")}}" alt="Image placeholder" class="card-img-top">
+        <img src="{{$perfil->photo_portada}}"   class="card-img-top">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle">
+                <img src="{{$perfil->photo}}" class="rounded-circle">
               </a>
             </div>
           </div>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+            {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
+            <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
         <div class="card-body pt-0">
@@ -49,7 +49,7 @@ height: 148%;"></span>
           </div>
           <div class="text-center">
             <h5 class="h3">
-              {{$perfil->name}}<span class="font-weight-light"><br> <?php echo calculaedad($perfil->cumpleanios) ?></span>
+              {{$perfil->name}} {{$perfil->lastname}} <span class="font-weight-light"><br> {{App\Helpers\Helpers::edad($perfil->cumpleanios)}}</span>
               años
             </h5>
             <div class="h5 font-weight-300">
@@ -266,13 +266,13 @@ height: 148%;"></span>
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>Perfil</a>
+            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Amigos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Amigos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-calendar-grid-58 mr-2"></i>Grupos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>Grupos</a>
           </li>
         </ul>
       </div>
@@ -290,7 +290,7 @@ height: 148%;"></span>
                   <div class="row">
                     <div class="col-md-6">
                         <h4>Nombre</h4>
-                        <h4 class=" text-muted mb-4">{{$perfil->name}}</h4>
+                        <h4 class=" text-muted mb-4">{{$perfil->name}} {{$perfil->lastname}}</h4>
                     </div>
                     <div class="col-md-5">
                       <div class="tab-content">
@@ -316,11 +316,14 @@ height: 148%;"></span>
                       <h4>Area</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
                     </div>
+                    @if ($perfil->phone_status == '1')
                     <div class="col-md-5">
                       <h4>Telefono</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->telefono}}</h4>
+                      <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
 
-                    </div>
+                    </div>   
+                    @endif
+                    
                   </div>                        
                 </div>  
             </div>
@@ -420,17 +423,7 @@ height: 148%;"></span>
         </div>
 
       </div>
-      <?php
-      function calculaedad($fechanacimiento)
-      {
-        list($ano, $mes, $dia) = explode("-", $fechanacimiento);
-        $ano_diferencia  = date("Y") - $ano;
-        $mes_diferencia = date("m") - $mes;
-        $dia_diferencia   = date("d") - $dia;
-        if ($dia_diferencia < 0 || $mes_diferencia < 0)
-          $ano_diferencia--;
-        return $ano_diferencia;
-      } ?>
+
       <?php $user = auth()->user();
       ?>
     </div>
@@ -442,11 +435,5 @@ height: 148%;"></span>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script type="text/javascript">
-  $(function () {
-      $('#date').date({
-        format: 'Y/M/D',
-      });
-  });
-</script>
+
 @endsection

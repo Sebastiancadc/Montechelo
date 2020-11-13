@@ -204,8 +204,5 @@
         })
     }
     addNumeration("test")
-</script>
-
-
-
+    </script>
 @endsection

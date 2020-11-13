@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\HelperProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        \Chatify\ChatifyServiceProvider::class,
 
 
         /*
@@ -229,7 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Helpers' => App\Helpers\Helpers::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Chatify' => Chatify\Facades\ChatifyMessenger::class,
 
     ],
 

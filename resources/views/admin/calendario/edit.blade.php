@@ -57,7 +57,7 @@
   <!-- Card body -->
   <div class="card-body">
 
-      <form action="{{url('admin/Calendario/editarEvento',$eventos->id)}}" method="POST">
+      <form action="{{url('Calendario/editarEvento',$eventos->id)}}" method="POST">
           @method('PUT')
           @csrf
           <div class="form-group mb-3">
@@ -66,6 +66,7 @@
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
                 <input class="form-control" placeholder="titulo" value='{{$eventos->name}}' name="name" type="text">
+                <input value='{{$eventos->Usuario_id_Usuario}}' name="Usuario_id_Usuario" type="text"  hidden>
               </div>
             </div>
             <div class="row"> 
@@ -96,9 +97,9 @@
               <div class="form-group">
                 <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                     <option>{{$eventos->className}}</option>
-                    <option class="importante" value="Importante">Importante</option>
-                    <option class="especial" value="Especial">Especial</option>
-                    <option class="advertencia" value="Advertencia">Advertencia</option>
+                    <option class="importantes" value="Importante">Importante</option>
+                    <option class="especials" value="Especial">Especial</option>
+                    <option class="advertencias" value="Advertencia">Advertencia</option>
                   </select>
               </div>
           </div>
@@ -111,7 +112,6 @@
   
       <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
     </form>
-  
   </div>
 </div>
 </div>
@@ -119,9 +119,9 @@
 </div>
 </div>
 <style>
-.advertencia{color:#fb6340;}
-.importante{color:#11cdef;}
-.especial{color:#2dce89;}
+.advertencias{color:#fb6340;}
+.importantes{color:#11cdef;}
+.especials{color:#2dce89;}
 </style>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>

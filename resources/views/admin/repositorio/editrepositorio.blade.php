@@ -30,7 +30,7 @@
     </div>
     <!-- Card body -->
     <div class="card-body">
-        <form action="{{url('admin/repositorio',$repositorioActualizar->Id_Repositorio)}}" method="POST">
+        <form action="{{url('repositorio',$repositorioActualizar->Id_Repositorio)}}" method="POST"  enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group mb-3">
@@ -59,11 +59,20 @@
                 </div>
               </div>
 
-              <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
+              <img src="{{$repositorioActualizar->image }}" class="img-fluid rounded" style="margin-left: 50px; width: 300px; heightmin-width: ;min-width: 300px;">
 
-              <button type="submit" class="btn btn-primary my-4">Editar</button>
+              <div class="form-group">
+                <label class="form-control-label" for="competencias">Imagen</label>
+                <input type="file"  class="form-control form-control-alternative" placeholder="" value="{{$repositorioActualizar->image }}" name="image">
+            </div>
 
-            <a href="{{ url('admin/repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
+
+            <div class="col-lg-6 col-5 text-right" style="float: right;">
+              <button type="submit" class="btn btn-primary my-4">Actualizar</button>
+          </div>
+            <a href="{{ url('repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
+          </form>
+        </div>
             @if (session('updaterepositorio'))
             <div class="alert alert-success mt-3">
             {{session('updaterepositorio')}} 
@@ -73,8 +82,8 @@
       </div>
     </div>
     </div>
-    </div>
-    </div>
+    
+    
     
         </div>
       </form>
