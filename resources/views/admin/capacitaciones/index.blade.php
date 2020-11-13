@@ -53,30 +53,35 @@
         <div class="col">
             <div class="card">
                 <!-- Card header -->
-
+              
                 <div class="card-header border-0">
-                    <div class="row float-left">
-                        <div class="col-12">
-                            <h3 class="mb-0">Gestión de Capacitaciones</h3>
-
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="mb-0">Gestión de Usuarios</h3>
                         </div>
-                        <br>
+                     
+                        
                         <div class="col-6 text-right">
-                            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir admin" style="    margin-right: -809%;
-            margin-top: -22px;">
+                            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                 <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-
-                                <span class="btn-inner--text">Crear</span>
-
+                                <span class="btn-inner--text">Crear </span>
                             </a>
                             @include('admin.capacitaciones.create')
-                        </div>
-
-                        <br>
+                        </div>                     
+                        
                     </div>
-
+                    <br>
+                    @if (session('update'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  @endif
                 </div>
-
+               
                 <!-- Light table -->
 
                 <div class="table-responsive py-4" style="margin-top: -51px;">
@@ -95,19 +100,6 @@
 
 
                         </thead>
-                        <tfoot>
-
-                            
-                            <th>#</th>
-                            <th>Titulo</th>
-                            <th>Fecha</th>
-                            <th>Descripción</th>
-                            <th>Categoria </th>
-                            <th>Link</th>
-
-                            <th>Acciones</th>
-
-                        </tfoot>
                         <tbody>
                             @foreach ($capacitaciones as $item)
                             <tr>

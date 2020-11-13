@@ -29,13 +29,7 @@
             <div class="card-wrapper">
 
                 <div class="card">
-                    {{-- alerta --}}
-                    @if (session('update'))
-                    <div class="alert alert-success ">
-                    {{session('update')}}
-                    </div>
-                    @endif
-
+                    
                     <!-- Card header -->
                     <div class="card-header">
                         <h3 class="mb-0">Editar capacitacion</h3>
@@ -66,17 +60,18 @@
                             <div class="form-group mb-3">
                                 <div class="input-group input-group-merge input-group-alternative">
 
-                                    <textarea class="form-control" placeholder="Descripcion" value='{{$capacitacionActualizar->descripcion}}' name="descripcion" type="text" cols="100" rows="5" required></textarea>
+                                    <textarea class="form-control" name="descripcion" type="text" cols="100" rows="5" required>{{$capacitacionActualizar->descripcion}}</textarea>
                                 </div>
                             </div>
+                            
 
 
                             <div class="form-group mb-3">
                                 <div class="input-group input-group-merge input-group-alternative">
 
-                                    <select class="form-control" id="exampleFormControlSelect1" value='{{$capacitacionActualizar->categoria}}' name="categoria" required>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="categoria" required>
 
-                                        <option>Seleccione categoria</option>
+                                        <option>{{$capacitacionActualizar->categoria}}</option>
                                         <option>Diseño</option>
                                         <option>Desarrollo</option>
                                         <option>Software</option>

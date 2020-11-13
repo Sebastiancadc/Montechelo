@@ -68,7 +68,7 @@ class CapacitacionesController extends Controller
         $updateCapacitacion->categoria = $request->categoria;
         $updateCapacitacion->link = $request->link;
         $updateCapacitacion->save();
-        return back()->with('update', 'la capacitacion a sido modificada correctamente');
+        return redirect('admin/capacitaciones')->with('update','la capacitacion a sido modificada correctamente');
     }
 
     public function destroy($id_capacitacion)
