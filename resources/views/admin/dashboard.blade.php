@@ -34,40 +34,40 @@ $date =date('m-d')
   <div class="container-fluid mt--6">
     <div class="row">
       <div class="col-lg-8">
+            <div class="card bg-default" style="background-color: #ffffff !important;">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                                <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
+                        </div>
 
 
-        <div class="card bg-default" style="background-color: #ffffff !important;">
-          <div class="card-header bg-transparent">
-            <div class="row align-items-center">
-              <div class="col">
-                    <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
-              </div>
+                    </div>
 
+                </div>
             </div>
-
-
+            @foreach ($noticias as $item)
+            <div class="card mb-6" style="max-width: 1000px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{$item->image}}" class="card-img fluid" alt="..." style="max-width: 500px; height: 250px; margin-right: 5px;
+                    margin-left: 15px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body" >
+                    <h5 class="card-title">{{$item->title}}</h5>
+                    <p class="card-text">{{ substr($item->body, 0,20) }}...</p>
+                    <p class="card-text"><small class="text-muted">{{$item->created_at->format('d/m/Y')}}</small></p>
+                    <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
+                </div>
+                </div>
             </div>
+            </div>
+            @endforeach
 
         </div>
-        @foreach ($noticias as $item)
-        <div class="card mb-6" style="max-width: 740px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-            <img src="{{$item->image}}" class="card-img fluid" alt="..." style="width: 240px; height: 250px; margin-right: 5px;">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body" >
-                <h5 class="card-title">{{$item->title}}</h5>
-                <p class="card-text">{{ substr($item->body, 0,20) }}...</p>
-                <p class="card-text"><small class="text-muted">{{$item->created_at->format('d/m/Y')}}</small></p>
-                <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        @endforeach
-
-      </div>
       <div class="col-lg-4">
 
 
