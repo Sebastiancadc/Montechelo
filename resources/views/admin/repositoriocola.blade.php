@@ -10,7 +10,7 @@
 <nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
     <div class="container">
         <div style="margin-left: -66px;font-size: 19px;">
-            <span class="mb-0 text-sm  font-weight-bold">Montechelo </span>
+            <a href="{{ url('home')}}" class="mb-0 text-sm  font-weight-bold" style="    color: white;">Montechelo </a>
           </div>
         <div class="collapse navbar-collapse" id="navbar-default">
             <div class="navbar-collapse-header">
