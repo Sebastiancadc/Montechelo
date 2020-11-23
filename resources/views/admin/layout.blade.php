@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
+  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <title>Montechelo </title>
 </head>
 
@@ -184,17 +186,59 @@
           <!-- Search form -->
           <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
             <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
+              <div class="input-group input-group-alternative input-group-merge" >
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
-                <input class="form-control" placeholder="Buscar" type="text">
+                <select class="js-example-basic-single" name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                  <option value="">Buscar...</option>
+                  <option value="{{url('Chatmontechelo')}}">Chat</option>
+                  <option value="{{url("directorio")}}">Directorio</option>
+                  <option value="{{url("noticiausu")}}">Noticias</option>
+                  <option value="{{url("repositoriocola")}}">Repositorio</option>
+                  <option value="{{url("calendar")}}">Calendario</option>
+                  <option value="{{url('crearsolicitud')}}">Solicitud</option>
+                  <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
+                  <option value="{{url("planestrategico")}}">Plan estrategico</option>
+                  <option value="{{url('crearnovedad')}}">Novedad</option>
+                  <option value="{{url('capacitaciones')}}">Capacitaciones</option>
+                </select>
               </div>
             </div>
+           <style>
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 16px;
+}
+.select2-container--default .select2-selection--single {
+     background-color: #e6eaef;
+    border: 1px solid #e6eaef;
+    margin-left: 37px;
+    height: 37px;
+    margin-top: -34px;
+    border: 0 solid;
+    border-radius: 2rem;
+}
+           </style>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </form>
+
+          {{-- <select class="form-control js-example-basic-single" placeholder="Buscar" type="text"  name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value="">Buscar...</option>
+            <option value="{{url('Chatmontechelo')}}">Chat</option>
+            <option value="{{url("directorio")}}">Directorio</option>
+            <option value="{{url("noticiausu")}}">Noticias</option>
+            <option value="{{url("repositoriocola")}}">Repositorio</option>
+            <option value="{{url("calendar")}}">Calendario</option>
+            <option value="{{url('crearsolicitud')}}">Solicitud</option>
+            <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
+            <option value="{{url("planestrategico")}}">Plan estrategico</option>
+            <option value="{{url('crearnovedad')}}">Novedad</option>
+            <option value="{{url('capacitaciones')}}">Capacitaciones</option>
+          </select> --}}
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -521,15 +565,15 @@
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
 <script src="{{asset("plantilla/js/perfil.js")}}"></script>
 
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>  
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
 
-
-
-
-
-
+<script>
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 
 </body>

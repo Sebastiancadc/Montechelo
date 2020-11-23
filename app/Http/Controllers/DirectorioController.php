@@ -53,7 +53,8 @@ class DirectorioController extends Controller
 
       foreach($querys as $query){
           $data[]=[
-              'label'=> $query->name
+              'label'=> $query->name,
+            
           ];
 
       }
