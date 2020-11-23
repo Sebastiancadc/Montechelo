@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SolicitudController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -62,6 +63,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('editarsolicitud/{id}', 'SolicitudController@edit')->name('editarsoli');
     Route::put('updatesolicitud/{id}', 'SolicitudController@update')->name('update');
     Route::delete('deletesolicitud/{id}', 'SolicitudController@destroy')->name('eliminar');
+    Route::get('/solicitudes/pdf', [SolicitudController::class, 'createPDF']);
+    Route::get('/nomina/pdf', [SolicitudController::class, 'storagePDF']);
 
     //buzon
     Route::resource('buzon', 'BuzonDeSugerenciasController');
@@ -150,6 +153,8 @@ Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')-
 Route::resource('solicitud', 'SolicitudController');
 Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
 Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
+Route::get('/solicitudes/pdf', [SolicitudController::class, 'createPDF']);
+Route::get('/nomina/pdf', [SolicitudController::class, 'storagePDF']);
 
 //Buzon
 Route::resource('buzon', 'BuzonDeSugerenciasController');
@@ -173,3 +178,6 @@ Route::post('fotoportada', 'PerfilController@updatePhotoportada');
 //pausas activas
 Route::resource('pausasactivas', 'PausasActivasController');
 });
+
+//Talento Humano
+Route::get('talento', 'NoticiasController@talento')->name('talento');

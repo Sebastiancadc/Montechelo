@@ -25,7 +25,8 @@
                 <button class="btn btn-primary" type="submit" style="height: 40px;">Buscar</button>
                 <span>.</span>
               </div>
-              <input class="form-control" type="search" placeholder="Buscar por" name="search" id="search" style="height: 40px;"> 
+              <input  class="form-control" type="search" placeholder="Buscar por" name="search" id="search" style="height: 40px;"> 
+             
             </div>
           </div> 
         </form>

@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <title>Montechelo </title>
 </head>
 
@@ -79,11 +81,12 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url("noticiausu")}}">
+                <a class="nav-link" href="{{url('talento')}}">
                   <i class="ni ni-archive-2 text-black"></i>
-                  <span class="nav-link-text">Noticia</span>
+                  <span class="nav-link-text">Talento Humano</span>
                 </a>
-              </li>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
@@ -97,7 +100,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('crearsolicitud')}}">
+              <a class="nav-link" href="{{url('solicitud')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
@@ -126,12 +129,6 @@
                 <span class="nav-link-text">Talento Humano</span>
               </a>
             </li> --}}
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('capacitaciones')}}">
-                  <i class="ni ni-paper-diploma text-black"></i>
-                  <span class="nav-link-text">Capacitaciones</span>
-                </a>
-              </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="{{url('pausasactivas')}}">
@@ -196,13 +193,49 @@
           <!-- Search form -->
           <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
             <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
+              <div class="input-group input-group-alternative input-group-merge" style="height: 42px;
+              width: 334px;">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
-                <input class="form-control" placeholder="Buscar" type="text">
+                <select class="js-example-basic-single" name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                  <option value="">Buscar...</option>
+                  <option value="{{url('Chatmontechelo')}}">Chat</option>
+                  <option value="{{url("directorio")}}">Directorio</option>
+                  <option value="{{url('talento')}}">Talento humano</option>
+                  <option value="{{url("repositoriocola")}}">Repositorio</option>
+                  <option value="{{url("calendar")}}">Calendario</option>
+                  <option value="{{url('solicitud')}}">Solicitud</option>
+                  <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
+                  <option value="{{url("planestrategico")}}">Plan estrategico</option>
+                  <option value="{{url('crearnovedad')}}">Novedad</option>
+                </select>
               </div>
             </div>
+           <style>
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 16px;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #e6eaef;
+    border: 1px solid #e6eaef;
+    margin-left: 31px;
+    height: 32px;
+    margin-top: -37px;
+    border: 0 solid;
+    border-radius: 2rem;
+    width: 297px;
+}
+.select2-container .select2-selection--single:focus, .select2-container--default.select2-container--focus .select2-selection--multiple:focus, .select2-container--default .select2-selection--multiple:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    color: #8898aa;
+    border-color: #5e72e4;
+    outline: 0;
+    background-color: #e6eaef;
+    box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
+}
+           </style>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -465,7 +498,7 @@
                     <img alt="Image placeholder" src="{{Auth::user()->photo}}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }} {{Auth::user()->lastname}}</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
                   </div>
                 </div>
               </a>
@@ -533,15 +566,15 @@
 <script src="{{asset("plantilla/js/dark.js")}}"></script>
 <script src="{{asset("plantilla/js/perfil.js")}}"></script>
 
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
 
-
-
-
-
-
+<script>
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 
 </body>

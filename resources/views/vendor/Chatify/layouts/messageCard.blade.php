@@ -1,5 +1,4 @@
 
-
 {{-- -------------------- The default card (white) -------------------- --}}
 @if($viewType == 'default')
     @if($from_id != $to_id)
