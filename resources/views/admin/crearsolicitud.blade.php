@@ -45,22 +45,21 @@
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                <input type="text" class="form-control"  name="nombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" maxlength="30">
+                <input type="text" class="form-control"  name="nombre"  required pattern="[A-Za-z]{5}" minlength="5" maxlength="30">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="form-group">
                 <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                <input type="text" class="form-control" name="apellido" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" maxlength="30">
+                <input type="text" class="form-control" name="apellido" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ]{5}" minlength="5" maxlength="30">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Tipo de solicitud</label>
                 <select class="form-control" name="tipo_solicitud" required>
                     <option>Vacaciones</option>
-                    <option>Desprendibles de pago</option>
-                    <option>Certificado laboral</option>
-                    <option>Certificado de nómina</option>
+                    <option>Permisos</option>
+
                 </select>
             </div>
       </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Capacitaciones;
 use Illuminate\Http\Request;
 use App\Noticia;
 use App\User;
@@ -30,6 +31,12 @@ class NoticiasController extends Controller
     {
         $noticias = Noticia::paginate(6);
         return view('admin.noticia',compact('noticias'));
+    }
+    public function talento()
+    {
+
+
+        return view('admin.talento');
     }
 
     public function crearnoticia()
@@ -73,7 +80,7 @@ class NoticiasController extends Controller
          $noticia->slug = Str::slug($request->title);
          $noticia->save();
 
-        
+
          if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();

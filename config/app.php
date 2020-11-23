@@ -164,6 +164,7 @@ return [
         App\Providers\HelperProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         \Chatify\ChatifyServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
         /*
@@ -233,6 +234,7 @@ return [
         'Helpers' => App\Helpers\Helpers::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Chatify' => Chatify\Facades\ChatifyMessenger::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
