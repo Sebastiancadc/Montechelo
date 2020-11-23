@@ -18,15 +18,15 @@
         <p>A quien le concierna:</p>
 
         <p>Montechelo:</p>
-        @foreach($user as $data)
+
         <p>
-            Certifica que <span class="text-muted">{{$data->name}} {{$data->lastname}}</span> quien trabaja en el área de <span class="text-muted">{{$data->area}},
+            Certifica que <span class="text-muted">{{Auth::user()->name}}{{Auth::user()->lastname}}</span> quien trabaja en el área de <span class="text-muted">{{Auth::user()->area}},
             trabaja 50 horas semanales en la modalidad de trabajo virtual.
         </p>
         <p>
          En caso de  presentar dudas o requerir más información por favor comuniquese a los números de atención.
         </p>
-        @endforeach
+
 
 
     </div>
