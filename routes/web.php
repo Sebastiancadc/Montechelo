@@ -169,4 +169,7 @@ Route::resource('capacitaciones', 'CapacitacionesController');
 //Imagen de perfil
 Route::post('foto', 'PerfilController@updatePhoto');
 Route::post('fotoportada', 'PerfilController@updatePhotoportada');
+
+//pausas activas
+Route::resource('pausasactivas', 'PausasActivasController');
 });

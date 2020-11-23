@@ -133,6 +133,13 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('pausasactivas')}}">
+                  <i class="ni ni-satisfied text-yellow"></i>
+                  <span class="nav-link-text">Pausas activas</span>
+                </a>
+              </li>
+
 @if ($user->role=='admin')
 <li class="nav-item">
   <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
