@@ -186,7 +186,8 @@
           <!-- Search form -->
           <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
             <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge" >
+              <div class="input-group input-group-alternative input-group-merge" style="height: 42px;
+              width: 334px;">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
@@ -194,14 +195,13 @@
                   <option value="">Buscar...</option>
                   <option value="{{url('Chatmontechelo')}}">Chat</option>
                   <option value="{{url("directorio")}}">Directorio</option>
-                  <option value="{{url("noticiausu")}}">Noticias</option>
+                  <option value="{{url('talento')}}">Talento humano</option>
                   <option value="{{url("repositoriocola")}}">Repositorio</option>
                   <option value="{{url("calendar")}}">Calendario</option>
-                  <option value="{{url('crearsolicitud')}}">Solicitud</option>
+                  <option value="{{url('solicitud')}}">Solicitud</option>
                   <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
                   <option value="{{url("planestrategico")}}">Plan estrategico</option>
                   <option value="{{url('crearnovedad')}}">Novedad</option>
-                  <option value="{{url('capacitaciones')}}">Capacitaciones</option>
                 </select>
               </div>
             </div>
@@ -212,33 +212,27 @@
     line-height: 16px;
 }
 .select2-container--default .select2-selection--single {
-     background-color: #e6eaef;
+    background-color: #e6eaef;
     border: 1px solid #e6eaef;
-    margin-left: 37px;
-    height: 37px;
-    margin-top: -34px;
+    margin-left: 31px;
+    height: 32px;
+    margin-top: -37px;
     border: 0 solid;
     border-radius: 2rem;
+    width: 297px;
+}
+.select2-container .select2-selection--single:focus, .select2-container--default.select2-container--focus .select2-selection--multiple:focus, .select2-container--default .select2-selection--multiple:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    color: #8898aa;
+    border-color: #5e72e4;
+    outline: 0;
+    background-color: #e6eaef;
+    box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
 }
            </style>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </form>
-
-          {{-- <select class="form-control js-example-basic-single" placeholder="Buscar" type="text"  name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-            <option value="">Buscar...</option>
-            <option value="{{url('Chatmontechelo')}}">Chat</option>
-            <option value="{{url("directorio")}}">Directorio</option>
-            <option value="{{url("noticiausu")}}">Noticias</option>
-            <option value="{{url("repositoriocola")}}">Repositorio</option>
-            <option value="{{url("calendar")}}">Calendario</option>
-            <option value="{{url('crearsolicitud')}}">Solicitud</option>
-            <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
-            <option value="{{url("planestrategico")}}">Plan estrategico</option>
-            <option value="{{url('crearnovedad')}}">Novedad</option>
-            <option value="{{url('capacitaciones')}}">Capacitaciones</option>
-          </select> --}}
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -497,7 +491,7 @@
                     <img alt="Image placeholder" src="{{Auth::user()->photo}}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }} {{Auth::user()->lastname}}</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
                   </div>
                 </div>
               </a>
