@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Solicitud;
+use App\User;
+use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,7 +30,7 @@ class SolicitudController extends Controller
     public function index()
     {
         $solicitud = Solicitud::paginate(4);
-        return view('admin.solicitud', compact('solicitud'));
+        return view('admin.solicitudes', compact('solicitud'));
     }
 
     public function store(Request $request)
@@ -92,4 +94,26 @@ class SolicitudController extends Controller
         'estado_solicitud' => ['string', 'max:30'],
         'status' => ['int', 'max:4'],]);
     }
+    public function createPDF() {
+        // retreive all records from db
+        $data = User::all();
+
+        // share data to view
+        view()->share('user',$data);
+        $pdf = PDF::loadView('admin.solicitud.pdf', $data);
+
+        // download PDF file with download method
+        return $pdf->download('certificado.pdf');
+      }
+      public function storagePDF() {
+        // retreive all records from db
+        $data = User::all();
+
+        // share data to view
+        view()->share('user',$data);
+        $pdf = PDF::loadView('admin.solicitud.pdf2', $data);
+
+        // download PDF file with download method
+        return $pdf->download('certificado.pdf');
+      }
 }

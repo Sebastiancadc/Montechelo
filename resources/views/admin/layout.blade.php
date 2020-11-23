@@ -81,11 +81,12 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url("noticiausu")}}">
+                <a class="nav-link" href="{{url('talento')}}">
                   <i class="ni ni-archive-2 text-black"></i>
-                  <span class="nav-link-text">Noticia</span>
+                  <span class="nav-link-text">Talento Humano</span>
                 </a>
-              </li>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
@@ -99,7 +100,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('crearsolicitud')}}">
+              <a class="nav-link" href="{{url('solicitud')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
@@ -128,12 +129,6 @@
                 <span class="nav-link-text">Talento Humano</span>
               </a>
             </li> --}}
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('capacitaciones')}}">
-                  <i class="ni ni-paper-diploma text-black"></i>
-                  <span class="nav-link-text">Capacitaciones</span>
-                </a>
-              </li>
 
 @if ($user->role=='admin')
 <li class="nav-item">
