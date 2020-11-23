@@ -32,17 +32,7 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
     <div class="row card-wrapper">
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
-                <div class="card-body" style="background: rgba(255,255,255,1);
-                background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
-                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
-                -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);">
+                <div class="card-body epep" >
                     <a href="{{url('noticiausu')}}">
                       <img src="{{asset("plantilla/img/theme/noticias.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
@@ -59,17 +49,9 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
         </div>
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
-                <div class="card-body" style="background: rgba(255,255,255,1);
-                background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
-                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
-                -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);">
+                <div class="card-body epep">
+                <style>
+                </style>
                     <a href="{{url('capacitaciones')}}">
                       <img src="{{asset("plantilla/img/theme/capacitacion.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
@@ -86,18 +68,8 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
         </div>
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
-                <div class="card-body" style="background: rgba(255,255,255,1);
-                background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
-                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
-                -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);">
-                    <a href="#!">
+                <div class="card-body epep" >
+                    <a href="{{url('pausasactivas')}}">
                       <img src="{{asset("plantilla/img/theme/pausas.png")}}" class="rounded-circle img-center img-fluid " style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">

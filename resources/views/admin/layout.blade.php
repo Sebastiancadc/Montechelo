@@ -123,19 +123,6 @@
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-            {{--  <li class="nav-item">
-              <a class="nav-link" href="{{url('capacitaciones')}}">
-                <i class="ni ni-planet text-green"></i>
-                <span class="nav-link-text">Talento Humano</span>
-              </a>
-            </li> --}}
-
-              <li class="nav-item">
-                <a class="nav-link" href="{{url('pausasactivas')}}">
-                  <i class="ni ni-satisfied text-yellow"></i>
-                  <span class="nav-link-text">Pausas activas</span>
-                </a>
-              </li>
 
 @if ($user->role=='admin')
 <li class="nav-item">
