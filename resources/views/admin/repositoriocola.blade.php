@@ -95,6 +95,88 @@
 <div style="height: 655x;">
     <div id="fm"></div>
 </div>
+{{-- Modal llenar campos --}}
+@if (Auth::User()->phone == '')
+<div class="col-lg-10">
+  <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog modal-dialog-centered modal-" role="document">
+    <div class="modal-content ">       
+        <div class="modal-header">
+         <span aria-hidden="true"></span>
+        </div>
+        <div class="modal-body"> 
+         <p>Por favor termine el registro para poder ingresar</p>                      
+     </div>
+        <div class="modal-footer">
+           <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+         </div>   
+       </div>
+</div>
+</div>
+</div>
+@endif
+{{-- fin modal llenar campos --}}
+
+
+    <script>
+        $(document).ready(function()
+        {
+           $("#modaLlenarcampos").modal("show");
+        });
+      </script> 
+    <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
+<script>
+setTimeout(function(){
+$.colorbox({
+html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
+clasName: 'cboxWrapper',
+width: 750,
+height: 550
+});
+}, 3000);
+</script>
+<script>
+  function makeArray(n) {
+  this.length = n;
+  for (var i=1; i<=n; i++) {
+  this[i] = "";
+  }
+  return this;
+  }
+  var i;
+  function videoaleatoire() {
+  i = Math.floor(6 * Math.random() + 1);
+  return video[i];
+  }
+  video = new makeArray(6);
+  video[1]="pausasacitvas/PausaA.mp4";
+  video[2]="pausasacitvas/PausaA2.mp4";
+  video[3]="pausasacitvas/PausaA3.mp4";
+  video[4]="pausasacitvas/PausaA4.mp4";
+  video[5]="pausasacitvas/PausaA5.mp4";
+  video[6]="pausasacitvas/PausaA6.mp4";
+  </script>
+</body>
+<style>
+
+  #cboxContent {
+      background: black;
+      /* overflow: hidden; */
+  }
+  .cboxWrapper{
+    overflow: visible;
+  }
+  #cboxClose {
+    margin-top: 5px;
+    -ms-user-select: none;
+    color: #f8f9fe;
+    border: 1px solid #5e72e4;
+    border-radius: .25rem;
+    background-color: #5e72e4;
+    height: 31px;
+    width: 70px;    
+}
+</style>
 
 <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>

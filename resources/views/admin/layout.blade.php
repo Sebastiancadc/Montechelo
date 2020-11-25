@@ -527,6 +527,7 @@
     </nav>
 
 @yield('content')
+
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>

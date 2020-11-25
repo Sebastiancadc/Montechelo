@@ -269,7 +269,6 @@ $date =date('m-d')
 
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script>
-
 setTimeout(function(){
 $.colorbox({
 html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
@@ -302,7 +301,6 @@ height: 550
   </script>
 </body>
 <style>
-
   #cboxContent {
       background: black;
       /* overflow: hidden; */
