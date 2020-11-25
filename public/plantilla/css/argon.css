@@ -229,13 +229,9 @@ a:hover
 
 a:not([href]):not([tabindex])
 {
-<<<<<<< HEAD
     text-decoration: none;
 
     color: inherit;
-=======
-    text-decoration: none; 
->>>>>>> 904569be57197ad43b4bf66be3943c25b8ecaf7f
 }
 a:not([href]):not([tabindex]):hover,
 a:not([href]):not([tabindex]):focus
