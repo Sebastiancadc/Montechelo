@@ -17,9 +17,55 @@
                 </div>
             </div>
 
+            <br><br><br>
+
+            <div class="container-fluid mt--6">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 card-wrapper">
+                        <!-- Grid system -->
+                        <div class="card">
+                            <div class="card-body">
+                                <br>
+
+                                @foreach ($capacitaciones as $item)
+                                <div class="col-lg-4 card-wrapper" style="float: left;">
+
+                                    <div class="card" style=" background: -prefix-linear-gradient(left top, #002A60, #0098C9) !important;
+                                                    background: linear-gradient(to bottom right, #002A60, #0098C9)!important;">
+                                        <!-- Card body -->
+                                        <div class="card-body" style="color:white !important;">
+                                            <h5 class="h2 card-title mb-0" style="color:white !important;">{{$item->titulo}}</h5>
+                                            <small class="text-muted" style="color:white !important;"> {{$item->fecha}}</small>
+                                            <p class="card-text mt-4">{{$item->descripcion}} </p>
+
+                                            <cite title="Source Title">{{$item->categoria}}</cite>
+
+                                            <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3" style="float: right;"><cite title="Source Title">acceder</cite></a>
 
 
-            <div class="container-fluid " style="margin-top: 11%">
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                @endforeach
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+{{--
+                    <div class="container-fluid " style="margin-top: 11%">
                 <div class="row">
 
 @foreach ($capacitaciones as $item)
@@ -33,29 +79,19 @@
 
                                         <div class="card-body">
                                             <h1 class="card-title text-white">{{$item->titulo}}</h1>
-                                            <h3 class="blockquote" style="font-size: 15px; margin-top: -25px">
-                                            {{$item->fecha}}
-                                            </h3>
+                    <h3 class="blockquote" style="font-size: 15px; margin-top: -25px">
+                        {{$item->fecha}}
+                    </h3>
 
-                                            <blockquote class="blockquote text-white mb-0">
-                                                <p>{{$item->descripcion}} </p>
-                                                <br>
-                                                <cite title="Source Title">{{$item->categoria}}</cite>
+                    <blockquote class="blockquote text-white mb-0">
+                        <p>{{$item->descripcion}} </p>
+                        <br>
+                        <cite title="Source Title">{{$item->categoria}}</cite>
 
-                                                <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3"style="float: right;">
-                                                <cite title="Source Title">acceder</cite>
-                                                </a>
-                                            </blockquote>
-
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-@endforeach
+                        <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3" style="float: right;">
+                            <cite title="Source Title">acceder</cite>
+                        </a>
+                    </blockquote>
 
 
                 </div>
