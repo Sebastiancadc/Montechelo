@@ -156,9 +156,4 @@
     </div>
     @endif
     {{-- fin modal llenar campos --}}
-<script>
-    $(document).ready(function()
-    {
-       $("#modaLlenarcampos").modal("show");
-    });
-  </script>
+    <script src="{{asset("pausasacitvas/pausas.js")}}"></script>

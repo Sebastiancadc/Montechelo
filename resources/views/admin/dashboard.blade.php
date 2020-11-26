@@ -1,32 +1,24 @@
 @extends('admin.layout')
-
-
 @section('content')
 <?php
 $date =date('m-d')
 ?>
-
 <div class="header bg-primary pb-6" >
-
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-
               </ol>
             </nav>
           </div>
-
         </div>
         <!-- Card stats -->
         <div class="row">
           <div class="col-xl-3 col-md-6">
-
           </div>
         </div>
       </div>
@@ -41,20 +33,14 @@ $date =date('m-d')
                         <div class="col">
                                 <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
             @foreach ($noticias as $item)
             <div class="card mb-6" style="max-width: 1000px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="{{$item->image}}" class="card-img fluid" alt="..." style="max-width: 500px; height: 250px; margin-right: 5px;
-                    margin-left: 15px;
-                    margin-top: 15px;
-                    margin-bottom: 15px;">
+                    <img src="{{$item->image}}" class="card-img fluid imgdas" alt="..." >
                 </div>
                 <div class="col-md-8">
                 <div class="card-body" >
@@ -67,11 +53,8 @@ $date =date('m-d')
             </div>
             </div>
             @endforeach
-
         </div>
       <div class="col-lg-4">
-
-
         <div class="card">
           <div class="card-header bg-transparent">
                 <div class="row align-items-center">
@@ -81,7 +64,6 @@ $date =date('m-d')
                 </div>
           </div>
           <div class="card-body">
-
            @foreach ($users as $user)
             <div class="row align-items-center">
               <div class="col-auto">
@@ -137,7 +119,6 @@ $date =date('m-d')
              </div>
              @endif
              {{-- fin modal llenar campos --}}
-
 {{-- Modal pausaActiva --}}
 
 <div class="col-lg-10">
@@ -196,9 +177,7 @@ $date =date('m-d')
           </div>
           @endforeach
         </div>
-
         <!-- Progress track -->
-
         <div class="card">
           <!-- Card header -->
           <div class="card-header bg-transparent">
@@ -221,15 +200,11 @@ $date =date('m-d')
                     <span class="text-success">●</span>
                     <small>Online</small>
                   </div>
-
                 </div>
             </ul>
           </div>
-
         </div>
-
       </div>
-
     </div>
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
@@ -240,7 +215,6 @@ $date =date('m-d')
         </div>
       </div>
     </footer>
-
   </div>
 </div>
 @section('js')
@@ -252,72 +226,8 @@ $date =date('m-d')
           })
       });
 </script>
-
-<script>
-  $(document).ready(function()
-  {
-     $("#modal-notification").modal("show");
-  });
-</script>
-
-<script>
-  $(document).ready(function()
-  {
-     $("#modaLlenarcampos").modal("show");
-  });
-</script>
-
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-<script>
-setTimeout(function(){
-$.colorbox({
-html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
-clasName: 'cboxWrapper',
-width: 750,
-height: 550
-});
-}, 3000);
-</script>
-<script>
-  function makeArray(n) {
-  this.length = n;
-  for (var i=1; i<=n; i++) {
-  this[i] = "";
-  }
-  return this;
-  }
-  var i;
-  function videoaleatoire() {
-  i = Math.floor(6 * Math.random() + 1);
-  return video[i];
-  }
-  video = new makeArray(6);
-  video[1]="pausasacitvas/PausaA.mp4";
-  video[2]="pausasacitvas/PausaA2.mp4";
-  video[3]="pausasacitvas/PausaA3.mp4";
-  video[4]="pausasacitvas/PausaA4.mp4";
-  video[5]="pausasacitvas/PausaA5.mp4";
-  video[6]="pausasacitvas/PausaA6.mp4";
-  </script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 </body>
-<style>
-  #cboxContent {
-      background: black;
-      /* overflow: hidden; */
-  }
-  .cboxWrapper{
-    overflow: visible;
-  }
-  #cboxClose {
-    margin-top: 5px;
-    -ms-user-select: none;
-    color: #f8f9fe;
-    border: 1px solid #5e72e4;
-    border-radius: .25rem;
-    background-color: #5e72e4;
-    height: 31px;
-    width: 70px;    
-}
-</style>
 @endsection
 @endsection

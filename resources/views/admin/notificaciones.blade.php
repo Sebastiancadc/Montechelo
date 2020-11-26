@@ -1,5 +1,3 @@
-
-
 @extends('admin.layout')
 @section('content')
     <div class="header bg-primary pb-6">
@@ -39,17 +37,8 @@
                             <div class="col-6">
                                 <h3 class="mb-0">Gestión de Solicitudes</h3>
                             </div>
-                            {{-- <div class="col-6 text-right">
-                                <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir solicitud">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                    <span class="btn-inner--text">Crear</span>
-
-                                </a>
-                                @include('admin.solicitud.create')
-                            </div> --}}
                         </div>
                     </div>
-
                     <!-- Light table -->
                     <div class="table-responsive py-4" style="margin-top: -51px;">
                         
@@ -67,14 +56,8 @@
                                     <th scope="col" class="sort" data-sort="estado_solicitud">Estado</th>
                                     <th scope="col" class="sort" data-sort="Acciones">Acciones</th>
                                 <br>
-                            </thead>
-
-
-
-
-                            
+                            </thead>                           
                             <tbody>
-
                                 @foreach ($solicitud as $item)
                                 <tr>
                                     <td>
@@ -112,9 +95,7 @@
                                         <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteSolicitud{{$item->Id_Solicitud}}" data-original-title="Eliminar solicitud">
                                             <i class="fas fa-trash"></i>
                                         </a>
-
                                         <div class="col-md-4">
-
                                             <div class="modal fade" id="deleteSolicitud{{$item->Id_Solicitud}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                                               <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                                                 <div class="modal-content">
@@ -173,24 +154,5 @@
         </div>
 
     </div>
-    <script>
-        var addNumeration = function(cl){
-          var table = document.querySelector('table.' + cl)
-          var trs = table.querySelectorAll('tr')
-          var counter = 1
-
-          Array.prototype.forEach.call(trs, function(x,i){
-            var firstChild = x.children[0]
-            if (firstChild.tagName === 'TD') {
-              var cell = document.createElement('td')
-              cell.textContent = counter ++
-              x.insertBefore(cell,firstChild)
-            } else {
-              firstChild.setAttribute('colspan',2)
-            }
-          })
-        }
-        addNumeration("test")
-        </script>
-    @endsection
-
+    <script src="{{asset("js/numerotabla.js")}}"></script>
+@endsection

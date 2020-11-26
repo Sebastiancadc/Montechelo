@@ -1,7 +1,6 @@
 @extends('admin.layout')
 {{-- <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css"> --}}
-@section('content')
-  
+@section('content')  
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">
     <div class="container-fluid">
       <div class="header-body">
@@ -15,8 +14,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Calendario</li>
               </ol>
             </nav>
-          </div>
-     
+          </div>     
           <div class="col-lg-6 mt-3 mt-lg-0 text-lg-right">
             <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#exampleModal">
                 Crear evento
@@ -85,14 +83,11 @@
           </div>
             @endif
           </div>
-          <!-- Card body -->
-         
+          <!-- Card body -->        
           <div class="card-body p-0">
             <div class="calendar" id="eventos" data-toggle="calendar"></div>
-          </div>
-       
+          </div>       
         </div>
-       
       </div>
     </div>
     {{-- Modal llenar campos --}}
@@ -129,70 +124,10 @@
   </div>
   @include('admin.calendario.crear')
 @section('js')
-
-
-
-
-<script>
-  $(document).ready(function()
-  {
-     $("#modaLlenarcampos").modal("show");
-  });
-</script>   
-
+  
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-<script>
-setTimeout(function(){
-$.colorbox({
-html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
-clasName: 'cboxWrapper',
-width: 750,
-height: 550
-});
-}, 3000);
-</script>
-<script>
-  function makeArray(n) {
-  this.length = n;
-  for (var i=1; i<=n; i++) {
-  this[i] = "";
-  }
-  return this;
-  }
-  var i;
-  function videoaleatoire() {
-  i = Math.floor(6 * Math.random() + 1);
-  return video[i];
-  }
-  video = new makeArray(6);
-  video[1]="pausasacitvas/PausaA.mp4";
-  video[2]="pausasacitvas/PausaA2.mp4";
-  video[3]="pausasacitvas/PausaA3.mp4";
-  video[4]="pausasacitvas/PausaA4.mp4";
-  video[5]="pausasacitvas/PausaA5.mp4";
-  video[6]="pausasacitvas/PausaA6.mp4";
-  </script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 </body>
-<style>
-
-  #cboxContent {
-      background: black;
-      /* overflow: hidden; */
-  }
-  .cboxWrapper{
-    overflow: visible;
-  }
-  #cboxClose {
-    margin-top: 5px;
-    -ms-user-select: none;
-    color: #f8f9fe;
-    border: 1px solid #5e72e4;
-    border-radius: .25rem;
-    background-color: #5e72e4;
-    height: 31px;
-    width: 70px;    
-}
-</style>
 <script>
 var Fullcalendar = (function() {
 
@@ -265,8 +200,6 @@ function init($this) {
   //
   // Calendar actions
   //
-
-
   //Add new Event
 
   $('body').on('click', '.new-event--add', function() {

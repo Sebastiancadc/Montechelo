@@ -82,7 +82,6 @@
                 </div>
             </div>
             </div>
-
             <div class="row">
               <div class="col-md-6">
                 <h4>Telefono</h4>
@@ -101,7 +100,6 @@
               </div>
           </div>
           </div>
-
               <div class="form-group mb-3">
                 <h4>Contraseña</h4>
                 <div class="input-group input-group-merge input-group-alternative">

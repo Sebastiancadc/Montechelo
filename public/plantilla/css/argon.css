@@ -29673,14 +29673,114 @@ width: 45px;
 
 .epep{
     background: rgba(255,255,255,1);
-                background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
-                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
-                -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
+    -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+    -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+    box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+}
+
+.advertencias{
+    color:#fb6340;
+}
+.importantes{
+    color:#11cdef;
+}
+.especials{
+    color:#2dce89;
+}
+
+.eventoVerde{
+background-color: #2dce89 !important;
+    }
+.eventoAmarillo{
+background-color: #fb6340 !important;
+    }
+.eventoAzul{
+background-color: #11cdef !important;
+}
+
+
+.Especial{
+    background-color: #2dce89 !important;
+}
+.Advertencia  {
+    background-color: #fb6340 !important;
+}
+.Importante{
+    background-color: #11cdef !important;
+}
+
+.img4{
+    margin-left: 200px;
+    width: 300px; 
+    min-width: 300px;
+}
+
+  
+#cboxContent {
+    background: black;
+    /* overflow: hidden; */
+}
+.cboxWrapper{
+  overflow: visible;
+}
+#cboxClose {
+  margin-top: 5px;
+  -ms-user-select: none;
+  color: #f8f9fe;
+  border: 1px solid #5e72e4;
+  border-radius: .25rem;
+  background-color: #5e72e4;
+  height: 31px;
+  width: 70px;    
+}
+
+.tgg{
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
+    -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+    -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+    box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
+}
+.awhite{
+    color:white !important;
+}
+
+.blues{
+    background: -prefix-linear-gradient(left top, #002A60, #0098C9) !important;
+    background: linear-gradient(to bottom right, #002A60, #0098C9)!important;
+}
+.imgdas{
+    max-width: 500px; height: 250px; margin-right: 5px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.hjk{
+    height: 40px;
+}
+.y6{
+    -webkit-box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);
+    -moz-box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);
+    box-shadow: -10px 10px 19px 5px rgba(88,154,252,0.42);
+}
+
+
+.texte{
+    text-align: justify; 
+}
+.test4{
+    text-align: center;
 }

@@ -11,7 +11,6 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-
                                 <li class="breadcrumb-item active" aria-current="page">Novedades</li>
                             </ol>
                         </nav>
@@ -60,7 +59,6 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                 </div>
-
                 <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text" required/>
               </div>
             </div>
@@ -74,9 +72,7 @@
           </div>
         </div>
       </div>
-
       <div class="row">
-
         <div class="col-md-9">
             <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="250"></textarea>
@@ -85,12 +81,10 @@
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary my-4">Crear</button>
-
     </div>
   </form>
   </div>
 </div>
-
 {{-- Modal llenar campos --}}
 @if (Auth::User()->phone == '')
 <div class="col-lg-10">
@@ -112,23 +106,13 @@
 </div>
 @endif
 {{-- fin modal llenar campos --}}
-
 @section('js')
-
-<script>
-    $(document).ready(function()
-    {
-       $("#modaLlenarcampos").modal("show");
-    });
-  </script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection
-
-
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-
-
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection

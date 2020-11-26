@@ -56,18 +56,7 @@
                                 <div class="col-lg-4">
                                     <div class="card card-lift--hover shadow border-0">
 
-                                        <div class="card-body py-5 rounded-sm"  style="background: rgba(255,255,255,1);
-                                        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                                        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,234,240,1)));
-                                        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                                        background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                                        background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                                        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(240,234,240,1) 100%);
-                                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0eaf0', GradientType=0 );
-                                        -webkit-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                                        -moz-box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                                        box-shadow: -13px 13px 18px -10px rgba(0,0,0,0.51);
-                                        ">
+                                        <div class="card-body py-5 rounded-sm  tgg" >
                                             <h4>{{$item->tipo_sugerencia}}</h4>
                                             <p class="description mt-3" style="text-align: justify;">{{$item->descripcion}}</p>
                                             <h4 style="color:#0098C9 ">{{$item->area}}</h4>
@@ -106,65 +95,8 @@
 {{-- fin modal llenar campos --}}
 </div>
 @section('js')
-
-<script>
-    $(document).ready(function()
-    {
-       $("#modaLlenarcampos").modal("show");
-    });
-  </script> 
   <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-  <script>
-  setTimeout(function(){
-  $.colorbox({
-  html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
-  clasName: 'cboxWrapper',
-  width: 750,
-  height: 550
-  });
-  }, 3000);
-  </script>
-  <script>
-    function makeArray(n) {
-    this.length = n;
-    for (var i=1; i<=n; i++) {
-    this[i] = "";
-    }
-    return this;
-    }
-    var i;
-    function videoaleatoire() {
-    i = Math.floor(6 * Math.random() + 1);
-    return video[i];
-    }
-    video = new makeArray(6);
-    video[1]="pausasacitvas/PausaA.mp4";
-    video[2]="pausasacitvas/PausaA2.mp4";
-    video[3]="pausasacitvas/PausaA3.mp4";
-    video[4]="pausasacitvas/PausaA4.mp4";
-    video[5]="pausasacitvas/PausaA5.mp4";
-    video[6]="pausasacitvas/PausaA6.mp4";
-    </script>
+  <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
   </body>
-  <style>
-  
-    #cboxContent {
-        background: black;
-        /* overflow: hidden; */
-    }
-    .cboxWrapper{
-      overflow: visible;
-    }
-    #cboxClose {
-      margin-top: 5px;
-      -ms-user-select: none;
-      color: #f8f9fe;
-      border: 1px solid #5e72e4;
-      border-radius: .25rem;
-      background-color: #5e72e4;
-      height: 31px;
-      width: 70px;    
-  }
-  </style>
 @endsection
 @endsection

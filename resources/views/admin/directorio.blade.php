@@ -15,14 +15,13 @@
             </nav>
           </div>
         </div>
-
         <form >
           <div class="input-group gpr">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <button class="btn btn-primary" type="submit" style="height: 40px;">Todos</button>
+                <button class="btn btn-primary hjk" type="submit">Todos</button>
                 <span>.</span>
-                <button class="btn btn-primary" type="submit" style="height: 40px;">Buscar</button>
+                <button class="btn btn-primary hjk" type="submit">Buscar</button>
                 <span>.</span>
               </div>
               <input  class="form-control" type="search" placeholder="Buscar por" name="search" id="search" style="height: 40px;"> 
@@ -41,10 +40,8 @@
       </div>
     </div>
   </div>
-  <!-- Page content -->
-  
+  <!-- Page content --> 
   <div class="container-fluid mt--6">
-
     <div class="row card-wrapper">
       @foreach ($usuarios as $usuario) 
       <div class="col-lg-4">
@@ -65,8 +62,7 @@
               {{-- <a href="#" class="btn btn-sm btn-info mr-4">Añadir amigo</a> --}}
               <a href="{{route('verperfil',$usuario->id)}}"  class="btn btn-sm btn-default float-right">Ver perfil</a>
             </div>
-          </div>
-         
+          </div>     
           <div class="card-body pt-0">
             <div class="text-center">
               @if(Illuminate\Support\Facades\Cache::has('user-is-online-'.$usuario->id))
@@ -76,7 +72,6 @@
               <span class="text-danger">●</span>
               <small>Desconectado</small>
               @endif
-              {{-- <small>Activo</small> --}}
               <h5 class="h3">
                 {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,
                 {{App\Helpers\Helpers::edad($usuario->cumpleanios)}}
@@ -92,30 +87,11 @@
               <div>
                 <a class="h3">{{$usuario->email}}</a>
               </div>
-             
             </div>
-            {{-- <div class="row">
-              <div class="col">
-                <div class="card-profile-stats d-flex justify-content-center">
-                  <div class="mt-3">
-                    <a href="#" class="btn btn-twitter btn-icon-only rounded-circle">
-                    
-                    </a>
-                    <a href="#" class="btn btn-facebook btn-icon-only rounded-circle">
-                     
-                    </a>
-                    <a href="#" class="btn btn-dribbble btn-icon-only rounded-circle">
-                     
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
           </div>
         </div>
       </div>
       @endforeach
-
 {{-- Modal llenar campos --}}
 @if (Auth::User()->phone == '')
 <div class="col-lg-10">
@@ -151,7 +127,6 @@
     </footer>
   </div>
 </div>  
-
 @section('jss')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
 <script>
@@ -171,66 +146,7 @@
     }
   });
   </script>
-  <script>
-    $(document).ready(function()
-    {
-       $("#modaLlenarcampos").modal("show");
-    });
-  </script> 
-
-
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-<script>
-setTimeout(function(){
-$.colorbox({
-html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
-clasName: 'cboxWrapper',
-width: 750,
-height: 550
-});
-}, 3000);
-</script>
-<script>
-  function makeArray(n) {
-  this.length = n;
-  for (var i=1; i<=n; i++) {
-  this[i] = "";
-  }
-  return this;
-  }
-  var i;
-  function videoaleatoire() {
-  i = Math.floor(6 * Math.random() + 1);
-  return video[i];
-  }
-  video = new makeArray(6);
-  video[1]="pausasacitvas/PausaA.mp4";
-  video[2]="pausasacitvas/PausaA2.mp4";
-  video[3]="pausasacitvas/PausaA3.mp4";
-  video[4]="pausasacitvas/PausaA4.mp4";
-  video[5]="pausasacitvas/PausaA5.mp4";
-  video[6]="pausasacitvas/PausaA6.mp4";
-  </script>
-</body>
-<style>
-
-  #cboxContent {
-      background: black;
-      /* overflow: hidden; */
-  }
-  .cboxWrapper{
-    overflow: visible;
-  }
-  #cboxClose {
-    margin-top: 5px;
-    -ms-user-select: none;
-    color: #f8f9fe;
-    border: 1px solid #5e72e4;
-    border-radius: .25rem;
-    background-color: #5e72e4;
-    height: 31px;
-    width: 70px;    
-}
-</style>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection
 @endsection

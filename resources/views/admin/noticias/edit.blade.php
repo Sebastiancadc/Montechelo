@@ -20,7 +20,6 @@
 </div>
 <br>
 <br>
-
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class="col-lg-8 card-wrapper">
@@ -40,21 +39,19 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="title">Título </label>
-                            <input type="text" id="title" class="form-control form-control-alternative" placeholder="" value="{{$noticiaActualizar->title }}" name="title">
+                            <input type="text" id="title" class="form-control form-control-alternative"  value="{{$noticiaActualizar->title }}" name="title">
                             @if ($errors->has('title'))
                             <strong class="text-danger" >{{ $errors->first('title') }}</strong>
                             @endif
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <label class="form-control-label" for="competencias">Contenido</label>
                                 <textarea class="form-control" id="mymce" rows="3" name="body">{{$noticiaActualizar->body }}</textarea>
                         </div>
-
-                        <img src="{{$noticiaActualizar->image }}" class="img-fluid rounded" style="margin-left: 200px; width: 300px; heightmin-width: ;min-width: 300px;">
-
+                        <img src="{{$noticiaActualizar->image }}" class="img-fluid rounded img4">
                         <div class="form-group">
                             <label class="form-control-label" for="competencias">Imagen</label>
-                            <input type="file"  class="form-control form-control-alternative" placeholder="" value="{{$noticiaActualizar->image }}" name="image">
+                            <input type="file"  class="form-control form-control-alternative"  value="{{$noticiaActualizar->image }}" name="image">
                         </div>
 
                         <div class="col-lg-6 col-5 text-right" style="float: right;">

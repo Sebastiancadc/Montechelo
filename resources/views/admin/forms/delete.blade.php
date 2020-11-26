@@ -1,5 +1,4 @@
-<div class="col-md-4">
-                           
+<div class="col-md-4">      
     <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
       <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
@@ -12,7 +11,6 @@
                 </div>
                 <form role="form" method="POST" action="{{ url('admin/usuario',$user->id) }}" >
                     @csrf @method('DELETE') 
-
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                     <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>

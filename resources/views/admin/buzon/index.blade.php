@@ -59,20 +59,14 @@
                                     <th scope="col" class="sort" data-sort="apellido">Descripcion</th>
                                     <th scope="col" class="sort" data-sort="género">Area</th>
                                     <th scope="col" class="sort" data-sort="género">Acciones</th>
-
-
-
                                 </tr>
                             </thead>
                             <tbody>
-
-
                                 @foreach ($buzon as $item)
                                 <tr>
                                     <td>
                                         <span class="text-muted"></span>
                                     </td>
-
                                     <td>
                                         <span class="text-muted">{{$item->tipo_sugerencia}}</span>
                                     </td>
@@ -88,10 +82,6 @@
                                         <i class="fas fa-trash"></i>
                                     </a>
                                     </td>
-
-
-
-
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -102,26 +92,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <script>
-        var addNumeration = function(cl){
-          var table = document.querySelector('table.' + cl)
-          var trs = table.querySelectorAll('tr')
-          var counter = 1
-
-          Array.prototype.forEach.call(trs, function(x,i){
-            var firstChild = x.children[0]
-            if (firstChild.tagName === 'TD') {
-              var cell = document.createElement('td')
-              cell.textContent = counter ++
-              x.insertBefore(cell,firstChild)
-            } else {
-              firstChild.setAttribute('colspan',2)
-            }
-          })
-        }
-        addNumeration("test")
-        </script>
+    <script src="{{asset("js/numerotabla.js")}}"></script>
     @endsection
-

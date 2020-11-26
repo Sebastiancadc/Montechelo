@@ -108,18 +108,4 @@
 </div>
 </div>
 </div>
-
-
-
-<style>
-    .Especial{
-        background-color: #2dce89 !important;
-        }
-    .Advertencia  {
-        background-color: #fb6340 !important;
-        }
-    .Importante{
-        background-color: #11cdef !important;
-        }
-        </style>
 @endsection 

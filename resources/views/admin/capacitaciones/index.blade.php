@@ -47,8 +47,6 @@
     </div>
     @endif
 
-
-
     <div class="row">
         <div class="col">
             <div class="card">
@@ -58,9 +56,7 @@
                     <div class="row">
                         <div class="col-6">
                             <h3 class="mb-0">Gestión de Usuarios</h3>
-                        </div>
-                     
-                        
+                        </div>                         
                         <div class="col-6 text-right">
                             <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
                                 <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
@@ -68,7 +64,6 @@
                             </a>
                             @include('admin.capacitaciones.create')
                         </div>                     
-                        
                     </div>
                     <br>
                     @if (session('update'))
@@ -80,25 +75,18 @@
                       </button>
                   </div>
                   @endif
-                </div>
-               
+                </div>               
                 <!-- Light table -->
-
                 <div class="table-responsive py-4" style="margin-top: -51px;">
-
                     <table class="table table-flush test" id="datatable-basic">
                         <thead class="thead-light">
-
                             <th>#</th>
                             <th>Titulo</th>
                             <th>Fecha</th>
                             <th>Descripción</th>
                             <th>Categoria </th>
-                            <th>Link</th>
-                            
+                            <th>Link</th>                         
                             <th>Acciones</th>
-
-
                         </thead>
                         <tbody>
                             @foreach ($capacitaciones as $item)
@@ -113,12 +101,10 @@
                                     <a href="{{route('editarcapacitacion',$item->id_capacitacion)}}" class="table-action">
                                         <i class="fas fa-user-edit"></i>
                                     <a/>
-
                                     <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deletecapacitacion{{$item->id_capacitacion}}" data-original-title="Eliminar novedad">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </th>
-
                                 <div class="modal fade" id="deletecapacitacion{{$item->id_capacitacion}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                                         <div class="modal-content">
@@ -163,7 +149,6 @@
         </div>
     </div>
 </div>
-
-
 </body>
+<script src="{{asset("js/numerotabla.js")}}"></script>
 @endsection

@@ -2,17 +2,6 @@
 
 <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
 
-<style>
-  .eventoVerde{
-      background-color: #2dce89 !important;
-      }
-      .eventoAmarillo{
-      background-color: #fb6340 !important;
-      }
-      .eventoAzul{
-      background-color: #11cdef !important;
-      }
-</style>
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -118,11 +107,6 @@
 </div>
 </div>
 </div>
-<style>
-.advertencias{color:#fb6340;}
-.importantes{color:#11cdef;}
-.especials{color:#2dce89;}
-</style>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script type="text/javascript">
@@ -161,5 +145,4 @@
       });
   });
 </script>
-
 @endsection

@@ -5,8 +5,6 @@
 <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 <title>Montechelo </title>
-
-
 <nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
     <div class="container">
         <div style="margin-left: -66px;font-size: 19px;">
@@ -26,14 +24,12 @@
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <i class="fas fa-heart"></i>
-                        
+                        <i class="fas fa-heart"></i>                        
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <i class="fas fa-bell"></i>
-                        
+                        <i class="fas fa-bell"></i>                        
                     </a>
                 </li>
                 <li class="nav-item">
@@ -74,8 +70,7 @@
                         <i class="fas fa-life-ring"></i>
                       <span>Support</span>
                     </a>
-                    <div class="dropdown-divider"></div>
-    
+                    <div class="dropdown-divider"></div>    
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" class="dropdown-item">
                        <i class="fas fa-running"></i>
@@ -86,9 +81,7 @@
                     </form>
                   </div>
                 </li>
-              </ul>
-            
-            
+              </ul>                     
         </div>
     </div>
 </nav>
@@ -116,74 +109,13 @@
 </div>
 @endif
 {{-- fin modal llenar campos --}}
-
-
-    <script>
-        $(document).ready(function()
-        {
-           $("#modaLlenarcampos").modal("show");
-        });
-      </script> 
     <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-<script>
-setTimeout(function(){
-$.colorbox({
-html:"<video width='750' height='540' autoplay controls> <source src="+ videoaleatoire()+" type='video/mp4'> </video>",
-clasName: 'cboxWrapper',
-width: 750,
-height: 550
-});
-}, 3000);
-</script>
-<script>
-  function makeArray(n) {
-  this.length = n;
-  for (var i=1; i<=n; i++) {
-  this[i] = "";
-  }
-  return this;
-  }
-  var i;
-  function videoaleatoire() {
-  i = Math.floor(6 * Math.random() + 1);
-  return video[i];
-  }
-  video = new makeArray(6);
-  video[1]="pausasacitvas/PausaA.mp4";
-  video[2]="pausasacitvas/PausaA2.mp4";
-  video[3]="pausasacitvas/PausaA3.mp4";
-  video[4]="pausasacitvas/PausaA4.mp4";
-  video[5]="pausasacitvas/PausaA5.mp4";
-  video[6]="pausasacitvas/PausaA6.mp4";
-  </script>
-</body>
-<style>
-
-  #cboxContent {
-      background: black;
-      /* overflow: hidden; */
-  }
-  .cboxWrapper{
-    overflow: visible;
-  }
-  #cboxClose {
-    margin-top: 5px;
-    -ms-user-select: none;
-    color: #f8f9fe;
-    border: 1px solid #5e72e4;
-    border-radius: .25rem;
-    background-color: #5e72e4;
-    height: 31px;
-    width: 70px;    
-}
-</style>
-
+    <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
 
 <style>
-
 .btn-secondary{
     color: #fff;
     background-color:#002A60 !important;

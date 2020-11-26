@@ -20,10 +20,8 @@
         </div>
     </div>
 </div>
-
 <br>
 <br>
-
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class="col-lg-8 card-wrapper">
@@ -77,9 +75,7 @@
                             <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>
                     </form>
-
             </div>
-
         </div>
     </div>
 </div>

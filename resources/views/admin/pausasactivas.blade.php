@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-<!-- AGREGAR BUZON DE SUGERENCIAS -->
+<!-- AGREGAR -->
 <div class="header bg-primary pb-6" style="height: 100px;">
     <div class="container-fluid">
         <div class="header-body">
@@ -19,29 +19,19 @@
     </div>
 </div>
 <br><br>
-
-
-
-
-
-
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class="col-lg-10 card-wrapper">
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-
                     <h1 style="text-align: center">¡Bienvenido a una pausa activa dinamica!</h1>
                     <br>
                     {{-- PRIMERA PAUSA --}}
                     <div class="card" style="width: 70% !important;   margin-left:auto !important; margin-right:auto !important;">
 
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-
-
                             <iframe src="https://www.youtube.com/embed/VhvUnHiysQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100% !important;height:25em;"></iframe>
-
                         </div>
                         <div class="card-body">
                             <h5 class="h2 card-title mb-0">
@@ -64,9 +54,7 @@
                                 <font style="vertical-align: inherit;"></font>
                             </a>
                         </div>
-
                     </div>
-
                     {{-- SEGUNDA PAUSA --}}
                     <div class="card" style="width: 50% !important; float:left;">
                         <!-- Card image -->
@@ -152,10 +140,8 @@
                                     <img src="plantilla/img/theme/pausasactivas/secondpausa3.png" class=" d-block w-100" alt="...">
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

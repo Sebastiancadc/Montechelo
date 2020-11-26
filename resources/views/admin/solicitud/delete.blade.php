@@ -11,7 +11,6 @@
                                                   </div>
                                                   <form role="form" method="POST" action="{{route('eliminar',$item->Id_Solicitud)}}" >
                                                       @csrf @method('DELETE')
-
                                                     <div class="text-center">
                                                       <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                                                       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>

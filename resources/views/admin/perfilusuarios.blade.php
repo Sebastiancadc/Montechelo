@@ -9,16 +9,12 @@ height: 148%;"></span>
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-md-12 col-lg-7">
-        {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
-
         <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} {{$perfil->lastname}} </h1>
       </div>
   
     </div>
   </div>
 </div>
-
-
 <!-- Page content -->
 <div class="container-fluid mt--6">
   <div class="row">
@@ -417,13 +413,10 @@ height: 148%;"></span>
                             margin-top: -55px;
                         ">Base de datos</h4>
               <br>
-
             </div>
           </div>
         </div>
-
       </div>
-
       <?php $user = auth()->user();
       ?>
     </div>

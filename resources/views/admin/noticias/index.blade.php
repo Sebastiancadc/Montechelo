@@ -39,13 +39,6 @@
                             <div class="col-6">
                                 <h3 class="mb-0">Gestión de Noticias</h3>
                             </div>
-                            {{--  <div class="col-6 text-right">
-                                <a href="" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Agregar noticia">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                    <span class="btn-inner--text">Publicar</span>
-                                </a>
-                            </div>
-                            @include('admin.noticias.create')  --}}
                         </div>
                     </div>
                     @if (Session::has('message'))
@@ -155,24 +148,6 @@
         </div>
 
     </div>
-    <script>
-        var addNumeration = function(cl){
-          var table = document.querySelector('table.' + cl)
-          var trs = table.querySelectorAll('tr')
-          var counter = 1
-
-          Array.prototype.forEach.call(trs, function(x,i){
-            var firstChild = x.children[0]
-            if (firstChild.tagName === 'TD') {
-              var cell = document.createElement('td')
-              cell.textContent = counter ++
-              x.insertBefore(cell,firstChild)
-            } else {
-              firstChild.setAttribute('colspan',2)
-            }
-          })
-        }
-        addNumeration("test")
-        </script>
+    <script src="{{asset("js/numerotabla.js")}}"></script>
     @endsection
 

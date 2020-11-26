@@ -86,14 +86,11 @@
                         </div>
                         @endif
                     </div>
-
                     <!-- Light table -->
-
                     <div class="table-responsive py-4" style="margin-top: -51px;">
 
                         <table class="table table-flush test" id="datatable-basic">
                             <thead class="thead-light">
-
                                 <th>#</th>
                                 <th>Área</th>
                                 <th>Fecha </th>
@@ -101,10 +98,8 @@
                                 <th>Descripción</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
-
                             </thead>
                             <tfoot>
-
                                 <th>#</th>
                                 <th>Área</th>
                                 <th>Fecha </th>
@@ -112,23 +107,17 @@
                                 <th>Descripción</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
-
                             </tfoot>
                             <tbody>
                                 @foreach ($novedad as $item)
-
-
                                 <td></td>
                                 <td>{{$item->area}}</td>
                                 <td>{{$item->fecha}}</td>
                                 <td>{{$item->novedad}}</td>
                                 <td>{{$item->descripcion}}</td>
                                 <td><span class="badge badge-lg badge-success">{{$item->estado}}</span></td>
-
                                 <td><a href="{{route('editarnovedad',$item->id_novedad)}}" class="table-action" data-original-title="Editar novedad">
                                         <i class="fas fa-user-edit"></i>
-
-
                                         <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="Eliminar novedad">
                                             <i class="fas fa-trash"></i>
                                         </a></td>
@@ -137,14 +126,12 @@
                                         <div class="modal-content">
                                             <div class="modal-body p-0">
                                                 <div class="card bg-secondary border-0 mb-0">
-
                                                     <div class="card-body px-lg-5 py-lg-5">
                                                         <div class="text-center text-muted mb-4">
                                                             <h3>Eliminar la novedad</h3>
                                                         </div>
                                                         <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad)}}">
                                                             @csrf @method('DELETE')
-
                                                             <div class="text-center">
                                                                 <button type="submit" class="btn btn-primary my-4">Eliminar</button>
                                                                 <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
@@ -162,7 +149,6 @@
 
                         </table>
                     </div>
-
                     <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
@@ -186,23 +172,5 @@
     </div>
 </body>
 
-<script>
-    var addNumeration = function(cl) {
-        var table = document.querySelector('table.' + cl)
-        var trs = table.querySelectorAll('tr')
-        var counter = 1
-
-        Array.prototype.forEach.call(trs, function(x, i) {
-            var firstChild = x.children[0]
-            if (firstChild.tagName === 'TD') {
-                var cell = document.createElement('td')
-                cell.textContent = counter++
-                x.insertBefore(cell, firstChild)
-            } else {
-                firstChild.setAttribute('colspan', 2)
-            }
-        })
-    }
-    addNumeration("test")
-    </script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection

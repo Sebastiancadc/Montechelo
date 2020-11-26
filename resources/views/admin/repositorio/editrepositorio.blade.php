@@ -59,11 +59,11 @@
                 </div>
               </div>
 
-              <img src="{{$repositorioActualizar->image }}" class="img-fluid rounded" style="margin-left: 50px; width: 300px; heightmin-width: ;min-width: 300px;">
+              <img src="{{$repositorioActualizar->image }}" class="img-fluid rounded img4">
 
               <div class="form-group">
                 <label class="form-control-label" for="competencias">Imagen</label>
-                <input type="file"  class="form-control form-control-alternative" placeholder="" value="{{$repositorioActualizar->image }}" name="image">
+                <input type="file"  class="form-control form-control-alternative"  value="{{$repositorioActualizar->image }}" name="image">
             </div>
 
 
@@ -82,9 +82,6 @@
       </div>
     </div>
     </div>
-    
-    
-    
         </div>
       </form>
     </div>
@@ -93,5 +90,4 @@
 </div>
 </div>
 </div>
-
 @endsection

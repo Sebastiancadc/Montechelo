@@ -1,11 +1,7 @@
 @extends('admin.layout')
-
 @section('content')
 <div class="header pb-6 d-flex align-items-center " <!-- Mask -->
-  <span class="mask bg-gradient-default opacity-8" style="
-width: 100%;
-height: 148%;"></span>
-
+  <span class="mask bg-gradient-default opacity-8" style="width: 100%;height: 148%;"></span>
   <?php
   $user = auth()->user();
   ?>
@@ -13,18 +9,12 @@ height: 148%;"></span>
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-md-12 col-lg-7">
-        {{-- <img src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="rounded-circle" style="width: 120px; margin-top: 70px"> --}}
-
         <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->lastname}}</h1>
       </div>
       <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
     </div>
   </div>
 </div>
-
-
-
-
 <!-- Page content -->
 <div class="container-fluid mt--6">
   <div class="row">
@@ -43,29 +33,15 @@ height: 148%;"></span>
                 <input type="file" id="avatarInput" style="display: none" name="photo">
             </form>
             <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
-    
           </div>
           </div>
         </div>
-
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
             {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
             <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
-        {{-- <a  style="margin-top: -6px;
-        margin-left: 150px;
-        font-size: 24px;
-        z-index: 2;
-        color: black;border: 0px solid rgb(255 253 253 / 18%);
-    background: rgb(255 253 253 / 62%);"><i style="margin-left" class="ni ni-camera-compact"></i></a>
-         <a  style="margin-top:-133px;
-         margin-left: 280px;
-         font-size: 24px;
-         z-index: 2;
-         color: black;border: 0px solid rgb(255 253 253 / 18%);
-    background: rgb(255 253 253 / 62%);"><i style="margin-left: 11px;" class="ni ni-camera-compact"></i></a> --}}
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
@@ -81,11 +57,9 @@ height: 148%;"></span>
                 {{ Auth::user()->area}}
               </div>
             </h5>
-
             <div class="">
               {{ Auth::user()->email}}
             </div>
-
           </div>
         </div>
       </div>
@@ -113,7 +87,6 @@ height: 148%;"></span>
                   <span class="text-success">●</span>
                   <small>Online</small>
                 </div>
-
               </div>
               <div class="row align-items-center">
                 <div class="col-auto">
@@ -129,7 +102,6 @@ height: 148%;"></span>
                   <span class="text-success">●</span>
                   <small>Online</small>
                 </div>
-
               </div>
             </li>
               <div class="row align-items-center">
@@ -146,7 +118,6 @@ height: 148%;"></span>
                   <span class="text-success">●</span>
                   <small>Online</small>
                 </div>
-
               </div>
               <div class="row align-items-center">
                 <div class="col-auto">
@@ -162,12 +133,10 @@ height: 148%;"></span>
                   <span class="text-success">●</span>
                   <small>Online</small>
                 </div>
-
               </div>
             </li>
           </ul>
         </div>
-
       </div>
       <!-- Progress track -->
       <div class="card">
@@ -194,7 +163,6 @@ height: 148%;"></span>
                     </div>
                     </div>
                 </div>
-
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <!-- Avatar -->
@@ -209,7 +177,6 @@ height: 148%;"></span>
                         </div>
                     </div>
                 </div>
-
                 <div class="row align-items-center">
                     <div class="col-auto">
                     <!-- Avatar -->
@@ -244,7 +211,6 @@ height: 148%;"></span>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row align-items-center">
                                 <div class="col-auto">
                                     <!-- Avatar -->
@@ -266,7 +232,6 @@ height: 148%;"></span>
                                         <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
                                     </a>
                                 </div>
-
                                 <div class="col">
                                     <h5>Desarrolladores </h5>
                                     <div class="">
@@ -294,12 +259,10 @@ height: 148%;"></span>
           </li>
         </ul>
       </div>
-
       <div class="card shadow">
         <div class="card-body">
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
-
               <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
                 <h4 class="text-muted ">INFORMACION PERSONAL</h4>
@@ -317,8 +280,7 @@ height: 148%;"></span>
                 <a class="text-muted mb-4">Seleccione los campos que desee ocultar</a>
                 <br><br>
                 <div class="pl-lg-4">
-                  <div class="row">
-                    
+                  <div class="row">                   
                     <div class="col-md-6">
                         <h4>Nombre</h4>
                         <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
@@ -362,13 +324,9 @@ height: 148%;"></span>
                         <option>Produccion</option>
                       </select>
                     </div>
-
                   </div>
-
-                  <div class="row">
-
+                   <div class="row">
                     <div class="col-md-6">
-
                       <h4>Genero</h4>
                       <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
                         <option>{{ Auth::user()->genero}}</option>
@@ -382,11 +340,9 @@ height: 148%;"></span>
                         checked value="1" 
                         @else
                             value="0"
-                      @endif></h4>
-                      
+                      @endif></h4>                      
                       <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
                     </div>
-
                   </div>
                 </div>
                 <div class="card-body text-center">
@@ -396,27 +352,16 @@ height: 148%;"></span>
           </form>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
               <h1 class="form-control-label">Amigos Sugeridos</h1><br>
-
-
-
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
               <a href="#" class="avatar" style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
               </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-
-                        ">Manuel Rodriguez</h4>
+              <h4 style="margin-left: 53px;margin-top: -35px;">Manuel Rodriguez</h4>
               <br>
 
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -50px;
-
-                        ">Andres Sebastian</h4>
+              <h4 style="margin-left: 400px;margin-top: -50px;">Andres Sebastian</h4>
               <br>
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}} ">
@@ -424,15 +369,9 @@ height: 148%;"></span>
               <a href="#" class="avatar "style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                        ">Angie Vega</h4>
+              <h4 style="margin-left: 53px;margin-top: -35px; ">Angie Vega</h4>
               <br>
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -55px;
-                        ">Maria Alejandra</h4>
+              <h4 style="margin-left: 400px;margin-top: -55px;">Maria Alejandra</h4>
               <br>
   </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
@@ -445,18 +384,10 @@ height: 148%;"></span>
               <a href="#" class="avatar" style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}} ">
               </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-
-                        ">PHP avanzado</h4>
+              <h4 style="margin-left: 53px;margin-top: -35px;">PHP avanzado</h4>
               <br>
 
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -50px;
-
-                        ">Desarrolladores</h4>
+              <h4 style="margin-left: 400px;margin-top: -50px;">Desarrolladores</h4>
               <br>
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
@@ -464,21 +395,13 @@ height: 148%;"></span>
               <a href="#" class="avatar "style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                        ">Laravel 5.8</h4>
+              <h4 style="margin-left: 53px;margin-top: -35px;">Laravel 5.8</h4>
               <br>
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -55px;
-                        ">Base de datos</h4>
+              <h4 style="margin-left: 400px;margin-top: -55px;">Base de datos</h4>
               <br>
-
             </div>
           </div>
         </div>
-
       </div>
       <?php $user = auth()->user();
       ?>
@@ -498,90 +421,7 @@ height: 148%;"></span>
       });
   });
 </script>
-
 @section('js')
-<script>
-$(function () {
-    var $avatarImage, $avatarInput, $avatarForm;
-    var avatarUrl;
-    
-    $avatarImage = $('#avatarImage');
-    $avatarInput = $('#avatarInput');
-    $avatarForm = $('#avatarForm');
-
-    $avatarImage.on('click', function () {
-        $avatarInput.click();
-    });
-
-    avatarUrl =$avatarForm.attr('action');  
-
-    $avatarInput.on('change', function () {
-    
-    var formData = new FormData();
-    
-
-    formData.append('photo', $avatarInput[0].files[0]);
-
-    $.ajax({
-        url: avatarUrl+'?'+$avatarForm.serialize(),
-        method: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false
-    })
-    .done(function (data) {
-        if (data.success)
-            $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
-            location.reload();
-            location.reload();
-
-    })
-    .fail(function () {
-        alert('La imagen subida no tiene un formato correcto');
-    });
-});
-});
-</script>
-
-<script>
-  $(function () {
-      var $portadata, $portadaInput, $portadaForm;
-      var portadaUrl;
-      
-      $portadata = $('#portadata');
-      $portadaInput = $('#portadaInput');
-      $portadaForm = $('#portadaForm');
-  
-      $portadata.on('click', function () {
-          $portadaInput.click();
-      });
-  
-      portadaUrl =$portadaForm.attr('action');  
-  
-      $portadaInput.on('change', function () {
-      
-      var formData = new FormData();
-      
-  
-      formData.append('photo_portada', $portadaInput[0].files[0]);
-  
-      $.ajax({
-          url: portadaUrl+'?'+$portadaForm.serialize(),
-          method: 'POST',
-          data: formData,
-          processData: false,
-          contentType: false
-      })
-      .done(function (data) {
-          if (data.success)
-              $portadata.attr('src', 'http://localhost/Montechelo/public/images/portada/'+data.file_name+'?'+ new Date().getTime());
-  
-      })
-      .fail(function () {
-          alert('La imagen subida no tiene un formato correcto');
-      });
-  });
-  });
-  </script>
+<script src="{{asset("js/fotoperfil.js")}}"></script>
 @endsection
 @endsection

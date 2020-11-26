@@ -49,19 +49,17 @@
                   <input class="form-control" placeholder="Email" value='{{$userActualizar->email}}' name="email" type="email">
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
-                <input type="datetime-local" name="" id="">
+                <input type="datetime-local">
                     <input class="form-control datepicker" value='{{$userActualizar->cumpleaños}}' type="date" name="cumpleaños" id="cumpleaños">
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                
                   <select class="form-control" id="exampleFormControlSelect1" name="genero">
                     <option>{{$userActualizar->genero}}</option>
                     <option>Hombre</option>
@@ -70,9 +68,7 @@
                   </select>
                 </div>
             </div>
-            </div>
-
-             
+            </div>             
         <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
         <div class="text-center" style="margin-top: -20%;margin-left: 45%;" >
             <a href="{{ url('admin/perfil') }}" class="btn btn-danger mt-4">Cancelar</a>
@@ -85,5 +81,4 @@
 </div>
 <script></script>
 </div>
-
 @endsection

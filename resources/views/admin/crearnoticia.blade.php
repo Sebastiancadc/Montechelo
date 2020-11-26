@@ -1,7 +1,5 @@
 @extends('admin.layout')
 @section('content')
-
-
 <!-- Crear Noticia -->
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
@@ -13,7 +11,6 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-
                                 <li class="breadcrumb-item active" aria-current="page">Publicar noticia</li>
                             </ol>
                         </nav>
@@ -22,10 +19,8 @@
         </div>
     </div>
 </div>
-
 <br>
 <br>
-
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class="col-lg-8 card-wrapper">
@@ -35,8 +30,6 @@
                         <form  method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
                             @csrf @method('POST')
                             <input type="hidden" name="user_id"  name="user_id" value="{{$user->id}}";>
-
-
                                 <div class="form-group">
                                     @if (session('noticia_crear'))
                                     <div class="alert alert-success mt-3">
@@ -58,7 +51,6 @@
                                           @endforeach
                                         </select>
                                     </div>
-
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
                                         <div class="col-md-12">
@@ -68,7 +60,6 @@
                                         <strong class="text-danger" >{{ $errors->first('body') }}</strong>
                                         @endif
                                     </div>
-
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="form-control-label"> Portada </label>
@@ -76,21 +67,17 @@
                                             @if ($errors->has('image'))
                                             <strong class="text-danger" >{{ $errors->first('image') }}</strong>
                                             @endif
-
                                         </div>
                                     </div>
-
                                     <div class="col-lg-6 col-5 text-right" style="float: right;">
                                         <button type="submit" class="btn btn-primary my-4">Enviar</button>
                                     </div>
                             </input>
                       </form>
                  </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
