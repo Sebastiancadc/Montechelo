@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //buzon
     Route::resource('buzon', 'BuzonDeSugerenciasController');
-    //Route::delete('deletebuzon/{id}', 'BuzonDeSugerenciasController@destroy')->name('eliminarbuzon');
+    Route::delete('deletesugerencia/{Id_sugerencia}', 'BuzonDeSugerenciasController@destroy')->name('eliminarsugerencia');
 
     //Canlendario
     Route::get('eventos', 'CalendarioController@eventos');
@@ -98,7 +98,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('admin/editarcapacitacion/{id_capacitacion}', 'CapacitacionesController@edit')->name('editarcapacitacion');
     Route::put('/update/{id_capacitacion}', 'CapacitacionesController@update')->name('update');
     Route::delete('deletecapacitacion/{id_capacitacion}', 'CapacitacionesController@destroy')->name('eliminarcapacitacion');
-
 });
 
 
@@ -120,63 +119,63 @@ Route::get('repositoriocola', function () {
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
 Route::group(['prefix' => ''], function () {
-//Usuario
-Route::resource('perfil', 'PerfilController');
-Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');
-Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
+    //Usuario
+    Route::resource('perfil', 'PerfilController');
+    Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');
+    Route::put('editarprofile/{id}', 'PerfilController@updateProfile')->name('editarprofile');
 
-//Directorio
-Route::resource('directorio', 'DirectorioController');
+    //Directorio
+    Route::resource('directorio', 'DirectorioController');
 
-Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
-Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
+    Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
+    Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 
-//Noticias
-Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
-Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
-Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
-Route::get('post/{slug}', 'NoticiasController@post')->name('post');
-
-
+    //Noticias
+    Route::get('noticiausu', 'NoticiasController@index2')->name('index2');
+    Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
+    Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
+    Route::get('post/{slug}', 'NoticiasController@post')->name('post');
 
 
-//Canlendario
-Route::get('calendar', 'CalendarioController@index')->name('calendar');
-Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
-Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
-Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
-Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
-Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
-Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
-
-//Solicitud
-Route::resource('solicitud', 'SolicitudController');
-Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
-Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
-Route::get('/solicitudes/pdf', [SolicitudController::class, 'createPDF']);
-Route::get('/nomina/pdf', [SolicitudController::class, 'storagePDF']);
-
-//Buzon
-Route::resource('buzon', 'BuzonDeSugerenciasController');
-Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
-Route::get('buzonusu', 'BuzonDeSugerenciasController@index2')->name('index2');
-Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')->name('crearsugerencias');
-
-//Novedad
-Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
-Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
-
-//capacitaciones
-Route::resource('capacitaciones', 'CapacitacionesController');
-//Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
 
 
-//Imagen de perfil
-Route::post('foto', 'PerfilController@updatePhoto');
-Route::post('fotoportada', 'PerfilController@updatePhotoportada');
+    //Canlendario
+    Route::get('calendar', 'CalendarioController@index')->name('calendar');
+    Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
+    Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
+    Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
+    Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
+    Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
+    Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
 
-//pausas activas
-Route::resource('pausasactivas', 'PausasActivasController');
+    //Solicitud
+    Route::resource('solicitud', 'SolicitudController');
+    Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
+    Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
+    Route::get('/solicitudes/pdf', [SolicitudController::class, 'createPDF']);
+    Route::get('/nomina/pdf', [SolicitudController::class, 'storagePDF']);
+
+    //Buzon
+    Route::resource('buzon', 'BuzonDeSugerenciasController');
+    Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
+    Route::get('buzonusu', 'BuzonDeSugerenciasController@index2')->name('index2');
+    Route::post('crearsugerencias', 'BuzonDeSugerenciasController@crearsugerencias')->name('crearsugerencias');
+
+    //Novedad
+    Route::get('crearnovedad', 'NovedadController@crearnovedad')->name('crear');
+    Route::post('crearnovedades', 'NovedadController@crearnovedades')->name('crearnovedades');
+
+    //capacitaciones
+    Route::resource('capacitaciones', 'CapacitacionesController');
+    //Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
+
+
+    //Imagen de perfil
+    Route::post('foto', 'PerfilController@updatePhoto');
+    Route::post('fotoportada', 'PerfilController@updatePhotoportada');
+
+    //pausas activas
+    Route::resource('pausasactivas', 'PausasActivasController');
 });
 
 //Talento Humano
