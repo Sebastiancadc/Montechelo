@@ -28,13 +28,12 @@
     </div>
     <!-- Page content -->
     <div class="container-fluid mt--6">
-{{--
         @if(session('eliminar'))
-    <div class="alert alert-success mt-3">
-        {{session('eliminar')}}
-    </div>
-    @endif
- --}}
+        <div class="alert alert-success mt-3">
+            {{session('eliminar')}}
+        </div>
+        @endif
+
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -78,13 +77,42 @@
                                     </td>
 
                                     <td>
-                                    <a href="#!" class="table-action table-action-delete" data-toggle="modal"  data-target="#deletebuzon{{$item->id}}" data-original-title="Eliminar sugerencia">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                        <a href="#!"  style="margin-left: 20px" class="table-action table-action-delete" data-toggle="modal" data-target="#deletesugerencia{{$item->Id_sugerencia}}" data-original-title="Eliminar sugerencia">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
                                     </td>
+
+                                    <div class="modal fade" id="deletesugerencia{{$item->Id_sugerencia}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                                        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body p-0">
+                                                    <div class="card bg-secondary border-0 mb-0">
+
+                                                        <div class="card-body px-lg-5 py-lg-5">
+                                                            <div class="text-center text-muted mb-4">
+                                                                <h3>¿Eliminar la sugerencia?</h3>
+                                                            </div>
+                                                            <form role="form" method="POST" action="{{route('eliminarsugerencia',$item->Id_sugerencia)}}">
+                                                                @csrf @method('DELETE')
+
+                                                                <div class="text-center">
+                                                                    <button type="submit" class="btn btn-primary my-4">Eliminar</button>
+                                                                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
                                 </tr>
                                 @endforeach
                             </tbody>
+
                         </table>
 
                     </div>

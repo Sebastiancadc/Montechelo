@@ -16,13 +16,13 @@ class BuzonDeSugerenciasController extends Controller
      */
     public function index()
     {
-        $buzon=buzon_de_sugerencias::all();
+        $buzon = buzon_de_sugerencias::all();
         return view('admin.buzon.index', compact('buzon'));
     }
 
     public function index2()
     {
-        $buzon=buzon_de_sugerencias::all();
+        $buzon = buzon_de_sugerencias::all();
         return view('admin.buzon', compact('buzon'));
     }
 
@@ -43,11 +43,13 @@ class BuzonDeSugerenciasController extends Controller
         return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Sugerencia registrada correctamente');
     }
 
-    public function destroy($id)
+    public function destroy($Id_sugerencia)
     {
-        $data = buzon_de_sugerencias::findOrFail($id);
-        $data->delete();
-        return redirect('admin/buzon/index')->with('eliminarsugerencia','la sugerencia  se elimino');
+
+
+        $eliminarsugerencia = buzon_de_sugerencias::findOrFail($Id_sugerencia);
+        $eliminarsugerencia->delete();
+        return back()->with('eliminar', 'La sugerencia se elimino corectamente ');
     }
 
     public function logout()
