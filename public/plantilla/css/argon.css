@@ -26856,8 +26856,8 @@ table.dataTable tbody > tr.selected
 .fc-view > table
 {
     overflow: hidden;
-
     border: 0;
+    z-index: 0;
 }
 
 .fc-view > table > tbody > tr .ui-widget-content
@@ -29669,6 +29669,7 @@ width: 45px;
     width: 352px;
     margin-left: 66%;
     margin-top: -33px;
+    z-index: 0;
 }
 
 .epep{

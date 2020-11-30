@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Solicitud;
 use App\User;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -115,5 +116,5 @@ class SolicitudController extends Controller
 
         // download PDF file with download method
         return $pdf->download('certificado.pdf');
-      }
+      } 
 }

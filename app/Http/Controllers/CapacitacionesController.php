@@ -39,7 +39,7 @@ class CapacitacionesController extends Controller
     public function store(Request $request)
     {
         $CapacitacionAgregar = new Capacitaciones;
-        $CapacitacionAgregar->id_capacitacion = $request->id_capacitacion;
+        $CapacitacionAgregar->titulo = $request->titulo;
         $CapacitacionAgregar->fecha = new \Datetime($request->fecha);
         $CapacitacionAgregar->descripcion = $request->descripcion;
         $CapacitacionAgregar->categoria = $request->categoria;

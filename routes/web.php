@@ -152,8 +152,8 @@ Route::group(['prefix' => ''], function () {
     Route::resource('solicitud', 'SolicitudController');
     Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
     Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
-    Route::get('/solicitudes/pdf', [SolicitudController::class, 'createPDF']);
-    Route::get('/nomina/pdf', [SolicitudController::class, 'storagePDF']);
+    Route::get('solicitudespdf','SolicitudController@createPDF');
+    Route::get('nominapdf', 'SolicitudController@storagePDF');
 
     //Buzon
     Route::resource('buzon', 'BuzonDeSugerenciasController');

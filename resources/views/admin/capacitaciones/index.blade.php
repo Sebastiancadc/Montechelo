@@ -91,7 +91,7 @@
                         <tbody>
                             @foreach ($capacitaciones as $item)
                             <tr>
-                                <td>{{$item->id_capacitacion}}</td>
+                                <td></td>
                                 <th>{{$item->titulo}}</th>
                                 <th>{{$item->fecha}}</th>
                                 <th>{{$item->descripcion}}</th>

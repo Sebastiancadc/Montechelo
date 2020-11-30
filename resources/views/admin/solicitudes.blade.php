@@ -50,7 +50,7 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
                 <div class="card-body epep" >
-                    <a href="{{ URL::to('/solicitudes/pdf') }}">
+                    <a href="{{url('solicitudespdf') }}">
                       <img src="{{asset("plantilla/img/theme/labo.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
@@ -66,8 +66,9 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
         </div>
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
+                {{-- <a href="{{url('/nomina/pdf')}}" target="_blank"> Descargar</a> --}}
                 <div class="card-body epep">
-                    <a href="{{ URL::to('/nomina/pdf') }}">
+                    <a href="{{url('nominapdf')}}">               
                       <img src="{{asset("plantilla/img/theme/nomina.png")}}" class="rounded-circle img-center img-fluid " style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
