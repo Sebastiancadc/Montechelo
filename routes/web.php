@@ -51,7 +51,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
     Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
-
+    
+    //DASBOARD ADMIN
+    Route::get('HomeAdmin', 'InicioController@indexAdmin');
     //Novedad
     Route::resource('novedad', 'NovedadController');
     Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
@@ -135,9 +137,6 @@ Route::group(['prefix' => ''], function () {
     Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
     Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
     Route::get('post/{slug}', 'NoticiasController@post')->name('post');
-
-
-
 
     //Canlendario
     Route::get('calendar', 'CalendarioController@index')->name('calendar');

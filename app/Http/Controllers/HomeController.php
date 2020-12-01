@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -28,8 +29,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(4);
-        return view('admin.usuario', compact('users'));
+        $users = User::all();
+        $usuariosregistrados = DB::table('usuario')->count();
+        $hombres = DB::table('usuario')->wheregenero('Hombre')->count();
+        $mujeres = DB::table('usuario')->wheregenero('Mujer')->count();
+        $otro = DB::table('usuario')->wheregenero('otro')->count();
+        $diseño = DB::table('usuario')->wherearea('diseño')->count();
+        $marketing = DB::table('usuario')->wherearea('marketing')->count();
+        $produccion = DB::table('usuario')->wherearea('produccion')->count();
+        $programacion = DB::table('usuario')->wherearea('programacion')->count();
+        $administradores = DB::table('usuario')->whererole('admin')->count();
+        $colaboradores = DB::table('usuario')->whererole('colaborador')->count();
+
+        return view('admin.usuario', compact('users','usuariosregistrados','hombres','mujeres','otro','diseño','marketing'
+        ,'produccion','programacion','administradores','colaboradores'));
     }
 
 
@@ -50,7 +63,7 @@ class HomeController extends Controller
         $user->messenger_color = $request->messenger_color;
         $user->role = $request->role;
         $user->save();
-        return redirect('admin/usuario');
+        return redirect('admin/usuario')->with('crearUsuario', 'Usuario creado correctamente');
     }
 
     public function storeAdmin(Request $request)
@@ -70,7 +83,7 @@ class HomeController extends Controller
         $user2->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
         $request['role'] = 'admin';
         $user2->save();
-        return redirect('admin/usuario');
+        return redirect('admin/usuario')->with('crearUsuario', 'Usuario creado correctamente');
     }
 
     public function crearAdmin()

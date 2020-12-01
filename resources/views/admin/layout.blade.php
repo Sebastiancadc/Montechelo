@@ -158,9 +158,6 @@
       <li class="nav-item">
         <a href="{{ url('admin/capacitaciones')}}" class="nav-link">Capacitaciones</a>
       </li>
-
-
-
     </ul>
   </div>
 </li>
@@ -497,20 +494,13 @@
                   <i class="ni ni-single-02"></i>
                   <span>Mi perfil</span>
                 </a>
-                <a href="#!" class="dropdown-item">
+                @if ($user->role=='admin')
+                <a href="{{ url('admin/HomeAdmin')}}" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
-                  <span>Ajustes</span>
+                  <span>Administrador</span>
                 </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Activity</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-support-16"></i>
-                  <span>Support</span>
-                </a>
+                @endif
                 <div class="dropdown-divider"></div>
-
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
                   <i class="ni ni-user-run"></i>

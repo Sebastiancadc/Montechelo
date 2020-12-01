@@ -1,108 +1,96 @@
-
-                    <div class="col-md-4">                        
-                        <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                          <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                            <div class="modal-content">
-                              <div class="modal-body p-0">
-                                <div class="card bg-secondary border-0 mb-0">  
-                                  <div class="card-body px-lg-5 py-lg-5">
-                                    <div class="text-center text-muted mb-4">
-                                      <small>Crea el usuario</small>
-                                    </div>
-                                    <form role="form" method="POST" action="{{url('admin/usuario')}}" >
-                                        @csrf @method('POST')                                       
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Nombre" name="name" type="text">
-                                        </div>
-                                      </div>
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Email" name="email" type="email">                                          
-                                        </div>
-                                      </div>
-                                      <input value="colaborador" name="role" hidden>
-                                      <div class="row">
-                                        <div class="col-md-6">
-                                      <div class="form-group">
-                                          <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                            </div>
-                                            <input class="form-control datepicker" id="datepicker" name="cumpleanios" placeholder="Select date" type="text">
-                                        </div>
-                                    </div>
-                                  </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <select class="form-control" id="exampleFormControlSelect1" name="genero" id="genero">
-                                            <option>Genero</option>
-                                            <option>Hombre</option>
-                                            <option>Mujer</option>
-                                            <option>Otro</option>
-                                          </select>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                          <input class="form-control" name="phone" placeholder="Telefono" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
-                                      </div>
-                                  </div>
-                                </div>
-                                    <div class="col-md-6">
-                                      <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1" name="area" id="genero">
-                                          <option>Area</option>
-                                          <option>Programacion</option>
-                                          <option>Diseño</option>
-                                          <option>Produccion</option>
-                                        </select>
-                                      </div>
-                                  </div>
-                                  </div>
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Contraseña" name="password" type="password">
-                                        </div>
-                                      </div>                                      
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Confimrar contraseña" name="password_confirmation" type="password">
-                                        </div>
-                                      </div>
-                                        <div class="text-center">
-                                        <button type="submit" class="btn btn-primary my-4">Crear</button>
-                                        <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
-                                      </div>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+<!-- Modal -->
+<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header no-bd">
+              <h2 class="modal-title">                
+                  Crear usuario
+              </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+             <br>
+              <form  role="form" method="POST" action="{{url('admin/usuario')}}">
+                  @csrf @method('POST') 
+                  <div class="row">  
+                      <div class="col-sm-12">
+                          <div class="form-group form-group-default">
+                              <label>Nombre</label>
+                              <input  type="text" class="form-control" placeholder="Tu nombre..." name="name" required>
                           </div>
-                        </div>
+                      </div>                     
+                      
+                      <div class="col-md-6 pr-0">
+                          <div class="form-group form-group-default">
+                              <label>Fecha de nacimiento</label>
+                              <input type="text" class="form-control" id="datepicker" name="datepicker" name="cumpleanios" required>
+                          </div>
                       </div>
-                      <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
-                     <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
-                      <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-                      <script>
-                        $(function () {
-                            $('#datepicker').datepicker({
-                            });
-                        });
-                      </script>
+                      <div class="col-md-6">
+                          <div class="form-group form-group-default">
+                              <label>Genero</label>
+                              <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect1" name="genero" style="margin-top: -14px;width: 215px;margin-left: -21px;" required>
+                                      <option></option>
+                                      <option>Hombre</option>
+                                      <option>Mujer</option>
+                                      <option>Otro</option>
+                                  </select>
+                              </div>
+                          </div>
+                          
+                      </div>
+                    
+                      <div class="col-md-6">
+                          <div class="form-group form-group-default">
+                              <label>Telefono</label>
+                              <input type="text" class="form-control" placeholder="3123123212..." name="phone" required>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group form-group-default">
+                              <label>Rol</label>
+                              <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect1" name="role" style="margin-top: -14px;width: 215px;margin-left: -21px;" required>
+                                      <option></option>
+                                      <option value="admin">Administrador</option>
+                                      <option >Colaborador</option>
+                                      
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-12">
+                          <div class="form-group form-group-default">
+                              <label>Correo</label>
+                              <input  type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co..."  name="email" required>
+                          </div>
+                      </div> 
+                      
+                      <div class="col-md-6">
+                          <div class="form-group form-group-default">
+                              <label>Contraseña</label>
+                              <input class="form-control" type="password" name="password" required>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group form-group-default">
+                              <label>Confirmar contraseña</label>
+                              <input class="form-control" type="password" name="password_confirmation" required>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer no-bd">
+              
+                      <button type="submit"  class="btn btn-primary">Añadir</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  </div>
+              </form>
+          </div>
+          
+      </div>
+  </div>
+</div>

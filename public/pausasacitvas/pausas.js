@@ -5,7 +5,7 @@ setTimeout(function(){
     width: 750,
     height: 550
     });
-    }, 3000);
+    }, 10800000);
 
   function makeArray(n) {
   this.length = n;

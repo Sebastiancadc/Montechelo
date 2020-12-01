@@ -8,6 +8,7 @@ use App\Noticia;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class InicioController extends Controller
 {
@@ -72,5 +73,9 @@ class InicioController extends Controller
         return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias'));
     }
 
-
+    public function indexAdmin()
+    {
+        $usuariosregistrados = DB::table('usuario')->count();
+        return view('admin.dashboardAdmin', compact('usuariosregistrados'));
+    }
 }
