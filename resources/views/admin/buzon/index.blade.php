@@ -1,125 +1,111 @@
-@extends('admin.layout')
-@section('content')
-    <div class="header bg-primary pb-6">
-        <div class="container-fluid">
-            <div class="header-body">
-                <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Buzon de sugerencias</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Administrador</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Sugerencias</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-                <!-- Card stats -->
-                <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card card-stats">
-                            <!-- Card body -->
-                        </div>
-                    </div>
-                </div>
+@extends('admin.layoutAdmin')
+@section('contents')
+
+<div class="main-panel">
+    <div class="content">
+        <div class="page-inner">
+            @include('admin.buzon.estadisticas')
+            @if (session('eliminar'))
+            <div class="alert alert-danger" role="alert">
+                {{(session('eliminar'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
             </div>
-        </div>
-    </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--6">
-        @if(session('eliminar'))
-        <div class="alert alert-success mt-3">
-            {{session('eliminar')}}
-        </div>
-        @endif
-
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <!-- Card header -->
-                    <div class="card-header border-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="mb-0">Gestión de sugerencias</h3>
+          @endif
+            <div class="row">              
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <h4 class="card-title">Gestión de Buzon</h4>
+                               
                             </div>
-
                         </div>
-                    </div>
-
-                    <!-- Light table -->
-                    <div class="table-responsive py-4" style="margin-top: -40px;">
-
-                        <table class="table table-flush test" id="datatable-basic">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col" class="sort" data-sort="nombre">#</th>
-                                    <th scope="col" class="sort" data-sort="nombre">Tipo de sugerencia</th>
-                                    <th scope="col" class="sort" data-sort="apellido">Descripcion</th>
-                                    <th scope="col" class="sort" data-sort="género">Area</th>
-                                    <th scope="col" class="sort" data-sort="género">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($buzon as $item)
-                                <tr>
-                                    <td>
-                                        <span class="text-muted"></span>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->tipo_sugerencia}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->descripcion}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">{{$item->area}}</span>
-                                    </td>
-
-                                    <td>
-                                        <a href="#!"  style="margin-left: 20px" class="table-action table-action-delete" data-toggle="modal" data-target="#deletesugerencia{{$item->Id_sugerencia}}" data-original-title="Eliminar sugerencia">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
-
-                                    <div class="modal fade" id="deletesugerencia{{$item->Id_sugerencia}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                                        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body p-0">
-                                                    <div class="card bg-secondary border-0 mb-0">
-
-                                                        <div class="card-body px-lg-5 py-lg-5">
-                                                            <div class="text-center text-muted mb-4">
-                                                                <h3>¿Eliminar la sugerencia?</h3>
+                        <div class="card-body">
+                            
+                            <div class="table-responsive">
+                                <table id="add-row" class="display table table-striped table-hover" >
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de sugerencia</th>
+                                            <th>Area</th>         
+                                            <th>Descripcion</th>                   
+                                            <th style="width: 10%">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($buzon as $item)
+                                        <tr>                                           
+                                            <td>{{$item->tipo_sugerencia}}</td>
+                                            <td>{{$item->area}}</td>
+                                            <td>{{$item->descripcion}}</td>
+    
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deletesugerencia{{$item->Id_sugerencia}}" data-original-title="Eliminar usuario">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                    <!-- Modal -->
+                                                <div class="modal fade" id="deletesugerencia{{$item->Id_sugerencia}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+	                                                <div class="modal-dialog modal-dialog-centered" role="document">
+		                                                <div class="modal-content">
+			                                                <div class="modal-header">
+				                                                <h3>¿Estás seguro?</h3>
+				                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                                                <span aria-hidden="true">&times;</span>
+				                                                </button>
                                                             </div>
                                                             <form role="form" method="POST" action="{{route('eliminarsugerencia',$item->Id_sugerencia)}}">
                                                                 @csrf @method('DELETE')
-
-                                                                <div class="text-center">
-                                                                    <button type="submit" class="btn btn-primary my-4">Eliminar</button>
-                                                                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
+			                                                <div class="modal-body">
+                                                                ¡No podrás revertir esto!			                                               
+                                                             </div>
+			                                                <div class="modal-footer">
+				                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+				                                                <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                            </div>
+                                                        </form>
+		                                                </div>
+	                                                </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </tr>
-                                @endforeach
-                            </tbody>
-
-                        </table>
-
+                                                
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                    @endforeach
+                                </table>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <script src="{{asset("js/numerotabla.js")}}"></script>
-    @endsection
+    
+</div>
+
+</div>
+
+@section('js')
+    <!--   Core JS Files   -->
+<script src="{{asset("plantillaAdmin/assets/js/core/jquery.3.2.1.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/core/popper.min.js")}}"></script>
+<!-- Datatables -->
+<script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
+
+<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
+<script>
+$('#datepicker').datetimepicker({
+    format: 'DD/MM/YYYY',
+});
+$('#datetime').datetimepicker({
+			format: 'MM/DD/YYYY H:mm',
+		});
+</script>
+@endsection
+@endsection

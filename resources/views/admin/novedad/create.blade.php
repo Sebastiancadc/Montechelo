@@ -1,59 +1,63 @@
+<!-- Modal -->
+<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header no-bd">
+              <h2 class="modal-title">                
+                  Crear novedad
+              </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+             <br>
+             <form role="form" method="POST" action="{{ url('admin/novedad')}}" >
+              @csrf @method('POST')
+                  <div class="row">  
 
-                    <div class="col-md-4">
-                        <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                          <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                            <div class="modal-content">
-                              <div class="modal-body p-0">
-                                <div class="card bg-secondary border-0 mb-0">
-                                  <div class="card-body px-lg-5 py-lg-5">
-                                    <div class="text-center text-muted mb-4">
-                                      <small>Crea la novedad</small>
-                                    </div>
-                                    <form role="form" method="POST" action="{{ url('admin/novedad')}}" >
-                                        @csrf @method('POST')
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-satisfied"></i></span>
-                                          </div>
-                                          <select class="form-control" id="exampleFormControlSelect1" name="area" required>
-                                            <option>Seleccione algun campo</option>
-                                            <option>Desarrollo</option>
-                                            <option>Talento humano</option>
-                                            <option>Recursos humanos</option>
-                                            <option>Produccion</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                          </div>
-                                          <input class="form-control"  name="fecha" type="date" required>
-                                        </div>
-                                      </div>
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-active-40"></i></span>
-                                          </div>
-                                          <input class="form-control" placeholder="Novedad" name="novedad" type="text" required>
-                                        </div>
-                                      </div>
-                                      <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">                                    
-                                        <textarea class="form-control" placeholder="Descripcion de la novedad" name="descripcion" type="text" cols="10" rows="5" required></textarea>
-                                        </div>
-                                      </div>
-                                      <div class="text-center">
-                                        <button type="submit" class="btn btn-primary my-4">crear</button>
-                                      </div>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                    <div class="col-sm-12">
+                      <div class="form-group form-group-default">
+                          <label>Area</label>
+                          <div class="form-group">
+                            <select id="s" name="area" class="form-control">
+                              <option>Seleccione algun campo</option>
+                              <option>Desarrollo</option>
+                              <option>Talento humano</option>
+                              <option>Recursos humanos</option>
+                              <option>Produccion</option>
+                            </select>
                           </div>
-                        </div>
                       </div>
+                  </div>
+                      <div class="col-sm-12">
+                          <div class="form-group form-group-default">
+                              <label>Fecha</label>
+                              <input type="text" class="form-control" id="datepicker" name="fecha" name="cumpleanios" required>
+                          </div>
+                      </div>                     
+                      <div class="col-sm-12">
+                        <div class="form-group form-group-default">
+                            <label>Novedad</label>
+                            <input type="text" class="form-control" id="datepicker"  name="novedad" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group form-group-default">
+                          <label>Descripcion de la novedad</label>
+                          <textarea class="form-control" name="descripcion" type="text" cols="10" rows="5" required></textarea>
+                      </div>
+                  </div> 
+                  </div>
+                  <div class="modal-footer no-bd">
+              
+                      <button type="submit"  class="btn btn-primary">Añadir</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  </div>
+              </form>
+          </div>
+          
+      </div>
+  </div>
+</div>

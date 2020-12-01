@@ -100,7 +100,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('solicitud')}}">
+              <a class="nav-link" href="{{url('solicitudesd')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>

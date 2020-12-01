@@ -44,7 +44,7 @@
                                 <option>Observacion</option>
                                 <option>Novedad</option>
                                 <option>Mejoras</option>
-                                <option>Felicidades</option>
+                                <option>Felicitaciones</option>
                             </select>
                         </div>
                         @error('titulo')

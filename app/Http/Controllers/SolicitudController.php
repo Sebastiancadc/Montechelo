@@ -8,6 +8,7 @@ use App\User;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use PDF;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -31,13 +32,27 @@ class SolicitudController extends Controller
     public function index()
     {
         $solicitud = Solicitud::paginate(4);
-        return view('admin.solicitudes', compact('solicitud'));
+        $solicitudes = DB::table('solicitud')->count();
+        $desarollo = DB::table('solicitud')->wherearea_trabajo('Desarrollo')->count();
+        $talentohumano = DB::table('solicitud')->wherearea_trabajo('talento humano')->count();
+        $recursoshumanos = DB::table('solicitud')->wherearea_trabajo('recursos humanos')->count();
+        $produccion = DB::table('solicitud')->wherearea_trabajo('produccion')->count();
+        $vacaciones = DB::table('solicitud')->wheretipo_solicitud('vacaciones')->count();
+        $pagos = DB::table('solicitud')->wheretipo_solicitud('desprendibles de pago')->count();
+        $pendientes = DB::table('solicitud')->whereestado_solicitud('pendiente')->count();
+        $revisado = DB::table('solicitud')->whereestado_solicitud('revisado')->count();
+        return view('admin.solicitud', compact('solicitud','solicitudes','desarollo','talentohumano'
+        ,'recursoshumanos','produccion','pendientes','revisado','vacaciones','pagos'));
+    }
+    public function soli()
+    {
+        return view('admin.solicitudes');
     }
 
     public function store(Request $request)
     {
         Solicitud::create($request->all());
-        return redirect('admin/solicitud');
+        return redirect()->action('SolicitudController@index')->with('crearsolicitudes', 'Solicitud creada exitosamente.');
     }
 
 
@@ -72,7 +87,7 @@ class SolicitudController extends Controller
     {
         $data = Solicitud::findOrFail($id);
         $data->delete();
-        return redirect('admin/solicitud')->with('eliminar', 'La solicitud se eliminó.');
+        return redirect('admin/solicitud')->with('eliminar', 'La solicitud se eliminó correctamente.');
     }
 
     public function logout()

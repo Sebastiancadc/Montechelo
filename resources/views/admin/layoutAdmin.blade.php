@@ -123,8 +123,24 @@
 								<p>Usuarios</p>
 							</a>
                         </li>
-
-
+						<li class="nav-item ">
+                            <a href="{{url('admin/novedad')}}">                        
+								<i class="fas fa-hotel"></i>
+								<p>Novedades</p>
+							</a>
+                        </li>
+						<li class="nav-item ">
+                            <a href="{{url('admin/solicitud')}}">                        
+								<i class="fas fa-bullhorn"></i>
+								<p>Solicitudes</p>
+							</a>
+						</li>
+						<li class="nav-item ">
+                            <a href="{{url('admin/buzon')}}">                        
+								<i class="fas fa-paper-plane"></i>
+								<p>Buzon</p>
+							</a>
+                        </li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>

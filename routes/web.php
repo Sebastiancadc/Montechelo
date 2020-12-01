@@ -149,6 +149,7 @@ Route::group(['prefix' => ''], function () {
 
     //Solicitud
     Route::resource('solicitud', 'SolicitudController');
+    Route::get('solicitudesd', 'SolicitudController@soli');
     Route::get('crearsolicitud', 'SolicitudController@crearsolicitud')->name('crear');
     Route::post('crearsolicitudes', 'SolicitudController@crearsolicitudes')->name('crearsolicitudes');
     Route::get('solicitudespdf','SolicitudController@createPDF');
