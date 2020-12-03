@@ -122,7 +122,7 @@
     </footer> 
     </div>
   </div>
-  @include('admin.calendario.crear')
+  @include('admin.calendario.crearev')
 @section('js')
   
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>

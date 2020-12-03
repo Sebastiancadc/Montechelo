@@ -122,9 +122,7 @@
 </div>
 
 @section('js')
-    <!--   Core JS Files   -->
-<script src="{{asset("plantillaAdmin/assets/js/core/jquery.3.2.1.min.js")}}"></script>
-<script src="{{asset("plantillaAdmin/assets/js/core/popper.min.js")}}"></script>
+
 <!-- Datatables -->
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>

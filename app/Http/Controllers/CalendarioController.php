@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 class CalendarioController extends Controller
@@ -15,8 +16,12 @@ class CalendarioController extends Controller
 
     public function eventos()
     {
-        $eventos = Eventos::paginate(6);
-        return view('admin.calendario.eventos', compact('eventos'));
+        $eventos = Eventos::paginate(10);
+        $evento = DB::table('eventos')->count();
+        $importante = DB::table('eventos')->whereclassname('importante')->count();
+        $especial = DB::table('eventos')->whereclassname('especial')->count();
+        $advertencia = DB::table('eventos')->whereclassname('advertencia')->count();
+        return view('admin.calendario.eventos', compact('eventos','evento','importante','especial','advertencia'));
     }
 
     public $sources = [
@@ -104,12 +109,30 @@ class CalendarioController extends Controller
         return back()->with('crearevento', 'Evento registrado correctamente');
     }
 
+    public function creareventoad(Request $request)
+    {
+
+        $evento = new Eventos();
+        $evento->name = $request->name;
+        $evento->description = $request->description;
+        $evento->className = $request->className;
+        $evento->start_time = new \Datetime($request->start_time);
+        $evento->end_time = new \Datetime($request->end_time);
+        $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
+        $evento->save();
+        return redirect()->action('CalendarioController@eventos')->with('crearevento', 'Evento registrado correctamente');
+    }
     public function verevento($id)
     {
         $eventos = Eventos::find($id);
         return view('admin.calendario.edit', compact('eventos'));
     }
-
+    public function vereventoad($id)
+    {
+        $eventos = Eventos::find($id);
+        return view('admin.calendario.editAd', compact('eventos'));
+    }
+    
     public function verEventos($id)
     {
         $eventos = Eventos::find($id);
@@ -129,10 +152,30 @@ class CalendarioController extends Controller
         return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
     
     }
+    public function editarEventoAd(Request $request, $id)
+    {
+        $evento = Eventos::findOrFail($id);
+        $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
+        $evento->name = $request->name;
+        $evento->description = $request->description;
+        $evento->className = $request->className;
+        $evento->start_time = new \Datetime($request->start_time);
+        $evento->end_time = new \Datetime($request->end_time);
+        $evento->save();
+       
+        return redirect()->action('CalendarioController@eventos')->with('editarevento', 'Evento editado correctamente');
+    
+    }
     public function destroy($id)
     {
         $data = Eventos::findOrFail($id);
         $data->delete();
-        return redirect()->action('CalendarioController@index')->with('seelimino', 'Evento eliminado');
+        return redirect()->action('CalendarioController@index')->with('seelimino', 'Evento eliminado correctamente');
+    }
+    public function destroyad($id)
+    {
+        $data = Eventos::findOrFail($id);
+        $data->delete();
+        return redirect()->action('CalendarioController@eventos')->with('seeliminoad', 'Evento eliminado correctamente');
     }
 }

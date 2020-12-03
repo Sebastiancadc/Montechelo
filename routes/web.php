@@ -141,11 +141,15 @@ Route::group(['prefix' => ''], function () {
     //Canlendario
     Route::get('calendar', 'CalendarioController@index')->name('calendar');
     Route::post('Calendario/crearEvento', 'CalendarioController@crearevento')->name('crearEvento');
+    Route::post('Calendario/creareventoad', 'CalendarioController@crearevento')->name('creareventoad');
     Route::get('cumpleaños', 'CalendarioController@cumpleAños')->name('cumpleaños');
     Route::get('Calendario/verEventos/{id}', 'CalendarioController@verEventos')->name('verEventos');
     Route::get('Calendario/verEvento/{id}', 'CalendarioController@verevento')->name('verEvento');
+    Route::get('Calendario/verEventoad/{id}', 'CalendarioController@vereventoad')->name('verEventoad');
     Route::delete('Calendario/eliminarEvento/{id}', 'CalendarioController@destroy')->name('eliminarEventos');
+    Route::delete('Calendario/eliminarEventoAd/{id}', 'CalendarioController@destroyad')->name('eliminarEventosad');
     Route::put('Calendario/editarEvento/{id}', 'CalendarioController@editarEvento')->name('editarEvento');
+    Route::put('Calendario/editarEventoAd/{id}', 'CalendarioController@editarEventoAd')->name('editarEventoAd');
 
     //Solicitud
     Route::resource('solicitud', 'SolicitudController');

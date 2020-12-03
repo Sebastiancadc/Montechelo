@@ -10,7 +10,7 @@ use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use AppExportPdfs;
 
 class SolicitudController extends Controller
 {
@@ -110,6 +110,9 @@ class SolicitudController extends Controller
         'estado_solicitud' => ['string', 'max:30'],
         'status' => ['int', 'max:4'],]);
     }
+
+
+
     public function createPDF() {
         // retreive all records from db
         $data = User::all();
@@ -119,8 +122,9 @@ class SolicitudController extends Controller
         $pdf = PDF::loadView('admin.solicitud.pdf', $data);
 
         // download PDF file with download method
-        return $pdf->download('certificado.pdf');
+        return $pdf->download('Certificado Laboral.pdf');
       }
+
       public function storagePDF() {
         // retreive all records from db
         $data = User::all();
@@ -130,6 +134,6 @@ class SolicitudController extends Controller
         $pdf = PDF::loadView('admin.solicitud.pdf2', $data);
 
         // download PDF file with download method
-        return $pdf->download('certificado.pdf');
+        return $pdf->download('Certificado De Nomina.pdf');
       } 
 }

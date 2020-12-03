@@ -49,8 +49,8 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
         </div>
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
-                <div class="card-body epep" >
-                    <a href="{{url('solicitudespdf') }}">
+                <div class="card-body epep">
+                    <a href="{{url('solicitudespdf')}}">
                       <img src="{{asset("plantilla/img/theme/labo.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">

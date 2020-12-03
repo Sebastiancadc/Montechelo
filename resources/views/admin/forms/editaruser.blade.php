@@ -102,7 +102,7 @@
 												<i class="fas fa-venus-mars"></i>
 											</span>
 										</div>
-										<select id="basic" name="genero" class="form-control">
+										<select id="basic2" name="genero" class="form-control">
 											<option>{{$userActualizar->genero}}</option>
                     						<option>Hombre</option>
                     						<option>Mujer</option>
@@ -137,7 +137,7 @@
 													<i class="fas fa-people-carry"></i>
 												</span>
 											</div>								
-												<select id="basic" name="area" class="form-control">
+												<select id="basic3" name="area" class="form-control">
 													<option>{{$userActualizar->area}}</option>
 													<option>Programacion</option>
 													<option>Diseño</option>
@@ -192,7 +192,13 @@ $('#datepicker').datetimepicker({
 });
 $('#basic').select2({
 			theme: "bootstrap"
-		});
+});
+$('#basic2').select2({
+			theme: "bootstrap"
+});
+$('#basic3').select2({
+			theme: "bootstrap"
+});
 </script>
 @endsection
 @endsection

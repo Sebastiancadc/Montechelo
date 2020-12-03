@@ -140,6 +140,18 @@
 								<i class="fas fa-paper-plane"></i>
 								<p>Buzon</p>
 							</a>
+						</li>
+						<li class="nav-item ">
+                            <a href="{{url('admin/eventos')}}">                        
+								<i class="fas fa-calendar-alt"></i>
+								<p>Eventos</p>
+							</a>
+						</li>
+						<li class="nav-item ">
+                            <a href="{{url('admin/repositorio')}}">                        
+								<i class="fas fa-cloud-upload-alt"></i>
+								<p>Repositorio</p>
+							</a>
                         </li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
