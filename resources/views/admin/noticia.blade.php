@@ -40,7 +40,7 @@
                         <div class="card-body flex-column position-static">
                             <strong class="h4 d-inline-block mb-2 text-primary">{{ $item->category->name}}</strong>
                             <h5 class="h2 card-title mb-0">{{$item->title }}</h5>
-                            
+
                             <small class="text-muted">{{ $item->created_at->format('d/m/Y') }} Escrito por <cite title="Source Title">{{$item->user->name}}</cite></small>
                             <p class="card-text mt-4">{{ substr($item->body, 0,20) }}...</p>
                             <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
@@ -54,16 +54,16 @@
 <div class="col-lg-10">
   <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
 <div class="modal-dialog modal-dialog-centered modal-" role="document">
-    <div class="modal-content ">       
+    <div class="modal-content ">
         <div class="modal-header">
          <span aria-hidden="true"></span>
         </div>
-        <div class="modal-body"> 
-         <p>Por favor termine el registro para poder ingresar</p>                      
+        <div class="modal-body">
+         <p>Por favor termine el registro para poder ingresar</p>
      </div>
         <div class="modal-footer">
            <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
-         </div>   
+         </div>
        </div>
 </div>
 </div>

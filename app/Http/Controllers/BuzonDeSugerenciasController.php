@@ -22,7 +22,7 @@ class BuzonDeSugerenciasController extends Controller
         $reclamos = DB::table('buzon_de_sugerencias')->wheretipo_sugerencia('reclamos')->count();
         $observacion = DB::table('buzon_de_sugerencias')->wheretipo_sugerencia('observacion')->count();
         $novedad = DB::table('buzon_de_sugerencias')->wheretipo_sugerencia('novedad')->count();
-        $felicitaciones = DB::table('buzon_de_sugerencias')->wheretipo_sugerencia('felicitaciones')->count();       
+        $felicitaciones = DB::table('buzon_de_sugerencias')->wheretipo_sugerencia('felicitaciones')->count();
         $diseño = DB::table('buzon_de_sugerencias')->wherearea('diseño')->count();
         $recursoshumanos = DB::table('buzon_de_sugerencias')->wherearea('Recursos Humanos')->count();
         $administracion = DB::table('buzon_de_sugerencias')->wherearea('administracion')->count();

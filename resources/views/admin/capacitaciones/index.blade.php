@@ -1,154 +1,161 @@
-<!--
-@extends('admin.layout')
 
-
-@section('content')
-
-<body>
-    <!-- Header -->
-<!-- Header -->
-<div class="header bg-primary pb-6">
-    <div class="container-fluid">
-        <div class="header-body">
-            <div class="row align-items-center py-4">
-                <div class="col-lg-6 col-7">
-                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                        <h6 class="h2 text-white d-inline-block mb-0">Capacitaciones</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Administrador</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Capacitaciones</li>
-                            </ol>
-                        </nav>
-                </div>
-
+@extends('admin.layoutAdmin')
+@section('contents')
+<div class="main-panel">
+    <div class="content">
+        <div class="page-inner">
+             @include('admin.capacitaciones.estadisticas')
+            @if (session('agregar'))
+            <div class="alert alert-primary" role="alert">
+                {{(session('agregar'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
             </div>
+          @endif
 
+            @if (session('eliminar'))
+            <div class="alert alert-danger" role="alert">
+                {{(session('eliminar'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+          @endif
+
+            @if (session('update'))
+          <div class="alert alert-warning" role="alert">
+           {{(session('update'))}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
         </div>
+          @endif
 
-    </div>
-</div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <h4 class="card-title">Gestión de Capacitaciones</h4>
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
+                                    <i class="fa fa-plus"></i>
+                                    Crear Capacitacion
+                                </button>
+                            </div>
 
-<br>
 
-<!-- Page content -->
-<div class="container-fluid mt--6">
-    {{-- alerta agregar--}}
-    @if(session('agregar'))
-    <div class="alert alert-success mt-3">
-        {{session('agregar')}}
-    </div>
-    @endif
 
-    @if(session('eliminar'))
-    <div class="alert alert-success mt-3">
-        {{session('eliminar')}}
-    </div>
-    @endif
 
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <!-- Card header -->
-              
-                <div class="card-header border-0">
-                    <div class="row">
-                        <div class="col-6">
-                            <h3 class="mb-0">Gestión de Usuarios</h3>
-                        </div>                         
-                        <div class="col-6 text-right">
-                            <a href="#" class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="modal" data-target="#modal-form" data-original-title="Añadir usuario">
-                                <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
-                                <span class="btn-inner--text">Crear </span>
-                            </a>
+                        </div>
+                        <div class="card-body">
                             @include('admin.capacitaciones.create')
-                        </div>                     
-                    </div>
-                    <br>
-                    @if (session('update'))
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                      <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                      <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('update')}}</span>
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  @endif
-                </div>               
-                <!-- Light table -->
-                <div class="table-responsive py-4" style="margin-top: -51px;">
-                    <table class="table table-flush test" id="datatable-basic">
-                        <thead class="thead-light">
-                            <th>#</th>
-                            <th>Titulo</th>
-                            <th>Fecha</th>
-                            <th>Descripción</th>
-                            <th>Categoria </th>
-                            <th>Link</th>                         
-                            <th>Acciones</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($capacitaciones as $item)
-                            <tr>
-                                <td></td>
-                                <th>{{$item->titulo}}</th>
-                                <th>{{$item->fecha}}</th>
-                                <th>{{$item->descripcion}}</th>
-                                <th>{{$item->categoria}}</th>
-                                <th>{{$item->link}}</th>
-                                <th>
-                                    <a href="{{route('editarcapacitacion',$item->id_capacitacion)}}" class="table-action">
-                                        <i class="fas fa-user-edit"></i>
-                                    <a/>
-                                    <a href="#!" class="table-action table-action-delete" data-toggle="modal" data-target="#deletecapacitacion{{$item->id_capacitacion}}" data-original-title="Eliminar novedad">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </th>
-                                <div class="modal fade" id="deletecapacitacion{{$item->id_capacitacion}}" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                                    <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-body p-0">
-                                                <div class="card bg-secondary border-0 mb-0">
+                            <div class="table-responsive">
+                                <table id="add-row" class="display table table-striped table-hover" >
+                                    <thead>
+                                        <tr>
+                                            {{-- <th>#</th> --}}
+                                            <th>Titulo</th>
+                                            <th>Fecha</th>
+                                            <th>Descripción</th>
+                                            <th>Categoria </th>
+                                            <th>Link</th>
 
-                                                    <div class="card-body px-lg-5 py-lg-5">
-                                                        <div class="text-center text-muted mb-4">
-                                                            <h3>¿Eliminar la capacitacion?</h3>
-                                                        </div>
-                                                        <form role="form" method="POST" action="{{route('eliminarcapacitacion',$item->id_capacitacion)}}">
-                                                            @csrf @method('DELETE')
+                                            <th style="width: 10%">Acciones</>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                     @foreach ($capacitaciones  as $item)
+                                        <tr>
+                                            <td>{{$item->titulo}}</td>
+                                            <td>{{$item->fecha}}</td>
+                                            <td>{{$item->descripcion}}</td>
+                                            <td>{{$item->categoria}}</td>
+                                            <td>{{$item->link}}</td>
+                                            <td>
 
-                                                            <div class="text-center">
-                                                                <button type="submit" class="btn btn-primary my-4">Eliminar</button>
-                                                                <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+
+
+                                                <div class="form-button-action">
+                                                    <a href="{{route('editarcapacitacion',$item->id_capacitacion)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deletecapacitacion{{$item->id_capacitacion}}"  data-original-title="Eliminar capacitacion">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                    <!-- Modal -->
+                                                <div class="modal fade" id="deletecapacitacion{{$item->id_capacitacion}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+	                                                <div class="modal-dialog modal-dialog-centered" role="document">
+		                                                <div class="modal-content">
+			                                                <div class="modal-header">
+				                                                <h3>¿Estás seguro de eliminar esta capacitacion?</h3>
+				                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                                                <span aria-hidden="true">&times;</span>
+				                                                </button>
+                                                            </div>
+                                                            <form role="form" method="POST" action="{{route('eliminarcapacitacion',$item->id_capacitacion) }}" >
+                                                                @csrf @method('DELETE')
+			                                                <div class="modal-body">
+                                                                ¡No podrás revertir esto!
+                                                             </div>
+			                                                <div class="modal-footer">
+				                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+				                                                <button type="sum" class="btn btn-primary">Eliminar</button>
                                                             </div>
                                                         </form>
-                                                    </div>
+		                                                </div>
+	                                                </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
 
-            </div>
-            <!-- Footer -->
-            <footer class="footer pt-0">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6">
-                        <div class="copyright text-center text-lg-left text-muted">
-                            &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    @endforeach
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
+
 </div>
-</body>
-<script src="{{asset("js/numerotabla.js")}}"></script>
+
+</div>
+
+@section('js')
+    <!--   Core JS Files   -->
+<script src="{{asset("plantillaAdmin/assets/js/core/jquery.3.2.1.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/core/popper.min.js")}}"></script>
+<!-- Datatables -->
+<script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
+
+<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
+<script>
+$('#datepicker').datetimepicker({
+    format: 'YYYY/MM/DD',
+});
+$('#datetime').datetimepicker({
+			format: 'MM/DD/YYYY H:mm',
+        });
+        $('#basic').select2({
+			theme: "bootstrap"
+		});
+</script>
 @endsection
+@endsection
+
+
+
+
+
+
+
+
+
+

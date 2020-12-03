@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Diseño</p>  
+                            <p class="card-category">Diseño</p>
                             <h4 class="card-title">{{$diseño}}</h4>
                         </div>
                     </div>
@@ -193,4 +193,3 @@
         </div>
     </div>
 </div>
- 

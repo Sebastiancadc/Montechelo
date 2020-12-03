@@ -50,11 +50,11 @@
                         </div>
                         <div class="text-right ml-auto">
                             @if($noticia->user->id == Auth::User()->id)
-                        <button type="button" class="btn btn-sm btn-primary btn-icon">
+                        <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
                             @endif
-                        </button>
+                        </a>
                         </div>
                     </div>
                 <div class="card-body">

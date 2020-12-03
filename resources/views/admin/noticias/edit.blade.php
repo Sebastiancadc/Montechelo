@@ -18,6 +18,14 @@
       </div>
     </div>
 </div>
+@if (session('editarnoticia'))
+<div class="alert alert-warning" role="alert">
+ {{(session('editarnoticia'))}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+@endif
 <br>
 <br>
 <div class="container-fluid mt--6">
@@ -26,7 +34,7 @@
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-                    <form action="{{url('admin/noticia',$noticiaActualizar->Id_noticia)}}" method="POST"  enctype="multipart/form-data">
+                    <form action="{{url('admin/updatenoticiaus',$noticiaActualizar->Id_noticia)}}" method="POST"  enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -44,7 +52,7 @@
                             <strong class="text-danger" >{{ $errors->first('title') }}</strong>
                             @endif
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <label class="form-control-label" for="competencias">Contenido</label>
                                 <textarea class="form-control" id="mymce" rows="3" name="body">{{$noticiaActualizar->body }}</textarea>
                         </div>

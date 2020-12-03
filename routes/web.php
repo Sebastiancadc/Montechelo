@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
     Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
-    
+
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
     //Novedad
@@ -83,7 +83,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //Noticias
     Route::resource('noticia', 'NoticiasController');
     Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
+    Route::get('editarnoticiaad/{id}', 'NoticiasController@editAd')->name('editarnoticiaad');
     Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
+    Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
     //Categorias
@@ -170,13 +172,19 @@ Route::group(['prefix' => ''], function () {
     //Route::get('crearbuzon', 'BuzonDeSugerenciasController@crearbuzon')->name('crearbuzon');
 
 
+    //NOTICIA
+    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
+    Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
+
     //Imagen de perfil
     Route::post('foto', 'PerfilController@updatePhoto');
     Route::post('fotoportada', 'PerfilController@updatePhotoportada');
 
     //pausas activas
     Route::resource('pausasactivas', 'PausasActivasController');
+
+    //Talento Humano
+Route::get('talento', 'NoticiasController@talento')->name('talento');
 });
 
-//Talento Humano
-Route::get('talento', 'NoticiasController@talento')->name('talento');
+
