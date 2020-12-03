@@ -1,78 +1,70 @@
-<div class="col-md-4">
+<!-- Modal -->
+<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-bd">
+                <h2 class="modal-title">
+                    Crear capacitacion
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
 
-    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div class="card bg-secondary border-0 mb-0">
+                <form role="form" method="POST" action="{{route('store')}}">
+                    @csrf @method('POST')
+                    <div class="row">
 
-                        <div class="card-body px-lg-5 py-lg-5">
-                            <div class="text-center text-muted mb-4">
-                                <small>Crear capacitacion</small>
-                            </div>
-                            <form role="form" method="POST" action="{{route('store')}}">
-                                @csrf @method('POST')
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
                                 <div class="form-group mb-3">
-
-                                    <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-
-                                            <input class="form-control" placeholder="Titulo" name="titulo" id="titulo" type="text" required >
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                            </div>
-                                            <input class="form-control" name="fecha" id="fecha" type="date" >
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-    
-                                            <textarea class="form-control" placeholder="Descripcion" name="descripcion" id="descripcion" type="text" cols="100" rows="5" required ></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group input-group-merge input-group-alternative">
-
-                                        <select class="form-control" id="exampleFormControlSelect1" name="categoria" id="categoria" required >
-                                            <option>Seleccione categoria</option>
-                                            <option>Diseño</option>
-                                            <option>Desarrollo</option>
-                                            <option>Software</option>
-                                            <option>Analisis</option>
-                                            <option>Produccion</option>
-                                        </select>
-                                    </div>
-                                    <br>
-
-                                    <div class="form-group mb-3">
-                                        <div class="input-group input-group-merge input-group-alternative">
-                                            <input class="form-control" placeholder="Link" name="link" id="link" type="text" required >
-                                        </div>
-                                    </div>
-                                
+                                    <input class="form-control" placeholder="Titulo" name="titulo" id="titulo" type="text" required>
                                 </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary my-4">crear</button>
-                                </div>
-                            </form>
-
+                            </div>
 
                         </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+
+                                <input class="form-control" name="fecha" id="fecha" type="date"> </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+
+                                <textarea class="form-control" placeholder="Descripcion" name="descripcion" id="descripcion" type="text" cols="100" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <div class="input-group input-group-merge input-group-alternative">
+
+                                    <select class="form-control" id="exampleFormControlSelect1" name="categoria" id="categoria" required>
+                                        <option>Seleccione categoria</option>
+                                        <option>Diseño</option>
+                                        <option>Desarrollo</option>
+                                        <option>Software</option>
+                                        <option>Analisis</option>
+                                        <option>Produccion</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+
+                                <input class="form-control" placeholder="Link" name="link" id="link" type="text" required>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="modal-footer no-bd">
+
+                        <button type="submit" class="btn btn-primary">Añadir</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
 </div>
-
-
-
-
-

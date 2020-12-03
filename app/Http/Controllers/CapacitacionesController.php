@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Capacitaciones;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class CapacitacionesController extends Controller
@@ -27,10 +28,23 @@ class CapacitacionesController extends Controller
     public function index2()
     {
 
-        $capacitaciones = Capacitaciones::paginate(9);
-        return view('admin/capacitaciones/index', compact('capacitaciones'));
-    }
+        /* $capacitaciones = Capacitaciones::paginate(9);
+        return view('admin/capacitaciones/index', compact('capacitaciones')); */
 
+        $capacitaciones = Capacitaciones::all();
+        $capacitacionesRegistradas = DB::table('Capacitaciones')->count();
+        $diseño = DB::table('Capacitaciones')->wherecategoria('diseño')->count();
+        $desarrollo = DB::table('Capacitaciones')->wherecategoria('desarrollo')->count();
+        $software = DB::table('Capacitaciones')->wherecategoria('software')->count();
+        $analisis = DB::table('Capacitaciones')->wherecategoria('analisis')->count();
+        $produccion = DB::table('Capacitaciones')->wherecategoria('produccion')->count();
+
+        return view('admin/capacitaciones/index', compact('capacitaciones','capacitacionesRegistradas','diseño','desarrollo','software',
+        'analisis','produccion'));
+
+
+
+    }
     public function crearcapacitaciones()
     {
         return view('admin/capacitaciones/index');

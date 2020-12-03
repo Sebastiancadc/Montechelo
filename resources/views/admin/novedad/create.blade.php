@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header no-bd">
-              <h2 class="modal-title">                
+              <h2 class="modal-title">
                   Crear novedad
               </h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,7 +15,7 @@
              <br>
              <form role="form" method="POST" action="{{ url('admin/novedad')}}" >
               @csrf @method('POST')
-                  <div class="row">  
+                  <div class="row">
 
                     <div class="col-sm-12">
                       <div class="form-group form-group-default">
@@ -36,7 +36,7 @@
                               <label>Fecha</label>
                               <input type="text" class="form-control" id="datepicker" name="fecha" name="cumpleanios" required>
                           </div>
-                      </div>                     
+                      </div>
                       <div class="col-sm-12">
                         <div class="form-group form-group-default">
                             <label>Novedad</label>
@@ -48,16 +48,16 @@
                           <label>Descripcion de la novedad</label>
                           <textarea class="form-control" name="descripcion" type="text" cols="10" rows="5" required></textarea>
                       </div>
-                  </div> 
+                  </div>
                   </div>
                   <div class="modal-footer no-bd">
-              
+
                       <button type="submit"  class="btn btn-primary">Añadir</button>
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                   </div>
               </form>
           </div>
-          
+
       </div>
   </div>
 </div>

@@ -7,7 +7,7 @@
 	<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
 	<!-- Fonts and icons -->
     <script src="{{asset("plantillaAdmin/assets/js/plugin/webfont/webfont.min.js")}}"></script>
-    
+
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
@@ -27,9 +27,9 @@
 		<div class="main-header" data-background-color="purple">
 			<!-- Logo Header -->
 			<div class="logo-header">
-				
+
 				<a href="{{url('HomeAdmin')}}" class="logo">
-					
+
 					<img src="{{asset("plantilla/img/theme/Montechelo_Negativo.png")}}" style="margin-top:-3px;
                     max-width: 64%;
                     max-height: 10rem;" class="navbar-brand">
@@ -40,15 +40,15 @@
 					</span>
 				</button>
 				<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
-				
+
 			</div>
 			<!-- End Logo Header -->
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg">
-				
+
 				<div class="container-fluid">
-				
+
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 
                         <li class="nav-item active">
@@ -62,7 +62,7 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="{{Auth::user()->photo}}" class="avatar-img rounded-circle">						
+									<img src="{{Auth::user()->photo}}" class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -77,7 +77,7 @@
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{ url('perfil')}}">Mi Perfil</a>								
+									<a class="dropdown-item" href="{{ url('perfil')}}">Mi Perfil</a>
 									<div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">Cerrar sesion</a>
@@ -87,7 +87,7 @@
 								</li>
 							</ul>
 						</li>
-						
+
 					</ul>
 				</div>
 			</nav>
@@ -96,15 +96,15 @@
 
 		<!-- Sidebar -->
 		<div class="sidebar">
-			
+
 			<div class="sidebar-background"></div>
 			<div class="sidebar-wrapper scrollbar-inner">
 				<div class="sidebar-content">
-					
+
 					<ul class="nav">
 						<li class="nav-item ">
                             <a href="{{url('HomeAdmin')}}">
-                        
+
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
@@ -118,25 +118,25 @@
 						</li>
 
                         <li class="nav-item ">
-                            <a href="{{url('admin/usuario')}}">                        
+                            <a href="{{url('admin/usuario')}}">
 								<i class="fas fa-users"></i>
 								<p>Usuarios</p>
 							</a>
                         </li>
 						<li class="nav-item ">
-                            <a href="{{url('admin/novedad')}}">                        
+                            <a href="{{url('admin/novedad')}}">
 								<i class="fas fa-hotel"></i>
 								<p>Novedades</p>
 							</a>
                         </li>
 						<li class="nav-item ">
-                            <a href="{{url('admin/solicitud')}}">                        
+                            <a href="{{url('admin/solicitud')}}">
 								<i class="fas fa-bullhorn"></i>
 								<p>Solicitudes</p>
 							</a>
 						</li>
 						<li class="nav-item ">
-                            <a href="{{url('admin/buzon')}}">                        
+                            <a href="{{url('admin/buzon')}}">
 								<i class="fas fa-paper-plane"></i>
 								<p>Buzon</p>
 							</a>
@@ -153,57 +153,33 @@
 								<p>Repositorio</p>
 							</a>
                         </li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-pen-square"></i>
-								<p>Forms</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Basic Form</span>
-										</a>
-									</li>
-									
-								</ul>
-							</div>
-                        </li>
-                      
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#tables">
-								<i class="fas fa-table"></i>
-								<p>Tables</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="tables">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="tables/tables.html">
-											<span class="sub-item">Basic Table</span>
-										</a>
-									</li>
-									<li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
 
-			
-						
-						<li class="nav-item">
-							<a href="widgets.html">
-								<i class="fas fa-desktop"></i>
-								<p>Widgets</p>
-								<span class="badge badge-count badge-success">4</span>
+
+
+                        {{-- eventos --}}
+                        {{-- Repositorio --}}
+
+                        <li class="nav-item ">
+                            <a href="{{url('admin/noticia')}}">
+								<i class="fas fa-newspaper"></i>
+								<p>Noticias
+                                </p>
 							</a>
-						</li>
-						
-						
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href="{{url('admin/capacitaciones')}}">
+								<i class="fas fa-chalkboard-teacher"></i>
+								<p>Capacitaciones
+                                </p>
+							</a>
+                        </li>
+
+
+
+
+
+
 					</ul>
 				</div>
 			</div>
