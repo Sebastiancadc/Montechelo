@@ -153,12 +153,8 @@
 								<p>Repositorio</p>
 							</a>
                         </li>
-
-
-
                         {{-- eventos --}}
                         {{-- Repositorio --}}
-
                         <li class="nav-item ">
                             <a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>
@@ -166,7 +162,6 @@
                                 </p>
 							</a>
                         </li>
-
                         <li class="nav-item ">
                             <a href="{{url('admin/capacitaciones')}}">
 								<i class="fas fa-chalkboard-teacher"></i>
@@ -174,12 +169,6 @@
                                 </p>
 							</a>
                         </li>
-
-
-
-
-
-
 					</ul>
 				</div>
 			</div>
