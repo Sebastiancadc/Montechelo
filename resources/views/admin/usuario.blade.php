@@ -40,12 +40,18 @@
                                 <h4 class="card-title">Gestión de Usuarios</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear usuario
+                                    Crear administrador
+                                </button>
+                                <span>.</span>
+                                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#addRowModal2">
+                                    <i class="fa fa-plus"></i>
+                                    Crear colaborador
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
                             @include('admin.forms.create')
+                            @include('admin.forms.createcola')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
@@ -129,6 +135,9 @@
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
 $('#datepicker').datetimepicker({
+    format: 'DD/MM/YYYY',
+});
+$('#datepicker2').datetimepicker({
     format: 'DD/MM/YYYY',
 });
 $('#datetime').datetimepicker({

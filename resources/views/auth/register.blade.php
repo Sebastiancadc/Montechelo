@@ -67,6 +67,7 @@
                 </div>
                 </div>
                 <input name="role" value="colaborador" hidden>
+                <input name="Rol_Id_Rol" value="2" hidden>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">

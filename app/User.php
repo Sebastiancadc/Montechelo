@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name','lastname', 'email', 'password','genero','cumpleanios','role','area','phone','phone_status'
+        'name','lastname', 'email', 'password','genero','cumpleanios','role','area','phone','phone_status','Rol_Id_Rol'
     ];
 
     /**
@@ -68,6 +68,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Noticia');
     }
 
+    public function permisos()
+    {
+        return $this->hasMany('App\Permisos');
+    }
+    
     public function scopeBuscarpor($query,$tipo,$buscar)
     {
        if( ($tipo) &&  ($buscar))

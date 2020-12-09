@@ -46,11 +46,18 @@ Route::middleware(['auth'])->group(function () {
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('usuario', 'HomeController');
-    Route::post('createadmin', 'HomeController@storeAdmin')->name('crearAdmin');
+
+    Route::post('createcolaborador', 'HomeController@storeCola')->name('crearColabordor');
     Route::get('crearUserAdmin', 'HomeController@crearAdmin');
     Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
     Route::delete('deleteusuario/{id}', 'HomeController@destroy')->name('eliminarusuario');
+
+    Route::get('permisoslista', 'HomeController@permisoslista');
+    Route::post('crearRol', 'HomeController@CrearRol');
+
+    Route::get('editarpermisos/{id}', 'HomeController@editarpermisos')->name('permisoedit');
+    Route::put('updatepermisos/{id}', 'HomeController@updatepermisos')->name('updatepermisos');
 
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');

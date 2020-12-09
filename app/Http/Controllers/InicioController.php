@@ -76,6 +76,10 @@ class InicioController extends Controller
     public function indexAdmin()
     {
         $usuariosregistrados = DB::table('usuario')->count();
-        return view('admin.dashboardAdmin', compact('usuariosregistrados'));
+        // $eventos = DB::table('eventos')->count();
+        $eventos = DB::table('eventos')->wheredeleted_at(null)->count();
+        $buzon = DB::table('buzon_de_sugerencias')->count();
+        return view('admin.dashboardAdmin', compact('usuariosregistrados','eventos','buzon'));
     }
+
 }

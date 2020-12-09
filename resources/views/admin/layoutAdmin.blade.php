@@ -103,7 +103,7 @@
 
 					<ul class="nav">
 						<li class="nav-item ">
-                            <a href="{{url('HomeAdmin')}}">
+                            <a href="{{ url('admin/HomeAdmin')}}">
 
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -116,13 +116,29 @@
 							</span>
 							<h4 class="text-section">Componentes</h4>
 						</li>
-
-                        <li class="nav-item ">
-                            <a href="{{url('admin/usuario')}}">
-								<i class="fas fa-users"></i>
-								<p>Usuarios</p>
-							</a>
+						<li class="nav-item">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-users"></i>
+                                <p>Usuarios</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{url('admin/usuario')}}">
+                                            <span class="sub-item">Lista</span>
+                                        </a>
+									</li>
+									<li>
+                                        <a href="{{url('admin/permisoslista')}}">
+                                            <span class="sub-item">Permisos</span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+							</div>
                         </li>
+
 						<li class="nav-item ">
                             <a href="{{url('admin/novedad')}}">
 								<i class="fas fa-hotel"></i>
@@ -153,8 +169,6 @@
 								<p>Repositorio</p>
 							</a>
                         </li>
-                        {{-- eventos --}}
-                        {{-- Repositorio --}}
                         <li class="nav-item ">
                             <a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>

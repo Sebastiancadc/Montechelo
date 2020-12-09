@@ -5,7 +5,7 @@
                 <div class="row align-items-center">
                     <div class="col-icon">
                         <div class="icon-big text-center icon-primary bubble-shadow-small">
-                            <i class="fas fa-chalkboard-teacher"></i>
+                            <i class="fas fa-newspaper"></i>
                         </div>
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
@@ -24,7 +24,7 @@
                 <div class="row align-items-center">
                     <div class="col-icon">
                         <div class="icon-big text-center icon-success bubble-shadow-small" style="background: #ab2dad;;color: #fff;">
-                            <i class="fas fa-diagnoses"></i>
+                            <i class="fas fa-desktop"></i>
                         </div>
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">

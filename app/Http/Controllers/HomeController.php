@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Permisos;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -41,10 +42,92 @@ class HomeController extends Controller
         $administradores = DB::table('usuario')->whererole('admin')->count();
         $colaboradores = DB::table('usuario')->whererole('colaborador')->count();
 
-        return view('admin.usuario', compact('users','usuariosregistrados','hombres','mujeres','otro','diseño','marketing'
+        return view('admin.usuario', compact('users','usuariosregistrados','hombres',
+        'mujeres','otro','diseño','marketing'
         ,'produccion','programacion','administradores','colaboradores'));
     }
 
+    public function CrearRol(Request $request)
+    {
+
+        $Rol = new Permisos();
+        $Rol->Roles = $request->Roles;
+        $Rol->save();
+        return redirect()->action('HomeController@permisoslista')->with('Rol', 'Rol creado correctamente');
+    }
+    public function permisoslista()
+    {
+        $permisos = Permisos::all();
+        return view('admin.forms.permisos', compact('permisos'));
+    }
+
+    public function editarpermisos($id)
+    {
+        $permisoActualizar = Permisos::findOrFail($id);
+        return view('admin/forms/editarpermisos', compact('permisoActualizar'));
+    }
+
+    public function updatepermisos(Request $request, $id)
+    {
+        $permisos = Permisos::findOrFail($id);
+        $permisos->chat_status = $request->chat_status;
+        if ($request->has('chat_status')) {
+            $permisos->chat_status = "1";
+        } else {
+            $permisos->chat_status = "0";
+        }
+        $permisos->directorio_status = $request->directorio_status;
+        if ($request->has('directorio_status')) {
+            $permisos->directorio_status = "1";
+        } else {
+            $permisos->directorio_status = "0";
+        }
+        $permisos->talento_status = $request->talento_status;
+        if ($request->has('talento_status')) {
+            $permisos->talento_status = "1";
+        } else {
+            $permisos->talento_status = "0";
+        }
+        $permisos->repositorio_status = $request->repositorio_status;
+        if ($request->has('repositorio_status')) {
+            $permisos->repositorio_status = "1";
+        } else {
+            $permisos->repositorio_status = "0";
+        }
+        $permisos->calendario_status = $request->calendario_status;
+        if ($request->has('calendario_status')) {
+            $permisos->calendario_status = "1";
+        } else {
+            $permisos->calendario_status = "0";
+        }
+        $permisos->solicitud_status = $request->solicitud_status;
+        if ($request->has('solicitud_status')) {
+            $permisos->solicitud_status = "1";
+        } else {
+            $permisos->solicitud_status = "0";
+        }
+        $permisos->buzon_status = $request->buzon_status;
+        if ($request->has('buzon_status')) {
+            $permisos->buzon_status = "1";
+        } else {
+            $permisos->buzon_status = "0";
+        }
+        $permisos->plan_status = $request->plan_status;
+        if ($request->has('plan_status')) {
+            $permisos->plan_status = "1";
+        } else {
+            $permisos->plan_status = "0";
+        }
+        $permisos->novedad_status = $request->novedad_status;
+        if ($request->has('novedad_status')) {
+            $permisos->novedad_status = "1";
+        } else {
+            $permisos->novedad_status = "0";
+        }
+        $permisos->save();
+        return redirect()->action('HomeController@permisoslista')->with('Permisosedit', 'Permisos editados correctamente');
+    }
+    
 
     public function store(Request $request)
     {
@@ -62,11 +145,12 @@ class HomeController extends Controller
         $user->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
         $user->messenger_color = $request->messenger_color;
         $user->role = $request->role;
+        $user->Rol_Id_Rol = $request->Rol_Id_Rol;
         $user->save();
-        return redirect('admin/usuario')->with('crearUsuario', 'Usuario creado correctamente');
+        return redirect('admin/usuario')->with('crearUsuario', 'Administrador creado correctamente');
     }
 
-    public function storeAdmin(Request $request)
+    public function storeCola(Request $request)
     {
 
         $request->request->add([
@@ -81,9 +165,10 @@ class HomeController extends Controller
         $user2->phone = $request->phone;
         $user2->cumpleanios = new \Datetime($request->cumpleanios);
         $user2->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
-        $request['role'] = 'admin';
+        $user2->role = $request->role;
+        $user2->Rol_Id_Rol = $request->Rol_Id_Rol;
         $user2->save();
-        return redirect('admin/usuario')->with('crearUsuario', 'Usuario creado correctamente');
+        return redirect('admin/usuario')->with('crearUsuario', 'Colaborador creado correctamente');
     }
 
     public function crearAdmin()

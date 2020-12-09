@@ -17,7 +17,7 @@ class CalendarioController extends Controller
     public function eventos()
     {
         $eventos = Eventos::paginate(10);
-        $evento = DB::table('eventos')->count();
+        $evento = DB::table('eventos')->wheredeleted_at(null)->count();
         $importante = DB::table('eventos')->whereclassname('importante')->count();
         $especial = DB::table('eventos')->whereclassname('especial')->count();
         $advertencia = DB::table('eventos')->whereclassname('advertencia')->count();

@@ -4,7 +4,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Dashboard</h4>
+                <h4 class="page-title">Dashboard-Admin</h4>
             </div>
 
             <div class="row">
@@ -33,13 +33,13 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="flaticon-interface-6"></i>
+                                        <i class="flaticon-calendar"></i>
                                     </div>
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Subscribers</p>
-                                        <h4 class="card-title">1303</h4>
+                                        <p class="card-category">Eventos registrados</p>
+                                        <h4 class="card-title">{{$eventos}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -52,13 +52,13 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="flaticon-analytics"></i>
+                                        <i class="flaticon-gestures"></i>
                                     </div>
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Sales</p>
-                                        <h4 class="card-title">$ 1,345</h4>
+                                        <p class="card-category">Sugerencias registradas</p>
+                                        <h4 class="card-title">{{$buzon}}</h4>
                                     </div>
                                 </div>
                             </div>
