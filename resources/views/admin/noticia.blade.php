@@ -13,9 +13,11 @@
                         </ol>
                     </nav>
                 </div>
+                @if (Auth::user()->role == 'admin')
                 <div class="col-lg-6 col-5 text-right">
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral">Agregar</a>
-                </div>
+                </div>              
+                @endif
             </div>
             <!-- Card stats -->
             <div class="row">

@@ -30,7 +30,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
 
-                            <p class="card-category">Programacion</p>
+                            <p class="card-category">Programación</p>
                         <h4 class="card-title">{{$programacion}}</h4>
                         </div>
                     </div>

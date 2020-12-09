@@ -56,16 +56,7 @@
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Titulo</th>
-                                            <th>Descripcion</th>
-                                            <th>Fecha inicial</th>
-                                            <th>Fecha final</th>
-                                            <th>Tipo</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </tfoot>
+                                 
                                     <tbody>
                                         @foreach ($eventos as $item)
                                         <tr>                                           

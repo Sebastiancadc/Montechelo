@@ -79,7 +79,6 @@
                 </button>
             </div>
             <div class="modal-body">
-
                 <form role="form" method="POST" action="{{url('crearnoticias')}}" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
@@ -91,14 +90,14 @@
                   </div>
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
-                            <select class="form-control" id="exampleFormControlSelect1" name="">
-                                <option>Seleccione categoria</option>
-                                <option>Diseño</option>
-                                <option>Desarrollo</option>
-                                <option>Software</option>
-                                <option>Analisis</option>
-                                <option>Produccion</option>
-                            </select>
+                        <select class="form-control" id="exampleFormControlSelect1" name="">
+                            <option>Seleccione categoria</option>
+                            <option>Diseño</option>
+                            <option>Desarrollo</option>
+                            <option>Software</option>
+                            <option>Analisis</option>
+                            <option>Produccion</option>
+                        </select>
                     </div>
                   </div>
                   <div class="form-group mb-3">
@@ -116,11 +115,10 @@
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">Crear</button>
-                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>                   
                   </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>

@@ -69,7 +69,13 @@
                                             <td>{{$item->area_trabajo}}</td>
                                             <td>{{$item->tipo_solicitud}}</td>
                                             <td>{{$item->fecha}}</td>
-                                            <td><span class="badge badge-lg badge-success">{{$item->estado_solicitud}}</td>
+                                            <td> @if ($item->estado_solicitud == 'Revisado')
+                                                <span class="badge badge-lg badge-success">{{$item->estado_solicitud}}
+                                                @else
+                                                <span class="badge badge-lg badge-danger">{{$item->estado_solicitud}}
+                                            @endif
+                                                
+                                                </td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('editarsoli',$item->Id_Solicitud)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">

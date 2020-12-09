@@ -65,7 +65,12 @@
                                             <td>{{$item->fecha}}</td>
                                             <td>{{$item->novedad}}</td>
                                             <td>{{$item->descripcion}}</td>
-                                            <td><span class="badge badge-lg badge-success">{{$item->estado}}</span></td>
+                                            <td>@if ($item->estado == 'Revisado')
+                                            <span class="badge badge-lg badge-success">{{$item->estado}}</span>
+                                                @else
+                                                <span class="badge badge-lg badge-danger">{{$item->estado}}</span>
+                                            @endif                                          
+                                            </td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">

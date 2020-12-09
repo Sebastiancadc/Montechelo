@@ -64,7 +64,7 @@
 
 												</span>
 											</div>
-											<input class="form-control" placeholder="Autor" name="" id="" value="" type="text">
+											<input class="form-control" placeholder="Autor" name="autor"  value="{{$noticiaActualizar->user->name}}" disabled type="text">
 										</div>
                                     </div>
 									<div class="col-md-12">
@@ -111,7 +111,7 @@
 					</div>
 					<div class="col-sm-10 col-md-9" style="margin-left: 72%;">
 					<button type="submit" class="btn btn-primary  mt-4">Actualizar</button>
-					<a href="{{ url('admin/noticias') }}" class="btn btn-danger mt-4">Cancelar</a>
+					<a href="{{ url('admin/noticia') }}" class="btn btn-danger mt-4">Cancelar</a>
 					</div>
 				</div>
 			</div>

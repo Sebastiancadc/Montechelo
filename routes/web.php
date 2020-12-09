@@ -61,6 +61,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
+    
+    //Pausas activas
+    Route::get('pasuasAdmin', 'PausasActivasController@admin');
+    Route::post('crearPausa', 'PausasActivasController@store');
+    Route::get('editarPausa/{id}', 'PausasActivasController@edit');
+    Route::put('updatePausa/{id}', 'PausasActivasController@update');
+    Route::delete('deletePausa/{id}', 'PausasActivasController@destroy');
     //Novedad
     Route::resource('novedad', 'NovedadController');
     Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
