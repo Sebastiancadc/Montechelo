@@ -32,8 +32,8 @@
 <body>
 <?php
   $user = auth()->user();
+  $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', 'colaborador')->first();
 ?>
-
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -66,108 +66,83 @@
               <span class="nav-link-text">Inicio</span>
             </a>
             </li>
-
+            @if ($colaborador->chat_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{ url('Chatmontechelo')}}">
                 <i class="ni ni-chat-round text-orange"></i>
                 <span class="nav-link-text">Chat</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->directorio_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("directorio")}}">
                 <i class="ni ni-badge text-info"></i>
                 <span class="nav-link-text">Directorio</span>
               </a>
-
             </li>
+            @endif
+            @if ($colaborador->talento_status == '1')
             <li class="nav-item">
                 <a class="nav-link" href="{{url('talento')}}">
                   <i class="ni ni-archive-2 text-black"></i>
                   <span class="nav-link-text">Talento Humano</span>
                 </a>
             </li>
-
+            @endif
+            @if ($colaborador->repositorio_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->calendario_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->solicitud_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url('solicitudesd')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitud</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->buzon_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("buzonusu")}}">
                 <i class="ni ni-send text-yellow"></i>
                 <span class="nav-link-text">Buzon de sugerencias</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->plan_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("planestrategico")}}">
                 <i class="ni ni-building text-orange"></i>
                 <span class="nav-link-text">Plan estrategico</span>
               </a>
             </li>
+            @endif
+            @if ($colaborador->novedad_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url('crearnovedad')}}">
                 <i class="ni ni-building text-purple"></i>
                 <span class="nav-link-text">Novedad</span>
               </a>
             </li>
-
-@if ($user->role=='admin')
-<li class="nav-item">
-  <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-    <i class="ni ni-map-big text-primary"></i>
-    <span class="nav-link-text">Administrador</span>
-  </a>
-  <div class="collapse" id="navbar-maps">
-    <ul class="nav nav-sm flex-column">
-      <li class="nav-item">
-        <a href="{{ url('admin/usuario')}}" class="nav-link">Usuarios</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="{{ url('admin/novedad')}}" class="nav-link">Novedades</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/solicitud')}}" class="nav-link">Solicitudes</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/buzon')}}" class="nav-link">Buzon</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/eventos')}}" class="nav-link">Eventos</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/noticia')}}" class="nav-link">Noticias</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/repositorio')}}" class="nav-link">Repositorio</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="{{ url('admin/capacitaciones')}}" class="nav-link">Capacitaciones</a>
-      </li>
-    </ul>
-  </div>
-</li>
-@endif
+            @endif
           </ul>
         </div>
       </div>
     </div>
   </nav>
-
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
@@ -196,30 +171,7 @@
                 </select>
               </div>
             </div>
-           <style>
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #444;
-    line-height: 16px;
-}
-.select2-container--default .select2-selection--single {
-    background-color: #e6eaef;
-    border: 1px solid #e6eaef;
-    margin-left: 31px;
-    height: 32px;
-    margin-top: -37px;
-    border: 0 solid;
-    border-radius: 2rem;
-    width: 297px;
-}
-.select2-container .select2-selection--single:focus, .select2-container--default.select2-container--focus .select2-selection--multiple:focus, .select2-container--default .select2-selection--multiple:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
-    color: #8898aa;
-    border-color: #5e72e4;
-    outline: 0;
-    background-color: #e6eaef;
-    box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
-}
-           </style>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -249,8 +201,6 @@
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-chat-round"></i>
               </a>
-
-
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
@@ -272,82 +222,6 @@
                           </div>
                           <div class="text-right text-muted">
                             <small>2 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Nuevo mensaje</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">User</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Nuevo mensaje</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">User</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>5 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Nuevo mensaje</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">User</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Nuevo mensaje</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-5.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">User</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
                           </div>
                         </div>
                         <p class="text-sm mb-0">Nuevo mensaje</p>
@@ -391,83 +265,7 @@
                         <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
                       </div>
                     </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>5 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Your posts have been liked a lot.</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-5.jpg")}}" class="avatar rounded-circle">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>3 hrs ago</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                      </div>
-                    </div>
-                  </a>
+                  </a> 
                 </div>
                 <!-- View all -->
                 <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
@@ -515,7 +313,30 @@
         </div>
       </div>
     </nav>
+    <style>
 
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+          color: #444;
+          line-height: 16px;
+      }
+      .select2-container--default .select2-selection--single {
+          background-color: #e6eaef;
+          border: 1px solid #e6eaef;
+          margin-left: 31px;
+          height: 32px;
+          margin-top: -37px;
+          border: 0 solid;
+          border-radius: 2rem;
+          width: 297px;
+      }
+      .select2-container .select2-selection--single:focus, .select2-container--default.select2-container--focus .select2-selection--multiple:focus, .select2-container--default .select2-selection--multiple:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
+          color: #8898aa;
+          border-color: #5e72e4;
+          outline: 0;
+          background-color: #e6eaef;
+          box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
+      }
+                 </style>
 @yield('content')
 
 <!-- Argon Scripts -->

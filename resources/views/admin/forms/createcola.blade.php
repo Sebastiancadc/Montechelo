@@ -1,10 +1,10 @@
 <!-- Modal -->
-<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="addRowModal2" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header no-bd">
               <h2 class="modal-title">                
-                  Crear Administrador
+                  Crear Colaborador
               </h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -13,7 +13,7 @@
           <div class="modal-body">
               <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
              <br>
-              <form  role="form" method="POST" action="{{url('admin/usuario')}}">
+              <form  role="form" method="POST" action="{{url('admin/createcolaborador')}}">
                   @csrf @method('POST') 
                   <div class="row">  
                       <div class="col-sm-12">
@@ -26,7 +26,7 @@
                       <div class="col-md-6 pr-0">
                           <div class="form-group form-group-default">
                               <label>Fecha de nacimiento</label>
-                              <input type="text" class="form-control" id="datepicker" name="datepicker" name="cumpleanios" required>
+                              <input type="text" class="form-control" id="datepicker2" name="datepicker" name="cumpleanios" required>
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -56,8 +56,8 @@
                             <input  type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co..."  name="email" required>
                         </div>
                     </div>
-                      <input type="text" class="form-control"  name="role" value="admin" hidden>
-                      <input type="text" class="form-control"  name="Rol_Id_Rol" value="1" hidden>
+                      <input type="text" class="form-control"  name="role" value="colaborador" hidden>
+                      <input type="text" class="form-control"  name="Rol_Id_Rol" value="2" hidden>
                       <div class="col-md-6">
                           <div class="form-group form-group-default">
                               <label>Contraseña</label>
