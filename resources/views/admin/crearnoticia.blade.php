@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
                                         <div class="col-md-12">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3"  maxlength="250" required>{{ old('body') }}</textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3"  required>{{ old('body') }}</textarea>
                                         </div>
                                         @if ($errors->has('body'))
                                         <strong class="text-danger" >{{ $errors->first('body') }}</strong>

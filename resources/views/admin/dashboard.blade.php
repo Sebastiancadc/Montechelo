@@ -3,6 +3,7 @@
 <?php
 $date =date('m-d')
 ?>
+<link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">
       <div class="header-body">
@@ -29,30 +30,96 @@ $date =date('m-d')
       <div class="col-lg-8">
             <div class="card bg-default" style="background-color: #ffffff !important;">
                 <div class="card-header bg-transparent">
-                    <div class="row align-items-center">
-                        <div class="col">
-                                <h2 class="text-uppercase ls-1 mb-1;">Noticias de interes</h2>
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="mb-0">Noticias de Intéres</h5>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col sm-4">
+                            @foreach ($noticias as $item)
+                            <a href="{{'post'}}/{{ $item->slug }}">
+                                <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
+
+                                    <img src="{{$item->image}}" alt="" class="image-responsive" style=" width: 190px; margin-top: 10px; margin-bottom: -60px;">
+
+                                    <div class="overlayer bottom-left full-width">
+                                    <div class="overlayer-wrapper item-info ">
+                                            <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                                <div class="">
+                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>
+                                                    
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="m-t-10">
+                                                    <div class="thumbnail-wrapper d32 circular m-t-5 avatar rounded-circle">
+                                                        <img width="auto" height="auto" src="{{ $item->user->photo }}">
+                                                    </div>
+                                                    <div class="inline m-l-10">
+                                                        <p class="no-margin text-white fs-12">Escrito por {{$item->user->name}} {{$item->user->lastname}}</p>
+
+                                                    </div>
+                                                
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                            @endforeach
+                        </div>
+                        @foreach ($noticias2 as $noticia2)
+                        <div class="col-md-8" style="margin-left: -20px;" >
+                            <a href="{{'post'}}/{{ $noticia2->slug }}">
+                                <div class="gallery-item " data-width="2" data-height="2" style="padding-left: 10px; width: auto">
+                                    <!-- START PREVIEW -->
+                                    <div class="live-tile slide" data-speed="750" data-delay="4000" data-mode="carousel">
+                                        <div class="slide-front">
+                                            <img src="{{$noticia2->image}}" alt="" class="image-responsive-height" style="max-width: 510px; padding-right: 124px; padding-top: 18px; padding-left: 10px;">
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- END PREVIEW -->
+                                    <!-- START ITEM OVERLAY DESCRIPTION -->
+                                    <div class="overlayer bottom-left full-width" style="margin-top: -25px;">
+                                    <div class="overlayer-wrapper item-info more-content">
+                                        <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                        <div class="">
+                                            <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>
+                                            
+                                            <div class="clearfix"></div>
+
+                                        </div>
+
+                                        <div class="m-t-10">
+                                            <div class="thumbnail-wrapper d32 circular m-t-5  avatar rounded-circle">
+                                            <img width="auto" height="auto" src="{{$noticia2->user->photo}}"  alt="">
+                                            </div>
+                                            <div class="inline m-l-10">
+                                                <p class="no-margin text-white fs-12">Escrito por {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>
+                                        
+                                            </div>
+                                            
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- END PRODUCT OVERLAY DESCRIPTION -->
+                                </div>
+                            </a>
+
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-            @foreach ($noticias as $item)
-            <div class="card mb-6" style="max-width: 1000px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{{$item->image}}" class="card-img fluid imgdas" alt="..." >
-                </div>
-                <div class="col-md-8">
-                <div class="card-body" >
-                    <h5 class="card-title">{{$item->title}}</h5>
-                    <p class="card-text">{{ substr($item->body, 0,20) }}...</p>
-                    <p class="card-text"><small class="text-muted">{{$item->created_at->format('d/m/Y')}}</small></p>
-                    <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-link px-0">Ver articulo</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            @endforeach
+           
+            
         </div>
       <div class="col-lg-4">
         <div class="card">
@@ -228,6 +295,7 @@ $date =date('m-d')
 </script>
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
+<script src="{{asset("plantilla/js/gallery.js")}}"></script>
 </body>
 @endsection
 @endsection

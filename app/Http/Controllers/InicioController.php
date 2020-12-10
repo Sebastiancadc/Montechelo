@@ -68,9 +68,12 @@ class InicioController extends Controller
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();
         $eventos = Eventos::whereMonth('start_time',"=",date('m'))->get();
         $modal = User::whereDay('cumpleanios',"=",date('d'))->get();
-        $noticias = Noticia::all();
+        $noticias= Noticia::latest()->take(2)->get();
+        $noticias2= Noticia::first()->take(1)->get();
+        
 
-        return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias'));
+
+        return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2'));
     }
 
     public function indexAdmin()
