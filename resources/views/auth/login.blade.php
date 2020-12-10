@@ -31,12 +31,17 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -12%;">
               <h1 class="text-white">¡Bienvenido!</h1>
-
             </div>
           </div>
         </div>
       </div>
-
+      <style>
+        @media only screen and (max-width: 700px) {
+            .main-content {
+                margin-top: 110px;
+            }
+        }
+    </style>
     </div>
     <!-- Page content -->
     <div class="container mt--8 pb-5">

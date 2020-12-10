@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositorio;
+use Faker\Provider\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -32,7 +33,12 @@ class RepositorioController extends Controller
      */
     public function index()
     {
+
+       
         $repositorio = Repositorio::all();
+
+
+
         return view('admin.repositorio', compact('repositorio'));
     }
 
@@ -50,7 +56,6 @@ class RepositorioController extends Controller
   
     public function store(Request $request)
     {
-       
            $messages = [
            
             //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
@@ -59,8 +64,6 @@ class RepositorioController extends Controller
          $this->validate($request,$messages);
 
          $repositorio = new Repositorio($request->all());
-  
-
 
          if ($request->file('image')) {
             $nombre = Storage::disk('archivosave')->put('archivos/repositorio',$request->file('image'));
@@ -69,8 +72,6 @@ class RepositorioController extends Controller
           Session::flash('message','Publicación creada correctamente');
 
           return back();
-
-
     }
 
     public function editrepositorio($id)
@@ -114,13 +115,9 @@ class RepositorioController extends Controller
                }
      
                 Session::flash('message','Publicación actualizada correctamente');
-                 
 
-
-
-        
         return redirect()->action('RepositorioController@index')->with('updaterepositorio','El archivo se actualizo');
-            }}
+     }}
 
 
             

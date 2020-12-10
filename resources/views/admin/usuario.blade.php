@@ -56,7 +56,6 @@
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            {{-- <th>#</th> --}}
                                             <th>Nombre</th>
                                             <th>Correo</th>
                                             <th>Género</th>

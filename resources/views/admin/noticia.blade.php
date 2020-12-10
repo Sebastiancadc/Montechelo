@@ -1,17 +1,23 @@
 @extends('admin.layout')
 @section('content')
-<link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
-<link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
-
-<div id="headerWrapper" class="container-fluid navHeaderWrapper header-image">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  mt-5" style="padding-right: 20px;">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
-                <div class="site-header-inner  mt-lg-0 mt-5">
-                    <h2 class="">Noticias de intéres</h2>
-                    <p>Descubre lo último en actualidad y mantente conectado.</p>
-                    <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Noticia</h6>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Noticia  </li>
+                        </ol>
+                    </nav>
                 </div>
+                @if (Auth::user()->role == 'admin')
+                <div class="col-lg-6 col-5 text-right">
+                    <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral">Agregar</a>
+                </div>              
+                @endif
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-1 text-center">
                 <div class="banner-image">

@@ -4,15 +4,6 @@
     <div class="content">
         <div class="page-inner">
              @include('admin.noticias.estadisticas')
-          @if (Session::has('message'))
-          <div class="alert alert-warning" role="alert">
-            {{ Session::get('message') }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          @endif
-
             @if (session('agregar'))
             <div class="alert alert-primary" role="alert">
                 {{(session('agregar'))}}
@@ -46,20 +37,17 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Gestión de Noticias</h4>
-                                 {{--  <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
+                                  <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearnoticia') }}">
                                  <i class="fa fa-plus"></i>
                                     Crear Noticia
-                                </button> --}}
+                                  </a>
                             </div>
                         </div>
                         <div class="card-body">
-
                             <div class="table-responsive">
-                                <table id="add-row" class="display table table-striped table-hover">
+                                <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-
-                                            {{-- <th scope="col" class="sort" data-sort="title">#</th> --}}
                                             <th>Titulo</th>
                                             <th>Categoría</th>
                                             <th>Autor</th>
@@ -71,7 +59,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         @foreach ($noticia as $item)
                                         <tr>
                                             <td>{{$item->title}}</td>

@@ -26,6 +26,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <a><?php if ($var = opendir('storage/repositorio/Test')) {
+                                        while (false !== ($archivo = readdir($var))) {
+                                        if ($archivo != "." && $archivo != "..") {
+                                        print("".$archivo."<br>");
+                                        }
+                                        }
+                                        closedir($var);
+                                        print("");
+                                        }?>
+                                       </a>
                                         @foreach ($repositorio as $item)
                                         <tr>                                           
                                             <td>{{$item->tipo_archivo}}</td>

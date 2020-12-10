@@ -104,7 +104,6 @@
 					<ul class="nav">
 						<li class="nav-item ">
                             <a href="{{ url('admin/HomeAdmin')}}">
-
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
@@ -163,12 +162,12 @@
 								<p>Eventos</p>
 							</a>
 						</li>
-						<li class="nav-item ">
+						{{-- <li class="nav-item ">
                             <a href="{{url('admin/repositorio')}}">                        
 								<i class="fas fa-cloud-upload-alt"></i>
 								<p>Repositorio</p>
 							</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item ">
                             <a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>
@@ -182,7 +181,27 @@
 								<p>Capacitaciones
                                 </p>
 							</a>
-                        </li>
+						</li>
+						<li class="nav-item ">
+                            <a href="{{url('admin/pasuasAdmin')}}">
+								<i class="fas fa-child"></i>
+								<p>Pauas activas
+                                </p>
+							</a>
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Sistema de gestión de contenidos</h4>
+						</li>
+						<li class="nav-item ">
+                            <a href="">
+								<i class="fas fa-cogs"></i>
+								<p>General
+                                </p>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

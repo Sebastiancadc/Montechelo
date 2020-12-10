@@ -71,6 +71,7 @@
                                     </div>
                                     <div class="col-lg-6 col-5 text-right" style="float: right;">
                                         <button type="submit" class="btn btn-primary my-4">Enviar</button>
+                                        <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
                                     </div>
                             </input>
                       </form>
