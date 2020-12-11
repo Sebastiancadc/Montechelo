@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pausasactivas;
 use Illuminate\Http\Request;
 use App\Solicitud;
 use App\User;
@@ -41,12 +42,25 @@ class SolicitudController extends Controller
         $pagos = DB::table('solicitud')->wheretipo_solicitud('desprendibles de pago')->count();
         $pendientes = DB::table('solicitud')->whereestado_solicitud('pendiente')->count();
         $revisado = DB::table('solicitud')->whereestado_solicitud('revisado')->count();
-        return view('admin.solicitud', compact('solicitud','solicitudes','desarollo','talentohumano'
-        ,'recursoshumanos','produccion','pendientes','revisado','vacaciones','pagos'));
+        return view('admin.solicitud', compact(
+            'solicitud',
+            'solicitudes',
+            'desarollo',
+            'talentohumano',
+            'recursoshumanos',
+            'produccion',
+            'pendientes',
+            'revisado',
+            'vacaciones',
+            'pagos'
+        ));
     }
     public function soli()
     {
-        return view('admin.solicitudes');
+        $pausasramdom = Pausasactivas::select('video')
+            ->inRandomOrder()
+            ->first();
+        return view('admin.solicitudes',compact('pausasramdom'));
     }
 
     public function store(Request $request)
@@ -58,7 +72,11 @@ class SolicitudController extends Controller
 
     public function crearsolicitud()
     {
-        return view('admin/crearsolicitud');
+        $pausasramdom = Pausasactivas::select('video')
+            ->inRandomOrder()
+            ->first();
+
+        return view('admin/crearsolicitud', compact('pausasramdom'));
     }
 
     public function crearsolicitudes(Request $request)
@@ -100,40 +118,43 @@ class SolicitudController extends Controller
     public function validator(array $data)
     {
         return Validator::make($data, [
-        'tipo_solicitud' => ['required', 'string', 'max:30'],
-        'nombre' => ['required', 'string', 'max:30'],
-        'apellido' => ['required', 'string', 'max:30'],
-        'fecha' => ['required', 'date'],
-        'cedula' => ['required', 'int', 'max:10'],
-        'telefono' => ['required', 'decimal','min:1', 'max:12'],
-        'area_trabajo' => ['required', 'string', 'max:30'],
-        'estado_solicitud' => ['string', 'max:30'],
-        'status' => ['int', 'max:4'],]);
+            'tipo_solicitud' => ['required', 'string', 'max:30'],
+            'nombre' => ['required', 'string', 'max:30'],
+            'apellido' => ['required', 'string', 'max:30'],
+            'fecha' => ['required', 'date'],
+            'cedula' => ['required', 'int', 'max:10'],
+            'telefono' => ['required', 'decimal', 'min:1', 'max:12'],
+            'area_trabajo' => ['required', 'string', 'max:30'],
+            'estado_solicitud' => ['string', 'max:30'],
+            'status' => ['int', 'max:4'],
+        ]);
     }
 
 
 
-    public function createPDF() {
+    public function createPDF()
+    {
         // retreive all records from db
         $data = User::all();
 
         // share data to view
-        view()->share('user',$data);
+        view()->share('user', $data);
         $pdf = PDF::loadView('admin.solicitud.pdf', $data);
 
         // download PDF file with download method
         return $pdf->download('Certificado Laboral.pdf');
-      }
+    }
 
-      public function storagePDF() {
+    public function storagePDF()
+    {
         // retreive all records from db
         $data = User::all();
 
         // share data to view
-        view()->share('user',$data);
+        view()->share('user', $data);
         $pdf = PDF::loadView('admin.solicitud.pdf2', $data);
 
         // download PDF file with download method
         return $pdf->download('Certificado De Nomina.pdf');
-      } 
+    }
 }

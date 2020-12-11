@@ -43,9 +43,13 @@ $date =date('m-d')
                             <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
 
-                                    <img src="{{$item->image}}" alt="" class="image-responsive" style=" width: 190px; margin-top: 10px; margin-bottom: -60px;">
+                                    <img src="{{$item->image}}" alt="" class="image-responsive" style="width: 193px;
+                                    margin-top: 1px;
+                                    margin-bottom: -60px;
+                                    height: 238px;
+                                ">
 
-                                    <div class="overlayer bottom-left full-width">
+                                    <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
                                     <div class="overlayer-wrapper item-info ">
                                             <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
                                                 <div class="">
@@ -55,7 +59,7 @@ $date =date('m-d')
                                                 </div>
                                                 <div class="m-t-10">
                                                     <div class="thumbnail-wrapper d32 circular m-t-5 avatar rounded-circle">
-                                                        <img width="auto" height="auto" src="{{ $item->user->photo }}">
+                                                        <img src="{{ $item->user->photo }}">
                                                     </div>
                                                     <div class="inline m-l-10">
                                                         <p class="no-margin text-white fs-12">Escrito por {{$item->user->name}} {{$item->user->lastname}}</p>
@@ -79,13 +83,16 @@ $date =date('m-d')
                                     <!-- START PREVIEW -->
                                     <div class="live-tile slide" data-speed="750" data-delay="4000" data-mode="carousel">
                                         <div class="slide-front">
-                                            <img src="{{$noticia2->image}}" alt="" class="image-responsive-height" style="max-width: 510px; padding-right: 124px; padding-top: 18px; padding-left: 10px;">
+                                            <img src="{{$noticia2->image}}" alt="" class="image-responsive-height" style="                                            
+                                            padding-top: 0px;     
+                                            height: 492px;
+                                            width: 394px;">
                                             
                                         </div>
                                     </div>
                                     <!-- END PREVIEW -->
                                     <!-- START ITEM OVERLAY DESCRIPTION -->
-                                    <div class="overlayer bottom-left full-width" style="margin-top: -25px;">
+                                    <div class="overlayer bottom-left full-width" style="margin-top: -185px;margin-left: 16px;">
                                     <div class="overlayer-wrapper item-info more-content">
                                         <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
                                         <div class="">
@@ -135,7 +142,7 @@ $date =date('m-d')
             <div class="row align-items-center">
               <div class="col-auto">
                 <a class="avatar rounded-circle">
-                  <img alt="Image placeholder" src="{{$user->photo}}">
+                <img src="{{$user->photo}}">
                 </a>
               </div>
               <div class="col ml--2">
@@ -164,50 +171,8 @@ $date =date('m-d')
             </div>
             @endif
             {{-- fin modal feliz cumpleaños --}}
-
-             {{-- Modal llenar campos --}}
-             @if (Auth::User()->phone == '')
-             <div class="col-lg-10">
-               <div class="modal fade" id="modaLlenarcampos" data-backdrop="static" data-keyboard="false">
-             <div class="modal-dialog modal-dialog-centered modal-" role="document">
-                 <div class="modal-content ">
-                     <div class="modal-header">
-                      <span aria-hidden="true"></span>
-                     </div>
-                     <div class="modal-body">
-                      <p>Por favor termine el registro para poder ingresar</p>
-                  </div>
-                     <div class="modal-footer">
-                        <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
-                      </div>
-                    </div>
-             </div>
-             </div>
-             </div>
-             @endif
-             {{-- fin modal llenar campos --}}
-{{-- Modal pausaActiva --}}
-
-<div class="col-lg-10">
-  <div class="modal fade" id="modalPausaActiva" data-backdrop="static" data-keyboard="false">
-<div class="modal-dialog modal-dialog-centered modal-" role="document">
-    <div class="modal-content ">
-        <div class="modal-header">
-         <span aria-hidden="true"></span>
-        </div>
-        <div class="modal-body">
-         <p>Puasaaa</p>
-     </div>
-        <div class="modal-footer">
-           <a href="{{ url('home')}}" class="btn btn-white">¡Vamos!</a>
-         </div>
-       </div>
-</div>
-</div>
-</div>
-
-{{-- fin modal llenar pausaActiva --}}
-
+            @include('admin.modalCampos')
+          @include('admin.modalPausas')
             @endforeach
           </div>
         </div>
@@ -244,33 +209,6 @@ $date =date('m-d')
           </div>
           @endforeach
         </div>
-        <!-- Progress track -->
-        <div class="card">
-          <!-- Card header -->
-          <div class="card-header bg-transparent">
-            <!-- Title -->
-            <h5 class="h3 mb-0">Amigos en linea </h5>
-          </div>
-          <!-- Card body -->
-          <div class="card-body">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col ml--2">
-                    <h4 class="mb-0">
-                      <a>User</a>
-                    </h4>
-                    <span class="text-success">●</span>
-                    <small>Online</small>
-                  </div>
-                </div>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
     <footer class="footer pt-0">
@@ -284,6 +222,7 @@ $date =date('m-d')
     </footer>
   </div>
 </div>
+
 @section('js')
 <script>
   $(document).ready(function () {
@@ -293,6 +232,7 @@ $date =date('m-d')
           })
       });
 </script>
+
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{asset("plantilla/js/gallery.js")}}"></script>

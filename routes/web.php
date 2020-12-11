@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SolicitudController;
+use App\Pausasactivas;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,8 +34,10 @@ Route::get('admin/pasword', function () {
 });
 
 Route::get('planestrategico', function () {
-
-    return view('admin.plan');
+    $pausasramdom = Pausasactivas::select('video')
+    ->inRandomOrder() 
+    ->first();
+    return view('admin.plan',compact('pausasramdom'));
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -68,6 +71,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('editarPausa/{id}', 'PausasActivasController@edit');
     Route::put('updatePausa/{id}', 'PausasActivasController@update');
     Route::delete('deletePausa/{id}', 'PausasActivasController@destroy');
+    Route::post('video', 'PausasActivasController@updatePhoto');
+
+
     //Novedad
     Route::resource('novedad', 'NovedadController');
     Route::get('editarnovedad/{id}', 'NovedadController@edit')->name('editarnovedad');
@@ -131,8 +137,10 @@ Route::post('/subir', 'Controller@subirArchivo')->name('subir');
 
 
 Route::get('repositoriocola', function () {
-
-    return view('admin.repositoriocola');
+    $pausasramdom = Pausasactivas::select('video')
+    ->inRandomOrder() 
+    ->first();
+    return view('admin.repositoriocola',compact('pausasramdom'));
 });
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>

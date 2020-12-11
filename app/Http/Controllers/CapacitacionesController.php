@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Capacitaciones;
+use App\Pausasactivas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,14 +18,13 @@ class CapacitacionesController extends Controller
     public function index()
     {
         $capacitaciones = Capacitaciones::paginate(9);
-        return view('admin/capacitaciones', compact('capacitaciones'));
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+        return view('admin/capacitaciones', compact('capacitaciones','pausasramdom '));
     }
 
 
-    /*   public function index2()
-    {
-        return view('admin/capacitaciones/index');
-    } */
     public function index2()
     {
 
@@ -67,10 +67,6 @@ class CapacitacionesController extends Controller
         $capacitacionActualizar = Capacitaciones::findOrFail($id_capacitacion);
         return view('admin/capacitaciones/editarcapacitacion', compact('capacitacionActualizar'));
     }
-
-
-
-
 
     public function update(Request $request, $id)
     {

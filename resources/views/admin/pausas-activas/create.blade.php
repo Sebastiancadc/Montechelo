@@ -18,7 +18,7 @@
                   <div class="row">  
                       <div class="col-sm-12">
                           <div class="form-group form-group-default">
-                              
+                            {{-- <input name="id" type="text" /> --}}
                               <div class="col-lg-4 col-md-9 col-sm-8">
                                 <div class="fallback">
                                     <input name="video" type="file" required/>

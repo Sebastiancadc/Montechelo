@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Novedad;
+use App\Pausasactivas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -47,7 +48,10 @@ class NovedadController extends Controller
 
     public function crearnovedad()
     {
-        return view('admin/crearnovedad');
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+        return view('admin/crearnovedad', compact('pausasramdom'));
     }
 
     public function crearnovedades(Request $request)

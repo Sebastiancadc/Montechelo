@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\buzon_de_sugerencias;
+use App\Pausasactivas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,12 @@ class BuzonDeSugerenciasController extends Controller
     public function index2()
     {
         $buzon = buzon_de_sugerencias::all();
-        return view('admin.buzon', compact('buzon'));
+
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+
+        return view('admin.buzon', compact('buzon','pausasramdom'));
     }
 
     public function store(Request $request)

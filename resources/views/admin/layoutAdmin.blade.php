@@ -29,10 +29,13 @@
 			<div class="logo-header">
 
 				<a href="{{url('HomeAdmin')}}" class="logo">
-
+					<h1 style="color:white;    color: white;
+					font-size: 20px;
+					margin-top: 16px;">ADMINISTRADOR</h1>
+{{-- 
 					<img src="{{asset("plantilla/img/theme/Montechelo_Negativo.png")}}" style="margin-top:-3px;
                     max-width: 64%;
-                    max-height: 10rem;" class="navbar-brand">
+                    max-height: 10rem;" class="navbar-brand"> --}}
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">

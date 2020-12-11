@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Noticia;
 use App\User;
 use App\Category;
+use App\Pausasactivas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -37,13 +38,18 @@ class NoticiasController extends Controller
     public function index2()
     {
         $noticias = Noticia::paginate(6);
-        return view('admin.noticia',compact('noticias'));
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+
+        return view('admin.noticia',compact('noticias','pausasramdom'));
     }
     public function talento()
     {
-
-
-        return view('admin.talento');
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+        return view('admin.talento',compact('pausasramdom'));
     }
 
     public function crearnoticia()

@@ -47,6 +47,7 @@ class PerfilController extends Controller
         $UserUpdate->genero = $request->genero;
         $UserUpdate->area = $request->area;
         $UserUpdate->phone = $request->phone;
+        $UserUpdate->biografia = $request->biografia;
         $UserUpdate->phone_status = $request->phone_status;
         if ($request->has('phone_status')) {
             $UserUpdate->phone_status = "1";

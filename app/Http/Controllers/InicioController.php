@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Eventos;
 use App\Helpers\Helpers;
 use App\Noticia;
+use App\Pausasactivas;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -71,9 +72,11 @@ class InicioController extends Controller
         $noticias= Noticia::latest()->take(2)->get();
         $noticias2= Noticia::first()->take(1)->get();
         
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
 
-
-        return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2'));
+        return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2','pausasramdom'));
     }
 
     public function indexAdmin()

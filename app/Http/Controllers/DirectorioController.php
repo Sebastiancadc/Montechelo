@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pausasactivas;
 use App\User;
 use Illuminate\Filesystem\Cache;
 use Illuminate\Http\Request;
@@ -28,7 +29,10 @@ class DirectorioController extends Controller
             $usuari = User::all();
             $usuarios = User::where('name','LIKE','%'.$query.'%')->orWhere('area','LIKE','%'.$query.'%')->orWhere('email','LIKE','%'.$query.'%')->orWhere('genero','LIKE','%'.$query.'%')->get();
         }
-        return view('admin.directorio', compact('usuari','query','usuarios'));
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+        return view('admin.directorio', compact('usuari','query','usuarios','pausasramdom'));
     }   
     public function buscador(Request $request)
     {

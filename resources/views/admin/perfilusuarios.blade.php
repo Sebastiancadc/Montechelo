@@ -1,5 +1,4 @@
 @extends('admin.layout')
-
 @section('content')
 <div class="header pb-6 d-flex align-items-center " <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8" style="
@@ -58,205 +57,6 @@ height: 148%;"></span>
           </div>
         </div>
       </div>
-      <div class="card">
-        <!-- Card header -->
-        <div class="card-header">
-          <!-- Title -->
-          <h5 class="h3 mb-0">Amigos en linea </h5>
-        </div>
-        <!-- Card body -->
-        <div class="card-body">
-          <!-- List group -->
-          <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col ml--2">
-                  <h4 class="mb-0">
-                    <a>Juan Manuel</a>
-                  </h4>
-                  <span class="text-success">●</span>
-                  <small>Online</small>
-                </div>
-
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col ml--2">
-                  <h4 class="mb-0">
-                    <a>Natalia Rodriguez</a>
-                  </h4>
-                  <span class="text-success">●</span>
-                  <small>Online</small>
-                </div>
-
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col ml--2">
-                  <h4 class="mb-0">
-                    <a>Daniela Sanchez</a>
-                  </h4>
-                  <span class="text-success">●</span>
-                  <small>Online</small>
-                </div>
-
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
-                  </a>
-                </div>
-                <div class="col ml--2">
-                  <h4 class="mb-0">
-                    <a>Anyul Carol</a>
-                  </h4>
-                  <span class="text-success">●</span>
-                  <small>Online</small>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-      <!-- Progress track -->
-      <div class="card">
-        <!-- Card header -->
-        <div class="card-header">
-          <!-- Title -->
-          <h5 class="h3 mb-0">Mis amigos</h5>
-        </div>
-        <!-- Card body -->
-        <div class="card-body">
-          <!-- List group -->
-          <ul class="list-group list-group-flush list my--3">
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-4.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Alejandra Osorio</h5>
-                  <div class="">
-                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Sebastian Rodriguez</h5>
-                  <div class="">
-                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item px-0">
-              <div class="row align-items-center">
-                <div class="col-auto">
-                  <!-- Avatar -->
-                  <a href="#" class="avatar rounded-circle">
-                    <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-                  </a>
-                </div>
-                <div class="col">
-                  <h5>Brayan Oconer</h5>
-                  <div class="">
-                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
-                  </div>
-                </div>
-              </div>
-            </li> <br>
-            <div class="card-header">
-              <h5 class="h3 mb-0"> Mi grupos</h5>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col">
-                    <h5>Diseñadores</h5>
-                    <div class="">
-                      <div class="progress-bar bg-teal" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}}">
-                    </a>
-                  </div>
-                  <div class="col">
-                    <h5>Java español</h5>
-                    <div class="">
-                      <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item px-0">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <!-- Avatar -->
-                    <a href="#" class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}}">
-                      </a>
-                  </div>
-
-                  <div class="col">
-                    <h5>Desarrolladores </h5>
-                    <div class="">
-                      <div class="progress-bar bg-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="col-xl-8 order-xl-1" style="margin-top: 30px">
       <div class="nav-wrapper">
@@ -265,11 +65,11 @@ height: 148%;"></span>
             <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Amigos</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Biografia</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>Grupos</a>
-          </li>
+          </li> --}}
         </ul>
       </div>
 
@@ -323,99 +123,12 @@ height: 148%;"></span>
                   </div>                        
                 </div>  
             </div>
-        
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Amigos Sugeridos</h1><br>
-
-        
-              
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-              </a>
-              <a href="#" class="avatar" style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}} ">
-              </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                            
-                        ">Manuel Rodriguez</h4>
-              <br>
-              
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -50px;
-                            
-                        ">Andres Sebastian</h4>
-              <br>
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-3.jpg")}} ">
-              </a>
-              <a href="#" class="avatar "style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
-              </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                        ">Angie Vega</h4>
-              <br>
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -55px;
-                        ">Maria Alejandra</h4>
-              <br>
-              
-           
-            
-              
-                     
-  </div>
-            <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-
-
-              <h1 class="form-control-label">Grupos sugeridos</h1><br>
-
-             
-        
-              
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
-              </a>
-              <a href="#" class="avatar" style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}} ">
-              </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                            
-                        ">PHP avanzado</h4>
-              <br>
-              
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -50px;
-                            
-                        ">Desarrolladores</h4>
-              <br>
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
-              </a>
-              <a href="#" class="avatar "style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
-              </a>
-              <h4 style="
-                            margin-left: 53px;
-                            margin-top: -35px;
-                        ">Laravel 5.8</h4>
-              <br>
-              <h4 style="
-                            margin-left: 400px;
-                            margin-top: -55px;
-                        ">Base de datos</h4>
-              <br>
+              <h1 class="form-control-label">Biografia</h1><br>               
+            <textarea name="biografia" id="" cols="75" rows="5" disabled >{{$perfil->biografia}}</textarea>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
       <?php $user = auth()->user();
       ?>

@@ -7,6 +7,7 @@ use App\Eventos;
 use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
+use App\Pausasactivas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -21,6 +22,7 @@ class CalendarioController extends Controller
         $importante = DB::table('eventos')->whereclassname('importante')->count();
         $especial = DB::table('eventos')->whereclassname('especial')->count();
         $advertencia = DB::table('eventos')->whereclassname('advertencia')->count();
+
         return view('admin.calendario.eventos', compact('eventos','evento','importante','especial','advertencia'));
     }
 
@@ -88,7 +90,10 @@ class CalendarioController extends Controller
             $calendario= array_merge($events,$h);
             
         }
-        return view('admin.calen', compact('calendario'));
+        $pausasramdom = Pausasactivas::select('video')
+        ->inRandomOrder() 
+        ->first();
+        return view('admin.calen', compact('calendario','pausasramdom'));
     }
 
 

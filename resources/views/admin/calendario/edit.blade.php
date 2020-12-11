@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-<link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
+
 
 @section('content')
 
@@ -28,7 +28,7 @@
       <div class="card-wrapper">
 <div class="card">
   <!-- Card header -->
-
+  <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
 
   <div class="card-header">
     <h3 class="mb-0">Editar evento</h3>
