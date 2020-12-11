@@ -11,7 +11,7 @@ class PausasActivasController extends Controller
 {
     public function index()
     {
-        return view('admin/pausasactivas');
+        return view('admin.pausas-activas.pausasactivas');
     }
 
     public function admin()
@@ -38,28 +38,6 @@ class PausasActivasController extends Controller
         $pausasEditar = Pausasactivas::findOrFail($id);
         return view('admin.pausas-activas.editar', compact('pausasEditar'));
     }
-    // public function update(Request $request, $id)
-    // {        
-    //     $pausaUpdate = Pausasactivas::findOrFail($id);
-    //     $pausaUpdate->id = $request->id;
-    //     $pausaUpdate->save();
-
-    //     $pausa = Pausasactivas::find($id);
-    //     $pausa->id = $request->id;
-    //     $pausa->update($request->all());
-
-    //     $f = $pausa->id = $request->id;
-        
-    //     if ($request->file('video')) {
-    //         $nombre = Storage::disk('videosave')->put('pausasacitvas',$request->file('video'));
-           
-    //         $pausa->fill(['video' => asset($nombre)])->save();
-    //         $pausass = $request->file('video');
-           
-    //         }
-           
-    //     return redirect()->action('PausasActivasController@admin')->with('Editarpa', 'Pausa editada correctamente');
-    // }
 
     
     public function updatePhoto(Request $request, $id)

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <div class="header bg-primary pb-6 "style="background:
 
@@ -84,8 +84,8 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
             </div>
         </div>
     </div>
-    @include('admin.modalCampos')
-    @include('admin.modalPausas')
+    @include('admin.modales.modalCampos')
+    @include('admin.modales.modalPausas')
     <!-- Footer -->
     <footer class="footer pt-0">
         <div class="row align-items-center justify-content-lg-between">

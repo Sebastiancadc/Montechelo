@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.min.css")}}">
 <div class="header bg-primary pb-6">
@@ -92,8 +92,8 @@
         </div>
       </div>
       @endforeach
-      @include('admin.modalCampos')
-@include('admin.modalPausas')
+      @include('admin.modales.modalCampos')
+      @include('admin.modales.modalPausas')
     </div>
     <!-- Footer -->
     <footer class="footer pt-0">

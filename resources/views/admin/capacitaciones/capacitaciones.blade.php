@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <!-- CAPACITACIONES -->
 <div class="header bg-primary pb-6" style="height: 100px;">
@@ -40,8 +40,8 @@
                             </div>
                         </div>
                     </div>    
-@include('admin.modalCampos')
-@include('admin.modalPausas')
+                    @include('admin.modales.modalCampos')
+                    @include('admin.modales.modalPausas')
     @endsection
 
     @section('js')

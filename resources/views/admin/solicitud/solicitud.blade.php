@@ -1,12 +1,13 @@
-@extends('admin.layoutAdmin')
+@extends('admin.layouts.layoutAdmin')
 @section('contents')
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.novedad.estadisticas')
-            @if (session('crearnovedades'))
+            @include('admin.solicitud.estadisticas')
+            @if (session('crearsolicitudes'))
             <div class="alert alert-primary" role="alert">
-                {{(session('crearnovedades'))}}
+                {{(session('crearsolicitudes'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -36,51 +37,55 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Novedades</h4>
+                                <h4 class="card-title">Gestión de Solicitud</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear novedad
+                                    Crear solicitud
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.novedad.create')
+                            @include('admin.solicitud.create')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            {{-- <th>#</th> --}}
+                                            <th>Nombre</th>
+                                            <th>Cédula</th>
+                                            <th>Teléfono</th>
                                             <th>Área</th>
-                                            <th>Fecha </th>
-                                            <th>Novedad</th>
-                                            <th>Descripción</th>
+                                            <th>Tipo de solicitud</th>
+                                            <th>Fecha</th>
                                             <th>Estado</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($novedad  as $item)
+                                        @foreach ($solicitud as $item)
                                         <tr>                                           
-                                            <td>{{$item->area}}</td>
+                                            <td>{{$item->nombre}} {{$item->apellido}}</td>
+                                            <td>{{$item->cedula}}</td>
+                                            <td>{{$item->telefono}}</td>
+                                            <td>{{$item->area_trabajo}}</td>
+                                            <td>{{$item->tipo_solicitud}}</td>
                                             <td>{{$item->fecha}}</td>
-                                            <td>{{$item->novedad}}</td>
-                                            <td>{{$item->descripcion}}</td>
-                                            <td>@if ($item->estado == 'Revisado')
-                                            <span class="badge badge-lg badge-success">{{$item->estado}}</span>
+                                            <td> @if ($item->estado_solicitud == 'Revisado')
+                                                <span class="badge badge-lg badge-success">{{$item->estado_solicitud}}
                                                 @else
-                                                <span class="badge badge-lg badge-danger">{{$item->estado}}</span>
-                                            @endif                                          
-                                            </td>
+                                                <span class="badge badge-lg badge-danger">{{$item->estado_solicitud}}
+                                            @endif
+                                                
+                                                </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                    <a href="{{route('editarsoli',$item->Id_Solicitud)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}"  data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteSolicitud{{$item->Id_Solicitud}}" data-original-title="Eliminar usuario">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteNovedad{{$item->id_novedad}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                <div class="modal fade" id="deleteSolicitud{{$item->Id_Solicitud}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
 	                                                <div class="modal-dialog modal-dialog-centered" role="document">
 		                                                <div class="modal-content">
 			                                                <div class="modal-header">
@@ -89,7 +94,7 @@
 					                                                <span aria-hidden="true">&times;</span>
 				                                                </button>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad) }}" >
+                                                            <form role="form" method="POST" action="{{route('eliminar',$item->Id_Solicitud)}}" >
                                                                 @csrf @method('DELETE') 
 			                                                <div class="modal-body">
                                                                 ¡No podrás revertir esto!			                                               
@@ -123,6 +128,8 @@
 </div>
 
 @section('js')
+
+<!-- Datatables -->
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
 
@@ -130,13 +137,10 @@
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
 $('#datepicker').datetimepicker({
-    format: 'YYYY/MM/DD',
+    format: 'DD/MM/YYYY',
 });
 $('#datetime').datetimepicker({
 			format: 'MM/DD/YYYY H:mm',
-        });
-        $('#basic').select2({
-			theme: "bootstrap"
 		});
 </script>
 @endsection

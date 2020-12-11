@@ -93,7 +93,7 @@ class CalendarioController extends Controller
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-        return view('admin.calen', compact('calendario','pausasramdom'));
+        return view('admin.calendario.calen', compact('calendario','pausasramdom'));
     }
 
 

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -85,8 +85,8 @@
   </form>
   </div>
 </div>
-@include('admin.modalCampos')
-@include('admin.modalPausas')
+@include('admin.modales.modalCampos')
+@include('admin.modales.modalPausas')
 @section('js')
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection

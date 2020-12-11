@@ -154,7 +154,7 @@
 							</a>
 						</li>
 						<li class="nav-item ">
-                            <a href="{{url('admin/buzon')}}">
+                            <a href="{{url('admin/buzonAdmin')}}">
 								<i class="fas fa-paper-plane"></i>
 								<p>Buzon</p>
 							</a>

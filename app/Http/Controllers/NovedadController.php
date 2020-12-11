@@ -35,7 +35,7 @@ class NovedadController extends Controller
         $produccion = DB::table('novedad')->wherearea('produccion')->count();
         $pendientes = DB::table('novedad')->whereestado('pendiente')->count();
         $revisado = DB::table('novedad')->whereestado('revisado')->count();
-        return view('admin.novedad', compact('novedad','novedades','pendientes','revisado','desarollo'
+        return view('admin.novedad.novedad', compact('novedad','novedades','pendientes','revisado','desarollo'
         ,'talentohumano','recursoshumanos','produccion'));
     }
 
@@ -51,7 +51,7 @@ class NovedadController extends Controller
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-        return view('admin/crearnovedad', compact('pausasramdom'));
+        return view('admin.novedad.crearnovedad', compact('pausasramdom'));
     }
 
     public function crearnovedades(Request $request)

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
@@ -77,8 +77,8 @@
     </div>
 </div>
 <!-- /Articles Posts -->
-@include('admin.modalCampos')
-@include('admin.modalPausas')
+@include('admin.modales.modalCampos')
+@include('admin.modales.modalPausas')
 @section('js')
   <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
   <script src="{{asset("pausasacitvas/pausas.js")}}"></script>

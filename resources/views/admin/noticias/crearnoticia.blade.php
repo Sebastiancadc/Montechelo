@@ -1,4 +1,5 @@
-@extends('admin.layout')
+
+@extends('admin.layouts.layout')
 @section('content')
 <!-- Crear Noticia -->
 <div class="header bg-primary pb-6">

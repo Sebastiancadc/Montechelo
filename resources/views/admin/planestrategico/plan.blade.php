@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <!-- PLAN ESTRATEGICO -->
 <div class="header bg-primary pb-6" style="height: 100px;">
@@ -67,8 +67,8 @@
             </div>
         </div>
     </div>
-    @include('admin.modalCampos')
-@include('admin.modalPausas')
+    @include('admin.modales.modalCampos')
+    @include('admin.modales.modalPausas')
 @section('js')
   <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
   <script src="{{asset("pausasacitvas/pausas.js")}}"></script>

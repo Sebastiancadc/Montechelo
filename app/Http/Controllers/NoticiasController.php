@@ -42,21 +42,21 @@ class NoticiasController extends Controller
         ->inRandomOrder() 
         ->first();
 
-        return view('admin.noticia',compact('noticias','pausasramdom'));
+        return view('admin.noticias.noticia',compact('noticias','pausasramdom'));
     }
     public function talento()
     {
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-        return view('admin.talento',compact('pausasramdom'));
+        return view('admin.talentohumano.talento',compact('pausasramdom'));
     }
 
     public function crearnoticia()
     {
         $user = User::find(Auth::User()->id);
         $categoria = Category::all();
-        return view('admin/crearnoticia',compact('categoria','user'));
+        return view('admin.noticias.crearnoticia',compact('categoria','user'));
     }
     public function crearnoticias()
     {
@@ -101,17 +101,7 @@ class NoticiasController extends Controller
           Session::flash('message','Publicación creada correctamente');
           return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
+ 
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
@@ -197,7 +187,7 @@ class NoticiasController extends Controller
     public function post($slug)
     {
         $noticia= Noticia::where('slug',$slug)->first();
-    	return view('admin.post',compact('noticia'));
+    	return view('admin.noticias.post',compact('noticia'));
     }
 
     /**

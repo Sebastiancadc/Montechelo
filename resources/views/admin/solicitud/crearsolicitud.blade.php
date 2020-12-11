@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -108,8 +108,8 @@
       <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
     </div>
   </form>
-  @include('admin.modalCampos')
-  @include('admin.modalPausas')
+  @include('admin.modales.modalCampos')
+  @include('admin.modales.modalPausas')
   </div>
   <!-- Footer -->
     <footer class="footer pt-0">

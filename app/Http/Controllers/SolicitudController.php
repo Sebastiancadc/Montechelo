@@ -42,7 +42,7 @@ class SolicitudController extends Controller
         $pagos = DB::table('solicitud')->wheretipo_solicitud('desprendibles de pago')->count();
         $pendientes = DB::table('solicitud')->whereestado_solicitud('pendiente')->count();
         $revisado = DB::table('solicitud')->whereestado_solicitud('revisado')->count();
-        return view('admin.solicitud', compact(
+        return view('admin.solicitud.solicitud', compact(
             'solicitud',
             'solicitudes',
             'desarollo',
@@ -60,7 +60,7 @@ class SolicitudController extends Controller
         $pausasramdom = Pausasactivas::select('video')
             ->inRandomOrder()
             ->first();
-        return view('admin.solicitudes',compact('pausasramdom'));
+        return view('admin.solicitud.solicitudes',compact('pausasramdom'));
     }
 
     public function store(Request $request)
@@ -76,7 +76,7 @@ class SolicitudController extends Controller
             ->inRandomOrder()
             ->first();
 
-        return view('admin/crearsolicitud', compact('pausasramdom'));
+        return view('admin.solicitud.crearsolicitud', compact('pausasramdom'));
     }
 
     public function crearsolicitudes(Request $request)

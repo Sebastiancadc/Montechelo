@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <!-- AGREGAR -->
 <div class="header bg-primary pb-6" style="height: 100px;">

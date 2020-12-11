@@ -42,7 +42,7 @@ class HomeController extends Controller
         $administradores = DB::table('usuario')->whererole('admin')->count();
         $colaboradores = DB::table('usuario')->whererole('colaborador')->count();
 
-        return view('admin.usuario', compact('users','usuariosregistrados','hombres',
+        return view('admin.forms.usuario', compact('users','usuariosregistrados','hombres',
         'mujeres','otro','diseño','marketing'
         ,'produccion','programacion','administradores','colaboradores'));
     }

@@ -40,7 +40,7 @@ class BuzonDeSugerenciasController extends Controller
         ->inRandomOrder() 
         ->first();
 
-        return view('admin.buzon', compact('buzon','pausasramdom'));
+        return view('admin.buzon.buzon', compact('buzon','pausasramdom'));
     }
 
     public function store(Request $request)
@@ -50,8 +50,8 @@ class BuzonDeSugerenciasController extends Controller
     }
 
     public function crearbuzon()
-    {
-        return view('admin/crearbuzon');
+    {   
+        return view('admin.buzon.crearbuzon');
     }
 
     public function crearsugerencias(Request $request)

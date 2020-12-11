@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 {{-- <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css"> --}}
 @section('content')  
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">
@@ -90,8 +90,8 @@
         </div>
       </div>
     </div>
-    @include('admin.modalCampos')
-@include('admin.modalPausas') 
+    @include('admin.modales.modalCampos')
+    @include('admin.modales.modalPausas')
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">

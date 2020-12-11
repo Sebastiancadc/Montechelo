@@ -135,4 +135,4 @@
 
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
-@include('admin.modalCampos')
+@include('admin.modales.modalCampos')

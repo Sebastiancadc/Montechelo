@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <?php
 $date =date('m-d')
@@ -171,8 +171,8 @@ $date =date('m-d')
             </div>
             @endif
             {{-- fin modal feliz cumpleaños --}}
-            @include('admin.modalCampos')
-          @include('admin.modalPausas')
+            @include('admin.modales.modalCampos')
+@include('admin.modales.modalPausas')
             @endforeach
           </div>
         </div>

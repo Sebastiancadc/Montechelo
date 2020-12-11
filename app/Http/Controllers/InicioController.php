@@ -76,7 +76,7 @@ class InicioController extends Controller
         ->inRandomOrder() 
         ->first();
 
-        return view('admin.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2','pausasramdom'));
+        return view('admin.dashboards.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2','pausasramdom'));
     }
 
     public function indexAdmin()
@@ -89,7 +89,7 @@ class InicioController extends Controller
         $noticias = DB::table('noticias')->count();
         $capacitaciones = DB::table('capacitaciones')->count();
         $pausas = DB::table('pausas_activas')->count();
-        return view('admin.dashboardAdmin', compact('usuariosregistrados','eventos','buzon','novedad'
+        return view('admin.dashboards.dashboardAdmin', compact('usuariosregistrados','eventos','buzon','novedad'
     ,'solicitudes','noticias','capacitaciones','pausas'));
     }
 

@@ -14,13 +14,8 @@ Route::get('/', function () {
 
 Route::get('/home', 'InicioController@index');
 
-// Route::get('/home', 'InicioController@index')->middleware('verified');
 
 Auth::routes();
-
-
-//dasboard
-
 
 // login
 Route::get('admin', function () {
@@ -37,7 +32,7 @@ Route::get('planestrategico', function () {
     $pausasramdom = Pausasactivas::select('video')
     ->inRandomOrder() 
     ->first();
-    return view('admin.plan',compact('pausasramdom'));
+    return view('admin.planestrategico.plan',compact('pausasramdom'));
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -90,6 +85,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //buzon
     Route::resource('buzon', 'BuzonDeSugerenciasController');
+    Route::get('buzonAdmin', 'BuzonDeSugerenciasController@index');
     Route::delete('deletesugerencia/{Id_sugerencia}', 'BuzonDeSugerenciasController@destroy')->name('eliminarsugerencia');
 
     //Canlendario
@@ -140,7 +136,7 @@ Route::get('repositoriocola', function () {
     $pausasramdom = Pausasactivas::select('video')
     ->inRandomOrder() 
     ->first();
-    return view('admin.repositoriocola',compact('pausasramdom'));
+    return view('admin.repositorio.repositoriocola',compact('pausasramdom'));
 });
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>

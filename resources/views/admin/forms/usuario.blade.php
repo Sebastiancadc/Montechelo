@@ -1,31 +1,31 @@
-@extends('admin.layoutAdmin')
+@extends('admin.layouts.layoutAdmin')
 @section('contents')
 
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.solicitud.estadisticas')
-            @if (session('crearsolicitudes'))
+            @include('admin.forms.estadisticas')
+            @if (session('crearUsuario'))
             <div class="alert alert-primary" role="alert">
-                {{(session('crearsolicitudes'))}}
+                {{(session('crearUsuario'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
 
-            @if (session('eliminar'))
+            @if (session('eliminarusuario'))
             <div class="alert alert-danger" role="alert">
-                {{(session('eliminar'))}}
+                {{(session('eliminarusuario'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
 
-            @if (session('update'))
+            @if (session('editarUsuario'))
           <div class="alert alert-warning" role="alert">
-           {{(session('update'))}}
+           {{(session('editarUsuario'))}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,55 +37,55 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Solicitud</h4>
+                                <h4 class="card-title">Gestión de Usuarios</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear solicitud
+                                    Crear administrador
+                                </button>
+                                <span>.</span>
+                                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#addRowModal2">
+                                    <i class="fa fa-plus"></i>
+                                    Crear colaborador
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.solicitud.create')
+                            @include('admin.forms.create')
+                            @include('admin.forms.createcola')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Cédula</th>
-                                            <th>Teléfono</th>
+                                            <th>Correo</th>
+                                            <th>Género</th>
+                                            <th>Fecha de nacimiento</th>
                                             <th>Área</th>
-                                            <th>Tipo de solicitud</th>
-                                            <th>Fecha</th>
-                                            <th>Estado</th>
+                                            <th>Teléfono</th>
+                                            <th>Rol</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($solicitud as $item)
+                                        @foreach ($users as $user)
                                         <tr>                                           
-                                            <td>{{$item->nombre}} {{$item->apellido}}</td>
-                                            <td>{{$item->cedula}}</td>
-                                            <td>{{$item->telefono}}</td>
-                                            <td>{{$item->area_trabajo}}</td>
-                                            <td>{{$item->tipo_solicitud}}</td>
-                                            <td>{{$item->fecha}}</td>
-                                            <td> @if ($item->estado_solicitud == 'Revisado')
-                                                <span class="badge badge-lg badge-success">{{$item->estado_solicitud}}
-                                                @else
-                                                <span class="badge badge-lg badge-danger">{{$item->estado_solicitud}}
-                                            @endif
-                                                
-                                                </td>
+                                            <td>{{$user->name}} {{$user->lastname}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->genero}}</td>
+                                            <td>{{$user->cumpleanios}}</td>
+                                            <td>{{$user->area}}</td>
+                                            <td>{{$user->phone}}</td>
+                                            <td>{{$user->role}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarsoli',$item->Id_Solicitud)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                    <a href="{{route('editarusuario',$user->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteSolicitud{{$item->Id_Solicitud}}" data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteSolicitud{{$item->Id_Solicitud}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
 	                                                <div class="modal-dialog modal-dialog-centered" role="document">
 		                                                <div class="modal-content">
 			                                                <div class="modal-header">
@@ -94,7 +94,7 @@
 					                                                <span aria-hidden="true">&times;</span>
 				                                                </button>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminar',$item->Id_Solicitud)}}" >
+                                                            <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}" >
                                                                 @csrf @method('DELETE') 
 			                                                <div class="modal-body">
                                                                 ¡No podrás revertir esto!			                                               
@@ -111,8 +111,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>
-                                    
+                                    </tbody>                                    
                                     @endforeach
                                 </table>
                             </div>
@@ -128,8 +127,6 @@
 </div>
 
 @section('js')
-
-<!-- Datatables -->
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
 
@@ -137,6 +134,9 @@
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
 $('#datepicker').datetimepicker({
+    format: 'DD/MM/YYYY',
+});
+$('#datepicker2').datetimepicker({
     format: 'DD/MM/YYYY',
 });
 $('#datetime').datetimepicker({

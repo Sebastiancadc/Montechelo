@@ -1,5 +1,5 @@
 
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <!-- AGREGAR BUZON DE SUGERENCIAS -->
 <div class="header bg-primary pb-6" style="height: 100px;">

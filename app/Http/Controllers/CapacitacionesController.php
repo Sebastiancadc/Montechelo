@@ -21,9 +21,8 @@ class CapacitacionesController extends Controller
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-        return view('admin/capacitaciones', compact('capacitaciones','pausasramdom '));
+        return view('admin.capacitaciones.capacitaciones', compact('capacitaciones','pausasramdom'));
     }
-
 
     public function index2()
     {

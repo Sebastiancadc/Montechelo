@@ -1,5 +1,5 @@
 
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <!-- BUZON DE SUGERENCIAS -->
 <div class="header bg-primary pb-6" style="height: 100px;">
@@ -72,8 +72,8 @@
             </section>
         </div>
     </div>
-@include('admin.modalCampos')
-@include('admin.modalPausas')
+    @include('admin.modales.modalCampos')
+    @include('admin.modales.modalPausas')
 </div>
 @section('js')
   <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>

@@ -1,31 +1,30 @@
-@extends('admin.layoutAdmin')
+@extends('admin.layouts.layoutAdmin')
 @section('contents')
-
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.forms.estadisticas')
-            @if (session('crearUsuario'))
+            @include('admin.novedad.estadisticas')
+            @if (session('crearnovedades'))
             <div class="alert alert-primary" role="alert">
-                {{(session('crearUsuario'))}}
+                {{(session('crearnovedades'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
 
-            @if (session('eliminarusuario'))
+            @if (session('eliminar'))
             <div class="alert alert-danger" role="alert">
-                {{(session('eliminarusuario'))}}
+                {{(session('eliminar'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
 
-            @if (session('editarUsuario'))
+            @if (session('update'))
           <div class="alert alert-warning" role="alert">
-           {{(session('editarUsuario'))}}
+           {{(session('update'))}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,55 +36,51 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Usuarios</h4>
+                                <h4 class="card-title">Gestión de Novedades</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear administrador
-                                </button>
-                                <span>.</span>
-                                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#addRowModal2">
-                                    <i class="fa fa-plus"></i>
-                                    Crear colaborador
+                                    Crear novedad
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.forms.create')
-                            @include('admin.forms.createcola')
+                            @include('admin.novedad.create')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Género</th>
-                                            <th>Fecha de nacimiento</th>
+                                            {{-- <th>#</th> --}}
                                             <th>Área</th>
-                                            <th>Teléfono</th>
-                                            <th>Rol</th>
+                                            <th>Fecha </th>
+                                            <th>Novedad</th>
+                                            <th>Descripción</th>
+                                            <th>Estado</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $user)
+                                        @foreach ($novedad  as $item)
                                         <tr>                                           
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td>{{$user->genero}}</td>
-                                            <td>{{$user->cumpleanios}}</td>
-                                            <td>{{$user->area}}</td>
-                                            <td>{{$user->phone}}</td>
-                                            <td>{{$user->role}}</td>
+                                            <td>{{$item->area}}</td>
+                                            <td>{{$item->fecha}}</td>
+                                            <td>{{$item->novedad}}</td>
+                                            <td>{{$item->descripcion}}</td>
+                                            <td>@if ($item->estado == 'Revisado')
+                                            <span class="badge badge-lg badge-success">{{$item->estado}}</span>
+                                                @else
+                                                <span class="badge badge-lg badge-danger">{{$item->estado}}</span>
+                                            @endif                                          
+                                            </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarusuario',$user->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                    <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}"  data-original-title="Eliminar usuario">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                <div class="modal fade" id="deleteNovedad{{$item->id_novedad}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
 	                                                <div class="modal-dialog modal-dialog-centered" role="document">
 		                                                <div class="modal-content">
 			                                                <div class="modal-header">
@@ -94,7 +89,7 @@
 					                                                <span aria-hidden="true">&times;</span>
 				                                                </button>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}" >
+                                                            <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad) }}" >
                                                                 @csrf @method('DELETE') 
 			                                                <div class="modal-body">
                                                                 ¡No podrás revertir esto!			                                               
@@ -111,7 +106,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>                                    
+                                    </tbody>
+                                    
                                     @endforeach
                                 </table>
                             </div>
@@ -134,13 +130,13 @@
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
 $('#datepicker').datetimepicker({
-    format: 'DD/MM/YYYY',
-});
-$('#datepicker2').datetimepicker({
-    format: 'DD/MM/YYYY',
+    format: 'YYYY/MM/DD',
 });
 $('#datetime').datetimepicker({
 			format: 'MM/DD/YYYY H:mm',
+        });
+        $('#basic').select2({
+			theme: "bootstrap"
 		});
 </script>
 @endsection

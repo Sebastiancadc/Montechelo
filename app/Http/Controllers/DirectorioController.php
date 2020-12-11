@@ -32,7 +32,7 @@ class DirectorioController extends Controller
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-        return view('admin.directorio', compact('usuari','query','usuarios','pausasramdom'));
+        return view('admin.directorio.directorio', compact('usuari','query','usuarios','pausasramdom'));
     }   
     public function buscador(Request $request)
     {
@@ -74,7 +74,7 @@ class DirectorioController extends Controller
     public function perfilUsuarios($id)
     {
         $perfil = User::findOrFail($id);
-        return view('admin/perfilusuarios',compact('perfil'));
+        return view('admin.directorio.perfilusuarios',compact('perfil'));
     }
 
 

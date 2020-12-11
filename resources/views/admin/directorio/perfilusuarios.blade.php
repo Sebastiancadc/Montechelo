@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 @section('content')
 <div class="header pb-6 d-flex align-items-center " <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8" style="
