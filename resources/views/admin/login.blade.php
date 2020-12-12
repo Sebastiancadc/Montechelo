@@ -48,13 +48,16 @@
             </div>
 
         </div>
+        <?php
+        $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+      ?>
         <!-- Page content -->
         <div class="container mt--8 pb-5">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-7">
                     <div class="card bg-secondary border-0 mb-0" style="top: -190px;">
                         <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
-                            <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;">
+                        <img src="{{$page->logologin}}" style="height: 70px;">
 
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
@@ -101,6 +104,9 @@
                                     <button type="submit" class="btn btn-primary my-4">Ingresar</button>
 
                                 </div>
+                               <div class="copyright text-center text-lg-left text-muted">
+                               <a style="color: #5e72e4;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
+                              </div>
                             </form>
                         </div>
                     </div>

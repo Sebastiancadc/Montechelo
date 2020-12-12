@@ -74,7 +74,7 @@ class DirectorioController extends Controller
     public function perfilUsuarios($id)
     {
         $perfil = User::findOrFail($id);
-        return view('admin.directorio.perfilusuarios',compact('perfil'));
+        return view('admin.perfil.perfilusuarios',compact('perfil'));
     }
 
 

@@ -84,9 +84,10 @@
     </div>
   </form>
   </div>
+  @include('admin.layouts.footer')
 </div>
 @include('admin.modales.modalCampos')
-@include('admin.modales.modalPausas')
+{{-- @include('admin.modales.modalPausas') --}}
 @section('js')
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection

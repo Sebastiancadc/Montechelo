@@ -39,11 +39,12 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>    
+                        @include('admin.layouts.footer')                        
+                    </div>   
                     @include('admin.modales.modalCampos')
-                    @include('admin.modales.modalPausas')
+                    {{-- @include('admin.modales.modalPausas') --}}
     @endsection
-
+    
     @section('js')
     <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
     <script src="{{asset("pausasacitvas/pausas.js")}}"></script>

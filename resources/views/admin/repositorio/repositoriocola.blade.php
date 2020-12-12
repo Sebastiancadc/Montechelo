@@ -89,7 +89,7 @@
     <div id="fm"></div>
 </div>
 @include('admin.modales.modalCampos')
-@include('admin.modales.modalPausas')
+{{-- @include('admin.modales.modalPausas') --}}
     <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
     <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>

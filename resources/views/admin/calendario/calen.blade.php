@@ -91,16 +91,8 @@
       </div>
     </div>
     @include('admin.modales.modalCampos')
-    @include('admin.modales.modalPausas')
-    <footer class="footer pt-0">
-      <div class="row align-items-center justify-content-lg-between">
-        <div class="col-lg-6">
-          <div class="copyright text-center text-lg-left text-muted">
-            &copy; 2020 <a href="" class="font-weight-bold ml-1" target="">Grupo 3.</a>
-          </div>
-        </div>
-      </div>
-    </footer> 
+    {{-- @include('admin.modales.modalPausas') --}}
+    @include('admin.layouts.footer')
     </div>
   </div>
   @include('admin.calendario.crearev')

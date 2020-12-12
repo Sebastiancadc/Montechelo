@@ -59,6 +59,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
+
+    //Configuracion web
+    Route::get('ConfiguracionAdmin/{id}', 'ConfigpageController@edit')->name('editarpage');
+    Route::put('updateConfiguracion/{id}', 'ConfigpageController@update')->name('updatepage');
+    Route::post('fotoisotipo', 'ConfigpageController@updatePhoto');
+    Route::post('fotologin', 'ConfigpageController@updatePhotologin');
+    Route::post('fotonavvertical', 'ConfigpageController@updatePhotonavvertical');
+    
     
     //Pausas activas
     Route::get('pasuasAdmin', 'PausasActivasController@admin');
@@ -201,6 +209,7 @@ Route::group(['prefix' => ''], function () {
     //Imagen de perfil
     Route::post('foto', 'PerfilController@updatePhoto');
     Route::post('fotoportada', 'PerfilController@updatePhotoportada');
+
 
     //pausas activas
     Route::resource('pausasactivas', 'PausasActivasController');

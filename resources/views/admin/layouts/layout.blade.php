@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <?php
+  $user = auth()->user();
+  $rol = auth()->user()->role;
+  $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
+  $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon -->
-  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+  <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
@@ -28,18 +34,16 @@
 </head>
 
 <body>
-<?php
-  $user = auth()->user();
-  $rol = auth()->user()->role;
-  $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
-?>
+
+
+@include('admin.configuracionweb.css2')
   <!-- Sidenav -->
-  <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-          <img src="{{asset("plantilla/img/theme/Logo1.png")}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
+        <img src="{{$page->logonav}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
           max-width: 126%;
           max-height: 10rem;">
         </a>
@@ -312,30 +316,7 @@
         </div>
       </div>
     </nav>
-    <style>
-
-      .select2-container--default .select2-selection--single .select2-selection__rendered {
-          color: #444;
-          line-height: 16px;
-      }
-      .select2-container--default .select2-selection--single {
-          background-color: #e6eaef;
-          border: 1px solid #e6eaef;
-          margin-left: 31px;
-          height: 32px;
-          margin-top: -37px;
-          border: 0 solid;
-          border-radius: 2rem;
-          width: 297px;
-      }
-      .select2-container .select2-selection--single:focus, .select2-container--default.select2-container--focus .select2-selection--multiple:focus, .select2-container--default .select2-selection--multiple:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
-          color: #8898aa;
-          border-color: #5e72e4;
-          outline: 0;
-          background-color: #e6eaef;
-          box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
-      }
-                 </style>
+ 
 @yield('content')
 
 <!-- Argon Scripts -->

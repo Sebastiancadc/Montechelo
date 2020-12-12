@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+	<?php
+	$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+  ?>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Montechelo</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+	<link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
 	<!-- Fonts and icons -->
     <script src="{{asset("plantillaAdmin/assets/js/plugin/webfont/webfont.min.js")}}"></script>
 
@@ -18,6 +21,10 @@
 		});
 	</script>
 	<!-- CSS Files -->
+
+	<?php
+	$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+	?>
     <link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/azzara.css")}}">
 
@@ -32,10 +39,6 @@
 					<h1 style="color:white;    color: white;
 					font-size: 20px;
 					margin-top: 16px;">ADMINISTRADOR</h1>
-{{-- 
-					<img src="{{asset("plantilla/img/theme/Montechelo_Negativo.png")}}" style="margin-top:-3px;
-                    max-width: 64%;
-                    max-height: 10rem;" class="navbar-brand"> --}}
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -165,12 +168,6 @@
 								<p>Eventos</p>
 							</a>
 						</li>
-						{{-- <li class="nav-item ">
-                            <a href="{{url('admin/repositorio')}}">                        
-								<i class="fas fa-cloud-upload-alt"></i>
-								<p>Repositorio</p>
-							</a>
-                        </li> --}}
                         <li class="nav-item ">
                             <a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>
@@ -198,11 +195,14 @@
 							</span>
 							<h4 class="text-section">Sistema de gestión de contenidos</h4>
 						</li>
+						<?php
+						$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+						?>
 						<li class="nav-item ">
-                            <a href="">
+							<a href="{{route('editarpage',$page->id)}}">
 								<i class="fas fa-cogs"></i>
 								<p>General
-                                </p>
+                                </p>	
 							</a>
 						</li>
 					</ul>
