@@ -42,7 +42,7 @@
                                             <td>{{$item->autor}}</td>
                                             <td>{{$item->observaciones}}</td>
                                             <td><a href="#" data-toggle="modal" data-target="#ver{{$item->Id_Repositorio}}" > 
-                                            <img src="{{$item->image}}"  width="50" height="50" class="img-fluid" ></a></td>                                           
+                                            <img src="{{$item->image}}"  width="50" height="50" class="img-fluid"></a></td>                                           
                                         </tr>
                                     </tbody>                                    
                                     @endforeach

@@ -1,8 +1,7 @@
 @extends('admin.layouts.layout')
 @section('content')
 <div class="header pb-6 d-flex align-items-center " <!-- Mask -->
-  <span class="mask bg-gradient-default opacity-8" style="
-width: 100%;
+  <span class="mask bg-gradient-default opacity-8" style="width: 100%;
 height: 148%;"></span>
   <!-- Header container -->
   <div class="container-fluid d-flex align-items-center">
@@ -19,19 +18,38 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="{{$perfil->photo_portada}}"   class="card-img-top">
+        <a href="#" data-toggle="modal" data-target="#verfotoportada{{$perfil->id}}" >
+        <img src="{{$perfil->photo_portada}}" class="card-img-top">
+      </a>
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
-              <a href="#">
+              <a href="#" data-toggle="modal" data-target="#verfotoperfil{{$perfil->id}}">
                 <img src="{{$perfil->photo}}" class="rounded-circle">
               </a>
             </div>
           </div>
         </div>
+        <div class="modal fade" id="verfotoperfil{{$perfil->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" style="width: 346px;" >
+                  <div class="modal-body">
+                      <img src="{{$perfil->photo}}" height="300" width="300" class="img-fluid">
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="modal fade" id="verfotoportada{{$perfil->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" >
+                <div class="modal-body" >
+                    <img src="{{$perfil->photo_portada}}"  class="img-fluid">
+            </div>
+        </div>
+    </div>
+    </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
             <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
@@ -67,9 +85,6 @@ height: 148%;"></span>
           <li class="nav-item">
             <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Biografia</a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>Grupos</a>
-          </li> --}}
         </ul>
       </div>
 
