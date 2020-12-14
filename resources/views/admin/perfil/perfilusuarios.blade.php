@@ -9,7 +9,6 @@ height: 148%;"></span>
       <div class="col-md-12 col-lg-7">
         <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{$perfil->name}} {{$perfil->lastname}} </h1>
       </div>
-  
     </div>
   </div>
 </div>
@@ -70,8 +69,7 @@ height: 148%;"></span>
             </div>
             <div class="h5 mt-4">
               {{$perfil->email}}
-            </div>
-            
+            </div>            
           </div>
         </div>
       </div>
@@ -87,13 +85,10 @@ height: 148%;"></span>
           </li>
         </ul>
       </div>
-
       <div class="card shadow">
         <div class="card-body">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
-
-              
+            <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">              
                 <hr class="my-4" />
                 <!-- Address -->
                 <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
@@ -114,14 +109,12 @@ height: 148%;"></span>
                     <div class="col-md-6">
                       <h4>Gmail</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->email}}</h4>
-
                     </div>
                     <div class="col-md-5">
                       <h4>Genero</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->genero}}</h4>
                     </div>
                   </div>  
-
                   <div class="row">
                     <div class="col-md-6">
                       <h4>Area</h4>
@@ -131,10 +124,8 @@ height: 148%;"></span>
                     <div class="col-md-5">
                       <h4>Telefono</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
-
                     </div>   
-                    @endif
-                    
+                    @endif                    
                   </div>                        
                 </div>  
             </div>
@@ -156,5 +147,4 @@ height: 148%;"></span>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-
 @endsection
