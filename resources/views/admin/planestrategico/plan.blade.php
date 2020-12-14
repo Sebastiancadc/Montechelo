@@ -38,7 +38,7 @@
                                      <div class="col-lg-4" >
                                         <div class="card card-lift--hover shadow border-0" >
                                             <div class="card-body py-5 y6" >
-                                                <h4 class="h3 text-primary text-uppercase test4">Mision</h4>
+                                                <h4 class="h3 text-primary text-uppercase test4">Misión</h4>
                                                 <p class="description mt-3 texte" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
                                         </div>
@@ -46,7 +46,7 @@
                                     <div class="col-lg-4">
                                         <div class="card card-lift--hover shadow border-0" >
                                             <div class="card-body py-5 y6">
-                                                <h4 class="h3 text-primary text-uppercase test4">Valores</h4>
+                                                <h4 class="h3 text-primary text-uppercase test4">Valores corporativos</h4>
                                                 <p class="description mt-3 texte">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
                                         </div>
@@ -54,7 +54,7 @@
                                     <div class="col-lg-4">
                                         <div class="card card-lift--hover shadow border-0">
                                             <div class="card-body py-5 y6" >
-                                                <h4 class="h3 text-primary text-uppercase test4">Vision</h4>
+                                                <h4 class="h3 text-primary text-uppercase test4">Visión </h4>
                                                 <p class="description mt-3 texte">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ut, temporibus quo tenetur fuga, corrupti repellat maiores, inventore modi illum fugit deserunt aliquam praesentium quae. Cumque beatae perspiciatis nobis.</p>
                                             </div>
                                         </div>

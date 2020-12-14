@@ -67,7 +67,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('fotologin', 'ConfigpageController@updatePhotologin');
     Route::post('fotonavvertical', 'ConfigpageController@updatePhotonavvertical');
     
-    
+    //LOGS
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+
     //Pausas activas
     Route::get('pasuasAdmin', 'PausasActivasController@admin');
     Route::post('crearPausa', 'PausasActivasController@store');
