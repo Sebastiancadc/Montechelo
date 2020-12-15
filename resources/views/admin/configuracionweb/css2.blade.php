@@ -8550,7 +8550,7 @@ button.bg-dark:focus
 
 .bg-default
 {
-    background-color: #172b4d !important;
+    background-color: #ffffff !important;
 }
 
 a.bg-default:hover,
