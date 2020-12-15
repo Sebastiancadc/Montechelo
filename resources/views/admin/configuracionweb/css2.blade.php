@@ -506,7 +506,7 @@ h6,
 
     margin-bottom: .5rem;
 
-    color: {{$page->colortitulo}}
+    color: {{$page->colortitulo}};
 }
 
 h1,

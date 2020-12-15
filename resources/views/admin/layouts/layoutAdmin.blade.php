@@ -205,6 +205,12 @@
                                 </p>	
 							</a>
 						</li>
+						<li class="nav-item ">
+							<a href="{{url('admin/logsAdmin')}}">
+								<i class="fas fa-cubes"></i>
+								<p>Logs del sistema</p>	
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

@@ -158,8 +158,6 @@
         <button type="submit" class="btn btn-primary" style="margin-left: 92px;
         margin-top: -19px;">Editar</button>
         </form>
-        <br>
-
         </div>               
     </div>
 </div>

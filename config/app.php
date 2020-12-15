@@ -165,7 +165,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         \Chatify\ChatifyServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         /*
          * Package Service Providers...
