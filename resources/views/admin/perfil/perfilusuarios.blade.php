@@ -17,7 +17,7 @@ height: 148%;"></span>
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <a href="#" data-toggle="modal" data-target="#verfotoportada{{$perfil->id}}" >
+        <a href="#" data-toggle="modal" data-target="#verfotoportada{{$perfil->id}}">
         <img src="{{$perfil->photo_portada}}" class="card-img-top">
       </a>
         <div class="row justify-content-center">

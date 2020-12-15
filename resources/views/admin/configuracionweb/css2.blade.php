@@ -1,3 +1,8 @@
+
+<?php
+$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+?>
+
 <style>
 
 @charset 'UTF-8';
@@ -29813,4 +29818,82 @@ background-color: #11cdef !important;
       background-color: #e6eaef;
       box-shadow: 0 3px 9px rgb(230 234 239), 3px 4px 8px rgb(230 234 239);
   }
+</style>
+
+
+<style>
+.trasparentee{
+    box-shadow: rgba(0, 0, 0, .1) 0 0 0 0px, rgba(0, 0, 0, .1) 0 0px 0px;
+    background-color: transparent;
+    font-size: .875rem;
+    display: block;
+    margin: 1rem 0;
+    padding: .75rem;
+    color: #393f49;
+    border-radius: .25rem;
+}
+.lineart{
+    z-index: 5;
+    position: absolute;
+    width: 94px;
+    height: 4px;
+    left: 8%;
+    top: 189px;
+    background: #bb5e19;
+    border-radius: 10px;
+}
+.lineart2{
+    z-index: 5;
+    position: absolute;
+    width: 83px;
+    height: 4px;
+    left: 8%;
+    top: 106px;
+    background: #bb5e19;
+    border-radius: 10px;
+
+}
+.lineart3{
+    z-index: 5;
+    position: absolute;
+    width: 97px;
+    height: 4px;
+    left: 8%;
+    top: 106px;
+    background: #bb5e19;
+    border-radius: 10px;
+
+}
+.lineart4{
+    z-index: 5;
+    position: absolute;
+    width: 61px;
+    height: 4px;
+    left: 8%;
+    top: 106px;
+    background: #bb5e19;
+    border-radius: 10px;
+
+}
+.lineart5{
+    z-index: 5;
+    position: absolute;
+    width: 162px;
+    height: 4px;
+    left: 8%;
+    top: 106px;
+    background: #bb5e19;
+    border-radius: 10px;
+
+}
+.lineart6{
+    z-index: 5;
+    position: absolute;
+    width: 119px;
+    height: 4px;
+    left: 8%;
+    top: 106px;
+    background: #bb5e19;
+    border-radius: 10px;
+}
 </style>

@@ -12,6 +12,7 @@ class Configpage extends Model
 
     protected $fillable = [
         'colornavho','colornavver','logologin','logologin','colorbtnprimary','colorbtndanger'
-        ,'colorbtnwarning','colortitulo','colortexto','logoisotipo'
+        ,'colorbtnwarning','colortitulo','colortexto','logoisotipo','textmision','textvision',
+        'textvalores','textpolitica','textplanestr','textorganigrama','textuniestra'
     ];
 }

@@ -66,6 +66,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('fotoisotipo', 'ConfigpageController@updatePhoto');
     Route::post('fotologin', 'ConfigpageController@updatePhotologin');
     Route::post('fotonavvertical', 'ConfigpageController@updatePhotonavvertical');
+
+    Route::post('imagenmision', 'ConfigpageController@updatePhotomision');
+    Route::post('imagenvision', 'ConfigpageController@updatePhotovision');
+    Route::post('imagenvalores', 'ConfigpageController@updatePhotovalores');
+    Route::post('imagenpolitica', 'ConfigpageController@updatePhotoaspolitica');
+    Route::post('imagenplanestra', 'ConfigpageController@updatePhotonplanestra');
+    Route::post('imagenorganigrama', 'ConfigpageController@updatePhotonaimagenorganigrama');
+    Route::post('imagenouniestra', 'ConfigpageController@updatePhotouniestra');
+
     
     //LOGS
     Route::get('logsAdmin', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

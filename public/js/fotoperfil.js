@@ -192,3 +192,279 @@ $(function () {
     });
 });
 });
+
+
+
+$(function () {
+    var $misionImage, $misionInput, $misionForm;
+    var avatarUrl;
+    $misionImage = $('#misionImage');
+    $misionInput = $('#misionInput');
+    $misionForm = $('#misionForm');
+
+    $misionImage.on('click', function () {
+        $misionInput.click();
+    });
+
+    avatarUrl =$misionForm.attr('action');  
+
+    $misionInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenmision', $misionInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$misionForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $misionImage.attr('src', 'http://localhost/Montechelo/public/images/plan/mision/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+});
+
+
+
+$(function () {
+    var $visionImage, $visionInput, $visionForm;
+    var avatarUrl;
+    $visionImage = $('#visionImage');
+    $visionInput = $('#visionInput');
+    $visionForm = $('#visionForm');
+
+    $visionImage.on('click', function () {
+        $visionInput.click();
+    });
+
+    avatarUrl =$visionForm.attr('action');  
+
+    $visionInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenvision', $visionInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$visionForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $visionImage.attr('src', 'http://localhost/Montechelo/public/images/plan/vision/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+
+$(function () {
+    var $valoresImage, $valoresInput, $valoresForm;
+    var avatarUrl;
+    $valoresImage = $('#valoresImage');
+    $valoresInput = $('#valoresInput');
+    $valoresForm = $('#valoresForm');
+
+    $valoresImage.on('click', function () {
+        $valoresInput.click();
+    });
+
+    avatarUrl =$valoresForm.attr('action');  
+
+    $valoresInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenvalores', $valoresInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$valoresForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $valoresImage.attr('src', 'http://localhost/Montechelo/public/images/plan/valores/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+
+$(function () {
+    var $politicaImage, $politicaInput, $politicaForm;
+    var avatarUrl;
+    $politicaImage = $('#politicaImage');
+    $politicaInput = $('#politicaInput');
+    $politicaForm = $('#politicaForm');
+
+    $politicaImage.on('click', function () {
+        $politicaInput.click();
+    });
+
+    avatarUrl =$politicaForm.attr('action');  
+
+    $politicaInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenpolitica', $politicaInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$politicaForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $politicaImage.attr('src', 'http://localhost/Montechelo/public/images/plan/politica/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+
+$(function () {
+    var $planestraImage, $planestraInput, $planestraForm;
+    var avatarUrl;
+    $planestraImage = $('#planestraImage');
+    $planestraInput = $('#planestraInput');
+    $planestraForm = $('#planestraForm');
+
+    $planestraImage.on('click', function () {
+        $planestraInput.click();
+    });
+
+    avatarUrl =$planestraForm.attr('action');  
+
+    $planestraInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenplanestra', $planestraInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$planestraForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $planestraImage.attr('src', 'http://localhost/Montechelo/public/images/plan/planestra/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+
+
+
+
+$(function () {
+    var $orgaImage, $orgaInput, $orgaForm;
+    var avatarUrl;
+    $orgaImage = $('#orgaImage');
+    $orgaInput = $('#orgaInput');
+    $orgaForm = $('#orgaForm');
+
+    $orgaImage.on('click', function () {
+        $orgaInput.click();
+    });
+
+    avatarUrl =$orgaForm.attr('action');  
+
+    $orgaInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenorganigrama', $orgaInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$orgaForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $orgaImage.attr('src', 'http://localhost/Montechelo/public/images/plan/organigrama/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+
+
+
+$(function () {
+    var $uniestraImage, $uniestraInput, $uniestraForm;
+    var avatarUrl;
+    $uniestraImage = $('#uniestraImage');
+    $uniestraInput = $('#uniestraInput');
+    $uniestraForm = $('#uniestraForm');
+
+    $uniestraImage.on('click', function () {
+        $uniestraInput.click();
+    });
+
+    avatarUrl =$uniestraForm.attr('action');  
+
+    $uniestraInput.on('change', function () {
+    
+    var formData = new FormData();
+
+    formData.append('imagenuniestra', $uniestraInput[0].files[0]);
+
+    $.ajax({
+        url: avatarUrl+'?'+$uniestraForm.serialize(),
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false
+    })
+    .done(function (data) {
+        if (data.success)
+            $uniestraImage.attr('src', 'http://localhost/Montechelo/public/images/plan/unidades/'+data.file_name+'?'+ new Date().getTime());
+            location.reload();
+            location.reload();
+    })
+    .fail(function () {
+        location.reload();
+    });
+});
+})
+

@@ -11,9 +11,6 @@
                 </button>
         </div>
           @endif
-          <form action="{{route('updatepage',$page->id)}}" method="POST">
-            @method('PUT')
-            @csrf
           <div class="row">
             <div class="col-md-10 ml-auto mr-auto">
                 <div class="card">
@@ -72,6 +69,119 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-10 ml-auto mr-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Imagenes plan estrategico - solo imagenes PNG</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Misión</h4>
+                                        <h4>693 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenmision') }}" enctype='multipart/form-data' id="misionForm">
+                                                @csrf 
+                                                <input type="file" id="misionInput" style="display: none" name="imagenmision" >
+                                            </form>
+                                            <div><img src="{{$page->imagenmision}}" height="200" width="300" id="misionImage"></div>
+                                        </div>
+                                    </div>
+                                </div>   
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Visión</h4>
+                                        <h4>650 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenvision') }}" enctype='multipart/form-data' id="visionForm">
+                                                @csrf 
+                                                <input type="file" id="visionInput" style="display: none" name="imagenvision" >
+                                            </form>
+                                            <div><img src="{{$page->imagenvision}}" height="200" width="300" id="visionImage"></div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Valores corporativos</h4>
+                                        <h4>693 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenvalores') }}" enctype='multipart/form-data' id="valoresForm">
+                                                @csrf 
+                                                <input type="file" id="valoresInput" style="display: none" name="imagenvalores" >
+                                            </form>
+                                            <div><img src="{{$page->imagenvalores}}" height="200" width="300" id="valoresImage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Política de calidad</h4>
+                                        <h4>650 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenpolitica') }}" enctype='multipart/form-data' id="politicaForm">
+                                                @csrf 
+                                                <input type="file" id="politicaInput" style="display: none" name="imagenpolitica" >
+                                            </form>
+                                            <div><img src="{{$page->imagenpolitica}}" height="200" width="300" id="politicaImage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Plan estrategico</h4>
+                                        <h4>693 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenplanestra') }}" enctype='multipart/form-data' id="planestraForm">
+                                                @csrf 
+                                                <input type="file" id="planestraInput" style="display: none" name="imagenplanestra">
+                                            </form>
+                                            <div><img src="{{$page->imagenplanestra}}" height="200" width="300" id="planestraImage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Organigrama</h4>
+                                        <h4>650 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenorganigrama') }}" enctype='multipart/form-data' id="orgaForm">
+                                                @csrf 
+                                                <input type="file" id="orgaInput" style="display: none" name="imagenorganigrama">
+                                            </form>
+                                            <div><img src="{{$page->imagenorganigrama}}" height="200" width="300" id="orgaImage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h4>Unidades estratégicas de negocio</h4>
+                                        <h4>693 X 500 pixeles</h4>
+                                        <div class="card-profile-image">
+                                            <form action="{{ url('admin/imagenouniestra') }}" enctype='multipart/form-data' id="uniestraForm">
+                                                @csrf 
+                                                <input type="file" id="uniestraInput" style="display: none" name="imagenuniestra">
+                                            </form>
+                                            <div><img src="{{$page->imagenuniestra}}" height="200" width="300" id="uniestraImage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="{{route('updatepage',$page->id)}}" method="POST">
+                    @method('PUT')
+                    @csrf
             <div class="col-md-10 ml-auto mr-auto" >
                 <div class="card">
                     <div class="card-header">
@@ -153,12 +263,74 @@
                        
                     </div>
                 </div>
+            </div>                 
+        <div class="col-md-10 ml-auto mr-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Pagina plan estrategico</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <h4>Misión</h4>
+                                <textarea name="textmision" cols="30" rows="4">{{$page->textmision}}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <h4>Visión</h4>   
+                                <textarea name="textvision"  cols="30" rows="4">{{$page->textvision}}</textarea>
+                            </div>
+                        </div>  
+                        <div class="col-md-4">
+                            <div class="form-group">
+                               
+                                <h4>Valores corporativos</h4>
+                                <textarea name="textvalores"  cols="30" rows="4">{{$page->textvalores}}</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                               
+                                <h4>Política  de calidad</h4>
+                                <textarea name="textpolitica"  cols="30" rows="4">{{$page->textpolitica}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                               
+                                <h4>Plan estratégico</h4>
+                                <textarea name="textplanestr"  cols="30" rows="4">{{$page->textplanestr}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                               
+                                <h4>Organigrama</h4>
+                                <textarea name="textorganigrama"  cols="30" rows="4">{{$page->textorganigrama}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">                              
+                                <h4> Unidades estratégicas de negocio</h4>
+                                <textarea name="textuniestra"  cols="30" rows="4">{{$page->textuniestra}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-left: 92px;
-        margin-top: -19px;">Editar</button>
-        </form>
-        </div>               
+        <button type="submit" class="btn btn-primary" 
+        style="margin-left: 107px; margin-top: -14px;">Editar</button></div>
+    </form>
+        <div>
+        </div>
+        </div> 
     </div>
 </div>
 </div>
