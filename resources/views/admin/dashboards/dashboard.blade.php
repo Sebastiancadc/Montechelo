@@ -172,10 +172,11 @@ $date =date('m-d')
             @endif
             {{-- fin modal feliz cumpleaños --}}
             @include('admin.modales.modalCampos')
-@include('admin.modales.modalPausas')
+            @include('admin.modales.modalPausas')
             @endforeach
           </div>
         </div>
+        @include('admin.modales.anuncios')
         <!-- Timeline card -->
         <div class="card widget-calendar">
           <!-- Card header -->
@@ -224,7 +225,6 @@ $date =date('m-d')
           })
       });
 </script>
-
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{asset("plantilla/js/gallery.js")}}"></script>

@@ -2,6 +2,8 @@
 
 namespace Chatify\Http\Controllers;
 
+use App\Events\AnuncioEvent;
+use App\Events\ChatEvent;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Response;
@@ -143,7 +145,6 @@ class MessagesController extends Controller
                 $error_msg = "File size is too long!";
             }
         }
-
         if (!$error_msg) {
             // send to database
             $messageID = mt_rand(9, 999999999) + time();
@@ -155,18 +156,16 @@ class MessagesController extends Controller
                 'body' => trim(htmlentities($request['message'])),
                 'attachment' => ($attachment) ? $attachment . ',' . $attachment_title : null,
             ]);
-
             // fetch message to send it with the response
-            $messageData = Chatify::fetchMessage($messageID);
-
+            $messageData = Chatify::fetchMessage($messageID);     
             // send to user using pusher
             Chatify::push('private-chatify', 'messaging', [
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'message' => Chatify::messageCard($messageData, 'default')
-            ]);
+            ]);  
         }
-
+        
         // send the response
         return Response::json([
             'status' => '200',
@@ -175,14 +174,9 @@ class MessagesController extends Controller
             'message' => Chatify::messageCard(@$messageData),
             'tempID' => $request['temporaryMsgId'],
         ]);
+        
     }
 
-    /**
-     * fetch [user/group] messages from database
-     *
-     * @param Request $request
-     * @return JSON response
-     */
     public function fetch(Request $request)
     {
         // messages variable

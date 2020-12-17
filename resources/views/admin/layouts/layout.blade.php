@@ -236,42 +236,65 @@
                 <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
               </div>
             </li>
+
+
+            {{-- Notificaciones campana --}}           
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"> <span  class="bange">1</span> </i>
-              </a>
-
-
+                <i class="ni ni-bell-55"></i>
+               <span>
+                @if (count(Auth::user()->unreadNotifications))
+                <span class="badge badge-danger" style="color: transparent;
+                background-color: #f80031;
+                height: 12px;width: 1px;">.
+                </span>
+               @endif
+              </span>
+                </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong>  notifications.
-                  </h6>
+
+                  <h6 class="text-sm text-muted m-0">Tienes    
+                  @if (count(Auth::user()->unreadNotifications)) 
+                  <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
+                  @endif notificaciones.
+                  </h6>                 
                 </div>
                 <!-- List group -->
-                <div class="list-group list-group-flush">
-                  <a href="#!" class="list-group-item list-group-item-action">
+                @forelse (Auth::user()->unreadNotifications  as $notificacion )
+                    <a href="#!" class="list-group-item list-group-item-action">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <i class="ni ni-bell-55" style="font-size: 23px;"></i>
+                        </div>
+                        <div class="col ml--2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 class="mb-0 text-sm">Anuncio {{$notificacion->data['titulo']}}</h4>
+                            </div>
+                            <div class="text-right text-muted">
+                              <small>{{$notificacion->created_at->diffForHumans()}}</small>
+                            </div>
+                          </div>
+                          <p class="text-sm mb-0">{{$notificacion->data['descripcion']}}</p>
+                        </div>
+                      </div>
+                    </a>
+                    @empty
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
                         </div>
-                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
+                        <p class="text-sm mb-0">Sin notificaciones</p>
                       </div>
                     </div>
-                  </a> 
-                </div>
+                    @endforelse    
                 <!-- View all -->
-                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
+                <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">Ver todas</a>
               </div>
             </li>
           </ul>
@@ -331,6 +354,7 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
 <!-- scripts buscador tablas -->
 <script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
@@ -349,7 +373,6 @@
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
-
 <script>
 $(document).ready(function() {
     $('.js-example-basic-single').select2();

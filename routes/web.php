@@ -60,13 +60,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
 
+    //ANUNCIOS
+    Route::get('AnunciosAdmin', 'AnunciosController@index');
+    Route::post('crearAnuncio', 'AnunciosController@Crear');
+    Route::delete('elimidarAnuncio/{id}', 'AnunciosController@destroy')->name('eliminaranuncio');
     //Configuracion web
     Route::get('ConfiguracionAdmin/{id}', 'ConfigpageController@edit')->name('editarpage');
     Route::put('updateConfiguracion/{id}', 'ConfigpageController@update')->name('updatepage');
     Route::post('fotoisotipo', 'ConfigpageController@updatePhoto');
     Route::post('fotologin', 'ConfigpageController@updatePhotologin');
     Route::post('fotonavvertical', 'ConfigpageController@updatePhotonavvertical');
-
     Route::post('imagenmision', 'ConfigpageController@updatePhotomision');
     Route::post('imagenvision', 'ConfigpageController@updatePhotovision');
     Route::post('imagenvalores', 'ConfigpageController@updatePhotovalores');
@@ -113,7 +116,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //repositorio
     Route::resource('repositorio', 'RepositorioController');
-
     Route::post('/subir', 'Controller@subirArchivo')->name('subir');
 
     //Noticias
@@ -138,6 +140,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('admin/editarcapacitacion/{id_capacitacion}', 'CapacitacionesController@edit')->name('editarcapacitacion');
     Route::put('/update/{id_capacitacion}', 'CapacitacionesController@update')->name('update');
     Route::delete('deletecapacitacion/{id_capacitacion}', 'CapacitacionesController@destroy')->name('eliminarcapacitacion');
+
+
 });
 
 
@@ -228,6 +232,15 @@ Route::group(['prefix' => ''], function () {
 
     //Talento Humano
 Route::get('talento', 'NoticiasController@talento')->name('talento');
+
+    //Notificaciones
+    Route::get('Notificaciones', 'AnunciosController@Listanotificaciones');
+    Route::get('Leidas', function(){
+        Auth::user()->unreadNotifications->markAsRead();
+        return redirect()->back();
+    })->name('leertodas');
+
+    Route::get('marcarleidas', 'AnunciosController@markNotification')->name('marcarleidas');
 });
 
 

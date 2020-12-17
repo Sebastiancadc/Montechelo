@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\AnuncioEvent;
+use App\Events\ChatEvent;
+use App\Listeners\AnuncioListener;
+use App\Listeners\ChatListener;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -17,6 +21,13 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        AnuncioEvent::class =>[
+            AnuncioListener::class,
+        ],
+
+        ChatEvent::class =>[
+            ChatListener::class,
         ],
     ];
 
