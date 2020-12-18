@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 
-class AnuncioListener implements ShouldQueue
+class AnuncioListener
 {
     /**
      * Create the event listener.

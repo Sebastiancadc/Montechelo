@@ -2,14 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Notifications\ChatNotification;
+use App\Notifications\EventoNotification;
 use App\User;
-use Chatify\Facades\ChatifyMessenger;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 
-class ChatListener
+class EventoListener
 {
     /**
      * Create the event listener.
@@ -29,16 +28,10 @@ class ChatListener
      */
     public function handle($event)
     {
-        // User::all()
-        // ->except($event->chat->from_id)
-        // ->each(function(ChatifyMessenger $chat) use($event){
-        //     Notification::send($chat->to_id, new ChatNotification($event->chat));
-        // });
-
         User::all()
-        ->except($event->chat->from_id)
-        ->each(function(User $user) use($event){
-            Notification::send($user, new ChatNotification($event->chat));
+        ->except($event->eventos->Usuario_id_Usuario)
+        ->each(function(User $user) use ($event){
+            Notification::send($user, new EventoNotification($event->eventos));
         });
     }
 }

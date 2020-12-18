@@ -44,10 +44,10 @@
            </div>
 
            {{-- ---------------- [ Group Tab ] ---------------- --}}
-           <div class="@if($route == 'group') show @endif messenger-tab app-scroll" data-view="groups">
-                {{-- items --}}
+           {{-- <div class="@if($route == 'group') show @endif messenger-tab app-scroll" data-view="groups">
+                
                 <p style="text-align: center;color:grey;">Pronto estara disponible</p>
-             </div>
+             </div> --}}
 
              {{-- ---------------- [ Search Tab ] ---------------- --}}
            <div class="messenger-tab app-scroll" data-view="search">
