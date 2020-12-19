@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
-
+use App\Notifications\NoticiasNotification;
 use Redirect;
 
 class NoticiasController extends Controller
@@ -98,7 +98,9 @@ class NoticiasController extends Controller
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
          }
-          Session::flash('message','Publicación creada correctamente');
+
+        Auth::user()->notify(new NoticiasNotification($noticia));
+
           return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
     }
  

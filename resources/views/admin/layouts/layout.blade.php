@@ -219,7 +219,7 @@
                         <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}"  class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
+                         <div class="d-flex justify-content-between align-items-center">
                           <div>
                             <h4 class="mb-0 text-sm">User</h4>
                           </div>
