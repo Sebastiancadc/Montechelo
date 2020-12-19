@@ -10,11 +10,10 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class ChatEvent
+class EventoEvent
 {
+    public $eventos;
 
-    public $chat;
-    
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
@@ -22,9 +21,9 @@ class ChatEvent
      *
      * @return void
      */
-    public function __construct($chat)
+    public function __construct($eventos)
     {
-        $this->chat = $chat;
+       $this->eventos = $eventos;
     }
 
     /**

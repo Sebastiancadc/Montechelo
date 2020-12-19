@@ -40,6 +40,8 @@ class AnunciosNotification extends Notification
             'titulo' => $this->anuncios->titulo,
             'descripcion' => $this->anuncios->descripcion,
             'tipo' => $this->anuncios->tipo,
+            'icono' => 'ni ni-bell-55',          
+            'evento' => 'Anuncio',
         ];
     }
 }

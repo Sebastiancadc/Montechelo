@@ -2,13 +2,13 @@
 
 namespace App\Notifications;
 
-use Chatify\Facades\ChatifyMessenger;
+use App\Eventos;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ChatNotification extends Notification
+class EventoNotification extends Notification
 {
     use Queueable;
 
@@ -17,9 +17,9 @@ class ChatNotification extends Notification
      *
      * @return void
      */
-    public function __construct(ChatifyMessenger $chat)
+    public function __construct(Eventos $eventos)
     {
-        $this->chat = $chat;
+        $this->eventos = $eventos; 
     }
 
     /**
@@ -33,18 +33,14 @@ class ChatNotification extends Notification
         return ['database'];
     }
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
     public function toArray($notifiable)
     {
         return [
-            'messages' => $this->chat->id,
-            'body' => $this->chat->body,
-            'from_id' => $this->chat->from_id,
-        ];
+            'eventos' => $this->eventos->id,
+            'titulo' => $this->eventos->name,
+            'descripcion' => $this->eventos->description,
+            'icono' => 'ni-calendar-grid-58',          
+            'evento' => 'Evento',
+        ]; 
     }
 }

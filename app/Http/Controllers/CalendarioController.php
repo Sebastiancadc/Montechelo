@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Eventos;
+use App\Events\EventoEvent;
 use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
+use App\Notifications\EventoNotification;
 use App\Pausasactivas;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -100,17 +103,22 @@ class CalendarioController extends Controller
     public function crearevento(Request $request)
     {
 
-        $evento = new Eventos();
-        $evento->name = $request->name;
-        $evento->description = $request->description;
-        $evento->className = $request->className;
-        $evento->start_time = new \Datetime($request->start_time);
-        $evento->end_time = new \Datetime($request->end_time);
-        // if (Eventos::where('start_time', '=', Input::get('start_time'))->exists()) { 
-        //     return back()->with('hora', 'La hora seleccionada ya esta ocupada, por favor elegir otra hora');       
-        // }
-        $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
-        $evento->save();
+        $eventos = new Eventos();
+        $eventos->name = $request->name;
+        $eventos->description = $request->description;
+        $eventos->className = $request->className;
+        $eventos->start_time = new \Datetime($request->start_time);
+        $eventos->end_time = new \Datetime($request->end_time);
+
+        $eventos->Usuario_id_Usuario = $request->Usuario_id_Usuario;
+        $eventos->save();
+        
+        if ( Auth::user()->role == 'admin'){
+        event(new EventoEvent($eventos));
+        }
+        else{
+            Auth::user()->notify(new EventoNotification($eventos));
+        }
         return back()->with('crearevento', 'Evento registrado correctamente');
     }
 

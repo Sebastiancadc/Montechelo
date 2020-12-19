@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Events\AnuncioEvent;
 use App\Events\ChatEvent;
+use App\Events\EventoEvent;
 use App\Listeners\AnuncioListener;
 use App\Listeners\ChatListener;
+use App\Listeners\EventoListener;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -25,9 +27,8 @@ class EventServiceProvider extends ServiceProvider
         AnuncioEvent::class =>[
             AnuncioListener::class,
         ],
-
-        ChatEvent::class =>[
-            ChatListener::class,
+        EventoEvent::class =>[
+            EventoListener::class,
         ],
     ];
 

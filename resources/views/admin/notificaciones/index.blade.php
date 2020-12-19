@@ -40,12 +40,12 @@
                     <a class="list-group-item list-group-item-action">
                       <div class="row align-items-center">
                         <div class="col-auto">
-                          <i class="ni ni-bell-55" style="font-size: 23px;"></i>
+                          <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>
                         </div>
                         <div class="col ml--2">
                           <div class="d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 class="mb-0 text-sm">Anuncio - {{$notificacion->data['titulo']}}</h4> 
+                              <h4 class="mb-0 text-sm">{{$notificacion->data['evento']}} - {{$notificacion->data['titulo']}}</h4> 
                             </div>
                             <div class="text-right text-muted">
                               <small>{{$notificacion->created_at->diffForHumans() }}</small>

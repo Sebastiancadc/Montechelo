@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Eventos;
 use App\Helpers\Helpers;
 use App\Noticia;
+use App\Notificacion;
 use App\Pausasactivas;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -76,7 +78,8 @@ class InicioController extends Controller
         ->inRandomOrder() 
         ->first();
 
-        return view('admin.dashboards.dashboard',compact('users','eventos','calendario','modal','noticias','noticias2','pausasramdom'));
+        return view('admin.dashboards.dashboard',compact('users','eventos','calendario'
+        ,'modal','noticias','noticias2','pausasramdom'));
     }
 
     public function indexAdmin()
