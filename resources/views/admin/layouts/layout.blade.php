@@ -302,7 +302,7 @@
                 </div>
                 <!-- List group -->
                 @forelse (Auth::user()->unreadNotifications  as $notificacion )
-                    <a href="#!" class="list-group-item list-group-item-action">
+                    <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
                       <div class="row align-items-center">
                         <div class="col-auto">
                           <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>

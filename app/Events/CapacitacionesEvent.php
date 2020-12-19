@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Capacitaciones;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -10,10 +11,9 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class NoticiasEvent
-{ 
-    public $noticias;
-    
+class CapacitacionesEvent
+{
+    public $capacitaciones;
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
@@ -21,9 +21,9 @@ class NoticiasEvent
      *
      * @return void
      */
-    public function __construct($noticias)
+    public function __construct($capacitaciones)
     {
-        $this->noticias=$noticias; 
+        $this->capacitaciones = $capacitaciones;
     }
 
     /**

@@ -33,11 +33,11 @@
                           <div class="form-group form-group-default">
                               <label>Genero</label>
                               <div class="form-group">
-                                  <select class="form-control" id="exampleFormControlSelect1" name="genero" style="margin-top: -14px;width: 215px;margin-left: -21px;" required>
-                                      <option></option>
-                                      <option>Hombre</option>
-                                      <option>Mujer</option>
-                                      <option>Otro</option>
+                                <select id="basic2" name="genero" class="col-md-15">
+                                    <option></option>
+                                    <option>Hombre</option>
+                                    <option>Mujer</option>
+                                    <option>Otro</option>
                                   </select>
                               </div>
                           </div>

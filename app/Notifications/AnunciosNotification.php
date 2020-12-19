@@ -40,8 +40,9 @@ class AnunciosNotification extends Notification
             'titulo' => $this->anuncios->titulo,
             'descripcion' => $this->anuncios->descripcion,
             'tipo' => $this->anuncios->tipo,
-            'icono' => 'ni ni-bell-55',          
+            'icono' => 'ni ni-notification-70',          
             'evento' => 'Anuncio',
+            'link' => 'http://localhost/Montechelo/public/Notificaciones',
         ];
     }
 }

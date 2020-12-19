@@ -12,7 +12,6 @@ class Capacitaciones extends Model
     protected $guarded = ['id_capacitacion'];
 	protected $primaryKey = 'id_capacitacion';
     protected $fillable = [
-        'titulo','categoria','fecha','descripcion','link'
-
+        'titulo','categoria','fecha','descripcion','link','user_id'
     ];
 }

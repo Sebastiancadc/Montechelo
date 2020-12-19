@@ -37,7 +37,7 @@
             <div class="row">
                 @forelse ($notificaciones as $notificacion)                 
               <div class="col-md-12">
-                    <a class="list-group-item list-group-item-action">
+                    <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
                       <div class="row align-items-center">
                         <div class="col-auto">
                           <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>

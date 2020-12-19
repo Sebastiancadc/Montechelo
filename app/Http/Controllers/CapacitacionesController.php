@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Capacitaciones;
+use App\Events\CapacitacionesEvent;
 use App\Pausasactivas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -57,7 +58,9 @@ class CapacitacionesController extends Controller
         $CapacitacionAgregar->descripcion = $request->descripcion;
         $CapacitacionAgregar->categoria = $request->categoria;
         $CapacitacionAgregar->link = $request->link;
+        $CapacitacionAgregar->user_id = $request->user_id;
         $CapacitacionAgregar->save();
+        event(new CapacitacionesEvent($CapacitacionAgregar));
         return back()->with('agregar', 'la capacitacion a sido agregada correctamente');
     }
 
@@ -74,7 +77,9 @@ class CapacitacionesController extends Controller
         $updateCapacitacion->fecha = new \Datetime($request->fecha);
         $updateCapacitacion->descripcion = $request->descripcion;
         $updateCapacitacion->categoria = $request->categoria;
+        $updateCapacitacion->user_id = $request->user_id;
         $updateCapacitacion->link = $request->link;
+        
         $updateCapacitacion->save();
         return redirect('admin/capacitaciones')->with('update', 'la capacitacion a sido modificada correctamente');
     }

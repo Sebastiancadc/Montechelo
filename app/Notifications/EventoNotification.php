@@ -41,6 +41,7 @@ class EventoNotification extends Notification
             'descripcion' => $this->eventos->description,
             'icono' => 'ni-calendar-grid-58',          
             'evento' => 'Evento',
+            'link' => 'http://localhost/Montechelo/public/calendar',
         ]; 
     }
 }

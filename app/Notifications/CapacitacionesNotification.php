@@ -2,13 +2,13 @@
 
 namespace App\Notifications;
 
-use App\Noticia;
+use App\Capacitaciones;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NoticiasNotification extends Notification
+class CapacitacionesNotification extends Notification
 {
     use Queueable;
 
@@ -17,9 +17,9 @@ class NoticiasNotification extends Notification
      *
      * @return void
      */
-    public function __construct(Noticia $noticias)
+    public function __construct(Capacitaciones $capacitaciones)
     {
-       $this->noticias = $noticias; 
+        $this->capacitaciones = $capacitaciones;
     }
 
     /**
@@ -33,7 +33,6 @@ class NoticiasNotification extends Notification
         return ['database'];
     }
 
-    
     /**
      * Get the array representation of the notification.
      *
@@ -43,12 +42,12 @@ class NoticiasNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'eventos' => $this->noticias->Id_noticia,
-            'titulo' => $this->noticias->title,
-            'descripcion' => $this->noticias->body,
-            'icono' => 'fa fa-newspaper',
-            'evento' => 'Noticia',
-            'link' => 'http://localhost/Montechelo/public/noticiausu',
+            'anuncios' => $this->capacitaciones->id_capacitacion,
+            'titulo' => $this->capacitaciones->titulo,
+            'descripcion' => $this->capacitaciones->descripcion,
+            'icono' => 'fas fa-chalkboard-teacher',          
+            'evento' => 'Capacitaciones',
+            'link' => 'http://localhost/Montechelo/public/capacitaciones',
         ];
     }
 }
