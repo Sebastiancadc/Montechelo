@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header no-bd">
-                <h2 class="modal-title">                
+                <h2 class="modal-title">
                     Crear solicitud
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -12,22 +12,22 @@
             </div>
             <div class="modal-body">
                 <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
-               <br>
-               <form role="form" method="POST" action="{{url('admin/solicitud')}}" >
-                @csrf @method('POST')   
-                    <div class="row">  
+                <br>
+                <form role="form" method="POST" action="{{url('admin/solicitud')}}">
+                    @csrf @method('POST')
+                    <div class="row">
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
-                                <input  type="text" class="form-control" placeholder="Tunombre"  name="nombre" required>
+                                <input type="text" class="form-control" placeholder="Tunombre" name="nombre" required>
                             </div>
                         </div>
                         <div class="col-md-6 ">
                             <div class="form-group form-group-default">
                                 <label>Apellido</label>
-                                <input  type="text" class="form-control" placeholder="Tuapellido"  name="apellido" required>
+                                <input type="text" class="form-control" placeholder="Tuapellido" name="apellido" required>
                             </div>
-                        </div>                      
+                        </div>
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Tipo de solicitud</label>
@@ -45,16 +45,16 @@
                         <div class="col-md-6 ">
                             <div class="form-group form-group-default">
                                 <label> documento</label>
-                                <input  type="text" class="form-control" placeholder="111111111"  min="10" max="10" required pattern="[0-9]{10}" maxlength="10" name="cedula" required>
+                                <input type="text" class="form-control" placeholder="111111111" min="10" max="10" required pattern="[0-9]{10}" maxlength="10" name="cedula" required>
                             </div>
-                        </div> 
+                        </div>
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Teléfono</label>
-                                <input  type="text" class="form-control" placeholder="11111111" min="10" max="10" required pattern="[0-9]{10}" maxlength="10" name="telefono" required>
+                                <input type="text" class="form-control" placeholder="11111111" min="10" max="10" required pattern="[0-9]{10}" maxlength="10" name="telefono" required>
                             </div>
-                        </div>  
-                        <div class="col-md-6">  
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Área de trabajo</label>
                                 <div class="form-group">
@@ -77,13 +77,13 @@
                         </div>
                     </div>
                     <div class="modal-footer no-bd">
-                
-                        <button type="submit"  class="btn btn-primary">Añadir</button>
+
+                        <button type="submit" class="btn btn-primary">Añadir</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
-            
+
         </div>
     </div>
-  </div>
+</div>

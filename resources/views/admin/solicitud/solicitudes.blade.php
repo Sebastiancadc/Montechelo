@@ -1,17 +1,14 @@
 @extends('admin.layouts.layout')
-
 @section('content')
-<div class="header bg-primary pb-6 "style="background:
+<div class="header bg-primary pb-6 " style="background:
 linear-gradient( rgba(231, 223, 223, 0), rgba(255, 255, 255, 0.527)),
 url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat: no-repeat; background-size: cover;">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-
                 </div>
             </div>
             <!-- Card stats -->
@@ -29,13 +26,12 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
 <br>
 <!-- Page content -->
 <div class="container-fluid mt--6">
-
     <div class="row card-wrapper">
         <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
-                <div class="card-body epep" >
+                <div class="card-body epep">
                     <a href="{{url('crearsolicitud')}}">
-                      <img src="{{asset("plantilla/img/theme/vacations.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
+                        <img src="{{asset("plantilla/img/theme/vacations.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Vacaciones y Permisos</span>
@@ -52,7 +48,7 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
             <div class="card card-lift--hover shadow border-0">
                 <div class="card-body epep">
                     <a href="{{url('solicitudespdf')}}">
-                      <img src="{{asset("plantilla/img/theme/labo.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
+                        <img src="{{asset("plantilla/img/theme/labo.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Certificado laboral</span>
@@ -69,8 +65,8 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
             <div class="card card-lift--hover shadow border-0">
                 {{-- <a href="{{url('/nomina/pdf')}}" target="_blank"> Descargar</a> --}}
                 <div class="card-body epep">
-                    <a href="{{url('nominapdf')}}">               
-                      <img src="{{asset("plantilla/img/theme/nomina.png")}}" class="rounded-circle img-center img-fluid " style="max-width: 550px; max-height: 238px;">
+                    <a href="{{url('nominapdf')}}">
+                        <img src="{{asset("plantilla/img/theme/nomina.png")}}" class="rounded-circle img-center img-fluid " style="max-width: 550px; max-height: 238px;">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Certificado de nómina</span>
@@ -90,7 +86,7 @@ url({{asset("plantilla/img/theme/solis.png")}}); height: auto; background-repeat
     @include('admin.layouts.footer')
 </div>
 @section('js')
-  <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-  <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
+<script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection
 @endsection

@@ -26,120 +26,119 @@
 				</ul>
 			</div>
 			<div class="col-md-9 ml-auto mr-auto">
-			<div class="card">
-        <form action="{{url('Calendario/editarEventoAd',$eventos->id)}}" method="POST">
-          @method('PUT')
-          @csrf	
-				<div class="card-body">
-					<h3 class="card-header">Edita el evento</h3>					
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-12">
-											<h4>Nombre</h4>
-											<div class="input-group">
-												<div class="input-group-prepend">
-													<span class="input-group-text">
-														<i class="fas fa-user"></i>
-													</span>
+				<div class="card">
+					<form action="{{url('Calendario/editarEventoAd',$eventos->id)}}" method="POST">
+						@method('PUT')
+						@csrf
+						<div class="card-body">
+							<h3 class="card-header">Edita el evento</h3>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<h4>Nombre</h4>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="fas fa-user"></i>
+														</span>
+													</div>
+													<input class="form-control" placeholder="Nombre" value='{{$eventos->name}}' name="name" type="text">
 												</div>
-												<input class="form-control" placeholder="Nombre" value='{{$eventos->name}}' name="name" type="text">
 											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<h4>Fecha inicial</h4>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="far fa-calendar-alt"></i>
-												</span>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<h4>Fecha inicial</h4>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="far fa-calendar-alt"></i>
+														</span>
+													</div>
+													<input type="text" class="form-control" id="datetime" value='{{$eventos->start_time}}' name="cumpleanios">
+												</div>
 											</div>
-											<input type="text" class="form-control" id="datetime" value='{{$eventos->start_time}}' name="cumpleanios">
+											<div class="col-md-6">
+												<h4>Fecha final</h4>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="far fa-calendar-alt"></i>
+														</span>
+													</div>
+													<input type="text" class="form-control" id="datetimes" value='{{$eventos->end_time}}' name="cumpleanios">
+												</div>
+											</div>
 										</div>
-                						</div>
-                						<div class="col-md-6">
-                  						<h4>Fecha final</h4>
-                  						<div class="input-group">
-                    						<div class="input-group-prepend">
-                      						<span class="input-group-text">
-                        						<i class="far fa-calendar-alt"></i>
-                      						</span>
-                    						</div>
-                    						<input type="text" class="form-control" id="datetimes" value='{{$eventos->end_time}}' name="cumpleanios">
-                  						</div>
-              						</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<h4>Área</h4>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="fas fa-people-carry"></i>
+														</span>
+													</div>
+													<select id="basic" name="className" class="form-control">
+														<option>{{$eventos->className}}</option>
+														<option value="Importante">Importante</option>
+														<option value="Especial">Especial</option>
+														<option value="Advertencia">Advertencia</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="card-body">
-								<div class="row">
-									<div class="col-md-12">
-										<h4>Área</h4>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="fas fa-people-carry"></i>
-												</span>
-											</div>								
-												<select id="basic" name="className" class="form-control">
-													<option>{{$eventos->className}}</option>
-													<option value="Importante">Importante</option>
-													<option value="Especial">Especial</option>
-													<option value="Advertencia">Advertencia</option>
-												</select>
-										</div>
-								</div>
+								<h4>Descripcion</h4>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-book-open"></i>
+										</span>
+									</div>
+									<textarea class="form-control" name="description" type="text" cols="10" rows="5" required>{{$eventos->description}}</textarea>
 								</div>
 							</div>
-						</div>
-						
-					</div>
-					<div class="card-body">
-						<h4>Descripcion</h4>
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text">
-									<i class="fas fa-book-open"></i>
-								</span>
+							<div class="col-sm-10 col-md-9" style="margin-left: 72%;">
+								<button type="submit" class="btn btn-primary  mt-4">Editar</button>
+								<a href="{{ url('admin/eventos') }}" class="btn btn-danger mt-4">Cancelar</a>
 							</div>
-             				 <textarea class="form-control" name="description" type="text" cols="10" rows="5" required>{{$eventos->description}}</textarea>
 						</div>
-					</div>
-					<div class="col-sm-10 col-md-9" style="margin-left: 72%;">						
-					<button type="submit" class="btn btn-primary  mt-4">Editar</button>
-					<a href="{{ url('admin/eventos') }}" class="btn btn-danger mt-4">Cancelar</a>
-					</div>
 				</div>
+				</form>
 			</div>
-		</form>
-		</div>
 		</div>
 	</div>
-@section('js')
-<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
-<script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
-<script>
-$('#datetime').datetimepicker({
-	format: 'YYYY/MM/DD H:mm',
-});
-$('#datetimes').datetimepicker({
-	format: 'YYYY/MM/DD H:mm',
-});
-$('#basic').select2({
+	@section('js')
+	<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
+	<script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
+	<script>
+		$('#datetime').datetimepicker({
+			format: 'YYYY/MM/DD H:mm',
+		});
+		$('#datetimes').datetimepicker({
+			format: 'YYYY/MM/DD H:mm',
+		});
+		$('#basic').select2({
 			theme: "bootstrap"
 		});
-</script>
-@endsection
-@endsection
+	</script>
+	@endsection
+	@endsection

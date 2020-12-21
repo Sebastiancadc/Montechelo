@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <?php
-  $user = auth()->user();
-  $rol = auth()->user()->role;
-  $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
-  $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-  $chat = Illuminate\Support\Facades\DB::table('messages')->select('*')->first();
-  $connt = Illuminate\Support\Facades\DB::table('messages')->select('seen')->whereto_id(Auth::user()->id)->count();
-  $ids=Auth::user()->id;
-  $conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
-  $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
-  ?>
+<?php
+$user = auth()->user();
+$rol = auth()->user()->role;
+$colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
+$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+$chat = Illuminate\Support\Facades\DB::table('messages')->select('*')->first();
+$connt = Illuminate\Support\Facades\DB::table('messages')->select('seen')->whereto_id(Auth::user()->id)->count();
+$ids = Auth::user()->id;
+$conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
+$horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
+?>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,15 +40,15 @@
 </head>
 
 <body>
-{{-- @include('admin.modales.anuncios') --}}
-@include('admin.configuracionweb.css2')
+  {{-- @include('admin.modales.anuncios') --}}
+  @include('admin.configuracionweb.css2')
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-        <img src="{{$page->logonav}}"  id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
+          <img src="{{$page->logonav}}" id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
           max-width: 126%;
           max-height: 10rem;">
         </a>
@@ -91,10 +92,10 @@
             @endif
             @if ($colaborador->talento_status == '1')
             <li class="nav-item">
-                <a class="nav-link" href="{{url('talento')}}">
-                  <i class="ni ni-archive-2 text-black"></i>
-                  <span class="nav-link-text">Talento Humano</span>
-                </a>
+              <a class="nav-link" href="{{url('talento')}}">
+                <i class="ni ni-archive-2 text-black"></i>
+                <span class="nav-link-text">Talento Humano</span>
+              </a>
             </li>
             @endif
             @if ($colaborador->repositorio_status == '1')
@@ -183,7 +184,7 @@
               <span aria-hidden="true">×</span>
             </button>
           </form>
-          
+
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -202,8 +203,8 @@
               </a>
             </li>
             <button class="switch" id="switch">
-                <span><i class="fas fa-sun" style="15px"></i></span>
-                <span><i class="fas fa-moon"style="15px"></i></span>
+              <span><i class="fas fa-sun" style="15px"></i></span>
+              <span><i class="fas fa-moon" style="15px"></i></span>
             </button>
 
             <li class="nav-item dropdown">
@@ -216,7 +217,7 @@
                   background-color: #f80031;
                   height: 12px;width: 1px;">.
                   </span>
-                 @endif
+                  @endif
                 </span>
               </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
@@ -225,38 +226,38 @@
                   <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{count($conntss)}}</strong> Mensajes.
                   </h6>
                 </div>
-                <!-- List group -->                
+                <!-- List group -->
                 <div class="list-group list-group-flush">
-                 @if (count($conntss) == 0)
-                 <a href="#!" class="list-group-item list-group-item-action">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      
-                    </div>
-                    <div class="col ml--2">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                          
-                        </div>
-                        <div class="text-right text-muted">
-                          <small>--</small>
-                        </div>
+                  @if (count($conntss) == 0)
+                  <a href="#!" class="list-group-item list-group-item-action">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+
                       </div>
-                      <p class="text-sm mb-0">No tienes mensajes</p>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>--</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0">No tienes mensajes</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                  @else 
+                  </a>
+                  @else
                   <a href="{{url('Chatmontechelo')}}" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
                         <div class="col-auto">
                           <i class="ni ni-chat-round" style="font-size: 23px;"></i>
-                        </div>                       
+                        </div>
                       </div>
                       <div class="col ml--2">
-                         <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
                           <div>
                             <h4 class="mb-0 text-sm">Chat</h4>
                           </div>
@@ -275,62 +276,59 @@
                 <a href="{{url('Chatmontechelo')}}" class="dropdown-item text-center text-primary font-weight-bold py-3">Ver mis mensajes</a>
               </div>
             </li>
-           
-
-            {{-- Notificaciones campana --}}           
+            {{-- Notificaciones campana --}}
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-bell-55"></i>
-               <span>
-                @if (count(Auth::user()->unreadNotifications))
-                <span class="badge badge-danger" style="color: transparent;
+                <span>
+                  @if (count(Auth::user()->unreadNotifications))
+                  <span class="badge badge-danger" style="color: transparent;
                 background-color: #f80031;
-                height: 12px;width: 1px;">.
+                height: 12px;width: 1px; ">.
+                  </span>
+                  @endif
                 </span>
-               @endif
-              </span>
-                </a>
+              </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-
-                  <h6 class="text-sm text-muted m-0">Tienes    
-                  @if (count(Auth::user()->unreadNotifications)) 
-                  <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
-                  @endif notificaciones.
-                  </h6>                 
+                  <h6 class="text-sm text-muted m-0">Tienes
+                    @if (count(Auth::user()->unreadNotifications))
+                    <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
+                    @endif notificaciones.
+                  </h6>
                 </div>
                 <!-- List group -->
-                @forelse (Auth::user()->unreadNotifications  as $notificacion )
-                    <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>
-                        </div>
-                        <div class="col ml--2">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                              <h4 class="mb-0 text-sm">{{$notificacion->data['evento']}} - {{$notificacion->data['titulo']}}</h4>
-                            </div>
-                            <div class="text-right text-muted">
-                              <small>{{$notificacion->created_at->diffForHumans()}}</small>
-                            </div>
-                          </div>
-                          <p class="text-sm mb-0">{{$notificacion->data['descripcion']}}</p>
-                        </div>
-                      </div>
-                    </a>
-                    @empty
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                        </div>
-                        <p class="text-sm mb-0">Sin notificaciones</p>
-                      </div>
+                @forelse (Auth::user()->unreadNotifications as $notificacion )
+                <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>
                     </div>
-                    @endforelse    
+                    <div class="col ml--2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <h4 class="mb-0 text-sm">{{$notificacion->data['evento']}} - {{$notificacion->data['titulo']}}</h4>
+                        </div>
+                        <div class="text-right text-muted">
+                          <small>{{$notificacion->created_at->diffForHumans()}}</small>
+                        </div>
+                      </div>
+                      <p class="text-sm mb-0">{{$notificacion->data['descripcion']}}</p>
+                    </div>
+                  </div>
+                </a>
+                @empty
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                  </div>
+                  <div class="col ml--2">
+                    <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                    <p class="text-sm mb-0">Sin notificaciones</p>
+                  </div>
+                </div>
+                @endforelse
                 <!-- View all -->
                 <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
                 <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">Ver todas</a>
@@ -363,6 +361,10 @@
                   <span>Administrador</span>
                 </a>
                 @endif
+                <a href="{{ url('perfil')}}" class="dropdown-item">
+                  <i class="fa fa-bolt"></i>
+                  <span>Ayuda</span>
+                </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
@@ -370,7 +372,7 @@
                   <span>Cerrar sesión </span>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+                  @csrf
                 </form>
               </div>
             </li>
@@ -378,43 +380,43 @@
         </div>
       </div>
     </nav>
- 
-@yield('content')
-<!-- Argon Scripts -->
-<!-- Core -->
-<script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
-<script src="{{asset("plantilla/vendor/jquery.scrollbar/jquery.scrollbar.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js")}}"></script>
-<!-- Optional JS -->
-<script src="{{asset("plantilla/vendor/chart.js/dist/Chart.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
-<script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
-<!-- scripts buscador tablas -->
-<script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
-<script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
-@yield('jss')
-<script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
-<!-- Argon JS -->
-<script src="{{asset("plantilla/js/dark.js")}}"></script>
-<script src="{{asset("plantilla/js/perfil.js")}}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
-<script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
-@yield('js')
-<script>
-$(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-</script>
+    @yield('content')
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/jquery.scrollbar/jquery.scrollbar.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js")}}"></script>
+    <!-- Optional JS -->
+    <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
+    <!-- scripts buscador tablas -->
+    <script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.flash.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
+    <script src="{{asset("plantilla/vendor/datatables.net-select/js/dataTables.select.min.js")}}"></script>
+    @yield('jss')
+    <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
+    <!-- Argon JS -->
+    <script src="{{asset("plantilla/js/dark.js")}}"></script>
+    <script src="{{asset("plantilla/js/perfil.js")}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
+    <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+    @yield('js')
+    <script>
+      $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+      });
+    </script>
 
 </body>

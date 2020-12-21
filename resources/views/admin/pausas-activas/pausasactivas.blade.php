@@ -10,7 +10,6 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-
                         </ol>
                     </nav>
                 </div>
@@ -29,7 +28,6 @@
                     <br>
                     {{-- PRIMERA PAUSA --}}
                     <div class="card" style="width: 70% !important;   margin-left:auto !important; margin-right:auto !important;">
-
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                             <iframe src="https://www.youtube.com/embed/VhvUnHiysQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100% !important;height:25em;"></iframe>
                         </div>
@@ -72,9 +70,6 @@
                                 <div class="carousel-item">
                                     <img src="plantilla/img/theme/pausasactivas/pausa4.png" class=" d-block w-100" alt="...">
                                 </div>
-
-
-
                             </div>
                         </div>
                         <!-- Card body -->
@@ -101,9 +96,6 @@
                             </a>
                         </div>
                     </div>
-
-
-
                     {{-- TERCERA PAUSA --}}
                     <div class="card" style="width: 50% !important; float:left">
                         <!-- Card body -->

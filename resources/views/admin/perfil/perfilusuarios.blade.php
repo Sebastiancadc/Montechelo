@@ -18,8 +18,8 @@ height: 148%;"></span>
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
         <a href="#" data-toggle="modal" data-target="#verfotoportada{{$perfil->id}}">
-        <img src="{{$perfil->photo_portada}}" class="card-img-top">
-      </a>
+          <img src="{{$perfil->photo_portada}}" class="card-img-top">
+        </a>
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
@@ -29,24 +29,24 @@ height: 148%;"></span>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="verfotoperfil{{$perfil->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal fade" id="verfotoperfil{{$perfil->id}}" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content" style="width: 346px;" >
-                  <div class="modal-body">
-                      <img src="{{$perfil->photo}}" height="300" width="300" class="img-fluid">
+            <div class="modal-content" style="width: 346px;">
+              <div class="modal-body">
+                <img src="{{$perfil->photo}}" height="300" width="300" class="img-fluid">
               </div>
-          </div>
-      </div>
-      </div>
-      <div class="modal fade" id="verfotoportada{{$perfil->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" >
-                <div class="modal-body" >
-                    <img src="{{$perfil->photo_portada}}"  class="img-fluid">
             </div>
+          </div>
         </div>
-    </div>
-    </div>
+        <div class="modal fade" id="verfotoportada{{$perfil->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="{{$perfil->photo_portada}}" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
             <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
@@ -69,7 +69,7 @@ height: 148%;"></span>
             </div>
             <div class="h5 mt-4">
               {{$perfil->email}}
-            </div>            
+            </div>
           </div>
         </div>
       </div>
@@ -88,53 +88,53 @@ height: 148%;"></span>
       <div class="card shadow">
         <div class="card-body">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">              
-                <hr class="my-4" />
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-md-6">
-                        <h4>Nombre</h4>
-                        <h4 class=" text-muted mb-4">{{$perfil->name}} {{$perfil->lastname}}</h4>
+            <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+              <hr class="my-4" />
+              <!-- Address -->
+              <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Nombre</h4>
+                    <h4 class=" text-muted mb-4">{{$perfil->name}} {{$perfil->lastname}}</h4>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="tab-content">
+                      <h4>Fecha de nacimiento</h4>
+                      <h4 class=" text-muted mb-4">{{$perfil->cumpleanios}}</h4>
                     </div>
-                    <div class="col-md-5">
-                      <div class="tab-content">
-                        <h4>Fecha de nacimiento</h4>
-                        <h4 class=" text-muted mb-4">{{$perfil->cumpleanios}}</h4>
-                      </div>
-                    </div>
-                  </div>        
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h4>Gmail</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->email}}</h4>
-                    </div>
-                    <div class="col-md-5">
-                      <h4>Genero</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->genero}}</h4>
-                    </div>
-                  </div>  
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h4>Area</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
-                    </div>
-                    @if ($perfil->phone_status == '1')
-                    <div class="col-md-5">
-                      <h4>Telefono</h4>
-                      <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
-                    </div>   
-                    @endif                    
-                  </div>                        
-                </div>  
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Gmail</h4>
+                    <h4 class=" text-muted mb-4">{{$perfil->email}}</h4>
+                  </div>
+                  <div class="col-md-5">
+                    <h4>Genero</h4>
+                    <h4 class=" text-muted mb-4">{{$perfil->genero}}</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Area</h4>
+                    <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
+                  </div>
+                  @if ($perfil->phone_status == '1')
+                  <div class="col-md-5">
+                    <h4>Telefono</h4>
+                    <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
+                  </div>
+                  @endif
+                </div>
+              </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Biografia</h1><br>               
-            <textarea name="biografia" id="" cols="75" rows="5" disabled >{{$perfil->biografia}}</textarea>
+              <h1 class="form-control-label">Biografia</h1><br>
+              <textarea name="biografia" id="" cols="75" rows="5" disabled>{{$perfil->biografia}}</textarea>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       <?php $user = auth()->user();
       ?>

@@ -21,19 +21,19 @@
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
         <form action="{{ url('fotoportada') }}" enctype='multipart/form-data' id="portadaForm">
-          @csrf 
+          @csrf
           <input type="file" id="portadaInput" style="display: none" name="photo_portada">
         </form>
-        <img src="{{Auth::user()->photo_portada}}" id="portadata"  class="card-img img-fluid">
+        <img src="{{Auth::user()->photo_portada}}" id="portadata" class="card-img img-fluid">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <form action="{{ url('foto') }}" enctype='multipart/form-data' id="avatarForm">
-                @csrf 
+                @csrf
                 <input type="file" id="avatarInput" style="display: none" name="photo">
-            </form>
-            <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
-          </div>
+              </form>
+              <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
+            </div>
           </div>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-      </div>          
+      </div>
     </div>
     <div class="col-xl-8 order-xl-1" style="margin-top: 30px">
       <div class="nav-wrapper">
@@ -85,7 +85,7 @@
               <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
                 <h4 class="text-muted ">INFORMACION PERSONAL</h4>
-                <hr class="my-4"/>
+                <hr class="my-4" />
                 @if (session('editarusu'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <span class="alert-icon"><i class="ni ni-like-2"></i></span>
@@ -99,24 +99,24 @@
                 <a class="text-muted mb-4">Seleccione los campos que desee ocultar</a>
                 <br><br>
                 <div class="pl-lg-4">
-                  <div class="row">                   
+                  <div class="row">
                     <div class="col-md-6">
-                        <h4>Nombre</h4>
-                        <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
+                      <h4>Nombre</h4>
+                      <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
                     </div>
                     <div class="col-md-6">
                       <h4>Apellido</h4>
                       <input class="form-control" value="{{ Auth::user()->lastname}}" name="lastname" type="text">
-                  </div>
+                    </div>
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-md-12">
                       <h4>Correo</h4>
-                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text" >
+                      <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text">
                     </div>
                   </div>
-                    <br>
+                  <br>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="tab-content">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="col-md-6">
                       <h4>Area</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="area" required>
+                      <select class="form-control" id="exampleFormControlSelect1" name="area" required>
                         <option>{{Auth::user()->area}}</option>
                         <option>Programacion</option>
                         <option>Diseño</option>
@@ -144,10 +144,10 @@
                       </select>
                     </div>
                   </div>
-                   <div class="row">
+                  <div class="row">
                     <div class="col-md-6">
                       <h4>Genero</h4>
-                      <select class="form-control"  id="exampleFormControlSelect1" name="genero" required>
+                      <select class="form-control" id="exampleFormControlSelect1" name="genero" required>
                         <option>{{ Auth::user()->genero}}</option>
                         <option>Hombre</option>
                         <option>Mujer</option>
@@ -156,28 +156,28 @@
                     </div>
                     <div class="col-md-6">
                       <h4>Telefono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
-                        checked value="1" 
+                        checked value="1"
                         @else
-                            value="0"
-                      @endif></h4>                      
+                        value="0"
+                        @endif></h4>
                       <input class="form-control" name="phone" value="{{Auth::user()->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
                     </div>
                   </div>
                 </div>
                 <div class="card-body text-center">
-                  <button type="submit" style="margin-left: 56%;"class="btn btn-primary" type="button">Guardar</button>
+                  <button type="submit" style="margin-left: 56%;" class="btn btn-primary" type="button">Guardar</button>
                 </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Biografia</h1><br>               
-            <textarea name="biografia" id="" cols="75" rows="5">{{Auth::user()->biografia}}</textarea>
+              <h1 class="form-control-label">Biografia</h1><br>
+              <textarea name="biografia" id="" cols="75" rows="5">{{Auth::user()->biografia}}</textarea>
               <div class="card-body text-center">
-                <button type="submit" style="margin-left: 86%;"class="btn btn-primary" type="button">Guardar</button>
+                <button type="submit" style="margin-left: 86%;" class="btn btn-primary" type="button">Guardar</button>
               </div>
             </div>
-          </form>
+            </form>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-          
+
               <h1 class="form-control-label">Grupos sugeridos</h1><br>
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
@@ -193,7 +193,7 @@
               <a href="#" class="avatar ">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
               </a>
-              <a href="#" class="avatar "style="margin-left: 295px">
+              <a href="#" class="avatar " style="margin-left: 295px">
                 <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
               </a>
               <h4 style="margin-left: 53px;margin-top: -35px;">Laravel 5.8</h4>
@@ -216,10 +216,10 @@
 <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script type="text/javascript">
-  $(function () {
-      $('#date').date({
-        format: 'Y/m/d',
-      });
+  $(function() {
+    $('#date').date({
+      format: 'Y/m/d',
+    });
   });
 </script>
 @section('js')

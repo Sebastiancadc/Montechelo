@@ -6,7 +6,6 @@
             <div class="page-header">
                 <h4 class="page-title">Dashboard-Admin</h4>
             </div>
-
             <div class="row">
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-primary card-round">
@@ -91,8 +90,8 @@
                         <div class="card-body ">
                             <div class="row align-items-center">
                                 <div class="col-icon">
-                                    <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                        <i class="fas fa-bullhorn"></i>
+                                    <div class="icon-big text-center icon-warning bubble-shadow-small">
+                                        <i class="fas fa-hand-holding"></i>
                                     </div>
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
@@ -110,7 +109,7 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-icon">
-                                    <div class="icon-big text-center icon-info bubble-shadow-small">
+                                    <div class="icon-big text-center icon-danger bubble-shadow-small">
                                         <i class="fas fa-newspaper"></i>
                                     </div>
                                 </div>
@@ -129,8 +128,8 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-icon">
-                                    <div class="icon-big text-center icon-success bubble-shadow-small">
-                                        <i class="fas fa-diagnoses"></i>
+                                    <div class="icon-big text-center icon-default bubble-shadow-small">
+                                        <i class="fas fa-chalkboard-teacher"></i>
                                     </div>
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
@@ -148,7 +147,8 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-icon">
-                                    <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                                    <div class="icon-big text-center icon-secondary bubble-shadow-small" style="background: #2f2dad;
+                                    color: #fff;">
                                         <i class="fas fa-child"></i>
                                     </div>
                                 </div>
@@ -162,8 +162,62 @@
                         </div>
                     </div>
                 </div>
-            </div>										
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-head-row">
+                                <div class="card-title">Novedades Pendientes</div>
+                            </div>
+                        </div>
+                        @foreach ($novedadesPendientes as $novedad)
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar ">
+                                    <span class="avatar-title rounded-circle border border-white bg-info"><i class="fas fa-exclamation-triangle"></i></span>
+                                </div>
+                                <div class="flex-1 ml-3 pt-1">
+                                    <h5 class="text-uppercase fw-bold mb-1">{{$novedad->novedad}}<span class="text-danger pl-3">Pendiente</span></h5>
+                                    <span class="text-muted">{{$novedad->descripcion}}</span>
+                                </div>
+                                <div class="float-right pt-1">
+                                    <small class="text-muted">{{Carbon\Carbon::parse($novedad->created_at)->diffForHumans()}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-head-row">
+                                <div class="card-title">Solicitudes Pendientes</div>
+                            </div>
+                        </div>
+                        @foreach ($solicidesPendientes as $solicitud)
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar ">
+                                    <span class="avatar-title rounded-circle border border-white bg-info"><i class="fas fa-exclamation-triangle"></i></span>
+                                </div>
+                                <div class="flex-1 ml-3 pt-1">
+                                    <h5 class="text-uppercase fw-bold mb-1">{{$solicitud->nombre}}<span class="text-danger pl-3">Pendiente</span></h5>
+                                    <span class="text-muted">{{$solicitud->tipo_solicitud}}</span>
+                                </div>
+                                <div class="float-right pt-1">
+                                    <small class="text-muted">{{Carbon\Carbon::parse($solicitud->created_at)->diffForHumans()}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

@@ -11,7 +11,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Solicitudes registradas</p>
-                        <h4 class="card-title">{{$solicitudes}}</h4>
+                            <h4 class="card-title">{{$solicitudes}}</h4>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Desarollo</p>
-                        <h4 class="card-title">{{$desarollo}}</h4>
+                            <h4 class="card-title">{{$desarollo}}</h4>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Talento humano</p>
-                        <h4 class="card-title">{{$talentohumano}}</h4>
+                            <h4 class="card-title">{{$talentohumano}}</h4>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Recursos humanos</p>
-                        <h4 class="card-title">{{$recursoshumanos}}</h4>
+                            <h4 class="card-title">{{$recursoshumanos}}</h4>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Producción</p>
-                        <h4 class="card-title">{{$produccion}}</h4>
+                            <h4 class="card-title">{{$produccion}}</h4>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Desprendibles de pago</p>  
+                            <p class="card-category">Desprendibles de pago</p>
                             <h4 class="card-title">{{$pagos}}</h4>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Pendientes</p>
-                        <h4 class="card-title">{{$pendientes}}</h4>
+                            <h4 class="card-title">{{$pendientes}}</h4>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-icon">
-                        <div class="icon-big text-center icon-success bubble-shadow-small" >
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
                             <i class="fas fa-tasks"></i>
                         </div>
                     </div>
@@ -174,4 +174,3 @@
         </div>
     </div>
 </div>
- 

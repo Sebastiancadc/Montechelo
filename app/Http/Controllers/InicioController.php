@@ -92,8 +92,10 @@ class InicioController extends Controller
         $noticias = DB::table('noticias')->count();
         $capacitaciones = DB::table('capacitaciones')->count();
         $pausas = DB::table('pausas_activas')->count();
+        $novedadesPendientes = DB::select("SELECT * FROM novedad WHERE estado = 'pendiente'");
+        $solicidesPendientes = DB::select("SELECT * FROM solicitud WHERE estado_solicitud = 'pendiente'");        
         return view('admin.dashboards.dashboardAdmin', compact('usuariosregistrados','eventos','buzon','novedad'
-    ,'solicitudes','noticias','capacitaciones','pausas'));
+    ,'solicitudes','noticias','capacitaciones','pausas','novedadesPendientes','solicidesPendientes'));
     }
 
 }

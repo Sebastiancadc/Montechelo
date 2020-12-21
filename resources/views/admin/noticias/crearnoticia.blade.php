@@ -1,4 +1,3 @@
-
 @extends('admin.layouts.layout')
 @section('content')
 <!-- Crear Noticia -->
@@ -27,59 +26,59 @@
         <div class="col-lg-8 card-wrapper">
             <!-- Grid system -->
             <div class="card">
-                    <div class="card-body">
-                        <form  method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
-                            @csrf @method('POST')
-                            <input type="hidden" name="user_id"  name="user_id" value="{{$user->id}}";>
+                <div class="card-body">
+                    <form method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
+                        @csrf @method('POST')
+                        <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}" ;>
+                        <div class="form-group">
+                            @if (session('noticia_crear'))
+                            <div class="alert alert-success mt-3">
+                                {{session('noticia_crear')}}
+                            </div>
+                            @endif
+                            <div class="form-group">
+                                <label class="form-control-label" for="exampleFormControlInput1" name="titulo">Título de la publicación</label>
+                                <input type="text" class="form-control form-control-alternative" placeholder="" value="{{ old('title') }}" name="title" maxlength="30" required>
+                                @if ($errors->has('title'))
+                                <strong class="text-danger">{{ $errors->first('title') }}</strong>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Categorias</label>
+                                <select class="form-control" name="category_id" required>
+                                    @foreach ($categoria as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3" required>{{ old('body') }}</textarea>
+                                </div>
+                                @if ($errors->has('body'))
+                                <strong class="text-danger">{{ $errors->first('body') }}</strong>
+                                @endif
+                            </div>
+                            <div class="form-group">
                                 <div class="form-group">
-                                    @if (session('noticia_crear'))
-                                    <div class="alert alert-success mt-3">
-                                        {{session('noticia_crear')}}
-                                    </div>
+                                    <label class="form-control-label"> Portada </label>
+                                    <input type="file" class="form-control form-control-alternative" placeholder="" value="" name="image" required>
+                                    @if ($errors->has('image'))
+                                    <strong class="text-danger">{{ $errors->first('image') }}</strong>
                                     @endif
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1" name="titulo">Título de la publicación</label>
-                                        <input type="text"  class="form-control form-control-alternative" placeholder="" value="{{ old('title') }}" name="title" maxlength="30" required>
-                                        @if ($errors->has('title'))
-                                        <strong class="text-danger" >{{ $errors->first('title') }}</strong>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label" >Categorias</label>
-                                        <select class="form-control" name="category_id" required>
-                                          @foreach ($categoria as $category)
-                                            <option  value="{{ $category->id }}">{{ $category->name }}</option>
-                                          @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
-                                        <div class="col-md-12">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3"  required>{{ old('body') }}</textarea>
-                                        </div>
-                                        @if ($errors->has('body'))
-                                        <strong class="text-danger" >{{ $errors->first('body') }}</strong>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label class="form-control-label"> Portada </label>
-                                            <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image" required>
-                                            @if ($errors->has('image'))
-                                            <strong class="text-danger" >{{ $errors->first('image') }}</strong>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-5 text-right" style="float: right;">
-                                        <button type="submit" class="btn btn-primary my-4">Enviar</button>
-                                        <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-5 text-right" style="float: right;">
+                                <button type="submit" class="btn btn-primary my-4">Enviar</button>
+                                <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
+                            </div>
                             </input>
-                      </form>
-                 </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

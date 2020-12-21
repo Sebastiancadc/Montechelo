@@ -11,7 +11,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Novedades registradas</p>
-                        <h4 class="card-title">{{$novedades}}</h4>
+                            <h4 class="card-title">{{$novedades}}</h4>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Talento humano</p>
-                        <h4 class="card-title">{{$talentohumano}}</h4>
+                            <h4 class="card-title">{{$talentohumano}}</h4>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Recursos humanos</p>
-                        <h4 class="card-title">{{$recursoshumanos}}</h4>
+                            <h4 class="card-title">{{$recursoshumanos}}</h4>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Produccion</p>
-                        <h4 class="card-title">{{$produccion}}</h4>
+                            <h4 class="card-title">{{$produccion}}</h4>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Revisadas</p>  
+                            <p class="card-category">Revisadas</p>
                             <h4 class="card-title">{{$revisado}}</h4>
                         </div>
                     </div>
@@ -136,4 +136,3 @@
         </div>
     </div>
 </div>
- 
