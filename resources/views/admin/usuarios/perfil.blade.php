@@ -176,31 +176,6 @@
               </div>
             </div>
             </form>
-            <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-
-              <h1 class="form-control-label">Grupos sugeridos</h1><br>
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/angular.jpg")}} ">
-              </a>
-              <a href="#" class="avatar" style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/vue.jpg")}} ">
-              </a>
-              <h4 style="margin-left: 53px;margin-top: -35px;">PHP avanzado</h4>
-              <br>
-
-              <h4 style="margin-left: 400px;margin-top: -50px;">Desarrolladores</h4>
-              <br>
-              <a href="#" class="avatar ">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/react.jpg")}} ">
-              </a>
-              <a href="#" class="avatar " style="margin-left: 295px">
-                <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-2.jpg")}} ">
-              </a>
-              <h4 style="margin-left: 53px;margin-top: -35px;">Laravel 5.8</h4>
-              <br>
-              <h4 style="margin-left: 400px;margin-top: -55px;">Base de datos</h4>
-              <br>
-            </div>
           </div>
         </div>
       </div>

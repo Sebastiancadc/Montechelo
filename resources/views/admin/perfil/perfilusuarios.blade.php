@@ -136,8 +136,6 @@ height: 148%;"></span>
           </div>
         </div>
       </div>
-      <?php $user = auth()->user();
-      ?>
     </div>
     </footer>
   </div>

@@ -61,7 +61,6 @@
                             <label class="form-control-label" for="competencias">Imagen</label>
                             <input type="file" class="form-control form-control-alternative" value="{{$noticiaActualizar->image }}" name="image">
                         </div>
-
                         <div class="col-lg-6 col-5 text-right" style="float: right;">
                             <button type="submit" class="btn btn-primary my-4">Actualizar</button>
                         </div>
@@ -75,6 +74,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection

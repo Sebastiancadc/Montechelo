@@ -1,6 +1,5 @@
 @extends('admin.layouts.layout')
 @section('content')
-
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
         <div class="header-body">
@@ -25,7 +24,6 @@
         <div class="card-header">
             <h3 class="mb-0">Enviar solicitud</h3>
         </div>
-
         @if (session('crearsolicitudes'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <span class="alert-icon"><i class="ni ni-like-2"></i></span>

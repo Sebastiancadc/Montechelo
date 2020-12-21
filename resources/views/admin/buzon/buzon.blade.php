@@ -34,18 +34,14 @@
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col">
-
-                <section class="py-6 pb-9 bg-default" style="background: linear-gradient( rgba(231, 223, 223, 0), rgb(255, 255, 255)),url({{asset("plantilla/img/theme/bb.jpg")}}); height: 300px;">
+                <section class="py-6 pb-9 bg-default ggtr">
                     <div class="row justify-content-center text-center">
                         <div class="col-md-6">
-
                             <p class="lead text-white"> </p>
-
                         </div>
                     </div>
                 </section>
-
-                <section class="section section-lg pt-lg-0 mt--7" style=" font-family: Roboto, Helvetica Neue, Arial, sans-serif;">
+                <section class="section section-lg pt-lg-0 mt--7" >
                     <div class="container">
                         <div class="row justify-content-center" <div class="col-lg-12">
                             <div class="row">
@@ -56,7 +52,7 @@
                                         <div class="card-body py-5 rounded-sm  tgg">
                                             <h4>{{$item->tipo_sugerencia}}</h4>
                                             <p class="description mt-3" style="text-align: justify;">{{$item->descripcion}}</p>
-                                            <h4 style="color:#0098C9 ">{{$item->area}}</h4>
+                                            <h4 class="zulcs">{{$item->area}}</h4>
                                         </div>
                                     </div>
                                 </div>

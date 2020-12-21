@@ -33,23 +33,23 @@
                         </div>
                         <div class="card-body">
                             <h5 class="h2 card-title mb-0">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Pausas activas</font>
+                                <font class="vetii">
+                                    <font class="vetii">Pausas activas</font>
                                 </font>
                             </h5>
                             <small class="text-muted">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Salud y bienestar en el Trabajo.</font>
+                                <font class="vetii">
+                                    <font class="vetii">Salud y bienestar en el Trabajo.</font>
                                 </font>
                             </small>
                             <p class="card-text mt-4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Los colaboradores llevamos semanas trabajando desde casa y es importante tener en cuenta ciertas pautas básicas para evitar dolores en el cuello y espalda. Ahí la importancia de realizar pausas activas durante el teletrabajo. <br>
+                                <font class="vetii">
+                                    <font class="vetii">Los colaboradores llevamos semanas trabajando desde casa y es importante tener en cuenta ciertas pautas básicas para evitar dolores en el cuello y espalda. Ahí la importancia de realizar pausas activas durante el teletrabajo. <br>
                                         Por ello en esta entrada te contaremos de los ejercicios que puedes hacer en tu casa para evitar dolores, preservar una buena postura y mantener una alta energía para continuar con tus labores. </font>
                                 </font>
                             </p>
                             <a href="#!" class="btn btn-link px-0">
-                                <font style="vertical-align: inherit;"></font>
+                                <font class="vetii"></font>
                             </a>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="width: 100% !important;height:100% !important;">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="plantilla/img/theme/pausasactivas/pausa1.png" class=" d-block w-100" alt="..." style="height: ">
+                                    <img src="plantilla/img/theme/pausasactivas/pausa1.png" class=" d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="plantilla/img/theme/pausasactivas/pausa2.png" class=" d-block w-100" alt="...">
@@ -75,24 +75,24 @@
                         <!-- Card body -->
                         <div class="card-body">
                             <h5 class="h2 card-title mb-0">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Pausas activas </font>
+                                <font class="vetii">
+                                    <font class="vetii">Pausas activas </font>
                                 </font>
                             </h5>
                             <small class="text-muted">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Salud y bienestar en el Trabajo.</font>
+                                <font class="vetii">
+                                    <font class="vetii">Salud y bienestar en el Trabajo.</font>
                                 </font>
                             </small>
                             <p class="card-text mt-4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">A continuación te presentamos una serie de ejercicios principalmente de elongación
+                                <font class="vetii">
+                                    <font class="vetii">A continuación te presentamos una serie de ejercicios principalmente de elongación
                                         que puedes realizar entre tus periodos de trabajo. Recuerda realizarlos a diario, en
                                         periodos de 3 a 5 minutos cada 2 o tres horas.</font>
                                 </font>
                             </p>
                             <a href="#!" class="btn btn-link px-0">
-                                <font style="vertical-align: inherit;"></font>
+                                <font class="vetii"></font>
                             </a>
                         </div>
                     </div>
@@ -101,22 +101,22 @@
                         <!-- Card body -->
                         <div class="card-body">
                             <h5 class="h2 card-title mb-0">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Pausas activas</font>
+                                <font class="vetii">
+                                    <font class="vetii">Pausas activas</font>
                                 </font>
                             </h5>
                             <small class="text-muted">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Salud y bienestar en el Trabajo.</font>
+                                <font class="vetii">
+                                    <font class="vetii">Salud y bienestar en el Trabajo.</font>
                                 </font>
                             </small>
                             <p class="card-text mt-4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Las pausas activas son breves descansos durante la jornada laboral que sirven para recuperar energía, mejorar el desempeño y eficiencia en el trabajo, a través de diferentes técnicas y ejercicios que ayudan a reducir la fatiga laboral y prevenir el estrés.</font>
+                                <font class="vetii">
+                                    <font class="vetii">Las pausas activas son breves descansos durante la jornada laboral que sirven para recuperar energía, mejorar el desempeño y eficiencia en el trabajo, a través de diferentes técnicas y ejercicios que ayudan a reducir la fatiga laboral y prevenir el estrés.</font>
                                 </font>
                             </p>
                             <a href="#!" class="btn btn-link px-0">
-                                <font style="vertical-align: inherit;"></font>
+                                <font class="vetii"></font>
                             </a>
                         </div>
                         <!-- Card image -->

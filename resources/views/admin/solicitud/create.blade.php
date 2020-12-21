@@ -77,7 +77,6 @@
                         </div>
                     </div>
                     <div class="modal-footer no-bd">
-
                         <button type="submit" class="btn btn-primary">Añadir</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>

@@ -16,7 +16,6 @@
                 <form role="form" method="POST" action="{{ url('admin/novedad')}}">
                     @csrf @method('POST')
                     <div class="row">
-
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Area</label>
@@ -51,7 +50,6 @@
                         </div>
                     </div>
                     <div class="modal-footer no-bd">
-
                         <button type="submit" class="btn btn-primary">Añadir</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>

@@ -213,9 +213,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 <span>
                   @if (count($conntss) == 0)
                   @else
-                  <span class="badge badge-danger" style="color: transparent;
-                  background-color: #f80031;
-                  height: 12px;width: 1px;">.
+                  <span class="badge badge-danger circulorojo">.
                   </span>
                   @endif
                 </span>
@@ -282,9 +280,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 <i class="ni ni-bell-55"></i>
                 <span>
                   @if (count(Auth::user()->unreadNotifications))
-                  <span class="badge badge-danger" style="color: transparent;
-                background-color: #f80031;
-                height: 12px;width: 1px; ">.
+                  <span class="badge badge-danger circulorojo">.
                   </span>
                   @endif
                 </span>

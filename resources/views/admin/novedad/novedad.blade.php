@@ -12,7 +12,6 @@
                 </button>
             </div>
             @endif
-
             @if (session('eliminar'))
             <div class="alert alert-danger" role="alert">
                 {{(session('eliminar'))}}
@@ -21,7 +20,6 @@
                 </button>
             </div>
             @endif
-
             @if (session('update'))
             <div class="alert alert-warning" role="alert">
                 {{(session('update'))}}
@@ -30,7 +28,6 @@
                 </button>
             </div>
             @endif
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -102,7 +99,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </td>
                                         </tr>
@@ -117,15 +113,11 @@
             </div>
         </div>
     </div>
-
 </div>
-
 </div>
-
 @section('js')
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
-
 <script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>

@@ -32,7 +32,6 @@
           <a href="{{route('leertodas')}}" class="btn btn-sm btn-warning mb-2" style="margin-left: 63%;
             margin-top: -15px;">Marcar todas como leidas</a>
           @else
-
           @endif
           <div class="row">
             @forelse ($notificaciones as $notificacion)
@@ -83,5 +82,4 @@
     </div>
   </div>
 </div>
-
 @endsection

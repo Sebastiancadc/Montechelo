@@ -1,6 +1,5 @@
 @extends('admin.layouts.layoutAdmin')
 @section('contents')
-
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -13,7 +12,6 @@
                 </button>
             </div>
             @endif
-
             @if (session('eliminar'))
             <div class="alert alert-danger" role="alert">
                 {{(session('eliminar'))}}
@@ -22,7 +20,6 @@
                 </button>
             </div>
             @endif
-
             @if (session('update'))
             <div class="alert alert-warning" role="alert">
                 {{(session('update'))}}
@@ -31,7 +28,6 @@
                 </button>
             </div>
             @endif
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -74,7 +70,6 @@
                                                     @else
                                                     <span class="badge badge-lg badge-danger">{{$item->estado_solicitud}}
                                                         @endif
-
                                             </td>
                                             <td>
                                                 <div class="form-button-action">
@@ -112,7 +107,6 @@
                                             </td>
                                         </tr>
                                     </tbody>
-
                                     @endforeach
                                 </table>
                             </div>

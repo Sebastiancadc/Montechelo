@@ -1,7 +1,6 @@
 @extends('admin.layouts.layout')
 @section('content')
-<div class="header bg-primary pb-6 " style="background:
-url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-repeat: no-repeat; background-size: cover;">
+<div class="header bg-primary pb-6 imgtalentoh">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
@@ -30,7 +29,7 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
             <div class="card card-lift--hover shadow border-0">
                 <div class="card-body epep">
                     <a href="{{url('noticiausu')}}">
-                        <img src="{{asset("plantilla/img/theme/noticias.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
+                        <img src="{{asset("plantilla/img/theme/noticias.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Noticias de interés</span>
@@ -49,7 +48,7 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
                     <style>
                     </style>
                     <a href="{{url('capacitaciones')}}">
-                        <img src="{{asset("plantilla/img/theme/capacitacion.png")}}" class="rounded-circle img-center img-fluid" style="max-width: 550px; max-height: 238px;">
+                        <img src="{{asset("plantilla/img/theme/capacitacion.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Capacitaciones</span>
@@ -66,7 +65,7 @@ url({{asset("plantilla/img/theme/completion.png")}}); height: auto; background-r
             <div class="card card-lift--hover shadow border-0">
                 <div class="card-body epep">
                     <a href="{{url('pausasactivas')}}">
-                        <img src="{{asset("plantilla/img/theme/pausas.png")}}" class="rounded-circle img-center img-fluid " style="max-width: 550px; max-height: 238px;">
+                        <img src="{{asset("plantilla/img/theme/pausas.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">Pausas activas</span>

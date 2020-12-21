@@ -1,13 +1,11 @@
 @extends('admin/buzon')
 @section('card')
-
 <div class="card-body">
     <form method="POST" action="{{route('admin/update', {{$editarbuzon->id}})}}">
         @csrf <div class="form-group">
             <label class="form-control-label" for="exampleFormControlInput1">Titulo</label>
-            <input type="email" name='titulo' class="form-control" id="titulo" placeholder="" value="{{$editarbuzon->titulo}}">
+            <input type="email" name='titulo' class="form-control" id="titulo"  value="{{$editarbuzon->titulo}}">
         </div>
-
         <div class="form-group">
             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
             <textarea class="form-control" id="descripcion" name='descripcion' rows="3" value="{{$editarbuzon->descripcion}}"></textarea>
@@ -32,7 +30,4 @@
     </div>
     @endif
 </div>
-
-
-
 @endsection

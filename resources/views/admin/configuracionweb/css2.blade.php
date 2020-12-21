@@ -29896,4 +29896,60 @@ background-color: #11cdef !important;
     background: #bb5e19;
     border-radius: 10px;
 }
+
+.imgsss{
+width: 193px;
+margin-top: 1px;
+margin-bottom: -60px;
+height: 238px;
+}
+                          
+.imgsss2{                                                                   
+padding-top: 0px;     
+height: 492px;
+width: 394px;
+}
+.etnrr{
+padding: 0.25rem 0.5rem;
+border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.ggtr{
+background: linear-gradient( rgba(231, 223, 223, 0), rgb(255, 255, 255)),
+url({{asset("plantilla/img/theme/bb.jpg")}}); height: 300px;
+}
+
+.zulcs{
+    color:#0098C9;
+}
+.circulorojo{
+    color: transparent;
+    background-color: #f80031;
+    height: 12px;width: 1px;
+}
+.vetii{
+    vertical-align: inherit;
+}
+.imgpgsolicitud{
+background:
+linear-gradient( rgba(231, 223, 223, 0), rgba(255, 255, 255, 0.527)),
+url({{asset("plantilla/img/theme/solis.png")}}); height: auto; 
+background-repeat: no-repeat; 
+background-size: cover;
+}
+
+.tajetasolicitud{
+    max-width: 550px; 
+    max-height: 238px;
+}
+.imgtalentoh{
+background:
+url(
+    {{asset("plantilla/img/theme/completion.png")}}); height: auto; background-repeat: no-repeat; background-size: cover;
+}
+
+.tarjetastalento{
+    max-width: 550px; 
+    max-height: 238px;
+}
 </style>

@@ -60,42 +60,24 @@
 						</div>
 				</div>
 				</form>
-				{{-- <form action="{{ url('admin/video') }}" enctype='multipart/form-data' id="avatarForm">
-				@csrf
-				<input type="file" id="avatarInput" name="video">
-				<input name="id" type="text" value="{{$pausasEditar->id}}" />
-				</form>
-				<video id="avatarImages" controls>
-					<source src="{{$pausasEditar->video}}"> </video> --}}
-				{{-- <div><img src="{{Auth::user()->photo}}" class="rounded-circle">
-			</div> --}}
 		</div>
 	</div>
 </div>
-
-
 @section('js')
 <script>
 	$(function() {
 		var $avatarImage, $avatarInput, $avatarForm;
 		var avatarUrl;
-
 		$avatarImage = $('#avatarImage');
 		$avatarInput = $('#avatarInput');
 		$avatarForm = $('#avatarForm');
-
 		$avatarImage.on('click', function() {
 			$avatarInput.click();
 		});
-
 		avatarUrl = $avatarForm.attr('action');
-
 		$avatarInput.on('change', function() {
-
 			var formData = new FormData();
-
 			formData.append('video', $avatarInput[0].files[0]);
-
 			$.ajax({
 					url: avatarUrl + '?' + $avatarForm.serialize(),
 					method: 'POST',
