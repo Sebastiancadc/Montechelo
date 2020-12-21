@@ -3,84 +3,60 @@
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.novedad.estadisticas')
-            @if (session('crearnovedades'))
+            @if (session('creareanuncio'))
             <div class="alert alert-primary" role="alert">
-                {{(session('crearnovedades'))}}
+                {{(session('creareanuncio'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
-
-            @if (session('eliminar'))
+            @if (session('seelimino'))
             <div class="alert alert-danger" role="alert">
-                {{(session('eliminar'))}}
+                {{(session('seelimino'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
             </div>
           @endif
-
-            @if (session('update'))
-          <div class="alert alert-warning" role="alert">
-           {{(session('update'))}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-        </div>
-          @endif
-
             <div class="row">              
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Novedades</h4>
+                                <h4 class="card-title">Gestión de Anuncios</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear novedad
+                                    Crear anuncio
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.novedad.create')
+                            @include('admin.anuncios.create')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            {{-- <th>#</th> --}}
-                                            <th>Área</th>
-                                            <th>Fecha </th>
-                                            <th>Novedad</th>
-                                            <th>Descripción</th>
-                                            <th>Estado</th>
+                                            <th>Titulo</th>      
+                                            <th>Descripcion</th>
+                                            <th>Tipo</th>                   
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($novedad  as $item)
+                                        @foreach ($anuncios as $anuncio)
                                         <tr>                                           
-                                            <td>{{$item->area}}</td>
-                                            <td>{{$item->fecha}}</td>
-                                            <td>{{$item->novedad}}</td>
-                                            <td>{{$item->descripcion}}</td>
-                                            <td>@if ($item->estado == 'Revisado')
-                                            <span class="badge badge-lg badge-success">{{$item->estado}}</span>
-                                                @else
-                                                <span class="badge badge-lg badge-danger">{{$item->estado}}</span>
-                                            @endif                                          
-                                            </td>
+                                            <td>{{$anuncio->titulo}}</td>
+                                            <td>{{$anuncio->descripcion}}</td>
+                                            <td><span class="badge badge-lg badge-{{$anuncio->tipo}}">{{$anuncio->tipo}}</span></td>
+    
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}"  data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteanuncio{{$anuncio->id}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteNovedad{{$item->id_novedad}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                <div class="modal fade" id="deleteanuncio{{$anuncio->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
 	                                                <div class="modal-dialog modal-dialog-centered" role="document">
 		                                                <div class="modal-content">
 			                                                <div class="modal-header">
@@ -89,8 +65,8 @@
 					                                                <span aria-hidden="true">&times;</span>
 				                                                </button>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad) }}" >
-                                                                @csrf @method('DELETE') 
+                                                            <form role="form" method="POST" action="{{route('eliminaranuncio',$anuncio->id) }}" >
+                                                                @csrf @method('DELETE')     
 			                                                <div class="modal-body">
                                                                 ¡No podrás revertir esto!			                                               
                                                              </div>
@@ -102,7 +78,6 @@
 		                                                </div>
 	                                                </div>
                                                 </div>
-                                                
                                                 </div>
                                             </td>
                                         </tr>
@@ -123,21 +98,55 @@
 </div>
 
 @section('js')
+
+<!-- Datatables -->
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
-
-<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
-<script>
-$('#datepicker').datetimepicker({
-    format: 'YYYY/MM/DD',
-});
-$('#datetime').datetimepicker({
-			format: 'MM/DD/YYYY H:mm',
-        });
-$('#basic').select2({
+
+
+    <!-- Bootstrap Notify -->
+    <script src="{{asset("plantillaAdmin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
+    <!-- Bootstrap Toggle -->
+    <script src="{{asset("plantillaAdmin/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js")}}"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- Azzara JS -->
+	<script src="../../assets/js/ready.min.js"></script>
+	<!-- Azzara DEMO methods, don't include it in your project! -->
+    <script src="../../assets/js/setting-demo.js"></script>
+    
+	<script>
+		$('#displayNotif').on('click', function(){
+			var placementFrom = $('#notify_placement_from option:selected').val();
+			var placementAlign = $('#notify_placement_align option:selected').val();
+			var state = $('#notify_state option:selected').val();
+			var style = $('#notify_style option:selected').val();
+			var content = {};
+
+			content.message = 'Turning standard Bootstrap alerts into "notify" like notifications';
+			content.title = 'Bootstrap notify';
+			if (style == "withicon") {
+				content.icon = 'fa fa-bell';
+			} else {
+				content.icon = 'none';
+			}
+			content.url = 'index.html';
+			content.target = '_blank';
+
+			$.notify(content,{
+				type: state,
+				placement: {
+					from: placementFrom,
+					align: placementAlign
+				},
+				time: 1000,
+				delay: 0,
+			});
+		});
+	</script>
+<script>$('#basic').select2({
 	theme: "bootstrap"
-});
-</script>
+});</script>
 @endsection
 @endsection

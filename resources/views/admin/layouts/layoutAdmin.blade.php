@@ -152,7 +152,7 @@
                         </li>
 						<li class="nav-item ">
                             <a href="{{url('admin/solicitud')}}">
-								<i class="fas fa-bullhorn"></i>
+								<i class="fas fas fa-hand-holding"></i>
 								<p>Solicitudes</p>
 							</a>
 						</li>
@@ -209,6 +209,12 @@
 							<a href="{{url('admin/logsAdmin')}}">
 								<i class="fas fa-cubes"></i>
 								<p>Logs del sistema</p>	
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a href="{{url('admin/AnunciosAdmin')}}">
+								<i class="fas fa-bullhorn"></i>
+								<p>Anuncios</p>	
 							</a>
 						</li>
 					</ul>

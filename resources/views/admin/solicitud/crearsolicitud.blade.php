@@ -77,12 +77,13 @@
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Área de trabajo</label>
-                <select class="form-control"  name="area_trabajo" required>
+                <select id="basic" name="area_trabajo" class="col-md-15">
+                    <option>Seleccione algun campo</option>
                     <option>Desarrollo</option>
                     <option>Talento Humano</option>
                     <option>Recursos Humanos</option>
                     <option>Producción</option>
-                </select>
+                  </select>
             </div>
       </div>
       <div class="row">
@@ -115,6 +116,10 @@
   @include('admin.layouts.footer')
 </div>
 @section('js')
-<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
+<script src="{{asset("pausasacitvas/pausas.js")}}">
+$('#basic').select2({
+    theme: "bootstrap"
+});
+</script>
 @endsection
   @endsection

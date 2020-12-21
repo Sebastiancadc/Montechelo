@@ -139,8 +139,14 @@ $('#datepicker2').datetimepicker({
     format: 'DD/MM/YYYY',
 });
 $('#datetime').datetimepicker({
-			format: 'MM/DD/YYYY H:mm',
-		});
+    format: 'MM/DD/YYYY H:mm',         
+});
+$('#basic').select2({
+	theme: "bootstrap"
+});
+$('#basic2').select2({
+	theme: "bootstrap"
+});
 </script>
 @endsection
 @endsection

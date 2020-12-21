@@ -6,7 +6,12 @@
   $rol = auth()->user()->role;
   $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
   $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-?>
+  $chat = Illuminate\Support\Facades\DB::table('messages')->select('*')->first();
+  $connt = Illuminate\Support\Facades\DB::table('messages')->select('seen')->whereto_id(Auth::user()->id)->count();
+  $ids=Auth::user()->id;
+  $conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
+  $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
+  ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,8 +39,7 @@
 </head>
 
 <body>
-
-
+{{-- @include('admin.modales.anuncios') --}}
 @include('admin.configuracionweb.css2')
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
@@ -179,6 +183,7 @@
               <span aria-hidden="true">×</span>
             </button>
           </form>
+          
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -200,78 +205,135 @@
                 <span><i class="fas fa-sun" style="15px"></i></span>
                 <span><i class="fas fa-moon"style="15px"></i></span>
             </button>
+
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-chat-round"></i>
+                <span>
+                  @if (count($conntss) == 0)
+                  @else
+                  <span class="badge badge-danger" style="color: transparent;
+                  background-color: #f80031;
+                  height: 12px;width: 1px;">.
+                  </span>
+                 @endif
+                </span>
               </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">13</strong> Mensajes.
+                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{count($conntss)}}</strong> Mensajes.
                   </h6>
                 </div>
-                <!-- List group -->
+                <!-- List group -->                
                 <div class="list-group list-group-flush">
-                  <a href="#!" class="list-group-item list-group-item-action">
+                 @if (count($conntss) == 0)
+                 <a href="#!" class="list-group-item list-group-item-action">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      
+                    </div>
+                    <div class="col ml--2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          
+                        </div>
+                        <div class="text-right text-muted">
+                          <small>--</small>
+                        </div>
+                      </div>
+                      <p class="text-sm mb-0">No tienes mensajes</p>
+                    </div>
+                  </div>
+                </a>
+                  @else 
+                  <a href="{{url('Chatmontechelo')}}" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}"  class="avatar rounded-circle">
+                        <div class="col-auto">
+                          <i class="ni ni-chat-round" style="font-size: 23px;"></i>
+                        </div>                       
                       </div>
                       <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
+                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm">User</h4>
+                            <h4 class="mb-0 text-sm">Chat</h4>
                           </div>
                           <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
+                            {{-- <small>{{json_encode($horas)}}</small> --}}
+                            <p></p>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Nuevo mensaje</p>
+                        <p class="text-sm mb-0">Tienes un mensaje nuevo</p>
                       </div>
                     </div>
                   </a>
+                  @endif
                 </div>
                 <!-- View all -->
-                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                <a href="{{url('Chatmontechelo')}}" class="dropdown-item text-center text-primary font-weight-bold py-3">Ver mis mensajes</a>
               </div>
             </li>
+           
+
+            {{-- Notificaciones campana --}}           
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"> <span  class="bange">1</span> </i>
-              </a>
-
-
+                <i class="ni ni-bell-55"></i>
+               <span>
+                @if (count(Auth::user()->unreadNotifications))
+                <span class="badge badge-danger" style="color: transparent;
+                background-color: #f80031;
+                height: 12px;width: 1px;">.
+                </span>
+               @endif
+              </span>
+                </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong>  notifications.
-                  </h6>
+
+                  <h6 class="text-sm text-muted m-0">Tienes    
+                  @if (count(Auth::user()->unreadNotifications)) 
+                  <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
+                  @endif notificaciones.
+                  </h6>                 
                 </div>
                 <!-- List group -->
-                <div class="list-group list-group-flush">
-                  <a href="#!" class="list-group-item list-group-item-action">
+                @forelse (Auth::user()->unreadNotifications  as $notificacion )
+                    <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>
+                        </div>
+                        <div class="col ml--2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 class="mb-0 text-sm">{{$notificacion->data['evento']}} - {{$notificacion->data['titulo']}}</h4>
+                            </div>
+                            <div class="text-right text-muted">
+                              <small>{{$notificacion->created_at->diffForHumans()}}</small>
+                            </div>
+                          </div>
+                          <p class="text-sm mb-0">{{$notificacion->data['descripcion']}}</p>
+                        </div>
+                      </div>
+                    </a>
+                    @empty
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <!-- Avatar -->
-                        <img alt="Image placeholder" src="{{asset("plantilla/img/theme/team-1.jpg")}}" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">John Snow</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>2 hrs ago</small>
-                          </div>
                         </div>
-                        <p class="text-sm mb-0>Let's meet at Starbucks at 11:30. Wdyt?"</p>
+                        <p class="text-sm mb-0">Sin notificaciones</p>
                       </div>
                     </div>
-                  </a> 
-                </div>
+                    @endforelse    
                 <!-- View all -->
-                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
+                <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">Ver todas</a>
               </div>
             </li>
           </ul>
@@ -318,7 +380,6 @@
     </nav>
  
 @yield('content')
-
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
@@ -331,6 +392,7 @@
 <script src="{{asset("plantilla/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.js")}}"></script>
+<script src="{{asset("plantilla/vendor/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
 <!-- scripts buscador tablas -->
 <script src="{{asset("plantilla/vendor/datatables.net/js/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("plantilla/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
@@ -349,7 +411,6 @@
 <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
 <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
 @yield('js')
-
 <script>
 $(document).ready(function() {
     $('.js-example-basic-single').select2();

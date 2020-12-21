@@ -21,13 +21,13 @@
                       <div class="form-group form-group-default">
                           <label>Area</label>
                           <div class="form-group">
-                            <select id="s" name="area" class="form-control">
-                              <option>Seleccione algun campo</option>
-                              <option>Desarrollo</option>
-                              <option>Talento humano</option>
-                              <option>Recursos humanos</option>
-                              <option>Produccion</option>
-                            </select>
+                            <select id="basic" name="area" class="col-md-15">
+                                <option>Seleccione algun campo</option>
+                                <option>Desarrollo</option>
+                                <option>Talento humano</option>
+                                <option>Recursos humanos</option>
+                                <option>Produccion</option>
+                              </select>
                           </div>
                       </div>
                   </div>
