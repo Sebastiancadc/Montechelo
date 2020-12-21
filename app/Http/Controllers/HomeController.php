@@ -42,7 +42,7 @@ class HomeController extends Controller
         $administradores = DB::table('usuario')->whererole('admin')->count();
         $colaboradores = DB::table('usuario')->whererole('colaborador')->count();
 
-        return view('admin.forms.usuario', compact('users','usuariosregistrados','hombres',
+        return view('admin.usuarios.usuario', compact('users','usuariosregistrados','hombres',
         'mujeres','otro','diseño','marketing'
         ,'produccion','programacion','administradores','colaboradores'));
     }
@@ -58,13 +58,13 @@ class HomeController extends Controller
     public function permisoslista()
     {
         $permisos = Permisos::all();
-        return view('admin.forms.permisos', compact('permisos'));
+        return view('admin.usuarios.permisos', compact('permisos'));
     }
 
     public function editarpermisos($id)
     {
         $permisoActualizar = Permisos::findOrFail($id);
-        return view('admin/forms/editarpermisos', compact('permisoActualizar'));
+        return view('admin/usuarios/editarpermisos', compact('permisoActualizar'));
     }
 
     public function updatepermisos(Request $request, $id)
@@ -179,7 +179,7 @@ class HomeController extends Controller
     public function edit($id)
     {
         $userActualizar = User::findOrFail($id);
-        return view('admin/forms/editaruser', compact('userActualizar'));
+        return view('admin/usuarios/editaruser', compact('userActualizar'));
     }
 
     public function update(Request $request, $id)

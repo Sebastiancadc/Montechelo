@@ -4,7 +4,7 @@
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.forms.estadisticas')
+            @include('admin.usuarios.estadisticas')
             @if (session('crearUsuario'))
             <div class="alert alert-primary" role="alert">
                 {{(session('crearUsuario'))}}
@@ -49,8 +49,8 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.forms.create')
-                            @include('admin.forms.createcola')
+                            @include('admin.usuarios.create')
+                            @include('admin.usuarios.createcola')
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
