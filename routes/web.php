@@ -30,7 +30,7 @@ Route::get('admin/pasword', function () {
 
 Route::get('planestrategico', function () {
     $pausasramdom = Pausasactivas::select('video')
-    ->inRandomOrder() 
+    ->inRandomOrder()
     ->first();
     return view('admin.planestrategico.plan',compact('pausasramdom'));
 });
@@ -39,7 +39,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categoria', 'CategoryController');
     Route::resource('noticia', 'NoticiasController');
 });
+Route::get('manual', function () {
 
+    return view('admin.manual');
+});
 
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
@@ -78,7 +81,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('imagenorganigrama', 'ConfigpageController@updatePhotonaimagenorganigrama');
     Route::post('imagenouniestra', 'ConfigpageController@updatePhotouniestra');
 
-    
+
     //LOGS
     Route::get('logsAdmin', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
@@ -158,7 +161,7 @@ Route::post('/subir', 'Controller@subirArchivo')->name('subir');
 
 Route::get('repositoriocola', function () {
     $pausasramdom = Pausasactivas::select('video')
-    ->inRandomOrder() 
+    ->inRandomOrder()
     ->first();
     return view('admin.repositorio.repositoriocola',compact('pausasramdom'));
 });
