@@ -147,7 +147,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 });
 
-
 //repositorio
 
 Route::get('crearrepositorio', 'RepositorioController@crearrepositorio')->name('crearrepositorio');
@@ -234,7 +233,7 @@ Route::group(['prefix' => ''], function () {
     Route::resource('pausasactivas', 'PausasActivasController');
 
     //Talento Humano
-Route::get('talento', 'NoticiasController@talento')->name('talento');
+    Route::get('talento', 'NoticiasController@talento')->name('talento');
 
     //Notificaciones
     Route::get('Notificaciones', 'AnunciosController@Listanotificaciones');
@@ -242,8 +241,10 @@ Route::get('talento', 'NoticiasController@talento')->name('talento');
         Auth::user()->unreadNotifications->markAsRead();
         return redirect()->back();
     })->name('leertodas');
-
     Route::get('marcarleidas', 'AnunciosController@markNotification')->name('marcarleidas');
+
+    //Manual
+    Route::get('ayuda', 'ManualController@index');
 });
 
 

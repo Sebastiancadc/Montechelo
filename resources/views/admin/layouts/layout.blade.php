@@ -15,7 +15,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
   <!-- Favicon -->
   <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
   <!-- Fonts -->
@@ -357,7 +357,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   <span>Administrador</span>
                 </a>
                 @endif
-                <a href="{{ url('perfil')}}" class="dropdown-item">
+                <a href="{{ url('ayuda')}}" class="dropdown-item">
                   <i class="fa fa-bolt"></i>
                   <span>Ayuda</span>
                 </a>
