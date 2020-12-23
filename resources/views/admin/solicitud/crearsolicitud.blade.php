@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <label class="form-control-label" for="exampleFormControlSelect1">Área de trabajo</label>
-                <select id="basic" name="area_trabajo" class="col-md-15">
+                <select id="basic" name="area_trabajo" class="col-md-15 form-control">
                     <option>Seleccione algun campo</option>
                     <option>Desarrollo</option>
                     <option>Talento Humano</option>

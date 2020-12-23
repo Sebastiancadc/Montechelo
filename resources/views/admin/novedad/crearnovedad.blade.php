@@ -74,7 +74,7 @@
       </div>
       <div class="row">
         <div class="col-md-9">
-            <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
+            <label class="form-control-label" for="exampleFormControlTextarea1">Descripción</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="250"></textarea>
           </div>
       </div>
