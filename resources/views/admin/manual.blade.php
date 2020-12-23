@@ -385,7 +385,7 @@
                                                         En este apartado encontrarás un pequeño registro de los módulos de la intranet, de esta manera tendrás un resumen de los registros realizados en cada uno de los módulos de la intranet.
                                                     </p>
                                                     <div class="faq-img text-center">
-                                                        <img alt="image-sample" src="{{asset("plantilla/img/manual/pendiente.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
+                                                        <img alt="image-sample" src="{{asset("plantilla/img/manual/Dash.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
 
                                                     </div>
                                                     <p class="mb-4">
