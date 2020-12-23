@@ -179,12 +179,10 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 </select>
               </div>
             </div>
-
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </form>
-
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -206,7 +204,6 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               <span><i class="fas fa-sun" style="15px"></i></span>
               <span><i class="fas fa-moon" style="15px"></i></span>
             </button>
-
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-chat-round"></i>
@@ -230,7 +227,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   <a href="#!" class="list-group-item list-group-item-action">
                     <div class="row align-items-center">
                       <div class="col-auto">
-
+                        <i class="fas fa-comment-slash" style="font-size: 23px;"></i>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -315,8 +312,10 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   </div>
                 </a>
                 @empty
+                <a class="list-group-item list-group-item-action">
                 <div class="row align-items-center">
                   <div class="col-auto">
+                    <i class="fas fa-bell-slash" style="font-size: 23px;"></i>
                   </div>
                   <div class="col ml--2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -324,6 +323,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                     <p class="text-sm mb-0">Sin notificaciones</p>
                   </div>
                 </div>
+              </a>
                 @endforelse
                 <!-- View all -->
                 <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
