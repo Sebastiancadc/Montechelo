@@ -28,65 +28,48 @@
             </div>
             <div class="col-md-9 ml-auto mr-auto">
                 <div class="card">
-
-
                     <form action="{{route('update',$capacitacionActualizar->id_capacitacion)}}" method="POST">
                         @method('PUT')
                         @csrf
-
                         <div class="card-body">
                             <h3 class="card-header">Editar capacitacion</h3>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="row">
-
                                             <div class="col-md-6">
-
                                                 <h4>Titulo</h4>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
                                                             <i class="fas fa-align-center"></i>
-
                                                         </span>
                                                     </div>
                                                     <input class="form-control" placeholder="Titulo" value='{{$capacitacionActualizar->titulo}}' name="titulo" type="text" required>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-6">
-
                                                 <h4>Fecha</h4>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
                                                             <i class="far fa-calendar-alt"></i>
-
                                                         </span>
                                                     </div>
                                                     <input class="form-control" name="fecha" value='{{$capacitacionActualizar->fecha}}' type="date" required>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-12">
                                                 <br>
                                                 <h4>Descripcion</h4>
                                                 <div class="input-group">
-
                                                     <textarea class="form-control" name="descripcion" type="text" cols="100" rows="5" required>{{$capacitacionActualizar->descripcion}}</textarea>
-
-
                                                 </div>
                                             </div>
-
-
-
                                             <div class="col-md-6">
                                                 <br>
                                                 <h4>Categoria</h4>
                                                 <select class="form-control" id="exampleFormControlSelect1" name="categoria" required>
-
                                                     <option>{{$capacitacionActualizar->categoria}}</option>
                                                     <option>Diseño</option>
                                                     <option>Desarrollo</option>
@@ -95,8 +78,6 @@
                                                     <option>Produccion</option>
                                                 </select>
                                             </div>
-
-
                                             <div class="col-md-6">
                                                 <br>
                                                 <h4>Link</h4>
@@ -109,9 +90,6 @@
                                                     <input class="form-control" placeholder="Link" value='{{$capacitacionActualizar->link}}' name="link" id="link" type="text" required>
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -123,8 +101,6 @@
                         </div>
                 </div>
                 </form>
-
-
             </div>
         </div>
     </div>

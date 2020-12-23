@@ -110,7 +110,7 @@
                   </div>
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
-                        <input type="file"  class="form-control form-control-alternative" placeholder="" value="" name="image">
+                        <input type="file"  class="form-control form-control-alternative"  name="image">
                     </div>
                   </div>
                   <div class="text-center">

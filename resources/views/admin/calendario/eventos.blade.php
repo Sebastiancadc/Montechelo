@@ -1,6 +1,5 @@
 @extends('admin.layouts.layoutAdmin')
 @section('contents')
-
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -10,27 +9,26 @@
                 {{(session('crearevento'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
+                </button>
             </div>
-          @endif
+            @endif
             @if (session('seeliminoad'))
             <div class="alert alert-danger" role="alert">
                 {{(session('seeliminoad'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
-            </div>
-          @endif
-
-            @if (session('editarevento'))
-          <div class="alert alert-warning" role="alert">
-           {{(session('editarevento'))}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
                 </button>
-        </div>
-          @endif
-            <div class="row">              
+            </div>
+            @endif
+            @if (session('editarevento'))
+            <div class="alert alert-warning" role="alert">
+                {{(session('editarevento'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -45,7 +43,7 @@
                         <div class="card-body">
                             @include('admin.calendario.crear')
                             <div class="table-responsive">
-                                <table id="add-row" class="display table table-striped table-hover" >
+                                <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Titulo</th>
@@ -56,10 +54,9 @@
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
-                                 
                                     <tbody>
                                         @foreach ($eventos as $item)
-                                        <tr>                                           
+                                        <tr>
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->description}}</td>
                                             <td>{{$item->start_time}}</td>
@@ -73,38 +70,36 @@
                                                     <a href="{{route('verEventoad',$item->id)}}" class="btn btn-link btn-primary btn-lg">
                                                         <i class="fas fa-user-edit"></i>
                                                     </a>
-            
                                                     <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteEvento{{$item->id}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteEvento{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteEventoTitle" aria-hidden="true">
-	                                                <div class="modal-dialog modal-dialog-centered" role="document">
-		                                                <div class="modal-content">
-			                                                <div class="modal-header">
-				                                                <h3>¿Estás seguro?</h3>
-				                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					                                                <span aria-hidden="true">&times;</span>
-				                                                </button>
+                                                    <div class="modal fade" id="deleteEvento{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteEventoTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3>¿Estás seguro?</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <form role="form" method="POST" action="{{route('eliminarEventosad',$item->id) }}">
+                                                                    @csrf @method('DELETE')
+                                                                    <div class="modal-body">
+                                                                        ¡No podrás revertir esto!
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminarEventosad',$item->id) }}" >
-                                                                @csrf @method('DELETE')     
-			                                                <div class="modal-body">
-                                                                ¡No podrás revertir esto!			                                               
-                                                             </div>
-			                                                <div class="modal-footer">
-				                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-				                                                <button type="sum" class="btn btn-primary">Eliminar</button>
-                                                            </div>
-                                                        </form>
-		                                                </div>
-	                                                </div>
-                                                </div>
-                                                
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>                                    
+                                    </tbody>
                                     @endforeach
                                 </table>
                             </div>
@@ -114,26 +109,23 @@
             </div>
         </div>
     </div>
-    
 </div>
-
 </div>
-
 @section('js')
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
-$('#basic').select2({
-	theme: "bootstrap"
-});
-$('#datetime').datetimepicker({
-	format: 'MM/DD/YYYY H:mm',
-});
-$('#datetimes').datetimepicker({
-	format: 'MM/DD/YYYY H:mm',
-});
+    $('#basic').select2({
+        theme: "bootstrap"
+    });
+    $('#datetime').datetimepicker({
+        format: 'MM/DD/YYYY H:mm',
+    });
+    $('#datetimes').datetimepicker({
+        format: 'MM/DD/YYYY H:mm',
+    });
 </script>
 @endsection
 @endsection

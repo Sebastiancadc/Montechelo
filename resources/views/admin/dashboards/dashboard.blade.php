@@ -42,19 +42,12 @@ $date =date('m-d')
                             @foreach ($noticias as $item)
                             <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-
-                                    <img src="{{$item->image}}" alt="" class="image-responsive" style="width: 193px;
-                                    margin-top: 1px;
-                                    margin-bottom: -60px;
-                                    height: 238px;
-                                ">
-
+                                    <img src="{{$item->image}}" alt="" class="image-responsive imgsss">
                                     <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
                                     <div class="overlayer-wrapper item-info ">
                                             <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
                                                 <div class="">
-                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>
-                                                    
+                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>                                            
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="m-t-10">
@@ -63,9 +56,7 @@ $date =date('m-d')
                                                     </div>
                                                     <div class="inline m-l-10">
                                                         <p class="no-margin text-white fs-12">Escrito por {{$item->user->name}} {{$item->user->lastname}}</p>
-
-                                                    </div>
-                                                
+                                                    </div>                                                
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>
@@ -83,11 +74,7 @@ $date =date('m-d')
                                     <!-- START PREVIEW -->
                                     <div class="live-tile slide" data-speed="750" data-delay="4000" data-mode="carousel">
                                         <div class="slide-front">
-                                            <img src="{{$noticia2->image}}" alt="" class="image-responsive-height" style="                                            
-                                            padding-top: 0px;     
-                                            height: 492px;
-                                            width: 394px;">
-                                            
+                                            <img src="{{$noticia2->image}}" class="image-responsive-height imgsss2">
                                         </div>
                                     </div>
                                     <!-- END PREVIEW -->
@@ -96,21 +83,16 @@ $date =date('m-d')
                                     <div class="overlayer-wrapper item-info more-content">
                                         <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
                                         <div class="">
-                                            <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>
-                                            
+                                            <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>                                        
                                             <div class="clearfix"></div>
-
                                         </div>
-
                                         <div class="m-t-10">
                                             <div class="thumbnail-wrapper d32 circular m-t-5  avatar rounded-circle">
                                             <img width="auto" height="auto" src="{{$noticia2->user->photo}}"  alt="">
                                             </div>
                                             <div class="inline m-l-10">
-                                                <p class="no-margin text-white fs-12">Escrito por {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>
-                                        
-                                            </div>
-                                            
+                                                <p class="no-margin text-white fs-12">Escrito por {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>                                      
+                                            </div>                                            
                                             <div class="clearfix"></div>
                                         </div>
                                         </div>
@@ -119,14 +101,11 @@ $date =date('m-d')
                                     <!-- END PRODUCT OVERLAY DESCRIPTION -->
                                 </div>
                             </a>
-
                         </div>
                         @endforeach
                     </div>
                 </div>
-            </div>
-           
-            
+            </div>               
         </div>
       <div class="col-lg-4">
         <div class="card">
@@ -151,30 +130,14 @@ $date =date('m-d')
                 </h4>
               </div>
             </div>
-            {{-- Modal feliz cumpleaños --}}
-            @if (App\Helpers\Helpers::modal(Auth::User()->cumpleanios) == $date)
-            <div class="col-lg-10">
-              <div class="modal fade" id="modal-notification" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered modal-" role="document">
-                <div class="modal-content gif">
-                    <div class="modal-header">
-                     <span aria-hidden="true"></span>
-                    </div>
-                    <br><br><br><br><br><br><br>
-                    <br><br><br><br><br><br><br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">¡Gracias!</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
-            @endif
-            {{-- fin modal feliz cumpleaños --}}
-            @include('admin.modales.modalCampos')
-            @include('admin.modales.modalPausas')
             @endforeach
           </div>
+          {{-- Modal feliz cumpleaños --}}
+          @include('admin.modales.cumpleanios')
+          {{-- Modal llenar campos --}}
+          @include('admin.modales.modalCampos')
+          {{-- Modal pausas activas --}}
+          @include('admin.modales.modalPausas')
         </div>
         @include('admin.modales.anuncios')
         <!-- Timeline card -->
@@ -191,15 +154,12 @@ $date =date('m-d')
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
           </div>
           <!-- Card body -->
-
           <div class="card-body">
             <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div>
             <div data-toggle="calendar" id="date" style="margin-top: -151%;" ></div>
-
           </div>
           @foreach ($eventos as $evento)
-          <div style="padding: 0.25rem 0.5rem;
-          border-bottom: 1px solid rgba(0, 0, 0, .05);">
+          <div class="etnrr">
             <h4>
               <br>
             <a style="margin-left:31px;">{{$evento->name}}
@@ -215,7 +175,6 @@ $date =date('m-d')
     @include('admin.layouts.footer')
   </div>
 </div>
-
 @section('js')
 <script>
   $(document).ready(function () {

@@ -2,7 +2,6 @@
 @section('content')
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
-
 <div id="headerWrapper" class="container-fluid navHeaderWrapper header-image">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  mt-5" style="padding-right: 20px;">
         <div class="row">
@@ -13,7 +12,6 @@
                     @if (Auth::user()->role == 'admin')
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
                     @endif
-                    
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-1 text-center">
@@ -22,7 +20,6 @@
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/code.png")}}" class="img-fluid code" style="">
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/cloud.png")}}" class="img-fluid cloud" style="">
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/globe.png")}}" class="img-fluid globe" style="">
-
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/wave-1.png")}}" class="img-fluid wave-1" style="">
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/wave-2.png")}}" class="img-fluid wave-2" style="">
                     <img alt="cover-image" src="{{asset("plantilla/img/theme/wave-3.png")}}" class="img-fluid wave-3" style="">
@@ -32,7 +29,6 @@
     </div>
 </div>
 <!-- /Header -->
-
 <!-- Page content -->
 <div id="articlesPostWrapper">
     <div class="container-fluid">
@@ -71,7 +67,6 @@
                     </div>
                 </article>
                 @endforeach
-
             </div>
         </div>
     </div>
@@ -80,7 +75,7 @@
 @include('admin.modales.modalCampos')
 {{-- @include('admin.modales.modalPausas') --}}
 @section('js')
-  <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-  <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
+<script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
+<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 @endsection
 @endsection

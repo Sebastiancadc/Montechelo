@@ -29,7 +29,7 @@ class PerfilController extends Controller
     public function index()
     {
         $usuario = User::all();
-        return view('admin.forms.perfil', compact('usuario'));
+        return view('admin.usuarios.perfil', compact('usuario'));
     }
 
     public function editarperfil($id)

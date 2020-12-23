@@ -25,28 +25,28 @@
                                 <br>
                                 @foreach ($capacitaciones as $item)
                                 <div class="col-lg-4 card-wrapper" style="float: left;">
-                                    <div class="card blues" >
+                                    <div class="card blues">
                                         <!-- Card body -->
                                         <div class="card-body awhite">
                                             <h5 class="h2 card-title mb-0 awhite">{{$item->titulo}}</h5>
                                             <small class="text-muted awhite"> {{$item->fecha}}</small>
                                             <p class="card-text mt-4">{{$item->descripcion}} </p>
                                             <cite>{{$item->categoria}}</cite>
-                                            <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3" style="float: right;"><cite >Acceder</cite></a>
+                                            <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3" style="float: right;"><cite>Acceder</cite></a>
                                         </div>
                                     </div>
                                 </div>
                                 @endforeach
                             </div>
                         </div>
-                        @include('admin.layouts.footer')                        
-                    </div>   
+                        @include('admin.layouts.footer')
+                    </div>
                     @include('admin.modales.modalCampos')
                     {{-- @include('admin.modales.modalPausas') --}}
-    @endsection
-    
-    @section('js')
-    <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-    <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
-</body>
-@endsection
+                    @endsection
+
+                    @section('js')
+                    <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
+                    <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
+                    </body>
+                    @endsection

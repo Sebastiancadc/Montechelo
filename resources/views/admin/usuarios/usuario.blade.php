@@ -4,34 +4,34 @@
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @include('admin.forms.estadisticas')
+            @include('admin.usuarios.estadisticas')
             @if (session('crearUsuario'))
             <div class="alert alert-primary" role="alert">
                 {{(session('crearUsuario'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
+                </button>
             </div>
-          @endif
+            @endif
 
             @if (session('eliminarusuario'))
             <div class="alert alert-danger" role="alert">
                 {{(session('eliminarusuario'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
+                </button>
             </div>
-          @endif
+            @endif
 
             @if (session('editarUsuario'))
-          <div class="alert alert-warning" role="alert">
-           {{(session('editarUsuario'))}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+            <div class="alert alert-warning" role="alert">
+                {{(session('editarUsuario'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-        </div>
-          @endif
-            <div class="row">              
+            </div>
+            @endif
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -49,10 +49,10 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('admin.forms.create')
-                            @include('admin.forms.createcola')
+                            @include('admin.usuarios.create')
+                            @include('admin.usuarios.createcola')
                             <div class="table-responsive">
-                                <table id="add-row" class="display table table-striped table-hover" >
+                                <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -67,7 +67,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($users as $user)
-                                        <tr>                                           
+                                        <tr>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->genero}}</td>
@@ -84,33 +84,33 @@
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
-	                                                <div class="modal-dialog modal-dialog-centered" role="document">
-		                                                <div class="modal-content">
-			                                                <div class="modal-header">
-				                                                <h3>¿Estás seguro?</h3>
-				                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					                                                <span aria-hidden="true">&times;</span>
-				                                                </button>
+                                                    <div class="modal fade" id="deleteUsuario{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3>¿Estás seguro?</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}">
+                                                                    @csrf @method('DELETE')
+                                                                    <div class="modal-body">
+                                                                        ¡No podrás revertir esto!
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}" >
-                                                                @csrf @method('DELETE') 
-			                                                <div class="modal-body">
-                                                                ¡No podrás revertir esto!			                                               
-                                                             </div>
-			                                                <div class="modal-footer">
-				                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-				                                                <button type="sum" class="btn btn-primary">Eliminar</button>
-                                                            </div>
-                                                        </form>
-		                                                </div>
-	                                                </div>
-                                                </div>
-                                                
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>                                    
+                                    </tbody>
                                     @endforeach
                                 </table>
                             </div>
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 </div>
@@ -132,21 +132,21 @@
 <script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
 <script>
-$('#datepicker').datetimepicker({
-    format: 'DD/MM/YYYY',
-});
-$('#datepicker2').datetimepicker({
-    format: 'DD/MM/YYYY',
-});
-$('#datetime').datetimepicker({
-    format: 'MM/DD/YYYY H:mm',         
-});
-$('#basic').select2({
-	theme: "bootstrap"
-});
-$('#basic2').select2({
-	theme: "bootstrap"
-});
+    $('#datepicker').datetimepicker({
+        format: 'DD/MM/YYYY',
+    });
+    $('#datepicker2').datetimepicker({
+        format: 'DD/MM/YYYY',
+    });
+    $('#datetime').datetimepicker({
+        format: 'MM/DD/YYYY H:mm',
+    });
+    $('#basic').select2({
+        theme: "bootstrap"
+    });
+    $('#basic2').select2({
+        theme: "bootstrap"
+    });
 </script>
 @endsection
 @endsection

@@ -11,7 +11,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Sugerencias registradas</p>
-                        <h4 class="card-title">{{$buzonsu}}</h4>
+                            <h4 class="card-title">{{$buzonsu}}</h4>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Quejas</p>
-                        <h4 class="card-title">{{$quejas}}</h4>
+                            <h4 class="card-title">{{$quejas}}</h4>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Reclamos</p>
-                        <h4 class="card-title">{{$reclamos}}</h4>
+                            <h4 class="card-title">{{$reclamos}}</h4>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Observacion</p>
-                        <h4 class="card-title">{{$observacion}}</h4>
+                            <h4 class="card-title">{{$observacion}}</h4>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Novedad</p>
-                        <h4 class="card-title">{{$novedad}}</h4>
+                            <h4 class="card-title">{{$novedad}}</h4>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Software</p>
-                        <h4 class="card-title">{{$software}}</h4>
+                            <h4 class="card-title">{{$software}}</h4>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-icon">
-                        <div class="icon-big text-center icon-success bubble-shadow-small" >
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
                             <i class="fas fa-hand-holding-usd"></i>
                         </div>
                     </div>

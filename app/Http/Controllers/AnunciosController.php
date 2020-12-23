@@ -8,6 +8,7 @@ use App\Notifications\AnunciosNotification;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\MockObject\Builder\InvocationMocker;
 
 class AnunciosController extends Controller
@@ -15,7 +16,15 @@ class AnunciosController extends Controller
     public function index()
     {         
         $anuncios = Anuncios::all();
-        return view('admin.anuncios.index', compact('anuncios'));
+        $anuncio = DB::table('anuncios')->count();
+        $default = DB::table('anuncios')->wheretipo('default')->count();
+        $info = DB::table('anuncios')->wheretipo('info')->count();
+        $success = DB::table('anuncios')->wheretipo('success')->count();
+        $warning = DB::table('anuncios')->wheretipo('warning')->count();
+        $danger = DB::table('anuncios')->wheretipo('danger')->count();
+
+        return view('admin.anuncios.index', compact('anuncios','anuncio','default','info'
+        ,'success','warning','danger'));
     }
 
     public function crear(Request $request)

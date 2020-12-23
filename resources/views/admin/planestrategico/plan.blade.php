@@ -49,7 +49,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     </div>
 </div>
 
-
 <div class="container-fluid mt-5">
     <div class="card-body">
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
@@ -67,7 +66,8 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="lineart2"></div>
                         <p>{{$page->textvision}}</p>
                     </div>
-                </span></div>
+                </span>
+            </div>
         </div>
     </div>
 </div>
@@ -94,7 +94,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     </div>
 </div>
 
-
 <div class="container-fluid mt-5">
     <div class="card-body">
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
@@ -112,7 +111,8 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="lineart3"></div>
                         <p>{{$page->textpolitica}}</p>
                     </div>
-                </span></div>
+                </span>
+            </div>
         </div>
     </div>
 </div>

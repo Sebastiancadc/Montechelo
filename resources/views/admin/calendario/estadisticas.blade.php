@@ -69,13 +69,11 @@
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
                             <p class="card-category">Advertencia</p>
-                        <h4 class="card-title">{{$advertencia}}</h4>
+                            <h4 class="card-title">{{$advertencia}}</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
- 
 </div>
