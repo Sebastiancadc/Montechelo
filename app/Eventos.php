@@ -14,16 +14,7 @@ class Eventos extends Model
     protected $guarded = ['id'];
 
     protected $primaryKey = 'id';
-    // protected $dates = [
-    //     'name',
-    //     'description',
-    //     'start_time',
-    //     'end_time',
-    //     'className',
-    //     'created_at',
-    //     'updated_at',
-        
-    // ];
+
 
     protected $fillable = [
         'name',

@@ -38,7 +38,7 @@
                                         <option value="default">Default- azul oscuro</option>
                                         <option value="info">Info - azul claro</option>
                                         <option value="success">Success - verde </option>
-                                        <option value="warning">Warning - anaranjado </option>
+                                        <option value="warning">Warning - naranja </option>
                                         <option value="danger">Danger - rojo</option>
                                     </select>
                                 </div>

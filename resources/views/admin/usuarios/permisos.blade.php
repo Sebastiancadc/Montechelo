@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('admin.forms.createpermiso')
+                    @include('admin.usuarios.createpermiso')
                     @foreach ($permisos as $permiso)
                     <div id="accordion" style="margin-top: -17px;">
                         <div class="card">

@@ -177,6 +177,63 @@
                     <div class="col-md-10 ml-auto mr-auto">
                         <div class="card">
                             <div class="card-header">
+                                <h4 class="card-title">Pagina plan estrategico</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Misión</h4>
+                                            <textarea name="textmision" cols="30" rows="4">{{$page->textmision}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Visión</h4>
+                                            <textarea name="textvision" cols="30" rows="4">{{$page->textvision}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Valores corporativos</h4>
+                                            <textarea name="textvalores" cols="30" rows="4">{{$page->textvalores}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Política de calidad</h4>
+                                            <textarea name="textpolitica" cols="30" rows="4">{{$page->textpolitica}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Plan estratégico</h4>
+                                            <textarea name="textplanestr" cols="30" rows="4">{{$page->textplanestr}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4>Organigrama</h4>
+                                            <textarea name="textorganigrama" cols="30" rows="4">{{$page->textorganigrama}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <h4> Unidades estratégicas de negocio</h4>
+                                            <textarea name="textuniestra" cols="30" rows="4">{{$page->textuniestra}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-header">
                                 <h4 class="card-title">Colores</h4>
                             </div>
                             <div class="card-body">
@@ -247,63 +304,6 @@
                                             <div class="input-group">
                                                 <input class="form-control" type="color" value="{{$page->colortexto}}" name="colortexto" id="example-color-input" style="height: 47px;">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-10 ml-auto mr-auto">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Pagina plan estrategico</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Misión</h4>
-                                            <textarea name="textmision" cols="30" rows="4">{{$page->textmision}}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Visión</h4>
-                                            <textarea name="textvision" cols="30" rows="4">{{$page->textvision}}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Valores corporativos</h4>
-                                            <textarea name="textvalores" cols="30" rows="4">{{$page->textvalores}}</textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Política de calidad</h4>
-                                            <textarea name="textpolitica" cols="30" rows="4">{{$page->textpolitica}}</textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Plan estratégico</h4>
-                                            <textarea name="textplanestr" cols="30" rows="4">{{$page->textplanestr}}</textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Organigrama</h4>
-                                            <textarea name="textorganigrama" cols="30" rows="4">{{$page->textorganigrama}}</textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4> Unidades estratégicas de negocio</h4>
-                                            <textarea name="textuniestra" cols="30" rows="4">{{$page->textuniestra}}</textarea>
                                         </div>
                                     </div>
                                 </div>

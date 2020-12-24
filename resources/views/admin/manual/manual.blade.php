@@ -43,6 +43,16 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="col-xl-4 col-lg-5 col-md-4 d-md-block  d-none col-sm-12 col-12">
                             <div class="d-lg-flex mx-lg-5">
                                 <div id="faq-list" class="list-group faq-nav-list">
+                                    <a href="{{url('home')}}" class="js-scroll-trigger list-group-item list-group-item-action mb-4" href="#list-item-1">
+                                        <div class="media">
+                                            <i class="flaticon-home-fill mr-2"></i>
+                                            <div class="media-body">
+                                                <h6 class="mt-0">Volver</h6>
+                                                
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
                                     <a class="js-scroll-trigger list-group-item list-group-item-action mb-4" href="#list-item-1">
                                         <div class="media">
                                             <i class="flaticon-star-fill mr-2"></i>
@@ -52,6 +62,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             </div>
                                         </div>
                                     </a>
+                                    
                                     @if (Auth::user()->role == 'admin')
                                     <a class="js-scroll-trigger list-group-item list-group-item-action mb-4" href="#list-item-2">
                                         <div class="media">

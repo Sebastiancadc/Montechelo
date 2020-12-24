@@ -132,13 +132,13 @@ $date =date('m-d')
             </div>
             @endforeach
           </div>
-          {{-- Modal feliz cumpleaños --}}
-          @include('admin.modales.cumpleanios')
-          {{-- Modal llenar campos --}}
-          @include('admin.modales.modalCampos')
-          {{-- Modal pausas activas --}}
-          @include('admin.modales.modalPausas')
         </div>
+        {{-- Modal feliz cumpleaños --}}
+        @include('admin.modales.cumpleanios')
+        {{-- Modal llenar campos --}}
+        @include('admin.modales.modalCampos')
+        {{-- Modal pausas activas --}}
+        @include('admin.modales.modalPausas')
         @include('admin.modales.anuncios')
         <!-- Timeline card -->
         <div class="card widget-calendar">
