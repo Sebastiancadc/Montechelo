@@ -164,7 +164,7 @@ Route::get('repositoriocola', function () {
 });
 
 // <<<<<<<<<<<-------------------------------COLABORADOR------------------->>>>>>>
-Route::group(['prefix' => ''], function () {
+Route::group(['auth','prefix' => ''], function () {
     //Usuario
     Route::resource('perfil', 'PerfilController');
     Route::get('editarperfil/{id}', 'PerfilController@editarperfil')->name('editarperfil');

@@ -28,14 +28,15 @@ class InicioController extends Controller
     {
 
         $usuariologeado = Auth::user();
+        
         $admins = User::where('role','=','admin')->pluck('id');
-
-
-
         $u =User::all();
         $e =Noticia::all();
         $h =Helpers::usuario($u);
-
+        if($usuariologeado == null){
+            return view('admin.login');
+        }
+        else
         if($usuariologeado->role =='colaborador'){
             $eventosadministradores = Eventos::whereIn('Usuario_id_Usuario',$admins)->get()->toArray();
             $eventoscolaborador = Eventos::where('Usuario_id_Usuario','=',$usuariologeado->id)->get()->toArray();
