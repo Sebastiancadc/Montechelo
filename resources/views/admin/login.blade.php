@@ -58,7 +58,6 @@
                     <div class="card bg-secondary border-0 mb-0" style="top: -190px;">
                         <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
                         <img src="{{$page->logologin}}" style="height: 70px;">
-
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
@@ -71,33 +70,22 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email" type="email" required autofocus>
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
+                                        <input id="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email" type="email" autofocus>
+                                    </div>  
+                                    @if ($errors->has('email'))
+                                    <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
+                                    @endif  
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" type="password" required>
-
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" type="password" >
                                     </div>
-                                </div>
-                                <div class="custom-control custom-control-alternative custom-checkbox">
-                                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                                    <label class="custom-control-label" for=" customCheckLogin">
-
-                                    </label>
+                                    @if ($errors->has('password'))
+                                    <strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
+                                    @endif 
                                 </div>
                                 <div class="text-center">
 

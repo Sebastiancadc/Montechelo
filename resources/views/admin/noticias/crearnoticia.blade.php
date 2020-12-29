@@ -21,6 +21,11 @@
 </div>
 <br>
 <br>
+@if (session('noticia_crear'))
+<div class="alert alert-success mt-3">
+    {{session('noticia_crear')}}
+</div>
+@endif
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class="col-lg-8 card-wrapper">
@@ -31,18 +36,15 @@
                         @csrf @method('POST')
                         <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}" ;>
                         <div class="form-group">
-                            @if (session('noticia_crear'))
-                            <div class="alert alert-success mt-3">
-                                {{session('noticia_crear')}}
-                            </div>
-                            @endif
+                            
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlInput1" name="titulo">Título de la publicación</label>
-                                <input type="text" class="form-control form-control-alternative" placeholder="" value="{{ old('title') }}" name="title" maxlength="30" required>
+                                <label class="form-control-label" for="exampleFormControlInput1">Título de la publicación</label>
+                                <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="30" >
                                 @if ($errors->has('title'))
-                                <strong class="text-danger">{{ $errors->first('title') }}</strong>
+                                <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
                             </div>
+                           
                             <div class="form-group">
                                 <label class="form-control-label">Categorias</label>
                                 <select class="form-control" name="category_id" required>
@@ -50,22 +52,25 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
+                                @if ($errors->has('category_id'))
+                                <strong class="text-danger tamano">{{$errors->first('category_id') }}</strong>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
                                 <div class="col-md-12">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3" required>{{ old('body') }}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3" >{{ old('body') }}</textarea>
+                                    @if ($errors->has('body'))
+                                    <strong class="text-danger tamano">{{$errors->first('body') }}</strong>
+                                    @endif
                                 </div>
-                                @if ($errors->has('body'))
-                                <strong class="text-danger">{{ $errors->first('body') }}</strong>
-                                @endif
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label class="form-control-label"> Portada </label>
-                                    <input type="file" class="form-control form-control-alternative" placeholder="" value="" name="image" required>
+                                    <input type="file" class="form-control form-control-alternative"  name="image" >
                                     @if ($errors->has('image'))
-                                    <strong class="text-danger">{{ $errors->first('image') }}</strong>
+                                    <strong class="text-danger tamano">{{$errors->first('image') }}</strong>
                                     @endif
                                 </div>
                             </div>

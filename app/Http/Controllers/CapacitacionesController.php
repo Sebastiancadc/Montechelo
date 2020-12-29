@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Capacitaciones;
 use App\Events\CapacitacionesEvent;
+use App\Http\Requests\CapacitacionesRequest;
 use App\Pausasactivas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,10 +28,6 @@ class CapacitacionesController extends Controller
 
     public function index2()
     {
-
-        /* $capacitaciones = Capacitaciones::paginate(9);
-        return view('admin/capacitaciones/index', compact('capacitaciones')); */
-
         $capacitaciones = Capacitaciones::all();
         $capacitacionesRegistradas = DB::table('Capacitaciones')->count();
         $diseño = DB::table('Capacitaciones')->wherecategoria('diseño')->count();
@@ -50,7 +47,7 @@ class CapacitacionesController extends Controller
         return view('admin/capacitaciones/index');
     }
 
-    public function store(Request $request)
+    public function store(CapacitacionesRequest $request)
     {
         $CapacitacionAgregar = new Capacitaciones;
         $CapacitacionAgregar->titulo = $request->titulo;
@@ -70,7 +67,7 @@ class CapacitacionesController extends Controller
         return view('admin/capacitaciones/editarcapacitacion', compact('capacitacionActualizar'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CapacitacionesRequest $request, $id)
     {
         $updateCapacitacion = Capacitaciones::findOrFail($id);
         $updateCapacitacion->titulo = $request->titulo;

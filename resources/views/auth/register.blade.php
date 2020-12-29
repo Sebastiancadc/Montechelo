@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{asset("plantilla/vendor/@fortawesome/fontawesome-free/css/all.min.css")}}" type="text/css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+  <link rel="stylesheet" href="{{asset("css/registro.css")}}" type="text/css">
 </head>
 @section('content')
 <body class="bg-default" style="background: linear-gradient(87deg, #002a60 0%,rgb(31 34 37) 100%) !important;">
@@ -57,14 +58,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nombre" required >
-                    @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                </div>
+                    <input id="name" type="text" class="form-control"  name="name" value="{{ old('name') }}" placeholder="Nombre" autofocus >
+                  </div>
+                  @if ($errors->has('name'))
+                  <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+                  @endif
                 </div>
                 <input name="role" value="colaborador" hidden>
                 <input name="Rol_Id_Rol" value="2" hidden>
@@ -73,54 +71,41 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$" title="Sólo pueden registrase cuentas corporativas">
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="tucorreo@montechelo.com.co" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$" >
                 </div>
-                </div>
+                @if ($errors->has('email'))
+                <strong class="text-danger  tamano">{{ $errors->first('email') }}</strong>
+                @endif  
+              </div>
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                           <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                       </div>
-                      <input class="form-control datepicker" id="datepickers" name="cumpleanios" placeholder="Select date" type="text" required>
+                      <input class="form-control datepicker" id="datepickers" name="cumpleanios" placeholder="Select date" type="text" >
                   </div>
-              </div>
+                  @if ($errors->has('cumpleanios'))
+                  <strong class="text-danger   tamano">{{ $errors->first('cumpleanios') }}</strong>
+                  @endif  
+                </div>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input placeholder="Contraseña" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña"  required>
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                    <input placeholder="Contraseña" id="txtPassword" type="password" class="form-control" name="password" placeholder="Contraseña" oncopy="return false" onpaste="return false">
                 </div>
+                @if ($errors->has('password'))
+                  <strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
+                  @endif
+                <div id="strengthMessage"></div>
                 </div>
-
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input  id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmar Contraseña" required>
-                  </div>
-                </div>
-
-
-                  <div class="row my-4">
-                  <div class="col-12">
-                    <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                      <label class="custom-control-label" for="customCheckRegister">
-                        <span class="text-muted">Estoy de acuerdo con la<a href="#!"> Política de privacidad</a></span>
-                      </label>
-                    </div>
+                    <input  id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmar Contraseña" oncopy="return false" onpaste="return false">
                   </div>
                 </div>
                 <div class="text-center" style="margin-right: 38%;">
@@ -146,11 +131,8 @@
   <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset("plantilla/js/demo.min.js")}}"></script>
-
   <script src="{{asset("plantilla/particles/particles.min.js")}}"></script>
   <script src="{{asset("plantilla/particles/app.js")}}"></script>
-
-
   <script src="{{asset("plantilla/vendor/moment/min/moment.min.js")}}"></script>
    <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
    <script>
@@ -160,13 +142,6 @@
          });
      });
    </script>
+   <script src="{{asset("js/seguridadPassword.js")}}"></script>
 </body>
-<style>
-  #particles-js {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
-  }
-</style>
 </html>

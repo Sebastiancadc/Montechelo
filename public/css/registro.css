@@ -1,0 +1,45 @@
+
+  #particles-js {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+
+
+.Short {
+    width: 100%;
+    background-color: #dc3545;
+    margin-top: 5px;
+    height: 3px;
+    color: #dc3545;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Weak {
+    width: 100%;
+    background-color: #ffc107;
+    margin-top: 5px;
+    height: 3px;
+    color: #ffc107;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Good {
+    width: 100%;
+    background-color: #28a745;
+    margin-top: 5px;
+    height: 3px;
+    color: #28a745;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Strong {
+    width: 100%;
+    background-color: #d39e00;
+    margin-top: 5px;
+    height: 3px;
+    color: #d39e00;
+    font-weight: 500;
+    font-size: 12px;
+}

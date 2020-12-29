@@ -42,65 +42,79 @@
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" required pattern="[A-Za-z]{5}" minlength="5" maxlength="30">
+                            <input type="text" class="form-control" name="nombre" minlength="5" maxlength="30">
+                            @if ($errors->has('nombre'))
+                            <strong class="text-danger tamano">{{ $errors->first('nombre') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                            <input type="text" class="form-control" name="apellido" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ]{5}" minlength="5" maxlength="30">
+                            <input type="text" class="form-control" name="apellido"  minlength="5" maxlength="30">
+                            @if ($errors->has('apellido'))
+                            <strong class="text-danger tamano">{{ $errors->first('apellido') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label class="form-control-label" for="exampleFormControlSelect1">Tipo de solicitud</label>
-                        <select class="form-control" name="tipo_solicitud" required>
+                        <select class="form-control" name="tipo_solicitud" >
+                            <option> </option>
                             <option>Vacaciones</option>
                             <option>Permisos</option>
 
                         </select>
+                        @if ($errors->has('tipo_solicitud'))
+                        <strong class="text-danger tamano">{{ $errors->first('tipo_solicitud') }}</strong>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Número de documento</label>
-                            <input type="text" class="form-control" name="cedula" placeholder="" required pattern="[0-9-]{1,10}" maxlength="10">
+                            <input type="text" class="form-control" name="cedula" placeholder="1001873526" maxlength="10">
+                            @if ($errors->has('cedula'))
+                            <strong class="text-danger tamano">{{ $errors->first('cedula') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Teléfono</label>
-                            <input type="text" class="form-control" name="telefono" placeholder="" required pattern="[0-9-]{1,10}" maxlength="10">
+                            <input type="text" class="form-control" name="telefono" placeholder="312456781" maxlength="10">
+                            @if ($errors->has('telefono'))
+                            <strong class="text-danger tamano">{{ $errors->first('telefono') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label class="form-control-label" for="exampleFormControlSelect1">Área de trabajo</label>
                         <select id="basic" name="area_trabajo" class="col-md-15 form-control">
-                            <option>Seleccione algun campo</option>
+                            <option></option>
                             <option>Desarrollo</option>
                             <option>Talento Humano</option>
                             <option>Recursos Humanos</option>
                             <option>Producción</option>
                         </select>
+                        @if ($errors->has('area_trabajo'))
+                        <strong class="text-danger tamano">{{ $errors->first('area_trabajo') }}</strong>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols2Input">Fecha</label>
-                            <input type="date" class="form-control" name="fecha" required>
+                            <input type="date" class="form-control" name="fecha">
                         </div>
+                        @if ($errors->has('fecha'))
+                        <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
+                        @endif
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" type="checkbox">
-                        <label class="custom-control-label" for="invalidCheck2">Acepto los términos y condiciones.</label>
-                        <div class="invalid-feedback">
-                            Debes aceptar los términos y condiciones antes de enviar.
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary my-4">Crear</button>

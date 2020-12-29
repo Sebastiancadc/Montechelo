@@ -36,8 +36,8 @@
                             </div>
                             @endif
                             <label class="form-control-label" for="exampleFormControlInput1" name="tipo_sugerencia">Titulo</label>
-                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia" required>
-                                <option>Seleccionar tipo de sugerencia </option>
+                            <select class="form-control" id="tipo_sugerencia" name="tipo_sugerencia" >
+                                <option> </option>
                                 <option>Quejas</option>
                                 <option>Reclamos</option>
                                 <option>Observacion</option>
@@ -45,31 +45,30 @@
                                 <option>Mejoras</option>
                                 <option>Felicitaciones</option>
                             </select>
+                            @if ($errors->has('tipo_sugerencia'))
+                            <strong class="text-danger tamano">{{ $errors->first('tipo_sugerencia') }}</strong>
+                            @endif
                         </div>
-                        @error('titulo')
-                        <div class="alert alert-danger">titulo requerido</div>
-                        @enderror
-
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" ></textarea>
+                            @if ($errors->has('descripcion'))
+                            <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>
+                            @endif
                         </div>
-                        @error('descripcion')
-                        <div class="alert alert-danger">descripcion requerida</div>
-                        @enderror
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" required>Area</label>
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" >Area</label>
                             <select class="form-control" id="area" name="area">
-                                <option>Seleccione el area</option>
+                                <option> </option>
                                 <option>Diseño</option>
                                 <option>Software</option>
                                 <option>Recursos Humanos</option>
                                 <option>Administracion</option>
                             </select>
+                            @if ($errors->has('area'))
+                            <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
+                            @endif
                         </div>
-                        @error('area')
-                        <div class="alert alert-danger">area requerida</div>
-                        @enderror
                         <div class="col-lg-6 col-5 text-right" style="float: right;">
                             <button type="submit" class="btn btn-primary my-4">Enviar</button>
                         </div>

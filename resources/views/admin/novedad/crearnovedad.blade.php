@@ -41,13 +41,16 @@
         <div class="row">
           <div class="col-md-4">
             <label class="form-control-label" for="exampleFormControlSelect1">Area</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="area" required>
+            <select class="form-control" id="exampleFormControlSelect1" name="area" >
               <option></option>
               <option>Desarrollo</option>
               <option>Talento humano</option>
               <option>Recursos humanos</option>
               <option>Produccion</option>
             </select>
+            @if ($errors->has('area'))
+            <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
+            @endif
           </div>
           <div class="col-md-4">
             <div class="tab-content">
@@ -58,8 +61,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text" required />
+                    <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"  />      
                   </div>
+                  @if ($errors->has('fecha'))
+                  <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
+                  @endif
                 </div>
               </div>
             </div>
@@ -67,16 +73,22 @@
           <div class="col-md-4">
             <div class="form-group">
               <label class="form-control-label" for="example3cols3Input">Novedad</label>
-              <input type="text" class="form-control" id="example3cols3Input" name="novedad" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="30">
+              <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="novedad" maxlength="30">
+              @if ($errors->has('novedad'))
+              <strong class="text-danger tamano">{{ $errors->first('novedad') }}</strong>
+              @endif
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-9">
             <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,30}" maxlength="250"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="descripcion" maxlength="250"></textarea>
           </div>
         </div>
+        @if ($errors->has('descripcion'))
+        <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>
+        @endif
       </div>
       <div class="text-center">
         <button type="submit" class="btn btn-primary my-4">Crear</button>

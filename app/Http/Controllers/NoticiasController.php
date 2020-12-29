@@ -8,6 +8,7 @@ use App\Noticia;
 use App\User;
 use App\Category;
 use App\Events\NoticiasEvent;
+use App\Http\Requests\NoticiaRequest;
 use App\Pausasactivas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -71,24 +72,8 @@ class NoticiasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoticiaRequest $request)
     {
-        $rules = [
-          'title' => 'required',
-          'body' => 'required',
-          //'image' =>'mimes:.jpeg,.bmp,.png,.jpg,.gif,.PNG,.JPG|max:2000',
-
-         ];
-
-        $messages = [
-          'title.required' =>'Es obligatorio un título para la publicación',
-          'body.required' =>'Es obligatorio un contenido para la publicación',
-          //'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
-          'image.max' =>'La imagen no debe ser mayor que 2 mb.'
-
-
-        ];
-         $this->validate($request, $rules, $messages);
 
          $noticia = new Noticia($request->all());
          $noticia->slug = Str::slug($request->title);
@@ -117,7 +102,7 @@ class NoticiasController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(NoticiaRequest $request, $id)
     {
         $noticiaUpdate = Noticia::findOrFail($id);
         $noticiaUpdate->save();
@@ -149,7 +134,7 @@ class NoticiasController extends Controller
            return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
-    public function updateUs(Request $request, $id)
+    public function updateUs(NoticiaRequest $request, $id)
     {
         $noticiaUpdate = Noticia::findOrFail($id);
         $noticiaUpdate->save();

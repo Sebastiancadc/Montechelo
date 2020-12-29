@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SolicitudRequest;
 use App\Pausasactivas;
 use Illuminate\Http\Request;
 use App\Solicitud;
@@ -63,7 +64,7 @@ class SolicitudController extends Controller
         return view('admin.solicitud.solicitudes',compact('pausasramdom'));
     }
 
-    public function store(Request $request)
+    public function store(SolicitudRequest $request)
     {
         Solicitud::create($request->all());
         return redirect()->action('SolicitudController@index')->with('crearsolicitudes', 'Solicitud creada exitosamente.');
@@ -79,7 +80,7 @@ class SolicitudController extends Controller
         return view('admin.solicitud.crearsolicitud', compact('pausasramdom'));
     }
 
-    public function crearsolicitudes(Request $request)
+    public function crearsolicitudes(SolicitudRequest $request)
     {
         Solicitud::create($request->all());
         return redirect()->action('SolicitudController@crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');

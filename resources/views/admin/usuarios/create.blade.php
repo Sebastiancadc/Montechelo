@@ -13,44 +13,44 @@
             <div class="modal-body">
                 <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
                 <br>
+
                 <form role="form" method="POST" action="{{url('admin/usuario')}}">
                     @csrf @method('POST')
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Tu nombre..." name="name" required>
+                                <input type="text" class="form-control" placeholder="Tu nombre..." name="name" >
+                                @if ($errors->has('name'))
+                                <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+                                @endif
+                            </div>    
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <label>Correo</label>
+                                <input type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co..." name="email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
+                                @if ($errors->has('email'))
+                                <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Fecha de nacimiento</label>
-                                <input type="text" class="form-control" id="datepicker" name="datepicker" name="cumpleanios" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-default">
-                                <label>Genero</label>
-                                <div class="form-group">
-                                    <select id="basic2" name="genero" class="col-md-15">
-                                        <option></option>
-                                        <option>Hombre</option>
-                                        <option>Mujer</option>
-                                        <option>Otro</option>
-                                    </select>
-                                </div>
+                                <input type="date" class="form-control" name="cumpleanios" >
+                                @if ($errors->has('cumpleanios'))
+                                <strong class="text-danger tamano">{{ $errors->first('cumpleanios') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Telefono</label>
-                                <input type="text" class="form-control" placeholder="3123123212..." name="phone" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-default">
-                                <label>Correo</label>
-                                <input type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co..." name="email" required>
+                                <input type="text" class="form-control" placeholder="3123123212..." name="phone" maxlength="11">
+                                @if ($errors->has('phone'))
+                                <strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <input type="text" class="form-control" name="role" value="admin" hidden>
@@ -58,13 +58,16 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Contraseña</label>
-                                <input class="form-control" type="password" name="password" required>
+                                <input class="form-control" type="password" name="password" >
+                                @if ($errors->has('password'))
+                                <strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Confirmar contraseña</label>
-                                <input class="form-control" type="password" name="password_confirmation" required>
+                                <input class="form-control" type="password" name="password_confirmation" >
                             </div>
                         </div>
                     </div>

@@ -118,7 +118,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
             <li class="nav-item">
               <a class="nav-link" href="{{url('solicitudesd')}}">
                 <i class="ni ni-notification-70 text-green"></i>
-                <span class="nav-link-text">Solicitud</span>
+                <span class="nav-link-text">Solicitudes y tramites</span>
               </a>
             </li>
             @endif

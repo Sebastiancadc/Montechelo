@@ -21,8 +21,11 @@ $user = auth()->user();
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-world-2"></i></span>
               </div>
-              <input class="form-control" placeholder="Titulo" name="name" type="text" required>
+              <input class="form-control" placeholder="Titulo" name="name" type="text" maxlength="21" >
             </div>
+            @if ($errors->has('name'))
+            <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+            @endif
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -34,6 +37,9 @@ $user = auth()->user();
                     <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-calendar"></span></button>
                   </span>
                 </div>
+                @if ($errors->has('start_time'))
+                <strong class="text-danger tamano">{{ $errors->first('start_time') }}</strong>
+                @endif
               </div>
             </div>
             <div class="col-md-6">
@@ -45,23 +51,32 @@ $user = auth()->user();
                     <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-calendar"></span></button>
                   </span>
                 </div>
+                @if ($errors->has('end_time'))
+                <strong class="text-danger tamano">{{ $errors->first('end_time') }}</strong>
+                @endif
               </div>
             </div>
           </div>
           <div class="form-group mb-3">
             <div class="input-group input-group-alternative">
-              <select class="form-control" id="exampleFormControlSelect1" name="className" id="class" required>
-                <option>Tipo</option>
+              <select class="form-control" id="exampleFormControlSelect1" name="className" id="class" >
+                <option> </option>
                 <option class="myRed" value="Importante">Importante</option>
                 <option class="myblue" value="Especial">Especial</option>
                 <option class="mygreen" value="Advertencia">Advertencia</option>
               </select>
             </div>
+            @if ($errors->has('className'))
+            <strong class="text-danger tamano">{{ $errors->first('className') }}</strong>
+            @endif
           </div>
           <div class="form-group mb-3">
             <div class="input-group input-group-alternative">
-              <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5" required></textarea>
+              <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5" maxlength="201" ></textarea>
             </div>
+            @if ($errors->has('description'))
+            <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
+            @endif
           </div>
       </div>
       <div class="text-center">

@@ -61,7 +61,8 @@
                                             <td>{{$item->description}}</td>
                                             <td>{{$item->start_time}}</td>
                                             <td>{{$item->end_time}}</td>
-                                            <td>{{$item->className}}</td>
+                                            <td>
+                                                {{$item->className}}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('verEventos',$item->id)}}" class="btn btn-link btn-secondary btn-lg">

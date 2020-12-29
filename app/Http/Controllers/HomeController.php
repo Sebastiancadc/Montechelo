@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioRequest;
 use Illuminate\Http\Request;
 use App\User;
 use App\Permisos;
@@ -131,6 +132,7 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        $user = new DateTime();
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
@@ -150,9 +152,9 @@ class HomeController extends Controller
         return redirect('admin/usuario')->with('crearUsuario', 'Administrador creado correctamente');
     }
 
-    public function storeCola(Request $request)
+    public function storeCola(UsuarioRequest $request)
     {
-
+        $user2 = new DateTime();
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
@@ -194,7 +196,7 @@ class HomeController extends Controller
         $UserUpdate->lastname = $request->lastname;
         $UserUpdate->email = $request->email;
         $UserUpdate->genero = $request->genero;
-        $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
+        $UserUpdate->cumpleanios = new Datetime($request->cumpleanios);
         $UserUpdate->role = $request->role;
         $UserUpdate->password = $request->password;
         $UserUpdate->area = $request->area;

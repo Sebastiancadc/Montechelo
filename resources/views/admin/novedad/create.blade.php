@@ -21,31 +21,43 @@
                                 <label>Area</label>
                                 <div class="form-group">
                                     <select id="basic" name="area" class="col-md-15">
-                                        <option>Seleccione algun campo</option>
+                                        <option> </option>
                                         <option>Desarrollo</option>
                                         <option>Talento humano</option>
                                         <option>Recursos humanos</option>
                                         <option>Produccion</option>
                                     </select>
+                                    @if ($errors->has('area'))
+                                    <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Fecha</label>
-                                <input type="text" class="form-control" id="datepicker" name="fecha" name="cumpleanios" required>
+                                <input type="text" class="form-control" id="datepicker" name="fecha" name="cumpleanios" >
+                                @if ($errors->has('fecha'))
+                                <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Novedad</label>
-                                <input type="text" class="form-control" id="datepicker" name="novedad" required>
+                                <input type="text" class="form-control" id="datepicker" name="novedad" >
+                                @if ($errors->has('novedad'))
+                                <strong class="text-danger tamano">{{ $errors->first('novedad') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Descripcion de la novedad</label>
-                                <textarea class="form-control" name="descripcion" type="text" cols="10" rows="5" required></textarea>
+                                <textarea class="form-control" name="descripcion" type="text" cols="10" rows="5" ></textarea>
+                                @if ($errors->has('descripcion'))
+                                <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>
+                                @endif
                             </div>
                         </div>
                     </div>

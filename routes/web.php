@@ -47,8 +47,7 @@ Route::get('manual', function () {
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('usuario', 'HomeController');
-
-    Route::post('createcolaborador', 'HomeController@storeCola')->name('crearColabordor');
+    Route::post('createcolaborador', 'HomeController@storeCola')->name('crearColaborador');
     Route::get('crearUserAdmin', 'HomeController@crearAdmin');
     Route::get('editarusuario/{id}', 'HomeController@edit')->name('editarusuario');
     Route::put('updateusuario/{id}', 'HomeController@update')->name('updateusuario');
@@ -56,7 +55,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('permisoslista', 'HomeController@permisoslista');
     Route::post('crearRol', 'HomeController@CrearRol');
-
     Route::get('editarpermisos/{id}', 'HomeController@editarpermisos')->name('permisoedit');
     Route::put('updatepermisos/{id}', 'HomeController@updatepermisos')->name('updatepermisos');
 
@@ -140,8 +138,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('capacitaciones', 'CapacitacionesController');
     Route::get('capacitaciones', 'CapacitacionesController@index2');
     Route::post('/store', 'CapacitacionesController@store')->name('store');
-    Route::get('admin/editarcapacitacion/{id_capacitacion}', 'CapacitacionesController@edit')->name('editarcapacitacion');
-    Route::put('/update/{id_capacitacion}', 'CapacitacionesController@update')->name('update');
+    Route::get('/editarcapacitacion/{id_capacitacion}', 'CapacitacionesController@edit')->name('editarcapacitacion');
+    Route::put('/update/{id_capacitacion}', 'CapacitacionesController@update')->name('updatecapa');
     Route::delete('deletecapacitacion/{id_capacitacion}', 'CapacitacionesController@destroy')->name('eliminarcapacitacion');
 
 

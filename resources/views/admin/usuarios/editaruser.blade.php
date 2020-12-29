@@ -24,7 +24,21 @@
 						<a href="#">Editar</a>
 					</li>
 				</ul>
-			</div>
+			</div>				
+			@if(count($errors) > 0)
+			<div class="col-md-12">
+			<div class="alert alert-danger" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			  <ul> 
+			@foreach ($errors->all() as $error)
+			<li>{{$error}}</li>
+			@endforeach
+		  </ul>
+		  </div>
+		  </div>  
+			@endif
 			<div class="col-md-9 ml-auto mr-auto">
 				<div class="card">
 					<form action="{{url('admin/usuario',$userActualizar->id)}}" method="POST">
@@ -45,6 +59,9 @@
 														</span>
 													</div>
 													<input class="form-control" placeholder="Nombre" value='{{$userActualizar->name}}' name="name" type="text">
+													@if ($errors->has('name'))
+													<strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -60,12 +77,15 @@
 														<option>Admin</option>
 														<option>Colaborador</option>
 													</select>
+													@if ($errors->has('role'))
+													<strong class="text-danger tamano">{{ $errors->first('role') }}</strong>
+													@endif
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div>		
 							<div class="card-body">
 								<h4>Correo</h4>
 								<div class="input-group">
@@ -75,6 +95,9 @@
 										</span>
 									</div>
 									<input class="form-control" placeholder="Email" value='{{$userActualizar->email}}' name="email" type="email">
+									@if ($errors->has('email'))
+									<strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
+									@endif
 								</div>
 							</div>
 							<div class="row">
@@ -90,6 +113,9 @@
 														</span>
 													</div>
 													<input type="text" class="form-control" id="datepicker" value='{{$userActualizar->cumpleanios}}' name="cumpleanios">
+													@if ($errors->has('cumpleanios'))
+													<strong class="text-danger tamano">{{ $errors->first('cumpleanios') }}</strong>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -106,6 +132,9 @@
 														<option>Mujer</option>
 														<option>Otro</option>
 													</select>
+													@if ($errors->has('genero'))
+													<strong class="text-danger tamano">{{ $errors->first('genero') }}</strong>
+													@endif
 												</div>
 											</div>
 										</div>
@@ -124,8 +153,11 @@
 															<i class="fas fa-phone"></i>
 														</span>
 													</div>
-													<input class="form-control" name="phone" value="{{$userActualizar->phone}}" type="text" min="10" max="10" required pattern="[0-9]{10}" maxlength="10">
+													<input class="form-control" name="phone" value="{{$userActualizar->phone}}" type="text" min="10" max="10"  pattern="[0-9]{10}" maxlength="10">
 												</div>
+												@if ($errors->has('phone'))
+													<strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>
+													@endif
 											</div>
 											<div class="col-md-6">
 												<h4>Área</h4>
@@ -142,6 +174,9 @@
 														<option>Marketing</option>
 														<option>Produccion</option>
 													</select>
+													@if ($errors->has('area'))
+													<strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
+													@endif
 												</div>
 											</div>
 										</div>
@@ -158,6 +193,9 @@
 									</div>
 									<input class="form-control" placeholder="Contraseña" name="password" type="text">
 								</div>
+								@if ($errors->has('password'))
+								<strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
+								@endif
 							</div>
 							<div class="card-body">
 								<h4>Confirmar contraseña</h4>

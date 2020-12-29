@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\buzon_de_sugerencias;
+use App\Http\Requests\BuzonRequest;
 use App\Pausasactivas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +55,7 @@ class BuzonDeSugerenciasController extends Controller
         return view('admin.buzon.crearbuzon');
     }
 
-    public function crearsugerencias(Request $request)
+    public function crearsugerencias(BuzonRequest $request)
     {
         buzon_de_sugerencias::create($request->all());
         return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Sugerencia registrada correctamente');
@@ -62,11 +63,9 @@ class BuzonDeSugerenciasController extends Controller
 
     public function destroy($Id_sugerencia)
     {
-
-
         $eliminarsugerencia = buzon_de_sugerencias::findOrFail($Id_sugerencia);
         $eliminarsugerencia->delete();
-        return back()->with('eliminar', 'La sugerencia se elimino corectamente ');
+        return back()->with('eliminar', 'La sugerencia se elimino correctamente ');
     }
 
     public function logout()

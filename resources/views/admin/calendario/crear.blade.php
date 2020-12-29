@@ -23,19 +23,28 @@ $user = auth()->user();
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Titulo</label>
-                                <input type="text" class="form-control" placeholder="Nombre evento" name="name" required>
+                                <input type="text" class="form-control" placeholder="Nombre evento" name="name" >
+                                @if ($errors->has('name'))
+                                <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Fecha inical</label>
-                                <input type="text" class="form-control" id="datetimes" name="datepicker" name="start_time" required>
+                                <input type="text" class="form-control" id="datetimes"  name="start_time" >
+                                @if ($errors->has('start_time'))
+                                <strong class="text-danger tamano">{{ $errors->first('start_time') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Fecha final</label>
-                                <input type="text" class="form-control" id="datetime" name="datepicker" name="end_time" required>
+                                <input type="text" class="form-control" id="datetime"  name="end_time" >
+                                @if ($errors->has('end_time'))
+                                <strong class="text-danger tamano">{{ $errors->first('end_time') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -48,13 +57,19 @@ $user = auth()->user();
                                         <option value="Especial">Especial</option>
                                         <option value="Advertencia">Advertencia</option>
                                     </select>
+                                    @if ($errors->has('className'))
+                                    <strong class="text-danger tamano">{{ $errors->first('className') }}</strong>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Descripcion del evento</label>
-                                <textarea class="form-control" name="description" type="text" cols="10" rows="5" required></textarea>
+                                <textarea class="form-control" name="description" type="text" cols="10" rows="5" ></textarea>
+                                @if ($errors->has('description'))
+                                <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
+                                @endif
                             </div>
                         </div>
                     </div>

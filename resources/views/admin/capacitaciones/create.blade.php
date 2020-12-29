@@ -19,13 +19,19 @@
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Titulo</label>
-                                <input type="text" class="form-control" placeholder="Titulo" name="titulo" required>
+                                <input type="text" class="form-control" placeholder="Titulo" name="titulo" >
+                                @if ($errors->has('titulo'))
+                                    <strong class="text-danger tamano">{{ $errors->first('titulo') }}</strong>
+                                    @endif
                             </div>
                         </div>
                         <div class="col-md-12 ">
                             <div class="form-group form-group-default">
                                 <label>Fecha de capacitacion</label>
-                                <input type="text" class="form-control" id="datepicker" name="fecha" required>
+                                <input type="text" class="form-control" id="datepicker" name="fecha" >
+                                @if ($errors->has('fecha'))
+                                <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -33,13 +39,16 @@
                                 <label>Categoria</label>
                                 <div class="form-group">
                                     <select id="basic" name="categoria" class="col-md-15">
-                                        <option>Seleccione categoria</option>
+                                        <option></option>
                                         <option>Diseño</option>
                                         <option>Desarrollo</option>
                                         <option>Software</option>
                                         <option>Analisis</option>
                                         <option>Produccion</option>
                                     </select>
+                                    @if ($errors->has('categoria'))
+                                    <strong class="text-danger tamano">{{ $errors->first('categoria') }}</strong>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -48,13 +57,19 @@
                     <div class="col-md-12">
                         <div class="form-group form-group-default">
                             <label>Link</label>
-                            <input type="text" class="form-control" placeholder="Link" name="link" required>
+                            <input type="text" class="form-control" placeholder="Link" name="link" >
+                            @if ($errors->has('link'))
+                            <strong class="text-danger tamano">{{ $errors->first('link') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group form-group-default">
                             <label>descripcion</label>
-                            <textarea class="form-control" placeholder="Descripcion" name="descripcion" type="text" cols="10" rows="5" required></textarea>
+                            <textarea class="form-control" placeholder="Descripcion" name="descripcion" type="text" cols="10" rows="5" ></textarea>
+                            @if ($errors->has('descripcion'))
+                            <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>
+                            @endif
                         </div>
                     </div>
                     <div class="modal-footer no-bd">

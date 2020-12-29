@@ -49,17 +49,23 @@
                             <label class="form-control-label" for="title">Título </label>
                             <input type="text" id="title" class="form-control form-control-alternative" value="{{$noticiaActualizar->title }}" name="title">
                             @if ($errors->has('title'))
-                            <strong class="text-danger">{{ $errors->first('title') }}</strong>
+                            <strong class="text-danger tamano">{{ $errors->first('title') }}</strong>
                             @endif
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="competencias">Contenido</label>
                             <textarea class="form-control" id="mymce" rows="3" name="body">{{$noticiaActualizar->body }}</textarea>
+                            @if ($errors->has('body'))
+                            <strong class="text-danger tamano">{{ $errors->first('body') }}</strong>
+                            @endif
                         </div>
                         <img src="{{$noticiaActualizar->image }}" class="img-fluid rounded img4">
                         <div class="form-group">
                             <label class="form-control-label" for="competencias">Imagen</label>
                             <input type="file" class="form-control form-control-alternative" value="{{$noticiaActualizar->image }}" name="image">
+                            @if ($errors->has('image'))
+                            <strong class="text-danger tamano">{{ $errors->first('image') }}</strong>
+                            @endif
                         </div>
                         <div class="col-lg-6 col-5 text-right" style="float: right;">
                             <button type="submit" class="btn btn-primary my-4">Actualizar</button>

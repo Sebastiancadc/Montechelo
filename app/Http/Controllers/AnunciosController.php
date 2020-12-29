@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Anuncios;
 use App\Events\AnuncioEvent;
+use App\Http\Requests\AnunciosRequest;
 use App\Notifications\AnunciosNotification;
 use App\User;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class AnunciosController extends Controller
         ,'success','warning','danger'));
     }
 
-    public function crear(Request $request)
+    public function crear(AnunciosRequest $request)
     {
         $anuncio = new Anuncios();
         $anuncio->titulo = $request->titulo;

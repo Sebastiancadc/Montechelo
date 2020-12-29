@@ -8,6 +8,7 @@ use App\Events\EventoEvent;
 use App\User;
 use Illuminate\Http\Request;
 use App\Helpers\Helpers;
+use App\Http\Requests\CalendarioRequest;
 use App\Notifications\EventoNotification;
 use App\Pausasactivas;
 use Illuminate\Support\Facades\Notification;
@@ -100,9 +101,8 @@ class CalendarioController extends Controller
     }
 
 
-    public function crearevento(Request $request)
+    public function crearevento(CalendarioRequest $request)
     {
-
         $eventos = new Eventos();
         $eventos->name = $request->name;
         $eventos->description = $request->description;
@@ -122,9 +122,8 @@ class CalendarioController extends Controller
         return back()->with('crearevento', 'Evento registrado correctamente');
     }
 
-    public function creareventoad(Request $request)
+    public function creareventoad(CalendarioRequest $request)
     {
-
         $evento = new Eventos();
         $evento->name = $request->name;
         $evento->description = $request->description;
@@ -151,7 +150,7 @@ class CalendarioController extends Controller
         $eventos = Eventos::find($id);
         return view('admin.calendario.ver', compact('eventos'));
     }
-    public function editarEvento(Request $request, $id)
+    public function editarEvento(CalendarioRequest $request, $id)
     {
         $evento = Eventos::findOrFail($id);
         $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
@@ -165,7 +164,7 @@ class CalendarioController extends Controller
         return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
     
     }
-    public function editarEventoAd(Request $request, $id)
+    public function editarEventoAd(CalendarioRequest $request, $id)
     {
         $evento = Eventos::findOrFail($id);
         $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;

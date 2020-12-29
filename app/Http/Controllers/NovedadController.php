@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NovedadRequest;
 use Illuminate\Http\Request;
 use App\Novedad;
 use App\Pausasactivas;
@@ -39,7 +40,7 @@ class NovedadController extends Controller
         ,'talentohumano','recursoshumanos','produccion'));
     }
 
-    public function store(Request $request)
+    public function store(NovedadRequest $request)
     {
         Novedad::create($request->all());
         return redirect()->action('NovedadController@index')->with('crearnovedades','Novedad registrada correctamente');
@@ -54,7 +55,7 @@ class NovedadController extends Controller
         return view('admin.novedad.crearnovedad', compact('pausasramdom'));
     }
 
-    public function crearnovedades(Request $request)
+    public function crearnovedades(NovedadRequest $request)
     {
 
         $novedad = new Novedad();

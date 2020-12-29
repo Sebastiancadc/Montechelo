@@ -10,7 +10,7 @@
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
               <li class="breadcrumb-item"><a href="#">Calendario</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Editar </li>
+              <li class="breadcrumb-item active" aria-current="page">Editar</li>
             </ol>
           </nav>
         </div>
@@ -50,6 +50,9 @@
                   <input class="form-control" placeholder="titulo" value='{{$eventos->name}}' name="name" type="text">
                   <input value='{{$eventos->Usuario_id_Usuario}}' name="Usuario_id_Usuario" type="text" hidden>
                 </div>
+                @if ($errors->has('name'))
+                <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+                @endif
               </div>
               <div class="row">
                 <div class="col-md-6">
@@ -61,6 +64,9 @@
                         <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-calendar"></span></button>
                       </span>
                     </div>
+                    @if ($errors->has('start_time'))
+                    <strong class="text-danger tamano">{{ $errors->first('start_time') }}</strong>
+                    @endif
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -72,6 +78,9 @@
                         <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-calendar"></span></button>
                       </span>
                     </div>
+                    @if ($errors->has('end_time'))
+                    <strong class="text-danger tamano">{{ $errors->first('end_time') }}</strong>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -84,11 +93,17 @@
                     <option class="advertencias" value="Advertencia">Advertencia</option>
                   </select>
                 </div>
+                @if ($errors->has('className'))
+                <strong class="text-danger tamano">{{ $errors->first('className') }}</strong>
+                @endif
               </div>
               <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
                   <textarea name="description" id="description" cols="60" rows="05">{{$eventos->description}}</textarea>
                 </div>
+                @if ($errors->has('description'))
+                <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
+                @endif
               </div>
               <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
               <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>

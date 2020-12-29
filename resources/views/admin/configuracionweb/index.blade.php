@@ -30,6 +30,7 @@
                                     <div class="form-group">
                                         <h4>Isotipo</h4>
                                         <h4>80 X 80 pixeles</h4>
+                                       
                                         <div class="card-profile-image">
                                             <form action="{{ url('admin/fotoisotipo') }}" enctype='multipart/form-data' id="isotipoForm">
                                                 @csrf
@@ -66,6 +67,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -46,6 +46,9 @@
 													</div>
 													<input class="form-control" placeholder="Nombre" value='{{$eventos->name}}' name="name" type="text">
 												</div>
+												@if ($errors->has('name'))
+                                				<strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
+                                				@endif
 											</div>
 										</div>
 									</div>
@@ -63,8 +66,11 @@
 															<i class="far fa-calendar-alt"></i>
 														</span>
 													</div>
-													<input type="text" class="form-control" id="datetime" value='{{$eventos->start_time}}' name="cumpleanios">
+													<input type="text" class="form-control" id="datetime" value='{{$eventos->start_time}}' name="start_time">
 												</div>
+												@if ($errors->has('start_time'))
+                                				<strong class="text-danger tamano">{{ $errors->first('start_time') }}</strong>
+                                				@endif
 											</div>
 											<div class="col-md-6">
 												<h4>Fecha final</h4>
@@ -74,8 +80,11 @@
 															<i class="far fa-calendar-alt"></i>
 														</span>
 													</div>
-													<input type="text" class="form-control" id="datetimes" value='{{$eventos->end_time}}' name="cumpleanios">
+													<input type="text" class="form-control" id="datetimes" value='{{$eventos->end_time}}' name="end_time">
 												</div>
+												@if ($errors->has('end_time'))
+                                				<strong class="text-danger tamano">{{ $errors->first('end_time') }}</strong>
+                                				@endif
 											</div>
 										</div>
 									</div>
@@ -100,6 +109,9 @@
 														<option value="Advertencia">Advertencia</option>
 													</select>
 												</div>
+												@if ($errors->has('className'))
+                                				<strong class="text-danger tamano">{{ $errors->first('className') }}</strong>
+                                				@endif
 											</div>
 										</div>
 									</div>
@@ -115,6 +127,9 @@
 									</div>
 									<textarea class="form-control" name="description" type="text" cols="10" rows="5" required>{{$eventos->description}}</textarea>
 								</div>
+								@if ($errors->has('description'))
+								<strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
+								@endif
 							</div>
 							<div class="col-sm-10 col-md-9" style="margin-left: 72%;">
 								<button type="submit" class="btn btn-primary  mt-4">Editar</button>
