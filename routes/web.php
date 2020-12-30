@@ -16,6 +16,11 @@ Route::get('/home', 'InicioController@index');
 
 
 Auth::routes();
+//pagina de espera
+Route::get('logout', function () {
+
+    return view('logout');
+});
 
 // login
 Route::get('admin', function () {
@@ -244,5 +249,3 @@ Route::group(['auth','prefix' => ''], function () {
     //Manual
     Route::get('ayuda', 'ManualController@index');
 });
-
-

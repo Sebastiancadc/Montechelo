@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
+<?php
+$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+?>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-    <meta name="author" content="Creative Tim">
     <title>Login</title>
     <!-- Favicon -->
-    <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+    <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
     <!-- Icons -->
