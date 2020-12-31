@@ -14,6 +14,11 @@ use PHPUnit\Framework\MockObject\Builder\InvocationMocker;
 
 class AnunciosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {         
         $anuncios = Anuncios::all();

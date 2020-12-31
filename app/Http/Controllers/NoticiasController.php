@@ -20,21 +20,16 @@ use Redirect;
 
 class NoticiasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $noticia = Noticia::paginate(4);
         $noticiasRegistradas = DB::table('noticias')->count();
         $programacion = DB::table('noticias')->wherecategory_id(1)->count();
-/*         $desarrollo = DB::table('noticias')->wherecategory_id('desarrollo')->count();
-        $software = DB::table('noticias')->wherecategory_id('software')->count();
-        $analisis = DB::table('noticias')->wherecategory_id('analisis')->count();
-        $produccion = DB::table('noticias')->wherecategory_id('produccion')->count(); */
-
         return view('admin.noticias.index', compact('noticia','noticiasRegistradas','programacion'));
     }
     public function index2()

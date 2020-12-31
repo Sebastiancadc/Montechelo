@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class BuzonDeSugerenciasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $buzon = buzon_de_sugerencias::all();

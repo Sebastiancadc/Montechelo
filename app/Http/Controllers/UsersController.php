@@ -9,11 +9,11 @@ use App\User;
 
 class UsersController extends Controller
 {
-   /**
-    * Show the application dashboard.
-    *
-    * @return \Illuminate\Contracts\Support\Renderable
-    */
+   public function __construct()
+   {
+       $this->middleware('auth');
+   }
+
    public function index()
    {
       $users = User::all();

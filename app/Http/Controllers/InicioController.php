@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\DB;
 
 class InicioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     public $sources = [
         [
             'start_time' => 'start_time',

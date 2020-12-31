@@ -48,9 +48,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
             </div>
 
         </div>
-        <?php
-        $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-      ?>
         <!-- Page content -->
         <div class="container mt--8 pb-5">
             <div class="row justify-content-center">
@@ -130,7 +127,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 
     <script src="{{asset("plantilla/particles/particles.min.js")}}"></script>
     <script src="{{asset("plantilla/particles/app.js")}}"></script>
-</body>
+</body> 
 <style>
     #particles-js {
         height: 100vh;
