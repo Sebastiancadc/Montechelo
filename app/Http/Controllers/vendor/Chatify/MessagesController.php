@@ -107,7 +107,7 @@ class MessagesController extends Controller
         if (file_exists($path)) {
             return Response::download($path, $fileName);
         } else {
-            return abort(404, "Sorry, File does not exist in our server or may have been deleted!");
+            return abort(404);
         }
     }
 

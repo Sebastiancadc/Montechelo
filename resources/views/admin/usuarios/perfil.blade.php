@@ -25,6 +25,8 @@
           <input type="file" id="portadaInput" style="display: none" name="photo_portada">
         </form>
         <img src="{{Auth::user()->photo_portada}}" id="portadata" class="card-img img-fluid">
+        <div id="hover"><h5 class="h3">Click para cambiar portada</h5></div>
+
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
@@ -32,8 +34,9 @@
                 @csrf
                 <input type="file" id="avatarInput" style="display: none" name="photo">
               </form>
-              <div><img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle"></div>
-            </div>
+              <img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle">
+                <div id="hover2"><h5 class="h3" style="color: #fff;">Cambiar avatar</h5> </div>
+              </div>
           </div>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
@@ -73,9 +76,6 @@
           <li class="nav-item">
             <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Mi biografia</a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-collection mr-2"></i>-..</a>
-          </li> --}}
         </ul>
       </div>
       <div class="card shadow">

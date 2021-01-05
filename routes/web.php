@@ -49,6 +49,10 @@ Route::get('manual', function () {
     return view('admin.manual');
 });
 
+Route::get('Cumpleaños', function () {
+
+    return view('admin.cumpleaños.cumple');
+});
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('usuario', 'HomeController');

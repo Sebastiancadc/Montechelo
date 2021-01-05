@@ -13,7 +13,6 @@ class Helpers
     public static function fechaCumpleanos($_date)
     {
 
-
         $descomponerFecha = strtotime($_date);
         $anio = date("Y");
         $dia = date("d", $descomponerFecha);

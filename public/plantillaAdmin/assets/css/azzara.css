@@ -11605,3 +11605,167 @@ div.table-responsive > div.dataTables_wrapper > div.row {
     padding: 60px 15px !important; } }
 
 /*# sourceMappingURL=azzara.css.map */
+                                                
+
+
+#hover {
+  display: none;
+  position: relative;
+  top: -77px;
+  color: rgb(0 0 0);
+  margin-left: 17px;
+}
+
+#isotipoImage:hover {
+  opacity: .10;
+}
+
+#isotipoImage:hover + #hover {
+  display: block;
+}
+
+#hover2 {
+  display: none;
+  position: relative;
+  top: -77px;
+  color: rgb(0 0 0);
+  margin-left: 17px;
+}
+
+#loginImage:hover {
+  opacity: .10;
+}
+
+#loginImage:hover + #hover2 {
+  display: block;
+}
+
+#hover3 {
+  display: none;
+  position: relative;
+  top: -77px;
+  color: rgb(0 0 0);
+  margin-left: 17px;
+}
+
+#verticalImage:hover {
+  opacity: .10;
+}
+
+#verticalImage:hover + #hover3 {
+  display: block;
+}
+
+#hover4 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 61px;
+}
+
+#misionImage:hover {
+  opacity: .10;
+}
+
+#misionImage:hover + #hover4 {
+  display: block;
+}
+
+
+#hover5 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 61px;
+}
+
+#visionImage:hover {
+  opacity: .10;
+}
+
+#visionImage:hover + #hover5 {
+  display: block;
+}
+
+
+#hover6 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 31px;
+}
+
+#valoresImage:hover {
+  opacity: .10;
+}
+
+#valoresImage:hover + #hover6 {
+  display: block;
+}
+
+#hover7 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 31px;
+}
+
+#politicaImage:hover {
+  opacity: .10;
+}
+
+#politicaImage:hover + #hover7 {
+  display: block;
+}
+  
+#hover8 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 31px;
+}
+
+#planestraImage:hover {
+  opacity: .10;
+}
+
+#planestraImage:hover + #hover8 {
+  display: block;
+}
+
+#hover9 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 31px;
+}
+
+#orgaImage:hover {
+  opacity: .10;
+}
+
+#orgaImage:hover + #hover9 {
+  display: block;
+}
+
+#hover10 {
+  display: none;
+  position: relative;
+  top: -113px;
+  color: rgb(0 0 0);
+  margin-left: 31px;
+}
+
+#uniestraImage:hover {
+  opacity: .10;
+}
+
+#uniestraImage:hover + #hover10 {
+  display: block;
+}

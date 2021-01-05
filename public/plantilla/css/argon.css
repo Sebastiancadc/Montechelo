@@ -29789,3 +29789,35 @@ background-color: #11cdef !important;
 .tamano{
     font-size: 14px;
   }
+
+#hover {
+    display: none;
+    position: relative;
+    top: -121px;
+    color: rgb(0 0 0);
+    margin-left: 65px;
+}
+
+#portadata:hover {
+    opacity: .10;
+}
+
+#portadata:hover + #hover {
+    display: block;
+}
+
+#hover2 {
+    display: none;
+position: relative;
+top: -24px;
+color: rgb(0 0 0);
+margin-left: -9px;
+}
+
+#avatarImage:hover {
+    opacity: .9;
+}
+
+#avatarImage:hover + #hover2 {
+    display: block;
+}

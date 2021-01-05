@@ -36,7 +36,9 @@
                                                 @csrf
                                                 <input type="file" id="isotipoInput" style="display: none" name="logoisotipo">
                                             </form>
-                                            <div><img src="{{$page->logoisotipo}}" id="isotipoImage"></div>
+                                            <div><img src="{{$page->logoisotipo}}" id="isotipoImage">
+                                                <div id="hover"><h4>Cambiar <br> isotipo</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +51,8 @@
                                                 @csrf
                                                 <input type="file" id="loginInput" style="display: none" name="logologin">
                                             </form>
-                                            <div><img src="{{$page->logologin}}" id="loginImage"></div>
+                                            <div><img src="{{$page->logologin}}" id="loginImage">
+                                                <div id="hover2"><h4>Cambiar <br>logo login </h4></div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +65,8 @@
                                                 @csrf
                                                 <input type="file" id="verticalInput" style="display: none" name="logonav">
                                             </form>
-                                            <div><img src="{{$page->logonav}}" id="verticalImage"></div>
+                                            <div><img src="{{$page->logonav}}" id="verticalImage">
+                                                <div id="hover3"><h4>Cambiar logo vertical </h4></div></div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +91,9 @@
                                                 @csrf
                                                 <input type="file" id="misionInput" style="display: none" name="imagenmision">
                                             </form>
-                                            <div><img src="{{$page->imagenmision}}" height="200" width="300" id="misionImage"></div>
+                                            <div><img src="{{$page->imagenmision}}" height="200" width="300" id="misionImage">
+                                                <div id="hover4"><h4>Cambiar imagen misión</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +106,9 @@
                                                 @csrf
                                                 <input type="file" id="visionInput" style="display: none" name="imagenvision">
                                             </form>
-                                            <div><img src="{{$page->imagenvision}}" height="200" width="300" id="visionImage"></div>
+                                            <div><img src="{{$page->imagenvision}}" height="200" width="300" id="visionImage">
+                                                <div id="hover5"><h4>Cambiar imagen visión</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +121,9 @@
                                                 @csrf
                                                 <input type="file" id="valoresInput" style="display: none" name="imagenvalores">
                                             </form>
-                                            <div><img src="{{$page->imagenvalores}}" height="200" width="300" id="valoresImage"></div>
+                                            <div><img src="{{$page->imagenvalores}}" height="200" width="300" id="valoresImage">
+                                                <div id="hover6"><h4>Cambiar imagen valores corporativos </h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +136,9 @@
                                                 @csrf
                                                 <input type="file" id="politicaInput" style="display: none" name="imagenpolitica">
                                             </form>
-                                            <div><img src="{{$page->imagenpolitica}}" height="200" width="300" id="politicaImage"></div>
+                                            <div><img src="{{$page->imagenpolitica}}" height="200" width="300" id="politicaImage">
+                                                <div id="hover7"><h4>Cambiar imagen política de calidad</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +151,9 @@
                                                 @csrf
                                                 <input type="file" id="planestraInput" style="display: none" name="imagenplanestra">
                                             </form>
-                                            <div><img src="{{$page->imagenplanestra}}" height="200" width="300" id="planestraImage"></div>
+                                            <div><img src="{{$page->imagenplanestra}}" height="200" width="300" id="planestraImage">
+                                                <div id="hover8"><h4>Cambiar imagen Plan estrategico</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +166,9 @@
                                                 @csrf
                                                 <input type="file" id="orgaInput" style="display: none" name="imagenorganigrama">
                                             </form>
-                                            <div><img src="{{$page->imagenorganigrama}}" height="200" width="300" id="orgaImage"></div>
+                                            <div><img src="{{$page->imagenorganigrama}}" height="200" width="300" id="orgaImage">
+                                                <div id="hover9"><h4>Cambiar imagen Organigrama</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +181,9 @@
                                                 @csrf
                                                 <input type="file" id="uniestraInput" style="display: none" name="imagenuniestra">
                                             </form>
-                                            <div><img src="{{$page->imagenuniestra}}" height="200" width="300" id="uniestraImage"></div>
+                                            <div><img src="{{$page->imagenuniestra}}" height="200" width="300" id="uniestraImage">
+                                                <div id="hover10"><h4>Cambiar imagen unidades estratégicas de negocio</h4></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
