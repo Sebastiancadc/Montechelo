@@ -50,7 +50,7 @@
                                             <th>Titulo</th>
                                             <th>Fecha</th>
                                             <th>Descripción</th>
-                                            <th>Categoria </th>
+                                            <th>Categoría </th>
                                             <th>Link</th>
                                             <th style="width: 10%">Acciones</>
                                         </tr>

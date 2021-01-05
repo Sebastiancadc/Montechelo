@@ -74,7 +74,7 @@
             <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Mi biografia</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Mi Biografía</a>
           </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
               <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
-                <h4 class="text-muted ">INFORMACION PERSONAL</h4>
+                <h4 class="text-muted ">INFORMACIÓN PERSONAL</h4>
                 <hr class="my-4" />
                 @if (session('editarusu'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -134,7 +134,7 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <h4>Area</h4>
+                      <h4>Área </h4>
                       <select class="form-control" id="exampleFormControlSelect1" name="area" required>
                         <option>{{Auth::user()->area}}</option>
                         <option>Programacion</option>
@@ -155,7 +155,7 @@
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <h4>Telefono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
+                      <h4>Teléfono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
                         checked value="1"
                         @else
                         value="0"
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Biografia</h1><br>
+              <h1 class="form-control-label">Biografía  </h1><br>
               <textarea name="biografia" id="" cols="75" rows="5">{{Auth::user()->biografia}}</textarea>
               <div class="card-body text-center">
                 <button type="submit" style="margin-left: 86%;" class="btn btn-primary" type="button">Guardar</button>

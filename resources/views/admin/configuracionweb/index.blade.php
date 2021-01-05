@@ -78,7 +78,7 @@
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Imagenes plan estrategico - solo imagenes PNG</h4>
+                            <h4 class="card-title">Imagenes plan estratégico - solo imagenes PNG</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h4>Plan estrategico</h4>
+                                        <h4>Plan estratégico</h4>
                                         <h4>693 X 500 pixeles</h4>
                                         <div class="card-profile-image">
                                             <form action="{{ url('admin/imagenplanestra') }}" enctype='multipart/form-data' id="planestraForm">
@@ -152,7 +152,7 @@
                                                 <input type="file" id="planestraInput" style="display: none" name="imagenplanestra">
                                             </form>
                                             <div><img src="{{$page->imagenplanestra}}" height="200" width="300" id="planestraImage">
-                                                <div id="hover8"><h4>Cambiar imagen Plan estrategico</h4></div>
+                                                <div id="hover8"><h4>Cambiar imagen Plan estratégico</h4></div>
                                             </div>
                                         </div>
                                     </div>

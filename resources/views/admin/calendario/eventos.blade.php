@@ -47,7 +47,7 @@
                                     <thead>
                                         <tr>
                                             <th>Titulo</th>
-                                            <th>Descripcion</th>
+                                            <th>Descripción</th>
                                             <th>Fecha inicial</th>
                                             <th>Fecha final</th>
                                             <th>Tipo</th>

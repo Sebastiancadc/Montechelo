@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group form-group-default">
-                            <label>descripcion</label>
+                            <label>Descripción </label>
                             <textarea class="form-control" placeholder="Descripcion" name="descripcion" type="text" cols="10" rows="5" ></textarea>
                             @if ($errors->has('descripcion'))
                             <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>

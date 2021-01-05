@@ -118,7 +118,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
             <li class="nav-item">
               <a class="nav-link" href="{{url('solicitudesd')}}">
                 <i class="ni ni-notification-70 text-green"></i>
-                <span class="nav-link-text">Solicitudes y tramites</span>
+                <span class="nav-link-text">Solicitudes y trámites</span>
               </a>
             </li>
             @endif
@@ -126,7 +126,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
             <li class="nav-item">
               <a class="nav-link" href="{{url("buzonusu")}}">
                 <i class="ni ni-send text-yellow"></i>
-                <span class="nav-link-text">Buzon de sugerencias</span>
+                <span class="nav-link-text">Buzón de sugerencias</span>
               </a>
             </li>
             @endif
@@ -134,7 +134,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
             <li class="nav-item">
               <a class="nav-link" href="{{url("planestrategico")}}">
                 <i class="ni ni-building text-orange"></i>
-                <span class="nav-link-text">Plan estrategico</span>
+                <span class="nav-link-text">Plan estratégico</span>
               </a>
             </li>
             @endif
@@ -380,6 +380,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
     @yield('content')
     <!-- Argon Scripts -->
     <!-- Core -->
+    
     <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
     <script src="{{asset("plantilla/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>
@@ -404,11 +405,12 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
     <!-- Argon JS -->
     <script src="{{asset("plantilla/js/dark.js")}}"></script>
     <script src="{{asset("plantilla/js/perfil.js")}}"></script>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
     <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
     @yield('js')
+    
     <script>
       $(document).ready(function() {
         $('.js-example-basic-single').select2();

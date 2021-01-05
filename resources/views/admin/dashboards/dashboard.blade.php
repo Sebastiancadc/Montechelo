@@ -109,10 +109,10 @@ $date =date('m-d')
         </div>
       <div class="col-lg-4">
         <div class="card">
-          <div class="card-header bg-transparent">
+          <div class="card-header bg-transparent"> 
                 <div class="row align-items-center">
                     <div class="col">
-                        <h5 class="h3 mb-0">Proximos cumpleaños</h5>
+                        <h5 class="h3 mb-0">Próximos cumpleaños</h5>
                     </div>
                 </div>
           </div>
@@ -145,10 +145,11 @@ $date =date('m-d')
           <!-- Card header -->
                     <div class="card-header">
             <!-- Title -->
-            <h5 class="h3 mb-0">Proximos eventos</h5>
+            <h5 class="h3 mb-0">Próximos eventos</h5>
              <h5>
           </h5>
           </div>
+          
           <div class="card-header">
                 <div class="h3 mb-0 widget-calendar-day"></div>
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
@@ -175,18 +176,23 @@ $date =date('m-d')
     @include('admin.layouts.footer')
   </div>
 </div>
+
 @section('js')
+<script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
 <script>
   $(document).ready(function () {
           events={!! json_encode($calendario) !!};
           $('#date').fullCalendar({
               events: events,
+
           })
       });
 </script>
+
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{asset("plantilla/js/gallery.js")}}"></script>
+
 </body>
 @endsection
 @endsection

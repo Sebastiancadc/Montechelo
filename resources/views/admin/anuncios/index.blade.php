@@ -39,7 +39,7 @@
                                     <thead>
                                         <tr>
                                             <th>Titulo</th>
-                                            <th>Descripcion</th>
+                                            <th>Descripción</th>
                                             <th>Tipo</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>

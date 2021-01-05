@@ -126,7 +126,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Produccion</p>
+                            <p class="card-category">Producción </p>
                             <h4 class="card-title">{{$produccion}}</h4>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Programacion</p>
+                            <p class="card-category">Programación</p>
                             <h4 class="card-title">{{$programacion}}</h4>
                         </div>
                     </div>

@@ -13,7 +13,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="lineart"></div>
                         <br><br><br><br>
                         <p>
-                            <h1 style="font-size: 2.625rem;">Plan Estrategico</h1>
+                            <h1 style="font-size: 2.625rem;">Plan Estratégico </h1>
                         </p>
                     </div>
                 </span>
@@ -125,7 +125,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Plan estrategico</h1>
+                        <h1>Plan estratégico</h1>
                         <div class="lineart4"></div>
                         <p>{{$page->textplanestr}}</p>
                     </div>

@@ -50,7 +50,7 @@
                                             <th>Categoría</th>
                                             <th>Autor</th>
                                             <th>Portada</th>
-                                            <th>Descripcion</th>
+                                            <th>Descripción </th>
                                             <th>Fecha</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>

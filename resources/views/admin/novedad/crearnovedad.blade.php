@@ -40,7 +40,7 @@
         <!-- Form groups used in grid -->
         <div class="row">
           <div class="col-md-4">
-            <label class="form-control-label" for="exampleFormControlSelect1">Area</label>
+            <label class="form-control-label" for="exampleFormControlSelect1">Área </label>
             <select class="form-control" id="exampleFormControlSelect1" name="area" >
               <option></option>
               <option>Desarrollo</option>
@@ -82,7 +82,7 @@
         </div>
         <div class="row">
           <div class="col-md-9">
-            <label class="form-control-label" for="exampleFormControlTextarea1">descripcion</label>
+            <label class="form-control-label" for="exampleFormControlTextarea1">Descripción</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="descripcion" maxlength="250"></textarea>
           </div>
         </div>
