@@ -130,7 +130,7 @@ class HomeController extends Controller
     }
     
 
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         $user = new DateTime();
         $request->request->add([

@@ -44,7 +44,7 @@
           <!-- Card header -->
           <div class="card-header">
             <!-- Title -->
-            <h5 class="h3 mb-0">Calendar</h5>
+            <h5 class="h3 mb-0">Calendario</h5>
             <h2 class="fullcalendar-title h2 text-black d-inline-block mb-0" style="margin-left: 44%;margin-top: -28px;"></h2>
             @if (session('crearevento'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
