@@ -7,6 +7,9 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Montechelo</title>
+	  <!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
+
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
 	<!-- Fonts and icons -->

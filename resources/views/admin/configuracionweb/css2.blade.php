@@ -69,7 +69,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 
 html
 {
-    font-family: sans-serif;
+    font-family: 'Roboto';
     line-height: 1.15;
 
     -webkit-text-size-adjust: 100%;
@@ -92,7 +92,7 @@ section
 
 body
 {
-    font-family: Open Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -7817,7 +7817,7 @@ a.close.disabled
 
 .tooltip
 {
-    font-family: Open Sans, sans-serif;
+    font-family:Roboto, sans-serif;
     font-size: .875rem;
     font-weight: 400;
     font-style: normal;
@@ -7964,7 +7964,7 @@ a.close.disabled
 
 .popover
 {
-    font-family: Open Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: .875rem;
     font-weight: 400;
     font-style: normal;
@@ -18632,7 +18632,7 @@ a.text-darker:focus
 }
 .btn-group-colors > .btn:before
 {
-    font-family: NucleoIcons, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     line-height: 28px;
 

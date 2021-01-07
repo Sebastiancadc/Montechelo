@@ -11,22 +11,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos</h3>
                 <br>
-                @if(count($errors) > 0)
-                <div class="col-md-12">
-                <div class="alert alert-danger" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                  <ul> 
-                @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-              </ul>
-              </div>
-              </div>  
-                @endif
                 <form role="form" method="POST" action="{{url('admin/createcolaborador')}}">
                     @csrf @method('POST')
                     <div class="row">
