@@ -27,10 +27,15 @@ Route::get('admin', function () {
 
     return view('admin.login');
 });
-// recuperar ss
-Route::get('paswords', function () {
+
+Route::get('cambiarpasss', function () {
+
     return view('auth.passwords.reset');
 });
+
+Route::get('Cambiarcontraseña/{id}', 'CambiarpassController@edit')->name('Cambiarcontraseña');
+Route::put('updateContraseña/{id}', 'CambiarpassController@update')->name('updateContraseña');
+
 Route::get('admin/reset', function () {
 
     return view('admin.pasword');

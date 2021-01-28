@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-
+    <?php
+    $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+    ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Olvide contraseña</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
     <!-- Icons -->
@@ -53,9 +56,8 @@
                                 {{ session('status') }}
                             </div>
                             @endif
-                            <form role="form" method="POST" action="{{ route('password.email') }}">
+                            <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
-
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">

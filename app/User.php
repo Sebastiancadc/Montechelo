@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Notifications\CambiarPassword;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -40,16 +41,12 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-     /**
-     * Send the email verification notification.
-     *
-     * @return void
-     */
+
     // public function sendEmailVerificationNotification()
     // {
     //     $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
     // }
-
+    
     public function admin()
     {
         return $this->role === 'admin';

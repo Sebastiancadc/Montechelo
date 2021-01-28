@@ -7,17 +7,26 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ResetPassword extends Notification
+//USamos la notificación por defecto para extenderla
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
+
+class CambiarPassword extends ResetPasswordNotification
 {
     use Queueable;
 
     /**
-     * Create a new notification instance.
+     * The password reset token.
      *
-     * @return void
+     * @var string
      */
     public $token;
 
+    /**
+     * Create a notification instance.
+     *
+     * @param  string  $token
+     * @return void
+     */
     public function __construct($token)
     {
         $this->token = $token;
