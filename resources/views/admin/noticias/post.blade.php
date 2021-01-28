@@ -37,9 +37,9 @@
                     <h5 class="h3 mb-0">{{ $noticia->title }}</h5>
                 </div>
                 <div class="card-header d-flex align-items-center">
-                        <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                         <a href="#">
-                            <img src="{{ $noticia->user->photo }}" class="avatar">
+                            <img src="{{ $noticia->user->photo }}" class="avatar" style="border-radius: 50%">
                         </a>
                         <div class="mx-3">
                             <h4 class="mb-0">
@@ -47,30 +47,32 @@
                             </h4>
                             <small class="d-block text-muted">{{ $noticia->created_at->format('d/m/Y') }}</small>
                         </div>
-                        </div>
-                        <div class="text-right ml-auto">
-                            @if($noticia->user->id == Auth::User()->id)
-                        <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
+                    </div>
+                    <div class="text-right ml-auto">
+                        @if($noticia->user->id == Auth::User()->id)
+                        <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button"
+                            class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
                             @endif
                         </a>
-                        </div>
                     </div>
+                </div>
                 <div class="card-body">
                     <p class="mb-4">
                         {{ $noticia->body }}
                     </p>
-                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
+                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded"
+                        style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
                     <div class="row align-items-center my-3 pb-3 border-bottom">
-                    <div class="col-sm-6">
-                    </div>
+                        <div class="col-sm-6">
+                        </div>
                     </div>
                     <!-- Comments -->
                     <div class="mb-1">
                         <div id="disqus_thread"></div>
                         <script>
-                        (function() { // DON'T EDIT BELOW THIS LINE
+                            (function() { // DON'T EDIT BELOW THIS LINE
                         var d = document, s = d.createElement('script');
                         s.src = 'https://montechelo-prueba.disqus.com/embed.js';
                         s.setAttribute('data-timestamp', +new Date());
@@ -80,7 +82,7 @@
                         <noscript><a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     </div>
                 </div>
-           </div>
+            </div>
         </div>
     </div>
 </div>

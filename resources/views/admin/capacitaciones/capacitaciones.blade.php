@@ -29,10 +29,13 @@
                                         <!-- Card body -->
                                         <div class="card-body awhite">
                                             <h5 class="h2 card-title mb-0 awhite">{{$item->titulo}}</h5>
-                                            <small class="text-muted awhite"> {{$item->fecha}}</small>
-                                            <p class="card-text mt-4">{{$item->descripcion}} </p>
-                                            <cite>{{$item->categoria}}</cite>
-                                            <a href="{{$item->link}} " type="button" target="_blank" class="btn btn-primary mb-3" style="float: right;"><cite>Acceder</cite></a>
+                                            <small class="text-muted grey"> {{$item->fecha}}</small>
+                                            <p class="card-text mt-4" style="color: white">{{$item->descripcion}} </p>
+                                            {{$item->categoria}}
+                                            <a href="{{$item->link}} " type="button" target="_blank"
+                                                class="btn btn-primary mb-3"
+                                                style="float: right;"><cite>Acceder</cite>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -50,3 +53,8 @@
                     <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
                     </body>
                     @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
