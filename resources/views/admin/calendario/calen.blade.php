@@ -1,110 +1,117 @@
 @extends('admin.layouts.layout')
 {{-- <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css"> --}}
-@section('content')  
+@section('content')
 <div class="header header-dark bg-primary pb-6 content__title content__title--calendar">
     <div class="container-fluid">
-      <div class="header-body">
-        <div class="row align-items-center py-4">
-          <div class="col-lg-6">
-            <h6 class="fullcalendar-title h2 text-white d-inline-block mb-0"></h6>
-            <nav aria-label="breadcrumb" class="d-none d-lg-inline-block ml-lg-4">
-              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Calendario</li>
-              </ol>
-            </nav>
-          </div>     
-          <div class="col-lg-6 mt-3 mt-lg-0 text-lg-right">
-            <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#exampleModal">
-                Crear evento
-               </button>
-               <a href="#" class="fullcalendar-btn-prev btn btn-sm btn-neutral">
-                <i class="fas fa-angle-left"></i>
-              </a>
-              <a href="#" class="fullcalendar-btn-next btn btn-sm btn-neutral">
-                <i class="fas fa-angle-right"></i>
-              </a>
-              <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">Mes</a>
-              <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">Semana</a>
-              <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Dia</a>
-          </div>
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6">
+                    <h6 class="fullcalendar-title h2 text-white d-inline-block mb-0"></h6>
+                    <nav aria-label="breadcrumb" class="d-none d-lg-inline-block ml-lg-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Calendario</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 mt-3 mt-lg-0 text-lg-right">
+                    <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#exampleModal">
+                        Crear evento
+                    </button>
+                    <a href="#" class="fullcalendar-btn-prev btn btn-sm btn-neutral">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                    <a href="#" class="fullcalendar-btn-next btn btn-sm btn-neutral">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">Mes</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">Semana</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Dia</a>
+                </div>
+            </div>
+
         </div>
-       
-      </div>
     </div>
-</a>
-  </div>
-  <!-- Page content -->
-  <div class="container-fluid mt--6">
+    </a>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
     <div class="row">
-      <div class="col">
-        <!-- Fullcalendar -->
-        <div class="card card-calendar">
-          <!-- Card header -->
-          <div class="card-header">
-            <!-- Title -->
-            <h5 class="h3 mb-0">Calendario</h5>
-            <h2 class="fullcalendar-title h2 text-black d-inline-block mb-0" style="margin-left: 44%;margin-top: -28px;"></h2>
-            @if (session('crearevento'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('crearevento')}}</span>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          @endif
-          @if (session('editarevento'))
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
-            <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="success" data-icon="ni ni-bell-55" ><strong></strong>{{session('editarevento')}}</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+        <div class="col">
+            <!-- Fullcalendar -->
+            <div class="card card-calendar">
+                <!-- Card header -->
+                <div class="card-header">
+                    <!-- Title -->
+                    <h2 class="fullcalendar-title h2 text-black  mb-14" style="text-align: center !important;"></h2>
+                    @if (session('crearevento'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                        <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center"
+                            data-type="success"
+                            data-icon="ni ni-bell-55"><strong></strong>{{session('crearevento')}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    @if (session('editarevento'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+                        <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center"
+                            data-type="success"
+                            data-icon="ni ni-bell-55"><strong></strong>{{session('editarevento')}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    @if (session('seelimino'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+                        <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center"
+                            data-type="danger"
+                            data-icon="ni ni-bell-55"><strong></strong>{{session('seelimino')}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    @if (session('hora'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+                        <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center"
+                            data-type="danger" data-icon="ni ni-bell-55"><strong></strong>{{session('hora')}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                </div>
+                <!-- Card body -->
+                <div class="card-body p-0">
+                    <div class="calendar" id="eventos" data-toggle="calendar"></div>
+                </div>
+            </div>
         </div>
-        @endif
-            @if (session('seelimino'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
-              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('seelimino')}}</span>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-            @endif
-            @if (session('hora'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
-              <span class="alert-text" data-toggle="notify" data-placement="top" data-align="center" data-type="danger" data-icon="ni ni-bell-55" ><strong></strong>{{session('hora')}}</span>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-            @endif
-          </div>
-          <!-- Card body -->        
-          <div class="card-body p-0">
-            <div class="calendar" id="eventos" data-toggle="calendar"></div>
-          </div>       
-        </div>
-      </div>
     </div>
     @include('admin.modales.modalCampos')
     {{-- @include('admin.modales.modalPausas') --}}
     @include('admin.layouts.footer')
-    </div>
-  </div>
-  @include('admin.calendario.crearev')
+</div>
+</div>
+@include('admin.calendario.crearev')
 
 @section('js')
-  
+
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 </body>
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
 <script>
-var Fullcalendar = (function() {
+    var Fullcalendar = (function() {
 
 // Variables
 
