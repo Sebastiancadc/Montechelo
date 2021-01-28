@@ -107,7 +107,6 @@
 var Fullcalendar = (function() {
 
 // Variables
-
 var $calendar = $('[data-toggle="calendar"]');
 
 //

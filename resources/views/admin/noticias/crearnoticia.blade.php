@@ -49,6 +49,7 @@
                                 <label class="form-control-label">Categorias</label>
                                 <select class="form-control" name="category_id" required>
                                     @foreach ($categoria as $category)
+                                   
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>

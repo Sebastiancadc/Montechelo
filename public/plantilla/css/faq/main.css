@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     letter-spacing: 0.0312rem;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: 'Roboto'
 }
 :focus { outline: none; }
 select.form-custom::-ms-expand {

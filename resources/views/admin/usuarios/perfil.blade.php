@@ -194,7 +194,7 @@
   $(function() {
     $('#date').date({
       format: 'Y/m/d',
-    });
+    }); 
   });
 </script>
 @section('js')

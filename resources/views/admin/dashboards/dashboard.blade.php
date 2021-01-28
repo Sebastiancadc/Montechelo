@@ -3,6 +3,7 @@
 <?php
 $date =date('m-d')
 ?>
+
 <link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">
@@ -34,7 +35,7 @@ $date =date('m-d')
                         <div class="row align-items-center">
                             <div class="col">
                                 <h2 class="mb-0">Noticias de Intéres</h5>
-                            </div>
+                            </div>                          
                         </div>
                     </div>
                     <div class="row align-items-center">

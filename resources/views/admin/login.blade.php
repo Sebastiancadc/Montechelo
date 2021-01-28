@@ -97,11 +97,14 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                     </div>
 
                     <div class="row" style="margin-top: -185px;">
-                        <div class="col-6">
+                        {{-- <div class="col-6">
 
                             <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
-                        </div>
+                        </div> --}}
+                        <div class="col-6">
 
+                            {{-- <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a> --}}
+                        </div>
                         <div class="col-6 text-right">
                             <a href="{{ route('register') }}" class="text-light"><small>Crear nueva cuenta</small></a>
                         </div>

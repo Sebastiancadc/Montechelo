@@ -9,6 +9,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>FAQ | Montechelo - Manual de usuarios </title>
     <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
     <link rel="stylesheet" href="{{asset("plantilla/bootstrap/css/bootstrap.min.css")}}" type="text/css">
     <link rel="stylesheet" href="{{asset("plantilla/css/faq/plugins.css")}}" type="text/css">

@@ -17,7 +17,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Configuración del sitio</h4>
                         </div>
-                    </div>  
+                    </div>      
                 </div>
                 <div class="col-md-10 ml-auto mr-auto" style="margin-top: -21px;">
                     <div class="card">

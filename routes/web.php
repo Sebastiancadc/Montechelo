@@ -27,12 +27,14 @@ Route::get('admin', function () {
 
     return view('admin.login');
 });
-// recuperar cotraseña
-Route::get('admin/pasword', function () {
+// recuperar ss
+Route::get('paswords', function () {
+    return view('auth.passwords.reset');
+});
+Route::get('admin/reset', function () {
 
     return view('admin.pasword');
 });
-
 Route::get('planestrategico', function () {
     $pausasramdom = Pausasactivas::select('video')
     ->inRandomOrder()
@@ -74,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('AnunciosAdmin', 'AnunciosController@index');
     Route::post('crearAnuncio', 'AnunciosController@Crear');
     Route::delete('elimidarAnuncio/{id}', 'AnunciosController@destroy')->name('eliminaranuncio');
+    
     //Configuracion web
     Route::get('ConfiguracionAdmin/{id}', 'ConfigpageController@edit')->name('editarpage');
     Route::put('updateConfiguracion/{id}', 'ConfigpageController@update')->name('updatepage');
