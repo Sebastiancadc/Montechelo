@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar el campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar los campos</h3>
                 <br>
                 <form role="form" method="POST" action="{{url('admin/crearPausa')}}" enctype="multipart/form-data">
                     @csrf @method('POST')

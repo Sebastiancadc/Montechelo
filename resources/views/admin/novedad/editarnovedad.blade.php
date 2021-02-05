@@ -31,7 +31,7 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita el estado de la novedad</h3>
+							<h3 class="card-header">Editar el estado de la novedad</h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">

@@ -38,7 +38,7 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label class="form-control-label">Categoria de la publicación</label>
+                            <label class="form-control-label">Categoría de la publicación</label>
                             <select class="form-control" name="category_id">
                                 @foreach ($categoria as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>

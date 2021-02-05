@@ -30,7 +30,7 @@
         <div class="card-body">
           @if (Auth::user()->Notifications)
           <a href="{{route('leertodas')}}" class="btn btn-sm btn-warning mb-2" style="margin-left: 63%;
-            margin-top: -15px;">Marcar todas como leidas</a>
+            margin-top: -15px;">Marcar todas como leídas</a>
           @else
           @endif
           <div class="row">

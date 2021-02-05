@@ -31,7 +31,7 @@
 						@csrf
 						@method('PUT')
 						<div class="card-body">
-							<h3 class="card-header">Edita noticia</h3>
+							<h3 class="card-header">Editar noticia</h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
@@ -39,7 +39,7 @@
 
 											<div class="col-md-6">
 
-												<h4>Titulo</h4>
+												<h4>Título</h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -47,7 +47,7 @@
 
 														</span>
 													</div>
-													<input class="form-control" placeholder="Titulo" name="title" id="title" value="{{$noticiaActualizar->title }}" type="text">
+													<input class="form-control" placeholder="Título" name="title" id="title" value="{{$noticiaActualizar->title }}" type="text">
 												</div>
 											</div>
 
@@ -69,18 +69,18 @@
 												<select class="form-control" id="exampleFormControlSelect1" name="category_id">
 													@foreach ($categoria as $category)
 													<option value="{{ $category->id }}">{{ $category->name }}</option>
-													<option>Seleccione categoria</option>
+													<option>Seleccione categoría</option>
 													<option>Diseño</option>
 													<option>Desarrollo</option>
 													<option>Software</option>
-													<option>Analisis</option>
-													<option>Produccion</option>
+													<option>Análisis</option>
+													<option>Producción</option>
 													@endforeach
 												</select>
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Descripcion</h4>
+												<h4>Descripción</h4>
 												<div class="input-group">
 													<textarea class="form-control" name="body" id="mymce" type="text" cols="10" rows="5" required>{{$noticiaActualizar->body}}</textarea>
 												</div>

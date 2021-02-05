@@ -46,7 +46,7 @@
               <option>Desarrollo</option>
               <option>Talento humano</option>
               <option>Recursos humanos</option>
-              <option>Produccion</option>
+              <option>Producción</option>
             </select>
             @if ($errors->has('area'))
             <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
@@ -61,7 +61,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"  />      
+                    <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"  />
                   </div>
                   @if ($errors->has('fecha'))
                   <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>

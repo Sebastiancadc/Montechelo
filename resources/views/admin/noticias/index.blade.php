@@ -46,7 +46,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Titulo</th>
+                                            <th>Título</th>
                                             <th>Categoría</th>
                                             <th>Autor</th>
                                             <th>Portada</th>
@@ -79,7 +79,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3>¿Estás seguro de eliminar esta capacitacion?</h3>
+                                                                    <h3>¿Estás seguro de eliminar esta capacitación?</h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

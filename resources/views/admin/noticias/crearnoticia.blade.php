@@ -36,7 +36,7 @@
                         @csrf @method('POST')
                         <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}" ;>
                         <div class="form-group">
-                            
+
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlInput1">Título de la publicación</label>
                                 <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="30" >
@@ -44,12 +44,12 @@
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
                             </div>
-                           
+
                             <div class="form-group">
-                                <label class="form-control-label">Categorias</label>
+                                <label class="form-control-label">Categorías</label>
                                 <select class="form-control" name="category_id" required>
                                     @foreach ($categoria as $category)
-                                   
+
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>

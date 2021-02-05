@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Buzon</h4>
+                                <h4 class="card-title">Gestión de Buzón</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -28,8 +28,8 @@
                                     <thead>
                                         <tr>
                                             <th>Tipo de sugerencia</th>
-                                            <th>Area</th>
-                                            <th>Descripcion</th>
+                                            <th>Área</th>
+                                            <th>Descripción</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>

@@ -46,7 +46,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Titulo</th>
+                                            <th>Título</th>
                                             <th>Descripción</th>
                                             <th>Fecha inicial</th>
                                             <th>Fecha final</th>

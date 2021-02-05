@@ -27,7 +27,7 @@
                     </a>
                     <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">Mes</a>
                     <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">Semana</a>
-                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Dia</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Día</a>
                 </div>
             </div>
 

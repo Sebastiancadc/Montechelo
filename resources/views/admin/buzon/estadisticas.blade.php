@@ -68,7 +68,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Observacion</p>
+                            <p class="card-category">Observación</p>
                             <h4 class="card-title">{{$observacion}}</h4>
                         </div>
                     </div>

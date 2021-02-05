@@ -61,7 +61,7 @@
         <!-- List group -->
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <h3 class="card-title mb-3">Titulo</h3> {{$eventos->name}}
+            <h3 class="card-title mb-3">Título</h3> {{$eventos->name}}
           </li>
           <li class="list-group-item">
             <h3 class="card-title mb-3">Fecha inical</h3> {{$eventos->start_time}}
@@ -72,7 +72,7 @@
         </ul>
         <!-- Card body -->
         <li class="list-group-item">
-          <h3 class="card-title mb-3">Descripcion</h3> {{$eventos->description}}
+          <h3 class="card-title mb-3">Descripción</h3> {{$eventos->description}}
         </li>
         <div class="card-body text-center">
           @if($eventos->Usuario_id_Usuario == Auth::User()->id)

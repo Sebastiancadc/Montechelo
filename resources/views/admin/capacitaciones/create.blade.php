@@ -11,14 +11,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos</h3>
                 <br>
                 <form role="form" method="POST" action="{{route('store')}}">
                     @csrf @method('POST')
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Titulo</label>
+                                <label>Título</label>
                                 <input type="text" class="form-control" placeholder="Titulo" name="titulo" >
                                 @if ($errors->has('titulo'))
                                     <strong class="text-danger tamano">{{ $errors->first('titulo') }}</strong>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-12 ">
                             <div class="form-group form-group-default">
-                                <label>Fecha de capacitacion</label>
+                                <label>Fecha de capacitación</label>
                                 <input type="text" class="form-control" id="datepicker" name="fecha" >
                                 @if ($errors->has('fecha'))
                                 <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
@@ -36,15 +36,15 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group form-group-default">
-                                <label>Categoria</label>
+                                <label>Categoría</label>
                                 <div class="form-group">
                                     <select id="basic" name="categoria" class="col-md-15">
                                         <option></option>
                                         <option>Diseño</option>
                                         <option>Desarrollo</option>
                                         <option>Software</option>
-                                        <option>Analisis</option>
-                                        <option>Produccion</option>
+                                        <option>Análisis</option>
+                                        <option>Producción</option>
                                     </select>
                                     @if ($errors->has('categoria'))
                                     <strong class="text-danger tamano">{{ $errors->first('categoria') }}</strong>

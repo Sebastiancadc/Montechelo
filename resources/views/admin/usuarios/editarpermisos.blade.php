@@ -103,7 +103,7 @@
 										<br>
 										<div class="row">
 											<div class="col-md-4">
-												<h4>Buzon</h4>
+												<h4>Buzón</h4>
 												<div class="input-group">
 													<input type="checkbox" data-toggle="toggle" data-on="Habilitado" name="buzon_status" data-off="Deshabilitado" @if ($permisoActualizar->buzon_status == '1')
 													checked data-onstyle="success" value="1"
@@ -113,7 +113,7 @@
 												</div>
 											</div>
 											<div class="col-md-4">
-												<h4>Plan estrategico</h4>
+												<h4>Plan estratégico</h4>
 												<div class="input-group">
 													<input type="checkbox" data-toggle="toggle" data-on="Habilitado" name="plan_status" data-off="Deshabilitado" @if ($permisoActualizar->plan_status == '1')
 													checked data-onstyle="success" value="1"

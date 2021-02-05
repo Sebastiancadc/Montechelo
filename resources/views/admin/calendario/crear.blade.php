@@ -14,7 +14,7 @@ $user = auth()->user();
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos</h3>
                 <br>
                 <form role="form" method="POST" action="{{url('Calendario/creareventoad')}}">
                     @csrf @method('POST')
@@ -22,7 +22,7 @@ $user = auth()->user();
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Titulo</label>
+                                <label>Título</label>
                                 <input type="text" class="form-control" placeholder="Nombre evento" name="name" >
                                 @if ($errors->has('name'))
                                 <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
@@ -65,7 +65,7 @@ $user = auth()->user();
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Descripcion del evento</label>
+                                <label>Descripción del evento</label>
                                 <textarea class="form-control" name="description" type="text" cols="10" rows="5" ></textarea>
                                 @if ($errors->has('description'))
                                 <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>

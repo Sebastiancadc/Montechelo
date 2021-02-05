@@ -114,7 +114,7 @@
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Buzon de sugerencias</h4>
+                                            <h4 class="colorsito">Buzón de sugerencias</h4>
                                             @if ($permiso->buzon_status == '1')
                                             <span class="badge badge-lg badge-success">
                                                 Habilitado
@@ -124,7 +124,7 @@
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Plan estrategico</h4>
+                                            <h4 class="colorsito">Plan estratégico</h4>
                                             @if ($permiso->plan_status == '1')
                                             <span class="badge badge-lg badge-success">
                                                 Habilitado

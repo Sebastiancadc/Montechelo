@@ -36,7 +36,7 @@
                                 <h4 class="card-title">Gestión de Capacitaciones</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear Capacitacion
+                                    Crear Capacitación
                                 </button>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     <thead>
                                         <tr>
                                             {{-- <th>#</th> --}}
-                                            <th>Titulo</th>
+                                            <th>Título</th>
                                             <th>Fecha</th>
                                             <th>Descripción</th>
                                             <th>Categoría </th>
@@ -76,7 +76,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3>¿Estás seguro de eliminar esta capacitacion?</h3>
+                                                                    <h3>¿Estás seguro de eliminar esta capacitación?</h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos</h3>
                 <br>
                 <form role="form" method="POST" action="{{url('admin/solicitud')}}">
                     @csrf @method('POST')
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-md-6 ">
                             <div class="form-group form-group-default">
-                                <label> documento</label>
+                                <label> Documento</label>
                                 <input type="text" class="form-control" placeholder="111111111" min="10" max="10"  pattern="[0-9]{10}" maxlength="10" name="cedula" >
                                 @if ($errors->has('cedula'))
                                 <strong class="text-danger tamano">{{ $errors->first('cedula') }}</strong>

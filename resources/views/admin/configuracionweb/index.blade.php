@@ -17,7 +17,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Configuración del sitio</h4>
                         </div>
-                    </div>      
+                    </div>
                 </div>
                 <div class="col-md-10 ml-auto mr-auto" style="margin-top: -21px;">
                     <div class="card">
@@ -30,7 +30,7 @@
                                     <div class="form-group">
                                         <h4>Isotipo</h4>
                                         <h4>80 X 80 pixeles</h4>
-                                       
+
                                         <div class="card-profile-image">
                                             <form action="{{ url('admin/fotoisotipo') }}" enctype='multipart/form-data' id="isotipoForm">
                                                 @csrf
@@ -71,14 +71,14 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Imagenes plan estratégico - solo imagenes PNG</h4>
+                            <h4 class="card-title">Imagenes plan estratégico - sólo imagenes PNG</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -312,7 +312,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <h4>Titulos</h4>
+                                            <h4>Títulos</h4>
                                             <div class="input-group">
                                                 <input class="form-control" type="color" value="{{$page->colortitulo}}" name="colortitulo" id="example-color-input" style="height: 47px;">
                                             </div>

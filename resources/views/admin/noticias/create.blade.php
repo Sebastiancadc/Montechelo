@@ -95,8 +95,8 @@
                             <option>Diseño</option>
                             <option>Desarrollo</option>
                             <option>Software</option>
-                            <option>Analisis</option>
-                            <option>Produccion</option>
+                            <option>Análisis</option>
+                            <option>Producción</option>
                         </select>
                     </div>
                   </div>
@@ -115,7 +115,7 @@
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">Crear</button>
-                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>                   
+                    <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
                   </div>
                 </form>
             </div>

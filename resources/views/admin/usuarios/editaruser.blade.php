@@ -24,20 +24,20 @@
 						<a href="#">Editar</a>
 					</li>
 				</ul>
-			</div>				
+			</div>
 			@if(count($errors) > 0)
 			<div class="col-md-12">
 			<div class="alert alert-danger" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
-			  <ul> 
+			  <ul>
 			@foreach ($errors->all() as $error)
 			<li>{{$error}}</li>
 			@endforeach
 		  </ul>
 		  </div>
-		  </div>  
+		  </div>
 			@endif
 			<div class="col-md-9 ml-auto mr-auto">
 				<div class="card">
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-							</div>		
+							</div>
 							<div class="card-body">
 								<h4>Correo</h4>
 								<div class="input-group">
@@ -119,7 +119,7 @@
 												</div>
 											</div>
 											<div class="col-md-6">
-												<h4>Genero</h4>
+												<h4>Género</h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -172,7 +172,7 @@
 														<option>Programacion</option>
 														<option>Diseño</option>
 														<option>Marketing</option>
-														<option>Produccion</option>
+														<option>Producción</option>
 													</select>
 													@if ($errors->has('area'))
 													<strong class="text-danger tamano">{{ $errors->first('area') }}</strong>

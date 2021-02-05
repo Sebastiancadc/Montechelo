@@ -24,7 +24,7 @@
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
-                    <h1 style="text-align: center">¡Bienvenido a una pausa activa dinamica!</h1>
+                    <h1 style="text-align: center">¡Bienvenido a una pausa activa dinámica!</h1>
                     <br>
                     {{-- PRIMERA PAUSA --}}
                     <div class="card"

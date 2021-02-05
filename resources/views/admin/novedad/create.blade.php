@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenarlas todos los campos</h3>
+                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llena todos los campos</h3>
                 <br>
                 <form role="form" method="POST" action="{{ url('admin/novedad')}}">
                     @csrf @method('POST')
@@ -25,7 +25,7 @@
                                         <option>Desarrollo</option>
                                         <option>Talento humano</option>
                                         <option>Recursos humanos</option>
-                                        <option>Produccion</option>
+                                        <option>Producción</option>
                                     </select>
                                     @if ($errors->has('area'))
                                     <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Descripcion de la novedad</label>
+                                <label>Descripción de la novedad</label>
                                 <textarea class="form-control" name="descripcion" type="text" cols="10" rows="5" ></textarea>
                                 @if ($errors->has('descripcion'))
                                 <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>

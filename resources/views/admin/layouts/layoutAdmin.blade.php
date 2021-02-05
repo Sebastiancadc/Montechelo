@@ -160,7 +160,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{url('admin/buzonAdmin')}}">
 								<i class="fas fa-paper-plane"></i>
-								<p>Buzon</p>
+								<p>Buzón</p>
 							</a>
 						</li>
 						<li class="nav-item ">
@@ -186,7 +186,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{url('admin/pasuasAdmin')}}">
 								<i class="fas fa-child"></i>
-								<p>Pauas activas
+								<p>Pausas activas
 								</p>
 							</a>
 						</li>

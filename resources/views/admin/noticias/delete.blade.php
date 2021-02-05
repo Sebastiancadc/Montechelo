@@ -5,7 +5,7 @@
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
             <div class="text-center text-muted mb-4">
-              <small>¿Está seguro de eliminar está noticia?</small>
+              <small>¿Está seguro de eliminar esta noticia?</small>
             </div>
             <form role="form" method="POST" action="{{route('eliminar',$item->Id_noticia)}}">
               @csrf @method('DELETE')

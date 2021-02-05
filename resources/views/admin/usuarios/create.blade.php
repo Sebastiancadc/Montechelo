@@ -24,7 +24,7 @@
                                 @if ($errors->has('name'))
                                 <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
                                 @endif
-                            </div>    
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
-                                <label>Telefono</label>
+                                <label>Teléfono</label>
                                 <input type="text" class="form-control" placeholder="3123123212..." name="phone" maxlength="11">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>

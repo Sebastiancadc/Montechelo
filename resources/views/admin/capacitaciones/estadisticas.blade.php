@@ -86,7 +86,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Analisis</p>
+                            <p class="card-category">Análisis</p>
                             <h4 class="card-title">{{$analisis}}</h4>
                         </div>
                     </div>

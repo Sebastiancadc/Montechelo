@@ -32,7 +32,7 @@
                         @method('PUT')
                         @csrf
                         <div class="card-body">
-                            <h3 class="card-header">Editar capacitacion</h3>
+                            <h3 class="card-header">Editar capacitación</h3>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card-body">
@@ -45,7 +45,7 @@
                                                             <i class="fas fa-align-center"></i>
                                                         </span>
                                                     </div>
-                                                    <input class="form-control" placeholder="Titulo" value='{{$capacitacionActualizar->titulo}}' name="titulo" type="text" >                                              
+                                                    <input class="form-control" placeholder="Titulo" value='{{$capacitacionActualizar->titulo}}' name="titulo" type="text" >
                                                 </div>
                                                 @if ($errors->has('titulo'))
                                                 <strong class="text-danger tamano">{{ $errors->first('titulo') }}</strong>
@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <br>
-                                                <h4>Descripcion</h4>
+                                                <h4>Descripción</h4>
                                                 <div class="input-group">
                                                     <textarea class="form-control" name="descripcion" type="text" cols="100" rows="5" >{{$capacitacionActualizar->descripcion}}</textarea>
                                                 </div>
@@ -83,8 +83,8 @@
                                                     <option>Diseño</option>
                                                     <option>Desarrollo</option>
                                                     <option>Software</option>
-                                                    <option>Analisis</option>
-                                                    <option>Produccion</option>
+                                                    <option>Análisis</option>
+                                                    <option>Producción</option>
                                                 </select>
                                                 @if ($errors->has('categoria'))
                                                 <strong class="text-danger tamano">{{ $errors->first('categoria') }}</strong>

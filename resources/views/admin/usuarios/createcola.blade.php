@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
-                                <label>Telefono</label>
+                                <label>Teléfono</label>
                                 <input type="text" class="form-control" placeholder="3123123212..." name="phone" maxlength="11">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>
@@ -67,7 +67,7 @@
                             <div class="form-group form-group-default">
                                 <label>Confirmar contraseña</label>
                                 <input class="form-control" type="password" name="password_confirmation" >
-                            
+
                             </div>
                         </div>
                     </div>

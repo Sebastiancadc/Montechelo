@@ -105,7 +105,7 @@
 			<div class="row">
 				<div class="col-md-6 text-center col-md-offset-3">
 					<button class="btn btn-primary" id="turn_on">Enciende las luces</button>
-					<button class="btn btn-primary" id="play">Reproducir musica</button>
+					<button class="btn btn-primary" id="play">Reproducir música</button>
 					<button class="btn btn-primary" id="bannar_coming">Vamos a decorar</button>
 					<button class="btn btn-primary" id="balloons_flying">Soltar globos</button>
 					<button class="btn btn-primary" id="cake_fadein">Ahora vamos con el pastel!</button>

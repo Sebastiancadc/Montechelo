@@ -137,10 +137,10 @@
                       <h4>Área </h4>
                       <select class="form-control" id="exampleFormControlSelect1" name="area" required>
                         <option>{{Auth::user()->area}}</option>
-                        <option>Programacion</option>
+                        <option>Programación</option>
                         <option>Diseño</option>
                         <option>Marketing</option>
-                        <option>Produccion</option>
+                        <option>Producción</option>
                       </select>
                     </div>
                   </div>
@@ -194,7 +194,7 @@
   $(function() {
     $('#date').date({
       format: 'Y/m/d',
-    }); 
+    });
   });
 </script>
 @section('js')
