@@ -49,7 +49,7 @@ height: 148%;"></span>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
           </div>
         </div>
         <div class="card-body pt-0">
