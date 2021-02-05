@@ -36,7 +36,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                     <div class="header-body text-center mb-7">
                         <div class="row justify-content-center">
                             <div id="titulo1" class="col-xl-5 col-lg-6 col-md-8 px-5"
-                                style="margin-top:-8em; margin-left: auto; margin-right:auto">
+                                style="margin-top:-9em; margin-left: auto; margin-right:auto">
                                 <h1 class="text-white">¡Bienvenido!</h1>
 
                             </div>
@@ -49,7 +49,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
             <div class="container mt--8 pb-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-7">
-                        <div class="card bg-secondary border-0 mb-0" style="margin-top:-10em;" id="contenedor1">
+                        <div class="card bg-secondary border-0 mb-0" style="margin-top:-12em;" id="contenedor1">
                             <div class="card-header bg-transparent pb-5"
                                 style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto; ">
                                 <img src="{{$page->logologin}}" style="height: 70px;">
@@ -119,11 +119,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     <style>
         @media (max-width:991px) {
             #titulo1 {
-                margin-top: -4em !important;
+                margin-top: -5em !important;
             }
 
             #contenedor1 {
-                margin-top: -4em !important;
+                margin-top: -6em !important;
             }
         }
     </style>

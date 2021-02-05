@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
-                        <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -8em;" id="titulo1">
+                        <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top: -9em;" id="titulo1">
                             <h1 class="text-white">¡Crea tu cuenta!</h1>
 
                         </div>
@@ -41,7 +41,7 @@
         <div class="container mt--8 pb-5">
             <!-- Table -->
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8" style="margin-top: -10em;" id="contenedor2">
+                <div class="col-lg-6 col-md-8" style="margin-top: -12em;" id="contenedor2">
                     <div class="card bg-secondary border-0">
                         <div class="card-header bg-transparent" style="margin-left: auto; margin-right:auto; ">
                             <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;">
@@ -136,11 +136,11 @@
         <style>
             @media (max-width:991px) {
                 #titulo1 {
-                    margin-top: -4em !important;
+                    margin-top: -5em !important;
                 }
 
                 #contenedor2 {
-                    margin-top: -4em !important;
+                    margin-top: -6em !important;
                 }
             }
         </style>

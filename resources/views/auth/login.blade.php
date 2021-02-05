@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
-                        <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top:-8em;" id="titulo1">
+                        <div class="col-xl-5 col-lg-6 col-md-8 px-5" style="margin-top:-9em;" id="titulo1">
                             <h1 class="text-white">¡Bienvenido!</h1>
                         </div>
                     </div>
@@ -125,11 +125,11 @@
 
             @media (max-width:991px) {
                 #titulo1 {
-                    margin-top: -4em !important;
+                    margin-top: -5em !important;
                 }
 
                 #contenedor1 {
-                    margin-top: -4em !important;
+                    margin-top: -6em !important;
                 }
             }
         </style>

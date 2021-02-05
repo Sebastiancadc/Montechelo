@@ -23,13 +23,14 @@
         <div class="col-lg-10 card-wrapper">
             <!-- Grid system -->
             <div class="card">
-                <div class="card-body">
-                    <h1 style="text-align: center">¡Bienvenido a una pausa activa dinámica!</h1>
+                
+                    <h1 style="text-align: center;margin-top:18px;margin-bottom:-5px;">¡Bienvenido a una pausa activa dinámica!</h1>
                     <br>
                     {{-- PRIMERA PAUSA --}}
                     <div class="card"
                         style="width: 100% !important;   margin-left:auto !important; margin-right:auto !important;">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="margin-right: 12px;
+    margin-left: 12px;">
                             <iframe src="https://www.youtube.com/embed/VhvUnHiysQY" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen style="width: 100% !important;height:25em;"></iframe>
@@ -160,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
