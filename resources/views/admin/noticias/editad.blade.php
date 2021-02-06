@@ -31,7 +31,7 @@
 						@csrf
 						@method('PUT')
 						<div class="card-body">
-							<h3 class="card-header">Editar noticia</h3>
+							<h3 class="card-header"><b>Editar noticia</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
@@ -39,7 +39,7 @@
 
 											<div class="col-md-6">
 
-												<h4>Título</h4>
+												<h4><b>Título</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -53,7 +53,7 @@
 
 											<div class="col-md-6">
 
-												<h4>Autor</h4>
+												<h4><b>Autor</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -65,7 +65,7 @@
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Categoria</h4>
+												<h4><b>Categoria</b></h4>
 												<select class="form-control" id="exampleFormControlSelect1" name="category_id">
 													@foreach ($categoria as $category)
 													<option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -80,14 +80,14 @@
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Descripción</h4>
+												<h4><b>Descripción</b></h4>
 												<div class="input-group">
 													<textarea class="form-control" name="body" id="mymce" type="text" cols="10" rows="5" required>{{$noticiaActualizar->body}}</textarea>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Imagen</h4>
+												<h4><b>Imagen</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">

@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear rol
+                    <b>Crear rol</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

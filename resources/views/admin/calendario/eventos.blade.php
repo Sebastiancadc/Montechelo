@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Eventos</h4>
+                                <h4 class="card-title">Gestión de eventos</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Crear evento
@@ -79,7 +79,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3>¿Estás seguro?</h3>
+                                                                    <h3><b>¿Está seguro de eliminar este evento?</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

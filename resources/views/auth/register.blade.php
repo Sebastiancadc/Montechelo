@@ -72,7 +72,7 @@
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
                                         <input id="email" type="email" class="form-control" name="email"
-                                            value="{{ old('email') }}" placeholder="tucorreo@montechelo.com.co"
+                                            value="{{ old('email') }}" placeholder="Correo electronico"
                                             pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
                                     </div>
                                     @if ($errors->has('email'))
@@ -85,7 +85,7 @@
                                             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                         </div>
                                         <input class="form-control datepicker" id="datepickers" name="cumpleanios"
-                                            placeholder="Select date" type="text">
+                                            placeholder="Fecha de nacimiento" type="text">
                                     </div>
                                     @if ($errors->has('cumpleanios'))
                                     <strong class="text-danger   tamano">{{ $errors->first('cumpleanios') }}</strong>
@@ -111,7 +111,7 @@
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
                                         <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" placeholder="Confirmar Contraseña"
+                                            name="password_confirmation" placeholder="Confirmar contraseña"
                                             oncopy="return false" onpaste="return false">
                                     </div>
                                 </div>

@@ -31,13 +31,13 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita el estado de la solicitud</h3>
+							<h3 class="card-header"><b>Editar estado de la solicitud</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12">
-												<h4>Estado</h4>
+												<h4><b>Estado</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">

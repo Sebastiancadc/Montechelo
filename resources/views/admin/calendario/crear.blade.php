@@ -7,7 +7,7 @@ $user = auth()->user();
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear evento
+                    <b>Crear evento</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -22,7 +22,7 @@ $user = auth()->user();
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Título</label>
+                                <label>Título del evento</label>
                                 <input type="text" class="form-control" placeholder="Nombre evento" name="name" >
                                 @if ($errors->has('name'))
                                 <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>

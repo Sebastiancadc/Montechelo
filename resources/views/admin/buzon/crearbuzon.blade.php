@@ -51,13 +51,13 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Descripción</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" ></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción" ></textarea>
                             @if ($errors->has('descripcion'))
                             <strong class="text-danger tamano">{{ $errors->first('descripcion') }}</strong>
                             @endif
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" >Area</label>
+                            <label class="form-control-label" for="exampleFormControlSelect1" name="area" >Área</label>
                             <select class="form-control" id="area" name="area">
                                 <option> </option>
                                 <option>Diseño</option>

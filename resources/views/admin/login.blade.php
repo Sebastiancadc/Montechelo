@@ -66,7 +66,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
                                             <input id="email" name="email" class="form-control"
-                                                value="{{ old('email') }}" placeholder="Email" type="email" autofocus>
+                                                value="{{ old('email') }}" placeholder="Correo electronico" type="email" autofocus>
                                         </div>
                                         @if ($errors->has('email'))
                                         <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
@@ -80,7 +80,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             </div>
                                             <input id="password" name="password"
                                                 class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Password" type="password">
+                                                placeholder="Contraseña" type="password">
                                         </div>
                                         @if ($errors->has('password'))
                                         <strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
@@ -102,7 +102,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="row mt-2">
                             <div class="col-6">
 
-                                <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la
+                                <a href="{{ route('password.request')}}" class="text-light"><small>¿Olvidaste tu
                                         contraseña?</small></a>
                             </div>
 

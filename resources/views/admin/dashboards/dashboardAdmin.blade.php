@@ -4,7 +4,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Dashboard-Admin</h4>
+                <h4 class="page-title">Inicio-Admin</h4>
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-3">
@@ -168,7 +168,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">Novedades Pendientes</div>
+                                <div class="card-title">Novedades pendientes</div>
                             </div>
                         </div>
                         @foreach ($novedadesPendientes as $novedad)
@@ -193,7 +193,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">Solicitudes Pendientes</div>
+                                <div class="card-title">Solicitudes pendientes</div>
                             </div>
                         </div>
                         @foreach ($solicidesPendientes as $solicitud)

@@ -45,13 +45,13 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita el usuario</h3>
+							<h3 class="card-header"><b>Editar usuario</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6">
-												<h4>Nombre</h4>
+												<h4><b>Nombre</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -65,7 +65,7 @@
 												</div>
 											</div>
 											<div class="col-md-6">
-												<h4>Rol</h4>
+												<h4><b>Rol</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -87,7 +87,7 @@
 								</div>
 							</div>
 							<div class="card-body">
-								<h4>Correo</h4>
+								<h4><b>Correo</b></h4>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
@@ -105,7 +105,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6">
-												<h4>Fecha de nacimiento</h4>
+												<h4><b>Fecha de nacimiento</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -119,7 +119,7 @@
 												</div>
 											</div>
 											<div class="col-md-6">
-												<h4>Género</h4>
+												<h4><b>Género</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -146,7 +146,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6">
-												<h4>Teléfono</h4>
+												<h4><b>Género</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -160,7 +160,7 @@
 													@endif
 											</div>
 											<div class="col-md-6">
-												<h4>Área</h4>
+												<h4><b>Área</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -184,7 +184,7 @@
 								</div>
 							</div>
 							<div class="card-body">
-								<h4>Contraseña</h4>
+								<h4><b>Contraseña</b></h4>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
@@ -198,7 +198,7 @@
 								@endif
 							</div>
 							<div class="card-body">
-								<h4>Confirmar contraseña</h4>
+								<h4><b>Confirmar contraseña</b></h4>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">

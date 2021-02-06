@@ -31,13 +31,13 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita el evento</h3>
+							<h3 class="card-header"><b>Editar evento</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12">
-												<h4>Nombre</h4>
+												<h4><b>Nombre</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -59,7 +59,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6">
-												<h4>Fecha inicial</h4>
+												<h4><b>Fecha inicial</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -73,7 +73,7 @@
                                 				@endif
 											</div>
 											<div class="col-md-6">
-												<h4>Fecha final</h4>
+												<h4><b>Fecha final</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -95,7 +95,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12">
-												<h4>Área</h4>
+												<h4><b>Área</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -118,7 +118,7 @@
 								</div>
 							</div>
 							<div class="card-body">
-								<h4>Descripcion</h4>
+								<h4><b>Descripción</b></h4>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">

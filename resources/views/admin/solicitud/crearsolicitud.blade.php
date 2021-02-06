@@ -42,7 +42,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" minlength="5" maxlength="30">
+                            <input type="text" class="form-control" name="nombre" minlength="5" maxlength="30" placeholder="Nombre" >
                             @if ($errors->has('nombre'))
                             <strong class="text-danger tamano">{{ $errors->first('nombre') }}</strong>
                             @endif
@@ -51,7 +51,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols3Input">Apellido</label>
-                            <input type="text" class="form-control" name="apellido"  minlength="5" maxlength="30">
+                            <input type="text" class="form-control" name="apellido" placeholder="Apellido"  minlength="5" maxlength="30">
                             @if ($errors->has('apellido'))
                             <strong class="text-danger tamano">{{ $errors->first('apellido') }}</strong>
                             @endif
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-12 mb-3">
                         <div class="form-group">
                             <label class="form-control-label" for="example3cols2Input">Fecha</label>
                             <input type="date" class="form-control" name="fecha">

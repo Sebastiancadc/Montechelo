@@ -28,7 +28,7 @@
 @endif
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
-        <div class="col-lg-8 card-wrapper">
+        <div class="col-lg-8 card-wrapper" style="margin-top: -40px" >
             <!-- Grid system -->
             <div class="card">
                 <div class="card-body">
@@ -38,8 +38,8 @@
                         <div class="form-group">
 
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlInput1">Título de la publicación</label>
-                                <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="30" >
+                                <label class="form-control-label" for="exampleFormControlInput1">Título de la notica</label>
+                                <input type="text" class="form-control form-control-alternative"  value="{{ old('title') }}" name="title" maxlength="30" >
                                 @if ($errors->has('title'))
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
-                                <div class="col-md-12">
+                                <div class="col-md-13">
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3" >{{ old('body') }}</textarea>
                                     @if ($errors->has('body'))
                                     <strong class="text-danger tamano">{{$errors->first('body') }}</strong>

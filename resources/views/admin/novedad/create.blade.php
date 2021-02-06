@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear novedad
+                    <b>Crear novedad</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Area</label>
+                                <label>Área</label>
                                 <div class="form-group">
                                     <select id="basic" name="area" class="col-md-15">
                                         <option> </option>

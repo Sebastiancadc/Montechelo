@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Pausas activas</h4>
+                                <h4 class="card-title">Gestión de pausas activas</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Crear pausa activa
@@ -69,7 +69,7 @@
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h3>¿Estás seguro de eliminar esta pausa activa?</h3>
+                                                            <h3><b>¿Estás seguro de eliminar esta pausa activa?</b></h3>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>

@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear anuncio
+                    <b>Crear anuncio</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -19,7 +19,7 @@
                         <div class="col-md-11 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Titulo</label>
-                                <input type="text" class="form-control" placeholder="titulo" name="titulo" >
+                                <input type="text" class="form-control"  name="titulo" >
                                 @if ($errors->has('titulo'))
                                 <strong class="text-danger tamano">{{ $errors->first('titulo') }}</strong>
                                 @endif
