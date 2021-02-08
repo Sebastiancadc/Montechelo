@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="thumbnail-img">
-                                <img alt="blog-image" src="{{ $item->image }}" class="img-fluid  mb-md-0 mb-4">
+                                <img alt="Imagen" src="{{ $item->image }}" class="img-fluid  mb-md-0 mb-4">
                             </div>
                         </div>
                         <div class="col-md-8 text-md-left text-center">

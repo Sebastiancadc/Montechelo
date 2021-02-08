@@ -114,7 +114,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{ url('admin/HomeAdmin')}}">
 								<i class="fas fa-home"></i>
-								<p>Dashboard</p>
+								<p>Inicio</p>
 							</a>
 						</li>
 						<li class="nav-section">

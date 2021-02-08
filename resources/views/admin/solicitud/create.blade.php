@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear solicitud
+                    <b>Crear solicitud</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -19,7 +19,7 @@
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Tunombre" name="nombre" >
+                                <input type="text" class="form-control"  name="nombre" >
                                 @if ($errors->has('nombre'))
                                 <strong class="text-danger tamano">{{ $errors->first('nombre') }}</strong>
                                 @endif
@@ -28,7 +28,7 @@
                         <div class="col-md-6 ">
                             <div class="form-group form-group-default">
                                 <label>Apellido</label>
-                                <input type="text" class="form-control" placeholder="Tuapellido" name="apellido" >
+                                <input type="text" class="form-control"  name="apellido" >
                                 @if ($errors->has('apellido'))
                                 <strong class="text-danger tamano">{{ $errors->first('apellido') }}</strong>
                                 @endif
@@ -54,7 +54,7 @@
                         <div class="col-md-6 ">
                             <div class="form-group form-group-default">
                                 <label> Documento</label>
-                                <input type="text" class="form-control" placeholder="111111111" min="10" max="10"  pattern="[0-9]{10}" maxlength="10" name="cedula" >
+                                <input type="text" class="form-control"  min="10" max="10"  pattern="[0-9]{10}" maxlength="10" name="cedula" >
                                 @if ($errors->has('cedula'))
                                 <strong class="text-danger tamano">{{ $errors->first('cedula') }}</strong>
                                 @endif
@@ -63,7 +63,7 @@
                         <div class="col-md-6 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Teléfono</label>
-                                <input type="text" class="form-control" placeholder="11111111" min="10" max="10"  pattern="[0-9]{10}" maxlength="10" name="telefono" >
+                                <input type="text" class="form-control"  min="10" max="10"  pattern="[0-9]{10}" maxlength="10" name="telefono" >
                                 @if ($errors->has('telefono'))
                                 <strong class="text-danger tamano">{{ $errors->first('telefono') }}</strong>
                                 @endif

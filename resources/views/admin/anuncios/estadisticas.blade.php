@@ -29,7 +29,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Default- azul oscuro</p>
+                            <p class="card-category">Por defecto-Azul oscuro</p>
                             <h4 class="card-title">{{$default}}</h4>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Info - azul claro</p>
+                            <p class="card-category">Información-Azul claro</p>
                             <h4 class="card-title">{{$info}}</h4>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Success - verde</p>
+                            <p class="card-category">Realizado-Verde</p>
                             <h4 class="card-title">{{$success}}</h4>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Warning - naranja</p>
+                            <p class="card-category">Advertencia-Naranja</p>
                             <h4 class="card-title">{{$warning}}</h4>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Danger - rojo</p>
+                            <p class="card-category">Urgente-Rojo</p>
                             <h4 class="card-title">{{$danger}}</h4>
                         </div>
                     </div>

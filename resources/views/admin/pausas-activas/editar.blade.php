@@ -31,7 +31,7 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita la pausa activa</h3>
+							<h3 class="card-header"><b>Editar pausa activa</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">

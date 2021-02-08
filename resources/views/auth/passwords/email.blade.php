@@ -63,7 +63,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input id="email" type="email" placeholder="Tucorreo@correo.com"
+                                        <input id="email" type="email" placeholder="Correo electronico"
                                             class="form-control  @error('email') is-invalid @enderror" name="email"
                                             value="{{ old('email') }}" required>
                                         @error('email')

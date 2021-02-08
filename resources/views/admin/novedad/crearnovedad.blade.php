@@ -61,7 +61,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input class="form-control datepicker" placeholder="Select date" name="fecha" type="text"  />
+                    <input class="form-control datepicker" placeholder="Fecha" name="fecha" type="text"  />
                   </div>
                   @if ($errors->has('fecha'))
                   <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
@@ -73,7 +73,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label class="form-control-label" for="example3cols3Input">Novedad</label>
-              <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="novedad" maxlength="30">
+              <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="Novedad" maxlength="30">
               @if ($errors->has('novedad'))
               <strong class="text-danger tamano">{{ $errors->first('novedad') }}</strong>
               @endif
@@ -81,9 +81,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-12">
             <label class="form-control-label" for="exampleFormControlTextarea1">Descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="descripcion" maxlength="250"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="Descripcion" maxlength="250"></textarea>
           </div>
         </div>
         @if ($errors->has('descripcion'))

@@ -52,7 +52,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Bienvenido!</h6>
+                            <h6 class="text-overflow m-0">¡Bienvenido!</h6>
                         </div>
                         <a href="{{ url('perfil')}}" class="dropdown-item">
                             <i class="fas fa-user"></i>

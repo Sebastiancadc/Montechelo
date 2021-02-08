@@ -62,7 +62,7 @@
                     <p class="mb-4">
                         {{ $noticia->body }}
                     </p>
-                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded"
+                    <img alt="Imagen" src="{{ $noticia->image }}" class="img-fluid rounded"
                         style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
                     <div class="row align-items-center my-3 pb-3 border-bottom">
                         <div class="col-sm-6">

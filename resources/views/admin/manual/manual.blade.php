@@ -48,12 +48,12 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                         <div class="media">
                                             <i class="flaticon-home-fill mr-2"></i>
                                             <div class="media-body">
-                                                <h6 class="mt-0">Volver</h6>
-                                                
+                                                <h6 class="mt-0">Inicio</h6>
+
                                             </div>
                                         </div>
                                     </a>
-                                    
+
                                     <a class="js-scroll-trigger list-group-item list-group-item-action mb-4" href="#list-item-1">
                                         <div class="media">
                                             <i class="flaticon-star-fill mr-2"></i>
@@ -63,7 +63,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             </div>
                                         </div>
                                     </a>
-                                    
+
                                     @if (Auth::user()->role == 'admin')
                                     <a class="js-scroll-trigger list-group-item list-group-item-action mb-4" href="#list-item-2">
                                         <div class="media">
@@ -92,7 +92,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             <div class="card-header" id="faq-section-one-ques-1">
                                                 <div class="mb-0 mt-0">
                                                     <div role="button" class="collapsed" data-toggle="collapse" data-target="#faq-section-one-ans-1" aria-expanded="false" aria-controls="faq-section-one-ans-1">
-                                                        Dashboard | Perfil de usuario
+                                                        Inicio | Perfil de usuario
                                                         <i class="flaticon-down-arrow float-right"></i>
                                                     </div>
                                                 </div>
@@ -100,7 +100,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             <div id="faq-section-one-ans-1" class="collapse" aria-labelledby="faq-section-one-ques-1" data-parent="#faq-section-1">
                                                 <div class="card-body">
                                                     <p class="mb-4">
-                                                        En el Dashboard encontrarás un acceso rápido a los módulos como lo son las noticias de intéres, de esta manera se obtien la información reciente de manera rápida.
+                                                        En el Inicio encontrarás un acceso rápido a los módulos como lo son las noticias de intéres, de esta manera se obtien la información reciente de manera rápida.
                                                     </p>
                                                     <p class="mb-4">
                                                         En las imagenes de abajo te explicaremos algunas funcionalidades que podrían no ser intuitivas.
@@ -111,10 +111,10 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                       <a href="#" data-toggle="modal" data-target="#verimagen1">
                                                           <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                        </a>  
+                                                        </a>
                                                       <a href="#" data-toggle="modal" data-target="#verimagen2">
                                                           <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Dark.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                        </a>  
+                                                        </a>
                                                     </div>
                                                     <p class="mb-4">
                                                         La aplicación cuenta con una barra de búsqueda que te permitira acceder a los módulos de la aplicación de
@@ -124,8 +124,8 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </p>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen3">
-                                                        <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Barra-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">                                                        
-                                                          </a>  
+                                                        <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Barra-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
+                                                          </a>
                                                     </div>
                                                     <p class="mb-4">
                                                         En el apartado superior derecho podrás encontrar el nombre con el que te registraste, dando click ahí podrás
@@ -136,16 +136,16 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </p>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen4">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Menu.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">                                           
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura1-Menu.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
                                                         </a>
 
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen5">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Cap-Perfil.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">                                               
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Cap-Perfil.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen6">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura-Biografia.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">                                                
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura-Biografia.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
                                                         </a>
                                                     </div>
 
@@ -176,10 +176,10 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </p>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen7">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Chat.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">                                                   
-                                                        </a>                                                       
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Chat.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
+                                                        </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen8">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Confi.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">                                                   
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Confi.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
                                                         </a>
                                                     </div>
                                                     <p class="mb-4">
@@ -210,18 +210,18 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen9">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Directorio.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen10">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura2-Perfil.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen11">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura2-Biografia.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                     <p class="mb-4">
@@ -230,12 +230,12 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen12">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura2-Nombre-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
-                                                        
+
                                                         <a href="#" data-toggle="modal" data-target="#verimagen13">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura2-Genero-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
 
@@ -259,7 +259,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </p>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen14">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">                                                  
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
                                                         </a>
 
                                                     </div>
@@ -271,21 +271,21 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen15">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3-Noticia.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen16">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3-Noticia-Usu3.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen17">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3-Post-Pic.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen18">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Captura3-Post-1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -316,11 +316,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen19">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Repo.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen20">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Repo2.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -347,19 +347,19 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen21">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Calendario.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen22">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Calendario1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
-                                                        
+
                                                         <a href="#" data-toggle="modal" data-target="#verimagen23">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Calendario3.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -382,12 +382,12 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen24">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Solicitudes.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
-                                                        
+
                                                         <a href="#" data-toggle="modal" data-target="#verimagen25">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Solicitudes1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -410,12 +410,12 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen26">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Sugerencia.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
-                                                        
+
                                                         <a href="#" data-toggle="modal" data-target="#verimagen27">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Sugerencia1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -438,7 +438,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen28">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Novedades.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -476,7 +476,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen29">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Dash.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -495,7 +495,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen30">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu1.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -505,11 +505,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen31">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu3.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen32">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu4.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                     <p class="mb-4">
@@ -519,18 +519,18 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen33">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu5.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen34">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu8.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen35">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Usu9.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
                                                 </div>
@@ -557,7 +557,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen36">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Nove1.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -567,7 +567,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen37">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Nove1.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -596,7 +596,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen38">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Soli.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -606,7 +606,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen39">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Soli1.png")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -630,7 +630,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen40">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Buz.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -654,11 +654,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen41">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Event.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen42">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Event1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
 
@@ -682,7 +682,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen43">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Not.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -693,7 +693,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             <div class="card-header" id="faq-section-two-ques-8">
                                                 <div class="mb-0 mt-0">
                                                     <div role="button" class="collapsed" data-toggle="collapse" data-target="#faq-section-two-ans-8" aria-expanded="false" aria-controls="faq-section-two-ans-8">
-                                                        Configuración General del Sitio
+                                                        Configuración general del sistema
                                                         <i class="flaticon-down-arrow float-right"></i>
                                                     </div>
                                                 </div>
@@ -709,18 +709,18 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen45">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf1.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen46">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf2.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen47">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf3.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
 
@@ -730,11 +730,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen48">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf4.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen49">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf5.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
 
@@ -744,7 +744,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen50">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Conf6.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 420px; height: 240px;">
-                                                    
+
                                                         </a>
 
                                                     </div>
@@ -769,11 +769,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen51">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Log.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen52">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Log1.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
-                                                    
+
                                                         </a>
                                                     </div>
 
@@ -796,7 +796,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </p>
                                                     <div class="faq-img text-center">
                                                         <a href="#" data-toggle="modal" data-target="#verimagen53">
-                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Anun.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">                                                    
+                                                            <img alt="image-sample" src="{{asset("plantilla/img/manual/Anun.jpg")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">
                                                         </a>
                                                         <a href="#" data-toggle="modal" data-target="#verimagen54">
                                                             <img alt="image-sample" src="{{asset("plantilla/img/manual/Anun1.png")}}" class="img-fluid mb-4 mt-4" style="width: 310px; height: 180px;">

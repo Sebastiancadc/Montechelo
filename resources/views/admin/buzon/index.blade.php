@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Buzón</h4>
+                                <h4 class="card-title">Gestión de buzón de sugerencias</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -50,7 +50,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3>¿Estás seguro?</h3>
+                                                                    <h3><b>¿Está seguro de eliminar esta sugerencia?</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

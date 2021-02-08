@@ -36,7 +36,7 @@
           <div class="app-modal-card" data-name="settings" data-modal='0'>
               <form id="updateAvatar" action="{{ route('avatar.update') }}" enctype="multipart/form-data" method="POST">
                   @csrf
-                  <div class="app-modal-header">Actualiza la configuración de tu perfil</div>
+                  <div class="app-modal-header">Configuración del perfil</div>
                   <div class="app-modal-body">
                       {{-- Udate profile avatar --}}
                       <div class="avatar av-l upload-avatar-preview"
@@ -54,7 +54,7 @@
                          data-mode="{{ Auth::user()->dark_mode > 0 ? 1 : 0 }}"></span></p>
                       {{-- change messenger color  --}}
                       <p class="divider"></p>
-                      <p class="app-modal-header">Cambiar el color de Montechelo Messenger</p>
+                      <p class="app-modal-header">Cambiar el color del chat</p>
                       <div class="update-messengerColor">
                             <a href="javascript:void(0)" class="messengerColor-1"></a>
                             <a href="javascript:void(0)" class="messengerColor-2"></a>

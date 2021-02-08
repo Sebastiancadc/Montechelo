@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    Crear Colaborador
+                    <b>Crear Colaborador</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -19,7 +19,7 @@
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Tu nombre..." name="name" >
+                                <input type="text" class="form-control"  name="name" >
                                 @if ($errors->has('name'))
                                 <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
                                 @endif
@@ -27,8 +27,8 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Correo</label>
-                                <input type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co" name="email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
+                                <label>Correo electronico</label>
+                                <input type="email" class="form-control"  name="email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
                                 @if ($errors->has('email'))
                                 <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
                                 @endif
@@ -46,7 +46,7 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Teléfono</label>
-                                <input type="text" class="form-control" placeholder="3123123212..." name="phone" maxlength="11">
+                                <input type="text" class="form-control"  name="phone" maxlength="11">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>
                                 @endif

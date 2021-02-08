@@ -32,13 +32,13 @@
                         @method('PUT')
                         @csrf
                         <div class="card-body">
-                            <h3 class="card-header">Editar capacitación</h3>
+                            <h3 class="card-header"><b>Editar capacitación</b></h3>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h4>Titulo</h4>
+                                                <h4><b>Titulo</b></h4>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
@@ -52,7 +52,7 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-6">
-                                                <h4>Fecha</h4>
+                                                <h4><b>Fecha</b></h4>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <br>
-                                                <h4>Descripción</h4>
+                                                <h4><b>Descripción</b></h4>
                                                 <div class="input-group">
                                                     <textarea class="form-control" name="descripcion" type="text" cols="100" rows="5" >{{$capacitacionActualizar->descripcion}}</textarea>
                                                 </div>
@@ -77,7 +77,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <br>
-                                                <h4>Categoria</h4>
+                                                <h4><b>Categoria</b></h4>
                                                 <select class="form-control" id="exampleFormControlSelect1" name="categoria" >
                                                     <option>{{$capacitacionActualizar->categoria}}</option>
                                                     <option>Diseño</option>
@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <br>
-                                                <h4>Link</h4>
+                                                <h4><b>Link</b></h4>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
