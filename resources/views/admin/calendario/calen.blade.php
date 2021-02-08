@@ -109,7 +109,13 @@
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 </body>
-<script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
+<script src="{{asset("plantilla/vendor/fullcalendar/dist/locale-all.js")}}"></script>
+
+<?php
+              
+$locales= app()->getLocale(); 
+
+?>
 <script>
     var Fullcalendar = (function() {
 
@@ -143,6 +149,7 @@ function init($this) {
     selectHelper: true,
     editable: false,
     events: events,
+    locale: '{{$locales= app()->getLocale()}}', 
 
     dayClick: function(date) {
       var isoDate = moment(date).toISOString();

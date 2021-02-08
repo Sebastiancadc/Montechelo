@@ -92,8 +92,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 
                                     </div>
                                     <div class="copyright text-center text-lg-left text-muted">
-                                        <a style="color: #5e72e4;" class="font-weight-bold ml-1">Creado por grupo 3 Sena
-                                            Montechelo.</a>
+                                        <a style="color: #002A60;" class="font-weight-bold ml-1">Develop by grupo 3 Sena Montechelo 👻 2020.</a>
                                     </div>
                                 </form>
                             </div>

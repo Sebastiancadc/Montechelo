@@ -6,7 +6,7 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">Mensajes</span> </a>
+                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">{{__('Mensajes')}}</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="{{ url('home')}}"><i class="fas fa-home"></i></a>
@@ -20,7 +20,7 @@
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($route == 'user') class="active-tab" @endif data-view="usuario">
-                    <span class="far fa-user"></span>Personas</a>
+                    <span class="far fa-user"></span>{{__('Personas')}}</a>
                 {{-- <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
                     <span class="fas fa-users"></span>Grupos</a> --}}
             </div>
@@ -32,7 +32,7 @@
            <div class="@if($route == 'user') show @endif messenger-tab app-scroll" data-view="usuario">
 
                {{-- Favorites --}}
-               <p class="messenger-title">Favoritos</p>
+               <p class="messenger-title">{{__('Favoritos')}}</p>
                 <div class="messenger-favorites app-scroll-thin"></div>
 
                {{-- Saved Messages --}}
@@ -52,9 +52,9 @@
              {{-- ---------------- [ Search Tab ] ---------------- --}}
            <div class="messenger-tab app-scroll" data-view="search">
                 {{-- items --}}
-                <p class="messenger-title">Buscar</p>
+                <p class="messenger-title">{{__('Buscar')}}</p>
                 <div class="search-records">
-                    <p class="message-hint"><span>Escribe para buscar..</span></p>
+                    <p class="message-hint"><span>{{__('Escribe para buscar..')}}</span></p>
                 </div>
              </div>
         </div>

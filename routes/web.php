@@ -60,6 +60,10 @@ Route::get('Cumpleaños', function () {
 
     return view('admin.cumpleaños.cumple');
 });
+
+
+Route::get('/set_language/{lang}' , 'IdiomaController@set_language')->name('set_language');
+
 // <<<<<<<<<<<<<<-------------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('usuario', 'HomeController');

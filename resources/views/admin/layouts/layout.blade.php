@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{app()->getLocale()}}">
+
 <?php
 $user = auth()->user();
 $rol = auth()->user()->role;
@@ -70,79 +71,79 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
           <ul class="navbar-nav">
             <li class="nav-item"></li>
             <a class="nav-link" href="{{ url('home')}}">
-              <i class="ni ni-shop text-primary"></i>
-              <span class="nav-link-text">Inicio</span>
+              <i class="ni ni-shop coloicon"></i>
+              <span class="nav-link-text">{{__('Inicio')}}</span>
             </a>
             </li>
             @if ($colaborador->chat_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{ url('Chatmontechelo')}}">
-                <i class="ni ni-chat-round text-orange"></i>
-                <span class="nav-link-text">Chat</span>
+                <i class="ni ni-chat-round coloicon"></i>
+                <span class="nav-link-text">{{__('Chat')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->directorio_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("directorio")}}">
-                <i class="ni ni-badge text-info"></i>
-                <span class="nav-link-text">Directorio</span>
+                <i class="ni ni-badge coloicon"></i>
+                <span class="nav-link-text">{{__('Directorio')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->talento_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url('talento')}}">
-                <i class="ni ni-archive-2 text-black"></i>
-                <span class="nav-link-text">Talento Humano</span>
+                <i class="ni ni-archive-2 coloicon"></i>
+                <span class="nav-link-text">{{__('Talento Humano')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->repositorio_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("repositoriocola")}}">
-                <i class="ni ni-folder-17 text-pink"></i>
-                <span class="nav-link-text">Repositorio</span>
+                <i class="ni ni-folder-17 coloicon"></i>
+                <span class="nav-link-text">{{__('Repositorio')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->calendario_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("calendar")}}">
-                <i class="ni ni-calendar-grid-58 text-red"></i>
-                <span class="nav-link-text">Calendario</span>
+                <i class="ni ni-calendar-grid-58 coloicon"></i>
+                <span class="nav-link-text">{{__('Calendario')}}</span>
               </a>
             </li>
             @endif
-            @if ($colaborador->solicitud_status == '1')
+            {{-- @if ($colaborador->solicitud_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url('solicitudesd')}}">
                 <i class="ni ni-notification-70 text-green"></i>
                 <span class="nav-link-text">Solicitudes y trámites</span>
               </a>
             </li>
-            @endif
+            @endif --}}
             @if ($colaborador->buzon_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("buzonusu")}}">
-                <i class="ni ni-send text-yellow"></i>
-                <span class="nav-link-text">Buzón de sugerencias</span>
+                <i class="ni ni-send coloicon"></i>
+                <span class="nav-link-text">{{__('Buzón de sugerencias')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->plan_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("planestrategico")}}">
-                <i class="ni ni-building text-orange"></i>
-                <span class="nav-link-text">Plan estratégico</span>
+                <i class="ni ni-building coloicon"></i>
+                <span class="nav-link-text">{{__('Plan estratégico')}}</span>
               </a>
             </li>
             @endif
             @if ($colaborador->novedad_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url('crearnovedad')}}">
-                <i class="ni ni-building text-purple"></i>
-                <span class="nav-link-text">Novedad</span>
+                <i class="ni ni-building coloicon"></i>
+                <span class="nav-link-text">{{__('Novedad')}}</span>
               </a>
             </li>
             @endif
@@ -166,16 +167,16 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
                 <select class="js-example-basic-single" name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                  <option value="">Buscar...</option>
-                  <option value="{{url('Chatmontechelo')}}">Chat</option>
-                  <option value="{{url("directorio")}}">Directorio</option>
-                  <option value="{{url('talento')}}">Talento humano</option>
-                  <option value="{{url("repositoriocola")}}">Repositorio</option>
-                  <option value="{{url("calendar")}}">Calendario</option>
-                  <option value="{{url('solicitud')}}">Solicitud</option>
-                  <option value="{{url("buzonusu")}}">Buzón de sugerencias</option>
-                  <option value="{{url("planestrategico")}}">Plan estratégico</option>
-                  <option value="{{url('crearnovedad')}}">Novedad</option>
+                  <option value="">{{__('Buscar...')}}</option>
+                  <option value="{{url('Chatmontechelo')}}">{{__('Chat')}}</option>
+                  <option value="{{url("directorio")}}">{{__('Directorio')}}</option>
+                  <option value="{{url('talento')}}">{{__('Talento Humano')}}</option>
+                  <option value="{{url("repositoriocola")}}">{{__('Repositorio')}}</option>
+                  <option value="{{url("calendar")}}">{{__('Calendario')}}</option>
+                  {{-- <option value="{{url('solicitud')}}">Solicitud</option> --}}
+                  <option value="{{url("buzonusu")}}">{{__('Buzón de sugerencias')}}</option>
+                  <option value="{{url("planestrategico")}}">{{__('Plan estratégico')}}</option>
+                  <option value="{{url('crearnovedad')}}">{{__('Novedad')}}</option>
                 </select>
               </div>
             </div>
@@ -200,6 +201,16 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
+                    <ul class="navbar-nav ml auto">
+                      <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" id="drop" data-toggle="dropdown" > {{__('Seleccione un idioma')}}</a>
+                    <div class="dropdown-menu" aria-labelledby="drop">
+                    <a href="{{route('set_language','es')}}" class="dropdown-item">{{__('Español')}}</a>
+                    <a href="{{route('set_language','en')}}" class="dropdown-item">{{__('Inglés')}}</a>
+
+                    </div>
+                      </li>
+                    </ul>
             <button class="switch" id="switch">
               <span><i class="fas fa-sun" style="15px"></i></span>
               <span><i class="fas fa-moon" style="15px"></i></span>
@@ -218,7 +229,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{count($conntss)}}</strong> Mensajes.
+                  <h6 class="text-sm text-muted m-0">{{__('Tienes')}} <strong class="text-primary">{{count($conntss)}}</strong> {{__('Mensajes.')}}
                   </h6>
                 </div>
                 <!-- List group -->
@@ -238,7 +249,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                             <small>--</small>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">No tienes mensajes</p>
+                        <p class="text-sm mb-0">{{__('No tienes mensajes.')}}</p>
                       </div>
                     </div>
                   </a>
@@ -261,14 +272,14 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                             <p></p>
                           </div>
                         </div>
-                        <p class="text-sm mb-0">Tienes un mensaje nuevo</p>
+                        <p class="text-sm mb-0">{{__('Tienes un mensaje nuevo.')}}</p>
                       </div>
                     </div>
                   </a>
                   @endif
                 </div>
                 <!-- View all -->
-                <a href="{{url('Chatmontechelo')}}" class="dropdown-item text-center text-primary font-weight-bold py-3">Ver mis mensajes</a>
+                <a href="{{url('Chatmontechelo')}}" class="dropdown-item text-center text-primary font-weight-bold py-3">{{__('Ver mis mensajes')}}</a>
               </div>
             </li>
             {{-- Notificaciones campana --}}
@@ -285,10 +296,10 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">Tienes
+                  <h6 class="text-sm text-muted m-0">{{__('Tienes')}}
                     @if (count(Auth::user()->unreadNotifications))
                     <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
-                    @endif notificaciones.
+                    @endif {{__('notificaciones.')}}
                   </h6>
                 </div>
                 <!-- List group -->
@@ -320,14 +331,14 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   <div class="col ml--2">
                     <div class="d-flex justify-content-between align-items-center">
                     </div>
-                    <p class="text-sm mb-0">Sin notificaciones</p>
+                    <p class="text-sm mb-0">{{__('Sin notificaciones.')}}</p>
                   </div>
                 </div>
               </a>
                 @endforelse
                 <!-- View all -->
-                <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
-                <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">Ver todas</a>
+                <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">{{__('Marcar como leidas')}}</a>
+                <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">{{__('Ver todas')}}</a>
               </div>
             </li>
           </ul>
@@ -345,27 +356,27 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Bienvenido!</h6>
+                  <h6 class="text-overflow m-0">{{__('Bienvenido!')}}</h6>
                 </div>
                 <a href="{{ url('perfil')}}" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
-                  <span>Mi perfil</span>
+                  <span>{{__('Mi perfil')}}</span>
                 </a>
                 @if ($user->role=='admin')
                 <a href="{{ url('admin/HomeAdmin')}}" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
-                  <span>Administrador</span>
+                  <span>{{__('Administrador')}}</span>
                 </a>
                 @endif
                 <a href="{{ url('ayuda')}}" class="dropdown-item">
                   <i class="fa fa-bolt"></i>
-                  <span>Ayuda</span>
+                  <span>{{__('Ayuda')}}</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
-                  <span>Cerrar sesión </span>
+                  <span>{{__('Cerrar sesión')}} </span>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
@@ -416,5 +427,9 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
         $('.js-example-basic-single').select2();
       });
     </script>
-
+<style>
+  .coloicon{
+    color: #ba5d19 !important;
+  }
+</style>
 </body>

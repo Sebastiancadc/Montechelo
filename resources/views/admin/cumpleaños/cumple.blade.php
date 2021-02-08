@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{app()->getLocale() }}">
 	<?php
 	$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
 	?>
