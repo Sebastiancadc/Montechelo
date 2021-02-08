@@ -13,7 +13,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="lineart"></div>
                         <br><br><br><br>
                         <p>
-                            <h1 style="font-size: 2.625rem;">Plan Estratégico </h1>
+                            <h1 style="font-size: 2.625rem;">{{__('Plan Estratégico')}}</h1>
                         </p>
                     </div>
                 </span>
@@ -34,7 +34,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Misión</h1>
+                        <h1>{{__('Misión')}}</h1>
                         <div class="lineart2"></div>
                         <p>{{$page->textmision}}</p>
                     </div>
@@ -62,7 +62,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Visión</h1>
+                        <h1>{{__('Visión')}}</h1>
                         <div class="lineart2"></div>
                         <p>{{$page->textvision}}</p>
                     </div>
@@ -79,7 +79,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Valores corporativos</h1>
+                        <h1>{{__('Valores corporativos')}}</h1>
                         <div class="lineart3"></div>
                         <p>{{$page->textvalores}}</p>
                     </div>
@@ -107,7 +107,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Política de calidad</h1>
+                        <h1>{{__('Política de calidad')}}</h1>
                         <div class="lineart3"></div>
                         <p>{{$page->textpolitica}}</p>
                     </div>
@@ -125,7 +125,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Plan estratégico</h1>
+                        <h1>{{__('Plan Estratégico')}}</h1>
                         <div class="lineart4"></div>
                         <p>{{$page->textplanestr}}</p>
                     </div>
@@ -152,7 +152,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Organigrama</h1>
+                        <h1>{{__('Organigrama')}}</h1>
                         <div class="lineart5"></div>
                         <p>{{$page->textorganigrama}}</p>
                     </div>
@@ -167,7 +167,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <span class="trasparentee">
                     <div>
                         <br><br>
-                        <h1>Unidades estratégicas de negocio</h1>
+                        <h1>{{__('Unidades estratégicas de negocio')}}</h1>
                         <div class="lineart6"></div>
                         <p>{{$page->textuniestra}}</p>
                     </div>

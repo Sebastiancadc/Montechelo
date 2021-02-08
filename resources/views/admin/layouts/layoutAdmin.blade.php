@@ -46,7 +46,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 				<a href="{{url('HomeAdmin')}}" class="logo">
 					<h1 style="color:white;    color: white;
 					font-size: 20px;
-					margin-top: 16px;">ADMINISTRADOR</h1>
+					margin-top: 16px;">{{__('ADMINISTRADOR')}}</h1>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -88,10 +88,10 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{ url('perfil')}}">Mi Perfil</a>
+									<a class="dropdown-item" href="{{ url('perfil')}}">{{__('Mi Perfil')}}</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">Cerrar sesion</a>
+                                    document.getElementById('logout-form').submit();">{{__('Cerrar sesión')}}</a>
 									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 										@csrf
 									</form>
@@ -114,31 +114,31 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{ url('admin/HomeAdmin')}}">
 								<i class="fas fa-home"></i>
-								<p>Inicio</p>
+								<p>{{__('Inicio')}}</p>
 							</a>
 						</li>
 						<li class="nav-section">
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-							<h4 class="text-section">Componentes</h4>
+							<h4 class="text-section">{{__('Componentes')}}</h4>
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-users"></i>
-								<p>Usuarios</p>
+								<p>{{__('Usuarios')}}</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="{{url('admin/usuario')}}">
-											<span class="sub-item">Lista</span>
+											<span class="sub-item">{{__('Lista')}}</span>
 										</a>
 									</li>
 									<li>
 										<a href="{{url('admin/permisoslista')}}">
-											<span class="sub-item">Permisos</span>
+											<span class="sub-item">{{__('Permisos')}}</span>
 										</a>
 									</li>
 
@@ -148,45 +148,45 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{url('admin/novedad')}}">
 								<i class="fas fa-hotel"></i>
-								<p>Novedades</p>
+								<p>{{__('Novedades')}}</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/solicitud')}}">
 								<i class="fas fas fa-hand-holding"></i>
-								<p>Solicitudes</p>
+								<p>{{__('Solicitudes')}}</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/buzonAdmin')}}">
 								<i class="fas fa-paper-plane"></i>
-								<p>Buzón</p>
+								<p>{{__('Buzón')}}</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/eventos')}}">
 								<i class="fas fa-calendar-alt"></i>
-								<p>Eventos</p>
+								<p>{{__('Eventos')}}</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>
-								<p>Noticias
+								<p>{{__('Noticias')}}
 								</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/capacitaciones')}}">
 								<i class="fas fa-chalkboard-teacher"></i>
-								<p>Capacitaciones
+								<p>{{__('Capacitaciones')}}
 								</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/pasuasAdmin')}}">
 								<i class="fas fa-child"></i>
-								<p>Pausas activas
+								<p>{{__('Pausas activas')}}
 								</p>
 							</a>
 						</li>
@@ -194,7 +194,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-							<h4 class="text-section">Sistema de gestión de contenidos</h4>
+							<h4 class="text-section">{{__('Sistema de gestión de contenidos')}}</h4>
 						</li>
 						<?php
 						$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
@@ -202,20 +202,20 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 						<li class="nav-item ">
 							<a href="{{route('editarpage',$page->id)}}">
 								<i class="fas fa-cogs"></i>
-								<p>General
+								<p>{{__('General')}}
 								</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/logsAdmin')}}">
 								<i class="fas fa-cubes"></i>
-								<p>Logs del sistema</p>
+								<p>{{__('Logs del sistema')}}</p>
 							</a>
 						</li>
 						<li class="nav-item ">
 							<a href="{{url('admin/AnunciosAdmin')}}">
 								<i class="fas fa-bullhorn"></i>
-								<p>Anuncios</p>
+								<p>{{__('Anuncios')}}</p>
 							</a>
 						</li>
 					</ul>

@@ -4,7 +4,7 @@
 	<div class="content">
 		<div class="page-inner">
 			<div class="page-header">
-				<h4 class="page-title">Administrador</h4>
+				<h4 class="page-title">{{__('Administrador')}}</h4>
 				<ul class="breadcrumbs">
 					<li class="nav-home">
 						<a href="#">
@@ -15,13 +15,13 @@
 						<i class="flaticon-right-arrow"></i>
 					</li>
 					<li class="nav-item">
-						<a href="#">Eventos</a>
+						<a href="#">{{__('Eventos')}}</a>
 					</li>
 					<li class="separator">
 						<i class="flaticon-right-arrow"></i>
 					</li>
 					<li class="nav-item">
-						<a href="#">Editar</a>
+						<a href="#">{{__('Editar')}}</a>
 					</li>
 				</ul>
 			</div>
@@ -31,20 +31,20 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header"><b>Editar evento</b></h3>
+							<h3 class="card-header"><b>{{__('Editar evento')}}</b></h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12">
-												<h4><b>Nombre</b></h4>
+												<h4><b>{{__('Nombre')}}</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
 															<i class="fas fa-user"></i>
 														</span>
 													</div>
-													<input class="form-control" placeholder="Nombre" value='{{$eventos->name}}' name="name" type="text">
+													<input class="form-control" placeholder="{{__('Nombre')}}" value='{{$eventos->name}}' name="name" type="text">
 												</div>
 												@if ($errors->has('name'))
                                 				<strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
@@ -59,7 +59,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6">
-												<h4><b>Fecha inicial</b></h4>
+												<h4><b>{{__('Fecha inicial')}}</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -73,7 +73,7 @@
                                 				@endif
 											</div>
 											<div class="col-md-6">
-												<h4><b>Fecha final</b></h4>
+												<h4><b>{{__('Fecha final')}}</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -95,7 +95,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12">
-												<h4><b>Área</b></h4>
+												<h4><b>{{__('Área')}}</b></h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
@@ -104,9 +104,9 @@
 													</div>
 													<select id="basic" name="className" class="form-control">
 														<option>{{$eventos->className}}</option>
-														<option value="Importante">Importante</option>
-														<option value="Especial">Especial</option>
-														<option value="Advertencia">Advertencia</option>
+														<option value="Importante">{{__('Importante')}}</option>
+														<option value="Especial">{{__('Especial')}}</option>
+														<option value="Advertencia">{{__('Advertencia')}}</option>
 													</select>
 												</div>
 												@if ($errors->has('className'))
@@ -118,7 +118,7 @@
 								</div>
 							</div>
 							<div class="card-body">
-								<h4><b>Descripción</b></h4>
+								<h4><b>{{__('Descripción')}}</b></h4>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text">
@@ -132,8 +132,8 @@
 								@endif
 							</div>
 							<div class="col-sm-10 col-md-9" style="margin-left: 72%;">
-								<button type="submit" class="btn btn-primary  mt-4">Editar</button>
-								<a href="{{ url('admin/eventos') }}" class="btn btn-danger mt-4">Cancelar</a>
+								<button type="submit" class="btn btn-primary  mt-4">{{__('Editar')}}</button>
+								<a href="{{ url('admin/eventos') }}" class="btn btn-danger mt-4">{{__('Cancelar')}}</a>
 							</div>
 						</div>
 				</div>

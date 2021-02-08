@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de buzón de sugerencias</h4>
+                                <h4 class="card-title">{{__('Gestión de buzón de sugerencias')}}</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -27,10 +27,10 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Tipo de sugerencia</th>
-                                            <th>Área</th>
-                                            <th>Descripción</th>
-                                            <th style="width: 10%">Acciones</th>
+                                            <th>{{__('Tipo de sugerencia')}}</th>
+                                            <th>{{__('Área')}}</th>
+                                            <th>{{__('Descripción')}}</th>
+                                            <th style="width: 10%">{{__('Acciones')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,7 +50,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar esta sugerencia?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar esta sugerencia?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -58,11 +58,11 @@
                                                                 <form role="form" method="POST" action="{{route('eliminarsugerencia',$item->Id_sugerencia)}}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                        <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

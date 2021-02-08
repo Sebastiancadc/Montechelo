@@ -91,13 +91,13 @@
             padding: 20px 15px;
             border-radius: 5px;
             text-align: center;" data-name="delete" data-modal='0'>
-                <div class="app-modal-header">¿Está seguro de que desea eliminar esto?</div>
-                <div class="app-modal-body">No se puede deshacer esta acción</div>
+                <div class="app-modal-header">{{__('¿Está seguro de que desea eliminar esto?')}}</div>
+                <div class="app-modal-body">{{__('No se puede deshacer esta acción')}}</div>
                 <form role="form" method="POST" action="{{route('eliminards',$id)}}">
                     @csrf @method('DELETE') 
                     <div class="app-modal-footer">
-                        <a href="#" data-dismiss="modal" class="app-btn cancel">Cancelar</a>
-                        <button type="submit" class="app-btn a-btn-danger delete">Eliminar</button>
+                        <a href="#" data-dismiss="modal" class="app-btn cancel">{{__('Cancelar')}}</a>
+                        <button type="submit" class="app-btn a-btn-danger delete">{{__('Eliminar')}}</button>
                     </div>  
                 </form>
               </div>

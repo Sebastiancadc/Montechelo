@@ -7,7 +7,7 @@ $user = auth()->user();
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Crear evento</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{__('Crear evento')}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -21,7 +21,7 @@ $user = auth()->user();
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-world-2"></i></span>
               </div>
-              <input class="form-control" placeholder="Titulo" name="name" type="text" maxlength="21" >
+              <input class="form-control" placeholder="{{__('Titulo')}}" name="name" type="text" maxlength="21" >
             </div>
             @if ($errors->has('name'))
             <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
@@ -30,7 +30,7 @@ $user = auth()->user();
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <h3>Fecha inicial</h3>
+                <h3>{{__('Fecha inicial')}}</h3>
                 <div class='input-group date' id='datetime1'>
                   <input type='text' class="form-control" name="start_time">
                   <span class="input-group-addon input-group-append">
@@ -44,7 +44,7 @@ $user = auth()->user();
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <h3>Fecha final</h3>
+                <h3>{{__('Fecha final')}}</h3>
                 <div class='input-group date' id='datetimepicker12'>
                   <input type='text' class="form-control" name="end_time">
                   <span class="input-group-addon input-group-append">
@@ -61,9 +61,9 @@ $user = auth()->user();
             <div class="input-group input-group-alternative">
               <select class="form-control" id="exampleFormControlSelect1" name="className" id="class" >
                 <option> </option>
-                <option class="myRed" value="Importante">Importante</option>
-                <option class="myblue" value="Especial">Especial</option>
-                <option class="mygreen" value="Advertencia">Advertencia</option>
+                <option class="myRed" value="Importante">{{__('Importante')}}</option>
+                <option class="myblue" value="Especial">{{__('Especial')}}</option>
+                <option class="mygreen" value="Advertencia">{{__('Advertencia')}}</option>
               </select>
             </div>
             @if ($errors->has('className'))
@@ -72,7 +72,7 @@ $user = auth()->user();
           </div>
           <div class="form-group mb-3">
             <div class="input-group input-group-alternative">
-              <textarea class="form-control" placeholder="Descripcion del evento" name="description" type="text" cols="10" rows="5" maxlength="201" ></textarea>
+              <textarea class="form-control" placeholder="{{__('Descripción del evento')}}" name="description" type="text" cols="10" rows="5" maxlength="201" ></textarea>
             </div>
             @if ($errors->has('description'))
             <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
@@ -80,8 +80,8 @@ $user = auth()->user();
           </div>
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary my-4">Crear</button>
-        <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary my-4">{{__('Crear')}}</button>
+        <button class="btn btn-danger ml-auto" data-dismiss="modal">{{__('Cancelar')}}</button>
       </div>
       </form>
     </div>

@@ -16,7 +16,7 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Buscar..." />
+            <input type="text" class="messenger-search" placeholder="{{__("Buscar...")}}" />
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($route == 'user') class="active-tab" @endif data-view="usuario">
@@ -74,7 +74,7 @@
                     <div class=" av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">           
                     </div>
                 
-                    <a href="#" class="user-name"> Montechelo chat</a>
+                    <a href="#" class="user-name">Montechelo chat</a>
                     <a class="s" style="text-decoration: none;margin-left: 4px;
                     color: #fff;" >  </a>
                 </div>
@@ -96,15 +96,15 @@
         </div>
         {{-- Internet connection --}}
         <div class="internet-connection">
-            <span class="ic-connected">Conectado</span>
-            <span class="ic-connecting">Conectando...</span>
-            <span class="ic-noInternet">Sin accesso a internet </span>
+            <span class="ic-connected">{{__('Conectado')}}</span>
+            <span class="ic-connecting">{{__('Conectando...')}}</span>
+            <span class="ic-noInternet">{{__('Sin acceso a internet')}}</span>
         </div>
         {{-- Messaging area --}}
         <div class="m-body app-scroll">
             <div class="messages">
                
-                <p class="message-hint" style="margin-top: calc(30% - 126.2px);"><span>Seleccione un chat para comenzar a enviar mensajes   </span></p>
+                <p class="message-hint" style="margin-top: calc(30% - 126.2px);"><span>{{__('Seleccione un chat para comenzar a enviar mensajes')}}</span></p>
             </div>
             {{-- Typing indicator --}}
             <div class="typing-indicator">

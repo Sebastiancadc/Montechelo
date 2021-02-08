@@ -5,12 +5,12 @@
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-          <h6 class="h2 text-white d-inline-block mb-0">Editar eventos</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">{{__('Editar eventos')}}</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Calendario</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Editar</li>
+              <li class="breadcrumb-item"><a href="#">{{__('Calendario')}}</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{__('Editar')}}</li>
             </ol>
           </nav>
         </div>
@@ -26,7 +26,7 @@
           <!-- Card header -->
           <link rel="stylesheet" href="{{asset("plantilla/css/date.css")}}" type="text/css">
           <div class="card-header">
-            <h3 class="mb-0">Editar evento</h3>
+            <h3 class="mb-0">{{__('Editar evento')}}</h3>
           </div>
           @if (session('editarevento'))
           <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -47,7 +47,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
-                  <input class="form-control" placeholder="titulo" value='{{$eventos->name}}' name="name" type="text">
+                  <input class="form-control" placeholder="{{__('titulo')}}" value='{{$eventos->name}}' name="name" type="text">
                   <input value='{{$eventos->Usuario_id_Usuario}}' name="Usuario_id_Usuario" type="text" hidden>
                 </div>
                 @if ($errors->has('name'))
@@ -57,7 +57,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <h3>Fecha inicial</h3>
+                    <h3>{{__('Fecha inicial')}}</h3>
                     <div class='input-group' id='datetimepicker1'>
                       <input type='text' class="form-control" name="start_time" value='{{$eventos->start_time}}'>
                       <span class="input-group-addon input-group-append">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <h3>Fecha final</h3>
+                    <h3>{{__('Fecha final')}}</h3>
                     <div class='input-group date' id='datetimepicker12'>
                       <input type='text' class="form-control" name="end_time" value='{{$eventos->end_time}}'>
                       <span class="input-group-addon input-group-append">
@@ -88,9 +88,9 @@
                 <div class="form-group">
                   <select class="form-control" id="exampleFormControlSelect1" name="className" id="class">
                     <option>{{$eventos->className}}</option>
-                    <option class="importantes" value="Importante">Importante</option>
-                    <option class="especials" value="Especial">Especial</option>
-                    <option class="advertencias" value="Advertencia">Advertencia</option>
+                    <option class="importantes" value="Importante">{{__('Importante')}}</option>
+                    <option class="especials" value="Especial">{{__('Especial')}}</option>
+                    <option class="advertencias" value="Advertencia">{{__('Advertencia')}}</option>
                   </select>
                 </div>
                 @if ($errors->has('className'))
@@ -105,8 +105,8 @@
                 <strong class="text-danger tamano">{{ $errors->first('description') }}</strong>
                 @endif
               </div>
-              <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
-              <a href="{{url("calendar")}}" class="btn btn-secondary my-4">Cancelar</a>
+              <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">{{__('Editar')}}</button>
+              <a href="{{url("calendar")}}" class="btn btn-secondary my-4">{{__('Cancelar')}}</a>
             </form>
           </div>
         </div>

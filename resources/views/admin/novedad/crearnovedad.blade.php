@@ -6,11 +6,11 @@
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-            <h6 class="h2 text-white d-inline-block mb-0">Novedades</h6>
+            <h6 class="h2 text-white d-inline-block mb-0">{{__('Novedades')}}</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item active" aria-current="page">Novedades</li>
+                <li class="breadcrumb-item active" aria-current="page">{{__('Novedades')}}</li>
               </ol>
             </nav>
         </div>
@@ -22,7 +22,7 @@
   <div class="card mb-4">
     <!-- Card header -->
     <div class="card-header">
-      <h3 class="mb-0">Novedad</h3>
+      <h3 class="mb-0">{{__('Novedad')}}</h3>
     </div>
     @if (session('crearnovedad'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -40,13 +40,13 @@
         <!-- Form groups used in grid -->
         <div class="row">
           <div class="col-md-4">
-            <label class="form-control-label" for="exampleFormControlSelect1">Área </label>
+            <label class="form-control-label" for="exampleFormControlSelect1">{{__('Área')}}</label>
             <select class="form-control" id="exampleFormControlSelect1" name="area" >
               <option></option>
-              <option>Desarrollo</option>
-              <option>Talento humano</option>
-              <option>Recursos humanos</option>
-              <option>Producción</option>
+              <option>{{__('Desarrollo')}}</option>
+              <option>{{__('Talento humano')}}</option>
+              <option>{{__('Recursos humanos')}}</option>
+              <option>{{__('Producción')}}</option>
             </select>
             @if ($errors->has('area'))
             <strong class="text-danger tamano">{{ $errors->first('area') }}</strong>
@@ -56,12 +56,12 @@
             <div class="tab-content">
               <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
                 <div class="form-group">
-                  <label class="form-control-label" for="example3cols2Input">Fecha</label>
+                  <label class="form-control-label" for="example3cols2Input">{{__('Fecha')}}</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                     </div>
-                    <input class="form-control datepicker" placeholder="Fecha" name="fecha" type="text"  />
+                    <input class="form-control datepicker" placeholder="{{__('Fecha')}}" name="fecha" type="text"  />
                   </div>
                   @if ($errors->has('fecha'))
                   <strong class="text-danger tamano">{{ $errors->first('fecha') }}</strong>
@@ -72,8 +72,8 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label class="form-control-label" for="example3cols3Input">Novedad</label>
-              <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="Novedad" maxlength="30">
+              <label class="form-control-label" for="example3cols3Input">{{__('Novedad')}}</label>
+              <input type="text" class="form-control" id="example3cols3Input" name="novedad" placeholder="{{__('Novedad')}}" maxlength="30">
               @if ($errors->has('novedad'))
               <strong class="text-danger tamano">{{ $errors->first('novedad') }}</strong>
               @endif
@@ -82,8 +82,8 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <label class="form-control-label" for="exampleFormControlTextarea1">Descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="Descripcion" maxlength="250"></textarea>
+            <label class="form-control-label" for="exampleFormControlTextarea1">{{__('Descripción')}}</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" rows="3" placeholder="{{__('Descripción')}}" maxlength="250"></textarea>
           </div>
         </div>
         @if ($errors->has('descripcion'))
@@ -91,7 +91,7 @@
         @endif
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary my-4">Crear</button>
+        <button type="submit" class="btn btn-primary my-4">{{__('Crear')}}</button>
       </div>
     </form>
   </div>

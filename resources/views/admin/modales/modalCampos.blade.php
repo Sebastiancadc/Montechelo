@@ -8,10 +8,10 @@
               <span aria-hidden="true"></span>
             </div>
             <div class="modal-body">
-              <p>Por favor termine el registro para poder ingresar</p>
+              <p>{{__('Por favor termine el registro para poder ingresar')}}</p>
             </div>
             <div class="modal-footer">
-              <a href="{{ url('perfil')}}" class="btn btn-white">¡Vamos!</a>
+              <a href="{{ url('perfil')}}" class="btn btn-white">{{__('¡Vamos!')}}</a>
             </div>
           </div>
         </div>

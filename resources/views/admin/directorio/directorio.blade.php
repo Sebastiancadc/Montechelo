@@ -6,11 +6,11 @@
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-          <h6 class="h2 text-white d-inline-block mb-0">Directorio</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">{{__('Directorio')}}</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item active" aria-current="page">Directorio</li>
+              <li class="breadcrumb-item active" aria-current="page">{{__('Directorio')}}</li>
             </ol>
           </nav>
         </div>
@@ -19,12 +19,12 @@
         <div class="input-group gpr">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-primary hjk" type="submit">Todos</button>
+              <button class="btn btn-primary hjk" type="submit">{{__('Todos')}}</button>
               <span>.</span>
-              <button class="btn btn-primary hjk" type="submit">Buscar</button>
+              <button class="btn btn-primary hjk" type="submit">{{__('Buscar')}}</button>
               <span>.</span>
             </div>
-            <input class="form-control" type="search" placeholder="Buscar por" name="search" id="search" style="height: 40px;">
+            <input class="form-control" type="search" placeholder="{{__('Buscar por')}}" name="search" id="search" style="height: 40px;">
           </div>
         </div>
       </form>
@@ -59,17 +59,17 @@
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
             {{-- <a href="#" class="btn btn-sm btn-info mr-4">Añadir amigo</a> --}}
-            <a href="{{route('verperfil',$usuario->id)}}" class="btn btn-sm btn-default float-right">Ver perfil</a>
+            <a href="{{route('verperfil',$usuario->id)}}" class="btn btn-sm btn-default float-right">{{__('Ver perfil')}}</a>
           </div>
         </div>
         <div class="card-body pt-0">
           <div class="text-center">
             @if(Illuminate\Support\Facades\Cache::has('user-is-online-'.$usuario->id))
             <span class="text-success">●</span>
-            <small>Conectado</small>
+            <small>{{__('Conectado')}}</small>
             @else
             <span class="text-danger">●</span>
-            <small>Desconectado</small>
+            <small>{{__('Desconectado')}}</small>
             @endif
             <h5 class="h3">
               {{$usuario->name}} {{$usuario->lastname}}<span class="font-weight-light">,

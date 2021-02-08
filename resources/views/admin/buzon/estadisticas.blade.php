@@ -10,7 +10,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Sugerencias registradas</p>
+                            <p class="card-category">{{__('Sugerencias registradas')}}</p>
                             <h4 class="card-title">{{$buzonsu}}</h4>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Quejas</p>
+                            <p class="card-category">{{__('Quejas')}}</p>
                             <h4 class="card-title">{{$quejas}}</h4>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Reclamos</p>
+                            <p class="card-category">{{__('Reclamos')}}</p>
                             <h4 class="card-title">{{$reclamos}}</h4>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Observación</p>
+                            <p class="card-category">{{__('Observación')}}</p>
                             <h4 class="card-title">{{$observacion}}</h4>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Novedad</p>
+                            <p class="card-category">{{__('Novedad')}}</p>
                             <h4 class="card-title">{{$novedad}}</h4>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Felicitaciones</p>
+                            <p class="card-category">{{__('Felicitaciones')}}</p>
                             <h4 class="card-title">{{$felicitaciones}}</h4>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Diseño</p>
+                            <p class="card-category">{{__('Diseño')}}</p>
                             <h4 class="card-title">{{$diseño}}</h4>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Software</p>
+                            <p class="card-category">{{__('Software')}}</p>
                             <h4 class="card-title">{{$software}}</h4>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Recursos Humanos</p>
+                            <p class="card-category">{{__('Recursos humanos')}}</p>
                             <h4 class="card-title">{{$recursoshumanos}}</h4>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Administración </p>
+                            <p class="card-category">{{__('Administración')}}</p>
                             <h4 class="card-title">{{$administracion}}</h4>
                         </div>
                     </div>

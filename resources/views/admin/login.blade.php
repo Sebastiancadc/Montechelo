@@ -37,7 +37,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="row justify-content-center">
                             <div id="titulo1" class="col-xl-5 col-lg-6 col-md-8 px-5"
                                 style="margin-top:-9em; margin-left: auto; margin-right:auto">
-                                <h1 class="text-white">¡Bienvenido!</h1>
+                                <h1 class="text-white">{{__('¡Bienvenido!')}}</h1>
 
                             </div>
                         </div>
@@ -56,7 +56,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                             </div>
                             <div class="card-body px-lg-5 py-lg-5">
                                 <div class="text-center text-muted mb-4">
-                                    <h3>Ingresa tus datos</h3>
+                                    <h3>{{__('Ingresa tus datos')}}</h3>
                                 </div>
                                 <form role="form" method="POST" action="{{ route('login') }}">
                                     @csrf
@@ -66,7 +66,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
                                             <input id="email" name="email" class="form-control"
-                                                value="{{ old('email') }}" placeholder="Correo electronico" type="email" autofocus>
+                                                value="{{ old('email') }}" placeholder="{{__('Correo eléctronico')}}" type="email" autofocus>
                                         </div>
                                         @if ($errors->has('email'))
                                         <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
@@ -80,7 +80,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             </div>
                                             <input id="password" name="password"
                                                 class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Contraseña" type="password">
+                                                placeholder="{{__('Contraseña')}}" type="password">
                                         </div>
                                         @if ($errors->has('password'))
                                         <strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
@@ -88,11 +88,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                     </div>
                                     <div class="text-center">
 
-                                        <button type="submit" class="btn btn-primary my-4">Ingresar</button>
+                                        <button type="submit" class="btn btn-primary my-4">{{__('Ingresar')}}</button>
 
                                     </div>
                                     <div class="copyright text-center text-lg-left text-muted">
-                                        <a style="color: #002A60;" class="font-weight-bold ml-1">Develop by grupo 3 Sena Montechelo 👻 2020.</a>
+                                        <a style="color: #002A60;" class="font-weight-bold ml-1">{{__('Desarrollado por el grupo 3 Sena Montechelo')}} 👻 2020.</a>
                                     </div>
                                 </form>
                             </div>
@@ -101,13 +101,13 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="row mt-2">
                             <div class="col-6">
 
-                                <a href="{{ route('password.request')}}" class="text-light"><small>¿Olvidaste tu
-                                        contraseña?</small></a>
+                                <a href="{{ route('password.request')}}" class="text-light"><small>{{__('¿Olvidaste tu
+                                        contraseña?')}}</small></a>
                             </div>
 
                             <div class="col-6 text-right">
-                                <a href="{{ route('register') }}" class="text-light"><small>Crear nueva
-                                        cuenta</small></a>
+                                <a href="{{ route('register') }}" class="text-light"><small>{{__('Crear nueva
+                                        cuenta')}}</small></a>
                             </div>
                         </div>
                     </div>

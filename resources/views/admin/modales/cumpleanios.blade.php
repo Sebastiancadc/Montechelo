@@ -10,7 +10,7 @@
                 <br><br><br><br><br><br><br>
                 <br><br><br><br><br><br><br>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">¡Gracias!</button>
+                    <button type="button" class="btn btn-white" data-dismiss="modal">{{__('¡Gracias!')}}</button>
                 </div>
             </div>
         </div>

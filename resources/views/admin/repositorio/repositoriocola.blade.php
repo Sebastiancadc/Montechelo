@@ -8,7 +8,7 @@
 <nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
     <div class="container">
         <div style="margin-left: -66px;font-size: 19px;">
-            <a href="{{ url('home')}}" class="mb-0 text-sm  font-weight-bold" style="    color: white;">Montechelo </a>
+            <a href="{{ url('home')}}" class="mb-0 text-sm  font-weight-bold" style="    color: white;">Montechelo</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-default">
             <div class="navbar-collapse-header">
@@ -22,16 +22,7 @@
                 </div>
             </div>
             <ul class="navbar-nav ml-lg-auto">
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#">
-                        <i class="fas fa-heart"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#">
-                        <i class="fas fa-bell"></i>
-                    </a>
-                </li>
+            
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ url('home')}}">
                         <i class="fas fa-home"></i>
@@ -52,29 +43,17 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">¡Bienvenido!</h6>
+                            <h6 class="text-overflow m-0">{{__('Bienvenido!')}}</h6>
                         </div>
                         <a href="{{ url('perfil')}}" class="dropdown-item">
                             <i class="fas fa-user"></i>
-                            <span>Mi perfil</span>
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                            <i class="fas fa-cog"></i>
-                            <span>Ajustes</span>
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                            <i class="fas fa-calendar-minus"></i>
-                            <span>Activity</span>
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                            <i class="fas fa-life-ring"></i>
-                            <span>Support</span>
+                            <span>{{__('Mi perfil')}}</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" class="dropdown-item">
                             <i class="fas fa-running"></i>
-                            <span>Cerrar sesión </span>
+                            <span>{{__('Cerrar sesión')}}</span>
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

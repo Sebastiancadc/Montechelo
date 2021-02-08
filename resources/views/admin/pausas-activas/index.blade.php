@@ -32,10 +32,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de pausas activas</h4>
+                                <h4 class="card-title">{{__('Gestión de pausas activas')}}s</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear pausa activa
+                                    {{__('Crear pausa activa')}}
                                 </button>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                         <div class="card">
                             <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne{{$pausa->id}}" aria-expanded="false" aria-controls="collapseOne">
                                 <div class="span-title">
-                                    <h3 class="text-section">Video</h3>
+                                    <h3 class="text-section">{{__('Video')}}</h3>
                                 </div>
                                 <div class="span-mode"></div>
                             </div>
@@ -59,17 +59,17 @@
                                             <source src="{{$pausa->video}}" type='video/mp4'> </video>
                                         <br>
                                         <div class="d-flex align-items-center">
-                                            <a href="{{url('admin/editarPausa',$pausa->id)}}" class="btn btn-primary  ml-auto" style="margin-right:3px;">Editar</a>
+                                            <a href="{{url('admin/editarPausa',$pausa->id)}}" class="btn btn-primary  ml-auto" style="margin-right:3px;">{{__('Editar')}}</a>
 
                                             <button href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$pausa->id}}" data-original-title="Eliminar capacitacion">
-                                                Eliminar
+                                                {{__('Eliminar')}}
                                             </button>
                                             <!-- Modal -->
                                             <div class="modal fade" id="deleteNoticia{{$pausa->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h3><b>¿Estás seguro de eliminar esta pausa activa?</b></h3>
+                                                            <h3><b>{{__('¿Estás seguro de eliminar esta pausa activa?')}}</b></h3>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -77,11 +77,11 @@
                                                         <form role="form" method="POST" action="{{url('admin/deletePausa',$pausa->id)}}">
                                                             @csrf @method('DELETE')
                                                             <div class="modal-body">
-                                                                ¡No podrás revertir esto!
+                                                                {{__('¡No podrás revertir esto!')}}
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                             </div>
                                                         </form>
                                                     </div>

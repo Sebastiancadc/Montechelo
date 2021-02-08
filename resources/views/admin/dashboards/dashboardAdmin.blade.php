@@ -4,7 +4,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Inicio-Admin</h4>
+                <h4 class="page-title">{{__('Inicio-Admin')}}</h4>
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-3">
@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Usuarios registrados</p>
+                                        <p class="card-category">{{__('Usuarios registrados')}}</p>
                                         <h4 class="card-title">{{$usuariosregistrados}}</h4>
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Eventos registrados</p>
+                                        <p class="card-category">{{__('Eventos registrados')}}</p>
                                         <h4 class="card-title">{{$eventos}}</h4>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Sugerencias registradas</p>
+                                        <p class="card-category">{{__('Sugerencias registradas')}}</p>
                                         <h4 class="card-title">{{$buzon}}</h4>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Novedades registradas</p>
+                                        <p class="card-category">{{__('Novedades registradas')}}</p>
                                         <h4 class="card-title">{{$novedad}}</h4>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Solicitudes registradas</p>
+                                        <p class="card-category">{{__('Solicitudes registradas')}}</p>
                                         <h4 class="card-title">{{$solicitudes}}</h4>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Noticias registradas</p>
+                                        <p class="card-category">{{__('Noticias registradas')}}</p>
                                         <h4 class="card-title">{{$noticias}}</h4>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Capacitaciones registradas</p>
+                                        <p class="card-category">{{__('Capacitaciones registradas')}}</p>
                                         <h4 class="card-title">{{$capacitaciones}}</h4>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Pausas activas</p>
+                                        <p class="card-category">{{__('Pausas activas')}}</p>
                                         <h4 class="card-title">{{$pausas}}</h4>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">Novedades pendientes</div>
+                                <div class="card-title">{{__('Novedades pendientes')}}</div>
                             </div>
                         </div>
                         @foreach ($novedadesPendientes as $novedad)
@@ -178,7 +178,7 @@
                                     <span class="avatar-title rounded-circle border border-white bg-info"><i class="fas fa-exclamation-triangle"></i></span>
                                 </div>
                                 <div class="flex-1 ml-3 pt-1">
-                                    <h5 class="text-uppercase fw-bold mb-1">{{$novedad->novedad}}<span class="text-danger pl-3">Pendiente</span></h5>
+                                    <h5 class="text-uppercase fw-bold mb-1">{{$novedad->novedad}}<span class="text-danger pl-3">{{__('Pendiente')}}</span></h5>
                                     <span class="text-muted">{{$novedad->descripcion}}</span>
                                 </div>
                                 <div class="float-right pt-1">
@@ -193,7 +193,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">Solicitudes pendientes</div>
+                                <div class="card-title">{{__('Solicitudes pendientes')}}</div>
                             </div>
                         </div>
                         @foreach ($solicidesPendientes as $solicitud)
@@ -203,7 +203,7 @@
                                     <span class="avatar-title rounded-circle border border-white bg-info"><i class="fas fa-exclamation-triangle"></i></span>
                                 </div>
                                 <div class="flex-1 ml-3 pt-1">
-                                    <h5 class="text-uppercase fw-bold mb-1">{{$solicitud->nombre}}<span class="text-danger pl-3">Pendiente</span></h5>
+                                    <h5 class="text-uppercase fw-bold mb-1">{{$solicitud->nombre}}<span class="text-danger pl-3">{{__('Pendiente')}}</span></h5>
                                     <span class="text-muted">{{$solicitud->tipo_solicitud}}</span>
                                 </div>
                                 <div class="float-right pt-1">

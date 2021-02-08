@@ -9,11 +9,11 @@
   <div class="app-modal" data-name="delete">
       <div class="app-modal-container">
           <div class="app-modal-card" data-name="delete" data-modal='0'>
-              <div class="app-modal-header">¿Está seguro de que desea eliminar esto?</div>
-              <div class="app-modal-body">No se puede deshacer esta acción</div>
+              <div class="app-modal-header">{{__('¿Está seguro de que desea eliminar esto?')}}</div>
+              <div class="app-modal-body">{{__('No se puede deshacer esta acción')}}</div>
               <div class="app-modal-footer">
-                  <a href="javascript:void(0)" class="app-btn cancel">Cancelar</a>
-                  <a href="javascript:void(0)" class="app-btn a-btn-danger delete">Eliminar</a>
+                  <a href="javascript:void(0)" class="app-btn cancel">{{__('Cancelar')}}</a>
+                  <a href="javascript:void(0)" class="app-btn a-btn-danger delete">{{__('Eliminar')}}</a>
               </div>
           </div>
       </div>
@@ -25,7 +25,7 @@
               <div class="app-modal-header"></div>
               <div class="app-modal-body"></div>
               <div class="app-modal-footer">
-                  <a href="javascript:void(0)" class="app-btn cancel">Cancelar</a>
+                  <a href="javascript:void(0)" class="app-btn cancel">{{__('Cancelar')}}</a>
               </div>
           </div>
       </div>
@@ -36,7 +36,7 @@
           <div class="app-modal-card" data-name="settings" data-modal='0'>
               <form id="updateAvatar" action="{{ route('avatar.update') }}" enctype="multipart/form-data" method="POST">
                   @csrf
-                  <div class="app-modal-header">Configuración del perfil</div>
+                  <div class="app-modal-header">{{__('Configuración del perfil')}}</div>
                   <div class="app-modal-body">
                       {{-- Udate profile avatar --}}
                       <div class="avatar av-l upload-avatar-preview"
@@ -49,12 +49,12 @@
                       </label> --}}
                       {{-- Dark/Light Mode  --}}
                       <p class="divider"></p>
-                      <p class="app-modal-header">Modo Oscuro <span class="
-                        {{ Auth::user()->dark_mode > 0 ? 'fas' : 'far' }} fa-moon dark-mode-switch"
+                      <p class="app-modal-header">{{__('Modo Oscuro')}}<span class="
+               N         {{ Auth::user()->dark_mode > 0 ? 'fas' : 'far' }} fa-moon dark-mode-switch"
                          data-mode="{{ Auth::user()->dark_mode > 0 ? 1 : 0 }}"></span></p>
                       {{-- change messenger color  --}}
                       <p class="divider"></p>
-                      <p class="app-modal-header">Cambiar el color del chat</p>
+                      <p class="app-modal-header">{{__('Cambiar el color del chat')}}</p>
                       <div class="update-messengerColor">
                             <a href="javascript:void(0)" class="messengerColor-1"></a>
                             <a href="javascript:void(0)" class="messengerColor-2"></a>
@@ -70,8 +70,8 @@
                       </div>
                   </div>
                   <div class="app-modal-footer">
-                      <a href="javascript:void(0)" class="app-btn cancel">Cancelar</a>
-                      <input type="submit" class="app-btn a-btn-success update" value="Editar" />
+                      <a href="javascript:void(0)" class="app-btn cancel">{{__('Cancelar')}}</a>
+                      <input type="submit" class="app-btn a-btn-success update" value="{{__("Editar")}}" />
                   </div>
               </form>
           </div>

@@ -10,7 +10,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Novedades registradas</p>
+                            <p class="card-category">{{__('Novedades registradas')}}</p>
                             <h4 class="card-title">{{$novedades}}</h4>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Desarollo</p>
+                            <p class="card-category">{{__('Desarollo')}}</p>
                             <h4 class="card-title">{{$desarollo}}</h4>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Talento humano</p>
+                            <p class="card-category">{{__('Talento humano')}}</p>
                             <h4 class="card-title">{{$talentohumano}}</h4>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Recursos humanos</p>
+                            <p class="card-category">{{__('Recursos humanos')}}</p>
                             <h4 class="card-title">{{$recursoshumanos}}</h4>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Producción </p>
+                            <p class="card-category">{{__('Producción')}} </p>
                             <h4 class="card-title">{{$produccion}}</h4>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Pendientes</p>
+                            <p class="card-category">{{__('Pendientes')}}</p>
                             <h4 class="card-title">{{$pendientes}}</h4>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Revisadas</p>
+                            <p class="card-category">{{__('Revisadas')}}</p>
                             <h4 class="card-title">{{$revisado}}</h4>
                         </div>
                     </div>

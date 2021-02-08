@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de novedades</h4>
+                                <h4 class="card-title">{{__('Gestión de novedades')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Crear novedad
@@ -47,12 +47,12 @@
                                     <thead>
                                         <tr>
                                             {{-- <th>#</th> --}}
-                                            <th>Área</th>
-                                            <th>Fecha </th>
-                                            <th>Novedad</th>
-                                            <th>Descripción</th>
-                                            <th>Estado</th>
-                                            <th style="width: 10%">Acciones</th>
+                                            <th>{{__('Área')}}</th>
+                                            <th>{{__('Fecha')}} </th>
+                                            <th>{{__('Novedad')}}</th>
+                                            <th>{{__('Descripción')}}</th>
+                                            <th>{{__('Estado')}}</th>
+                                            <th style="width: 10%">{{__('Acciones')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,10 +70,10 @@
                                             </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                    <a href="{{route('editarnovedad',$item->id_novedad)}}" class="btn btn-link btn-primary btn-lg" data-original-title="{{__('Editar novedad')}}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNovedad{{$item->id_novedad}}" data-original-title="{{__('Eliminar novedad')}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -81,7 +81,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar esta novedad?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar esta novedad?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -89,11 +89,11 @@
                                                                 <form role="form" method="POST" action="{{route('eliminarnovedad',$item->id_novedad) }}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                        <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

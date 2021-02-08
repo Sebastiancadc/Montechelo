@@ -4,14 +4,14 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    <b>Crear pausa activa</b>
+                    <b>{{__('Crear pausa activa')}}</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar los campos</h3>
+                <h3 class="small" style="font-size: 14px;">{{__('Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos.')}}</h3>
                 <br>
                 <form role="form" method="POST" action="{{url('admin/crearPausa')}}" enctype="multipart/form-data">
                     @csrf @method('POST')
@@ -28,8 +28,8 @@
                         </div>
                     </div>
                     <div class="modal-footer no-bd">
-                        <button type="submit" class="btn btn-primary">Añadir</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">{{__('Añadir')}}</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
                     </div>
                 </form>
             </div>

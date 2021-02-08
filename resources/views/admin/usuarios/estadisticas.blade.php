@@ -10,7 +10,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Usuarios registrados</p>
+                            <p class="card-category">{{__('Usuarios registrados')}}</p>
                             <h4 class="card-title">{{$usuariosregistrados}}</h4>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Mujeres</p>
+                            <p class="card-category">{{__('Mujeres')}}</p>
                             <h4 class="card-title">{{$mujeres}}</h4>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Hombres</p>
+                            <p class="card-category">{{__('Hombres')}}</p>
                             <h4 class="card-title">{{$hombres}}</h4>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Otro</p>
+                            <p class="card-category">{{__('Otro')}}</p>
                             <h4 class="card-title">{{$otro}}</h4>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Diseño</p>
+                            <p class="card-category">{{__('Diseño')}}</p>
                             <h4 class="card-title">{{$diseño}}</h4>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Marketing</p>
+                            <p class="card-category">{{__('Marketing')}}</p>
                             <h4 class="card-title">{{$marketing}}</h4>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Producción </p>
+                            <p class="card-category">{{__('Producción')}} </p>
                             <h4 class="card-title">{{$produccion}}</h4>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Programación</p>
+                            <p class="card-category">{{__('Programación')}}</p>
                             <h4 class="card-title">{{$programacion}}</h4>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Administradores</p>
+                            <p class="card-category">{{__('Administradores')}}</p>
                             <h4 class="card-title">{{$administradores}}</h4>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Colaboradores</p>
+                            <p class="card-category">{{__('Colaboradores')}}</p>
                             <h4 class="card-title">{{$colaboradores}}</h4>
                         </div>
                     </div>

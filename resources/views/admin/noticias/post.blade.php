@@ -5,16 +5,16 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Noticias</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">{{__('Noticias')}}</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Noticia publicada</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{__('Noticia publicada')}}</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                    <a href="{{ url('noticiausu') }}" class="btn btn-sm btn-neutral">Volver</a>
+                    <a href="{{ url('noticiausu') }}" class="btn btn-sm btn-neutral">{{__('Volver')}}</a>
                 </div>
             </div>
             <!-- Card stats -->
@@ -53,7 +53,7 @@
                         <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button"
                             class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
-                            <span class="btn-inner--text">Editar</span>
+                            <span class="btn-inner--text">{{__('Editar')}}</span>
                             @endif
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                         (d.head || d.body).appendChild(s);
                         })();
                         </script>
-                        <noscript><a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <noscript><a href="https://disqus.com/?ref_noscript">{{__('Comentarios impulsados por Disqus.')}}</a></noscript>
                     </div>
                 </div>
             </div>

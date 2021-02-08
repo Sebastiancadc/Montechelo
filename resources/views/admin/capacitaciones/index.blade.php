@@ -33,10 +33,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de capacitaciones</h4>
+                                <h4 class="card-title">{{__('Gestión de capacitaciones')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear Capacitación
+                                    {{__('Crear Capacitación')}}
                                 </button>
                             </div>
                         </div>
@@ -47,12 +47,12 @@
                                     <thead>
                                         <tr>
                                             {{-- <th>#</th> --}}
-                                            <th>Título</th>
-                                            <th>Fecha</th>
-                                            <th>Descripción</th>
-                                            <th>Categoría </th>
+                                            <th>{{__('Título')}}</th>
+                                            <th>{{__('Fecha')}}</th>
+                                            <th>{{__('Descripción')}}</th>
+                                            <th>{{__('Categoría')}} </th>
                                             <th>Link</th>
-                                            <th style="width: 10%">Acciones</>
+                                            <th style="width: 10%">{{__('Acciones')}}</>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,10 +65,10 @@
                                             <td>{{$item->link}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarcapacitacion',$item->id_capacitacion)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
+                                                    <a href="{{route('editarcapacitacion',$item->id_capacitacion)}}" class="btn btn-link btn-primary btn-lg" data-original-title="{{__('Editar capacitacion')}}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deletecapacitacion{{$item->id_capacitacion}}" data-original-title="Eliminar capacitacion">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deletecapacitacion{{$item->id_capacitacion}}" data-original-title="{{__('Eliminar capacitacion')}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -76,7 +76,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar esta capacitación?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar esta capacitación?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -84,11 +84,11 @@
                                                                 <form role="form" method="POST" action="{{route('eliminarcapacitacion',$item->id_capacitacion) }}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                        <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

@@ -34,10 +34,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de noticias</h4>
+                                <h4 class="card-title">{{__('Gestión de noticias')}}</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearnoticia') }}">
                                     <i class="fa fa-plus"></i>
-                                    Crear Noticia
+                                    {{__('Crear Noticia')}}
                                 </a>
                             </div>
                         </div>
@@ -46,13 +46,13 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Título</th>
-                                            <th>Categoría</th>
-                                            <th>Autor</th>
-                                            <th>Portada</th>
-                                            <th>Descripción </th>
-                                            <th>Fecha</th>
-                                            <th style="width: 10%">Acciones</th>
+                                            <th>{{__('Título')}}</th>
+                                            <th>{{__('Categoría')}}</th>
+                                            <th>{{__('Autor')}}</th>
+                                            <th>{{__('Portada')}}</th>
+                                            <th>{{__('Descripción')}} </th>
+                                            <th>{{__('Fecha')}}</th>
+                                            <th style="width: 10%">{{__('Acciones')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,10 +68,10 @@
                                             <td>{{$item->created_at}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarnoticiaad', $item->Id_noticia)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
+                                                    <a href="{{route('editarnoticiaad', $item->Id_noticia)}}" class="btn btn-link btn-primary btn-lg" data-original-title="{{__('Editar noticia')}}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->Id_noticia}}" data-original-title="Eliminar capacitacion">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->Id_noticia}}" data-original-title="{{__('Eliminar noticia')}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -79,7 +79,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar esta noticia?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar esta noticia?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -87,11 +87,11 @@
                                                                 <form role="form" method="POST" action="{{route('eliminarnoticia',$item->Id_noticia)}}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                        <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

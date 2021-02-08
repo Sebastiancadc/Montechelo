@@ -7,11 +7,11 @@
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                        <h6 class="h2 text-white d-inline-block mb-0">Noticias</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">{{__('Noticias')}}</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Publicar noticia</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{__('Publicar noticia')}}</li>
                             </ol>
                         </nav>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="form-group">
 
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlInput1">Título de la notica</label>
+                                <label class="form-control-label" for="exampleFormControlInput1">{{__('Título de la notica')}}</label>
                                 <input type="text" class="form-control form-control-alternative"  value="{{ old('title') }}" name="title" maxlength="30" >
                                 @if ($errors->has('title'))
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-control-label">Categorías</label>
+                                <label class="form-control-label">{{__('Categorías')}}</label>
                                 <select class="form-control" name="category_id" required>
                                     @foreach ($categoria as $category)
 
@@ -58,7 +58,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
+                                <label class="form-control-label" for="exampleFormControlTextarea1">{{__('Contenido')}}</label>
                                 <div class="col-md-13">
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3" >{{ old('body') }}</textarea>
                                     @if ($errors->has('body'))
@@ -68,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label class="form-control-label"> Portada </label>
+                                    <label class="form-control-label"> {{__('Portada')}} </label>
                                     <input type="file" class="form-control form-control-alternative"  name="image" >
                                     @if ($errors->has('image'))
                                     <strong class="text-danger tamano">{{$errors->first('image') }}</strong>
@@ -76,8 +76,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-5 text-right" style="float: right;">
-                                <button type="submit" class="btn btn-primary my-4">Enviar</button>
-                                <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
+                                <button type="submit" class="btn btn-primary my-4">{{__('Enviar')}}</button>
+                                <button onclick="window.history.back();" class="btn btn-danger my-4">{{__('Cancelar')}}</button>
                             </div>
                             </input>
                     </form>

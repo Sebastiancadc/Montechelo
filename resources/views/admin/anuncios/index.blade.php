@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de anuncios</h4>
+                                <h4 class="card-title">{{__('Gestión de anuncios')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Crear anuncio
@@ -38,10 +38,10 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Titulo</th>
-                                            <th>Descripción</th>
-                                            <th>Tipo</th>
-                                            <th style="width: 10%">Acciones</th>
+                                            <th>{{__('Titulo')}}</th>
+                                            <th>{{__('Descripción')}}</th>
+                                            <th>{{__('Tipo')}}</th>
+                                            <th style="width: 10%">{{__('Acciones')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -61,7 +61,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar este anuncio?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar este anuncio?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -69,7 +69,7 @@
                                                                 <form role="form" method="POST" action="{{route('eliminaranuncio',$anuncio->id) }}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

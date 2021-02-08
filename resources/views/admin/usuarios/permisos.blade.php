@@ -32,10 +32,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de permisos</h4>
+                                <h4 class="card-title">{{__('Gestión de permisos')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear un rol
+                                    {{__('Crear un rol')}}
                                 </button>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                         <div class="card">
                             <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne{{$permiso->Id_Rol}}" aria-expanded="false" aria-controls="collapseOne">
                                 <div class="span-title">
-                                    <h3 class="text-section">{{$permiso->Roles}} - Modulos</h3>
+                                    <h3 class="text-section">{{$permiso->Roles}} - {{__('Módulos')}}</h3>
                                 </div>
                                 <div class="span-mode"></div>
                             </div>
@@ -57,90 +57,90 @@
                                             <h4 class="colorsito">Chat</h4>
                                             @if ($permiso->chat_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Directorio</h4>
+                                            <h4 class="colorsito">{{__('Directorio')}}</h4>
                                             @if ($permiso->directorio_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Talento Humano</h4>
+                                            <h4 class="colorsito">{{__('Talento Humano')}}</h4>
                                             @if ($permiso->talento_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Repositorio</h4>
+                                            <h4 class="colorsito">{{__('Repositorio')}}</h4>
                                             @if ($permiso->repositorio_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Calendario</h4>
+                                            <h4 class="colorsito">{{__('Calendario')}}</h4>
                                             @if ($permiso->calendario_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Solicitud</h4>
+                                            <h4 class="colorsito">{{__('Solicitud')}}</h4>
                                             @if ($permiso->solicitud_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Buzón de sugerencias</h4>
+                                            <h4 class="colorsito">{{__('Buzón de sugerencias')}}</h4>
                                             @if ($permiso->buzon_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Plan estratégico</h4>
+                                            <h4 class="colorsito">{{__('Plan estratégico')}}</h4>
                                             @if ($permiso->plan_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Novedad</h4>
+                                            <h4 class="colorsito">{{__('Novedad')}}</h4>
                                             @if ($permiso->novedad_status == '1')
                                             <span class="badge badge-lg badge-success">
-                                                Habilitado
+                                                {{__('Habilitado')}}
                                                 @else
                                                 <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
+                                                    {{__('Deshabilitado')}}
                                                     @endif
                                         </li>
                                     </ul>
@@ -148,7 +148,7 @@
                                     @if ($permiso->Roles == 'admin')
                                     @else
                                     <div class="d-flex align-items-center">
-                                        <a href="{{route('permisoedit',$permiso->Id_Rol)}}" class="btn btn-primary  ml-auto">Ver</a>
+                                        <a href="{{route('permisoedit',$permiso->Id_Rol)}}" class="btn btn-primary  ml-auto">{{__('Ver')}}</a>
                                     </div>
                                     @endif
                                 </div>

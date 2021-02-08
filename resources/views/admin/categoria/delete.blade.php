@@ -5,13 +5,13 @@
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
             <div class="text-center text-muted mb-4">
-              <small>Eliminar la categoría</small>
+              <small>{{__('Eliminar la categoría')}}</small>
             </div>
             <form role="form" method="POST" action="{{route('eliminar',$item->Id_Categoria)}}">
               @csrf @method('DELETE')
               <div class="text-center">
-                <button type="submit" class="btn btn-primary my-4">Eliminar</button>
-                <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary my-4">{{__('Eliminar')}}</button>
+                <button class="btn btn-danger ml-auto" data-dismiss="modal">{{__('Cancelar')}}</button>
               </div>
             </form>
           </div>

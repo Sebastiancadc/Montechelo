@@ -4,27 +4,27 @@
         <div class="modal-content">
             <div class="modal-header no-bd">
                 <h2 class="modal-title">
-                    <b>Crear rol</b>
+                    <b>{{__('Crear rol')}}</b>
                 </h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="small" style="font-size: 14px;">Cree una nueva fila usando este formulario, asegúrese de llenar el campos</h3>
+                <h3 class="small" style="font-size: 14px;">{{__('Cree una nueva fila usando este formulario, asegúrese de llenar todos los campos.')}}</h3>
                 <br>
                 <form role="form" method="POST" action="{{url('admin/crearRol')}}">
                     @csrf @method('POST')
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Nombre</label>
+                                <label>{{__('Nombre')}}</label>
                                 <input type="text" class="form-control" placeholder="Admin..." name="Roles" required>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer no-bd">
-                        <button type="submit" class="btn btn-primary">Añadir</button>
+                        <button type="submit" class="btn btn-primary">{{__('Añadir')}}</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

@@ -10,7 +10,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Archivos subidos</p>
+                            <p class="card-category">{{__('Archivos subidos')}}</p>
                             <h4 class="card-title"></h4>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Imagen</p>
+                            <p class="card-category">{{__('Imagen')}}</p>
                             <h4 class="card-title"></h4>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Audio</p>
+                            <p class="card-category">{{__('Audio')}}</p>
                             <h4 class="card-title"></h4>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Vídeo</p>
+                            <p class="card-category">{{__('Vídeo')}}</p>
                             <h4 class="card-title"></h4>
                         </div>
                     </div>

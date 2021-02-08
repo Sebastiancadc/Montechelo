@@ -11,7 +11,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Eventos registrados</p>
+                            <p class="card-category">{{__('Eventos registrados')}}</p>
                             <h4 class="card-title">{{$evento}}</h4>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Importante</p>
+                            <p class="card-category">{{__('Importante')}}</p>
                             <h4 class="card-title">{{$importante}}</h4>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Especial</p>
+                            <p class="card-category">{{__('Especial')}}</p>
                             <h4 class="card-title">{{$especial}}</h4>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Advertencia</p>
+                            <p class="card-category">{{__('Advertencia')}}</p>
                             <h4 class="card-title">{{$advertencia}}</h4>
                         </div>
                     </div>

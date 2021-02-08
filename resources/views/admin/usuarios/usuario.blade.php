@@ -36,15 +36,15 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de usuarios</h4>
+                                <h4 class="card-title">{{__('Gestión de usuarios')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear administrador
+                                    {{__('Crear administrador')}}
                                 </button>
                                 <span>.</span>
                                 <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#addRowModal2">
                                     <i class="fa fa-plus"></i>
-                                    Crear colaborador
+                                    {{__('Crear colaborador')}}
                                 </button>
                             </div>
                         </div>
@@ -55,14 +55,14 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Género</th>
-                                            <th>Fecha de nacimiento</th>
-                                            <th>Área</th>
-                                            <th>Teléfono</th>
-                                            <th>Rol</th>
-                                            <th style="width: 10%">Acciones</th>
+                                            <th>{{__('Nombre')}}</th>
+                                            <th>{{__('Correo')}}</th>
+                                            <th>{{__('Género')}}</th>
+                                            <th>{{__('Fecha de nacimiento')}}</th>
+                                            <th>{{__('Área')}}</th>
+                                            <th>{{__('Teléfono')}}</th>
+                                            <th>{{__('Rol')}}</th>
+                                            <th style="width: 10%">{{__('Acciones')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -77,10 +77,10 @@
                                             <td>{{$user->role}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarusuario',$user->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                    <a href="{{route('editarusuario',$user->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="{{__('Editar usuario')}}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="Eliminar usuario">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteUsuario{{$user->id}}" data-original-title="{{__('Eliminar usuario')}}">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -88,7 +88,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>¿Está seguro de eliminar este usuario?</b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar este usuario?')}}</b></h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -96,11 +96,11 @@
                                                                 <form role="form" method="POST" action="{{route('eliminarusuario',$user->id) }}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
-                                                                        ¡No podrás revertir esto!
+                                                                        {{__('¡No podrás revertir esto!')}}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Cancelar')}}</button>
+                                                                        <button type="sum" class="btn btn-primary">{{__('Eliminar')}}</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

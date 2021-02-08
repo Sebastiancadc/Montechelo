@@ -10,14 +10,14 @@
                     <nav aria-label="breadcrumb" class="d-none d-lg-inline-block ml-lg-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Calendario</li>
+                            <li class="breadcrumb-item"><a href="#">{{__('Inicio')}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{__('Calendario')}}</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-lg-6 mt-3 mt-lg-0 text-lg-right">
                     <button class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#exampleModal">
-                        Crear evento
+                        {{__('Crear evento')}}
                     </button>
                     <a href="#" class="fullcalendar-btn-prev btn btn-sm btn-neutral">
                         <i class="fas fa-angle-left"></i>
@@ -25,9 +25,9 @@
                     <a href="#" class="fullcalendar-btn-next btn btn-sm btn-neutral">
                         <i class="fas fa-angle-right"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">Mes</a>
-                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">Semana</a>
-                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">Día</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="month">{{__('Mes')}}</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicWeek">{{__('Semana')}}</a>
+                    <a href="#" class="btn btn-sm btn-neutral" data-calendar-view="basicDay">{{__('Día')}}</a>
                 </div>
             </div>
 

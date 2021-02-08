@@ -6,7 +6,7 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Crea la categoría</small>
+                <small>{{__('Crea la categoría')}}</small>
               </div>
               <form role="form" method="POST" action="{{ url('admin/categoria')}}">
                 @csrf @method('POST')
@@ -15,11 +15,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Nombre " name="nombre" type="text">
+                    <input class="form-control" placeholder="{{__('Nombre')}} " name="nombre" type="text">
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4">crear</button>
+                  <button type="submit" class="btn btn-primary my-4">{{__('Crear')}}</button>
                 </div>
               </form>
             </div>

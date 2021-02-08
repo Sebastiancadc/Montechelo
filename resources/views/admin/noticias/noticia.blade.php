@@ -7,10 +7,10 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
                 <div class="site-header-inner  mt-lg-0 mt-5">
-                    <h2 class="">Noticias de intéres</h2>
-                    <p>Descubre lo último en actualidad y mantente conectado.</p>
+                    <h2 class="">{{__('Noticias de intéres')}}</h2>
+                    <p>{{__('Descubre lo último en actualidad y mantente conectado.')}}</p>
                     @if (Auth::user()->role == 'admin')
-                    <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
+                    <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">{{__('Agregar')}}</a>
                     @endif
                 </div>
             </div>
@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-12 text-center text-sm-right">
-                                    <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-outline-info btn-rounded">Ver artículo</a>
+                                    <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-outline-info btn-rounded">{{__('Ver artículo')}}</a>
                                 </div>
                             </div>
                         </div>

@@ -49,7 +49,7 @@ height: 148%;"></span>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">{{__('Mensaje')}}</a>
           </div>
         </div>
         <div class="card-body pt-0">
@@ -78,10 +78,10 @@ height: 148%;"></span>
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
+            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>{{__('Perfil')}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Biografia</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>{{__('Biografía')}}</a>
           </li>
         </ul>
       </div>
@@ -91,16 +91,16 @@ height: 148%;"></span>
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
               <hr class="my-4" />
               <!-- Address -->
-              <h6 class="heading-small text-muted mb-4">Informacion personal</h6>
+              <h6 class="heading-small text-muted mb-4">{{__('Información personal')}}</h6>
               <div class="pl-lg-4">
                 <div class="row">
                   <div class="col-md-6">
-                    <h4>Nombre</h4>
+                    <h4>{{__('Nombre')}}</h4>
                     <h4 class=" text-muted mb-4">{{$perfil->name}} {{$perfil->lastname}}</h4>
                   </div>
                   <div class="col-md-5">
                     <div class="tab-content">
-                      <h4>Fecha de nacimiento</h4>
+                      <h4>{{__('Fecha de nacimiento')}}</h4>
                       <h4 class=" text-muted mb-4">{{$perfil->cumpleanios}}</h4>
                     </div>
                   </div>
@@ -111,18 +111,18 @@ height: 148%;"></span>
                     <h4 class=" text-muted mb-4">{{$perfil->email}}</h4>
                   </div>
                   <div class="col-md-5">
-                    <h4>Genero</h4>
+                    <h4>{{__('Género')}}</h4>
                     <h4 class=" text-muted mb-4">{{$perfil->genero}}</h4>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <h4>Area</h4>
+                    <h4>{{__('Área')}}</h4>
                     <h4 class=" text-muted mb-4">{{$perfil->area}}</h4>
                   </div>
                   @if ($perfil->phone_status == '1')
                   <div class="col-md-5">
-                    <h4>Telefono</h4>
+                    <h4>{{__('Teléfono')}}</h4>
                     <h4 class=" text-muted mb-4">{{$perfil->phone}}</h4>
                   </div>
                   @endif
@@ -130,7 +130,7 @@ height: 148%;"></span>
               </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Biografia</h1><br>
+              <h1 class="form-control-label">{{__('Biografía')}}</h1><br>
               <textarea name="biografia" id="" cols="75" rows="5" disabled>{{$perfil->biografia}}</textarea>
             </div>
           </div>

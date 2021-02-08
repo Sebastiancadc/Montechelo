@@ -32,8 +32,8 @@
                         <img src="{{asset("plantilla/img/theme/noticias.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
-                                <span class="d-block mb-1">Noticias de interés</span>
-                                <small class="h4 font-weight-light text-muted"> Aquí encontrarás las últimas noticias.</small>
+                                <span class="d-block mb-1">{{__('Noticias de interés')}}</span>
+                                <small class="h4 font-weight-light text-muted">{{__('Aquí encontrarás las últimas noticias.')}}</small>
                             </h5>
                             <div class="mt-3">
                             </div>
@@ -51,8 +51,8 @@
                         <img src="{{asset("plantilla/img/theme/capacitacion.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
-                                <span class="d-block mb-1">Capacitaciones</span>
-                                <small class="h4 font-weight-light text-muted">Aquí encontrarás recursos para mejorar tu formación.</small>
+                                <span class="d-block mb-1">{{__('Capacitaciones')}}</span>
+                                <small class="h4 font-weight-light text-muted">{{__('Aquí encontrarás recursos para mejorar tu formación.')}}</small>
                             </h5>
                             <div class="mt-3">
                             </div>
@@ -68,8 +68,8 @@
                         <img src="{{asset("plantilla/img/theme/pausas.png")}}" class="rounded-circle img-center img-fluid tarjetastalento">
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
-                                <span class="d-block mb-1">Pausas activas</span>
-                                <small class="h4 font-weight-light text-muted"> Tómate un descanso.</small>
+                                <span class="d-block mb-1">{{__('Pausas activas')}}</span>
+                                <small class="h4 font-weight-light text-muted">{{__('Tómate un descanso')}}.</small>
                             </h5>
                             <div class="mt-3">
                             </div>

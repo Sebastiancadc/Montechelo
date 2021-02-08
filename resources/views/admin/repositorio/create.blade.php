@@ -6,7 +6,7 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Crear repositorio</small>
+                <small>{{__('Crear repositorio')}}</small>
               </div>
               <form enctype="multipart/form-data" role="form" method="POST" action="{{url('repositorio')}}">
                 @csrf @method('POST')
@@ -31,12 +31,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Observacion" name="observaciones" type="text">
+                    <input class="form-control" placeholder="Observación" name="observaciones" type="text">
                   </div>
                 </div>
                 <input type="file" class="form-control form-control-alternative" placeholder="" value="" name="image">
-                <button type="submit" class="btn btn-primary my-4">Crear</button>
-                <a href="{{ url('repositorio') }}" class="btn btn-danger mt-4">Cancelar</a>
+                <button type="submit" class="btn btn-primary my-4">{{__('Crear')}}</button>
+                <a href="{{ url('repositorio') }}" class="btn btn-danger mt-4">{{__('Cancelar')}}</a>
               </form>
             </div>
             </form>

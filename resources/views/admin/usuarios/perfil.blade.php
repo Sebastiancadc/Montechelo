@@ -9,7 +9,7 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-md-12 col-lg-7">
-        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">¡Hola! {{Auth::user()->name}} {{Auth::user()->lastname}}</h1>
+        <h1 class="display-2 text-white" style="font-size:35px;margin-top: 55px;">{{__('¡Hola!')}} {{Auth::user()->name}} {{Auth::user()->lastname}}</h1>
       </div>
       <div style="text-align:right;visibility: hidden;">Este texto estar&aacute; alineado a la derecha.</div>
     </div>
@@ -25,7 +25,7 @@
           <input type="file" id="portadaInput" style="display: none" name="photo_portada">
         </form>
         <img src="{{Auth::user()->photo_portada}}" id="portadata" class="card-img img-fluid">
-        <div id="hover"><h5 class="h3">Click para cambiar portada</h5></div>
+        <div id="hover"><h5 class="h3">{{__('Click para cambiar portada')}}</h5></div>
 
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
@@ -35,14 +35,14 @@
                 <input type="file" id="avatarInput" style="display: none" name="photo">
               </form>
               <img src="{{Auth::user()->photo}}" id="avatarImage" class="rounded-circle">
-                <div id="hover2"><h5 class="h3" style="color: #fff;">Cambiar avatar</h5> </div>
+                <div id="hover2"><h5 class="h3" style="color: #fff;">{{__('Cambiar avatar')}}</h5> </div>
               </div>
           </div>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
             {{-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> --}}
-            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">Mensaje</a>
+            <a href="{{ url('Chatmontechelo')}}" class="btn btn-sm btn-default float-right">{{__('Mensaje')}}</a>
           </div>
         </div>
         <div class="card-body pt-0">
@@ -71,10 +71,10 @@
       <div class="nav-wrapper">
         <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>Perfil</a>
+            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-circle-08 mr-2"></i>{{__('Perfil')}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>Mi Biografía</a>
+            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-satisfied mr-2"></i>{{__('Mi Biografía')}}</a>
           </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
               <form role="form" method="POST" action="{{url('editarprofile',$user->id)}}">
                 @csrf @method('PUT')
-                <h4 class="text-muted ">INFORMACIÓN PERSONAL</h4>
+                <h4 class="text-muted ">{{__('INFORMACIÓN PERSONAL')}}</h4>
                 <hr class="my-4" />
                 @if (session('editarusu'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -96,23 +96,23 @@
                 </div>
                 @endif
                 <!-- Address -->
-                <a class="text-muted mb-4">Seleccione los campos que desee ocultar</a>
+                <a class="text-muted mb-4">{{__('Seleccione los campos que desee ocultar')}}</a>
                 <br><br>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-md-6">
-                      <h4>Nombre</h4>
+                      <h4>{{__('Nombre')}}</h4>
                       <input class="form-control" value="{{ Auth::user()->name}}" name="name" type="text">
                     </div>
                     <div class="col-md-6">
-                      <h4>Apellido</h4>
+                      <h4>{{__('Apellido')}}</h4>
                       <input class="form-control" value="{{ Auth::user()->lastname}}" name="lastname" type="text">
                     </div>
                   </div>
                   <br>
                   <div class="row">
                     <div class="col-md-12">
-                      <h4>Correo</h4>
+                      <h4>{{__('Correo')}}</h4>
                       <input class="form-control" name="email" value="{{ Auth::user()->email}}" type="text">
                     </div>
                   </div>
@@ -122,7 +122,7 @@
                       <div class="tab-content">
                         <div id="datepicker-single-component" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="datepicker-single-component-tab">
                           <div class="form-group">
-                            <label class="form-control-label" for="example3cols2Input">Fecha de nacimiento</label>
+                            <label class="form-control-label" for="example3cols2Input">{{__('Fecha de nacimiento')}}</label>
                             <div class="input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -134,28 +134,28 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <h4>Área </h4>
+                      <h4>{{__('Área')}} </h4>
                       <select class="form-control" id="exampleFormControlSelect1" name="area" required>
                         <option>{{Auth::user()->area}}</option>
-                        <option>Programación</option>
-                        <option>Diseño</option>
-                        <option>Marketing</option>
-                        <option>Producción</option>
+                        <option>{{__('Programación')}}</option>
+                        <option>{{__('Diseño')}}</option>
+                        <option>{{__('Marketing')}}</option>
+                        <option>{{__('Producción')}}</option>
                       </select>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <h4>Genero</h4>
+                      <h4>{{__('Género')}}</h4>
                       <select class="form-control" id="exampleFormControlSelect1" name="genero" required>
                         <option>{{ Auth::user()->genero}}</option>
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro</option>
+                        <option>{{__('Hombre')}}</option>
+                        <option>{{__('Mujer')}}</option>
+                        <option>{{__('Otro')}}</option>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <h4>Teléfono <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
+                      <h4>{{__('Teléfono')}} <input type="checkbox" name="phone_status" @if (Auth::user()->phone_status == '1')
                         checked value="1"
                         @else
                         value="0"
@@ -165,14 +165,14 @@
                   </div>
                 </div>
                 <div class="card-body text-center">
-                  <button type="submit" style="margin-left: 56%;" class="btn btn-primary" type="button">Guardar</button>
+                  <button type="submit" style="margin-left: 56%;" class="btn btn-primary" type="button">{{__('Guardar')}}</button>
                 </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-              <h1 class="form-control-label">Biografía  </h1><br>
+              <h1 class="form-control-label">{{__('Biografía')}}  </h1><br>
               <textarea name="biografia" id="" cols="75" rows="5">{{Auth::user()->biografia}}</textarea>
               <div class="card-body text-center">
-                <button type="submit" style="margin-left: 86%;" class="btn btn-primary" type="button">Guardar</button>
+                <button type="submit" style="margin-left: 86%;" class="btn btn-primary" type="button">{{__('Guardar')}}</button>
               </div>
             </div>
             </form>

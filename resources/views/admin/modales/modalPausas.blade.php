@@ -8,7 +8,7 @@
             <source src="{{$pausasramdom->video}}" type='video/mp4'> </video>
         </div>
         <div class="modal-footer" style="margin-right: 456px;margin-top: -52px;">
-          <button class="btn btn-danger ml-auto" data-dismiss="modal">Cerrar</button>
+          <button class="btn btn-danger ml-auto" data-dismiss="modal">{{__('Cerrar')}}</button>
         </div>
       </div>
     </div>

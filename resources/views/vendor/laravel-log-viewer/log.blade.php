@@ -11,7 +11,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
             <div class="col-md-17">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Historial</h4>
+                        <h4 class="card-title">{{__('Historial')}}</h4>
                         <div class="card-body">
                             <div class="row row-demo-grid">
                                 @foreach($folders as $folder)
@@ -41,7 +41,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Gestión de logs</h4>
+                            <h4 class="card-title">{{__('Gestión de logs')}}</h4>
                         </div>
                     </div>
                     <div class="container-fluid">
@@ -63,13 +63,13 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                         <thead>
                                             <tr>
                                                 @if ($standardFormat)
-                                                <th>Nivel</th>
-                                                <th>Contexto</th>
-                                                <th>Fecha</th>
+                                                <th>{{__('Nivel')}}</th>
+                                                <th>{{__('Contexto')}}</th>
+                                                <th>{{__('Fecha')}}</th>
                                                 @else
-                                                <th>Line number</th>
+                                                <th>{{__('Número de linea')}}</th>
                                                 @endif
-                                                <th>Contenido</th>
+                                                <th>{{__('Contenido')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -106,7 +106,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                 <div class="p-3">
                                     @if($current_file)
                                     <a href="?dl={{ \Illuminate\Support\Facades\Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . \Illuminate\Support\Facades\Crypt::encrypt($current_folder) : '' }}">
-                                        <span class="fa fa-download"></span>Descargar archivo.
+                                        <span class="fa fa-download"></span>{{__('Descargar archivo.')}}
                                     </a>
                                     @endif
                                 </div>

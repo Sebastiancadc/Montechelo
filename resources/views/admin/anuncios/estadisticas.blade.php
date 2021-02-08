@@ -10,7 +10,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Anuncios registrados</p>
+                            <p class="card-category">{{__('Anuncios registrados')}}</p>
                             <h4 class="card-title">{{$anuncio}}</h4>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Por defecto-Azul oscuro</p>
+                            <p class="card-category">{{__('Por defecto-Azul oscuro')}}</p>
                             <h4 class="card-title">{{$default}}</h4>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Información-Azul claro</p>
+                            <p class="card-category">{{__('Información-Azul claro')}}</p>
                             <h4 class="card-title">{{$info}}</h4>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Realizado-Verde</p>
+                            <p class="card-category">{{__('Realizado-Verde')}}</p>
                             <h4 class="card-title">{{$success}}</h4>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Advertencia-Naranja</p>
+                            <p class="card-category">{{__('Advertencia-Naranja')}}</p>
                             <h4 class="card-title">{{$warning}}</h4>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Urgente-Rojo</p>
+                            <p class="card-category">{{__('Urgente-Rojo')}}</p>
                             <h4 class="card-title">{{$danger}}</h4>
                         </div>
                     </div>

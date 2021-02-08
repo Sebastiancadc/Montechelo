@@ -10,8 +10,8 @@
             </td>
             {{-- center side --}}
             <td>
-                <p data-id="{{ 'user_'.Auth::user()->id }}">Mensajes guardados <span>Tu</span></p>
-                <span>Guarda mesajes en secreto</span>
+                <p data-id="{{ 'user_'.Auth::user()->id }}">{{__('Mensajes guardados')}}<span>{{__('Tu')}}</span></p>
+                <span>{{__('Guarda mensajes en secreto')}}</span>
             </td>
         </tr>
     </table>
@@ -41,7 +41,7 @@
             {{-- Last Message user indicator --}}
             {!!
                 $lastMessage->from_id == Auth::user()->id 
-                ? '<span class="lastMessageIndicator">Tu :</span>'
+                ? '<span class="lastMessageIndicator">{{__("Tu")}} :</span>'
                 : ''
             !!}
             {{-- Last message body --}}
@@ -52,7 +52,7 @@
                 : $lastMessage->body
             }}
             @else
-            <span class="fas fa-file"></span> Archivo
+            <span class="fas fa-file"></span> {{__('Archivo')}}
             @endif
         </span>
         {{-- New messages counter --}}

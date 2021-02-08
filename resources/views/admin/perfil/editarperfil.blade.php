@@ -6,12 +6,12 @@
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-          <h6 class="h2 text-white d-inline-block mb-0">Editar perfil</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">{{__('Editar perfil')}}</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Perfil</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Editar</li>
+              <li class="breadcrumb-item"><a href="#">{{__('Perfil')}}</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{__('Editar')}}</li>
             </ol>
           </nav>
         </div>
@@ -26,7 +26,7 @@
         <div class="card">
           <!-- Card header -->
           <div class="card-header">
-            <h3 class="mb-0">Editar el perfil</h3>
+            <h3 class="mb-0">{{__('Editar el perfil')}}</h3>
           </div>
           <!-- Card body -->
           <div class="card-body">
@@ -38,7 +38,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Nombre" value='{{$userActualizar->name}}' name="name" type="text">
+                  <input class="form-control" placeholder="{{__('Nombre')}}" value='{{$userActualizar->name}}' name="name" type="text">
                 </div>
               </div>
               <div class="form-group mb-3">
@@ -62,16 +62,16 @@
                   <div class="form-group">
                     <select class="form-control" id="exampleFormControlSelect1" name="genero">
                       <option>{{$userActualizar->genero}}</option>
-                      <option>Hombre</option>
-                      <option>Mujer</option>
-                      <option>Otro</option>
+                      <option>{{__('Hombre')}}</option>
+                      <option>{{__('Mujer')}}</option>
+                      <option>{{__('Otro')}}</option>
                     </select>
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">Editar</button>
+              <button type="submit" class="btn btn-primary my-4" style="margin-left: 19%;">{{__('Editar')}}</button>
               <div class="text-center" style="margin-top: -20%;margin-left: 45%;">
-                <a href="{{ url('admin/perfil') }}" class="btn btn-danger mt-4">Cancelar</a>
+                <a href="{{ url('admin/perfil') }}" class="btn btn-danger mt-4">{{__('Cancelar')}}</a>
               </div>
             </form>
           </div>

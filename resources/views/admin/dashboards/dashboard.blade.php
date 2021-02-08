@@ -13,7 +13,7 @@ $date =date('m-d')
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">{{__('Inicio')}}</a></li>
               </ol>
             </nav>
           </div>
@@ -34,7 +34,7 @@ $date =date('m-d')
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="mb-0">Noticias de Intéres</h5>
+                                <h2 class="mb-0">{{__('Noticias de Intéres')}}</h5>
                             </div>                          
                         </div>
                     </div>
@@ -56,7 +56,7 @@ $date =date('m-d')
                                                         <img src="{{ $item->user->photo }}">
                                                     </div>
                                                     <div class="inline m-l-10">
-                                                        <p class="no-margin text-white fs-12">Escrito por {{$item->user->name}} {{$item->user->lastname}}</p>
+                                                        <p class="no-margin text-white fs-12">{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
                                                     </div>                                                
                                                     <div class="clearfix"></div>
                                                 </div>
@@ -92,7 +92,7 @@ $date =date('m-d')
                                             <img width="auto" height="auto" src="{{$noticia2->user->photo}}"  alt="">
                                             </div>
                                             <div class="inline m-l-10">
-                                                <p class="no-margin text-white fs-12">Escrito por {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>                                      
+                                                <p class="no-margin text-white fs-12">{{__('Escrito por')}} {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>                                      
                                             </div>                                            
                                             <div class="clearfix"></div>
                                         </div>
@@ -113,7 +113,7 @@ $date =date('m-d')
           <div class="card-header bg-transparent"> 
                 <div class="row align-items-center">
                     <div class="col">
-                        <h5 class="h3 mb-0">Próximos cumpleaños</h5>
+                        <h5 class="h3 mb-0">{{(__('Próximos cumpleaños'))}}</h5>
                     </div>
                 </div>
           </div>
@@ -146,7 +146,7 @@ $date =date('m-d')
           <!-- Card header -->
                     <div class="card-header">
             <!-- Title -->
-            <h5 class="h3 mb-0">Próximos eventos</h5>
+            <h5 class="h3 mb-0">{{__('Próximos eventos')}}</h5>
              <h5>
           </h5>
           </div>
@@ -166,7 +166,7 @@ $date =date('m-d')
               <br>
             <a style="margin-left:31px;">{{$evento->name}}
             <a class="gris">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>
-            <a class="gris"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
+            <a class="gris"> {{__('hasta')}} {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
           <br>
             </h4>
           </div>
@@ -179,12 +179,13 @@ $date =date('m-d')
 </div>
 
 @section('js')
-<script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
+<script src="{{asset("plantilla/vendor/fullcalendar/dist/locale-all.js")}}"></script>
 <script>
   $(document).ready(function () {
           events={!! json_encode($calendario) !!};
           $('#date').fullCalendar({
               events: events,
+              locale: '{{$locales= app()->getLocale()}}',
 
           })
       });
