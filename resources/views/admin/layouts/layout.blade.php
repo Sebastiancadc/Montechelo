@@ -201,16 +201,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-                    <ul class="navbar-nav ml auto">
-                      <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" id="drop" data-toggle="dropdown" > {{__('Seleccione un idioma')}}</a>
-                    <div class="dropdown-menu" aria-labelledby="drop">
-                    <a href="{{route('set_language','es')}}" class="dropdown-item">{{__('Español')}}</a>
-                    <a href="{{route('set_language','en')}}" class="dropdown-item">{{__('Inglés')}}</a>
-
-                    </div>
-                      </li>
-                    </ul>
+ 
             <button class="switch" id="switch">
               <span><i class="fas fa-sun" style="15px"></i></span>
               <span><i class="fas fa-moon" style="15px"></i></span>
@@ -372,6 +363,15 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                   <i class="fa fa-bolt"></i>
                   <span>{{__('Ayuda')}}</span>
                 </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">{{__('Seleccione un idioma')}}</h6>
+                </div>
+                <p >
+                  <a href="{{route('set_language','es')}}" style="margin-left: 29px;"><img src="{{asset('plantilla/img/theme/BdnCol.png')}}" height="20" width="30"></a>
+                  <a href="{{route('set_language','en')}}" style="margin-left: 60px;"><img src="{{asset('plantilla/img/theme/BdnRey.png')}}" height="20" width="30"></a>
+                </p>  
+
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
