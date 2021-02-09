@@ -34,7 +34,7 @@
     <div class="container-fluid">
         <div class="row">
             <div id="articlesPostHeading" class="col-md-12">
-                <h2 class="pb-4 m-0">Artículos</h2>
+                <h2 class="pb-4 m-0">{{__('Artículos')}}</h2>
             </div>
             <div id="articlesPostContent" class="col-md-12 mt-5 pt-4">
                 @foreach ($noticias as $item)

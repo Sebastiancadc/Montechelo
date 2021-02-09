@@ -89,13 +89,13 @@
     "Los colaboradores llevamos semanas trabajando desde casa y es importante tener en cuenta ciertas pautas básicas para evitar dolores en el cuello y espalda. Ahí la importancia de realizar pausas activas durante el teletrabajo.":"We employees have been working from home for weeks and it is important to take into account certain basic guidelines to avoid neck and back pain. That is why it is important to take active breaks during teleworking.",
     "Por ello en esta entrada te contaremos de los ejercicios que puedes hacer en tu casa para evitar dolores, preservar una buena postura y mantener una alta energía para continuar con tus labores.":"Therefore, in this post we will tell you about the exercises you can do at home to avoid pain, preserve a good posture and maintain a high energy to continue with your work.",
     "Las pausas activas son breves descansos durante la jornada laboral que sirven para recuperar energía, mejorar el desempeño y eficiencia en el trabajo, a través de diferentes técnicas y ejercicios que ayudan a reducir la fatiga laboral y prevenir el estrés.":"Active breaks are short breaks during the workday that serve to recover energy, improve performance and efficiency at work, through different techniques and exercises that help reduce work fatigue and prevent stress.",
-
+    "A continuación te presentamos una serie de ejercicio principalmente de elongación que puedes realizar entre tus periodos de trabajo. Recuerda realizarlos a diario, en periodos de 3 a 5 minutos cada 2 o tres horas.":"Here is a series of mainly stretching exercises that you can do between your work periods. Remember to do them daily, in periods of 3 to 5 minutes every 2 to 3 hours.",
     "Noticias de interés":"News of interest",
     "Aquí encontrarás las últimas noticias.":"Here you will find the latest news.",
     "Capacitaciones":"Trainings",
     "Aquí encontrarás recursos para mejorar tu formación.":"Here you will find resources to improve your training.",
     "Tómate un descanso.":"Take a break.",
-    
+    "Edita el rol":"Edit role",
     "Descubre lo último en actualidad y mantente conectado.":"Discover the latest news and stay connected.", 
     "Noticias de Intéres":"News of Interest",
     "Noticias de intéres":"News of Interest",
@@ -197,7 +197,10 @@
     "Enviar":"Send",
     "¿Está seguro de eliminar esta noticia?":"Are you sure want to delete this publication?",
     "Otro":"Other",
+    "Gestión de pausas activas":"Management of active breaks",
     "Crear noticia":"Create publication",
+    "Crear Noticia":"Create Publication",
+    "Gestión de noticias":"News management",
     "Seleccione la categoría":"Choose a category",
     "Categoría de la publicación":"Category of the publication",
     "Imagen":"Image",
@@ -267,7 +270,7 @@
     "Crear colaborador":"Create collaborator",
     "Eliminar usuario":"Delete user",
     "¿Está seguro de eliminar este usuario?":"Are you sure want to delete this user?",
-  
+    "Imagenes plan estratégico - sólo imagenes PNG":"Strategic plan images - PNG images only",
     "Gestión de pausas activa":"Active break management",
     "Crear pausa activas":"Create active pauses",
     "Video":"Video",
@@ -321,5 +324,6 @@
     "Desarrollado por el grupo 3 Sena Montechelo":"Develop by group 3 Sena Montechelo",
     "Ingresar":"Enter",
     "¿Olvidaste tu contraseña?":"Forgot your password?",
-    "Crear nueva cuenta":"Create a new account"    
+    "Crear nueva cuenta":"Create a new account",
+    "Evento registrado correctamente":"Correctly registered event"
 }

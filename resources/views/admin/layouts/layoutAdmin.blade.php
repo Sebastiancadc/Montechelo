@@ -151,12 +151,12 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 								<p>{{__('Novedades')}}</p>
 							</a>
 						</li>
-						<li class="nav-item ">
+						{{-- <li class="nav-item ">
 							<a href="{{url('admin/solicitud')}}">
 								<i class="fas fas fa-hand-holding"></i>
 								<p>{{__('Solicitudes')}}</p>
 							</a>
-						</li>
+						</li> --}}
 						<li class="nav-item ">
 							<a href="{{url('admin/buzonAdmin')}}">
 								<i class="fas fa-paper-plane"></i>

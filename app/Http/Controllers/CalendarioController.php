@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Eventos;
-use App\Events\EventoEvent;
 use App\User;
-use Illuminate\Http\Request;
+use App\Eventos;
+use App\Pausasactivas;
 use App\Helpers\Helpers;
+use App\Events\EventoEvent;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests\CalendarioRequest;
 use App\Notifications\EventoNotification;
-use App\Pausasactivas;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 
 class CalendarioController extends Controller
 {
@@ -123,7 +123,13 @@ class CalendarioController extends Controller
         else{
             Auth::user()->notify(new EventoNotification($eventos));
         }
-        return back()->with('crearevento', 'Evento registrado correctamente');
+
+        if(app()->getLocale() == 'es'){
+            return back()->with('crearevento', 'Evento registrado correctamente');
+        }else{
+            return back()->with('crearevento', 'Correctly registered event');
+        }
+        
     }
 
     public function creareventoad(CalendarioRequest $request)
@@ -136,7 +142,11 @@ class CalendarioController extends Controller
         $evento->end_time = new \Datetime($request->end_time);
         $evento->Usuario_id_Usuario = $request->Usuario_id_Usuario;
         $evento->save();
-        return redirect()->action('CalendarioController@eventos')->with('crearevento', 'Evento registrado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('CalendarioController@eventos')->with('crearevento', 'Evento registrado correctamente');
+        }else{
+            return redirect()->action('CalendarioController@eventos')->with('crearevento', 'Correctly registered event');
+        }
     }
     public function verevento($id)
     {

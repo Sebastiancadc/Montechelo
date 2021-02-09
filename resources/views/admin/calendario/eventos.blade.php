@@ -79,7 +79,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3><b>{{__('¿Está seguro de eliminar este evento?')}}/b></h3>
+                                                                    <h3><b>{{__('¿Está seguro de eliminar este evento?')}}</h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

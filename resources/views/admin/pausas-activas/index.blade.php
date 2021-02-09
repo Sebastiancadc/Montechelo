@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">{{__('Gestión de pausas activas')}}s</h4>
+                                <h4 class="card-title">{{__('Gestión de pausas activas')}}</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     {{__('Crear pausa activa')}}
