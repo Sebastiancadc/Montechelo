@@ -54,7 +54,12 @@ class HomeController extends Controller
         $Rol = new Permisos();
         $Rol->Roles = $request->Roles;
         $Rol->save();
-        return redirect()->action('HomeController@permisoslista')->with('Rol', 'Rol creado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('HomeController@permisoslista')->with('Rol', 'Rol creado correctamente');
+           }else{
+            return redirect()->action('HomeController@permisoslista')->with('Rol', 'Role successfully created');
+        }
+        
     }
     public function permisoslista()
     {
@@ -126,7 +131,12 @@ class HomeController extends Controller
             $permisos->novedad_status = "0";
         }
         $permisos->save();
-        return redirect()->action('HomeController@permisoslista')->with('Permisosedit', 'Permisos editados correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('HomeController@permisoslista')->with('Permisosedit', 'Permisos editados correctamente');
+           }else{
+            return redirect()->action('HomeController@permisoslista')->with('Permisosedit', 'Permissions edited correctly');
+        }
+        
     }
     
 
@@ -149,7 +159,11 @@ class HomeController extends Controller
         $user->role = $request->role;
         $user->Rol_Id_Rol = $request->Rol_Id_Rol;
         $user->save();
-        return redirect('admin/usuario')->with('crearUsuario', 'Administrador creado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/usuario')->with('crearUsuario', 'Administrador creado correctamente');
+           }else{
+            return redirect('admin/usuario')->with('crearUsuario', 'Administrator successfully created');
+           }
     }
 
     public function storeCola(UsuarioRequest $request)
@@ -170,7 +184,12 @@ class HomeController extends Controller
         $user2->role = $request->role;
         $user2->Rol_Id_Rol = $request->Rol_Id_Rol;
         $user2->save();
-        return redirect('admin/usuario')->with('crearUsuario', 'Colaborador creado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/usuario')->with('crearUsuario', 'Colaborador creado correctamente');
+           }else{
+            return redirect('admin/usuario')->with('crearUsuario', 'Collaborator successfully created');
+           }
+        
     }
 
     public function crearAdmin()
@@ -202,14 +221,24 @@ class HomeController extends Controller
         $UserUpdate->area = $request->area;
         $UserUpdate->phone = $request->phone;
         $UserUpdate->save();
-        return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('HomeController@index')->with('editarUsuario', 'Usuario editado correctamente');
+           }else{
+            return redirect()->action('HomeController@index')->with('editarUsuario', 'User successfully edited');
+           }
+        
     }
 
     public function destroy($id)
     {
         $data = User::find($id);
         $data->delete();
-        return redirect('admin/usuario')->with('eliminarusuario', 'El usuario se elimino');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/usuario')->with('eliminarusuario', 'El usuario se elimino');
+           }else{
+            return redirect('admin/usuario')->with('eliminarusuario', 'The user was deleted');
+           }
+        
     }
 
     public function logout()

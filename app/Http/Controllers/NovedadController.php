@@ -34,7 +34,12 @@ class NovedadController extends Controller
     public function store(NovedadRequest $request)
     {
         Novedad::create($request->all());
-        return redirect()->action('NovedadController@index')->with('crearnovedades','Novedad registrada correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NovedadController@index')->with('crearnovedades','Novedad registrada correctamente');
+           }else{
+            return redirect()->action('NovedadController@index')->with('crearnovedades','Novelty correctly registered');
+           }
+        
     }
 
 
@@ -56,7 +61,12 @@ class NovedadController extends Controller
         $novedad->descripcion = $request->descripcion;
         $novedad->estado = $request->estado;
         $novedad->save();
-        return back()->with('crearnovedad','Novedad registrada correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('crearnovedad','Novedad registrada correctamente');
+           }else{
+            return back()->with('crearnovedad','Novelty correctly registered'); 
+        }
+        
     }
 
 
@@ -71,7 +81,13 @@ class NovedadController extends Controller
         $novedadAUpdate = Novedad::findOrFail($id);
         $novedadAUpdate->estado = $request->estado;
         $novedadAUpdate->save();
-        return redirect()->action('NovedadController@index')->with('update', 'El estado de la novedad se actualizo correctamente');
+
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NovedadController@index')->with('update', 'El estado de la novedad se actualizo correctamente');
+           }else{
+            return redirect()->action('NovedadController@index')->with('update', 'The novelty status has been updated correctly.');
+        }
+        
     }
 
 
@@ -79,7 +95,12 @@ class NovedadController extends Controller
     {
         $data = Novedad::findOrFail($id);
         $data->delete();
-        return redirect('admin/novedad')->with('eliminar','La novedad se elimino correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/novedad')->with('eliminar','La novedad se elimino correctamente');
+           }else{
+            return redirect('admin/novedad')->with('eliminar','The novelty was successfully removed');
+        }
+        
         
     }
 

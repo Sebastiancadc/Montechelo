@@ -58,7 +58,12 @@ class CapacitacionesController extends Controller
         $CapacitacionAgregar->user_id = $request->user_id;
         $CapacitacionAgregar->save();
         event(new CapacitacionesEvent($CapacitacionAgregar));
-        return back()->with('agregar', 'la capacitacion a sido agregada correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('agregar', 'La capacitacion a sido agregada correctamente');
+           }else{
+            return back()->with('agregar', 'Training has been added correctly');
+        }
+       
     }
 
     public function edit($id_capacitacion)
@@ -78,7 +83,12 @@ class CapacitacionesController extends Controller
         $updateCapacitacion->link = $request->link;
         
         $updateCapacitacion->save();
-        return redirect('admin/capacitaciones')->with('update', 'la capacitacion a sido modificada correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/capacitaciones')->with('update', 'La capacitacion a sido modificada correctamente');
+           }else{
+            return redirect('admin/capacitaciones')->with('update', 'The training has been modified correctly');
+        }
+        
     }
 
     public function destroy($id_capacitacion)
@@ -86,6 +96,11 @@ class CapacitacionesController extends Controller
 
         $eliminarCapacitacion = Capacitaciones::findOrFail($id_capacitacion);
         $eliminarCapacitacion->delete();
-        return redirect('admin/capacitaciones')->with('eliminar', 'la capacitacion se elimino corectamente ');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/capacitaciones')->with('eliminar', 'La capacitacion se elimino corectamente.');
+           }else{
+            return redirect('admin/capacitaciones')->with('eliminar', 'The training was eliminated correctly.');
+        }
+        
     }
 }

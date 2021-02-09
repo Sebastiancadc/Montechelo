@@ -47,7 +47,12 @@ class PerfilController extends Controller
         }
         $UserUpdate->cumpleanios = new \Datetime($request->cumpleanios);
         $UserUpdate->save();
-        return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('PerfilController@index')->with('editarusu', 'Usuario editado correctamente');
+           }else{
+            return redirect()->action('PerfilController@index')->with('editarusu', 'User successfully edited');
+        }
+        
     }  
 
     public function updatePhoto(Request $request)

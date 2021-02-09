@@ -35,7 +35,12 @@ class PausasActivasController extends Controller
             $nombre = Storage::disk('videosave')->put('pausasacitvas',$request->file('video'));
             $pausas->fill(['video' => asset($nombre)])->save();
          }
-         return redirect()->action('PausasActivasController@admin')->with('Crearv', 'Pausa creada correctamente');
+         if(app()->getLocale() == 'es'){
+            return redirect()->action('PausasActivasController@admin')->with('Crearv', 'Pausa creada correctamente');
+           }else{
+            return redirect()->action('PausasActivasController@admin')->with('Crearv', 'Pause created correctly');
+        }
+         
     }
 
     public function edit($id)
@@ -67,7 +72,12 @@ class PausasActivasController extends Controller
     {
         $data = Pausasactivas::findOrFail($id);
         $data->delete();
-        return back()->with('eliminar','La pausa activa se elimino correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('eliminar','La pausa activa se elimino correctamente');
+           }else{
+            return back()->with('eliminar','The active pause was successfully removed');
+        }
+        
     }
 
     public function logout()

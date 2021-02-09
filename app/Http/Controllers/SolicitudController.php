@@ -67,7 +67,12 @@ class SolicitudController extends Controller
     public function store(SolicitudRequest $request)
     {
         Solicitud::create($request->all());
-        return redirect()->action('SolicitudController@index')->with('crearsolicitudes', 'Solicitud creada exitosamente.');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('SolicitudController@index')->with('crearsolicitudes', 'Solicitud creada exitosamente.');
+           }else{
+            return redirect()->action('SolicitudController@index')->with('crearsolicitudes', 'Request successfully created.');
+        }
+        
     }
 
 
@@ -83,7 +88,12 @@ class SolicitudController extends Controller
     public function crearsolicitudes(SolicitudRequest $request)
     {
         Solicitud::create($request->all());
-        return redirect()->action('SolicitudController@crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('SolicitudController@crearsolicitud')->with('crearsolicitudes', 'La solicitud fue enviada exitosamente.');
+           }else{
+            return redirect()->action('SolicitudController@crearsolicitud')->with('crearsolicitudes', 'The request was successfully sent.');
+        }
+        
     }
 
 
@@ -98,7 +108,12 @@ class SolicitudController extends Controller
         $solicitudUpdate = Solicitud::findOrFail($id);
         $solicitudUpdate->estado_solicitud = $request->estado_solicitud;
         $solicitudUpdate->save();
-        return redirect('admin/solicitud')->with('update', 'El estado de la solicitud se actualizó correctamente.');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/solicitud')->with('update', 'El estado de la solicitud se actualizó correctamente.');
+           }else{
+            return redirect('admin/solicitud')->with('update', 'The status of the request was successfully updated.');
+        }
+        
     }
 
 
@@ -106,7 +121,12 @@ class SolicitudController extends Controller
     {
         $data = Solicitud::findOrFail($id);
         $data->delete();
-        return redirect('admin/solicitud')->with('eliminar', 'La solicitud se eliminó correctamente.');
+        if(app()->getLocale() == 'es'){
+            return redirect('admin/solicitud')->with('eliminar', 'La solicitud se eliminó correctamente.');
+           }else{
+            return redirect('admin/solicitud')->with('eliminar', 'The request was successfully deleted.');
+        }
+        
     }
 
     public function logout()

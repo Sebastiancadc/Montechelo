@@ -39,7 +39,12 @@ class ConfigpageController extends Controller
         $configUpdate->textorganigrama = $request->textorganigrama;
         $configUpdate->textuniestra = $request->textuniestra;
         $configUpdate->save();
-        return back()->with('Pageedit', 'Estilos editados correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('Pageedit', 'Estilos editados correctamente');
+           }else{
+            return back()->with('Pageedit', 'Styles edited correctly');
+        }
+        
     }
 
     public function updatePhoto(Request $request)

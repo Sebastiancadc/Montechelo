@@ -33,12 +33,7 @@ class RepositorioController extends Controller
      */
     public function index()
     {
-
-       
         $repositorio = Repositorio::all();
-
-
-
         return view('admin.repositorio', compact('repositorio'));
     }
 

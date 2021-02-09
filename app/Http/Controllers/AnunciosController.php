@@ -42,15 +42,25 @@ class AnunciosController extends Controller
         $anuncio->user_id = $request->user_id;
         $anuncio->save();
         event(new AnuncioEvent($anuncio));
-
-        return back()->with('creareanuncio', 'Anuncio registrado correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('creareanuncio', 'Anuncio registrado correctamente');
+           }else{
+            return back()->with('creareanuncio', 'Ad successfully registered');
+           }
+        
+        
     }
 
     public function destroy($id)
     {
         $data = Anuncios::findOrFail($id);
         $data->delete();
-        return redirect()->action('AnunciosController@index')->with('seelimino', 'Anuncio eliminado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('AnunciosController@index')->with('seelimino', 'Anuncio eliminado correctamente');
+           }else{
+            return redirect()->action('AnunciosController@index')->with('seelimino', 'Ad successfully removed');
+           }
+        
     }
 
     public function Listanotificaciones()

@@ -174,9 +174,11 @@ class CalendarioController extends Controller
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
         $evento->save();
-       
+       if(app()->getLocale() == 'es'){
         return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
-    
+       }else{
+        return redirect()->action('CalendarioController@index')->with('editarevento', 'Event successfully edited');
+       }
     }
     public function editarEventoAd(CalendarioRequest $request, $id)
     {
@@ -188,20 +190,32 @@ class CalendarioController extends Controller
         $evento->start_time = new \Datetime($request->start_time);
         $evento->end_time = new \Datetime($request->end_time);
         $evento->save();
-       
-        return redirect()->action('CalendarioController@eventos')->with('editarevento', 'Evento editado correctamente');
-    
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('CalendarioController@index')->with('editarevento', 'Evento editado correctamente');
+           }else{
+            return redirect()->action('CalendarioController@index')->with('editarevento', 'Event successfully edited');
+           }
     }
     public function destroy($id)
     {
         $data = Eventos::findOrFail($id);
         $data->delete();
-        return redirect()->action('CalendarioController@index')->with('seelimino', 'Evento eliminado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('CalendarioController@index')->with('seelimino', 'Evento eliminado correctamente');
+           }else{
+            return redirect()->action('CalendarioController@index')->with('seelimino', 'Event successfully deleted');
+           }
+        
     }
     public function destroyad($id)
     {
         $data = Eventos::findOrFail($id);
         $data->delete();
-        return redirect()->action('CalendarioController@eventos')->with('seeliminoad', 'Evento eliminado correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('CalendarioController@eventos')->with('seeliminoad', 'Evento eliminado correctamente');
+           }else{
+            return redirect()->action('CalendarioController@eventos')->with('seeliminoad', 'Event successfully deleted');
+           }
+        
     }
 }

@@ -58,14 +58,23 @@ class BuzonDeSugerenciasController extends Controller
     public function crearsugerencias(BuzonRequest $request)
     {
         buzon_de_sugerencias::create($request->all());
-        return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Sugerencia registrada correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Sugerencia registrada correctamente');
+           }else{
+            return redirect()->action('BuzonDeSugerenciasController@index2')->with('buzon_crear', 'Suggestion successfully registered');
+        }
     }
 
     public function destroy($Id_sugerencia)
     {
         $eliminarsugerencia = buzon_de_sugerencias::findOrFail($Id_sugerencia);
         $eliminarsugerencia->delete();
-        return back()->with('eliminar', 'La sugerencia se elimino correctamente ');
+        if(app()->getLocale() == 'es'){
+            return back()->with('eliminar', 'La sugerencia se elimino correctamente ');
+           }else{
+            return back()->with('eliminar', 'The suggestion was correctly deleted');
+           }
+        
     }
 
     public function logout()

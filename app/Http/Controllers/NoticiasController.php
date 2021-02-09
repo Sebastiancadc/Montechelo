@@ -80,7 +80,12 @@ class NoticiasController extends Controller
             $noticia->fill(['image' => asset($nombre)])->save();
         }
         event(new NoticiasEvent($noticia));
-        return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
+           }else{
+            return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Correctly published news');
+           }
+        
     }
 
     public function edit($id)
@@ -112,7 +117,12 @@ class NoticiasController extends Controller
         }
 
         Session::flash('message', 'Publicación actualizada correctamente');
-        return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
+           }else{
+            return redirect()->action('NoticiasController@index')->with('editarnoticia', 'News updated correctly');
+           }
+        
     }
 
     public function updateUs(NoticiaRequest $request, $id)
@@ -145,10 +155,12 @@ class NoticiasController extends Controller
             $nombre = Storage::disk('imaposts')->put('plantilla/img/noticia',  $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
         }
-
-        Session::flash('message', 'Publicación actualizada correctamente');
-        //return redirect()->action('NoticiasController@directee')->with('editarnoticia', 'Noticia actualizada correctamente');
-        return back()->with('editarnoticia', 'Noticia actualizada correctamente');
+        if(app()->getLocale() == 'es'){
+            return back()->with('editarnoticia', 'Noticia actualizada correctamente');
+           }else{
+            return back()->with('editarnoticia', 'News updated correctly');
+           }
+        
     }
 
     public function post($slug)
@@ -168,7 +180,12 @@ class NoticiasController extends Controller
         $noticia = Noticia::findOrFail($id);
         $noticia->delete();
         Session::flash('message', 'Publicación borrada  correctamente');
-        return redirect()->action('NoticiasController@index')->with('eliminar', 'la noticia se elimino correctamente');
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NoticiasController@index')->with('eliminar', 'La noticia se elimino correctamente');
+           }else{
+            return redirect()->action('NoticiasController@index')->with('eliminar', 'The news item was deleted correctly');
+           }
+        
     }
     public function logout()
     {
