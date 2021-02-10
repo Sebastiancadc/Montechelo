@@ -69,7 +69,7 @@
                         <div class="pt-4 text-center">
                             <h5 class="h3 title">
                                 <span class="d-block mb-1">{{__('Pausas activas')}}</span>
-                                <small class="h4 font-weight-light text-muted">{{__('Tómate un descanso')}}.</small>
+                                <small class="h4 font-weight-light text-muted">{{__('Tómate un descanso.')}}</small>
                             </h5>
                             <div class="mt-3">
                             </div>
