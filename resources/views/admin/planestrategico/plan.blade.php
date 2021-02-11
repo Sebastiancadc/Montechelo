@@ -144,9 +144,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row ">
             <div class="col-18 col-md-8">
-                <span>
-                    <img src="{{$page->imagenorganigrama}}" height="500" width="650">
-                </span>
+                <iframe src="{{$page->textorganigrama}}" width="1010" height="580"></iframe>
             </div>
             <div class="col-11 col-md-4">
                 <span class="trasparentee">
@@ -154,7 +152,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <br><br>
                         <h1>{{__('Organigrama')}}</h1>
                         <div class="lineart5"></div>
-                        <p>{{$page->textorganigrama}}</p>
+                        
                     </div>
                 </span></div>
         </div>

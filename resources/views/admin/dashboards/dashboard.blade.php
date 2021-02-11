@@ -1,9 +1,8 @@
 @extends('admin.layouts.layout')
 @section('content')
 <?php
-$date =date('m-d')
+$date =date('m-d');
 ?>
-
 <link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">

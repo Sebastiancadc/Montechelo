@@ -13,7 +13,9 @@ $ids = Auth::user()->id;
 $conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
 $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
 ?>
-
+<script>
+  window.history.forward();
+</script>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

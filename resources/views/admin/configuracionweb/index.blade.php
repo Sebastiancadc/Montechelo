@@ -159,21 +159,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h4>{{__('Organigrama')}}</h4>
-                                        <h4>{{__('650 X 500 pixeles')}}</h4>
-                                        <div class="card-profile-image">
-                                            <form action="{{ url('admin/imagenorganigrama') }}" enctype='multipart/form-data' id="orgaForm">
-                                                @csrf
-                                                <input type="file" id="orgaInput" style="display: none" name="imagenorganigrama">
-                                            </form>
-                                            <div><img src="{{$page->imagenorganigrama}}" height="200" width="300" id="orgaImage">
-                                                <div id="hover9"><h4>{{__('Cambiar imagen Organigrama')}}</h4></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <h4>{{__('Unidades estratégicas de negocio')}}</h4>
                                         <h4>{{__('693 X 500 pixeles')}}</h4>
                                         <div class="card-profile-image">
