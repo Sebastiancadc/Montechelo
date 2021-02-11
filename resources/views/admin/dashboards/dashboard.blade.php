@@ -52,7 +52,7 @@ $date =date('m-d');
                                                 </div>
                                                 <div class="m-t-10">
                                                     <div class="thumbnail-wrapper d32 circular m-t-5 avatar rounded-circle">
-                                                        <img src="{{ $item->user->photo }}">
+                                                        <img src="{{$item->user->photo}}">
                                                     </div>
                                                     <div class="inline m-l-10">
                                                         <p class="no-margin text-white fs-12">{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
@@ -150,14 +150,14 @@ $date =date('m-d');
           </h5>
           </div>
           
-          <div class="card-header">
+          {{-- <div class="card-header">
                 <div class="h3 mb-0 widget-calendar-day"></div>
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
-          </div>
+          </div> --}}
           <!-- Card body -->
           <div class="card-body">
-            <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div>
-            <div data-toggle="calendar" id="date" style="margin-top: -151%;" ></div>
+            {{-- <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div> --}}
+            <div data-toggle="calendar" id="date"  ></div>
           </div>
           @foreach ($eventos as $evento)
           <div class="etnrr">

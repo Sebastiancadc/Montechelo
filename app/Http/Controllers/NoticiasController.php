@@ -28,8 +28,8 @@ class NoticiasController extends Controller
     {
         $noticia = Noticia::paginate(4);
         $noticiasRegistradas = DB::table('noticias')->count();
-        $programacion = DB::table('noticias')->wherecategory_id(1)->count();
-        return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas', 'programacion'));
+       
+        return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas'));
     }
     public function index2()
     {
@@ -84,7 +84,26 @@ class NoticiasController extends Controller
            }
 
     }
+    public function storeAD(NoticiaRequest $request)
+    {
 
+        $noticia = new Noticia($request->all());
+        $noticia->slug = Str::slug($request->title);
+        $noticia->save();
+
+        if ($request->file('image')) {
+            $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
+            $noticia->fill(['image' => asset($nombre)])->save();
+        }
+        event(new NoticiasEvent($noticia));
+        if(app()->getLocale() == 'es'){
+            return redirect()->action('NoticiasController@index')->with('agregar', 'Noticia publicada correctamente');
+           }else{
+            return redirect()->action('NoticiasController@index')->with('agregar', 'Correctly published news');
+           }
+
+    }
+    
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);

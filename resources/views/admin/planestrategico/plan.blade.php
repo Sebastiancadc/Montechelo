@@ -146,7 +146,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
             <div class="col-18 col-md-8">
                 <iframe src="{{$page->textorganigrama}}" width="1010" height="580"></iframe>
             </div>
-            <div class="col-11 col-md-4">
+            {{-- <div class="col-11 col-md-4">
                 <span class="trasparentee">
                     <div>
                         <br><br>
@@ -154,7 +154,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                         <div class="lineart5"></div>
                         
                     </div>
-                </span></div>
+                </span></div> --}}
         </div>
     </div>
 </div>

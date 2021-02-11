@@ -29,16 +29,17 @@
                 </button>
             </div>
             @endif
+            @include('admin.noticias.create')
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">{{__('Gestión de noticias')}}</h4>
-                                <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearnoticia') }}">
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     {{__('Crear Noticia')}}
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -59,8 +60,8 @@
                                         @foreach ($noticia as $item)
                                         <tr>
                                             <td>{{$item->title}}</td>
-                                            <td>{{$item->category->name}}</td>
-                                            <td>{{$item->user->name}}</td>
+                                            <td>{{$item->category}}</td>
+                                            <td>{{$item->autor}}</td>
                                             <td><a href="#" data-toggle="modal" data-target="#ver{{$item->Id_noticia}}">
                                                     <img src="{{$item->image }}" width="80" height="900" class="img-fluid"></a>
                                             </td>

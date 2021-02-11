@@ -60,22 +60,22 @@
 															<i class="fas fa-user-edit"></i>
 														</span>
 													</div>
-													<input class="form-control" placeholder="{{__('Autor')}}" name="autor" value="{{$noticiaActualizar->user->name}}" disabled type="text">
+													<input class="form-control" placeholder="{{__('Autor')}}" name="autor" value="{{$noticiaActualizar->autor}}" disabled type="text">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<br>
 												<h4><b>{{__('Categoría')}}</b></h4>
 												<select class="form-control" id="exampleFormControlSelect1" name="category_id">
-													@foreach ($categoria as $category)
-													<option value="{{ $category->id }}">{{ $category->name }}</option>
+													
+													<option value="{{$noticiaActualizar->category}}">{{$noticiaActualizar->category}}</option>
 													<option>{{__('Seleccione categoría')}}</option>
 													<option>{{__('Diseño')}}</option>
 													<option>{{__('Desarrollo')}}</option>
 													<option>{{__('Software')}}</option>
 													<option>{{__('Análisis')}}</option>
 													<option>{{__('Producción')}}</option>
-													@endforeach
+													
 												</select>
 											</div>
 											<div class="col-md-12">
@@ -102,7 +102,7 @@
 								</div>
 							</div>
 							<div class="col-sm-10 col-md-9" style="margin-left: 72%;">
-								<button type="submit" class="btn btn-primary  mt-4">{{(__'Actualizar')}}</button>
+								<button type="submit" class="btn btn-primary  mt-4">{{__('Actualizar')}}</button>
 								<a href="{{ url('admin/noticia') }}" class="btn btn-danger mt-4">{{__('Cancelar')}}</a>
 							</div>
 						</div>

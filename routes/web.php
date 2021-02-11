@@ -106,7 +106,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //LOGS
     Route::get('logsAdmin', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-
+    Route::post('crearnoticiasAD', 'NoticiasController@storeAD')->name('crearnoticiasAD');
 
     //Pausas activas
     Route::get('pasuasAdmin', 'PausasActivasController@admin');

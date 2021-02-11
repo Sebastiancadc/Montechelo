@@ -12,10 +12,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="{{url('crearnoticias')}}" enctype="multipart/form-data">
+                <form role="form" method="POST" action="{{url('admin/crearnoticiasAD')}}" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
-                    <input type="hidden" name="user_id"  name="user_id" value="";>
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
                       <input class="form-control" placeholder="{{__('Título')}}" name="title" type="text">
@@ -23,7 +23,7 @@
                   </div>
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
-                        <select class="form-control" id="exampleFormControlSelect1" name="">
+                        <select class="form-control" id="exampleFormControlSelect1" name="category">
                             <option>{{__('Seleccione la categoría')}}</option>
                             <option>{{__('Diseño')}}</option>
                             <option>{{__('Desarrollo')}}</option>
@@ -33,12 +33,12 @@
                         </select>
                     </div>
                   </div>
-                  <div class="form-group mb-3">
-                    <input class="form-control" placeholder="autor" name="" type="text">
-                    </div>
+                 
+                    <input class="form-control" name="autor" value="{{Auth::user()->name}}" type="hidden">
+                 
                   <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
-                        <textarea class="form-control" placeholder="{{__('Descripción')}}" name="descripcion" type="text" cols="10" rows="5" required></textarea>
+                        <textarea class="form-control" placeholder="{{__('Descripción')}}" name="body" type="text" cols="10" rows="5" required></textarea>
                     </div>
                   </div>
                   <div class="form-group mb-3">
