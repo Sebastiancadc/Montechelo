@@ -44,19 +44,20 @@
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
                             </div>
-
-                            <div class="form-group">
-                                <label class="form-control-label">{{__('Categorías')}}</label>
-                                <select class="form-control" name="category_id" required>
-                                    @foreach ($categoria as $category)
-
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
+                            <div class="col-md-13">
+                                <label class="form-control-label" for="exampleFormControlSelect1">{{__('Categorías')}}</label>
+                                <select class="form-control" name="category" >
+                                    <option></option>
+                                    <option>{{__('Diseño')}}</option>
+                                    <option>{{__('Desarrollo')}}</option>
+                                    <option>{{__('Software')}}</option>
+                                    <option>{{__('Análisis')}}</option>
+                                    <option>{{__('Producción')}}</option>
+                                    <option>{{__('Otro')}}</option>
                                 </select>
-                                @if ($errors->has('category_id'))
-                                <strong class="text-danger tamano">{{$errors->first('category_id') }}</strong>
-                                @endif
+
                             </div>
+
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">{{__('Contenido')}}</label>
                                 <div class="col-md-13">

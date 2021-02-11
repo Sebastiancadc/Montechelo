@@ -6,7 +6,6 @@ use App\Capacitaciones;
 use Illuminate\Http\Request;
 use App\Noticia;
 use App\User;
-use App\Category;
 use App\Events\NoticiasEvent;
 use App\Http\Requests\NoticiaRequest;
 use App\Pausasactivas;
@@ -52,14 +51,12 @@ class NoticiasController extends Controller
     public function crearnoticia()
     {
         $user = User::find(Auth::User()->id);
-        $categoria = Category::all();
-        return view('admin.noticias.crearnoticia', compact('categoria', 'user'));
+        return view('admin.noticias.crearnoticia', compact('user'));
     }
     public function crearnoticias()
     {
         $user = User::find(Auth::User()->id);
-        $categoria = Category::all();
-        return view('admin.crearnoticia', compact('categoria', 'user'));
+        return view('admin.crearnoticia', compact('user'));
     }
     /**
      * Store a newly created resource in storage.
@@ -85,20 +82,20 @@ class NoticiasController extends Controller
            }else{
             return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Correctly published news');
            }
-        
+
     }
 
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
-        $categoria = Category::all();
-        return view('admin/noticias/edit', compact('noticiaActualizar', 'categoria'));
+
+        return view('admin/noticias/edit', compact('noticiaActualizar'));
     }
     public function editAd($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
-        $categoria = Category::all();
-        return view('admin/noticias/editad', compact('noticiaActualizar', 'categoria'));
+
+        return view('admin/noticias/editad', compact('noticiaActualizar'));
     }
 
 
@@ -110,7 +107,7 @@ class NoticiasController extends Controller
         $noticia = Noticia::find($id);
         $noticia->slug =  Str::slug($request->title);
         $noticia->update($request->all());
-        
+
         if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('plantilla/img/noticia',  $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
@@ -122,7 +119,7 @@ class NoticiasController extends Controller
            }else{
             return redirect()->action('NoticiasController@index')->with('editarnoticia', 'News updated correctly');
            }
-        
+
     }
 
     public function updateUs(NoticiaRequest $request, $id)
@@ -160,7 +157,7 @@ class NoticiasController extends Controller
            }else{
             return back()->with('editarnoticia', 'News updated correctly');
            }
-        
+
     }
 
     public function post($slug)
@@ -185,7 +182,7 @@ class NoticiasController extends Controller
            }else{
             return redirect()->action('NoticiasController@index')->with('eliminar', 'The news item was deleted correctly');
            }
-        
+
     }
     public function logout()
     {
