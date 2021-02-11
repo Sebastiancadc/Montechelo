@@ -2,6 +2,13 @@
 <html lang="es">
 <?php
 $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
+
+header("Expires: Tue, 01 Jul 2001 06:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -33,8 +40,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
   </div>
   <h1>Cerrando sesion...</h1>
  <script>
-   localStorage.clear();
-   sessionStorage.clear();
   function redireccionar(){
   window.location.href = "http://localhost/Montechelo/public/";
 }
