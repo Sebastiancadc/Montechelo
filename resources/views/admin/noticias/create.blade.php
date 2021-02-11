@@ -16,36 +16,55 @@
                     @csrf
                     @method('POST')
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
-                      <input class="form-control" placeholder="{{__('Título')}}" name="title" type="text">
-                    </div>
+                  
+                    <div class="col-sm-12">
+                      <div class="form-group form-group-default">
+                          <label>{{__('Título')}}</label>
+                          <input class="form-control" placeholder="{{__('Título')}}" name="title" type="text">
+           
+                      </div>
                   </div>
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
+
+
+                  <div class="col-sm-12">
+                    <div class="form-group form-group-default">
+                        <label>{{__('Categoria')}}</label>
                         <select class="form-control" id="exampleFormControlSelect1" name="category">
-                            <option>{{__('Seleccione la categoría')}}</option>
-                            <option>{{__('Diseño')}}</option>
-                            <option>{{__('Desarrollo')}}</option>
-                            <option>{{__('Software')}}</option>
-                            <option>{{__('Análisis')}}</option>
-                            <option>{{__('Producción')}}</option>
-                        </select>
+                          <option>{{__('Seleccione la categoría')}}</option>
+                          <option>{{__('Diseño')}}</option>
+                          <option>{{__('Desarrollo')}}</option>
+                          <option>{{__('Software')}}</option>
+                          <option>{{__('Análisis')}}</option>
+                          <option>{{__('Producción')}}</option>
+                      </select>
+         
                     </div>
-                  </div>
+                </div>
                  
                     <input class="form-control" name="autor" value="{{Auth::user()->name}}" type="hidden">
-                 
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
+                    
+                    <div class="col-sm-12">
+                      <div class="form-group form-group-default">
+                          <label>{{__('Fecha de publicación')}}</label>
+                          <input class="form-control" type="date" name="fecha"  >
+                      </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <div class="form-group form-group-default">
+                        <label>{{__('Descripción')}}</label>
                         <textarea class="form-control" placeholder="{{__('Descripción')}}" name="body" type="text" cols="10" rows="5" required></textarea>
+         
                     </div>
+                </div>
+
+                <div class="col-sm-12">
+                  <div class="form-group form-group-default">
+                      <label>{{__('Imagen portada')}}</label>
+                      <input type="file"  class="form-control form-control-alternative"  name="image">
+       
                   </div>
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
-                        <input type="file"  class="form-control form-control-alternative"  name="image">
-                    </div>
-                  </div>
+              </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">{{__('Crear')}}</button>
                     <button class="btn btn-danger ml-auto" data-dismiss="modal">{{__('Cancelar')}}</button>

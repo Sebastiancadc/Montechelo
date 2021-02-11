@@ -57,7 +57,16 @@
                                 </select>
 
                             </div>
-
+                            <br>
+                            <div class="form-group">
+                                <label class="form-control-label" for="exampleFormControlTextarea1">{{__('Fecha de publicación')}}</label>
+                                <div class="col-md-13">
+                                   <input class="form-control" type="date" name="fecha">
+                                    @if ($errors->has('fecha'))
+                                    <strong class="text-danger tamano">{{$errors->first('fecha') }}</strong>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">{{__('Contenido')}}</label>
                                 <div class="col-md-13">

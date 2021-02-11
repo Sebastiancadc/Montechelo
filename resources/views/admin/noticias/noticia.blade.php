@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-8 text-md-left text-center">
                             <h4 class="post-heading">{{$item->title }}</h4>
-                            <p class="meta  mb-4"><span class="post-category">{{ $item->category}}</span> / <span class="post-meta-info">{{ $item->created_at->format('d/m/Y') }}</span></p>
+                            <p class="meta  mb-4"><span class="post-category">{{ $item->category}}</span> / <span class="post-meta-info">{{ $item->fecha}}</span></p>
 
                             <p class="post-text text-justify">{{ substr($item->body, 0,90) }}...</p>
                             <div class="row mt-5">

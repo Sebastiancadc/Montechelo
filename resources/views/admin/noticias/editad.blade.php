@@ -78,6 +78,16 @@
 													
 												</select>
 											</div>
+
+											<div class="col-md-12">
+												<br>
+												<h4><b>{{__('Fecha de publicación')}}</b></h4>
+												<div class="input-group">
+													<input class="form-control" type="date" name="fecha" value="{{$noticiaActualizar->fecha}}">
+												</div>
+											</div>
+
+
 											<div class="col-md-12">
 												<br>
 												<h4><b>{{__('Descripción')}}</b></h4>

@@ -66,7 +66,7 @@
                                                     <img src="{{$item->image }}" width="80" height="900" class="img-fluid"></a>
                                             </td>
                                             <td>{{$item->body}}</td>
-                                            <td>{{$item->created_at}}</td>
+                                            <td>{{$item->fecha}}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('editarnoticiaad', $item->Id_noticia)}}" class="btn btn-link btn-primary btn-lg" data-original-title="{{__('Editar noticia')}}">

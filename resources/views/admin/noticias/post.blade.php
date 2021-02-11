@@ -45,7 +45,7 @@
                             <h4 class="mb-0">
                                 <a>{{$noticia->user->name}} {{$noticia->user->lastname}}</a>
                             </h4>
-                            <small class="d-block text-muted">{{ $noticia->created_at->format('d/m/Y') }}</small>
+                            <small class="d-block text-muted">{{ $noticia->fecha}}</small>
                         </div>
                     </div>
                     <div class="text-right ml-auto">
