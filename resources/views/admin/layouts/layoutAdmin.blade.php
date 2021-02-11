@@ -3,9 +3,7 @@
 <?php
 $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
 ?>
-<script>
-	window.history.forward();
-  </script>
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Montechelo</title>

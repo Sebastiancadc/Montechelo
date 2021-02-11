@@ -33,9 +33,11 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
   </div>
   <h1>Cerrando sesion...</h1>
  <script>
-     function redireccionar(){
+   localStorage.clear();
+   sessionStorage.clear();
+  function redireccionar(){
   window.location.href = "http://localhost/Montechelo/public/";
 }
-setTimeout("redireccionar()", 2000);
+  setTimeout("redireccionar()", 2000);
  </script>
 </html>

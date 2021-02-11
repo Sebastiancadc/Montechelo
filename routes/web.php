@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SolicitudController;
 use App\Pausasactivas;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,6 @@ Route::get('/', function () {
 
 Route::get('/home', 'InicioController@index');
 
-
 Auth::routes();
 //pagina de espera
 Route::get('logout', function () {
@@ -22,10 +22,13 @@ Route::get('logout', function () {
     return view('logout');
 });
 
+
 // login
 Route::get('admin', function () {
-
+    
+    Artisan::call('cache:clear');
     return view('admin.login');
+    
 });
 
 Route::get('cambiarpasss', function () {
@@ -193,7 +196,6 @@ Route::group(['auth','prefix' => ''], function () {
 
     //Directorio
     Route::resource('directorio', 'DirectorioController');
-
     Route::get('buscador', 'DirectorioController@buscador')->name('buscar');
     Route::get('verperfil/{id}', 'DirectorioController@perfilUsuarios')->name('verperfil');
 

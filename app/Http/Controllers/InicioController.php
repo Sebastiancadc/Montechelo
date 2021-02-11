@@ -84,7 +84,6 @@ class InicioController extends Controller
         $pausasramdom = Pausasactivas::select('video')
         ->inRandomOrder() 
         ->first();
-
         return view('admin.dashboards.dashboard',compact('users','eventos','calendario'
         ,'modal','noticias','noticias2','pausasramdom'));
     }

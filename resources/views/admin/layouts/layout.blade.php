@@ -13,13 +13,13 @@ $ids = Auth::user()->id;
 $conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
 $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
 ?>
-<script>
+{{-- <script>
   window.history.forward();
-</script>
+</script> --}}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Favicon -->
+<!-- Favicon -->
   <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
@@ -39,6 +39,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
 
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
   <title>Montechelo </title>
 </head>
 

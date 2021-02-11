@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
     ];
 
+
     /**
      * The priority-sorted list of middleware.
      *

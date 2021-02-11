@@ -19,14 +19,9 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
 </head>
-<script>function deshabilitaRetroceso(){
-    window.location.hash="no-back-button";
-    window.location.hash="Again-No-back-button" //chrome
-    window.onhashchange=function(){window.location.hash="";}
-}
-</script>
-<body class="bg-default" onload="deshabilitaRetroceso()"
-    style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%, rgb(31 34 37) 100%) !important;"  >
+
+<body class="bg-default"
+    style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%, rgb(31 34 37) 100%) !important;">
     <!-- Navbar -->
     <div id="particles-js"> </div>
     <!-- Main content -->
@@ -97,7 +92,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 
                                     </div>
                                     <div class="copyright text-center text-lg-left text-muted">
-                                        <a style="color: #002A60;" class="font-weight-bold ml-1">{{__('Desarrollado por el grupo 3 Sena Montechelo')}} 👻 2020.</a>
+                                        <a style="color: #002A60;" class="font-weight-bold ml-1">{{__('Desarrollado por Montechelo - SENA.')}}&copy;</a>
                                     </div>
                                 </form>
                             </div>
