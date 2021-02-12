@@ -49,14 +49,18 @@ $fechas = $fechahoy->format('d-m-Y');
                                             <div class="carousel-item {{$loop->first ? 'active': ''}}" data-interval="5000">
                                                 <img src="{{$item->image}}" class="d-block w-100 image-responsive imges" alt="...">
                                                 <div class="carousel-caption d-none d-md-block ">
-                                                 
-                                                  <a  href="{{'post'}}/{{ $item->slug }}">  
-                                                    <h5 class="aso">{{$item->title}}</h5>
+
+                                                  <a  href="{{'post'}}/{{ $item->slug }}">
+                                                    <h1 class="aso">{{$item->title}}</h5>
                                                     <p class="aso">{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
+                                                    <div class="thumbnail-wrapper d32 circular m-t-5  avatar rounded-circle">
+                                                        <img width="auto" height="auto" src="{{$item->user->photo}}"  alt="">
+                                                    </div>
+
                                                   </a>
                                                 </div>
                                                 </div>
-                                            
+
                                           @endif
                                           @endforeach
                                         </div>
@@ -68,7 +72,7 @@ $fechas = $fechahoy->format('d-m-Y');
                                         </a>
                                     </div>
                                 </div>
-                            
+
                         </div>
 
                     </div>
@@ -157,14 +161,16 @@ $fechas = $fechahoy->format('d-m-Y');
           })
       });
 </script>
-<style> 
+<style>
   .imges:hover {
     opacity: 0.75;
-    
-}
 
+}
+.aso{
+    color: #ffffff;
+}
 .aso:hover {
-  color: #07d544;
+  color: #000000;
   cursor: pointer;
 }
 </style>
