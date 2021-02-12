@@ -20,7 +20,7 @@ class InicioController extends Controller
         $this->middleware('auth');
     }
 
-    
+
     public $sources = [
         [
             'start_time' => 'start_time',
@@ -34,7 +34,7 @@ class InicioController extends Controller
     {
 
         $usuariologeado = Auth::user();
-        
+
         $admins = User::where('role','=','admin')->pluck('id');
         $u =User::all();
         $e =Noticia::all();
@@ -78,14 +78,13 @@ class InicioController extends Controller
         $users = User::whereMonth('cumpleanios',"=",date('m'))->get();
         $eventos = Eventos::whereMonth('start_time',"=",date('m'))->get();
         $modal = User::whereDay('cumpleanios',"=",date('d'))->get();
-        $noticias= Noticia::latest()->take(2)->get();
-        $noticias2= Noticia::first()->take(1)->get();
-        
+        $noticias= Noticia::all();
+
         $pausasramdom = Pausasactivas::select('video')
-        ->inRandomOrder() 
+        ->inRandomOrder()
         ->first();
         return view('admin.dashboards.dashboard',compact('users','eventos','calendario'
-        ,'modal','noticias','noticias2','pausasramdom'));
+        ,'modal','noticias','pausasramdom'));
     }
 
     public function indexAdmin()
@@ -99,7 +98,7 @@ class InicioController extends Controller
         $capacitaciones = DB::table('capacitaciones')->count();
         $pausas = DB::table('pausas_activas')->count();
         $novedadesPendientes = DB::select("SELECT * FROM novedad WHERE estado = 'pendiente'");
-        $solicidesPendientes = DB::select("SELECT * FROM solicitud WHERE estado_solicitud = 'pendiente'");        
+        $solicidesPendientes = DB::select("SELECT * FROM solicitud WHERE estado_solicitud = 'pendiente'");
         return view('admin.dashboards.dashboardAdmin', compact('usuariosregistrados','eventos','buzon','novedad'
     ,'solicitudes','noticias','capacitaciones','pausas','novedadesPendientes','solicidesPendientes'));
     }

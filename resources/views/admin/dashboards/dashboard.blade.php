@@ -34,82 +34,50 @@ $date =date('m-d');
                         <div class="row align-items-center">
                             <div class="col">
                                 <h2 class="mb-0">{{__('Noticias de Intéres')}}</h5>
-                            </div>                          
+                            </div>
                         </div>
                     </div>
                     <div class="row align-items-center">
                         <div class="col sm-4">
                             @foreach ($noticias as $item)
                             <a href="{{'post'}}/{{ $item->slug }}">
-                                <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-                                    <img src="{{$item->image}}" alt="" class="image-responsive imgsss">
-                                    <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
-                                    <div class="overlayer-wrapper item-info ">
-                                            <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                                <div class="">
-                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>                                            
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="m-t-10">
-                                                    <div class="thumbnail-wrapper d32 circular m-t-5 avatar rounded-circle">
-                                                        <img src="{{$item->user->photo}}">
-                                                    </div>
-                                                    <div class="inline m-l-10">
-                                                        <p class="no-margin text-white fs-12">{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
-                                                    </div>                                                
-                                                    <div class="clearfix"></div>
+                                <div class="bd-example">
+                                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{$item->image}}" class="d-block w-100 image-responsive" alt="...">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>{{$item->title}}</h5>
+                                                    <p>{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
                                     </div>
-                                    </div>
-
                                 </div>
                             </a>
                             @endforeach
                         </div>
-                        @foreach ($noticias2 as $noticia2)
-                        <div class="col-md-8" style="margin-left: -20px;" >
-                            <a href="{{'post'}}/{{ $noticia2->slug }}">
-                                <div class="gallery-item " data-width="2" data-height="2" style="padding-left: 10px; width: auto">
-                                    <!-- START PREVIEW -->
-                                    <div class="live-tile slide" data-speed="750" data-delay="4000" data-mode="carousel">
-                                        <div class="slide-front">
-                                            <img src="{{$noticia2->image}}" class="image-responsive-height imgsss2">
-                                        </div>
-                                    </div>
-                                    <!-- END PREVIEW -->
-                                    <!-- START ITEM OVERLAY DESCRIPTION -->
-                                    <div class="overlayer bottom-left full-width" style="margin-top: -185px;margin-left: 16px;">
-                                    <div class="overlayer-wrapper item-info more-content">
-                                        <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                        <div class="">
-                                            <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>                                        
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="m-t-10">
-                                            <div class="thumbnail-wrapper d32 circular m-t-5  avatar rounded-circle">
-                                            <img width="auto" height="auto" src="{{$noticia2->user->photo}}"  alt="">
-                                            </div>
-                                            <div class="inline m-l-10">
-                                                <p class="no-margin text-white fs-12">{{__('Escrito por')}} {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>                                      
-                                            </div>                                            
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <!-- END PRODUCT OVERLAY DESCRIPTION -->
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
+
                     </div>
                 </div>
-            </div>               
+            </div>
         </div>
       <div class="col-lg-4">
         <div class="card">
-          <div class="card-header bg-transparent"> 
+          <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
                         <h5 class="h3 mb-0">{{(__('Próximos cumpleaños'))}}</h5>
@@ -149,7 +117,7 @@ $date =date('m-d');
              <h5>
           </h5>
           </div>
-          
+
           {{-- <div class="card-header">
                 <div class="h3 mb-0 widget-calendar-day"></div>
                 <div class="h3 text-muted mb-1 widget-calendar-year"></div>
