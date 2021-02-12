@@ -2,8 +2,10 @@
 @section('content')
 <?php
 $date =date('m-d');
+$fechahoy = new \DateTime();
+$fechas = $fechahoy->format('d-m-Y');
 ?>
-<link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
+
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">
       <div class="header-body">
@@ -39,36 +41,34 @@ $date =date('m-d');
                     </div>
                     <div class="row align-items-center">
                         <div class="col sm-4">
-                            @foreach ($noticias as $item)
-                            <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="bd-example">
                                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                                        </ol>
                                         <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{$item->image}}" class="d-block w-100 image-responsive" alt="...">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>{{$item->title}}</h5>
-                                                    <p>{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
+                                          @foreach ($noticias as $item)
+                                          @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
+                                            <div class="carousel-item {{$loop->first ? 'active': ''}}" data-interval="5000">
+                                                <img src="{{$item->image}}" class="d-block w-100 image-responsive imges" alt="...">
+                                                <div class="carousel-caption d-none d-md-block ">
+                                                 
+                                                  <a  href="{{'post'}}/{{ $item->slug }}">  
+                                                    <h5 class="aso">{{$item->title}}</h5>
+                                                    <p class="aso">{{__('Escrito por')}} {{$item->user->name}} {{$item->user->lastname}}</p>
+                                                  </a>
                                                 </div>
-                                            </div>
+                                                </div>
+                                            
+                                          @endif
+                                          @endforeach
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
                                         </a>
                                         <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
                                         </a>
                                     </div>
                                 </div>
-                            </a>
-                            @endforeach
+                            
                         </div>
 
                     </div>
@@ -157,11 +157,19 @@ $date =date('m-d');
           })
       });
 </script>
+<style> 
+  .imges:hover {
+    opacity: 0.75;
+    
+}
 
+.aso:hover {
+  color: #07d544;
+  cursor: pointer;
+}
+</style>
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
 <script src="{{asset("pausasacitvas/pausas.js")}}"></script>
-<script src="{{asset("plantilla/js/gallery.js")}}"></script>
-
 </body>
 @endsection
 @endsection

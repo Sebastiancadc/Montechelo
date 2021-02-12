@@ -50,6 +50,12 @@ class Helpers
         return $fechaformateada;
     }
 
+    public static function formatearFechahoy($fecha) 
+    {   
+        $fechaformateada = Carbon::parse($fecha)->format('d-m-Y');
+        return $fechaformateada;
+    }
+
     public static function modal($cumpleanios) 
     {   
         $fechamodal =Carbon::parse($cumpleanios)->format('m-d');
