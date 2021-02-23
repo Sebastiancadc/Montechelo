@@ -68,7 +68,7 @@ class PerfilController extends Controller
         $path= public_path('images/users/'.$file_name);
 
         Image::make($request->file('photo'))->fit(144,144)->save($path);
-        $user->photo = 'http://localhost/Montechelo/public/images/users/'.$file_name;
+        $user->photo = 'http://intranet-montechelo.qa.groupcos.com/images/users/'.$file_name;
         $user->save();  
         $data['success'] =true;
         $data['path'] = $path;
@@ -89,7 +89,7 @@ class PerfilController extends Controller
         $path= public_path('images/portada/'.$file_name);
 
         Image::make($request->file('photo_portada'))->fit(1000,600)->save($path);
-        $user->photo_portada = 'http://localhost/Montechelo/public/images/portada/'.$file_name;
+        $user->photo_portada = 'http://intranet-montechelo.qa.groupcos.com/images/portada/'.$file_name;
         $user->save();  
         $data['success'] =true;
         $data['path'] = $path;

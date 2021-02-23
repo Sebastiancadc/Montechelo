@@ -47,7 +47,7 @@ class CapacitacionesNotification extends Notification
             'descripcion' => $this->capacitaciones->descripcion,
             'icono' => 'fas fa-chalkboard-teacher',          
             'evento' => 'Capacitaciones',
-            'link' => 'http://localhost/Montechelo/public/capacitaciones',
+            'link' => 'http://intranet-montechelo.qa.groupcos.com/capacitaciones',
         ];
     }
 }

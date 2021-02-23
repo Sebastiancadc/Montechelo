@@ -48,7 +48,7 @@ class NoticiasNotification extends Notification
             'descripcion' => $this->noticias->body,
             'icono' => 'fa fa-newspaper',
             'evento' => 'Noticia',
-            'link' => 'http://localhost/Montechelo/public/noticiausu',
+            'link' => 'http://intranet-montechelo.qa.groupcos.com/noticiausu',
         ];
     }
 }

@@ -61,7 +61,7 @@ class PausasActivasController extends Controller
         $path= public_path('pausasacitvas/'.$file_name);
 
         Image::make($request->file('video'))->fit(144,144)->save($path);
-        $pausaUpdate->video = 'http://localhost/Montechelo/public/pausasacitvas/'.$file_name;
+        $pausaUpdate->video = 'http://intranet-montechelo.qa.groupcos.com/pausasacitvas/'.$file_name;
         $pausaUpdate->save();  
         $data['success'] =true;
         $data['path'] = $path;

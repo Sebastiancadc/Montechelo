@@ -59,7 +59,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/isotipo/'.$file_name);
 
         Image::make($request->file('logoisotipo'))->fit(80,80)->save($path);
-        $isotipo->logoisotipo = 'http://localhost/Montechelo/public/images/isotipo/'.$file_name;
+        $isotipo->logoisotipo = 'http://intranet-montechelo.qa.groupcos.com/images/isotipo/'.$file_name;
         $isotipo->save();  
         $data['success'] =true;
         $data['path'] = $path;
@@ -78,7 +78,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/login/'.$file_name);
 
         Image::make($request->file('logologin'))->fit(80,80)->save($path);
-        $login->logologin = 'http://localhost/Montechelo/public/images/login/'.$file_name;
+        $login->logologin = 'http://intranet-montechelo.qa.groupcos.com/images/login/'.$file_name;
         $login->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -98,7 +98,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/navvertical/'.$file_name);
 
         Image::make($request->file('logonav'))->fit(200,70)->save($path);
-        $nav->logonav = 'http://localhost/Montechelo/public/images/navvertical/'.$file_name;
+        $nav->logonav = 'http://intranet-montechelo.qa.groupcos.com/images/navvertical/'.$file_name;
         $nav->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -119,7 +119,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/mision/'.$file_name);
 
         Image::make($request->file('imagenmision'))->fit(693,500)->save($path);
-        $mision->imagenmision = 'http://localhost/Montechelo/public/images/plan/mision/'.$file_name;
+        $mision->imagenmision = 'http://intranet-montechelo.qa.groupcos.com/images/plan/mision/'.$file_name;
         $mision->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -139,7 +139,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/vision/'.$file_name);
 
         Image::make($request->file('imagenvision'))->fit(650,500)->save($path);
-        $vision->imagenvision = 'http://localhost/Montechelo/public/images/plan/vision/'.$file_name;
+        $vision->imagenvision = 'http://intranet-montechelo.qa.groupcos.com/images/plan/vision/'.$file_name;
         $vision->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -159,7 +159,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/valores/'.$file_name);
 
         Image::make($request->file('imagenvalores'))->fit(693,500)->save($path);
-        $valores->imagenvalores= 'http://localhost/Montechelo/public/images/plan/valores/'.$file_name;
+        $valores->imagenvalores= 'http://intranet-montechelo.qa.groupcos.com/images/plan/valores/'.$file_name;
         $valores->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -179,7 +179,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/politica/'.$file_name);
 
         Image::make($request->file('imagenpolitica'))->fit(650,500)->save($path);
-        $politica->imagenpolitica = 'http://localhost/Montechelo/public/images/plan/politica/'.$file_name;
+        $politica->imagenpolitica = 'http://intranet-montechelo.qa.groupcos.com/images/plan/politica/'.$file_name;
         $politica->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -198,7 +198,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/planestra/'.$file_name);
 
         Image::make($request->file('imagenplanestra'))->fit(693,500)->save($path);
-        $planestra->imagenplanestra = 'http://localhost/Montechelo/public/images/plan/planestra/'.$file_name;
+        $planestra->imagenplanestra = 'http://intranet-montechelo.qa.groupcos.com/images/plan/planestra/'.$file_name;
         $planestra->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -217,7 +217,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/organigrama/'.$file_name);
 
         Image::make($request->file('imagenorganigrama'))->fit(650,500)->save($path);
-        $organigrama->imagenorganigrama = 'http://localhost/Montechelo/public/images/plan/organigrama/'.$file_name;
+        $organigrama->imagenorganigrama = 'http://intranet-montechelo.qa.groupcos.com/images/plan/organigrama/'.$file_name;
         $organigrama->save();  
         $data['success'] =true; 
         $data['path'] = $path;
@@ -237,7 +237,7 @@ class ConfigpageController extends Controller
         $path= public_path('images/plan/unidades/'.$file_name);
 
         Image::make($request->file('imagenuniestra'))->fit(693,500)->save($path);
-        $uniestra->imagenuniestra = 'http://localhost/Montechelo/public/images/plan/unidades/'.$file_name;
+        $uniestra->imagenuniestra = 'http://intranet-montechelo.qa.groupcos.com/images/plan/unidades/'.$file_name;
         $uniestra->save();  
         $data['success'] =true; 
         $data['path'] = $path;

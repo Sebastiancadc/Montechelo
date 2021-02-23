@@ -41,7 +41,7 @@ header("Pragma: no-cache");
   <h1>Cerrando sesion...</h1>
  <script>
   function redireccionar(){
-  window.location.href = "http://localhost/Montechelo/public/";
+  window.location.href = "http://intranet-montechelo.qa.groupcos.com/";
 }
   setTimeout("redireccionar()", 2000);
  </script>

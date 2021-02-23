@@ -42,7 +42,7 @@ class AnunciosNotification extends Notification
             'tipo' => $this->anuncios->tipo,
             'icono' => 'ni ni-notification-70',          
             'evento' => 'Anuncio',
-            'link' => 'http://localhost/Montechelo/public/Notificaciones',
+            'link' => 'http://intranet-montechelo.qa.groupcos.com/Notificaciones',
         ];
     }
 }

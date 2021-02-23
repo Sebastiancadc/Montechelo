@@ -112,7 +112,7 @@
 					<button class="btn btn-primary" id="light_candle">Enciende la vela</button>
 					<button class="btn btn-primary" id="wish_message">Feliz cumpleaños</button>
 					<button class="btn btn-primary" id="story">Un mensaje para ti</button>
-					<a href="http://localhost/Montechelo/public/home" class="btn btn-primary" id="tenkyu" style="display: none;" >Gracias!</a>
+					<a href="http://intranet-montechelo.qa.groupcos.com/home" class="btn btn-primary" id="tenkyu" style="display: none;" >Gracias!</a>
 				</div>
 			</div>
 		</div>

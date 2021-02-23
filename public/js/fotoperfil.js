@@ -28,7 +28,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $avatarImage.attr('src', 'http://localhost/Montechelo/public/images/users/'+data.file_name+'?'+ new Date().getTime());
+            $avatarImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/users/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
 
@@ -69,7 +69,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $portadata.attr('src', 'http://localhost/Montechelo/public/images/portada/'+data.file_name+'?'+ new Date().getTime());
+            $portadata.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/portada/'+data.file_name+'?'+ new Date().getTime());
 
     })
     .fail(function () {
@@ -106,7 +106,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $isotipoImage.attr('src', 'http://localhost/Montechelo/public/images/isotipo/'+data.file_name+'?'+ new Date().getTime());
+            $isotipoImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/isotipo/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -145,7 +145,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $loginImage.attr('src', 'http://localhost/Montechelo/public/images/login/'+data.file_name+'?'+ new Date().getTime());
+            $loginImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/login/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -183,7 +183,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $verticalImage.attr('src', 'http://localhost/Montechelo/public/images/navvertical/'+data.file_name+'?'+ new Date().getTime());
+            $verticalImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/navvertical/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -223,7 +223,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $misionImage.attr('src', 'http://localhost/Montechelo/public/images/plan/mision/'+data.file_name+'?'+ new Date().getTime());
+            $misionImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/mision/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -263,7 +263,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $visionImage.attr('src', 'http://localhost/Montechelo/public/images/plan/vision/'+data.file_name+'?'+ new Date().getTime());
+            $visionImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/vision/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -301,7 +301,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $valoresImage.attr('src', 'http://localhost/Montechelo/public/images/plan/valores/'+data.file_name+'?'+ new Date().getTime());
+            $valoresImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/valores/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -339,7 +339,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $politicaImage.attr('src', 'http://localhost/Montechelo/public/images/plan/politica/'+data.file_name+'?'+ new Date().getTime());
+            $politicaImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/politica/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -377,7 +377,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $planestraImage.attr('src', 'http://localhost/Montechelo/public/images/plan/planestra/'+data.file_name+'?'+ new Date().getTime());
+            $planestraImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/planestra/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -418,7 +418,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $orgaImage.attr('src', 'http://localhost/Montechelo/public/images/plan/organigrama/'+data.file_name+'?'+ new Date().getTime());
+            $orgaImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/organigrama/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })
@@ -458,7 +458,7 @@ $(function () {
     })
     .done(function (data) {
         if (data.success)
-            $uniestraImage.attr('src', 'http://localhost/Montechelo/public/images/plan/unidades/'+data.file_name+'?'+ new Date().getTime());
+            $uniestraImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/images/plan/unidades/'+data.file_name+'?'+ new Date().getTime());
             location.reload();
             location.reload();
     })

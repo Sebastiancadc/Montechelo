@@ -153,7 +153,7 @@ class HomeController extends Controller
         $user->area = $request->area;
         $user->phone = $request->phone;
         $user->cumpleanios = new \Datetime($request->cumpleanios);
-        $user->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
+        $user->photo = 'http://intranet-montechelo.qa.groupcos.com/images/users/d-avatar.jpg';
         $user->messenger_color = $request->messenger_color;
         $user->role = $request->role;
         $user->Rol_Id_Rol = $request->Rol_Id_Rol;
@@ -179,7 +179,7 @@ class HomeController extends Controller
         $user2->area = $request->area;
         $user2->phone = $request->phone;
         $user2->cumpleanios = new \Datetime($request->cumpleanios);
-        $user2->photo = 'http://localhost/Montechelo/public/images/users/d-avatar.jpg';
+        $user2->photo = 'http://intranet-montechelo.qa.groupcos.com/images/users/d-avatar.jpg';
         $user2->role = $request->role;
         $user2->Rol_Id_Rol = $request->Rol_Id_Rol;
         $user2->save();

@@ -87,7 +87,7 @@
 				})
 				.done(function(data) {
 					if (data.success)
-						$avatarImage.attr('src', 'http://localhost/Montechelo/public/pausasacitvas/' + data.file_name + '?' + new Date().getTime());
+						$avatarImage.attr('src', 'http://intranet-montechelo.qa.groupcos.com/pausasacitvas/' + data.file_name + '?' + new Date().getTime());
 					alert($avatarImage);
 					location.reload();
 					location.reload();
@@ -100,5 +100,4 @@
 	});
 </script>
 @endsection
-
 @endsection
