@@ -50,7 +50,7 @@ class PausasActivasController extends Controller
     }
 
     
-    public function updatePhoto(Request $request, $id)
+    public function update(Request $request, $id)
     {        
 
         $pausaUpdate = Pausasactivas::findOrFail($id);

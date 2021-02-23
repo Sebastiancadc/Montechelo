@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 class Capacitaciones extends Model
 {
     use Notifiable;
-    protected $table = 'Capacitaciones';
+    protected $table = 'capacitaciones';
     protected $guarded = ['id_capacitacion'];
 	protected $primaryKey = 'id_capacitacion';
     protected $fillable = [

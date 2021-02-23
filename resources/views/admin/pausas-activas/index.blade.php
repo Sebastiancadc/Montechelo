@@ -59,8 +59,7 @@
                                             <source src="{{$pausa->video}}" type='video/mp4'> </video>
                                         <br>
                                         <div class="d-flex align-items-center">
-                                            <a href="{{url('admin/editarPausa',$pausa->id)}}" class="btn btn-primary  ml-auto" style="margin-right:3px;">{{__('Editar')}}</a>
-
+                                            {{-- <a href="{{url('admin/editarPausa',$pausa->id)}}" class="btn btn-primary  ml-auto" style="margin-right:3px;">{{__('Editar')}}</a> --}}
                                             <button href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$pausa->id}}" data-original-title="Eliminar capacitacion">
                                                 {{__('Eliminar')}}
                                             </button>

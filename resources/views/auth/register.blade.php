@@ -73,7 +73,7 @@
                                         </div>
                                         <input id="email" type="email" class="form-control" name="email"
                                             value="{{ old('email') }}" placeholder="Correo electronico"
-                                            pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
+                                            pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(montechelo)\.com.co$">
                                     </div>
                                     @if ($errors->has('email'))
                                     <strong class="text-danger  tamano">{{ $errors->first('email') }}</strong>
