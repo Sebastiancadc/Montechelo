@@ -79,7 +79,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                         class="ni ni-lock-circle-open"></i></span>
                                             </div>
                                             <input id="password" name="password"
-                                                class="form-control @error('password') is-invalid @enderror"
+                                                class="form-control"
                                                 placeholder="{{__('Contraseña')}}" type="password">
                                         </div>
                                         @if ($errors->has('password'))
