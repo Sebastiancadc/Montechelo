@@ -43,10 +43,11 @@
                 </section>
                 <section class="section section-lg pt-lg-0 mt--7" >
                     <div class="container">
-                        <div class="row justify-content-center" <div class="col-lg-12">
+                        <div class="row justify-content-center">
                             <div class="row">
+                                
                                 @foreach ($buzon as $item)
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="card card-lift--hover shadow border-0">
 
                                         <div class="card-body py-5 rounded-sm  tgg">
@@ -57,12 +58,12 @@
                                     </div>
                                 </div>
                                 @endforeach
-                            </div>
+                            
+                        </div>
                         </div>
                     </div>
-            </div>
-
-            </section>
+                    </div>
+                </section>
         </div>
         @include('admin.layouts.footer')
     </div>
