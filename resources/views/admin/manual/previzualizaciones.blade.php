@@ -13,7 +13,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura1-Dark.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura1-Dark.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura-Biografia.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura-Biografia.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura2-Perfil.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura2-Perfil.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -101,7 +101,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura2-Biografia.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura2-Biografia.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -128,7 +128,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura3.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura3.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura3-Noticia-Usu3.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura3-Noticia-Usu3.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -165,7 +165,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Captura3-Post-1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Captura3-Post-1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -201,7 +201,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Calendario1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Calendario1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -210,7 +210,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Calendario3.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Calendario3.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -219,7 +219,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Solicitudes.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Solicitudes.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -228,7 +228,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Solicitudes1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Solicitudes1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -237,7 +237,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Sugerencia.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Sugerencia.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -246,7 +246,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Sugerencia1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Sugerencia1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -255,7 +255,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Novedades.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Novedades.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -264,7 +264,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Dash.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Dash.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -273,7 +273,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Usu1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Usu1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -282,7 +282,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Usu3.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Usu3.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -291,7 +291,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Usu4.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Usu4.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -336,7 +336,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Nove1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Nove1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -354,7 +354,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Soli1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Soli1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -381,7 +381,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Event1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Event1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -435,7 +435,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Conf5.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Conf5.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -453,7 +453,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Log.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Log.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
@@ -480,7 +480,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content imgalt">
             <div class="modal-body bgalt" >
-                <img src="{{asset("plantilla/img/manual/Anun1.png")}}" class="img-fluid">
+                <img src="{{asset("plantilla/img/manual/Anun1.PNG")}}" class="img-fluid">
             </div>
         </div>
     </div>
