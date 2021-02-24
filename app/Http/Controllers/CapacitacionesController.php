@@ -29,12 +29,12 @@ class CapacitacionesController extends Controller
     public function index2()
     {
         $capacitaciones = Capacitaciones::all();
-        $capacitacionesRegistradas = DB::table('Capacitaciones')->count();
-        $diseño = DB::table('Capacitaciones')->wherecategoria('diseño')->count();
-        $desarrollo = DB::table('Capacitaciones')->wherecategoria('desarrollo')->count();
-        $software = DB::table('Capacitaciones')->wherecategoria('software')->count();
-        $analisis = DB::table('Capacitaciones')->wherecategoria('analisis')->count();
-        $produccion = DB::table('Capacitaciones')->wherecategoria('produccion')->count();
+        $capacitacionesRegistradas = DB::table('capacitaciones')->count();
+        $diseño = DB::table('capacitaciones')->wherecategoria('diseño')->count();
+        $desarrollo = DB::table('capacitaciones')->wherecategoria('desarrollo')->count();
+        $software = DB::table('capacitaciones')->wherecategoria('software')->count();
+        $analisis = DB::table('capacitaciones')->wherecategoria('analisis')->count();
+        $produccion = DB::table('capacitaciones')->wherecategoria('produccion')->count();
 
         return view('admin/capacitaciones/index', compact('capacitaciones','capacitacionesRegistradas','diseño','desarrollo','software',
         'analisis','produccion'));
