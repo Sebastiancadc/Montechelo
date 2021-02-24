@@ -576,7 +576,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                             </div>
                                         </div>
 
-                                        <div class="card">
+                                        {{-- <div class="card">
                                             <div class="card-header" id="faq-section-two-ques-4">
                                                 <div class="mb-0 mt-0">
                                                     <div role="button" class="collapsed" data-toggle="collapse" data-target="#faq-section-two-ans-4" aria-expanded="false" aria-controls="faq-section-two-ans-4">
@@ -612,7 +612,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="card">
                                             <div class="card-header" id="faq-section-two-ques-5">
                                                 <div class="mb-0 mt-0">
