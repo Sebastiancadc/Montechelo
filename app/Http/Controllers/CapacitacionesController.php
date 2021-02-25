@@ -39,8 +39,6 @@ class CapacitacionesController extends Controller
         return view('admin/capacitaciones/index', compact('capacitaciones','capacitacionesRegistradas','diseño','desarrollo','software',
         'analisis','produccion'));
 
-
-
     }
     public function crearcapacitaciones()
     {
