@@ -90,9 +90,9 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                                         <button type="submit" class="btn btn-primary my-4">{{__('Ingresar')}}</button>
 
                                     </div>
-                                    <div class="copyright text-center text-lg-left text-muted">
+                                    {{-- <div class="copyright text-center text-lg-left text-muted">
                                         <a style="color: #002A60;" class="font-weight-bold ml-1">{{__('Desarrollado por Montechelo - SENA.')}}&copy;</a>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
