@@ -41,7 +41,7 @@
             {{-- Last Message user indicator --}}
             {!!
                 $lastMessage->from_id == Auth::user()->id 
-                ? '<span class="lastMessageIndicator">{{__("Tu")}} :</span>'
+                ? '<span class="lastMessageIndicator">Tu :</span>'
                 : ''
             !!}
             {{-- Last message body --}}
