@@ -45,7 +45,7 @@ $fechas = $fechahoy->format('d-m-Y');
                                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
                                           @foreach ($noticias as $item)
-                                          @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
+                                          {{-- @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas) --}}
                                             <div class="carousel-item {{$loop->first ? 'active': ''}}" data-interval="5000">
                                                 <img src="{{$item->image}}" class="d-block w-100 image-responsive imges" alt="...">
                                                 <div class="carousel-caption d-none d-md-block ">
@@ -61,7 +61,7 @@ $fechas = $fechahoy->format('d-m-Y');
                                                 </div>
                                                 </div>
 
-                                          @endif
+                                          {{-- @endif --}}
                                           @endforeach
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">

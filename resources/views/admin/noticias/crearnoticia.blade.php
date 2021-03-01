@@ -34,7 +34,8 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
                         @csrf @method('POST')
-                        <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}" ;>
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                        <input class="form-control" name="autor" value="{{Auth::user()->name}}" type="hidden">
                         <div class="form-group">
 
                             <div class="form-group">

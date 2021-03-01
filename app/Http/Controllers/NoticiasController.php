@@ -26,14 +26,14 @@ class NoticiasController extends Controller
 
     public function index()
     {
-        $noticia = Noticia::paginate(4);
+        $noticia = Noticia::all();
         $noticiasRegistradas = DB::table('noticias')->count();
        
         return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas'));
     }
     public function index2()
     {
-        $noticias = Noticia::paginate(6);
+        $noticias = Noticia::all();
         $pausasramdom = Pausasactivas::select('video')
             ->inRandomOrder()
             ->first();
